@@ -17687,15 +17687,12 @@ div#edit-actions button {
 
 
 
-
-
 /*contact us new updates merna*/
 #contact-feedback-form {
     display: flex;
-    flex-direction: column;
     padding-top: 5rem;
     position: relative;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
@@ -17705,7 +17702,6 @@ div#edit-actions button {
     flex: none;
     order: 0;
     flex-grow: 0;
-    padding-left: 75px;
     width: auto !important;
     background: unset;
     height: 84px;
@@ -17715,7 +17711,7 @@ div#edit-actions button {
     line-height: 84px;
     color: #11183b;
     text-align: center;
-    padding-left: 0;
+    padding-left: 75px;
     margin-bottom: 20px;
 }
 
@@ -17748,6 +17744,7 @@ form#contact-message-feedback-form {
 form#contact-message-feedback-form {
     padding-left: 8rem;
     padding-top: 8rem;
+    padding-bottom: 8rem;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -17778,7 +17775,7 @@ form#contact-message-feedback-form .bx--global-light-ui .form-item .description 
     letter-spacing: .32px;
 }
 
-a.reload-captcha {
+form#contact-message-feedback-form a.reload-captcha {
     height: 24px;
     top: 1229px;
     font-family: 'Inter';
@@ -17812,7 +17809,7 @@ div#contact-feedback-form .bg-images .circle-2 {
 }
 
 form#contact-message-feedback-form textarea#edit-message-0-value {
-    width: 369px;
+    width: 100%;
     height: 132px;
     background: #f6f7fa;
     border-bottom: 2px solid #fff;
@@ -17822,8 +17819,8 @@ form#contact-message-feedback-form textarea#edit-message-0-value {
     border-radius: 15px !important;
 }
 
-/*contact us new updates merna*/
 #contact-feedback-form::after {
+    flex: 1.5;
     height: 100%;
     content: "";
     display: block;
@@ -17833,4 +17830,43 @@ form#contact-message-feedback-form textarea#edit-message-0-value {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+    content: "";
+    transform: translate(-7%, 50%);
+    width: 43%;
+    min-height: 479px;
 }
+
+@media (max-width: 1200px) {
+    #contact-feedback-form {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5rem;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #contact-feedback-heading {
+        padding-left: unset;
+    }
+
+    #contact-feedback-form::after {
+        transform: none;
+    }
+
+    form#contact-message-feedback-form {
+        padding-bottom: unset;
+        padding-left: unset;
+        padding-top: unset;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #contact-feedback-heading {
+        font-size: 54px;
+        line-height: 57px;
+    }
+}
+
+/*contact us new updates merna*/
