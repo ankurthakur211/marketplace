@@ -1,0 +1,219 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Third Party Fund Transfer Status Notification API Documentation",
+    "version": "1.0.0",
+    "title": "TPP - Fund Transfer Status Notification"
+  },
+  "basePath": "/v1/transfers/third-party",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/notify": {
+      "post": {
+        "summary": "Third Party Fund Transfer Status Notification",
+        "operationId": "third-party-fund-transfer-status-notification",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "unique identifier for request",
+            "x-example": "cc47c0b3-64bd-4bf4-a3e8-de73ee9cb85b"
+          },
+          {
+            "name": "X-External-Party-Id",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": "third party Customer identifier",
+            "x-example": "1234568779"
+          },
+          {
+            "name": "X-Session-Language",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": "the default http language, accepted values are [en, ar], if not sent will consider value 'en'",
+            "x-example": "en"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TPFundTransferStatusNotificationRq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TPFundTransferStatusNotificationRs"
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "schema": {
+              "$ref": "#/definitions/errorReply"
+            }
+          },
+          "500": {
+            "description": "InternalServerError",
+            "schema": {
+              "$ref": "#/definitions/errorReply"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "TPFundTransferStatusNotificationRs": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/header"
+        }
+      }
+    },
+    "header": {
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "format": "uuid",
+          "example": "6390cc30-16d9-11eb-adc1-0242ac120002"
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "example": "I000000"
+            },
+            "description": {
+              "type": "string",
+              "example": "Success"
+            }
+          }
+        }
+      }
+    },
+    "errorReply": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/header"
+        }
+      }
+    },
+    "Metadata": {
+      "type": "object",
+      "required": [
+        "key",
+        "value"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "example": "currency",
+          "description": "Partner defined field name"
+        },
+        "value": {
+          "type": "string",
+          "example": "SAR",
+          "description": "Partner defined field value"
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "example": "E999999"
+        },
+        "description": {
+          "type": "string",
+          "example": "General Error"
+        }
+      }
+    },
+    "TPFundTransferStatusNotificationRq": {
+      "type": "object",
+      "required": [
+        "ucmTransactionReferenceNumber",
+        "partnerTransactionReferenceNumber",
+        "transactionStatus"
+      ],
+      "properties": {
+        "ucmTransactionReferenceNumber": {
+          "type": "string",
+          "example": "26078",
+          "description": "UCM transaction reference number"
+        },
+        "partnerTransactionReferenceNumber": {
+          "type": "string",
+          "example": "1245",
+          "description": "Third Party Transaction Reference Number"
+        },
+        "orderId": {
+          "type": "string",
+          "example": "1245",
+          "description": "Portfolio Order Id"
+        },
+        "transactionStatus": {
+          "type": "string",
+          "example": "ACCEPT",
+          "description": "transaction Status",
+          "enum": [
+            "ACCEPT",
+            "REJECT"
+          ]
+        },
+        "transactionRejectionReason": {
+          "$ref": "#/definitions/status"
+        },
+        "metadata": {
+          "type": "array",
+          "description": "List of Partner defined fields",
+          "items": {
+            "$ref": "#/definitions/Metadata"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "clientID": {
+      "name": "client_id",
+      "type": "apiKey",
+      "in": "header"
+    },
+    "clientSecret": {
+      "name": "client_secret",
+      "type": "apiKey",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "clientID": [],
+      "clientSecret": []
+    }
+  ]
+}

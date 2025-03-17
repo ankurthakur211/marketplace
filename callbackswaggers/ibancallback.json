@@ -1,0 +1,671 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IBAN Verification",
+    "description": "Callback endpoint required to receive inquired IBAN Verification Details from requested sources\nAlso You can inquire on the Verificatin Request seperatly.\n",
+    "version": "1.0.0",
+    "x-ibm-name": "iban-verification"
+  },
+  "servers": [
+    {
+      "url": "/iban-verification/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "IBAN Verification Callback",
+      "description": "EndPOInts required for receiving IBAN Verifiaction for a specific request."
+    }
+  ],
+  "paths": {
+    "/verification-requets/push": {
+      "post": {
+        "tags": [
+          "IBAN Verification Callback"
+        ],
+        "summary": "Recieve IBAN Verefication Data from all required sources for a specific Request.",
+        "operationId": "CallbackVerificationRequest",
+        "description": "Returns IBAN Verefication Data from all required sources for a specific Request.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-request-id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerificationRequestCallbackBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "$ref": "#/components/responses/202VerificationRequestCallbackResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/500Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "202VerificationRequestCallbackResponse": {
+        "description": "Callback Verification Request Success Response",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "400Error": {
+        "description": "Bad request",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.400.001",
+                  "message": "Customer POINumber is invalid.",
+                  "path": "request.body.POINumber",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.400.001",
+                  "message": "Customer POINumber is invalid.",
+                  "path": "request.body.POINumber",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "401Error": {
+        "description": "Unauthorized",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.401.001",
+                  "message": "Unauthorized to call the target operation.",
+                  "path": "authorization",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.401.001",
+                  "message": "Unauthorized to call the target operation.",
+                  "path": "authorization",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "403Error": {
+        "description": "Forbidden",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.403.001",
+                  "message": "Can't find any valid subscription.",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.403.001",
+                  "message": "Can't find any valid subscription.",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "404Error": {
+        "description": "Not found",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.404.001",
+                  "message": "No resources match requested URI.",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.404.001",
+                  "message": "No resources match requested URI.",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "405Error": {
+        "description": "Method Not Allowed",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.405.001",
+                  "message": "The method is not allowed for the requested URL.",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.405.001",
+                  "message": "The method is not allowed for the requested URL.",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "406Error": {
+        "description": "Not Acceptable",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.406.001",
+                  "message": "An appropriate representation of the requested resource could not be found",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.406.001",
+                  "message": "An appropriate representation of the requested resource could not be found",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "415Error": {
+        "description": "Unsupported Media Type",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.415.001",
+                  "message": "Unsupported Content-Type",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.415.001",
+                  "message": "Unsupported Content-Type",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "429Error": {
+        "description": "Too Many Requests",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          "Retry-After": {
+            "description": "Number in seconds to wait",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.429.001",
+                  "message": "Assembly Rate Limit exceeded",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.429.001",
+                  "message": "Assembly Rate Limit exceeded",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "500Error": {
+        "description": "Internal Server Error",
+        "headers": {
+          "x-request-id": {
+            "description": "An RFC4122 UID used as a correlation id.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "content": {
+          "application/json; charset=utf-8": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.500.001",
+                  "message": "Internal Error",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorResponse"
+            },
+            "example": {
+              "errors": [
+                {
+                  "code": "NTSP.ERROR.500.001",
+                  "message": "Internal Error",
+                  "url": "https://{baseURL}/developer-portal/terms"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "VerificationRequestCallbackBody": {
+        "type": "object",
+        "properties": {
+          "Data": {
+            "$ref": "#/components/schemas/VerificationRequestCallbackBodyData"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "description": "An array of detail error codes, and messages, and URLs to documentation to help remediation.",
+        "type": "object",
+        "properties": {
+          "errors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        },
+        "required": [
+          "errors"
+        ],
+        "additionalProperties": false
+      },
+      "VerificationRequestCallbackBodyData": {
+        "type": "object",
+        "required": [
+          "RequestId",
+          "Source",
+          "IBAN",
+          "RequestStatus",
+          "POIType",
+          "POINumber"
+        ],
+        "properties": {
+          "RequestId": {
+            "$ref": "#/components/schemas/RequestReferenceNumber"
+          },
+          "RequestStatus": {
+            "$ref": "#/components/schemas/RequestResultStatus"
+          },
+          "AccountStatus": {
+            "$ref": "#/components/schemas/AccountStatus"
+          },
+          "FailureCode": {
+            "$ref": "#/components/schemas/FailureCode"
+          },
+          "Name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "Source": {
+            "$ref": "#/components/schemas/SourceItem"
+          },
+          "IBAN": {
+            "$ref": "#/components/schemas/IBAN"
+          },
+          "POIType": {
+            "$ref": "#/components/schemas/POIType"
+          },
+          "POINumber": {
+            "$ref": "#/components/schemas/POINumber"
+          },
+          "BankTransferReferenceID": {
+            "$ref": "#/components/schemas/BankTransferReferenceID"
+          },
+          "EchoList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EchoObject"
+            }
+          }
+        }
+      },
+      "EchoObject": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "$ref": "#/components/schemas/EchoObjectName"
+          },
+          "Value": {
+            "$ref": "#/components/schemas/EchoObjectValue"
+          }
+        }
+      },
+      "Error": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Low level textual error code, e.g., NTSP.ERROR.400.001",
+            "example": "NTSP.ERROR.400.001"
+          },
+          "message": {
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string",
+            "description": "A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future' OBIE doesn't standardise this field",
+            "example": "Instructed identification is missing"
+          },
+          "path": {
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string",
+            "description": "Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency",
+            "example": "Data.Initiation.InstructionIdentification"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL to help remediate the problem, or provide more information, or to API Reference, or help etc",
+            "example": "https://{baseURL}/developer-portal/term"
+          }
+        }
+      },
+      "SourceItem": {
+        "type": "string",
+        "description": "Source List:\n</br> ARB\n</br> Saudi-Payment\n</br> OB",
+        "enum": [
+          "ARB",
+          "Saudi-Payment",
+          "OB"
+        ],
+        "example": "ARB"
+      },
+      "IBAN": {
+        "type": "string",
+        "maxLength": 24,
+        "minLength": 24,
+        "example": "SA2230400108071086000028"
+      },
+      "Name": {
+        "type": "string",
+        "example": "Mohamed Ahamed",
+        "description": "Name.",
+        "minLength": 1,
+        "maxLength": 200
+      },
+      "POIType": {
+        "type": "string",
+        "description": "Proxy Type.\n Allowed Values:\n NAT: National ID.\n IQA: Iqama.",
+        "enum": [
+          "NAT",
+          "IQA"
+        ]
+      },
+      "POINumber": {
+        "type": "string",
+        "description": "Proof of Identity Number",
+        "example": "2369874521",
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "BankTransferReferenceID": {
+        "title": "BankTransferReferenceID",
+        "description": "Unique Identifier for the Bank Transfer Request",
+        "type": "string",
+        "example": "0d1ee301-df1f-4c45-8b8d-2fce0eb29d59"
+      },
+      "RequestReferenceNumber": {
+        "description": "Request Id of the created request to fetch data.",
+        "type": "string",
+        "example": "1234567891",
+        "minLength": 1,
+        "maxLength": 50
+      },
+      "RequestResultStatus": {
+        "description": "Request Result for the IBAN Verification.\nAllowed Values:\n  </br> Valid\n  </br> Not Valid",
+        "type": "string",
+        "enum": [
+          "Valid",
+          "Not Valid"
+        ]
+      },
+      "AccountStatus": {
+        "description": "Account Result for the IBAN Verification.\nAllowed Values:\n  </br> Active\n  </br> Blocked\n  </br> Closed",
+        "type": "string",
+        "enum": [
+          "Active",
+          "Blocked",
+          "Closed"
+        ]
+      },
+      "FailureCode": {
+        "description": "IBAN Verification Failure code as received from ARB\n<br/>For example:\n<br/>AV01:\tIBAN & ID doesn’t match\n<br/>AC03:\tIBAN format is invalid\n<br/>AV02:\tID is invalid\n<br/>AC06:\tAccount is Blocked\n<br/>AC07:\tAccount is closed\n<br/>AC03:\tInvalid Creditor Account Number\n<br/>AC06:\tBlocked Account - Account has Credit block\n<br/>AC07:\tClosed Creditor Account Number\n<br/>AV01:\tThe IBAN and the Proxy details supplied do not match The Proxy details supplied could not be found\n<br/>AV03:\tThe Account holder Name supplied cannot be blank\n<br/>P802:\tProxy Type is not valid\n<br/>DS24:\tTechnical Error on GW side, e.g: (Timeout,..)\n<br/>P803:\tProxy Value is not valid(If the value passed is not in line with its respective type format; e.g. UNN Format).\n<br/>FF07:\tInvalid Business Use case ID supplied\n<br/>P802:\tProxy Type not valid\n<br/>P803:\tProxy Value not valid\n<br/>AC03:\tIBAN is Invalid",
+        "type": "string",
+        "example": "ACO6"
+      },
+      "EchoObjectName": {
+        "description": "Extra data that will return with the data",
+        "type": "string",
+        "example": "channelRedirectionUrl"
+      },
+      "EchoObjectValue": {
+        "type": "string",
+        "example": "https://www.example.com"
+      }
+    },
+    "parameters": {
+      "x-request-id": {
+        "in": "header",
+        "name": "x-request-id",
+        "required": false,
+        "description": "An RFC4122 UID used as a correlation id.",
+        "schema": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

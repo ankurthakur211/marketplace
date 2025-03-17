@@ -1,0 +1,1025 @@
+<div id="search-term-result">
+    <p>About Emkan Voucher Redemption APIS</p>
+
+    <p>
+        The main goal for this project is to enable Emkan to avail applying
+        for
+        Voucher Redemption through API Marketplace.
+        Voucher Redemption mainly is the exchange by a Customer of a Voucher (or individual items
+        within
+        a Voucher) for goods or services ordinarily provided.
+        These API’s are used for getting the voucher details [amount and current status], voucher
+        pre-redemption, redemption, pre-refunding and refunding. Exposing these API’s can be applied
+        for
+        on-prem and ecommerce Emkan's Retail Finance merchants.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Emkan Voucher Redemption API
+            Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">Emkan
+                            Voucher Redemption APIs</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Voucher Details</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-3">Pre-redeem</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-4">Redeem</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-5">Pre-refund</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-6">Refund</a>
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Emkan Voucher Redemption APIs</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">The main goal for this project is to enable Emkan to avail applying for
+                            Voucher Redemption through API Marketplace.
+                            Voucher Redemption mainly is the exchange by a Customer of a Voucher (or individual items within
+                            a Voucher) for goods or services ordinarily provided.
+                            These API’s are used for getting the voucher details [amount and current status], voucher
+                            pre-redemption, redemption, pre-refunding and refunding. Exposing these API’s can be applied for
+                            on-prem and ecommerce Emkan's Retail Finance merchants.
+                            </br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Emkan_Voucher_Redemption.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/EmkanVoucherRedemptionSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+                        <h1 class="fob-welcome-title">Emkan Voucher Redemption Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../voucherRedemptionWorkflowImg">Click
+                            here</a>
+                        <div class="row flex mt-25 mb-25">
+                            <div class="col-lg-8">
+                                <p class="Voucher-Redemption-flow-img"><br></p>
+                            </div>
+                        </div>
+                        <h1 class="fob-welcome-title">Emkan Voucher Redemption Architecture</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../voucherRedemptionarchImg">Click
+                            here</a>
+                        <div class="row flex mt-25 mb-25">
+                            <div class="col-lg-8">
+                                <p class="Voucher-Redemption-img"><br></p>
+                            </div>
+                        </div>
+    
+                        <h1 class="fob-welcome-title" id="section-2">Voucher Details</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/getVoucherDetails</br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FgetVoucherDetails/post">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">It is exposed for retrieving the voucher
+                            details (voucher's current amount and status).
+                            </br></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+        {
+            "voucherCode": "4ZlO9ctKUxKIYJWD",
+            "customerId": "1230000000",
+            "applicationId": "1931979"
+            }
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('rede-details')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="rede-details" style=" display: block;">
+        curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/getVoucherDetails' \
+        --header 'MERCHANT_CODE: ARBMarketplace' \
+        --header 'LNG: EN' \
+        --header 'CHN: ECOMMERCE' \
+        --header 'Content-Type: application/json' \
+        --header 'Accept: application/json' \
+        --header 'Authorization: Bearer AAIgYjgzOTY5ODM3Yzk1Zjk3YzQzOWM4ZWMxMDA1MDZmZWEchAnVQaWrtvoP_gZ3eDlg96vLzN3x8i2COUtIUxh7vViDcF0SYaiMfmKZMxerHDmnJm7KeIVEQiEHqnNxKBMFUQrPZ9lon1zgFKOF1adJ3h2HJEdnXWTiFir-9AgG4D-Cu0VwYGRz1Ox1pNtzudRz' \
+        --data '{
+            "voucherCode": "YD1lPscjhadds5v8",
+            "customerId": "1701180745",
+            "applicationId": "11270841"
+        }'
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('voucher-det')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('voucher-det3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('voucher-det4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('voucher-det5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('voucher-det6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('voucher-det7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('voucher-det8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('voucher-det9')">500</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                        <code id="voucher-det" style=" display: block; " class="text">
+        {
+            "status": "USED",
+            "amount": 15000
+            }
+                              
+                        </code>
+                        <code id="voucher-det3" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }  
+                        </code>	
+                      
+                        <code id="voucher-det4" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }    
+                        </code>
+                      
+                        <code id="voucher-det5" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      
+                        <code id="voucher-det6" style=" display: none; "class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }
+                              
+                        </code>
+                      
+                        <code id="voucher-det7" style=" display: none; "class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }       
+                        </code>
+                      
+                        <code id="voucher-det8" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      
+                        <code id="voucher-det9" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      </pre>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <h1 class="fob-welcome-title" id="section-3">Pre-redeem</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/preRedeem</br></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FpreRedeem/post">Swagger
+                                    Link</a></p>
+                            <p class="fob-welcome-text">This api is exposed for generating the otp (that is being sent to
+                                user's mobile
+                                number and otp id to the merchant, each of the otp and otpID are associated) before
+                                redeeming the voucher.</br></p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                          <code class="sample-code">
+        {
+            "customerId": "1230000000"
+            }
+                          </code>
+                        </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+    
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('preredeem-vo')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+    
+                                        <pre id="generatedCurl">
+                            <code id="preredeem-vo" style=" display: block;">
+        curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/preRedeem' \
+        --header 'MERCHANT_CODE: ARBMarketplace' \
+        --header 'LNG: AR' \
+        --header 'CHN: ECOMMERCE' \
+        --header 'Content-Type: application/json' \
+        --header 'Accept: application/json' \
+        --header 'Authorization: Bearer AAIgYjgzOTY5ODM3Yzk1Zjk3YzQzOWM4ZWMxMDA1MDZmZWEchAnVQaWrtvoP_gZ3eDlg96vLzN3x8i2COUtIUxh7vViDcF0SYaiMfmKZMxerHDmnJm7KeIVEQiEHqnNxKBMFUQrPZ9lon1zgFKOF1adJ3h2HJEdnXWTiFir-9AgG4D-Cu0VwYGRz1Ox1pNtzudRz' \
+        --data '{
+            "customerId": "1701180745"
+        }'                    
+                            </code>
+                          </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('preredeem')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('preredeem3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('preredeem4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('preredeem5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('preredeem6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('preredeem7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('preredeem8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('preredeem9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                  <code id="preredeem" style=" display: block; " class="text">
+        {
+            "statusCode": "200",
+            "otpID": "95297c94-6669-4544-9f0b-ef6406bafcc0"
+            }
+                      
+                   </code>
+                  
+                  <code id="preredeem3" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.401.001",
+          "message": "Unauthorized to call the target operation.",
+          "path": "authorization",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }
+                  
+                  </code>	
+                  
+                  <code id="preredeem4" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.403.001",
+          "message": "Can't find any valid subscription.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }   
+                  </code>
+                  
+                  
+                  <code id="preredeem5" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.404.001",
+          "message": "No resources match requested URI.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }     
+                  </code>
+                  
+                  
+                  <code id="preredeem6" style=" display: none; "class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.405.001",
+          "message": "The method is not allowed for the requested URL.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }
+                       
+                  </code>
+                   
+                  
+                  <code id="preredeem7" style=" display: none; "class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.406.001",
+          "message": "An appropriate representation of the requested resource could not be found",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }       
+                  </code>
+                   
+                  
+                  <code id="preredeem8" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.429.001",
+          "message": "Assembly Rate Limit exceeded",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }     
+                  </code>
+                  
+                  
+                  <code id="preredeem9" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.500.001",
+          "message": "Internal Error",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }    
+                  </code>
+                        </pre>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="fob-welcome-title" id="section-4">Redeem</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/redeem</br></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2Fredeem/post">Swagger
+                                    Link</a></p>
+                            <p class="fob-welcome-text">This operation is performed when a
+                                voucher is used as a form of payment. When used as a form of payment the consumer
+                                redeems the requested amount against the voucher. Once redeemed, the voucher may not
+                                be used again.</br></p>
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+        {
+            "customerId": "1230000000",
+            "voucherCode": "4ZlO9ctKUxKIYJWD",
+            "transactionId": "ABC-01eca917-f346-1cd8-b5c6-398E",
+            "otp": "1234",
+            "otpID": "4cc76a3e-352b-40b5-bbac-6be59a3fe469"
+            }         
+                            </code>
+                          </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <button class="curlbtn fob-validate-OTP-top" type="submit"
+                                            onclick="show('redeem-voucher')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+                                        <pre id="generatedCurl">
+                      <code id="redeem-voucher" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/redeem' \
+    --header 'MERCHANT_CODE: ARBMarketplace' \
+    --header 'LNG: AR' \
+    --header 'CHN: ECOMMERCE' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer AAIgYjgzOTY5ODM3Yzk1Zjk3YzQzOWM4ZWMxMDA1MDZmZWHqWoVjtM2mTfYRheuoaxKKMTRe8L7GRGLAKjALKS1D9twJAdw1Q07PTh60YkJnZgvwv77MmcR4ulVG-YZMOr2iRb4Ph-RqR8aFOVqvMwMWArAivyV0mhVH0FVTM2FL45br46tueyxBM-8oA-xXJB9R' \
+    --data '{
+        "customerId": "1701180745",
+        "voucherCode": "YD1lPscjhadds5v8",
+        "transactionId": "ABC-01eca917-f346-1cd8-b5c6-398908afb007",
+        "otp": "1234",
+        "otpID": "4f3088e9-b1e6-4ae5-be82-1f8c2716739f"
+    }'   
+                       </code>
+                            </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+    
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('redeem')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('redeem3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('redeem4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('redeem5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('redeem6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('redeem7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('redeem8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('redeem9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                      <code id="redeem" style=" display: block; " class="text">
+        {
+            "voucher": {
+                "id": "4818",
+                "amount": "15000",
+                "currency": "SAR",
+                "createdAt": "2023-06-202T19:35:19",
+                "expiryDate": "2022-06-30T00:00:00.000Z",
+                "status": "USED"
+            },
+            "applicationId": "1931979",
+            "transactionId": "ABC-01eca917-f346-1cd8-b5c6-398E",
+            "timestamp": "2023-06-21T18:03:07.301Z"
+            }
+                          
+                      </code>
+                      <code id="redeem3" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.401.001",
+          "message": "Unauthorized to call the target operation.",
+          "path": "authorization",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }    
+                      </code>	
+                      
+                      <code id="redeem4" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.403.001",
+          "message": "Can't find any valid subscription.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }
+                      </code>
+                      
+                      
+                      <code id="redeem5" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.404.001",
+          "message": "No resources match requested URI.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }    
+                      </code>
+                      
+                      
+                      <code id="redeem6" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.405.001",
+          "message": "The method is not allowed for the requested URL.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }           
+                      </code>
+                      
+                      
+                      <code id="redeem7" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.406.001",
+          "message": "An appropriate representation of the requested resource could not be found",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }      
+                      </code>
+                      
+                      
+                      <code id="redeem8" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.429.001",
+          "message": "Assembly Rate Limit exceeded",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }     
+                      </code>
+                      
+                      
+                      <code id="redeem9" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.500.001",
+          "message": "Internal Error",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }   
+                      </code>
+                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="fob-welcome-title" id="section-5">Pre-refund</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/preRefund</br></p>
+                                <p class="fob-welcome-text"><a
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FpreRefund/post">Swagger
+                                        Link</a></p>
+                                <p class="fob-welcome-text">It is exposed for generating the otp (that
+                                    is being sent to user's mobile number and otp id to the merchant, each of the otp
+                                    and otpID are associated) before refunding the voucher. </br></p>
+    
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+        {
+            "customerId": "1230000000"
+            }
+                                   </code>
+                                      </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+    
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                onclick="show('vo-prerefund')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+    
+                                            <pre id="generatedCurl">
+                                          <code id="vo-prerefund" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/preRefund' \
+    --header 'MERCHANT_CODE: ARBMarketplace' \
+    --header 'LNG: AR' \
+    --header 'CHN: ECOMMERCE' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer AAIgYjgzOTY5ODM3Yzk1Zjk3YzQzOWM4ZWMxMDA1MDZmZWHqWoVjtM2mTfYRheuoaxKKMTRe8L7GRGLAKjALKS1D9twJAdw1Q07PTh60YkJnZgvwv77MmcR4ulVG-YZMOr2iRb4Ph-RqR8aFOVqvMwMWArAivyV0mhVH0FVTM2FL45br46tueyxBM-8oA-xXJB9R' \
+    --data 
+    '{ "customerId": "1701180745"}' 
+                                          </code>
+                                        </pre>
+                                        </div>
+                                    </div>
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('prerefund')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('prerefund3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('prerefund4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('prerefund5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('prerefund6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('prerefund7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('prerefund8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('prerefund9')">500</a>
+                                                </div>
+                                                <pre class="response-box">
+    
+                                <code id="prerefund" style=" display: block; " class="text">
+        {
+            "statusCode": "200",
+            "otpID": "c8ae39bd-46d5-45dc-959f-ac2740d2680d"
+            }
+                                      
+                                 </code>
+                                
+                                <code id="prerefund3" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.401.001",
+                "message": "Unauthorized to call the target operation.",
+                "path": "authorization",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                
+                                </code>	
+                                
+                                <code id="prerefund4" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.403.001",
+                "message": "Can't find any valid subscription.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }   
+                                </code>
+                                
+                                
+                                <code id="prerefund5" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="prerefund6" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                     
+                                </code>
+                                 
+                                
+                                <code id="prerefund7" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }       
+                                </code>
+                                 
+                                
+                                <code id="prerefund8" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="prerefund9" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }    
+                                </code>
+                                      </pre>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <h1 class="fob-welcome-title" id="section-6">Refund</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/refund</br></p>
+                                    <p class="fob-welcome-text"><a
+                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2Frefund/post">Swagger
+                                            Link</a></p>
+                                    <p class="fob-welcome-text">This operation is performed when a voucher
+                                        was previously successfully redeemed, the merchant may use the refund voucher
+                                        operation to request the voucher to be placed back into an unredeemed state. Once
+                                        status of the voucher is unredeemed, the customer may cancel the contract from emkan
+                                        website or redeem it again.</br></p>
+    
+                                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <h1 class="fob-welcome-title">Request Example</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <pre class="example_97 api-guides-example-fob ">
+                                            <code class="sample-code">
+        {
+            "customerId": "1230000000",
+            "voucherId": "4818",
+            "otp": "1234",
+            "otpID": "fe419221-aad4-4da6-9370-1bbcd477dfbb"
+            }
+                                            </code>
+                                          </pre>
+                                            </div>
+                                            <div class="col-lg-4 mt-25">
+    
+                                                <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                    onclick="show('vo-refund')">
+                                                    <p class="curlText">cURL</p>
+                                                </button>
+    
+                                                <pre id="generatedCurl">
+                                              <code id="vo-refund" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/refund' \
+    --header 'MERCHANT_CODE: ARBMarketplace' \
+    --header 'LNG: AR' \
+    --header 'CHN: ECOMMERCE' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer AAIgYjgzOTY5ODM3Yzk1Zjk3YzQzOWM4ZWMxMDA1MDZmZWFA4Ua9oTluLa80f5V1LAX8kTpSZAWLd3KBae99SVUORECa-Nv5YLno2NvsF8bCXvipmUSUDbg3_0d_cWLlBKsiMUXFeq1cLgCtItIz9v2dxdqBIwyGX4Wq3AYnzoiW7POH8NUeC2FFUMABZRRus5VB' \
+    --data '{
+        "customerId": "1701180745",
+        "voucherId": "48458",
+        "otp": "1234",
+        "otpID": "12160f89-df27-456a-a11a-aaa2bc33dbdc"
+    }'
+    
+                                              </code>
+                                            </pre>
+                                            </div>
+                                        </div>
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <div class="code-box">
+                                                    <p
+                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                    <div class="response-box-div">
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-refund')">200</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-refund3')">401</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-refund4')">403</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-refund5')">404</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-refund6')">405</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-refund7')">406</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-refund8')">429</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-refund9')">500</a>
+                                                    </div>
+                                                    <pre class="response-box">
+    
+                                    <code id="response-refund" style=" display: block; " class="text">
+        {
+            "voucher": {
+                "id": "4818",
+                "amount": "15000",
+                "currency": "SAR",
+                "createdAt": "2023-06-202T19:35:19",
+                "expiryDate": "2022-06-30T00:00:00.000Z",
+                "status": "REFUNDED"
+            },
+            "applicationId": "1931979",
+            "timestamp": "2023-06-21T18:03:07.301Z"
+            }
+                                          
+                                          
+                                        
+                                     </code>
+                                    
+                                    <code id="response-refund3" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.401.001",
+                    "message": "Unauthorized to call the target operation.",
+                    "path": "authorization",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }
+                                    
+                                    </code>	
+                                    
+                                    <code id="response-refund4" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.403.001",
+                    "message": "Can't find any valid subscription.",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }   
+                                    </code>
+                                    
+                                    
+                                    <code id="response-refund5" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.404.001",
+                    "message": "No resources match requested URI.",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }     
+                                    </code>
+                                    
+                                    
+                                    <code id="response-refund6" style=" display: none; "class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.405.001",
+                    "message": "The method is not allowed for the requested URL.",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }
+                                         
+                                    </code>
+                                     
+                                    
+                                    <code id="response-refund7" style=" display: none; "class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.406.001",
+                    "message": "An appropriate representation of the requested resource could not be found",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }       
+                                    </code>
+                                     
+                                    
+                                    <code id="response-refund8" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.429.001",
+                    "message": "Assembly Rate Limit exceeded",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }     
+                                    </code>
+                                    
+                                    
+                                    <code id="response-refund9" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.500.001",
+                    "message": "Internal Error",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }    
+                                    </code>
+                                          </pre>
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

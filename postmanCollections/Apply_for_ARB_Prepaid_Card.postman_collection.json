@@ -1,0 +1,1463 @@
+{
+	"info": {
+		"_postman_id": "9babe4ad-cc69-4fab-8898-0ff1b310d16a",
+		"name": "Apply for ARB Prepaid Card",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29982339"
+	},
+	"item": [
+		{
+			"name": "ARB Microsite Token",
+			"item": [
+				{
+					"name": "OAuth Provider Authorize",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var locationHeader = pm.response.headers.get('Location');\r",
+									"var locationHeader2 = pm.response.headers.get('Location');\r",
+									"pm.collectionVariables.set(\"originalUrl\",decodeURIComponent(locationHeader.split(\"original-url=\")[1]));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false,
+						"disableUrlEncoding": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=prepaid_card_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}"
+								},
+								{
+									"key": "scope",
+									"value": "prepaid_card_apis"
+								},
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "code_challenge",
+									"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: prepaid_card_apis",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=prepaid_card_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}"
+										},
+										{
+											"key": "scope",
+											"value": "prepaid_card_apis"
+										},
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "code_challenge",
+											"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256"
+										}
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-request-id",
+									"value": "de88d987-5c24-4444-baca-2d33b11fb530"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "7f3276e4-9a2c-4569-bfc8-b7771426a6e9"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1bfb01a4b0a2"
+								},
+								{
+									"key": "Location",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/auth/initiate-redirect?original-url=https%3A%2F%2Fapimarketplace-ext-test-gw-svc-gw-gateway-traffic-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud%2Fapimarketplace-sit%2Fsandbox-inbound%2Fsandbox-arb-microsite-oauth-provider%2Foauth2%2Fauthorize%3Fclient_id%3D009407e30165d8f05d554e336acb0b26%26scope%3Dprepaid_card_apis%26response_type%3Dcode%26code_challenge%3DGlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0%26code_challenge_method%3DS256%26state_nonce%3D6PbxS%252BTAIiL2NkAmL2J%252FUWAzDtql%252F0ITUOjWdDqxcRI%253D"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:56:43 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Generate Initiate Redirection Input",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = responseBody;\r",
+									"pm.collectionVariables.set(\"initiate-redirect-identity\", data);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "issuer",
+								"value": "{{client-id}}",
+								"type": "text"
+							},
+							{
+								"key": "audience",
+								"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"generate-jwt",
+								"sign-request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "poiNumber = 1845490013",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "77b355d4-13d3-4b34-a6e9-36db392c1453"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.73.89"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7d6b4019e7fe2"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c10821be-e756-457a-91d3-54e3cb0dcd81"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:08:04 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIwMDc5ZDNlNS1jNGFiLTRhOTYtYmFlNS1hZGVjNWU2Yzk0YTUiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyNzY4NCwiaWF0IjoxNzIzMzI0MDg0LCJuYmYiOjE3MjMzMjQwODQsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiN2M0MmNkODQtMzllMS00MzIyLWI2YTctMGQ5MjM4NjA1ODRlIiwicG9pTnVtYmVyIjoiMTg0NTQ5MDAxMyJ9fQ.Nz-ihPlG_8DSFHdinRFr79FwIQHkA5JSkhn2sGmhWL0fDLj7Ltl5j9I1VjPFDDgl469mUcl08FRbqgNpd9CK3St9m0a6h3_YqheeIdiyECFoleTuWWWf_cj3GVUI4JbyLAtTut_vKZrpFD1DXyVz2o5OuDKXSi7N07KHh08IdRHqp0KxK26PKplX9fronGJ-FoamKj-gHY77AV3InwwP4z2uT6bPPkZqyORa1SMtv9DBeg2XgKLbs6A6XSbaEtOZ__Tql8FB78GpkuO2tjUztz6QpKv20k9ccRP6AYvX525hmbFbKe4FA_8UoMMhOnUH6ZQomp--xM7tOkel6k-yJw"
+						},
+						{
+							"name": "poiNumber = 1646701570",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1646701570\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "69263396-02fb-4e72-ad96-e145081fa842"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7db4e00630a90"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "4a48d741-c2be-4003-9589-f89916419f9c"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:27:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJiZTgyZDM4NS1iOWRiLTQ0YjUtOWM2Yi1hZGVjNWU2Y2ViZDMiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODg2MiwiaWF0IjoxNzIzMzI1MjYyLCJuYmYiOjE3MjMzMjUyNjIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiODQxMjkzZWYtNDU0NC00OWZhLWE3ZWYtMjA3OGE2NmJlZDUwIiwicG9pTnVtYmVyIjoiMTY0NjcwMTU3MCJ9fQ.qrLok5CnoeV5Qkf15l5iVQnsQydtco0oZrIjvH5ixcL-rH27-GNXtb3fbuzoZms1eOc5OkJTtPKIadbKEnEP9ba320gxdV6wGbJiHYPXIlSRM7wdq5efcnRbXUxri8MHV5bRT_KbMOltX3dijF2MoJYxyKj_qsedoFt4XnYcxfqFvPTPmmmqf8ZLe3G94oCqHPo8SzYIkM5SzSe0SGvlChGXxnGKl6vEneT1XSu0rTq6x_KkS_OszfdgOiD9An4zA1c0EAp8PbHRTTU_gts0qXvbn7Aaor_oAo3qO7wy0LI9Niv1frh7_UACavN-jfmasp_qZ3wxMehVpIHvf4dyKw"
+						},
+						{
+							"name": "poiNumber = 1452525363",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1452525363\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "d14ad09e-c7f4-4b25-aaf5-6a34f12d5f73"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7db7500630ac0"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "86467d55-94a5-4745-8117-e030e0a0ff93"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:28:21 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJlZGUzZWFjNy1iZjVlLTRlOGMtOTIxOC1hZGVjNWU2YzRmNzAiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODkwMSwiaWF0IjoxNzIzMzI1MzAxLCJuYmYiOjE3MjMzMjUzMDEsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiYjI2ZmFkMzMtYjQzNS00YWEyLWE2Y2ItZTY0MDgyOWE1NmI0IiwicG9pTnVtYmVyIjoiMTQ1MjUyNTM2MyJ9fQ.dbxu73j_fwPJv1v6Ej6UmYnOvUETR9AaWjt2xE8zixPBicQYzVGtZX9nhpTo3UA4HJ9I4XSzqkT3Nk_4iiXE0Ez5oGjy111ao6cuCsUCGtSW1zI-NIUY_8TvFkpBwnKVafyqHlDIDxsr1KLV-aQqpANVfbsRXMEF06o10jFk7MVeGTF2WzteSkeeuhWD_a3ZJLKmPCIzN-GBBUE4iQE6sH--WacFxbnuLDPy6k3Gic3aPhdsjrYIdAJfEGo3_4gbhbmqiPK0riWu-eukSKVmA2_Z5gQEAbZBR7X9-mCUo4CZ4PMfmw6xO2nY_uK-BpcUQRXUqpI8_Ezhshsb_IFNlA"
+						},
+						{
+							"name": "poiNumber = 1634378157",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1634378157\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "ce8de52d-89b3-4415-b4e9-65f79fcd76be"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7dbda00630b10"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8b759779-9d94-4da7-bd40-12bba3514388"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:30:02 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIxOGI4YmY0ZC0xZjc4LTQ4OWYtYTYzYS1hZGVjNWU2YzA3OWQiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyOTAwMiwiaWF0IjoxNzIzMzI1NDAyLCJuYmYiOjE3MjMzMjU0MDIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiMWQwYWQ3YjgtNmFmYy00NzlkLWI0MDktZjljNjNmYjBiNjg2IiwicG9pTnVtYmVyIjoiMTYzNDM3ODE1NyJ9fQ.aiArQSR9wrzq48xq0Q3WFa03gY1AhP9bOWMleWQwIn561CikvY9xD_054gvJ6ZroQKHoUs3gmH1_lFkKppcdbhf6iULhj_Ws_PYOHeQtBosYZbV8cM3ddqnPUesBtEwJtPrEoGHwbTgH6-RKrhYh8jAulx5-tVo_cj_rxudLrZAy3DTJ_bEGwJ6OvDcN5vFnkBZFPCdB9lcT8e0jVSnotLWHfdBoxmp29PxSRIraxdav6aalMLdFE7rjdTpLKhELpN3xgqzGW6asbc-e5Kh8rRVZl5KVMjFDS0dj78xMkl8IE3xYGDtt94ZR6l0oNiC-I8bdIadbUqAypCNOmFXE0w"
+						}
+					]
+				},
+				{
+					"name": "Initiate Redirection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.code == 303){\r",
+									"    var locationHeader = pm.response.headers.get('Location');\r",
+									"    pm.collectionVariables.set(\"confirmationCode\", locationHeader.split(\"identity=\")[1]);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{inbound-gw}}/auth/initiate-redirect?client_id={{client-id}}&identity={{initiate-redirect-identity}}",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"auth",
+								"initiate-redirect"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}"
+								},
+								{
+									"key": "identity",
+									"value": "{{initiate-redirect-identity}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Authorize Confirmation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.status != 400){\r",
+									"    var locationHeader = pm.response.headers.get('Location');\r",
+									"    var code = locationHeader.split(\"code=\")[1];\r",
+									"    pm.collectionVariables.set(\"authorizationCode\",code);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false,
+						"disableUrlEncoding": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}",
+							"host": [
+								"{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Provider Access Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"if(pm.response.code == 200){\r",
+									"    pm.collectionVariables.set('security-token', 'Bearer ' + response.access_token);\r",
+									"    pm.collectionVariables.set('customer_access_token', response.access_token);\r",
+									"    pm.collectionVariables.set('customer_refresh_token',response.refresh_token);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "prepaid_card_apis",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "{{authorizationCode}}",
+									"type": "text"
+								},
+								{
+									"key": "code_verifier",
+									"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+									"type": "text"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256",
+									"type": "text"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "plain",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: prepaid_card_apis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "prepaid_card_apis",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "authorization_code",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "{{authorizationCode}}",
+											"type": "text"
+										},
+										{
+											"key": "code_verifier",
+											"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+											"type": "text"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256",
+											"type": "text"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "plain",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "7f91476c-4a5c-4a01-a088-b2dd276b964c"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1c0c00bf96c0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8ed7782b-b849-4c9a-ae95-87064db08824"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:57:00 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjbZPAV_b8JPzqNtKSRs15OiujhO4nLZJYOtk3svJbBfn26Ok3w1c8nJKHMATAHgg8ECOLaHlE_alku1PqqUnUOd5icVYMTVN81jGAHjXd6laDuIrnLIu2SB-1CUFGp04-UY2Skh-eSyWWYbg-QpMAdtFQFMquMYXe9xmz4V9hupJakk8vRLayuUPJFdAs5gxkFxF7Xi-Q1CbyXxF5XPB2lF-yjDPLo1Q9pQSry6P0KVTIEHaJTjb7P7xeOoTpJqn-Q\",\n    \"scope\": \"prepaid_card_apis\",\n    \"expires_in\": 1800,\n    \"consented_on\": 1724587020,\n    \"refresh_token\": \"AAInFdpuWjBfpsMyw5F9APG_jZTV8GITNp43jLkwE5k0kk3pTxYX9duScvCQioVpF_mhvJRcDlqFjA_wRo6QYI2CXQDnqStRCqfxGYBCW7eI5y3UblGhtpcAwVBSax7uN2dOo27KWJKJh1DO5X4AEzK0T-DRku5qxH8gBXJeSV1xmR5QAuyw8JaFj7P_wTqoELfvkq_-2EkXvCPErU2s2qtrS9Q0qNUF9nnoZJbadlsIvVpbQs5a8bAdIbQYQZ9Ht2zmlUH8yoPdz5ZrIyi0YfA3\",\n    \"refresh_token_expires_in\": 36000\n}"
+						}
+					]
+				},
+				{
+					"name": "OAuth Provider Refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"pm.environment.set('security_token', 'Bearer ' + response.access_token);\r",
+									"    pm.collectionVariables.set('customer_access_token', response.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "prepaid_card_apis",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{customer_refresh_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: prepaid_card_apis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "prepaid_card_apis",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "{{customer_refresh_token}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "f8b3b13c-d1ad-4b2b-aa4a-6fa18b980fd7"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1c15008663d1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1d95ceb0-a59e-44c2-931e-42d46f86dd3b"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:57:09 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZH5cnvs8mVC02w9ENbY3ZHrFYQFRZFSYio1LbNNWzZAcpvqCZi0jSpftpKo5YPrcNN07GZ8XVuWRw6gqG9BkbKEOtDt8SM2w03F0M4HZTvuBBju26INCS3kGfI4lj0KxC1NLUjq_immUNu5icJHCRHvKXzQWxgWroTXXEQ09fL42k9hT7gLnRUXXUogxC_7cMuQCvGmSoyXbVZeG93A0t2n1iEXHmvtWnJsuBI40AdCKoIyXEEGpvnOGF0t6XLZwg\",\n    \"scope\": \"prepaid_card_apis\",\n    \"expires_in\": 1800,\n    \"consented_on\": 1724587020,\n    \"refresh_token\": \"AAIKyU-EWi9fBs3kQYMJE5uQLcmLeph1hHQqmoBCTx4eTJR1pvaD3SxlLTt_58ntkp3bprE5pdlmHioGSAUoOOO9LgEn_pwN5RFiEeYlZm5vrF5K8f-FWDgO0M2gM9vWMw4RXSYyUfZuREb-Vb3GbpHkgu8T9deyGhbFFXQYHlHgD-D9bfU1H7oaorYOSAEbKmaW8Zc8X0YQDMis4ZWhcRXIOU73VpuRtZmfGH-psOKytAGXWArN-VTuFT6-1xWyFyHViI5KVns4A5QwAs5Q1P9Z\",\n    \"refresh_token_expires_in\": 36000\n}"
+						}
+					]
+				},
+				{
+					"name": "OAuth Introspect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "text"
+								},
+								{
+									"key": "token_type_hint",
+									"value": "access_token",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/introspect",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"introspect"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Apply for ARB Prepaid Card",
+			"item": [
+				{
+					"name": "Inquire Card Issuance Eligibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerIdentifiersList\": [\r\n    {\r\n      \"customerID\": \"1106366398\",\r\n      \"IDNumber\": \"1106368598\",\r\n      \"customerCode\": \"12563068598\",\r\n      \"institutionCode\": \"0029\"\r\n    }\r\n  ],\r\n  \"cardProduct\": \"CLQ\",\r\n  \"cardType\": \"PRPD\",\r\n  \"returnEligibleCardsCount\": \"Y\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/card-issuance-eligibility/v1/inquire",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"card-issuance-eligibility",
+								"v1",
+								"inquire"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inquire Card Issuance Eligibility",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerIdentifiersList\": [\r\n    {\r\n      \"customerID\": \"1106366398\",\r\n      \"IDNumber\": \"1106368598\",\r\n      \"customerCode\": \"12563068598\",\r\n      \"institutionCode\": \"0029\"\r\n    }\r\n  ],\r\n  \"cardProduct\": \"CLQ\",\r\n  \"cardType\": \"PRPD\",\r\n  \"returnEligibleCardsCount\": \"Y\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/card-issuance-eligibility/v1/inquire",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"card-issuance-eligibility",
+										"v1",
+										"inquire"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "893f419c-9e48-42a6-8c44-addf808c2e20"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666f2768200e69ff0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 24 Sep 2024 08:21:22 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"296562c0-2258-4c02-b435-f2f98eae3d34\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"eligibleCardTypesList\": [\n            {\n                \"cardTypesList\": [\n                    {\n                        \"cardType\": \"PRPD\",\n                        \"cardTypeDescription\": \"Prepaid Products Group\"\n                    }\n                ],\n                \"maximumNumberOfPrimaryCards\": \"10\",\n                \"maximumNumberOfSupplementaryCards\": \"5\",\n                \"remainingNumberOfPrimaryCards\": \"10\",\n                \"remainingNumberOfSupplementaryCards\": \"5\",\n                \"eligibleCardProductsList\": [\n                    {\n                        \"cardProductsList\": [\n                            {\n                                \"ID\": \"61\",\n                                \"institutionCode\": \"ARB\",\n                                \"productCode\": \"VENS\",\n                                \"description\": \"VISA ENSAN\",\n                                \"bin\": \"405433\"\n                            }\n                        ],\n                        \"maximumNumberOfPrimaryCards\": \"5\",\n                        \"maximumNumberOfSupplementaryCards\": \"0\",\n                        \"remainingNumberOfPrimaryCards\": \"5\",\n                        \"remainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"cardProductsList\": [\n                            {\n                                \"ID\": \"63\",\n                                \"institutionCode\": \"ARB\",\n                                \"productCode\": \"TSWQ\",\n                                \"description\": \"VISA TASAWAQ\",\n                                \"bin\": \"405433\"\n                            }\n                        ],\n                        \"maximumNumberOfPrimaryCards\": \"5\",\n                        \"maximumNumberOfSupplementaryCards\": \"0\",\n                        \"remainingNumberOfPrimaryCards\": \"4\",\n                        \"remainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"cardProductsList\": [\n                            {\n                                \"ID\": \"301\",\n                                \"institutionCode\": \"ARB\",\n                                \"productCode\": \"VIRP\",\n                                \"description\": \"VISA VIRTUAL\",\n                                \"bin\": \"445827\",\n                                \"deniedServicesList\": [\n                                    {\n                                        \"deniedServices\": 9\n                                    },\n                                    {\n                                        \"deniedServices\": 10\n                                    },\n                                    {\n                                        \"deniedServices\": 11\n                                    },\n                                    {\n                                        \"deniedServices\": 23\n                                    },\n                                    {\n                                        \"deniedServices\": 9100\n                                    },\n                                    {\n                                        \"deniedServices\": 28\n                                    },\n                                    {\n                                        \"deniedServices\": 38\n                                    },\n                                    {\n                                        \"deniedServices\": 21\n                                    }\n                                ]\n                            }\n                        ],\n                        \"maximumNumberOfPrimaryCards\": \"5\",\n                        \"maximumNumberOfSupplementaryCards\": \"0\",\n                        \"remainingNumberOfPrimaryCards\": \"5\",\n                        \"remainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"cardProductsList\": [\n                            {\n                                \"ID\": \"221\",\n                                \"institutionCode\": \"ARB\",\n                                \"productCode\": \"VMCC\",\n                                \"description\": \"VISA OMLAH PREPAID\",\n                                \"bin\": \"429927\"\n                            }\n                        ],\n                        \"maximumNumberOfPrimaryCards\": \"5\",\n                        \"maximumNumberOfSupplementaryCards\": \"0\",\n                        \"remainingNumberOfPrimaryCards\": \"5\",\n                        \"remainingNumberOfSupplementaryCards\": \"0\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Issue Credit Card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardSegment\": \"SMEPrepaid\",\r\n  \"cardEmbossingName\": \"SIRUTHAI K JAKIN\",\r\n  \"cardLinkedAccountBranch\": \"20400\",\r\n  \"cardLinkedAccountType\": \"001\",\r\n  \"cardLinkedAccountNumber\": \"0006085178233\",\r\n  \"userID\": \"ARGx\",\r\n  \"IDType\": \"01\",\r\n  \"IDNumber\": \"1200520979\",\r\n  \"firstName\": \"SIRUTHAI\",\r\n  \"familyName\": \"JAKIN\",\r\n  \"cardIssueReason\": \"New\",\r\n  \"deliveryAddress1\": \"AL RIYADH\",\r\n  \"deliveryAddress2\": \"AL RIYADH\",\r\n  \"deliveryAddress3\": \"AL RIYADH\",\r\n  \"deliveryAddress4\": \"AL RIYADH\",\r\n  \"deliveryAddressCity\": \"AL RIYADH\",\r\n  \"deliveryAddressDistrict\": \"al riyadh\",\r\n  \"deliveryAddressPostalCode\": \"11111\",\r\n  \"deliveryAddressCountryCode\": \"608\",\r\n  \"cardDesignPreference\":\"1\",\r\n  \"deliveryFlag\": \"D\",\r\n  \"rolloutFlag\": \"Y\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/credit-cards-issuing/1.0.0/cards",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"credit-cards-issuing",
+								"1.0.0",
+								"cards"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"cardSegment\": \"SMEPrepaid\",\r\n  \"cardEmbossingName\": \"SIRUTHAI K JAKIN\",\r\n  \"cardLinkedAccountBranch\": \"20400\",\r\n  \"cardLinkedAccountType\": \"001\",\r\n  \"cardLinkedAccountNumber\": \"0006085178233\",\r\n  \"userID\": \"ARGx\",\r\n  \"IDType\": \"01\",\r\n  \"IDNumber\": \"1200520979\",\r\n  \"firstName\": \"SIRUTHAI\",\r\n  \"familyName\": \"JAKIN\",\r\n  \"cardIssueReason\": \"New\",\r\n  \"deliveryAddress1\": \"AL RIYADH\",\r\n  \"deliveryAddress2\": \"AL RIYADH\",\r\n  \"deliveryAddress3\": \"AL RIYADH\",\r\n  \"deliveryAddress4\": \"AL RIYADH\",\r\n  \"deliveryAddressCity\": \"AL RIYADH\",\r\n  \"deliveryAddressDistrict\": \"al riyadh\",\r\n  \"deliveryAddressPostalCode\": \"11111\",\r\n  \"deliveryAddressCountryCode\": \"608\",\r\n  \"cardDesignPreference\":\"1\",\r\n  \"deliveryFlag\": \"D\",\r\n  \"rolloutFlag\": \"Y\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/credit-cards-issuing/1.0.0/cards",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"credit-cards-issuing",
+										"1.0.0",
+										"cards"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3770d059-38fa-4113-a2c1-b5ff9c84bdef"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66f279c3008e0883"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,91;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 24 Sep 2024 08:35:15 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"a2f68596-66c3-4679-b9f4-ee87f1a0d561\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"acceptableRequest\": \"Y\",\n        \"cardOrderID\": \"8800000065612\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "originalUrl",
+			"value": ""
+		},
+		{
+			"key": "initiate-redirect-identity",
+			"value": ""
+		},
+		{
+			"key": "confirmationCode",
+			"value": ""
+		},
+		{
+			"key": "authorizationCode",
+			"value": ""
+		},
+		{
+			"key": "security-token",
+			"value": ""
+		},
+		{
+			"key": "customer_access_token",
+			"value": ""
+		},
+		{
+			"key": "customer_refresh_token",
+			"value": ""
+		}
+	]
+}

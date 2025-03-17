@@ -1,0 +1,788 @@
+<div class="api-doc-background">
+    <p class="api-doc-background-text ">Affordability Check</p>
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="container">
+                <div>
+                    <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                        onkeyup="search_menu()" type="text" />
+
+                </div>
+                <br>
+                <div class="api-guides-vertical-menu ">
+
+
+                    <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                        onclick="show('expand2')">Affordability Check</a>
+
+                    <div class="api-guides-dropdown-container" id="expand2">
+                        <a class="api-guides-noList apn-doc-menu" href="#section-2">Create Affordability Check
+                            Request</a>
+                        <a class="api-guides-noList apn-doc-menu" href="#section-3">Get Affordability Check Request</a>
+                        <a class="api-guides-noList apn-doc-menu" href="#section-4">Execute Affordability Check
+                            Request</a>
+                    </div>
+
+
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="container api-guides-text">
+                <div class="container api-guides-text p-0">
+                    <p class="fob-welcome-title" id="section-1">Affordability Check APIS </p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">The primary objective of this project is to enable Neotek to avail
+                        affordability check through API Marketplace.</br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Affordability_Check.postman_collection.json"
+                            download="">Download Postman Collection</a></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/AffordabilityCheckSampleRequestData.xlsx"
+                            download="">Download Sample Data</a></p>
+
+                    <h1 class="fob-welcome-title">Affordability Check Workflow</h1>
+                    <p class="fob-welcome-line"></p>
+                    <a class="fob-product-title-click" target="_blank" href="./AffordabilityCheckWorkflowImg">Click
+                        here</a>
+                    <div class="row flex mt-25">
+                        <div class="col-lg-8">
+                            <p class="AffordabilityCheck-flow-img"><br></p>
+                        </div>
+                    </div>
+
+
+                    <h1 class="fob-welcome-title">Affordability Check Architecture</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+                    <a class="fob-product-title-click" href="./AffordabilityCheckArchitectureWorkflowImg"
+                        target="_blank">Click here</a>
+
+                    <div class="row flex mt-25">
+                        <div class="col-lg-8">
+                            <p class="AffordabilityCheckArchitecture-flow-img">&nbsp;</p>
+                        </div>
+                    </div>
+
+
+                    <h1 class="fob-welcome-title" id="section-2">Create Affordability Check Request</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: POST :
+                        /affordability-check/v1/affordability-check-requests</br></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1141/api/1138#/AffordabilityCheckRequests_100/operation/%2Faffordability-check-requests/post">Swagger
+                            Link</a></p>
+                    <p class="fob-welcome-text">This path is used to create an affordability check request.</br></p>
+                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+Header request
+{
+“x-request-id”:”174a889” }
+            Request Body
+{
+  "FinancialInstitutionId": "SAMAModelBank",
+  "POINum": "1545818534",
+  "POIType": "IqamaID",
+  "AccountTypes": [
+    "Retail"
+  ],
+  "SecurityProfile": "Redirection"
+}
+                    </code>
+                  </pre>
+                            </div>
+                            <div class="col-lg-4 mt-25">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('Create-Affordability-Check-Request-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+                                <pre id="generatedCurl">
+                    <code id="Create-Affordability-Check-Request-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/affordability-check/v1/affordability-check-requests' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+    "FinancialInstitutionId": "SAMAModelBank",
+    "POINum": "1545818534",
+    "POIType": "IqamaID",
+    "AccountTypes": [
+        "Retail"
+    ],
+    "SecurityProfile": "Redirection"
+}'
+                    </code>
+                  </pre>
+                            </div>
+                        </div>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <div class="code-box">
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request')">200</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request3')">401</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request4')">403</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request5')">404</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request6')">405</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request7')">406</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request8')">429</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request9')">500</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                      <code id="Create-Affordability-Check-Request" style=" display: block; " class="text">
+{
+    "RequestId": "66",
+    "Status": "AwaitingAuthorization",
+    "RedirectionURL": "https://auth1.lab.openbanking.sa/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3Aefebf834-b304-4a58-a6bf-2c40cc92c058&client_id=c27042bb-fc24-4bc3-a844-73b2cf2bb97f&response_type=code&scope=accounts+openid"
+}        
+                      </code>
+                      <code id="Create-Affordability-Check-Request3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }  
+                      </code>	
+                    
+                      <code id="Create-Affordability-Check-Request4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                      </code>
+                    
+                      <code id="Create-Affordability-Check-Request5" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                      </code>
+                    
+                      <code id="Create-Affordability-Check-Request6" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                            
+                      </code>
+                    
+                      <code id="Create-Affordability-Check-Request7" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }       
+                      </code>
+                    
+                      <code id="Create-Affordability-Check-Request8" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                      </code>
+                    
+                      <code id="Create-Affordability-Check-Request9" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                      </code>
+                    </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h1 class="fob-welcome-title" id="section-3">Get Affordability Check Request</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: POST :
+                            /affordability-check/v1/affordability-check-requests/{RequestId}</br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1141/api/1138#/AffordabilityCheckRequests_100/operation/%2Faffordability-check-requests%2F{RequestId}/post">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">Retrieve the list of all AC Requests available in the system.</br>
+                        </p>
+
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+Header request
+{
+"x-request-id": "ca4777821",
+} 
+Path parameters
+{
+    " RequestId": "123",
+        }                                                                
+                                </code>
+                              </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <!-- <div class="code-box"> -->
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('get-Affordability-Check-Request-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                  <code id="get-Affordability-Check-Request-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/affordability-check/v1/affordability-check-requests/19' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+    "POINum": "1545818534"
+}'
+                                  </code>
+                                </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request9')">500</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                        <code id="get-Affordability-Check-Request" style=" display: block; " class="text">
+{
+    "Data": {
+        "RequestId": "19",
+        "POINum": "1545818534",
+        "POIType": "IqamaID",
+        "FinancialInstitution": {
+            "FinancialInstitutionId": "INMASARI",
+            "NameEn": "Alinma Bank",
+            "NameAr": "مصرف الانماء"
+        },
+        "CreationDateTime": "2024-07-02T13:32:53.776+00:00",
+        "Status": "Completed",
+        "StatusDescription": "Request Completed Successfully",
+        "StatusUpdateDateTime": "2024-07-02T13:34:08.971+00:00",
+        "OBAccounts": [
+            "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e"
+        ],
+        "MainAccountId": "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e",
+        "AccountTypes": [
+            "Retail"
+        ],
+        "RequestData": {
+            "BankStatement": {
+                "AverageBalance": 47.57,
+                "AverageSalary": 0.0,
+                "LastSalaryCredited": 16.03,
+                "AverageDividend": 0.0,
+                "CreditAmountSummary": [
+                    {
+                        "Year": "2024",
+                        "Month": "Jul",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "Jun",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "May",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "Apr",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "Mar",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "Feb",
+                        "TotalAmount": 0
+                    }
+                ],
+                "DebitAmountSummary": [
+                    {
+                        "Year": "2024",
+                        "Month": "Jul",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "Jun",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "May",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "Apr",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "Mar",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
+                        "Month": "Feb",
+                        "TotalAmount": 0
+                    }
+                ],
+                "LastDividendAmount": 31.20
+            },
+            "CreditBalance": [
+                {
+                    "BalanceType": "KSAOB.ClosingAvailable",
+                    "Amount": 1500.00,
+                    "Currency": "SAR"
+                },
+                {
+                    "BalanceType": "KSAOB.ClosingAvailable",
+                    "Amount": 1500.00,
+                    "Currency": "SAR"
+                }
+            ],
+            "ScheduledPayments": [
+                {
+                    "ScheduledPaymentId": "140ab1c8-634a-44dd-935a-7d02fb233922",
+                    "ScheduledType": "KSAOB.Arrival",
+                    "ScheduledPaymentDateTime": "2023-02-22T22:21:11.761Z",
+                    "CreditorReference": "reference",
+                    "DebtorReference": "debtorReference",
+                    "InstructedAmount": {
+                        "Amount": "35.53",
+                        "Currency": "SAR"
+                    },
+                    "CreditorAgent": {
+                        "IdentificationType": "KSAOB.BICFI",
+                        "Identification": "identification"
+                    },
+                    "CreditorAccount": [
+                        {
+                            "IdentificationType": "KSAOB.IBAN",
+                            "Identification": "096260283686"
+                        }
+                    ]
+                }
+            ],
+            "StandingOrders": [
+                {
+                    "StandingOrderId": "d00a23ff-42f1-48c1-adb0-d2969251ebcb",
+                    "StandingOrderType": "KSAOB.InternationalTransfer",
+                    "Frequency": "EvryDay",
+                    "CreditorReference": "Allowance",
+                    "Purpose": "Bills and expenses",
+                    "FirstPaymentDateTime": "2023-02-22T22:21:11.762Z",
+                    "NextPaymentDateTime": "2023-02-22T22:21:11.762Z",
+                    "LastPaymentDateTime": "2023-02-22T22:21:11.762Z",
+                    "FinalPaymentDateTime": "2024-01-23T22:21:11.762Z",
+                    "NumberOfPayments": "4",
+                    "StandingOrderStatusCode": "KSAOB.Active",
+                    "FirstPaymentAmount": {
+                        "Amount": "38.48",
+                        "Currency": "SAR"
+                    },
+                    "NextPaymentAmount": {
+                        "Amount": "24.18",
+                        "Currency": "SAR"
+                    },
+                    "LastPaymentAmount": {
+                        "Amount": "62.14",
+                        "Currency": "SAR"
+                    },
+                    "FinalPaymentAmount": {
+                        "Amount": "21.69",
+                        "Currency": "SAR"
+                    },
+                    "CreditorAgent": {
+                        "IdentificationType": "KSAOB.BICFI",
+                        "Identification": "bWkSN9JILgJrzn"
+                    },
+                    "CreditorAccount": [
+                        {
+                            "IdentificationType": "KSAOB.IBAN",
+                            "Identification": "009034203556"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}                            
+                         </code>
+      
+                        <code id="get-Affordability-Check-Request3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                        
+                        </code>	
+                        
+                        <code id="get-Affordability-Check-Request4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }   
+                        </code>
+                        
+                        
+                        <code id="get-Affordability-Check-Request5" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                        </code>
+                        
+                        
+                        <code id="get-Affordability-Check-Request6" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                             
+                        </code>
+                         
+                        
+                        <code id="get-Affordability-Check-Request7" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                        </code>
+                         
+                        
+                        <code id="get-Affordability-Check-Request8" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                        </code>
+                        
+                        
+                        <code id="get-Affordability-Check-Request9" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                        </code>
+                              </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <h1 class="fob-welcome-title" id="section-4">Execute Affordability Check Request</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: POST :
+                                /affordability-check/v1/affordability-check-requests/execute</br></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1141/api/1138#/AffordabilityCheckRequests_100/operation/%2Faffordability-check-requests%2Fexecute/post">Swagger
+                                    Link</a></p>
+                            <p class="fob-welcome-text">This path is used to execute the affordability check request.</br></p>
+
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+Header request
+{
+"x-request-id": "a47112v"
+} 
+Body request
+    {
+    "RequestId": "154581853470993793600321149731",
+    "POINum": "1545818534",
+    "MainAccountId": "string"
+}                                                                                           
+                                </code>
+                              </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <!-- <div class="code-box"> -->
+
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('execute-Affordability-Check-Request-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+
+                                        <pre id="generatedCurl">
+                                  <code id="execute-Affordability-Check-Request-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/affordability-check/v1/affordability-check-requests/execute' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+    "RequestId": "19",
+    "POINum": "1545818534",
+    "MainAccountId": "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e"
+}'                                    
+                                  </code>
+                                </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+
+                        <code id="execute-Affordability-Check-Request" style=" display: block; " class="text">
+200	Execute affordability check request
+                         </code>
+      
+                        <code id="execute-Affordability-Check-Request3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                        
+                        </code>	
+                        
+                        <code id="execute-Affordability-Check-Request4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }   
+                        </code>
+                        
+                        
+                        <code id="execute-Affordability-Check-Request5" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                        </code>
+                        
+                        
+                        <code id="execute-Affordability-Check-Request6" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                             
+                        </code>
+                         
+                        
+                        <code id="execute-Affordability-Check-Request7" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                        </code>
+                         
+                        
+                        <code id="execute-Affordability-Check-Request8" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                        </code>
+                        
+                        
+                        <code id="execute-Affordability-Check-Request9" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                        </code>
+                              </pre>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

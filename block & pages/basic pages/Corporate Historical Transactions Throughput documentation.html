@@ -1,0 +1,1084 @@
+<div id="search-term-result">
+    <p>
+        The primary objective of this project is to enable ARB to offer the
+        Corporate Historical Transactions Throughput application process through the API
+        Marketplace.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Corporate Historical Transactions Throughput API Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                            onclick="show('expand2')">Corporate Historical Transactions Throughput</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">List customer financial
+                                summaries</a>
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Corporate Historical Transactions Throughput APIS </p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">The primary objective of this project is to enable ARB to offer the
+                            Corporate Historical Transactions Throughput application process through the API Marketplace.
+                            </br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Corporate_Historical_Transactions_Throughput.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/CorporateHistoricalTransactionsThroughputSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+                        <h1 class="fob-welcome-title">Corporate Historical Transactions Throughput Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank"
+                            href="../CorporateHistoricalTransactionsThroughputWorkflowImg">Click
+                            here</a>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="CorporateHistoricalTransactionsThroughput-flow-img"><br></p>
+                            </div>
+                        </div>
+    
+    
+                        <h1 class="fob-welcome-title">Corporate Historical Transactions Throughput Architecture</h1>
+    
+                        <p class="fob-welcome-line">&nbsp;</p>
+                        <a class="fob-product-title-click"
+                            href="../CorporateHistoricalTransactionsThroughputArchitectureWorkflowImg" target="_blank">Click
+                            here</a>
+    
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="CorporateHistoricalTransactionsThroughput-architecture-img">&nbsp;</p>
+                            </div>
+                        </div>
+    
+    
+                        <h1 class="fob-welcome-title" id="section-2">List customer financial summaries</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: GET: /list-customer-financial-summaries/v1/</br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1411/api/1408#/ListCustomerFinancialSummaries_100/operation/%2F/get">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">This operation path is used to list customer financial summaries.</br>
+                        </p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    Headers
+    {
+    “Accept-Language”:”en”
+    }
+    Query parameters:
+    {
+    “CIC”:” 0000000000464637”,
+    “UNN”:” 2342”,
+    “CRReference”:” 008976”,
+    “maxRecords”:”100”,
+    “offset”:”1”
+    }                                             
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('list-customer-financial-summaries-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="list-customer-financial-summaries-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/list-customer-financial-summaries/v1/?CIC=0000000003045537&maxRecords=100&offset=1' \
+    --header 'Accept-Language: ar' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'                                       
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('list-customer-financial-summaries')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('list-customer-financial-summaries3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('list-customer-financial-summaries4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('list-customer-financial-summaries5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('list-customer-financial-summaries6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('list-customer-financial-summaries7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('list-customer-financial-summaries8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('list-customer-financial-summaries9')">500</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                          <code id="list-customer-financial-summaries" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "7bb492aa-012b-4355-aa75-bf30121a3f07",
+            "statusDescription": "Success"
+        },
+        "body": {
+            "CICNum": "0000000003045537",
+            "accountsHolderName": "CONNECTIS2",
+            "lastUpdateDate": "2024-09-02 00:00:00",
+            "financialSummeryList": [
+            {
+                "YearMonth": "202309",
+                "TotalWithdrawAmount": 346637.96,
+                "TotalDepositAmount": -105527.87,
+                "AverageBalance": 467730.75,
+                "MonthlyClosingBalance": "6303974.44",
+                "NumberOfTransactions": 25
+            },
+            {
+                "YearMonth": "202310",
+                "TotalWithdrawAmount": 367309.83,
+                "TotalDepositAmount": -105187.63,
+                "AverageBalance": 1702869.79,
+                "MonthlyClosingBalance": "4037013.18",
+                "NumberOfTransactions": 24
+            },
+            {
+                "YearMonth": "202311",
+                "TotalWithdrawAmount": 345142.2,
+                "TotalDepositAmount": -102068.1,
+                "AverageBalance": 5390467.96,
+                "MonthlyClosingBalance": "4036569.21",
+                "NumberOfTransactions": 24
+            },
+            {
+                "YearMonth": "202312",
+                "TotalWithdrawAmount": 3457477.49,
+                "TotalDepositAmount": -106384.8,
+                "AverageBalance": 6436851.7,
+                "MonthlyClosingBalance": "8612003.93",
+                "NumberOfTransactions": 8
+            },
+            {
+                "YearMonth": "202401",
+                "TotalWithdrawAmount": 6977.58,
+                "TotalDepositAmount": -3490.58,
+                "AverageBalance": 4241347.33,
+                "MonthlyClosingBalance": "-696100.61",
+                "NumberOfTransactions": 27
+            },
+            {
+                "YearMonth": "202402",
+                "TotalWithdrawAmount": 2226.25,
+                "TotalDepositAmount": -111.15,
+                "AverageBalance": 4594387.53,
+                "MonthlyClosingBalance": "135.00",
+                "NumberOfTransactions": 14
+            },
+            {
+                "YearMonth": "202403",
+                "TotalWithdrawAmount": 85523.88,
+                "TotalDepositAmount": -4451.67,
+                "AverageBalance": 5558902.84,
+                "MonthlyClosingBalance": "-7029.53",
+                "NumberOfTransactions": 12
+            },
+            {
+                "YearMonth": "202404",
+                "TotalWithdrawAmount": 551401,
+                "AverageBalance": 6084356.57,
+                "MonthlyClosingBalance": "-100000.00",
+                "NumberOfTransactions": 0
+            },
+            {
+                "YearMonth": "202405",
+                "TotalWithdrawAmount": 312626,
+                "TotalDepositAmount": -301500,
+                "AverageBalance": 3699094.52,
+                "MonthlyClosingBalance": "0",
+                "NumberOfTransactions": 7
+            },
+            {
+                "YearMonth": "202407",
+                "TotalWithdrawAmount": 3.81,
+                "TotalDepositAmount": -528.98,
+                "AverageBalance": 4021020.96,
+                "MonthlyClosingBalance": "4021020.96",
+                "NumberOfTransactions": 3
+            },
+            {
+                "YearMonth": "Last_Year",
+                "TotalWithdrawAmount": 4849559.71,
+                "TotalDepositAmount": -1061381.68,
+                "AverageBalance": 5078290.85,
+                "MonthlyClosingBalance": "4036835.31",
+                "NumberOfTransactions": 164
+            },
+            {
+                "YearMonth": "Before_Last_Year",
+                "TotalWithdrawAmount": 13250065631.59,
+                "TotalDepositAmount": -32297200965.55,
+                "AverageBalance": 1087113065.6,
+                "MonthlyClosingBalance": "8613932.46",
+                "NumberOfTransactions": 427
+            }
+            ],
+            "accountList": [
+            {
+                "accountFullNumber": "204000010006086037214",
+                "IBAN": "SA2280000204608016037214",
+                "accountIssueDate": "2023-10-09T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037222",
+                "IBAN": "SA9780000204608016037222",
+                "accountIssueDate": "2023-10-09T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036901",
+                "IBAN": "SA3480000204608016036901",
+                "accountIssueDate": "2023-09-12T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037511",
+                "IBAN": "SA5480000204608016037511",
+                "accountIssueDate": "2023-10-13T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037388",
+                "IBAN": "SA7780000204608016037388",
+                "accountIssueDate": "2023-10-12T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037396",
+                "IBAN": "SA5580000204608016037396",
+                "accountIssueDate": "2023-10-12T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037412",
+                "IBAN": "SA1180000204608016037412",
+                "accountIssueDate": "2023-10-12T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037420",
+                "IBAN": "SA8680000204608016037420",
+                "accountIssueDate": "2023-10-12T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037438",
+                "IBAN": "SA8580000204608016037438",
+                "accountIssueDate": "2023-10-12T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037578",
+                "IBAN": "SA8880000204608016037578",
+                "accountIssueDate": "2023-10-15T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037461",
+                "IBAN": "SA4680000204608016037461",
+                "accountIssueDate": "2023-10-13T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037479",
+                "IBAN": "SA4580000204608016037479",
+                "accountIssueDate": "2023-10-13T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037503",
+                "IBAN": "SA7680000204608016037503",
+                "accountIssueDate": "2023-10-13T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037529",
+                "IBAN": "SA5380000204608016037529",
+                "accountIssueDate": "2023-10-13T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003839",
+                "IBAN": "SA7080000204608013003839",
+                "accountIssueDate": "2024-07-14T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037313",
+                "IBAN": "SA6580000204608016037313",
+                "accountIssueDate": "2023-10-11T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037321",
+                "IBAN": "SA4380000204608016037321",
+                "accountIssueDate": "2023-10-11T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037339",
+                "IBAN": "SA4280000204608016037339",
+                "accountIssueDate": "2023-10-11T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037354",
+                "IBAN": "SA2580000204608016037354",
+                "accountIssueDate": "2023-10-11T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037370",
+                "IBAN": "SA7880000204608016037370",
+                "accountIssueDate": "2023-10-11T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037099",
+                "IBAN": "SA2380000204608016037099",
+                "accountIssueDate": "2023-10-01T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037115",
+                "IBAN": "SA7680000204608016037115",
+                "accountIssueDate": "2023-10-03T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037123",
+                "IBAN": "SA5480000204608016037123",
+                "accountIssueDate": "2023-10-03T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037057",
+                "IBAN": "SA9080000204608016037057",
+                "accountIssueDate": "2023-09-28T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036752",
+                "IBAN": "SA8080000204608016036752",
+                "accountIssueDate": "2023-08-22T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037255",
+                "IBAN": "SA7980000204608016037255",
+                "accountIssueDate": "2023-10-10T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037263",
+                "IBAN": "SA5780000204608016037263",
+                "accountIssueDate": "2023-10-10T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037271",
+                "IBAN": "SA3580000204608016037271",
+                "accountIssueDate": "2023-10-10T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037289",
+                "IBAN": "SA3480000204608016037289",
+                "accountIssueDate": "2023-10-10T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037297",
+                "IBAN": "SA1280000204608016037297",
+                "accountIssueDate": "2023-10-10T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086037305",
+                "IBAN": "SA8780000204608016037305",
+                "accountIssueDate": "2023-10-11T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036737",
+                "IBAN": "SA9780000204608016036737",
+                "accountIssueDate": "2023-04-04T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036745",
+                "IBAN": "SA7580000204608016036745",
+                "accountIssueDate": "2023-04-04T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036729",
+                "IBAN": "SA2280000204608016036729",
+                "accountIssueDate": "2023-03-30T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086001624",
+                "IBAN": "SA7080000204608016001624",
+                "accountIssueDate": "2020-02-06T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086001632",
+                "IBAN": "SA4880000204608016001632",
+                "accountIssueDate": "2020-02-06T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006088744114",
+                "IBAN": "SA2180000204608018744114",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036679",
+                "IBAN": "SA1480000204608016036679",
+                "accountIssueDate": "2022-05-30T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036687",
+                "IBAN": "SA8980000204608016036687",
+                "accountIssueDate": "2022-05-30T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036695",
+                "IBAN": "SA6780000204608016036695",
+                "accountIssueDate": "2022-05-30T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086036703",
+                "IBAN": "SA4580000204608016036703",
+                "accountIssueDate": "2022-06-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006086002812",
+                "IBAN": "SA0480000204608016002812",
+                "accountIssueDate": "2020-04-06T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083004035",
+                "IBAN": "SA1680000204608013004035",
+                "accountIssueDate": "2024-08-22T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083004027",
+                "IBAN": "SA3880000204608013004027",
+                "accountIssueDate": "2024-08-21T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000054",
+                "IBAN": "SA2180000204608017000054",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000062",
+                "IBAN": "SA9680000204608017000062",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000070",
+                "IBAN": "SA7480000204608017000070",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000088",
+                "IBAN": "SA7380000204608017000088",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000096",
+                "IBAN": "SA5180000204608017000096",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000104",
+                "IBAN": "SA2980000204608017000104",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000112",
+                "IBAN": "SA0780000204608017000112",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000120",
+                "IBAN": "SA8280000204608017000120",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087000138",
+                "IBAN": "SA8180000204608017000138",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087565437",
+                "IBAN": "SA5580000204608017565437",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006087565460",
+                "IBAN": "SA1680000204608017565460",
+                "accountIssueDate": "2010-11-07T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083004019",
+                "IBAN": "SA6080000204608013004019",
+                "accountIssueDate": "2024-08-20T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003995",
+                "IBAN": "SA2980000204608013003995",
+                "accountIssueDate": "2024-08-06T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003938",
+                "IBAN": "SA1680000204608013003938",
+                "accountIssueDate": "2024-07-18T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003946",
+                "IBAN": "SA9180000204608013003946",
+                "accountIssueDate": "2024-07-18T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003953",
+                "IBAN": "SA9680000204608013003953",
+                "accountIssueDate": "2024-07-18T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003961",
+                "IBAN": "SA7480000204608013003961",
+                "accountIssueDate": "2024-07-18T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003979",
+                "IBAN": "SA7380000204608013003979",
+                "accountIssueDate": "2024-07-18T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003987",
+                "IBAN": "SA5180000204608013003987",
+                "accountIssueDate": "2024-07-21T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003847",
+                "IBAN": "SA4880000204608013003847",
+                "accountIssueDate": "2024-07-14T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003110",
+                "IBAN": "SA6280000204608013003110",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003870",
+                "IBAN": "SA0980000204608013003870",
+                "accountIssueDate": "2024-07-15T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003888",
+                "IBAN": "SA0880000204608013003888",
+                "accountIssueDate": "2024-07-15T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003904",
+                "IBAN": "SA6180000204608013003904",
+                "accountIssueDate": "2024-07-15T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003912",
+                "IBAN": "SA3980000204608013003912",
+                "accountIssueDate": "2024-07-16T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003920",
+                "IBAN": "SA1780000204608013003920",
+                "accountIssueDate": "2024-07-17T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003078",
+                "IBAN": "SA5380000204608013003078",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003086",
+                "IBAN": "SA3180000204608013003086",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003094",
+                "IBAN": "SA0980000204608013003094",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003102",
+                "IBAN": "SA8480000204608013003102",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003128",
+                "IBAN": "SA6180000204608013003128",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003136",
+                "IBAN": "SA3980000204608013003136",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003144",
+                "IBAN": "SA1780000204608013003144",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003151",
+                "IBAN": "SA2280000204608013003151",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003169",
+                "IBAN": "SA2180000204608013003169",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003201",
+                "IBAN": "SA3080000204608013003201",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003177",
+                "IBAN": "SA9680000204608013003177",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003185",
+                "IBAN": "SA7480000204608013003185",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003193",
+                "IBAN": "SA5280000204608013003193",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003227",
+                "IBAN": "SA0780000204608013003227",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003235",
+                "IBAN": "SA8280000204608013003235",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003243",
+                "IBAN": "SA6080000204608013003243",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003250",
+                "IBAN": "SA6580000204608013003250",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003268",
+                "IBAN": "SA6480000204608013003268",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003276",
+                "IBAN": "SA4280000204608013003276",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003284",
+                "IBAN": "SA2080000204608013003284",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003292",
+                "IBAN": "SA9580000204608013003292",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003300",
+                "IBAN": "SA7380000204608013003300",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003318",
+                "IBAN": "SA7280000204608013003318",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003326",
+                "IBAN": "SA5080000204608013003326",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003334",
+                "IBAN": "SA2880000204608013003334",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003375",
+                "IBAN": "SA8580000204608013003375",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003342",
+                "IBAN": "SA0680000204608013003342",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003359",
+                "IBAN": "SA3280000204608013003359",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003367",
+                "IBAN": "SA1080000204608013003367",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003383",
+                "IBAN": "SA6380000204608013003383",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003391",
+                "IBAN": "SA4180000204608013003391",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003409",
+                "IBAN": "SA4080000204608013003409",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003417",
+                "IBAN": "SA1880000204608013003417",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003425",
+                "IBAN": "SA9380000204608013003425",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003433",
+                "IBAN": "SA7180000204608013003433",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003441",
+                "IBAN": "SA4980000204608013003441",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003458",
+                "IBAN": "SA7580000204608013003458",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003466",
+                "IBAN": "SA5380000204608013003466",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003474",
+                "IBAN": "SA3180000204608013003474",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003482",
+                "IBAN": "SA0980000204608013003482",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003490",
+                "IBAN": "SA8480000204608013003490",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003508",
+                "IBAN": "SA8380000204608013003508",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003516",
+                "IBAN": "SA6180000204608013003516",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003524",
+                "IBAN": "SA3980000204608013003524",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003532",
+                "IBAN": "SA1780000204608013003532",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003540",
+                "IBAN": "SA9280000204608013003540",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003581",
+                "IBAN": "SA5280000204608013003581",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003557",
+                "IBAN": "SA2180000204608013003557",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003565",
+                "IBAN": "SA9680000204608013003565",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            },
+            {
+                "accountFullNumber": "204000010006083003573",
+                "IBAN": "SA7480000204608013003573",
+                "accountIssueDate": "2024-07-02T00:00:00",
+                "AccountStatus": "A"
+            }
+            ]
+        }
+        }
+                          </code>
+                          <code id="list-customer-financial-summaries3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }  
+                          </code>	
+                        
+                          <code id="list-customer-financial-summaries4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                          </code>
+                        
+                          <code id="list-customer-financial-summaries5" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        
+                          <code id="list-customer-financial-summaries6" style=" display: none; "class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }
+                                
+                          </code>
+                        
+                          <code id="list-customer-financial-summaries7" style=" display: none; "class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }       
+                          </code>
+                        
+                          <code id="list-customer-financial-summaries8" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        
+                          <code id="list-customer-financial-summaries9" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

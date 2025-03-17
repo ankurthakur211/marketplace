@@ -1,0 +1,731 @@
+<div id="search-term-result">
+    <p>Income Verification API Documentation</p>
+
+    <p>
+        The primary objective of this project is to enable Neotek to avail Income Verification through API
+        Marketplace.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Income Verification API
+            Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                            onclick="show('expand2')">Income Verification APIs</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Create Income Verification
+                                Request</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-3">Get Income Verification by Request
+                                Id</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-4">Get Income Verification by
+                                Statement Id</a>
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Income Verification APIs</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">The API Marketplace allows users to access Neotek's income verification
+                            service, which helps manage income verification requests by providing details about an
+                            employee's identity, income earned, and the time period covered by their employment.The primary
+                            objective of this project is to enable Neotek to avail Income Verification through API
+                            Marketplace.
+                            </br></p>
+                        <p class="fob-welcome-text"></br></p>
+    
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Income_Verification.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/IncomeVerificationSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+                        <h1 class="fob-welcome-title">Income Verification Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../IncomeVerificationWorkflowImg">Click
+                            here</a>
+                        <div class="row flex mt-25 mb-25">
+                            <div class="col-lg-8">
+                                <p class="IncomeVerification-flow-img">
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                        <h1 class="fob-welcome-title">Income Verification Architecture</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../IncomeVerificationArchitectureImg">Click
+                            here</a>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="E-Statement-architecture-img"><br></p>
+                            </div>
+                        </div>
+    
+                        <h1 class="fob-welcome-title" id="section-2">Create Income Verification Request</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: POST :
+                            /income-verification/v1/income-verification-requests</br></p>
+                        <p class="fob-welcome-text">This path is used to create Income Verification.</br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1429/api/1426#/IncomeVerification_100/operation/%2Fincome-verification-requests/post">Swagger
+                                Link</a></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    Header request
+    {
+    “x-request-id”:”174a889” }
+                Request Body
+    {
+        "AccountsLinkIds": [
+        "string"
+        ],
+        "PSUId": "89423413245465123185",
+        "TransactionType": "KSAOB.BillPayments",
+        "TransactionFromTimestamp": "2024-10-02T09:59:09.035Z",
+        "TransactionToTimestamp": "2024-10-02T09:59:09.035Z",
+        "TransactionFromAmount": 5000,
+        "TransactionToAmount": 120000
+    }
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('Create-IncomeVerification-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="Create-IncomeVerification-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/income-verification/v1/income-verification-requests' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "PSUId": "255cc",
+        "AccountsLinkIds": [
+            "455388795953530740313566134178"
+        ],
+        "TransactionFromTimestamp": "2010-03-31T21:51:27.236Z",
+        "TransactionToTimestamp": "2024-03-31T21:51:27.236Z"
+    }'
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-IncomeVerification')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-IncomeVerification3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-IncomeVerification4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-IncomeVerification5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-IncomeVerification6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-IncomeVerification7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-IncomeVerification8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-IncomeVerification9')">500</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                        <code id="response-Create-IncomeVerification" style=" display: block; " class="text">
+    {
+        "Data": {
+            "RequestId": "76",
+            "Status": "InProgress",
+            "AccountsLinkIds": [
+                "455388795953530740313566134178"
+            ],
+            "IncomeVerifications": [
+                {
+                    "IncomeVerificationId": "203",
+                    "Status": "Requested",
+                    "StatusDescription": "Requested",
+                    "AccountId": "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e",
+                    "AccountsLinkId": "455388795953530740313566134178"
+                },
+                {
+                    "IncomeVerificationId": "204",
+                    "Status": "Requested",
+                    "StatusDescription": "Requested",
+                    "AccountId": "a313398d-b1a8-4ea8-8ccf-fd2966b08a93",
+                    "AccountsLinkId": "455388795953530740313566134178"
+                },
+                {
+                    "IncomeVerificationId": "205",
+                    "Status": "Requested",
+                    "StatusDescription": "Requested",
+                    "AccountId": "77885ba5-a0b2-4d9b-8e77-577d703834a6",
+                    "AccountsLinkId": "455388795953530740313566134178"
+                },
+                {
+                    "IncomeVerificationId": "206",
+                    "Status": "Requested",
+                    "StatusDescription": "Requested",
+                    "AccountId": "28529b27-fc67-40eb-8030-6690b0af644c",
+                    "AccountsLinkId": "455388795953530740313566134178"
+                },
+                {
+                    "IncomeVerificationId": "207",
+                    "Status": "Requested",
+                    "StatusDescription": "Requested",
+                    "AccountId": "e0cab2d5-724f-445f-8ca5-0baa75d62298",
+                    "AccountsLinkId": "455388795953530740313566134178"
+                },
+                {
+                    "IncomeVerificationId": "208",
+                    "Status": "Requested",
+                    "StatusDescription": "Requested",
+                    "AccountId": "3f7e2e28-9d86-4173-bc57-f89297d57c22",
+                    "AccountsLinkId": "455388795953530740313566134178"
+                }
+            ]
+        }
+    }
+                        </code>
+                      <code id="response-Create-IncomeVerification3" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }  
+                        </code>	
+                      
+                        <code id="response-Create-IncomeVerification4" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }    
+                        </code>
+                      
+                        <code id="response-Create-IncomeVerification5" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      
+                        <code id="response-Create-IncomeVerification6" style=" display: none; "class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }
+                              
+                        </code>
+                      
+                        <code id="response-Create-IncomeVerification7" style=" display: none; "class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }       
+                        </code>
+                      
+                        <code id="response-Create-IncomeVerification8" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      
+                        <code id="response-Create-IncomeVerification9" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      </pre>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <h1 class="fob-welcome-title" id="section-3">Get Income Verification Request Details</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: GET :
+                                /income-verification/v1/income-verification-requests/{RequestId}</br></p>
+                            <p class="fob-welcome-text">Get Income Verification by Request Id</br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1429/api/1426#/IncomeVerification_100/operation/%2Fincome-verification-requests%2F{RequestId}/get">Swagger
+                                    Link</a></p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                          <code class="sample-code">
+    Header request
+    {
+    "x-request-id": "ca4777821",
+    } 
+    Path parameters
+    {
+        " RequestId": "123",
+            }                                            
+                          </code>
+                        </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+    
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('Get-Income-Verification-by-Request-Id-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+    
+                                        <pre id="generatedCurl">
+                            <code id="Get-Income-Verification-by-Request-Id-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/income-verification/v1/income-verification-requests/132' \
+    --header 'Authorization: ••••••'
+                            </code>
+                          </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-Income-Verification-by-Request-Id')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-Income-Verification-by-Request-Id3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-Income-Verification-by-Request-Id4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-Income-Verification-by-Request-Id5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-Income-Verification-by-Request-Id6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-Income-Verification-by-Request-Id7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-Income-Verification-by-Request-Id8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-Income-Verification-by-Request-Id9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                  <code id="response-Get-Income-Verification-by-Request-Id" style=" display: block; " class="text">
+    {
+        "Data": {
+            "RequestId": "132",
+            "Status": "Completed",
+            "AccountsLinkIds": [
+                "318277138619959493194352989475"
+            ],
+            "IncomeVerifications": [
+                {
+                    "IncomeVerificationId": "409",
+                    "Status": "Completed",
+                    "StatusDescription": "Completed",
+                    "AccountId": "77885ba5-a0b2-4d9b-8e77-577d703834a6",
+                    "AccountsLinkId": "318277138619959493194352989475",
+                    "FinancialInstitutionId": "INMASARI"
+                },
+                {
+                    "IncomeVerificationId": "408",
+                    "Status": "Completed",
+                    "StatusDescription": "Completed",
+                    "AccountId": "a313398d-b1a8-4ea8-8ccf-fd2966b08a93",
+                    "AccountsLinkId": "318277138619959493194352989475",
+                    "FinancialInstitutionId": "INMASARI"
+                },
+                {
+                    "IncomeVerificationId": "411",
+                    "Status": "Completed",
+                    "StatusDescription": "Completed",
+                    "AccountId": "e0cab2d5-724f-445f-8ca5-0baa75d62298",
+                    "AccountsLinkId": "318277138619959493194352989475",
+                    "FinancialInstitutionId": "INMASARI"
+                },
+                {
+                    "IncomeVerificationId": "407",
+                    "Status": "Completed",
+                    "StatusDescription": "Completed",
+                    "AccountId": "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e",
+                    "AccountsLinkId": "318277138619959493194352989475",
+                    "FinancialInstitutionId": "INMASARI"
+                },
+                {
+                    "IncomeVerificationId": "410",
+                    "Status": "Completed",
+                    "StatusDescription": "Completed",
+                    "AccountId": "28529b27-fc67-40eb-8030-6690b0af644c",
+                    "AccountsLinkId": "318277138619959493194352989475",
+                    "FinancialInstitutionId": "INMASARI"
+                },
+                {
+                    "IncomeVerificationId": "412",
+                    "Status": "Completed",
+                    "StatusDescription": "Completed",
+                    "AccountId": "3f7e2e28-9d86-4173-bc57-f89297d57c22",
+                    "AccountsLinkId": "318277138619959493194352989475",
+                    "FinancialInstitutionId": "INMASARI"
+                }
+            ]
+        }
+    }
+                   </code>
+                  <code id="response-Get-Income-Verification-by-Request-Id3" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.401.001",
+          "message": "Unauthorized to call the target operation.",
+          "path": "authorization",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }
+                  
+                  </code>	
+                  
+                  <code id="response-Get-Income-Verification-by-Request-Id4" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.403.001",
+          "message": "Can't find any valid subscription.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }   
+                  </code>
+                  
+                  <code id="response-Get-Income-Verification-by-Request-Id5" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.404.001",
+          "message": "No resources match requested URI.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }     
+                  </code>
+                  
+                  
+                  <code id="response-Get-Income-Verification-by-Request-Id6" style=" display: none; "class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.405.001",
+          "message": "The method is not allowed for the requested URL.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }
+                       
+                  </code>
+                   
+                  
+                  <code id="response-Get-Income-Verification-by-Request-Id7" style=" display: none; "class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.406.001",
+          "message": "An appropriate representation of the requested resource could not be found",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }       
+                  </code>
+                   
+                  
+                  <code id="response-Get-Income-Verification-by-Request-Id8" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.429.001",
+          "message": "Assembly Rate Limit exceeded",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }     
+                  </code>
+                  
+                  
+                  <code id="response-Get-Income-Verification-by-Request-Id9" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.500.001",
+          "message": "Internal Error",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }    
+                  </code>
+                        </pre>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="fob-welcome-title" id="section-4">Income Verification Inquiry</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: GET :
+                                /income-verification/v1/income-verifications/{IncomeVerificationId}</br></p>
+                            <p class="fob-welcome-text">This path is used to Get Income Verification by Statement Id.</br>
+                            </p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1429/api/1426#/IncomeVerification_100/operation/%2Fincome-verifications%2F{IncomeVerificationId}/get">Swagger
+                                    Link</a></p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+    Header request
+    {
+    "x-request-id": "a47112v"
+    } 
+    Path parameters
+    {
+    “IncomeVerificationId “:”IncomeVerificationId “
+    } 
+                            </code>
+                          </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <button class="curlbtn fob-validate-OTP-top" type="submit"
+                                            onclick="show('Income-Verification-Inquiry-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+                                        <pre id="generatedCurl">
+                      <code id="Income-Verification-Inquiry-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/income-verification/v1/income-verifications/203' \
+    --header 'Authorization: ••••••'                    
+                       </code>
+                            </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+    
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Income-Verification-Inquiry-')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Income-Verification-Inquiry3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Income-Verification-Inquiry4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Income-Verification-Inquiry5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Income-Verification-Inquiry6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Income-Verification-Inquiry7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Income-Verification-Inquiry8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Income-Verification-Inquiry9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                      <code id="response-Income-Verification-Inquiry" style=" display: block; " class="text">
+    {
+        "Data": {
+            "Status": "Completed",
+            "IncomeVerification": {
+                "CustomerName": "Mussaud Abu Zaki ",
+                "LastMonthSalary": 0,
+                "AverageSalary": 0,
+                "LastDividendAmount": 0,
+                "AverageDividend": 0,
+                "Currency": "SAR",
+                "PerviousSalaryAmount": 0
+            }
+        }
+    }
+                      </code>
+                     <code id="response-Income-Verification-Inquiry3" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.401.001",
+          "message": "Unauthorized to call the target operation.",
+          "path": "authorization",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }           
+                      </code>	
+                      
+                      <code id="response-Income-Verification-Inquiry4" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.403.001",
+          "message": "Can't find any valid subscription.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }
+                      </code>
+                      
+                      
+                      <code id="response-Income-Verification-Inquiry5" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.404.001",
+          "message": "No resources match requested URI.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }    
+                      </code>
+                      
+                      
+                      <code id="response-Income-Verification-Inquiry6" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.405.001",
+          "message": "The method is not allowed for the requested URL.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        } 
+                         
+                      </code>
+                      
+                      
+                      <code id="response-Income-Verification-Inquiry7" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.406.001",
+          "message": "An appropriate representation of the requested resource could not be found",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }      
+                      </code>
+                      
+                      
+                      <code id="response-Income-Verification-Inquiry8" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.429.001",
+          "message": "Assembly Rate Limit exceeded",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }     
+                      </code>
+                      
+                      
+                      <code id="response-Income-Verification-Inquiry9" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.500.001",
+          "message": "Internal Error",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }   
+                      </code>
+                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

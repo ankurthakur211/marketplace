@@ -1,0 +1,1673 @@
+<div class="api-doc-background">
+    <p class="api-doc-background-text ">Travel API
+        Documentation</p>
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="container">
+                <div>
+                    <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                        onkeyup="search_menu()" type="text" />
+
+                </div>
+                <br>
+                <div class="api-guides-vertical-menu ">
+
+
+                    <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                        onclick="show('expand2')">Travel Insurance APIs</a>
+
+                    <div class="api-guides-dropdown-container" id="expand2">
+                        <a class="api-guides-noList apn-doc-menu" href="#section-2">Finds Travel Insurance Products</a>
+                        <a class="api-guides-noList apn-doc-menu" href="#section-3">Finds Trip Destination</a>
+                        <a class="api-guides-noList apn-doc-menu " href="#section-4">Finds Trip Types</a>
+                        <a class="api-guides-noList apn-doc-menu" href="#section-5">Get Add-Ons on Plan</a>
+                        <a class="api-guides-noList apn-doc-menu " href="#section-6">Get Available Package and New Rates</a>
+                        <a class="api-guides-noList apn-doc-menu " href="#section-7">Generates New Quote</a>
+                        <a class="api-guides-noList apn-doc-menu " href="#section-8">Generates Policy</a>
+                        <a class="api-guides-noList apn-doc-menu " href="#section-9">Get Policy List</a>
+                    </div>
+
+
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="container api-guides-text">
+                <div class="container api-guides-text p-0">
+                    <p class="fob-welcome-title" id="section-1">Travel Insurance APIs</p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">API Marketplace is offering all al-Rajhi group to share their most
+                        consumed APIs in its portal to make it easy to call external entities and call each other with
+                        low-rate API call.The Travel Integration ART API is an application that provides a streamlined
+                        and efficient process for onboarding new users onto Marketplace to be able to use all of its
+                        capabilities.
+                        </br></p>
+                    <p class="fob-welcome-text"></br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxTravelIntegrationARTInboundAPIs.postman_collection.json"
+                        download="">Download Postman Collection</a></p>
+                <p class="fob-welcome-text"><a
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/TravelInsuranceSampleRequestData.xlsx"
+                        download="">Download Sample Data</a></p>
+                    
+
+                    <h1 class="fob-welcome-title">Travel Insurance Workflow</h1>
+                    <p class="fob-welcome-line"></p>
+                    
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ARTTravelInsuranceFlowDigramv0.1.pdf"
+                            download="">Download Travel Insurance Workflow</a></p>
+
+
+                    <h1 class="fob-welcome-title" id="section-2">Finds Travel Insurance Products</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: /mp-travel-insurance/v1/products</br></p>
+                    <p class="fob-welcome-text">Use this API to fetch travel insurance products based on the user's date of birth. It will return all products and available plan types.
+                        </br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/50/api/26#/TravelInsuranceAPIs_100/operation/%2Finsurance%2Fproducts/get">Swagger
+                            Link</a></p>
+                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+Query Params: 
+referenceId:2406132841
+birthDate:1989-05-25
+                          
+                    </code>
+                  </pre>
+                            </div>
+                            <div class="col-lg-4 mt-25">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('trip-ins')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+                                <pre id="generatedCurl">
+                    <code id="trip-ins" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox//mp-travel-insurance/v1/products?referenceId=2406132841&birthDate=1989-05-25' \
+--header 'x-request-id: c2572d66-1c03-4aa7-849e-e76af744a060' \
+--header 'accept-language: En' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'
+                    </code>
+                  </pre>
+                            </div>
+                        </div>
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <div class="code-box">
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-trip-ins')">200</a>
+                                            <a type="button" class="response-box-error"
+                                            onclick="responseText('response-trip-ins2')">400</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-trip-ins3')">401</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-trip-ins9')">500</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                    <code id="response-trip-ins" style=" display: block; " class="text">
+{
+    "Data": {
+        "ReferenceId": "2406132841",
+        "ListTravelProduct": [
+            {
+                "MaximumAge": "89",
+                "MinimumAge": "0",
+                "ProductId": "610621",
+                "ProductName": "Domestic",
+                "GroupSize": "15",
+                "Benefit": [
+                    "Travel Inconvenience Benefits",
+                    "Personal Accident Benefits",
+                    "Emergency Medical Benefits"
+                ],
+                "PlanType": [
+                    "N/A"
+                ]
+            },
+            {
+                "MaximumAge": "89",
+                "MinimumAge": "0",
+                "ProductId": "610380",
+                "ProductName": "Outbound",
+                "GroupSize": "15",
+                "Benefit": [
+                    "Travel Inconvenience Benefits",
+                    "Personal Accident Benefits",
+                    "Emergency Medical Benefits"
+                ],
+                "PlanType": [
+                    "Platinum",
+                    "Gold",
+                    "Silver"
+                ]
+            },
+            {
+                "MaximumAge": "35",
+                "MinimumAge": "18",
+                "ProductId": "610381",
+                "ProductName": "Student",
+                "GroupSize": "15",
+                "Benefit": [
+                    "Travel Inconvenience Benefits",
+                    "Personal Accident Benefits",
+                    "Emergency Medical Benefits"
+                ],
+                "PlanType": [
+                    "Honors",
+                    "Standard"
+                ]
+            }
+        ]
+    }
+}
+          
+                    </code>
+                
+                    <code id="response-trip-ins2" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "string",
+    "Message": "string",
+    "Path": "string",
+    "Url": "https://{baseURL}/developer-portal/terms"
+    }
+]
+}
+                                          </code>	
+
+                  <code id="response-trip-ins3" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "string",
+    "Message": "string",
+    "Path": "string",
+    "Url": "https://{baseURL}/developer-portal/terms"
+    }
+]
+}
+                    </code>	
+                  
+                    <code id="response-trip-ins9" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "string",
+    "Message": "string",
+    "Path": "string",
+    "Url": "https://{baseURL}/developer-portal/terms"
+    }
+]
+}
+                    </code>
+                  </pre>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <h1 class="fob-welcome-title" id="section-3">Finds Trip Destination</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: v1/art/travel/tripdestinations?</br></p>
+                        <p class="fob-welcome-text">This API is used to fetch Trip destination based on product
+                            details.</br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/50/api/26#/TravelInsuranceAPIs_100/operation/%2Ftripdestinations/get">Swagger
+                                Link</a></p>
+
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                      <code class="sample-code">
+    Query Params:
+        ReferenceId:110034851
+        ProductId:610380
+                      </code>
+                    </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('travel-insurance')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                        <code id="travel-insurance" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/travel/tripdestinations?ReferenceId=110034851&ProductId=610380' \
+    --header 'Accept: application/json' 
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-insurance')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-insurance3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-insurance4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-insurance5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-insurance6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-insurance7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-insurance8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-insurance9')">500</a>
+                                        </div>
+                                        <pre class="response-box">
+
+              <code id="response-insurance" style=" display: block; " class="text">
+    {
+        "Errors": null,
+        "ListTripDestination": [
+            {
+                "ProductId": "610380",
+                "ProductName": "Outbound",
+                "TripDestination": "WW – Worldwide",
+                "TripDestinationId": "99901"
+            },
+            {
+                "ProductId": "610380",
+                "ProductName": "Outbound",
+                "TripDestination": "WW Ex. Worldwide Excluding USA & Canada",
+                "TripDestinationId": "99902"
+            },
+            {
+                "ProductId": "610380",
+                "ProductName": "Outbound",
+                "TripDestination": "GCC & Eu. – States of the Gulf Cooperation Council & Europe",
+                "TripDestinationId": "99903"
+            }
+        ],
+        "ReferenceId": "110034851",
+        "SourceSystem": "Ejada",
+        "StatusCode": 2
+    }
+                
+                  
+               </code>
+              <code id="response-insurance3" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.401.001",
+      "message": "Unauthorized to call the target operation.",
+      "path": "authorization",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }
+              
+              </code>	
+              
+              <code id="response-insurance4" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.403.001",
+      "message": "Can't find any valid subscription.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }   
+              </code>
+              
+              
+              <code id="response-insurance5" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.404.001",
+      "message": "No resources match requested URI.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }     
+              </code>
+              
+              
+              <code id="response-insurance6" style=" display: none; "class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.405.001",
+      "message": "The method is not allowed for the requested URL.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }
+                   
+              </code>
+               
+              
+              <code id="response-insurance7" style=" display: none; "class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.406.001",
+      "message": "An appropriate representation of the requested resource could not be found",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }       
+              </code>
+               
+              
+              <code id="response-insurance8" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.429.001",
+      "message": "Assembly Rate Limit exceeded",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }     
+              </code>
+              
+              
+              <code id="response-insurance9" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.500.001",
+      "message": "Internal Error",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }    
+              </code>
+                    </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="fob-welcome-title" id="section-4">Finds Trip Types</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /v1/art/travel/triptypes?</br></p>
+                        <p class="fob-welcome-text">This API is used to fetch Trip type based product Id.</br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/50/api/26#/TravelInsuranceAPIs_100/operation/%2Ftriptypes/get">Swagger
+                            Link</a></p>
+
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    Query Params:
+        ReferenceId:110034851
+        ProductId:610380
+                            
+                              
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-validate-OTP-top" type="submit"
+                                        onclick="show('travel-types')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+                                    <pre id="generatedCurl">
+                  <code id="travel-types" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/travel/triptypes?ReferenceId=110034851&ProductId=610381' \
+    --header 'Accept: application/json'
+                   </code>
+                        </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-types')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-types3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-types4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-types5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-types6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-types7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-types8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-types9')">500</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                  <code id="response-types" style=" display: block; " class="text">
+    {
+        "Errors": null,
+        "ListTripType": [
+            {
+                "ProductId": "610381",
+                "ProductName": "Student",
+                "TripTypes": "One Trip",
+                "TripTypesId": "611000"
+            },
+            {
+                "ProductId": "610381",
+                "ProductName": "Student",
+                "TripTypes": "All Trips",
+                "TripTypesId": "611001"
+            }
+        ],
+        "ReferenceId": "110034851",
+        "SourceSystem": "Ejada",
+        "StatusCode": 2
+    }       
+                  </code>
+                 <code id="response-types3" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.401.001",
+      "message": "Unauthorized to call the target operation.",
+      "path": "authorization",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }           
+                  </code>	
+                  
+                  <code id="response-types4" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.403.001",
+      "message": "Can't find any valid subscription.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }
+                  </code>
+                  
+                  
+                  <code id="response-types5" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.404.001",
+      "message": "No resources match requested URI.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }    
+                  </code>
+                  
+                  
+                  <code id="response-types6" style=" display: none; "class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.405.001",
+      "message": "The method is not allowed for the requested URL.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    } 
+                     
+                  </code>
+                  
+                  
+                  <code id="response-types7" style=" display: none; "class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.406.001",
+      "message": "An appropriate representation of the requested resource could not be found",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }      
+                  </code>
+                  
+                  
+                  <code id="response-types8" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.429.001",
+      "message": "Assembly Rate Limit exceeded",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }     
+                  </code>
+                  
+                  
+                  <code id="response-types9" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.500.001",
+      "message": "Internal Error",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }   
+                  </code>
+                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="fob-welcome-title" id="section-5">Get Add-Ons on Plan</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: /v1/art/travel/addons?</br></p>
+                            <p class="fob-welcome-text">This API is used to fetch Add-ons based on product Id. </br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/50/api/26#/TravelInsuranceAPIs_100/operation/%2Faddons/get">Swagger
+                                Link</a></p>
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+    Query Params:
+        ReferenceId:209915
+        ProductId:610380
+        NoOfTraveller:1
+        PlanType:Gold
+        RateCode:TR220614-547861075338
+                                    </code>
+                                  </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('travel-addons')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+
+                                        <pre id="generatedCurl">
+                                      <code id="travel-addons" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/travel/addons?ReferenceId=209915&ProductId=610380&NoOfTraveller=1&PlanType=Gold&RateCode=TR220614-547861075338' \
+--header 'Accept: application/json'
+                                      </code>
+                                    </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-addons')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-addons3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-addons4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-addons5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-addons6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-addons7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-addons8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-addons9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+
+                            <code id="response-addons" style=" display: block; " class="text">
+    {
+        "Errors": null,
+        "ListTravelPackAddOns": [
+            {
+                "CoverPremium": "50.0000",
+                "CoverPremiumTotalTraveller": "50.0000",
+                "CoverageDesc": "Car Hire Excess Waiver",
+                "CoverageId": "610694",
+                "CoverageName": "Car Hire Excess Waiver",
+                "PlanTypes": "GOLD",
+                "ProductId": "610380",
+                "ProductName": "OUTBOUND"
+            },
+            {
+                "CoverPremium": "30.0000",
+                "CoverPremiumTotalTraveller": "30.0000",
+                "CoverageDesc": "Terrorism and Hijack",
+                "CoverageId": "611325",
+                "CoverageName": "Terrorism and Hijack",
+                "PlanTypes": "GOLD",
+                "ProductId": "610380",
+                "ProductName": "OUTBOUND"
+            },
+            {
+                "CoverPremium": "30.0000",
+                "CoverPremiumTotalTraveller": "30.0000",
+                "CoverageDesc": "Technology",
+                "CoverageId": "611324",
+                "CoverageName": "Technology",
+                "PlanTypes": "GOLD",
+                "ProductId": "610380",
+                "ProductName": "OUTBOUND"
+            },
+            {
+                "CoverPremium": "50.0000",
+                "CoverPremiumTotalTraveller": "50.0000",
+                "CoverageDesc": "Adventure",
+                "CoverageId": "611326",
+                "CoverageName": "Adventure",
+                "PlanTypes": "GOLD",
+                "ProductId": "610380",
+                "ProductName": "OUTBOUND"
+            },
+            {
+                "CoverPremium": "100.0000",
+                "CoverPremiumTotalTraveller": "100.0000",
+                "CoverageDesc": "Snow Pack",
+                "CoverageId": "610688",
+                "CoverageName": "Snow Pack",
+                "PlanTypes": "GOLD",
+                "ProductId": "610380",
+                "ProductName": "OUTBOUND"
+            },
+            {
+                "CoverPremium": "30.0000",
+                "CoverPremiumTotalTraveller": "30.0000",
+                "CoverageDesc": "Cruise Pack",
+                "CoverageId": "610691",
+                "CoverageName": "Cruise Pack",
+                "PlanTypes": "GOLD",
+                "ProductId": "610380",
+                "ProductName": "OUTBOUND"
+            },
+            {
+                "CoverPremium": "50.0000",
+                "CoverPremiumTotalTraveller": "50.0000",
+                "CoverageDesc": "Wedding Pack",
+                "CoverageId": "610692",
+                "CoverageName": "Wedding Pack",
+                "PlanTypes": "GOLD",
+                "ProductId": "610380",
+                "ProductName": "OUTBOUND"
+            },
+            {
+                "CoverPremium": "50.0000",
+                "CoverPremiumTotalTraveller": "50.0000",
+                "CoverageDesc": "Excess Waiver",
+                "CoverageId": "610693",
+                "CoverageName": "Excess Waiver",
+                "PlanTypes": "GOLD",
+                "ProductId": "610380",
+                "ProductName": "OUTBOUND"
+            }
+        ],
+        "ReferenceId": "209915",
+        "SourceSystem": "Ejada",
+        "StatusCode": 2
+    }
+                                
+                                  
+                             </code>
+                            <code id="response-addons3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                            
+                            </code>	
+                            
+                            <code id="response-addons4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                            </code>
+                            
+                            
+                            <code id="response-addons5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                            </code>
+                            
+                            
+                            <code id="response-addons6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                 
+                            </code>
+                             
+                            
+                            <code id="response-addons7" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }       
+                            </code>
+                             
+                            
+                            <code id="response-addons8" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                            </code>
+                            
+                            
+                            <code id="response-addons9" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                            </code>
+                                  </pre>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h1 class="fob-welcome-title" id="section-6">Get Available Package and New
+                                    Rates</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint: /v1/art/travel/ratenew</br>
+                                </p>
+                                <p class="fob-welcome-text">This API provides available package and their rates.</br>
+                                </p>
+                                <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/50/api/26#/TravelInsuranceAPIs_100/operation/%2Fratenew/post">Swagger
+                                    Link</a></p>
+    
+
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+    Request Body:
+            {
+        "GroupType": "Individual",
+        "NumberOfMembers": 1,
+        "ReferenceId": 26459992,
+        "Products": [{
+            "ProductID": 610380,
+            "PackageType": "WorldWide",
+            "TripDuration": 365,
+            "TripType": "611001",
+            "StartDate": "2022-05-26",
+            "EndDate": "2023-05-26",
+            "Travellers": [{
+                "NationalId": "1011151006",
+                "Age": 40,
+                "DateOfBirth": "1981-05-25",
+                "IsPolicyHolder": true,
+                "Name": "يزيد بن فهد بن ابراهيم المطيويع",
+                "Email": "johndoe@gamil.com",
+                "PassportNo": "",
+                "MobileNo": "543543543",
+                "IdExpiry": ""
+            }]
+        }]
+
+        }
+                                        </code>
+                                      </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                onclick="show('travel-rates')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+
+                                            <pre id="generatedCurl">
+                                          <code id="travel-rates" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/travel/ratenew' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --data-raw '{
+        "GroupType": "Individual",
+        "NumberOfMembers": 1,
+        "ReferenceId": 26459992,
+        "Products": [
+            {
+                "ProductID": 610380,
+                "PackageType": "WorldWide",
+                "TripDuration": 365,
+                "TripType": "611001",
+                "StartDate": "2022-05-26",
+                "EndDate": "2023-05-26",
+                "Travellers": [
+                    {
+                        "NationalId": "1011151006",
+                        "Age": 40,
+                        "DateOfBirth": "1981-05-25",
+                        "IsPolicyHolder": true,
+                        "Name": "يزيد بن فهد بن ابراهيم المطيويع",
+                        "Email": "johndoe@gamil.com",
+                        "PassportNo": "",
+                        "MobileNo": "543543543",
+                        "IdExpiry": ""
+                    }
+                ]
+            }
+        ]
+    }'
+                                          </code>
+                                        </pre>
+                                        </div>
+                                    </div>
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-rates')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-rates3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-rates4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-rates5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-rates6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-rates7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-rates8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-rates9')">500</a>
+                                                </div>
+                                                <pre class="response-box">
+
+                                <code id="response-rates" style=" display: block; " class="text">
+    {
+        "BusinessChannel": null,
+        "Errors": [
+            {
+                "Code": "1",
+                "Field": null,
+                "Message": "No AccountInfo defined for this SourceSystem!"
+            }
+        ],
+        "GroupType": null,
+        "NumberOfMembers": null,
+        "Products": null,
+        "RateCode": null,
+        "ReferenceCode": null,
+        "ReferenceId": "26459992",
+        "SourceSystem": "Ejada",
+        "StatusCode": 1
+    }     
+                                 </code>
+                                <code id="response-rates3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                
+                                </code>	
+                                
+                                <code id="response-rates4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }   
+                                </code>
+                                
+                                
+                                <code id="response-rates5" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                </code>
+                                
+                                
+                                <code id="response-rates6" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                     
+                                </code>
+                                 
+                                
+                                <code id="response-rates7" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }       
+                                </code>
+                                 
+                                
+                                <code id="response-rates8" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="response-rates9" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }    
+                                </code>
+                                      </pre>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="fob-welcome-title" id="section-7">Generates New Quote</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <p class="fob-welcome-text">Endpoint: /v1/art/travel/quotenew</br>
+                                    <p class="fob-welcome-text">This API provides available package and their
+                                        rates.</br>
+                                    </p>
+                                    <p class="fob-welcome-text"><a id="downloadLink"
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/50/api/26#/TravelInsuranceAPIs_100/operation/%2Fquotenew/post">Swagger
+                                        Link</a></p>
+
+                                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <h1 class="fob-welcome-title">Request Example</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <pre class="example_97 api-guides-example-fob ">
+                                            <code class="sample-code">
+    Request Body:
+        {
+        "ReferenceId":"1110034855",
+        "RateCode":"TR220916-547626868392",
+        "PlanType":"Silver",
+        "TotalPremium":72.0
+        }
+                                            </code>
+                                          </pre>
+                                            </div>
+                                            <div class="col-lg-4 mt-25">
+
+                                                <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                    onclick="show('travel-quotes')">
+                                                    <p class="curlText">cURL</p>
+                                                </button>
+
+                                                <pre id="generatedCurl">
+                                              <code id="travel-quotes" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/travel/quotenew' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --data '{
+    "ReferenceId":"1110034855",
+    "RateCode":"TR220916-547626868392",
+    "PlanType":"Silver",
+    "TotalPremium":72.0
+    }'
+                                              </code>
+                                            </pre>
+                                            </div>
+                                        </div>
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <div class="code-box">
+                                                    <p
+                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                    <div class="response-box-div">
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-quotes')">200</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-quotes3')">401</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-quotes4')">403</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-quotes5')">404</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-quotes6')">405</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-quotes7')">406</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-quotes8')">429</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-quotes9')">500</a>
+                                                    </div>
+                                                    <pre class="response-box">
+
+                                    <code id="response-quotes" style=" display: block; " class="text">
+    {
+        "Coverages": null,
+        "Errors": null,
+        "NetPremium": 0,
+        "OptionalDiscountAmount": 0,
+        "QuotationNo": "TQ240122-540039744673755",
+        "RateCode": "TR220916-547626868392",
+        "ReferenceId": "1110034855",
+        "SourceSystem": "Ejada",
+        "StatusCode": 2,
+        "TotalPremium": 72,
+        "VATAmount": 0
+    }
+
+                                     </code>
+                                   <code id="response-quotes3" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.401.001",
+                    "message": "Unauthorized to call the target operation.",
+                    "path": "authorization",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }
+                                    
+                                    </code>	
+                                    
+                                    <code id="response-quotes4" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.403.001",
+                    "message": "Can't find any valid subscription.",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }   
+                                    </code>
+                                    
+                                    
+                                    <code id="response-quotes5" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.404.001",
+                    "message": "No resources match requested URI.",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }     
+                                    </code>
+                                    
+                                    
+                                    <code id="response-quotes6" style=" display: none; "class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.405.001",
+                    "message": "The method is not allowed for the requested URL.",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }
+                                         
+                                    </code>
+                                     
+                                    
+                                    <code id="response-quotes7" style=" display: none; "class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.406.001",
+                    "message": "An appropriate representation of the requested resource could not be found",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }       
+                                    </code>
+                                     
+                                    
+                                    <code id="response-quotes8" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.429.001",
+                    "message": "Assembly Rate Limit exceeded",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }     
+                                    </code>
+                                    
+                                    
+                                    <code id="response-quotes9" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.500.001",
+                    "message": "Internal Error",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }    
+                                    </code>
+                                          </pre>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <h1 class="fob-welcome-title" id="section-8">Generates Policy</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <p class="fob-welcome-text">Endpoint: /v1/art/travel/policy</br>
+                                        </p>
+                                        <p class="fob-welcome-text">Once payment is confirmed by source system then
+                                            this API should be called to generate policy at ART end, this API will
+                                            provide acknowledgement of request in response and in background it will
+                                            generate policy.</br>
+                                        </p>
+                                        <p class="fob-welcome-text"><a id="downloadLink"
+                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/50/api/26#/TravelInsuranceAPIs_100/operation/%2Fpolicy/post">Swagger
+                                            Link</a></p>
+
+                                        <div class="bx--snippet-container body"
+                                            data-testid="expandable-example-display">
+
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                                    <p class="fob-welcome-line"></p>
+                                                    <pre class="example_97 api-guides-example-fob ">
+                                                <code class="sample-code">
+    Request Body:
+    {
+        "PaymentAmount":"30",
+        "PaymentBillNumber":"TQ220425-542991098734419",
+        "ProductId":"610380",
+        "QuotationNo":"TQ220425-542991098734419",
+        "ReferenceId":"2983ae34-ade2-4370-b6eb-dc2f514da67b"
+        }      
+                                                </code>
+                                              </pre>
+                                                </div>
+                                                <div class="col-lg-4 mt-25">
+
+                                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                        onclick="show('travel-policy')">
+                                                        <p class="curlText">cURL</p>
+                                                    </button>
+
+                                                    <pre id="generatedCurl">
+                                                  <code id="travel-policy" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/travel/policy' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--data '{
+"PaymentAmount":"30",
+"PaymentBillNumber":"TQ220425-542991098734419",
+"ProductId":"610380",
+"QuotationNo":"TQ220425-542991098734419",
+"ReferenceId":"2983ae34-ade2-4370-b6eb-dc2f514da67b"
+}'
+                                                    
+    
+                                                  </code>
+                                                </pre>
+                                                </div>
+                                            </div>
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <div class="code-box">
+                                                        <p
+                                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                        <div class="response-box-div">
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-policy')">200</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-policy3')">401</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-policy4')">403</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-policy5')">404</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-policy6')">405</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-policy7')">406</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-policy8')">429</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-policy9')">500</a>
+                                                        </div>
+                                                        <pre class="response-box">
+
+                                        <code id="response-policy" style=" display: block; " class="text">
+    {
+        "Errors": null,
+            "IsPosted": "Success",
+            "PolicyId": "8941374",
+            "PolicyNo": "P0422-OTR-ARBM-00003065",
+            "QuotationNo": "TQ220425-542991098734419",
+            "ReferenceId": "2983ae34-ade2-4370-b6eb-dc2f514da67b",
+            "SourceSystem": "Ejada",
+            "StatusCode": 2
+        }
+                                         </code>
+                                       <code id="response-policy3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                        
+                                        </code>	
+                                        
+                                        <code id="response-policy4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }   
+                                        </code>
+                                        
+                                        
+                                        <code id="response-policy5" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                        </code>
+                                        
+                                        
+                                        <code id="response-policy6" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                             
+                                        </code>
+                                         
+                                        
+                                        <code id="response-policy7" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                                        </code>
+                                         
+                                        
+                                        <code id="response-policy8" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                        </code>
+                                        
+                                        
+                                        <code id="response-policy9" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                                        </code>
+                                              </pre>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <h1 class="fob-welcome-title" id="section-9">Get Policy List</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <p class="fob-welcome-text">Endpoint: /v1/art/travel/policies?</br></p>
+                                            <p class="fob-welcome-text">This API is used to fetch list of all policies
+                                                for
+                                                user.</br>
+                                            </p>
+                                            <p class="fob-welcome-text"><a id="downloadLink"
+                                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/50/api/26#/TravelInsuranceAPIs_100/operation/%2Fpolicies/get">Swagger
+                                                Link</a></p>
+                
+
+                                            <div class="bx--snippet-container body"
+                                                data-testid="expandable-example-display">
+
+                                                <div class="row flex mt-25">
+                                                    <div class="col-lg-8">
+                                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                                        <p class="fob-welcome-line"></p>
+                                                        <pre class="example_97 api-guides-example-fob ">
+                                                <code class="sample-code">
+    Query Params:
+        ReferenceId:110034854
+        NationalId:2135137640
+        Lang:1
+                                                </code>
+                                              </pre>
+                                                    </div>
+                                                    <div class="col-lg-4 mt-25">
+
+                                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                            onclick="show('travel-policylist')">
+                                                            <p class="curlText">cURL</p>
+                                                        </button>
+
+                                                        <pre id="generatedCurl">
+                                                  <code id="travel-policylist" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/travel/policies?ReferenceId=110034854&NationalId=2135137640&Lang=1' \
+    --header 'Accept: application/json'
+                                                  </code>
+                                                </pre>
+                                                    </div>
+                                                </div>
+                                                <div class="row flex mt-25">
+                                                    <div class="col-lg-8">
+                                                        <div class="code-box">
+                                                            <p
+                                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                            <div class="response-box-div">
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-policylist')">200</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-policylist3')">401</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-policylist4')">403</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-policylist5')">404</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-policylist6')">405</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-policylist7')">406</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-policylist8')">429</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-policylist9')">500</a>
+                                                            </div>
+                                                            <pre class="response-box">
+
+                                        <code id="response-policylist" style=" display: block; " class="text">
+    {
+    "Errors": null,
+    "IsPosted": "Success",
+    "PolicyId": "8941374",
+    "PolicyNo": "P0422-OTR-ARBM-00003065",
+    "QuotationNo": "TQ220425-542991098734419",
+    "ReferenceId": "2983ae34-ade2-4370-b6eb-dc2f514da67b",
+    "SourceSystem": "Ejada",
+    "StatusCode": 2
+    }
+
+                                         </code>
+                                        <code id="response-policylist3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                        
+                                        </code>	
+                                        
+                                        <code id="response-policylist4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }   
+                                        </code>
+                                        
+                                        
+                                        <code id="response-policylist5" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                        </code>
+                                        
+                                        
+                                        <code id="response-policylist6" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                             
+                                        </code>
+                                         
+                                        
+                                        <code id="response-policylist7" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                                        </code>
+                                         
+                                        
+                                        <code id="response-policylist8" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                        </code>
+                                        
+                                        
+                                        <code id="response-policylist9" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                                        </code>
+                                              </pre>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

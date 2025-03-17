@@ -1,0 +1,1229 @@
+{
+	"info": {
+		"_postman_id": "83c186e0-62e6-4486-bc09-f28b8739b4c9",
+		"name": "MP Modern Sandbox Yakeen Integration API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22086553",
+		"_collection_link": "https://speeding-water-900262.postman.co/workspace/Modern-Sandbox~54d8660f-9568-4428-bcb2-e6d7c82cb248/collection/22086553-83c186e0-62e6-4486-bc09-f28b8739b4c9?action=share&source=collection_link&creator=22086553"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base-url}}/oauth2security/oauth2/token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Yakeen Apis",
+			"item": [
+				{
+					"name": "customers",
+					"item": [
+						{
+							"name": "{poiNumber}",
+							"item": [
+								{
+									"name": "yakeen-id-expiration",
+									"item": [
+										{
+											"name": "Yakeen Customer ID Expiration",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{access-token}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-request-id",
+														"value": "Mayar",
+														"description": "An RFC4122 UID used as a correlation id.",
+														"disabled": true
+													},
+													{
+														"key": "Accept",
+														"value": "application/json; charset=utf-8"
+													}
+												],
+												"url": {
+													"raw": "{{base-url}}/mp-yakeen/v1/customers/:POINumber/id-expiration?poiType=1&birthDate=1979-10-13",
+													"host": [
+														"{{base-url}}"
+													],
+													"path": [
+														"mp-yakeen",
+														"v1",
+														"customers",
+														":POINumber",
+														"id-expiration"
+													],
+													"query": [
+														{
+															"key": "poiType",
+															"value": "1"
+														},
+														{
+															"key": "birthDate",
+															"value": "1979-10-13"
+														}
+													],
+													"variable": [
+														{
+															"key": "POINumber",
+															"value": "2292663263"
+														}
+													]
+												},
+												"description": "Retrieve Customer ID Expiration from Yakeen"
+											},
+											"response": [
+												{
+													"name": "Yakeen Customer ID Expiration",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json; charset=utf-8"
+															}
+														],
+														"url": {
+															"raw": "{{base-url}}/mp-yakeen/v1/customers/:POINumber/id-expiration?poiType=0&birthDate=1423-06-26",
+															"host": [
+																"{{base-url}}"
+															],
+															"path": [
+																"mp-yakeen",
+																"v1",
+																"customers",
+																":POINumber",
+																"id-expiration"
+															],
+															"query": [
+																{
+																	"key": "poiType",
+																	"value": "0"
+																},
+																{
+																	"key": "birthDate",
+																	"value": "1423-06-26"
+																}
+															],
+															"variable": [
+																{
+																	"key": "POINumber",
+																	"value": "1117548550"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Connection",
+															"value": "Keep-Alive"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "X-Global-Transaction-ID",
+															"value": "04ee24c7679b679700012b41"
+														},
+														{
+															"key": "Date",
+															"value": "Thu, 30 Jan 2025 11:50:48 GMT"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json"
+														},
+														{
+															"key": "x-request-id",
+															"value": "fff11cfe-f2b9-4d93-b6ae-71c9932dcaf3"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "name=default,100;"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "name=default,95;"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "gzip"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdenificationInfo\": {\n                \"POINumber\": \"1117548550\",\n                \"HijriExpiryDate\": \"1449-12-08\"\n            }\n        },\n        \"LogID\": \"2010648624\"\n    }\n}"
+												},
+												{
+													"name": "Yakeen Customer ID Expiration",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "x-request-id",
+																"value": "Mayar",
+																"description": "An RFC4122 UID used as a correlation id.",
+																"disabled": true
+															},
+															{
+																"key": "Accept",
+																"value": "application/json; charset=utf-8"
+															}
+														],
+														"url": {
+															"raw": "{{base-url}}/mp-yakeen/v1/customers/:POINumber/id-expiration?poiType=0&birthDate=1423-06-26",
+															"host": [
+																"{{base-url}}"
+															],
+															"path": [
+																"mp-yakeen",
+																"v1",
+																"customers",
+																":POINumber",
+																"id-expiration"
+															],
+															"query": [
+																{
+																	"key": "poiType",
+																	"value": "0"
+																},
+																{
+																	"key": "birthDate",
+																	"value": "1423-06-26"
+																}
+															],
+															"variable": [
+																{
+																	"key": "POINumber",
+																	"value": "1117548550"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Connection",
+															"value": "Keep-Alive"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "X-Global-Transaction-ID",
+															"value": "04ee24c7679b7c4c00012bd1"
+														},
+														{
+															"key": "Date",
+															"value": "Thu, 30 Jan 2025 13:19:08 GMT"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json"
+														},
+														{
+															"key": "x-request-id",
+															"value": "a4afc371-8d15-49b3-b998-5f7eb23b6e11"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "name=default,100;"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "name=default,98;"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "gzip"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdenificationInfo\": {\n                \"POINumber\": \"1117548550\",\n                \"HijriExpiryDate\": \"1449-12-08\"\n            }\n        },\n        \"LogID\": \"2010648624\"\n    }\n}"
+												},
+												{
+													"name": "Yakeen Customer ID Expiration",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "x-request-id",
+																"value": "Mayar",
+																"description": "An RFC4122 UID used as a correlation id.",
+																"disabled": true
+															},
+															{
+																"key": "Accept",
+																"value": "application/json; charset=utf-8"
+															}
+														],
+														"url": {
+															"raw": "{{base-url}}/mp-yakeen/v1/customers/:POINumber/id-expiration?poiType=1&birthDate=1979-10-13",
+															"host": [
+																"{{base-url}}"
+															],
+															"path": [
+																"mp-yakeen",
+																"v1",
+																"customers",
+																":POINumber",
+																"id-expiration"
+															],
+															"query": [
+																{
+																	"key": "poiType",
+																	"value": "1"
+																},
+																{
+																	"key": "birthDate",
+																	"value": "1979-10-13"
+																}
+															],
+															"variable": [
+																{
+																	"key": "POINumber",
+																	"value": "2292663263"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Connection",
+															"value": "Keep-Alive"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "X-Global-Transaction-ID",
+															"value": "58f2380a679b7ca100013f21"
+														},
+														{
+															"key": "Date",
+															"value": "Thu, 30 Jan 2025 13:20:33 GMT"
+														},
+														{
+															"key": "content-type",
+															"value": "application/json"
+														},
+														{
+															"key": "x-request-id",
+															"value": "369432c8-3bee-4248-813d-fc4d1055531a"
+														},
+														{
+															"key": "X-RateLimit-Limit",
+															"value": "name=default,100;"
+														},
+														{
+															"key": "X-RateLimit-Remaining",
+															"value": "name=default,94;"
+														},
+														{
+															"key": "Content-Encoding",
+															"value": "gzip"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdenificationInfo\": {\n                \"POINumber\": \"2292663263\",\n                \"HijriExpiryDate\": \"1445-11-24\"\n            }\n        }\n    }\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Person Info",
+					"item": [
+						{
+							"name": "Yakeen Person Information ARB",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access-token}}"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=1&birthDate=02-1987",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-yakeen",
+										"v1",
+										"arb-persons",
+										":POINumber"
+									],
+									"query": [
+										{
+											"key": "poiType",
+											"value": "1"
+										},
+										{
+											"key": "birthDate",
+											"value": "02-1987"
+										},
+										{
+											"key": "expiryDate",
+											"value": "1445-08-08",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "POINumber",
+											"value": "2313576072"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Yakeen Person Information ARB",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=1&birthDate=12-1998",
+											"host": [
+												"{{base-url}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"v1",
+												"arb-persons",
+												":POINumber"
+											],
+											"query": [
+												{
+													"key": "poiType",
+													"value": "1"
+												},
+												{
+													"key": "birthDate",
+													"value": "12-1998"
+												},
+												{
+													"key": "expiryDate",
+													"value": "08-08-1445",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "POINumber",
+													"value": "2476065236"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "69ab2572-2c18-4180-8422-89d9c3f1b04e"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "9e07f6a6679e65b2047c7082"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,91;"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Feb 2025 18:19:31 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdentificationInfo\": {\n                \"POINumber\": \"2476065236\",\n                \"HijriExpiryDate\": \"1446-01-04\"\n            },\n            \"FirstNameEn\": \"MOHAMED\",\n            \"SecondNameEn\": \"SHIEK\",\n            \"ThirdNameEn\": \"AMIR\",\n            \"LastNameEn\": \"MOHAMED ALI\",\n            \"FirstNameAr\": \"محمد\",\n            \"SecondNameAr\": \"شيك\",\n            \"ThirdNameAr\": null,\n            \"LastNameAr\": \"محمدعلي\",\n            \"NationalityCode\": \"321\",\n            \"Gender\": \"M\",\n            \"OccupationDescription\": \"مهندس  الكترونيات تقني\",\n            \"SponsorName\": \"موسسه الاميره نوف بنت مساعد سعود عبدالعزيز ال سعود للتجاره\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Yakeen Person Information ARB",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=1&birthDate=06-1989",
+											"host": [
+												"{{base-url}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"v1",
+												"arb-persons",
+												":POINumber"
+											],
+											"query": [
+												{
+													"key": "poiType",
+													"value": "1"
+												},
+												{
+													"key": "birthDate",
+													"value": "06-1989"
+												},
+												{
+													"key": "expiryDate",
+													"value": "08-08-1445",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "POINumber",
+													"value": "2541829814"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "a087e037-f9a2-4a14-b46e-236841cd0000"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "6c5eecad679e66df019d95a0"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,90;"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Feb 2025 18:24:32 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdentificationInfo\": {\n                \"POINumber\": \"2541829814\",\n                \"HijriExpiryDate\": \"1445-11-24\"\n            },\n            \"FirstNameEn\": \"ALAA\",\n            \"SecondNameEn\": \"BAYOUMI\",\n            \"ThirdNameEn\": \"ALI\",\n            \"LastNameEn\": \"BADRAN\",\n            \"FirstNameAr\": \"علاء\",\n            \"SecondNameAr\": \"بيومى\",\n            \"ThirdNameAr\": null,\n            \"LastNameAr\": \"بدران\",\n            \"NationalityCode\": \"207\",\n            \"Gender\": \"M\",\n            \"OccupationDescription\": \"مبرمج تطبيقات\",\n            \"SponsorName\": \"فرع شركة ان تي جي كلاريتي نتويركس  انك\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Yakeen Person Information ARB",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=0&expiryDate=1449-12-08",
+											"host": [
+												"{{base-url}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"v1",
+												"arb-persons",
+												":POINumber"
+											],
+											"query": [
+												{
+													"key": "poiType",
+													"value": "0"
+												},
+												{
+													"key": "birthDate",
+													"value": "12-1998",
+													"disabled": true
+												},
+												{
+													"key": "expiryDate",
+													"value": "1449-12-08"
+												}
+											],
+											"variable": [
+												{
+													"key": "POINumber",
+													"value": "1117548550"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "ca0d292d-585e-43d4-8adc-188999a9891b"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67a1fd920074d440"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,53;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 04 Feb 2025 11:44:18 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdentificationInfo\": {\n                \"POINumber\": \"1117548550\",\n                \"HijriExpiryDate\": \"1449-12-08\",\n                \"POIType\": \"0\"\n            },\n            \"FirstNameEn\": \"MAZEN\",\n            \"SecondNameEn\": \"MOHAMMED\",\n            \"ThirdNameEn\": \"ASRI\",\n            \"LastNameEn\": \"ALANAZI\",\n            \"FirstNameAr\": \"مازن\",\n            \"Gender\": \"0\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Yakeen Person Information ARB",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=0&expiryDate=1446-13-08",
+											"host": [
+												"{{base-url}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"v1",
+												"arb-persons",
+												":POINumber"
+											],
+											"query": [
+												{
+													"key": "poiType",
+													"value": "0"
+												},
+												{
+													"key": "birthDate",
+													"value": "12-1998",
+													"disabled": true
+												},
+												{
+													"key": "expiryDate",
+													"value": "1446-13-08"
+												}
+											],
+											"variable": [
+												{
+													"key": "POINumber",
+													"value": "1112548555"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "1641331d-0843-4ab5-94dd-c06fcb0240d1"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67a1fdb50074d800"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,52;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 04 Feb 2025 11:44:53 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdentificationInfo\": {\n                \"POINumber\": \"1112548555\",\n                \"HijriExpiryDate\": \"1443-12-08\",\n                \"POIType\": \"0\"\n            },\n            \"FirstNameEn\": \"Mohamed\",\n            \"SecondNameEn\": \"MOHAMMED\",\n            \"ThirdNameEn\": \"Mohamed\",\n            \"LastNameEn\": \"ALANAZI\",\n            \"FirstNameAr\": \"محمد\",\n            \"Gender\": \"0\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Yakeen Person Information ARB",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=0&expiryDate=1445-08-08",
+											"host": [
+												"{{base-url}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"v1",
+												"arb-persons",
+												":POINumber"
+											],
+											"query": [
+												{
+													"key": "poiType",
+													"value": "0"
+												},
+												{
+													"key": "birthDate",
+													"value": "12-1998",
+													"disabled": true
+												},
+												{
+													"key": "expiryDate",
+													"value": "1445-08-08"
+												}
+											],
+											"variable": [
+												{
+													"key": "POINumber",
+													"value": "1112548655"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "e85ff3f8-7b75-4987-880c-f9c3e82ad473"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67a1fdf30074e270"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,51;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 04 Feb 2025 11:45:56 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdentificationInfo\": {\n                \"POINumber\": \"1112548655\",\n                \"HijriExpiryDate\": \"1443-12-08\",\n                \"POIType\": \"0\"\n            },\n            \"FirstNameEn\": \"Ahmed\",\n            \"SecondNameEn\": \"احمد\",\n            \"ThirdNameEn\": \"Ahmed\",\n            \"LastNameEn\": \"ALANAZI\",\n            \"FirstNameAr\": \"احمد\",\n            \"Gender\": \"0\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Yakeen Person Information ARB",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=1&birthDate=04-1981",
+											"host": [
+												"{{base-url}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"v1",
+												"arb-persons",
+												":POINumber"
+											],
+											"query": [
+												{
+													"key": "poiType",
+													"value": "1"
+												},
+												{
+													"key": "birthDate",
+													"value": "04-1981"
+												},
+												{
+													"key": "expiryDate",
+													"value": "1445-08-08",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "POINumber",
+													"value": "2315509709"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "79f9cad5-c79b-47ac-b383-91fb3e2a2669"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67a20492007590e0"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,87;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 04 Feb 2025 12:14:10 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdentificationInfo\": {\n                \"POINumber\": \"2315509709\",\n                \"HijriExpiryDate\": \"1436-04-15\",\n                \"POIType\": \"1\"\n            },\n            \"FirstNameEn\": \"ARSHAD\",\n            \"SecondNameEn\": \"GUL\",\n            \"ThirdNameEn\": \"NABI\",\n            \"LastNameEn\": \"GUL\",\n            \"FirstNameAr\": \"ارشد\",\n            \"SecondNameAr\": \"قل\",\n            \"LastNameAr\": \"قل\",\n            \"NationalityCode\": \"304\",\n            \"Gender\": \"0\",\n            \"OccupationDescription\": \"ضابط\",\n            \"SponsorName\": \"وزارةالدفاع بالرياض لايستخدم للفروع التابعه للوزاره\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Yakeen Person Information ARB",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=1&birthDate=02-1987",
+											"host": [
+												"{{base-url}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"v1",
+												"arb-persons",
+												":POINumber"
+											],
+											"query": [
+												{
+													"key": "poiType",
+													"value": "1"
+												},
+												{
+													"key": "birthDate",
+													"value": "02-1987"
+												},
+												{
+													"key": "expiryDate",
+													"value": "1445-08-08",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "POINumber",
+													"value": "2313576072"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "721c81df-23dc-4aa5-9f13-f43d6bc515e4"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67a204a3009fa962"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,86;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 04 Feb 2025 12:14:27 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdentificationInfo\": {\n                \"POINumber\": \"2313576072\",\n                \"HijriExpiryDate\": \"1438-11-10\",\n                \"POIType\": \"1\"\n            },\n            \"FirstNameEn\": \"SHIRLEY\",\n            \"ThirdNameEn\": \"MALIT\",\n            \"LastNameEn\": \"DABU\",\n            \"FirstNameAr\": \"شيرلي\",\n            \"LastNameAr\": \"دابو\",\n            \"NationalityCode\": \"315\",\n            \"Gender\": \"1\",\n            \"OccupationDescription\": \"ممرضة عامة\",\n            \"SponsorName\": \"وزارة الصحة للموارد البشرية\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Yakeen Person Information ARB",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base-url}}/mp-yakeen/v1/arb-persons/:POINumber?poiType=1&birthDate=4-1-1984",
+											"host": [
+												"{{base-url}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"v1",
+												"arb-persons",
+												":POINumber"
+											],
+											"query": [
+												{
+													"key": "poiType",
+													"value": "1"
+												},
+												{
+													"key": "birthDate",
+													"value": "4-1-1984"
+												},
+												{
+													"key": "expiryDate",
+													"value": "1445-08-08",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "POINumber",
+													"value": "2313819712"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "3ea030ac-df89-4aba-930c-ab2221f1133b"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67a204b7004c92a1"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,85;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 04 Feb 2025 12:14:47 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"IdentificationInfo\": {\n                \"POINumber\": \"2313819712\",\n                \"HijriExpiryDate\": \"1446-03-05\",\n                \"POIType\": \"1\"\n            },\n            \"FirstNameEn\": \"SHALFALYN\",\n            \"ThirdNameEn\": \"ABDUSALAM\",\n            \"LastNameEn\": \"SALI\",\n            \"FirstNameAr\": \"شالفلين\",\n            \"LastNameAr\": \"سالي\",\n            \"NationalityCode\": \"315\",\n            \"Gender\": \"1\",\n            \"OccupationDescription\": \"أخصائية\",\n            \"SponsorName\": \"ادارةالبرامج للخدمات الطبيه التابع لوزارةالدفاع\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

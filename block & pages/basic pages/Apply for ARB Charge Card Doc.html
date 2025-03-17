@@ -1,0 +1,1422 @@
+<div id="search-term-result">
+
+    <p>
+        The API Marketplace empowers consumers to effortlessly apply for the ARB Charge Card, streamlining the
+        application
+        process for greater convenience.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Apply for ARB Charge Card API Documentation</p>
+        </div>
+        
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="container">
+                        <div>
+                            <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                                onkeyup="search_menu()" type="text" />
+        
+                        </div>
+                        <br>
+                        <div class="api-guides-vertical-menu ">
+        
+        
+                            <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">Apply
+                                for ARB Charge Card</a>
+        
+                            <div class="api-guides-dropdown-container" id="expand2">
+                                <a class="api-guides-noList apn-doc-menu" href="#section-2">Get Customer Preliminary Check</a>
+                                <a class="api-guides-noList apn-doc-menu" href="#section-3">Get Responsible Lending</a>
+                                <a class="api-guides-noList apn-doc-menu" href="#section-4">Set Responsible Lending</a>
+                                <a class="api-guides-noList apn-doc-menu" href="#section-5">Get Mandatory Documents</a>
+                                <a class="api-guides-noList apn-doc-menu" href="#section-6">Issue Credit Card</a>
+                            </div>
+        
+        
+                        </div>
+                        <br>
+                    </div>
+                </div>
+        
+                <div class="col-md-9">
+                    <div class="container api-guides-text">
+                        <div class="container api-guides-text p-0">
+                            <p class="fob-welcome-title" id="section-1">Apply for ARB Charge Card APIS </p>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">The primary objective of this project is to enable ARB to offer the
+                                charge card application process through the API Marketplace. This will provide a seamless,
+                                efficient, and accessible way for consumers to apply for ARB charge cards via integrated API
+                                solutions.
+                                </br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Apply_for_ARB_Charge_Card.postman_collection.json"
+                                    download="">Download Postman Collection</a></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/ApplyforARBChargeCardSampleRequestData.xlsx"
+                                    download="">Download Sample Data</a></p>
+        
+                            <h1 class="fob-welcome-title">Apply for ARB Charge Card Workflow</h1>
+                            <p class="fob-welcome-line"></p>
+                            <a class="fob-product-title-click" target="_blank" href="../ApplyforARBChargeCardWorkflowImg">Click
+                                here</a>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <p class="ApplyforARBChargeCard-flow-img"><br></p>
+                                </div>
+                            </div>
+        
+        
+                            <h1 class="fob-welcome-title">Apply for ARB Charge Card Architecture</h1>
+        
+                            <p class="fob-welcome-line">&nbsp;</p>
+                            <a class="fob-product-title-click" href="../ApplyforARBChargeCardArchitectureWorkflowImg"
+                                target="_blank">Click here</a>
+        
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <p class="ApplyforARBChargeCardArchitecture-flow-img">&nbsp;</p>
+                                </div>
+                            </div>
+        
+        
+                            <h1 class="fob-welcome-title" id="section-2">Get Customer Preliminary Check</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: /efinance/preliminary-check/v1/</br></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/970/api/967#/GetCustomerPreliminaryCheck_100/operation/%2F/get">Swagger
+                                    Link</a></p>
+                            <p class="fob-welcome-text">This API is used to get customer
+                                preliminary check.</br></p>
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+        
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+        Header request
+        {
+        "Accept-Language": "en",
+        } 
+        Query request
+        {
+            " productID": "015",
+            " increaseDecreaseFlag": “SAALBI”,
+        }                        
+                            </code>
+                          </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                            onclick="show('Get-Customer-Preliminary-Check-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+        
+                                        <pre id="generatedCurl">
+                            <code id="Get-Customer-Preliminary-Check-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/efinance/preliminary-check/v1/?productID=MRCC' \
+        --header 'Accept-Language: en' \
+        --header 'Accept: application/json'             
+                            </code>
+                          </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+        
+        
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Get-Customer-Preliminary-Check')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Get-Customer-Preliminary-Check3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Get-Customer-Preliminary-Check4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Get-Customer-Preliminary-Check5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Get-Customer-Preliminary-Check6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Get-Customer-Preliminary-Check7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Get-Customer-Preliminary-Check8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Get-Customer-Preliminary-Check9')">500</a>
+                                            </div>
+        
+                                            <pre class="response-box">
+        
+                              <code id="Get-Customer-Preliminary-Check" style=" display: block; " class="text">
+        {
+            "header": {
+                "statusCode": "I000000",
+                "requestID": "07a4c7aa-bee3-45bc-84ac-a84a9c491b30",
+                "statusDescription": "Successful"
+            },
+            "body": {
+                "checkStatus": "1"
+            }
+        }
+                              </code>
+                              <code id="Get-Customer-Preliminary-Check3" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.401.001",
+                "message": "Unauthorized to call the target operation.",
+                "path": "authorization",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }  
+                              </code>	
+                            
+                              <code id="Get-Customer-Preliminary-Check4" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.403.001",
+                "message": "Can't find any valid subscription.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }    
+                              </code>
+                            
+                              <code id="Get-Customer-Preliminary-Check5" style=" display: none; " class="text">
+            {
+                "errors": [
+                {
+                    "code": "ERROR.404.001",
+                    "message": "No resources match requested URI.",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+            }     
+                              </code>
+                            
+                              <code id="Get-Customer-Preliminary-Check6" style=" display: none; "class="text">
+            {
+                "errors": [
+                {
+                    "code": "ERROR.405.001",
+                    "message": "The method is not allowed for the requested URL.",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+            }
+                                    
+                              </code>
+                            
+                              <code id="Get-Customer-Preliminary-Check7" style=" display: none; "class="text">
+            {
+                "errors": [
+                {
+                    "code": "ERROR.406.001",
+                    "message": "An appropriate representation of the requested resource could not be found",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+            }       
+                              </code>
+                            
+                              <code id="Get-Customer-Preliminary-Check8" style=" display: none; " class="text">
+            {
+                "errors": [
+                {
+                    "code": "ERROR.429.001",
+                    "message": "Assembly Rate Limit exceeded",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+            }     
+                              </code>
+                            
+                              <code id="Get-Customer-Preliminary-Check9" style=" display: none; " class="text">
+            {
+                "errors": [
+                {
+                    "code": "ERROR.500.001",
+                    "message": "Internal Error",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+            }     
+                              </code>
+                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <h1 class="fob-welcome-title" id="section-3">Get Responsible Lending</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint: /efinance/v1</br></p>
+                                <p class="fob-welcome-text"><a
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1609/api/718#/GetResponsibleLending_100/operation/%2Fresponsible-lending/get">Swagger
+                                        Link</a></p>
+                                <p class="fob-welcome-text">This path is used to get customer
+                                    financial stipulated data.</br></p>
+        
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+        
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+        Header request
+        {
+        "Accept-Language": "en",
+        } 
+        Query request
+        {
+            " dossierID": "015",
+            "participantName": “SAALBI”,
+        
+        }                                                                         
+                                        </code>
+                                      </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+                                            <!-- <div class="code-box"> -->
+        
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                onclick="show('Get-Responsible-Lending-curl')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+        
+                                            <pre id="generatedCurl">
+                                          <code id="Get-Responsible-Lending-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/efinance/v1/responsible-lending' \
+        --header 'Accept-Language: en' \
+        --header 'Accept: application/json'                                    
+                                          </code>
+                                        </pre>
+                                        </div>
+                                    </div>
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+        
+        
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Responsible-Lending')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Responsible-Lending3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Responsible-Lending4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Responsible-Lending5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Responsible-Lending6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Responsible-Lending7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Responsible-Lending8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Responsible-Lending9')">500</a>
+                                                </div>
+                                                <pre class="response-box">
+        
+                                <code id="Get-Responsible-Lending" style=" display: block; " class="text">
+        {
+            "header": {
+                "statusCode": "I000000",
+                "requestID": "13566602-eb67-4c76-ba9e-742718549067",
+                "statusDescription": "Successful"
+            },
+            "body": {
+                "martialStatus": "2",
+                "familyMembers": 3,
+                "ownHouse": "02",
+                "educationFees": 0,
+                "insurance": "N",
+                "cityID": "00000002",
+                "workingStatus": "S",
+                "housingAllowanceAmount": "0.000",
+                "housingAllowanceCurrency": "SAR",
+                "fixedAllowanceAmount": "0.000",
+                "fixedAllowanceCurrency": "SAR",
+                "transportationAllowanceAmount": "0.000",
+                "transportationAllowanceCurrency": "SAR",
+                "totalNetSalaryAmount": "63700.000",
+                "totalNetSalaryCurrency": "SAR",
+                "totalMonthlyIncomeAmount": "63700.000",
+                "totalMonthlyIncomeCurrency": "SAR",
+                "totalObligationsAmount": "0.000",
+                "totalObligationsCurrency": "SAR",
+                "customerExpensesList": [
+                    {
+                        "expenseID": "001",
+                        "description": "Food And Beverages",
+                        "baseAmount": "880.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "880.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "003",
+                        "description": "Housing",
+                        "baseAmount": "2750.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "2750.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "007",
+                        "description": "Transport",
+                        "baseAmount": "550.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "550.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "008",
+                        "description": "Communications",
+                        "baseAmount": "220.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "220.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "010",
+                        "description": "Education Fees",
+                        "baseAmount": "0.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "0.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "011",
+                        "description": "Home Servants",
+                        "baseAmount": "0.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "0.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "012",
+                        "description": "Fees on expats",
+                        "baseAmount": "0.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "0.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "900",
+                        "description": "Other Income-Government support*",
+                        "baseAmount": "0.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "0.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "013",
+                        "description": "Other future expenses",
+                        "baseAmount": "0.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "0.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "005",
+                        "description": "Insurance",
+                        "baseAmount": "110.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "110.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "004",
+                        "description": "Utilities",
+                        "baseAmount": "330.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "330.000",
+                        "valueCurrency": "SAR"
+                    },
+                    {
+                        "expenseID": "006",
+                        "description": "Health Care Services",
+                        "baseAmount": "0.000",
+                        "baseCurrency": "SAR",
+                        "valueAmount": "0.000",
+                        "valueCurrency": "SAR"
+                    }
+                ],
+                "residentialType": "001",
+                "houseHoldHelp": 0,
+                "publicSchoolDependants": 0,
+                "privateSchoolDependants": 0,
+                "breadWinnerFlag": "N",
+                "basicSalaryAmount": "70000.000",
+                "basicSalaryCurrency": "SAR",
+                "GOSIDeductionAmount": "6300.000",
+                "GOSIDeductionCurrency": "SAR"
+            }
+        }                            
+                                 </code>
+              
+                                <code id="Get-Responsible-Lending3" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.401.001",
+                "message": "Unauthorized to call the target operation.",
+                "path": "authorization",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                
+                                </code>	
+                                
+                                <code id="Get-Responsible-Lending4" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.403.001",
+                "message": "Can't find any valid subscription.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }   
+                                </code>
+                                
+                                
+                                <code id="Get-Responsible-Lending5" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="Get-Responsible-Lending6" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                     
+                                </code>
+                                 
+                                
+                                <code id="Get-Responsible-Lending7" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }       
+                                </code>
+                                 
+                                
+                                <code id="Get-Responsible-Lending8" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="Get-Responsible-Lending9" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }    
+                                </code>
+                                      </pre>
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+        
+        
+        
+                                <h1 class="fob-welcome-title" id="section-4">Set Responsible Lending</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint: /efinance/v1/responsible-lending</br></p>
+                                <p class="fob-welcome-text"><a
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2128/api/712#/SetResponsibleLending_100/operation/%2Fresponsible-lending/post">Swagger
+                                        Link</a></p>
+                                <p class="fob-welcome-text">This API is used to to set customer
+                                    responsible lending information.</br></p>
+        
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+        
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+        Header request
+        {
+        "Accept-Language": "en"
+        } 
+        Body request
+        {
+            "martialStatus": "1",
+            "familyMembers": 1,
+            "ownHouse": "00",
+            "educationFees": 2,
+            "insurance": "Y",
+            "cityID": "00000627",
+            "workingStatus": "S",
+            "basicSalaryAmount": "12000.000",
+            "basicSalaryCurrency": "SAR",
+            "housingAllowanceAmount": "0.000",
+            "housingAllowanceCurrency": "SAR",
+            "fixedAllowanceAmount": "0.000",
+            "fixedAllowanceCurrency": "SAR",
+            "GOSIDeductionAmount": "1080.000",
+            "GOSIDeductionCurrency": "SAR",
+            "transportationAllowanceAmount": "0.000",
+            "transportationAllowanceCurrency": "SAR",
+            "otherAllowancesList": [
+            {
+                "otherAllowanceAmount": "0.000",
+                "otherAllowanceCurrency": "SAR",
+                "otherAllowanceFrequency": "1"
+            }
+            ],
+            "otherIncomesList": [
+            {
+                "incomeID": "001",
+                "percentage": "50.20",
+                "otherIncomeAmount": "0.000",
+                "otherIncomeCurrency": "SAR",
+                "otherIncomeFrequency": "1"
+            }
+            ],
+            "otherObligationsList": [
+            {
+                "obligationID": "001",
+                "otherObligationAmount": "0.000",
+                "otherObligationCurrency": "SAR"
+            }
+            ],
+            "customerExpensesList": [
+            {
+                "expenseID": "900",
+                "description": "مصاريف مستقبلية",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR",
+                "valueAmount": "0.000",
+                "valueAmountCurrency": "SAR"
+            }
+            ],
+            "dossierID": "24687780",
+            "GOSICRNumber": "1234567927",
+            "GOSIUNNumber": "1234567927",
+            "GOSIIncome": "1556.332",
+            "GOSIAllownce": "1556.332",
+            "GOSIDate": "2022-12-11",
+            "GOSIHousing": "1556.332",
+            "GOSITransportation": "1556.332",
+            "residentialType": "001",
+            "houseHoldHelp": 11,
+            "publicSchoolDependants": 11,
+            "privateSchoolDependants": 11,
+            "breadWinnerFlag": "Y"
+        }                              
+                                        </code>
+                                      </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+                                            <!-- <div class="code-box"> -->
+        
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                onclick="show('Set-Responsible-Lending-curl')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+        
+                                            <pre id="generatedCurl">
+                                          <code id="Set-Responsible-Lending-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/efinance/v1/responsible-lending' \
+        --header 'Accept-Language: en' \
+        --header 'Content-Type: application/json' \
+        --header 'Accept: application/json' \
+        --data '{
+            "martialStatus": "2",
+            "familyMembers": 1,
+            "ownHouse": "01",
+            "educationFees": 1,
+            "insurance": "Y",
+            "cityID": "00000002",
+            "workingStatus": "S",
+            "basicSalaryAmount": "25000",
+            "basicSalaryCurrency": "SAR",
+            "housingAllowanceAmount": "0.000",
+            "housingAllowanceCurrency": "SAR",
+            "fixedAllowanceAmount": "0.000",
+            "fixedAllowanceCurrency": "SAR",
+            "transportationAllowanceAmount": "0.000",
+            "transportationAllowanceCurrency": "SAR",
+            "CIC": "0000000125107679",
+            "customerExpensesList": [
+            {
+                "expenseID": "001",
+                "valueAmount": "840",
+                "valueAmountCurrency": "SAR",
+                "description": "Food And Beverages",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "003",
+                "valueAmount": "0.000",
+                "valueAmountCurrency": "SAR",
+                "description": "Housing",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "007",
+                "valueAmount": "525",
+                "valueAmountCurrency": "SAR",
+                "description": "Transport",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "008",
+                "valueAmount": "210",
+                "valueAmountCurrency": "SAR",
+                "description": "Communications",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "010",
+                "valueAmount": "0.000",
+                "valueAmountCurrency": "SAR",
+                "description": "Education Fees",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "011",
+                "valueAmount": "0.000",
+                "valueAmountCurrency": "SAR",
+                "description": "Home Servants",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "012",
+                "valueAmount": "0.000",
+                "valueAmountCurrency": "SAR",
+                "description": "Fees on expats",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "900",
+                "valueAmount": "0.000",
+                "valueAmountCurrency": "SAR",
+                "description": "Other Income-Government support*",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "013",
+                "valueAmount": "0.000",
+                "valueAmountCurrency": "SAR",
+                "description": "Other future expenses",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "005",
+                "valueAmount": "105",
+                "valueAmountCurrency": "SAR",
+                "description": "Insurance",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "004",
+                "valueAmount": "315",
+                "valueAmountCurrency": "SAR",
+                "description": "Utilities",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            },
+            {
+                "expenseID": "006",
+                "valueAmount": "0.000",
+                "valueAmountCurrency": "SAR",
+                "description": "Health Care Services",
+                "baseAmount": "0.000",
+                "baseAmountCurrency": "SAR"
+            }
+            ],
+            "residentialType": "001",
+            "houseHoldHelp": 0,
+            "publicSchoolDependants": 0,
+            "privateSchoolDependants": 0,
+            "breadWinnerFlag": "N"
+        }'                                    
+                                          </code>
+                                        </pre>
+                                        </div>
+                                    </div>
+        
+        
+        
+        
+        
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+        
+        
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Set-Responsible-Lending')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Set-Responsible-Lending3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Set-Responsible-Lending4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Set-Responsible-Lending5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Set-Responsible-Lending6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Set-Responsible-Lending7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Set-Responsible-Lending8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Set-Responsible-Lending9')">500</a>
+                                                </div>
+        
+                                                <pre class="response-box">
+        
+               <code id="Set-Responsible-Lending" style=" display: block; " class="text">
+        {
+            "header": {
+                "statusCode": "I000000",
+                "requestID": "c1e6f2bb-14e2-49d8-a0e8-ddae6319423b",
+                "statusDescription": "Successful"
+            },
+            "body": {
+                "GOSIFlag": "O"
+            }
+        }        
+           </code>
+         <code id="Set-Responsible-Lending3" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }  
+                    </code>	
+        
+                           <code id="Set-Responsible-Lending4" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }    
+                     </code>
+        
+                          <code id="Set-Responsible-Lending5" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }     
+                  </code>
+        
+                            <code id="Set-Responsible-Lending6" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }
+            
+                      </code>
+        
+                             <code id="Set-Responsible-Lending7" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }       
+              </code>
+        
+                        <code id="Set-Responsible-Lending8" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }     
+                        </code>
+        
+                            <code id="Set-Responsible-Lending9" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }     
+                        </code>
+                                   </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+        
+        
+                                <h1 class="fob-welcome-title" id="section-5">Get Mandatory Documents</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint: /efinance/v1 /mandatory-documents</br></p>
+                                <p class="fob-welcome-text"><a
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/988/api/985#/GetMandatoryDocuments_100/operation/%2Fmandatory-documents/get">Swagger
+                                        Link</a></p>
+                                <p class="fob-welcome-text">This path is used to get the list of
+                                    mandatory documents.</br></p>
+        
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+        
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+        Headers
+        {
+        Accept-Language:”en”
+        }
+        Query Params
+        {
+        " productID": “CLQ”,
+        " customerSegment": “001”,
+        " rolloutFlag": “Y”,
+        " lastStipulatedDossierID": “855268”,
+                        }                                                             
+                                        </code>
+                                      </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+                                            <!-- <div class="code-box"> -->
+        
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                onclick="show('Get-Mandatory-Documents-curl')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+        
+                                            <pre id="generatedCurl">
+                                          <code id="Get-Mandatory-Documents-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/efinance/v1/mandatory-documents?productID=CC&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierID=855268' \
+        --header 'Accept-Language: en' \
+        --header 'Accept: application/json'                                                        
+                                          </code>
+                                        </pre>
+                                        </div>
+                                    </div>
+        
+        
+        
+        
+        
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+        
+        
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Mandatory-Documents')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Mandatory-Documents3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Mandatory-Documents4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Mandatory-Documents5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Mandatory-Documents6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Mandatory-Documents7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Mandatory-Documents8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('Get-Mandatory-Documents9')">500</a>
+                                                </div>
+                                                <pre class="response-box">
+        
+                        <code id="Get-Mandatory-Documents" style=" display: block; " class="text">
+        {
+            "header": {
+                "statusCode": "I000000",
+                "requestID": "228eae76-cdc0-4aa2-862d-d26160a8d3e5",
+                "statusDescription": "Successful Operation"
+            },
+            "body": {
+                "mandatoryDocumentsList": [
+                    {
+                        "mandatory": "Y",
+                        "documentCode": "37",
+                        "documentDescription": "Updated Salary Certificate"
+                    },
+                    {
+                        "mandatory": "Y",
+                        "documentCode": "7",
+                        "documentDescription": "Updated Salary transfer"
+                    },
+                    {
+                        "mandatory": "N",
+                        "documentCode": "OTHERS",
+                        "documentDescription": "Others"
+                    }
+                ]
+            }
+        }
+                                 </code>
+                      
+        
+                            
+                          <code id="Get-Mandatory-Documents3" style=" display: none; " class="text">
+             {
+            "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+            }  
+                       </code>	
+            
+                       <code id="Get-Mandatory-Documents4" style=" display: none; " class="text">
+            {
+            "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+            }    
+                   </code>
+            
+                       <code id="Get-Mandatory-Documents5" style=" display: none; " class="text">
+            {
+            "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+            }     
+                      </code>
+            
+                       <code id="Get-Mandatory-Documents6" style=" display: none; "class="text">
+            {
+            "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+            }
+                
+                      </code>
+              
+                        <code id="Get-Mandatory-Documents7" style=" display: none; "class="text">
+            {
+            "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+            }       
+                        </code>
+            
+                               <code id="Get-Mandatory-Documents8" style=" display: none; " class="text">
+            {
+              "errors": [
+             {
+             "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+             "url": "https://{baseURL}/developer-portal/terms"
+             }
+             ]
+             }     
+                              </code>
+            
+                                <code id="Get-Mandatory-Documents9" style=" display: none; " class="text">
+                {
+              "errors": [
+              {
+               "code": "ERROR.500.001",
+               "message": "Internal Error",
+               "url": "https://{baseURL}/developer-portal/terms"
+               }
+               ]
+              }     
+                             </code>
+                          </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+        
+                                    <h1 class="fob-welcome-title" id="section-6">Issue Credit Card</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <p class="fob-welcome-text">Endpoint: /credit-cards-issuing/1.0.0</br></p>
+                                    <p class="fob-welcome-text"><a
+                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1105/api/991#/IssueCreditCard_100/operation/%2Fcards/post">Swagger
+                                            Link</a></p>
+                                    <p class="fob-welcome-text">This path is used to create request of
+                                        prepaid credit card.</br></p>
+        
+                                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+        
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <h1 class="fob-welcome-title">Request Example</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <pre class="example_97 api-guides-example-fob ">
+                                            <code class="sample-code">
+        Headers
+        {
+        Accept-Language:”en”
+        }
+        Request Body
+        {
+            "IDType": "01",
+            "IDNumber": "1083308922",
+            "cardSegment": "Fursan",
+            "cardEmbossingName": "NISHTHA",
+            "cardProduct": "CLQ",
+            "customerSegment": "001",
+            "firstName": "AHMED",
+            "familyName": "GOMAA",
+            "cardIssueReason": "New",
+            "cardLinkedAccountBranch": "20400",
+            "cardLinkedAccountType": "001",
+            "cardLinkedAccountNumber": "0006084545655",
+            "cardMembershipID": "1",
+            "cardMembershipContact": "01200123123",
+            "deliveryAddress1": "AL RIYADH",
+            "deliveryAddress2": "AL RIYADH",
+            "deliveryAddress3": "AL RIYADH",
+            "deliveryAddress4": "AL RIYADH",
+            "deliveryAddressCity": "AL RIYADH",
+            "deliveryAddressProvince": "East Province",
+            "deliveryAddressDistrict": "East District",
+            "deliveryAddressPostalCode": "11113",
+            "deliveryAddressCountryCode": "608",
+            "deliveryAddressLatitude": "31.23",
+            "deliveryAddressLongitude": "30.22",
+            "cardRequestorEmployeeCIC": "0000000009013370",
+            "cardRequestorEmployeeID": "12345",
+            "cardRequestorDocumentID": "01",
+            "cardRequestorDocumentCode": "1083308922",
+            "cardRequestorFirstNameEnglish": "Ahmed",
+            "cardRequestorLastNameEnglish": "Gomaa",
+            "cardRequestorEmbossingName": "Embossing Name",
+            "cardRequestorNationality": "KSA",
+            "cardRequestorCity": "Riyadh",
+            "cardRequestorStreetName": "Ahmed Shawki st.",
+            "cardRequestorStreetNumber": "570",
+            "cardRequestorUnitNumber": "110",
+            "cardRequestorCountryCode": "KSA",
+            "cardRequestorRegion": "East Region",
+            "cardRequestorPostalCode": "25925",
+            "cardRequestorAdditionalCode": "1234567890",
+            "cardRequestorEmail": "cardRequestorEMail@ejada.com",
+            "cardRequestorMobileNumber": "01001234567",
+            "cardRequestorPosition": "User Position",
+            "cardRequestorEmploymentDate": "2014-10-30",
+            "cardRequestorCivilStatus": "M",
+            "cardRequestorGender": "M",
+            "cardRequestorBirthDate": "2014-10-30",
+            "cardRequestorContactMode": "01",
+            "cardRequestorHouseOwnerID": "01",
+            "cardRequestorFamilySize": 2,
+            "cardRequestorNumberOfCars": 2,
+            "skipOwnerVerficationFlag": "Y",
+            "cardDesignPreference": "1",
+            "deliveryFlag": "D",
+            "rolloutFlag": "Y"
+        }                                                              
+                                            </code>
+                                          </pre>
+                                            </div>
+                                            <div class="col-lg-4 mt-25">
+                                                <!-- <div class="code-box"> -->
+        
+                                                <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                    onclick="show('Issue-Credit-Card-curl')">
+                                                    <p class="curlText">cURL</p>
+                                                </button>
+        
+                                                <pre id="generatedCurl">
+                                              <code id="Issue-Credit-Card-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/credit-cards-issuing/1.0.0/cards' \
+        --header 'Accept: application/json' \
+        --header 'Accept-Language: en' \
+        --header 'Content-Type: application/json' \
+        --data '{
+        "cardSegment": "Charge",
+        "cardEmbossingName": "SURYA P JAKIN",
+        "cardLinkedAccountBranch": "20400",
+        "cardLinkedAccountType": "001",
+        "cardLinkedAccountNumber": "0006085202561",
+        "CIC": "0000000125120671",
+        "userID": "ARGx",
+        "IDType": "01",
+        "IDNumber": "1200533840",
+        "cardProduct": "PLT",
+        "customerSegment": "001",
+        "firstName": "SURYA",
+        "familyName": "JAKIN",
+        "cardIssueReason": "New",
+        "deliveryAddress1": "AL RIYADH",
+        "deliveryAddress2": "AL RIYADH",
+        "deliveryAddress3": "AL RIYADH",
+        "deliveryAddress4": "AL RIYADH",
+        "deliveryAddressCity": "AL RIYADH",
+        "deliveryAddressDistrict": "al riyadh",
+        "deliveryAddressPostalCode": "11111",
+        "deliveryAddressCountryCode": "608",
+        "cardRequestorEmploymentDate": "2023-06-02",
+        "cardRequestorEmployerID": 1001,
+        "cardRequestorDepartmentID": 33,
+        "cardRequestorMilitaryRankID": "102",
+        "cardRequestorSalaryAmountValue": "1200000",
+        "cardRequestorSalaryAmountCurrency": "608",
+        "cardRequestorEmployerSubID": "33",
+        "cardRequestorMilitaryNum": "102",
+        "cardRequestorRequestedFinancingAmountValue": "98000",
+        "cardRequestorRequestedFinancingAmountCurrency": "608",
+        "rolloutFlag": "Y"
+        }                                           
+                                              </code>
+                                            </pre>
+                                            </div>
+                                        </div>
+        
+        
+        
+        
+        
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <div class="code-box">
+                                                    <p
+                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+        
+        
+                                                    <div class="response-box-div">
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('Issue-Credit-Card')">200</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('Issue-Credit-Card3')">401</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('Issue-Credit-Card4')">403</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('Issue-Credit-Card5')">404</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('Issue-Credit-Card6')">405</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('Issue-Credit-Card7')">406</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('Issue-Credit-Card8')">429</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('Issue-Credit-Card9')">500</a>
+                                                    </div>
+                                                    <pre class="response-box">
+        
+                            <code id="Issue-Credit-Card" style=" display: block; " class="text">
+        {
+            "header": {
+                "statusCode": "I000000",
+                "requestID": "f0d12aab-65fb-4cf2-a0fd-c9bc2684caa5",
+                "statusDescription": "Success"
+            },
+            "body": {
+                "acceptableRequest": "Y",
+                "cardOrderID": "8800000061727"
+            }
+        }
+                                     </code>
+                          
+            
+                                
+                              <code id="Issue-Credit-Card3" style=" display: none; " class="text">
+                 {
+                "errors": [
+                {
+                "code": "ERROR.401.001",
+                "message": "Unauthorized to call the target operation.",
+                "path": "authorization",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+                }  
+                           </code>	
+                
+                           <code id="Issue-Credit-Card4" style=" display: none; " class="text">
+                {
+                "errors": [
+                {
+                "code": "ERROR.403.001",
+                "message": "Can't find any valid subscription.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+                }    
+                       </code>
+                
+                           <code id="Issue-Credit-Card5" style=" display: none; " class="text">
+                {
+                "errors": [
+                {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+                }     
+                          </code>
+                
+                           <code id="Issue-Credit-Card6" style=" display: none; "class="text">
+                {
+                "errors": [
+                {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+                }
+                    
+                          </code>
+                  
+                            <code id="Issue-Credit-Card7" style=" display: none; "class="text">
+                {
+                "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+                ]
+                }       
+                            </code>
+                
+                                   <code id="Issue-Credit-Card8" style=" display: none; " class="text">
+                {
+                  "errors": [
+                 {
+                 "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                 "url": "https://{baseURL}/developer-portal/terms"
+                 }
+                 ]
+                 }     
+                                  </code>
+                
+                                    <code id="Issue-Credit-Card9" style=" display: none; " class="text">
+                    {
+                  "errors": [
+                  {
+                   "code": "ERROR.500.001",
+                   "message": "Internal Error",
+                   "url": "https://{baseURL}/developer-portal/terms"
+                   }
+                   ]
+                  }     
+                                 </code>
+                              </pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

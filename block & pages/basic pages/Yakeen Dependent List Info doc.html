@@ -1,0 +1,313 @@
+<div id="search-term-result">
+    <p>Yakeen Dependent List Info</p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Yakeen API
+            Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                            onclick="show('expand2')">Yakeen</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Yakeen Dependent List Info</a>
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Yakeen Dependent List Info </p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">The Yakeen Dependent List Info displays the list of customer dependents' information by entering the user's inquiry key and the dependent's ID, showing their shared relationship and details.
+                            </br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxYakeenDependentListInfoAPI.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/YakeenDependentListInfoSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+    
+                        <h1 class="fob-welcome-title">Yakeen Dependent List Info Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                    
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/YakeenDependentListInfoFlowDiagramv0.1.pdf"
+                            download="">Download Yakeen Dependent List Info Workflow</a></p>
+                        
+                        </div>
+    
+                        <h1 class="fob-welcome-title" id="section-2">List Customer Dependent Info</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /mp-yakeen-customers/v1/dependent-information{DependentId}</br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/91/api/20#/YakeenPersonInformation_100/operation/%2Farb%2Fpersons%2F{poiNumber}/get">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">The endpoint is used to return the dependent information of the customer.
+                            </br></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    Query Params:
+    inquiryType:AlienDependentInfoByIqama
+    inquiryKey:2200326351
+    
+    Path Variables:
+    DependentId:2045395892
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('yakeen-inf')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="yakeen-inf" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-yakeen-customers/v1/dependent-information/2045395892?inquiryType=AlienDependentInfoByIqama&inquiryKey=2200326351' \
+    --header 'x-request-id: eff32975-c288-44b8-b3b4-bf08a8167649' \
+    --header 'Accept: application/json' \
+    --header 'Accept-Language: ar' \
+    --header 'Authorization: ••••••' 
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info9')">500</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-info10')">503</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                          <code id="response-info" style=" display: block; " class="text">
+    {
+        "Data": {
+            "InquiryKey": "2200326351",
+            "CitizenDependentInfoList": [
+                {
+                    "HijriBirthDate": "1416-06-21",
+                    "GregBirthDate": "1995-11-14",
+                    "Gender": "2",
+                    "DependentId": "2045395891",
+                    "FirstNameEn": "SAMA",
+                    "LastNameEn": "PATIL",
+                    "SecondNameEn": "NIHIT",
+                    "ThirdNameEn": "RAM",
+                    "LastNameAr": "حسين",
+                    "SecondNameAr": "احمد",
+                    "FirstNameAr": "سما",
+                    "ThirdNameAr": "سامى",
+                    "RelationshipDescription": "3"
+                },
+                {
+                    "HijriBirthDate": "1436-03-10",
+                    "GregBirthDate": "2015-01-01",
+                    "Gender": "1",
+                    "DependentId": "2045395892",
+                    "FirstNameEn": "PESHA",
+                    "LastNameEn": "PATIL",
+                    "SecondNameEn": "NIHIT",
+                    "ThirdNameEn": "RAM",
+                    "LastNameAr": "حسين",
+                    "SecondNameAr": "احمد",
+                    "FirstNameAr": "بيشا",
+                    "ThirdNameAr": "سامى",
+                    "RelationshipDescription": "1"
+                },
+                {
+                    "HijriBirthDate": "1436-05-15",
+                    "GregBirthDate": "2015-03-06",
+                    "Gender": "2",
+                    "DependentId": "2045395893",
+                    "FirstNameEn": "ASM",
+                    "LastNameEn": "PATIL",
+                    "SecondNameEn": "NIHIT",
+                    "ThirdNameEn": "RAM",
+                    "LastNameAr": "حسين",
+                    "SecondNameAr": "احمد",
+                    "FirstNameAr": "عاصم",
+                    "ThirdNameAr": "سامى",
+                    "RelationshipDescription": "2"
+                }
+            ]
+        }
+    }
+                        
+                          </code>
+                          <code id="response-info2" style=" display: none; " class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }
+                                              </code>	                      
+                          <code id="response-info3" style=" display: none; " class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    } 
+                          </code>	
+                        
+                          <code id="response-info4" style=" display: none; " class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }
+                          </code>
+                        
+                          <code id="response-info5" style=" display: none; " class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.404.001",
+        "Message": "No resources match requested URI.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }
+                          </code>
+                        
+                          <code id="response-info6" style=" display: none; "class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }
+                                
+                          </code>
+                        
+                          <code id="response-info7" style=" display: none; "class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.406.001",
+        "Message": "An appropriate representation of the requested resource could not be found",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }      
+                          </code>
+                        
+                          <code id="response-info8" style=" display: none; " class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    } 
+                          </code>
+                        
+                          <code id="response-info9" style=" display: none; " class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }
+                          </code>
+                          <code id="response-info10" style=" display: none; " class="text">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.503.001",
+        "Message": "Service Unavailable.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }
+                                                  </code>
+                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

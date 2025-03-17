@@ -1,0 +1,3111 @@
+{
+	"info": {
+		"_postman_id": "660feb7e-807c-468e-b2b9-945c16ccbd05",
+		"name": "Gold Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29982339"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Access Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Cookie",
+								"value": "cookiesession1=678A8C3997F36E43064F1EBED59975E1"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/oauth2security/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gold Wallet",
+			"item": [
+				{
+					"name": "Create Customer Paper Gold Wallet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"CIC\": \"1900000000000618\",\r\n  \"defaultAccountBranch\": \"35500\",\r\n  \"defaultAccountType\": \"001\",\r\n  \"defaultAccountNumber\": \"0006086017863\",\r\n  \"feesAccountBranch\": \"35200\",\r\n  \"feesAccountType\": \"001\",\r\n  \"feesAccountNumber\": \"0006086012567\",\r\n  \"commodityType\": \"1\",\r\n  \"comment\": \"CustomerID=0000000013026500,Channel=MOBILEWEB\",\r\n  \"VATPercentage\": \"1.0\",\r\n  \"defaultIBAN\": \"SA7880000382608016017556\",\r\n  \"feesIBAN\": \"SA7880000382608016017556\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/customers/gold-wallet/v1/create",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"customers",
+								"gold-wallet",
+								"v1",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Customer Paper Gold Wallet",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CIC\": \"1900000000000618\",\r\n  \"defaultAccountBranch\": \"35500\",\r\n  \"defaultAccountType\": \"001\",\r\n  \"defaultAccountNumber\": \"0006086017863\",\r\n  \"feesAccountBranch\": \"35200\",\r\n  \"feesAccountType\": \"001\",\r\n  \"feesAccountNumber\": \"0006086012567\",\r\n  \"commodityType\": \"1\",\r\n  \"comment\": \"CustomerID=0000000013026500,Channel=MOBILEWEB\",\r\n  \"VATPercentage\": \"1.0\",\r\n  \"defaultIBAN\": \"SA7880000382608016017556\",\r\n  \"feesIBAN\": \"SA7880000382608016017556\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/gold-wallet/v1/create",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"gold-wallet",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1e0f8920-b8ba-463a-80ee-79aa154a1ac7"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b50834016bdfb2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,86;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 18:02:28 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"7d50c51e-5b94-4ce8-a188-476515afa2c1\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"walletNumber\": \"GL000000996226\"\n    }\n}"
+						},
+						{
+							"name": "Create Customer Paper Gold Wallet",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CIC\": \"1900000000000055\",\r\n  \"defaultAccountBranch\": \"35500\",\r\n  \"defaultAccountType\": \"001\",\r\n  \"defaultAccountNumber\": \"0006086017863\",\r\n  \"feesAccountBranch\": \"35200\",\r\n  \"feesAccountType\": \"001\",\r\n  \"feesAccountNumber\": \"0006086012567\",\r\n  \"commodityType\": \"1\",\r\n  \"comment\": \"CustomerID=0000000013026500,Channel=MOBILEWEB\",\r\n  \"VATPercentage\": \"1.0\",\r\n  \"defaultIBAN\": \"SA7880000382608016017556\",\r\n  \"feesIBAN\": \"SA7880000382608016017556\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/gold-wallet/v1/create",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"gold-wallet",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2c4e08ca-f7fe-4d93-98bd-8f97b35058ac"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b5083c00956710"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,85;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 18:02:36 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"bddf817e-f0d5-4519-a74b-18d11f8c2e1e\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"walletNumber\": \"GL000000996217\"\n    }\n}"
+						},
+						{
+							"name": "Create Customer Paper Gold Wallet",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CIC\": \"1900000000000018\",\r\n  \"defaultAccountBranch\": \"35500\",\r\n  \"defaultAccountType\": \"001\",\r\n  \"defaultAccountNumber\": \"0006086017863\",\r\n  \"feesAccountBranch\": \"35200\",\r\n  \"feesAccountType\": \"001\",\r\n  \"feesAccountNumber\": \"0006086012567\",\r\n  \"commodityType\": \"1\",\r\n  \"comment\": \"CustomerID=0000000013026500,Channel=MOBILEWEB\",\r\n  \"VATPercentage\": \"1.0\",\r\n  \"defaultIBAN\": \"SA7880000382608016017556\",\r\n  \"feesIBAN\": \"SA7880000382608016017556\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/gold-wallet/v1/create",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"gold-wallet",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "30150756-b402-495f-936f-b054e17ea63f"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b5084500956720"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,84;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 18:02:45 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"ba8d051b-1959-4542-ad91-dc882b314a45\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"walletNumber\": \"GL000000996216\"\n    }\n}"
+						},
+						{
+							"name": "Create Customer Paper Gold Wallet",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CIC\": \"0000000009013370\",\r\n  \"defaultAccountBranch\": \"35500\",\r\n  \"defaultAccountType\": \"001\",\r\n  \"defaultAccountNumber\": \"0006086017863\",\r\n  \"feesAccountBranch\": \"35200\",\r\n  \"feesAccountType\": \"001\",\r\n  \"feesAccountNumber\": \"0006086012567\",\r\n  \"commodityType\": \"1\",\r\n  \"comment\": \"CustomerID=0000000013026500,Channel=MOBILEWEB\",\r\n  \"VATPercentage\": \"1.0\",\r\n  \"defaultIBAN\": \"SA7880000382608016017556\",\r\n  \"feesIBAN\": \"SA7880000382608016017556\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/gold-wallet/v1/create",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"gold-wallet",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2d9f1d9f-2174-49d0-a903-bd8cae65d35c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b5084e00956730"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,83;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 18:02:54 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"E000007\",\n        \"requestID\": \"73d6034e-8bfd-4f2a-a4cc-70075dc302f3\",\n        \"statusDescription\": \"CIC is associated to another wallet\"\n    }\n}"
+						},
+						{
+							"name": "Create Customer Paper Gold Wallet",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"CIC\": \"000000000000null\",\r\n  \"defaultAccountBranch\": \"35500\",\r\n  \"defaultAccountType\": \"001\",\r\n  \"defaultAccountNumber\": \"0006086017863\",\r\n  \"feesAccountBranch\": \"35200\",\r\n  \"feesAccountType\": \"001\",\r\n  \"feesAccountNumber\": \"0006086012567\",\r\n  \"commodityType\": \"1\",\r\n  \"comment\": \"CustomerID=0000000013026500,Channel=MOBILEWEB\",\r\n  \"VATPercentage\": \"1.0\",\r\n  \"defaultIBAN\": \"SA7880000382608016017556\",\r\n  \"feesIBAN\": \"SA7880000382608016017556\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/gold-wallet/v1/create",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"gold-wallet",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "a230a7c3-5e97-4deb-84b9-ab893347f790"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b5085b0068a511"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,82;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 18:03:07 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"E000002\",\n        \"requestID\": \"9316003b-4cff-437e-8b1d-64b8fcb7997a\",\n        \"statusDescription\": \"Invalid CIC no\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Indicative Rate Inquiry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CIC\": \"0000000003048480\",\n  \"transactionKey\": \"0eb6fcea-0165-482b-94ba-84d0cce31a0d\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"SAR\",\n  \"sellCurrency\": \"SAR\",\n  \"dealtCurrency\": \"SAR\",\n  \"dealtQuantity\": \"25\",\n  \"valueDate\": \"2022-10-12\",\n  \"buyValueDate\": \"2022-10-12\",\n  \"sellValueDate\": \"2022-10-12\",\n  \"rateType\": \"Buy\",\n  \"supplier\": \"AlRajhi\",\n  \"weight\": \"225.2\",\n  \"productType\": \"Gold\",\n  \"measureUnit\": \"Kg\",\n  \"attributeOne\": \"Indicative_Rate\",\n  \"attributeTwo\": \"Indicative_Rate\",\n  \"comment\": \"CustomerSegment=Mass,TransactionType=,Entity=KSA,Requester=MubasherDesktop-Mass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/pricing/transfer-fees/inquiry-requests/v1/submit",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"pricing",
+								"transfer-fees",
+								"inquiry-requests",
+								"v1",
+								"submit"
+							]
+						},
+						"description": "This path is used to indicative rate inquiry."
+					},
+					"response": [
+						{
+							"name": "Indicative Rate Inquiry",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CIC\": \"0000000003048480\",\n  \"transactionKey\": \"0eb6fcea-0165-482b-94ba-84d0cce31a0d\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"SAR\",\n  \"sellCurrency\": \"SAR\",\n  \"dealtCurrency\": \"SAR\",\n  \"dealtQuantity\": \"25\",\n  \"valueDate\": \"2022-10-12\",\n  \"buyValueDate\": \"2022-10-12\",\n  \"sellValueDate\": \"2022-10-12\",\n  \"rateType\": \"Buy\",\n  \"supplier\": \"AlRajhi\",\n  \"weight\": \"225.2\",\n  \"productType\": \"Gold\",\n  \"measureUnit\": \"Kg\",\n  \"attributeOne\": \"Indicative_Rate\",\n  \"attributeTwo\": \"Indicative_Rate\",\n  \"comment\": \"CustomerSegment=Mass,TransactionType=,Entity=KSA,Requester=MubasherDesktop-Mass\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/pricing/transfer-fees/inquiry-requests/v1/submit",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"pricing",
+										"transfer-fees",
+										"inquiry-requests",
+										"v1",
+										"submit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "58f2380a66b5371a00005731"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:22:35 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "17f35bd3-bea9-4d0c-a771-498aef7d85c6"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"6b505ab9-90c4-4aa5-b767-903f48692337\",\n        \"statusDescription\": \"Successful Transaction\"\n    },\n    \"body\": {\n        \"transactionKey\": \"0eb6fcea-0165-482b-94ba-84d0cce31a0d\",\n        \"requester\": \"MubasherMobile-Mass\",\n        \"customerID\": \"0000000003048480\",\n        \"buyCurrency\": \"XA0\",\n        \"sellCurrency\": \"SAR\",\n        \"dealtCurrency\": \"XA0\",\n        \"dealtQuantity\": \"25\",\n        \"dealtAmount\": \"25\",\n        \"contraAmount\": \"6740.43\",\n        \"valueDate\": \"2024-05-29\",\n        \"buyValueDate\": \"2024-05-29\",\n        \"sellValueDate\": \"2024-05-29\",\n        \"valueDateChanged\": \"false\",\n        \"coverRate\": \"267.4814036781600\",\n        \"margin\": \"2.1357963218400\",\n        \"clientRate\": \"269.6172000000\",\n        \"timeToLive\": \"60\",\n        \"GIDID\": \"6067930\",\n        \"comment\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000003048480,TerminalID=RAJHIA1L018001A5,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=25\"\n    }\n}"
+						},
+						{
+							"name": "Indicative Rate Inquiry",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CIC\": \"0000000003048480\",\n  \"transactionKey\": \"0eb6fcea-0165-482b-94ba-84d0cce31a0c\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"SAR\",\n  \"sellCurrency\": \"SAR\",\n  \"dealtCurrency\": \"SAR\",\n  \"dealtQuantity\": \"25\",\n  \"valueDate\": \"2022-10-12\",\n  \"buyValueDate\": \"2022-10-12\",\n  \"sellValueDate\": \"2022-10-12\",\n  \"rateType\": \"Buy\",\n  \"supplier\": \"AlRajhi\",\n  \"weight\": \"225.2\",\n  \"productType\": \"Gold\",\n  \"measureUnit\": \"Kg\",\n  \"attributeOne\": \"Indicative_Rate\",\n  \"attributeTwo\": \"Indicative_Rate\",\n  \"comment\": \"CustomerSegment=Mass,TransactionType=,Entity=KSA,Requester=MubasherDesktop-Mass\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/pricing/transfer-fees/inquiry-requests/v1/submit",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"pricing",
+										"transfer-fees",
+										"inquiry-requests",
+										"v1",
+										"submit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "04ee24c766b53730000082c0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:22:57 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "31d24c19-16b8-4195-b2c8-76bf0566477d"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"e9f4946d-0da7-4291-af39-d546840e4b65\",\n        \"statusDescription\": \"Successful Transaction\"\n    },\n    \"body\": {\n        \"transactionKey\": \"0eb6fcea-0165-482b-94ba-84d0cce31a0c\",\n        \"requester\": \"MubasherMobile-Mass\",\n        \"customerID\": \"0000000003048480\",\n        \"buyCurrency\": \"XA0\",\n        \"sellCurrency\": \"SAR\",\n        \"dealtCurrency\": \"XA0\",\n        \"dealtQuantity\": \"25\",\n        \"dealtAmount\": \"25\",\n        \"contraAmount\": \"6749.97\",\n        \"valueDate\": \"2024-05-29\",\n        \"buyValueDate\": \"2024-05-29\",\n        \"sellValueDate\": \"2024-05-29\",\n        \"valueDateChanged\": \"false\",\n        \"coverRate\": \"267.8599502359200\",\n        \"margin\": \"2.1388497640800\",\n        \"clientRate\": \"269.9988000000\",\n        \"timeToLive\": \"60\",\n        \"GIDID\": \"6067910\",\n        \"comment\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000003048480,TerminalID=RAJHIA1L018001A5,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=25\"\n    }\n}"
+						},
+						{
+							"name": "Indicative Rate Inquiry",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CIC\": \"0000000125105232\",\n  \"transactionKey\": \"1694eed2-40bf-40d0-9ed8-b31f2609adeb\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"SAR\",\n  \"sellCurrency\": \"SAR\",\n  \"dealtCurrency\": \"SAR\",\n  \"dealtQuantity\": \"25\",\n  \"valueDate\": \"2022-10-12\",\n  \"buyValueDate\": \"2022-10-12\",\n  \"sellValueDate\": \"2022-10-12\",\n  \"rateType\": \"Buy\",\n  \"supplier\": \"AlRajhi\",\n  \"weight\": \"225.2\",\n  \"productType\": \"Gold\",\n  \"measureUnit\": \"Kg\",\n  \"attributeOne\": \"Indicative_Rate\",\n  \"attributeTwo\": \"Indicative_Rate\",\n  \"comment\": \"CustomerSegment=Mass,TransactionType=,Entity=KSA,Requester=MubasherDesktop-Mass\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/pricing/transfer-fees/inquiry-requests/v1/submit",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"pricing",
+										"transfer-fees",
+										"inquiry-requests",
+										"v1",
+										"submit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "58f2380a66b5374100007ab0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:23:13 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "7d99a73b-7f53-430c-a6e9-7302e0b851e3"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"9e92e8af-af0d-4453-b797-b4a5769aabf4\",\n        \"statusDescription\": \"Successful Transaction\"\n    },\n    \"body\": {\n        \"transactionKey\": \"1694eed2-40bf-40d0-9ed8-b31f2609adeb\",\n        \"requester\": \"XAU-Indicative\",\n        \"customerID\": \"0000000125105232\",\n        \"buyCurrency\": \"SAR\",\n        \"sellCurrency\": \"XA1\",\n        \"dealtCurrency\": \"XA1\",\n        \"dealtQuantity\": \"1\",\n        \"dealtAmount\": \"5\",\n        \"contraAmount\": \"1238.69\",\n        \"valueDate\": \"2024-02-25\",\n        \"buyValueDate\": \"2024-02-25\",\n        \"sellValueDate\": \"2024-02-25\",\n        \"valueDateChanged\": \"false\",\n        \"coverRate\": \"243.41\",\n        \"margin\": \"1.48640650128000000\",\n        \"clientRate\": \"247.74\",\n        \"timeToLive\": \"180\",\n        \"GIDID\": \"1\",\n        \"comment\": \"CustomerSegment=ARBCustomer,TransactionType=,Entity=KSA,Requester=XAU-Indicative,CustomerID=0000000125105232,TerminalID=,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Customer Paper Gold Wallet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet?CIC=0000000000012012",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"customers",
+								"v1",
+								"gold-wallet"
+							],
+							"query": [
+								{
+									"key": "CIC",
+									"value": "0000000000012012",
+									"description": "(Required) CIC Number."
+								}
+							]
+						},
+						"description": "This path is used to list customer paper gold wallet ."
+					},
+					"response": [
+						{
+							"name": "List Customer Paper Gold Wallet",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet?CIC=0000000000012012",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"v1",
+										"gold-wallet"
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000000012012",
+											"description": "(Required) CIC Number."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "cbb413f9-3b3b-40d9-bf34-5dcd4d6df431"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b538e801341032"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,91;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:30:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"67295b36-6d0c-4f29-871b-cbe5c2252d91\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"customerPaperGoldWalletsList\": [\n            {\n                \"walletNumber\": \"GL000000996192\",\n                \"status\": \"1\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Customer Paper Gold Wallet",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet?CIC=0000000003049299",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"v1",
+										"gold-wallet"
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000003049299",
+											"description": "(Required) CIC Number."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d423cb47-1d8a-4733-b6f7-27cd5462e6c8"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b538f801341042"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,90;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:30:32 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"cdf5548b-5369-4629-8f5a-7bb7efae15ed\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"customerPaperGoldWalletsList\": [\n            {\n                \"walletNumber\": \"GL000000996124\",\n                \"status\": \"1\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Customer Paper Gold Wallet",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet?CIC=0000000003070558",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"v1",
+										"gold-wallet"
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000003070558",
+											"description": "(Required) CIC Number."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b215bb4c-3f9d-4c14-8dc6-734480939b21"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b5390301341052"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,89;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:30:43 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"0a0836e2-61e4-4eeb-a3d9-c0c1e4e803e0\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"customerPaperGoldWalletsList\": [\n            {\n                \"walletNumber\": \"GL000000996193\",\n                \"status\": \"1\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Customer Paper Gold Wallet Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet-details?CIC=0000000125105232&walletNumber=GL000000996154&statusID=2&maximumRecords=5&offset=1",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"customers",
+								"v1",
+								"gold-wallet-details"
+							],
+							"query": [
+								{
+									"key": "CIC",
+									"value": "0000000125105232",
+									"description": "(Required) CIC Number."
+								},
+								{
+									"key": "walletNumber",
+									"value": "GL000000996154",
+									"description": "(Required) Wallet Number."
+								},
+								{
+									"key": "statusID",
+									"value": "2",
+									"description": "(Required) Status ID.\nAllowed Values:\n  1: Pending\n  2: Both\n  3: Confirmed"
+								},
+								{
+									"key": "maximumRecords",
+									"value": "5",
+									"description": "(Required) Maximum Records."
+								},
+								{
+									"key": "offset",
+									"value": "1",
+									"description": "(Required) Offset."
+								}
+							]
+						},
+						"description": "This path is used to get customer paper gold wallet details."
+					},
+					"response": [
+						{
+							"name": "Get Customer Paper Gold Wallet Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet-details?CIC=0000000125105232&walletNumber=GL000000996154&statusID=2&maximumRecords=5&offset=1",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"v1",
+										"gold-wallet-details"
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000125105232",
+											"description": "(Required) CIC Number."
+										},
+										{
+											"key": "walletNumber",
+											"value": "GL000000996154",
+											"description": "(Required) Wallet Number."
+										},
+										{
+											"key": "statusID",
+											"value": "2",
+											"description": "(Required) Status ID.\nAllowed Values:\n  1: Pending\n  2: Both\n  3: Confirmed"
+										},
+										{
+											"key": "maximumRecords",
+											"value": "5",
+											"description": "(Required) Maximum Records."
+										},
+										{
+											"key": "offset",
+											"value": "1",
+											"description": "(Required) Offset."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "a716353b-6cd3-443c-bfe5-be17fc8a4406"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b5357500a38630"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:15:33 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"a26249a1-dc24-4eb4-8d2c-490ecdde2a3d\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"walletNumber\": \"GL000000996154\",\n        \"status\": \"1\",\n        \"commodityType\": \"1\",\n        \"defaultAccountNumber\": \"204000010006085072238\",\n        \"defaultIBAN\": \"SA7780000204608015072238\",\n        \"feesAccountNumber\": \"204000010006085072238\",\n        \"feesIBAN\": \"SA7780000204608015072238\",\n        \"totalAmount\": \"151388.33\",\n        \"totalWeight\": \"20\",\n        \"weightType\": \"Free\",\n        \"totalFreeWeight\": \"20\",\n        \"totalFixedWeight\": \"0\",\n        \"walletDetailsList\": [\n            {\n                \"serialNumber\": \"D326809\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"4\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"ARB_FINTECH\",\n                \"transactionDate\": \"2024-07-16\",\n                \"amount\": \"1072.624\",\n                \"rate\": \"268.156\",\n                \"ETID\": \"6073236\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Canceled\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"SA9080000500608011416018\",\n                \"IBAN\": \"SA9080000500608011416018\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D326796\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"1\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"ARB_FINTECH\",\n                \"transactionDate\": \"2024-07-16\",\n                \"amount\": \"268.156\",\n                \"rate\": \"268.156\",\n                \"ETID\": \"6073236\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Canceled\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"SA9080000500608011416018\",\n                \"IBAN\": \"SA9080000500608011416018\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D367693\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"1\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"ARB_FINTECH\",\n                \"transactionDate\": \"2024-06-11\",\n                \"amount\": \"266.608\",\n                \"rate\": \"266.608\",\n                \"ETID\": \"6069534\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Canceled\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"SA9080000500608011416018\",\n                \"IBAN\": \"SA9080000500608011416018\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D326809\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"4\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"ARB_FINTECH\",\n                \"transactionDate\": \"2024-06-11\",\n                \"amount\": \"1066.432\",\n                \"rate\": \"266.608\",\n                \"ETID\": \"6069534\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Canceled\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"SA9080000500608011416018\",\n                \"IBAN\": \"SA9080000500608011416018\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D385545\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"10\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-05-28\",\n                \"amount\": \"2818.14\",\n                \"rate\": \"281.814\",\n                \"ETID\": \"6067828\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Sell\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            }\n        ],\n        \"sentRecords\": 63,\n        \"matchedRecords\": 5,\n        \"completedFlag\": \"N\"\n    }\n}"
+						},
+						{
+							"name": "Get Customer Paper Gold Wallet Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet-details?CIC=0000000125105232&walletNumber=GL000000996154&statusID=3&maximumRecords=10&offset=1",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"v1",
+										"gold-wallet-details"
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000125105232",
+											"description": "(Required) CIC Number."
+										},
+										{
+											"key": "walletNumber",
+											"value": "GL000000996154",
+											"description": "(Required) Wallet Number."
+										},
+										{
+											"key": "statusID",
+											"value": "3",
+											"description": "(Required) Status ID.\nAllowed Values:\n  1: Pending\n  2: Both\n  3: Confirmed"
+										},
+										{
+											"key": "maximumRecords",
+											"value": "10",
+											"description": "(Required) Maximum Records."
+										},
+										{
+											"key": "offset",
+											"value": "1",
+											"description": "(Required) Offset."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d2d77571-2c3f-46e6-9be7-12972c0faf5d"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b5359a00a386b0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:16:10 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"f5c3c18f-fb57-4323-a400-398697dfdfa9\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"walletNumber\": \"GL000000996154\",\n        \"status\": \"1\",\n        \"commodityType\": \"1\",\n        \"defaultAccountNumber\": \"204000010006085072238\",\n        \"defaultIBAN\": \"SA7780000204608015072238\",\n        \"feesAccountNumber\": \"204000010006085072238\",\n        \"feesIBAN\": \"SA7780000204608015072238\",\n        \"totalAmount\": \"151388.33\",\n        \"totalWeight\": \"20\",\n        \"weightType\": \"Free\",\n        \"totalFreeWeight\": \"20\",\n        \"totalFixedWeight\": \"0\",\n        \"walletDetailsList\": [\n            {\n                \"serialNumber\": \"D385545\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"10\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-05-28\",\n                \"amount\": \"2818.14\",\n                \"rate\": \"281.814\",\n                \"ETID\": \"6067828\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Sell\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D385545\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"1\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-05-07\",\n                \"amount\": \"214.56\",\n                \"rate\": \"214.56\",\n                \"ETID\": \"6066650\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Sell\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D385545\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"11\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-24\",\n                \"amount\": \"2670.8200000000000000000000000\",\n                \"rate\": \"242.80181818\",\n                \"ETID\": \"6005798\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D358825\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"4\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-18\",\n                \"amount\": \"981.2872727272727272727272727\",\n                \"rate\": \"245.32181818\",\n                \"ETID\": \"6005271\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D358875\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"4\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-18\",\n                \"amount\": \"981.2872727272727272727272727\",\n                \"rate\": \"245.32181818\",\n                \"ETID\": \"6005271\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D257598\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"2\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-18\",\n                \"amount\": \"490.64363636363636363636363636\",\n                \"rate\": \"245.32181818\",\n                \"ETID\": \"6005271\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D361736\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"1\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-18\",\n                \"amount\": \"245.32181818181818181818181818\",\n                \"rate\": \"245.32181818\",\n                \"ETID\": \"6005271\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D257598\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"2\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-17\",\n                \"amount\": \"475.72\",\n                \"rate\": \"237.86\",\n                \"ETID\": \"6005024\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Sell\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D361736\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"1\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-17\",\n                \"amount\": \"237.86\",\n                \"rate\": \"237.86\",\n                \"ETID\": \"6005024\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Sell\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"C016124\",\n                \"fixedWeight\": \"500\",\n                \"weight\": \"3\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-15\",\n                \"amount\": \"745.47\",\n                \"rate\": \"248.49\",\n                \"ETID\": \"6004764\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Confirmed\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            }\n        ],\n        \"sentRecords\": 29,\n        \"matchedRecords\": 10,\n        \"completedFlag\": \"N\"\n    }\n}"
+						},
+						{
+							"name": "Get Customer Paper Gold Wallet Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet-details?CIC=0000000125105232&walletNumber=GL000000996154&statusID=4&maximumRecords=20&offset=1",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"v1",
+										"gold-wallet-details"
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000125105232",
+											"description": "(Required) CIC Number."
+										},
+										{
+											"key": "walletNumber",
+											"value": "GL000000996154",
+											"description": "(Required) Wallet Number."
+										},
+										{
+											"key": "statusID",
+											"value": "4",
+											"description": "(Required) Status ID.\nAllowed Values:\n  1: Pending\n  2: Both\n  3: Confirmed"
+										},
+										{
+											"key": "maximumRecords",
+											"value": "20",
+											"description": "(Required) Maximum Records."
+										},
+										{
+											"key": "offset",
+											"value": "1",
+											"description": "(Required) Offset."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d872df1f-eebf-4948-b873-4ce47dd2f75c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b535dc01340e82"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:17:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"0d454314-ef0a-4c17-850e-c11e46680fad\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"walletNumber\": \"GL000000996154\",\n        \"status\": \"1\",\n        \"commodityType\": \"1\",\n        \"defaultAccountNumber\": \"204000010006085072238\",\n        \"defaultIBAN\": \"SA7780000204608015072238\",\n        \"feesAccountNumber\": \"204000010006085072238\",\n        \"feesIBAN\": \"SA7780000204608015072238\",\n        \"totalAmount\": \"4865\",\n        \"totalWeight\": \"20\",\n        \"weightType\": \"Free\",\n        \"totalFreeWeight\": \"20\",\n        \"totalFixedWeight\": \"0\",\n        \"walletDetailsList\": [\n            {\n                \"serialNumber\": \"D257598\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"2\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-05-01\",\n                \"amount\": \"429.0600000000000000\",\n                \"rate\": \"214.53\",\n                \"ETID\": \"6065855\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Sell\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Valid For Trading\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D358825\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"4\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-18\",\n                \"amount\": \"981.2872727200000000\",\n                \"rate\": \"245.32181818\",\n                \"ETID\": \"6005271\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Valid For Trading\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D358875\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"4\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-18\",\n                \"amount\": \"981.2872727200000000\",\n                \"rate\": \"245.32181818\",\n                \"ETID\": \"6005271\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Valid For Trading\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D361736\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"2\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-18\",\n                \"amount\": \"490.6436363600000000\",\n                \"rate\": \"245.32181818\",\n                \"ETID\": \"6005271\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Valid For Trading\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"C016124\",\n                \"fixedWeight\": \"500\",\n                \"weight\": \"5\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-15\",\n                \"amount\": \"1242.4500000000000000\",\n                \"rate\": \"248.49\",\n                \"ETID\": \"6004764\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Valid For Trading\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            },\n            {\n                \"serialNumber\": \"D250739\",\n                \"fixedWeight\": \"1000\",\n                \"weight\": \"3\",\n                \"karat\": \"24\",\n                \"purity\": \"999.9\",\n                \"location\": \"Switzerland\",\n                \"channel\": \"MOBILEWEB\",\n                \"transactionDate\": \"2024-01-04\",\n                \"amount\": \"742.8699999900000000\",\n                \"rate\": \"247.62333333\",\n                \"ETID\": \"6003194\",\n                \"quantity\": \"1\",\n                \"transactionType\": \"Free\",\n                \"rateType\": \"Buy\",\n                \"vendorName\": \"MKS\",\n                \"goldSource\": \"Switzerland\",\n                \"transactionStatus\": \"Valid For Trading\",\n                \"currency\": \"XA0\",\n                \"accountNumber\": \"204000010006085072238\",\n                \"IBAN\": \"SA7780000204608015072238\",\n                \"feesAccountNumber\": \" \",\n                \"feesIBAN\": \" \",\n                \"safeKeeperName\": \"PAMP\"\n            }\n        ],\n        \"sentRecords\": 6,\n        \"matchedRecords\": 6,\n        \"completedFlag\": \"Y\"\n    }\n}"
+						},
+						{
+							"name": "Get Customer Paper Gold Wallet Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/customers/v1/gold-wallet-details?CIC=0000000125147233&walletNumber=string&statusID=4&maximumRecords=20&offset=1",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"customers",
+										"v1",
+										"gold-wallet-details"
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000125147233",
+											"description": "(Required) CIC Number."
+										},
+										{
+											"key": "walletNumber",
+											"value": "string",
+											"description": "(Required) Wallet Number."
+										},
+										{
+											"key": "statusID",
+											"value": "4",
+											"description": "(Required) Status ID.\nAllowed Values:\n  1: Pending\n  2: Both\n  3: Confirmed"
+										},
+										{
+											"key": "maximumRecords",
+											"value": "20",
+											"description": "(Required) Maximum Records."
+										},
+										{
+											"key": "offset",
+											"value": "1",
+											"description": "(Required) Offset."
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "af158b99-020a-4e91-b3f3-f8d48aeb723e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b5361901340eb2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:18:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"E000014\",\n        \"requestID\": \"69793668-cb6e-42d3-90d1-e1ff7a59e00a\",\n        \"statusDescription\": \"Invalid wallet Id\"\n    },\n    \"body\": {\n        \"completedFlag\": \"N\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Available Bullions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/pricing/bullions/v1/commdities/:commodityType/available-bullions?branchID=88542",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"pricing",
+								"bullions",
+								"v1",
+								"commdities",
+								":commodityType",
+								"available-bullions"
+							],
+							"query": [
+								{
+									"key": "branchID",
+									"value": "88542",
+									"description": "(Required) Branch ID."
+								}
+							],
+							"variable": [
+								{
+									"key": "commodityType",
+									"value": "1",
+									"description": "(Required) Commodity Type."
+								}
+							]
+						},
+						"description": "This path is used to list the available bullions for the digital channel."
+					},
+					"response": [
+						{
+							"name": "List Available Bullions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/pricing/bullions/v1/commdities/:commodityType/available-bullions?branchID=88542",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"pricing",
+										"bullions",
+										"v1",
+										"commdities",
+										":commodityType",
+										"available-bullions"
+									],
+									"query": [
+										{
+											"key": "branchID",
+											"value": "88542",
+											"description": "(Required) Branch ID."
+										}
+									],
+									"variable": [
+										{
+											"key": "commodityType",
+											"value": "1",
+											"description": "(Required) Commodity Type."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d8cd542a-d1f5-4438-8fb5-7329f6a6b084"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b8c44800672a03"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Aug 2024 14:01:44 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"0b1e7c88-8657-438b-a8d5-2d7aed18d2ba\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"availableBullionsList\": [\n            {\n                \"commodityType\": \"Gold\",\n                \"availableFreeWeight\": \"1252117\",\n                \"fixedBullionsList\": [\n                    {\n                        \"weight\": \"1000\",\n                        \"currency\": \"XA7\"\n                    },\n                    {\n                        \"weight\": \"50\",\n                        \"currency\": \"XA4\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Available Bullions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/pricing/bullions/v1/commdities/:commodityType/available-bullions?branchID=04033",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"pricing",
+										"bullions",
+										"v1",
+										"commdities",
+										":commodityType",
+										"available-bullions"
+									],
+									"query": [
+										{
+											"key": "branchID",
+											"value": "04033",
+											"description": "(Required) Branch ID."
+										}
+									],
+									"variable": [
+										{
+											"key": "commodityType",
+											"value": "1",
+											"description": "(Required) Commodity Type."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "df174f60-f3b5-41dc-8b96-49010d41eae9"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b8c454007026e1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Aug 2024 14:01:56 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"70f5e9a4-6484-48e7-b893-6efb2f201cf8\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"availableBullionsList\": [\n            {\n                \"commodityType\": \"Gold\",\n                \"availableFreeWeight\": \"1251117\",\n                \"fixedBullionsList\": [\n                    {\n                        \"weight\": \"1000\",\n                        \"currency\": \"XA7\"\n                    },\n                    {\n                        \"weight\": \"50\",\n                        \"currency\": \"XA4\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Available Bullions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/pricing/bullions/v1/commdities/:commodityType/available-bullions?branchID=12345",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"pricing",
+										"bullions",
+										"v1",
+										"commdities",
+										":commodityType",
+										"available-bullions"
+									],
+									"query": [
+										{
+											"key": "branchID",
+											"value": "12345",
+											"description": "(Required) Branch ID."
+										}
+									],
+									"variable": [
+										{
+											"key": "commodityType",
+											"value": "1",
+											"description": "(Required) Commodity Type."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "4d85677c-e87b-4a36-97a6-9206aa79928d"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b8c46101714f92"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Aug 2024 14:02:09 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"1bb3e168-4025-4e8e-957c-5d6091fc8cda\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"availableBullionsList\": [\n            {\n                \"commodityType\": \"Gold\",\n                \"availableFreeWeight\": \"1251117\",\n                \"fixedBullionsList\": [\n                    {\n                        \"weight\": \"1000\",\n                        \"currency\": \"XA7\"\n                    },\n                    {\n                        \"weight\": \"50\",\n                        \"currency\": \"XA4\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Inquire Gold Rates",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CIC\": \"0000000125105232\",\n  \"branchID\": \"88542\",\n  \"walletID\": \"GL000000996150\",\n  \"segment\": \"0260\",\n  \"city\": \"Dammam\",\n  \"region\": \"Eastern Province\",\n  \"fromCurrency\": \"SAR\",\n  \"toCurrency\": \"SAR\",\n  \"customerTier\": \"1\",\n  \"weight\": \"5\",\n  \"quantity\": 1,\n  \"bullionsList\": [\n    {\n      \"serialNumber\": \"12589\",\n      \"weight\": \"5\",\n      \"quantity\": 1\n    }\n  ],\n  \"dealQuantity\": \"5\",\n  \"dealQuantityCurrency\": \"XA0\",\n  \"transactionType\": \"Free-Weight\",\n  \"rateType\": \"Buy\",\n  \"productType\": \"Gold\",\n  \"purity\": \"1.0\",\n  \"supplierName\": \"MKS\",\n  \"measureUnit\": \"gm\",\n  \"sourceReferenceNumber\": \"012345678901234567890\",\n  \"remarks\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff,CustomerID=0000000013026500,TerminalID=,SourceSystemID=,Channel=MubasherMobile,TellerID=,ExecutingBranch=,Supplier=MKS\",\n  \"transactionKey\": \"8f093d9f-e6f5-40ee-8d6d-343f14327193\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"XA0\",\n  \"sellCurrency\": \"SAR\",\n  \"buyValueDate\": \"2023-10-25T11:32:32\",\n  \"comment\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/rates/gold-rates/v1/inquire",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"rates",
+								"gold-rates",
+								"v1",
+								"inquire"
+							]
+						},
+						"description": "This path is used to inquire gold rates."
+					},
+					"response": [
+						{
+							"name": "Inquire Gold Rates",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CIC\": \"0000000125105232\",\n  \"branchID\": \"88542\",\n  \"walletID\": \"GL000000996150\",\n  \"segment\": \"0260\",\n  \"city\": \"Dammam\",\n  \"region\": \"Eastern Province\",\n  \"fromCurrency\": \"SAR\",\n  \"toCurrency\": \"SAR\",\n  \"customerTier\": \"1\",\n  \"weight\": \"5\",\n  \"quantity\": 1,\n  \"bullionsList\": [\n    {\n      \"serialNumber\": \"12589\",\n      \"weight\": \"5\",\n      \"quantity\": 1\n    }\n  ],\n  \"dealQuantity\": \"5\",\n  \"dealQuantityCurrency\": \"XA0\",\n  \"transactionType\": \"Free-Weight\",\n  \"rateType\": \"Buy\",\n  \"productType\": \"Gold\",\n  \"purity\": \"1.0\",\n  \"supplierName\": \"MKS\",\n  \"measureUnit\": \"gm\",\n  \"sourceReferenceNumber\": \"012345678901234567890\",\n  \"remarks\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff,CustomerID=0000000013026500,TerminalID=,SourceSystemID=,Channel=MubasherMobile,TellerID=,ExecutingBranch=,Supplier=MKS\",\n  \"transactionKey\": \"8f093d9f-e6f5-40ee-8d6d-343f14327193\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"XA0\",\n  \"sellCurrency\": \"SAR\",\n  \"buyValueDate\": \"2023-10-25T11:32:32\",\n  \"comment\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/rates/gold-rates/v1/inquire",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"rates",
+										"gold-rates",
+										"v1",
+										"inquire"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "04ee24c766b53765000082f0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:23:49 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "fe8f87ce-aee5-4cba-8569-1cb24214d0fa"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"62ddd38a-a672-46aa-a428-ae9c22b65306\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"transactionKey\": \"8f093d9f-e6f5-40ee-8d6d-343f14327193\",\n        \"transactionID\": \"6073236\",\n        \"requestID\": \"62ddd38a-a672-46aa-a428-ae9c22b65306\",\n        \"rate\": \"268.156\",\n        \"supplierName\": \"MKS\",\n        \"timeToLive\": \"60\",\n        \"contraAmount\": \"1340.78\",\n        \"measureUnit\": \"gm\",\n        \"remarks\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000125105232,TerminalID=,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=5\",\n        \"weight\": \"5\",\n        \"quantity\": 5,\n        \"purity\": \"999.9\",\n        \"goldSource\": \"Switzerland\"\n    }\n}"
+						},
+						{
+							"name": "Inquire Gold Rates",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CIC\": \"0000000125105232\",\n  \"branchID\": \"88542\",\n  \"walletID\": \"GL000000996150\",\n  \"segment\": \"0260\",\n  \"city\": \"Dammam\",\n  \"region\": \"Eastern Province\",\n  \"fromCurrency\": \"SAR\",\n  \"toCurrency\": \"SAR\",\n  \"customerTier\": \"1\",\n  \"weight\": \"5\",\n  \"quantity\": 1,\n  \"bullionsList\": [\n    {\n      \"serialNumber\": \"12589\",\n      \"weight\": \"5\",\n      \"quantity\": 1\n    }\n  ],\n  \"dealQuantity\": \"5\",\n  \"dealQuantityCurrency\": \"XA0\",\n  \"transactionType\": \"Free-Weight\",\n  \"rateType\": \"Buy\",\n  \"productType\": \"Gold\",\n  \"purity\": \"1.0\",\n  \"supplierName\": \"MKS\",\n  \"measureUnit\": \"gm\",\n  \"sourceReferenceNumber\": \"012345678901234567890\",\n  \"remarks\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff,CustomerID=0000000013026500,TerminalID=,SourceSystemID=,Channel=MubasherMobile,TellerID=,ExecutingBranch=,Supplier=MKS\",\n  \"transactionKey\": \"a1bc9028-e81d-42e9-b34c-63d838b6d99f\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"XA0\",\n  \"sellCurrency\": \"SAR\",\n  \"buyValueDate\": \"2023-10-25T11:32:32\",\n  \"comment\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/rates/gold-rates/v1/inquire",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"rates",
+										"gold-rates",
+										"v1",
+										"inquire"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "36972ec066b5377d00031021"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:24:13 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "6b5eda6d-003d-49c8-959b-d6bf66f6fda9"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"7febaf84-1255-4dc8-bf56-ce2be793a87e\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"transactionKey\": \"a1bc9028-e81d-42e9-b34c-63d838b6d99f\",\n        \"transactionID\": \"6072431\",\n        \"requestID\": \"7febaf84-1255-4dc8-bf56-ce2be793a87e\",\n        \"rate\": \"287.278\",\n        \"supplierName\": \"MKS\",\n        \"timeToLive\": \"60\",\n        \"contraAmount\": \"1436.39\",\n        \"measureUnit\": \"gm\",\n        \"remarks\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000125105232,TerminalID=,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=5\",\n        \"weight\": \"5\",\n        \"quantity\": 5,\n        \"purity\": \"999.9\",\n        \"goldSource\": \"Switzerland\"\n    }\n}"
+						},
+						{
+							"name": "Inquire Gold Rates",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CIC\": \"0000000003048480\",\n  \"branchID\": \"88542\",\n  \"walletID\": \"GL000000996150\",\n  \"segment\": \"0260\",\n  \"city\": \"Dammam\",\n  \"region\": \"Eastern Province\",\n  \"fromCurrency\": \"SAR\",\n  \"toCurrency\": \"SAR\",\n  \"customerTier\": \"1\",\n  \"weight\": \"5\",\n  \"quantity\": 1,\n  \"bullionsList\": [\n    {\n      \"serialNumber\": \"12589\",\n      \"weight\": \"5\",\n      \"quantity\": 1\n    }\n  ],\n  \"dealQuantity\": \"5\",\n  \"dealQuantityCurrency\": \"XA0\",\n  \"transactionType\": \"Free-Weight\",\n  \"rateType\": \"Buy\",\n  \"productType\": \"Gold\",\n  \"purity\": \"1.0\",\n  \"supplierName\": \"MKS\",\n  \"measureUnit\": \"gm\",\n  \"sourceReferenceNumber\": \"012345678901234567890\",\n  \"remarks\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff,CustomerID=0000000013026500,TerminalID=,SourceSystemID=,Channel=MubasherMobile,TellerID=,ExecutingBranch=,Supplier=MKS\",\n  \"transactionKey\": \"32052bd4-c4e4-46d1-a9fd-0a735eda35a3\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"XA0\",\n  \"sellCurrency\": \"SAR\",\n  \"buyValueDate\": \"2023-10-25T11:32:32\",\n  \"comment\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/rates/gold-rates/v1/inquire",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"rates",
+										"gold-rates",
+										"v1",
+										"inquire"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "36972ec066b5379200031041"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:24:34 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5dc419d0-1c2a-43bb-b15e-c75c423cf285"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"587bccc8-090a-4d3d-9676-0d5cebf75768\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"transactionKey\": \"32052bd4-c4e4-46d1-a9fd-0a735eda35a3\",\n        \"transactionID\": \"6067542\",\n        \"requestID\": \"587bccc8-090a-4d3d-9676-0d5cebf75768\",\n        \"sourceReferenceNumber\": \"012345678901234567890\",\n        \"rate\": \"286.52\",\n        \"supplierName\": \"MKS\",\n        \"timeToLive\": \"60\",\n        \"contraAmount\": \"1432.6\",\n        \"measureUnit\": \"gm\",\n        \"remarks\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000003048480,TerminalID=,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=5\",\n        \"weight\": \"5\",\n        \"quantity\": 1,\n        \"purity\": \"999.9\",\n        \"goldSource\": \"Switzerland\"\n    }\n}"
+						},
+						{
+							"name": "Inquire Gold Rates",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CIC\": \"0000000003048480\",\n  \"branchID\": \"88542\",\n  \"walletID\": \"GL000000996150\",\n  \"segment\": \"0260\",\n  \"city\": \"Dammam\",\n  \"region\": \"Eastern Province\",\n  \"fromCurrency\": \"SAR\",\n  \"toCurrency\": \"SAR\",\n  \"customerTier\": \"1\",\n  \"weight\": \"5\",\n  \"quantity\": 1,\n  \"bullionsList\": [\n    {\n      \"serialNumber\": \"12589\",\n      \"weight\": \"5\",\n      \"quantity\": 1\n    }\n  ],\n  \"dealQuantity\": \"5\",\n  \"dealQuantityCurrency\": \"XA0\",\n  \"transactionType\": \"Free-Weight\",\n  \"rateType\": \"Buy\",\n  \"productType\": \"Gold\",\n  \"purity\": \"1.0\",\n  \"supplierName\": \"MKS\",\n  \"measureUnit\": \"gm\",\n  \"sourceReferenceNumber\": \"012345678901234567890\",\n  \"remarks\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff,CustomerID=0000000013026500,TerminalID=,SourceSystemID=,Channel=MubasherMobile,TellerID=,ExecutingBranch=,Supplier=MKS\",\n  \"transactionKey\": \"32052bd4-c4e4-46d1-a9fd-0a735eda35a2\",\n  \"requester\": \"XAU-Indicative\",\n  \"buyCurrency\": \"XA0\",\n  \"sellCurrency\": \"SAR\",\n  \"buyValueDate\": \"2023-10-25T11:32:32\",\n  \"comment\": \"CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/rates/gold-rates/v1/inquire",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"rates",
+										"gold-rates",
+										"v1",
+										"inquire"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "58f2380a66b537b000007ad0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:25:04 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b8b2b7cd-fc8d-4f7d-af09-a3ca071aaef7"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"E078007\",\n        \"requestID\": \"bd2428f2-d127-4691-b981-b2c0b16ea210\",\n        \"statusDescription\": \"TechnicalError:From ET: ValueDate is invalid. Historic ValueDate.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Confirm Rate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"branchID\": \"88542\",\n  \"ETID\": \"6073236\",\n  \"transactionKey\": \"8f093d9f-e6f5-40ee-8d6d-343f14327193\",\n  \"rateStatus\": \"Confirmed\",\n  \"remarks\": \"reason for error\",\n  \"customerAccountType\": \"CA\",\n  \"customerAccountTransaction\": \"SA9080000500608011416018\",\n  \"transactionIBAN\": \"SA9080000500608011416018\",\n  \"customerAccountFee\": \"500000010006081416018\",\n  \"feeIBAN\": \"SA2230400108071086000028\"\n}"
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/rates/confirmation/v1/confirmation",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"rates",
+								"confirmation",
+								"v1",
+								"confirmation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Confirm Rate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchID\": \"88542\",\n  \"ETID\": \"6073236\",\n  \"transactionKey\": \"8f093d9f-e6f5-40ee-8d6d-343f14327193\",\n  \"rateStatus\": \"Confirmed\",\n  \"remarks\": \"reason for error\",\n  \"customerAccountType\": \"CA\",\n  \"customerAccountTransaction\": \"SA9080000500608011416018\",\n  \"transactionIBAN\": \"SA9080000500608011416018\",\n  \"customerAccountFee\": \"500000010006081416018\",\n  \"feeIBAN\": \"SA2230400108071086000028\"\n}"
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/rates/confirmation/v1/confirmation",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"rates",
+										"confirmation",
+										"v1",
+										"confirmation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3dc8141b-8b04-448b-a4a3-8b9f3b0d4e48"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b8c3da009fbd20"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Aug 2024 13:59:54 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"3f6f5dbd-e6ee-4a95-9751-91cf9aed95ab\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"ETID\": \"6073236\",\n        \"transactionKey\": \"8f093d9f-e6f5-40ee-8d6d-343f14327193\",\n        \"rateStatus\": \"Success\"\n    }\n}"
+						},
+						{
+							"name": "Confirm Rate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchID\": \"88542\",\n  \"ETID\": \"6069534\",\n  \"transactionKey\": \"b671cbd7-3f5a-4128-b1ca-141db7d35e28\",\n  \"rateStatus\": \"Confirmed\",\n  \"remarks\": \"reason for error\",\n  \"customerAccountType\": \"CA\",\n  \"customerAccountTransaction\": \"SA9080000500608011416018\",\n  \"transactionIBAN\": \"SA9080000500608011416018\",\n  \"customerAccountFee\": \"500000010006081416018\",\n  \"feeIBAN\": \"SA2230400108071086000028\"\n}"
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/rates/confirmation/v1/confirmation",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"rates",
+										"confirmation",
+										"v1",
+										"confirmation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f43cbd07-114a-4890-88eb-65e008c52758"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b8c3f3009fc620"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Aug 2024 14:00:20 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"7e2db82d-aab7-44ce-8c08-b9c0cfc712df\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"ETID\": \"6069534\",\n        \"transactionKey\": \"b671cbd7-3f5a-4128-b1ca-141db7d35e28\",\n        \"rateStatus\": \"Success\"\n    }\n}"
+						},
+						{
+							"name": "Confirm Rate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchID\": \"20400\",\n  \"ETID\": \"6067932\",\n  \"transactionKey\": \"391f9bce-9408-43b4-9436-c6717a984f42\",\n  \"rateStatus\": \"Confirmed\",\n  \"remarks\": \"reason for error\",\n  \"customerAccountType\": \"CA\",\n  \"customerAccountTransaction\": \"SA9080000500608011416018\",\n  \"transactionIBAN\": \"SA9080000500608011416018\",\n  \"customerAccountFee\": \"500000010006081416018\",\n  \"feeIBAN\": \"SA2230400108071086000028\"\n}"
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/rates/confirmation/v1/confirmation",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"rates",
+										"confirmation",
+										"v1",
+										"confirmation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5cca66ed-8e87-4b5b-8b26-c2b90f0e3ebe"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b8c409006729b3"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Aug 2024 14:00:41 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"eb4f9122-365b-41e2-a5fe-e73e7764d13e\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"ETID\": \"6067932\",\n        \"transactionKey\": \"391f9bce-9408-43b4-9436-c6717a984f42\",\n        \"rateStatus\": \"Success\"\n    }\n}"
+						},
+						{
+							"name": "Confirm Rate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"branchID\": \"20400\",\n  \"ETID\": \"6067930\",\n  \"transactionKey\": \"6b505ab9-90c4-4aa5-b767-903f48692337\",\n  \"rateStatus\": \"Confirmed\",\n  \"remarks\": \"reason for error\",\n  \"customerAccountType\": \"CA\",\n  \"customerAccountTransaction\": \"SA9080000500608011416018\",\n  \"transactionIBAN\": \"SA9080000500608011416018\",\n  \"customerAccountFee\": \"500000010006081416018\",\n  \"feeIBAN\": \"SA2230400108071086000028\"\n}"
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/rates/confirmation/v1/confirmation",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"rates",
+										"confirmation",
+										"v1",
+										"confirmation"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "83a88f5b-23c9-48a9-b9c2-fe570839f025"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666b8c426009fc660"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Aug 2024 14:01:10 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"E000022\",\n        \"requestID\": \"2f669802-1220-484c-ba1f-bdbd43cce706\",\n        \"statusDescription\": \"Transaction Key not found\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Gold Rate History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/gold-rate-history/v1/rate-history?fromDate=2023-12-24&toDate=2024-01-24&aggregationType=D",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"gold-rate-history",
+								"v1",
+								"rate-history"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2023-12-24",
+									"description": "(Required) From Date."
+								},
+								{
+									"key": "toDate",
+									"value": "2024-01-24",
+									"description": "(Required) To Date."
+								},
+								{
+									"key": "aggregationType",
+									"value": "D",
+									"description": "(Required) Aggregation Type.\nAllowed Values:\nD: Daily\nW: Weekly\nM: Monthly"
+								}
+							]
+						},
+						"description": "This operation path is used to get gold rate history."
+					},
+					"response": [
+						{
+							"name": "Get Gold Rate History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/gold-rate-history/v1/rate-history?fromDate=2023-12-24&toDate=2024-01-24&aggregationType=D",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"gold-rate-history",
+										"v1",
+										"rate-history"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "2023-12-24",
+											"description": "(Required) From Date."
+										},
+										{
+											"key": "toDate",
+											"value": "2024-01-24",
+											"description": "(Required) To Date."
+										},
+										{
+											"key": "aggregationType",
+											"value": "D",
+											"description": "(Required) Aggregation Type.\nAllowed Values:\nD: Daily\nW: Weekly\nM: Monthly"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d6f5ca5f-2185-4f0e-9958-9814d95cfe49"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b5364601340ed2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:19:02 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"2c3158b2-e2bc-4332-8ec1-dad3c3976c9e\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"goldRateHistoryList\": [\n            {\n                \"clientRate\": \"250.500000000\",\n                \"rateTimeStamp\": \"2023-12-25T00:00:00\"\n            },\n            {\n                \"clientRate\": \"250.334782610\",\n                \"rateTimeStamp\": \"2023-12-26T00:00:00\"\n            },\n            {\n                \"clientRate\": \"251.163478260\",\n                \"rateTimeStamp\": \"2023-12-27T00:00:00\"\n            },\n            {\n                \"clientRate\": \"250.543043480\",\n                \"rateTimeStamp\": \"2023-12-28T00:00:00\"\n            },\n            {\n                \"clientRate\": \"251.422272730\",\n                \"rateTimeStamp\": \"2023-12-29T00:00:00\"\n            },\n            {\n                \"clientRate\": \"251.140454550\",\n                \"rateTimeStamp\": \"2024-01-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"249.543125000\",\n                \"rateTimeStamp\": \"2024-01-02T00:00:00\"\n            },\n            {\n                \"clientRate\": \"249.235000000\",\n                \"rateTimeStamp\": \"2024-01-03T00:00:00\"\n            },\n            {\n                \"clientRate\": \"248.101818180\",\n                \"rateTimeStamp\": \"2024-01-04T00:00:00\"\n            },\n            {\n                \"clientRate\": \"246.865454550\",\n                \"rateTimeStamp\": \"2024-01-05T00:00:00\"\n            },\n            {\n                \"clientRate\": \"244.822727270\",\n                \"rateTimeStamp\": \"2024-01-08T00:00:00\"\n            },\n            {\n                \"clientRate\": \"245.378666670\",\n                \"rateTimeStamp\": \"2024-01-09T00:00:00\"\n            },\n            {\n                \"clientRate\": \"244.882857140\",\n                \"rateTimeStamp\": \"2024-01-10T00:00:00\"\n            },\n            {\n                \"clientRate\": \"246.610454550\",\n                \"rateTimeStamp\": \"2024-01-11T00:00:00\"\n            },\n            {\n                \"clientRate\": \"246.863636360\",\n                \"rateTimeStamp\": \"2024-01-12T00:00:00\"\n            },\n            {\n                \"clientRate\": \"249.065909090\",\n                \"rateTimeStamp\": \"2024-01-15T00:00:00\"\n            },\n            {\n                \"clientRate\": \"246.409545450\",\n                \"rateTimeStamp\": \"2024-01-16T00:00:00\"\n            },\n            {\n                \"clientRate\": \"241.965909090\",\n                \"rateTimeStamp\": \"2024-01-17T00:00:00\"\n            },\n            {\n                \"clientRate\": \"243.822272730\",\n                \"rateTimeStamp\": \"2024-01-18T00:00:00\"\n            },\n            {\n                \"clientRate\": \"245.967500000\",\n                \"rateTimeStamp\": \"2024-01-19T00:00:00\"\n            },\n            {\n                \"clientRate\": \"243.595000000\",\n                \"rateTimeStamp\": \"2024-01-22T00:00:00\"\n            },\n            {\n                \"clientRate\": \"245.127727270\",\n                \"rateTimeStamp\": \"2024-01-23T00:00:00\"\n            },\n            {\n                \"clientRate\": \"245.316363640\",\n                \"rateTimeStamp\": \"2024-01-24T00:00:00\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Gold Rate History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/gold-rate-history/v1/rate-history?fromDate=2023-11-03&toDate=2023-12-03&aggregationType=D",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"gold-rate-history",
+										"v1",
+										"rate-history"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "2023-11-03",
+											"description": "(Required) From Date."
+										},
+										{
+											"key": "toDate",
+											"value": "2023-12-03",
+											"description": "(Required) To Date."
+										},
+										{
+											"key": "aggregationType",
+											"value": "D",
+											"description": "(Required) Aggregation Type.\nAllowed Values:\nD: Daily\nW: Weekly\nM: Monthly"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "70ce28a4-c546-4669-a8d5-4a6db94f0932"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b5365300a389f0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:19:16 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"61891f7f-63fe-404b-952c-6cbbdc46f943\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"goldRateHistoryList\": [\n            {\n                \"clientRate\": \"216.080000000\",\n                \"rateTimeStamp\": \"2023-11-03T00:00:00\"\n            },\n            {\n                \"clientRate\": \"227.501111110\",\n                \"rateTimeStamp\": \"2023-11-06T00:00:00\"\n            },\n            {\n                \"clientRate\": \"231.127826090\",\n                \"rateTimeStamp\": \"2023-11-07T00:00:00\"\n            },\n            {\n                \"clientRate\": \"238.193043480\",\n                \"rateTimeStamp\": \"2023-11-08T00:00:00\"\n            },\n            {\n                \"clientRate\": \"237.913750000\",\n                \"rateTimeStamp\": \"2023-11-09T00:00:00\"\n            },\n            {\n                \"clientRate\": \"237.187272730\",\n                \"rateTimeStamp\": \"2023-11-10T00:00:00\"\n            },\n            {\n                \"clientRate\": \"236.070000000\",\n                \"rateTimeStamp\": \"2023-11-11T00:00:00\"\n            },\n            {\n                \"clientRate\": \"238.392666670\",\n                \"rateTimeStamp\": \"2023-11-14T00:00:00\"\n            },\n            {\n                \"clientRate\": \"238.264347830\",\n                \"rateTimeStamp\": \"2023-11-15T00:00:00\"\n            },\n            {\n                \"clientRate\": \"238.341333330\",\n                \"rateTimeStamp\": \"2023-11-16T00:00:00\"\n            },\n            {\n                \"clientRate\": \"242.392857140\",\n                \"rateTimeStamp\": \"2023-11-22T00:00:00\"\n            },\n            {\n                \"clientRate\": \"242.565833330\",\n                \"rateTimeStamp\": \"2023-11-23T00:00:00\"\n            },\n            {\n                \"clientRate\": \"241.756363640\",\n                \"rateTimeStamp\": \"2023-11-24T00:00:00\"\n            },\n            {\n                \"clientRate\": \"242.130000000\",\n                \"rateTimeStamp\": \"2023-11-25T00:00:00\"\n            },\n            {\n                \"clientRate\": \"233.316842110\",\n                \"rateTimeStamp\": \"2023-11-27T00:00:00\"\n            },\n            {\n                \"clientRate\": \"240.023636360\",\n                \"rateTimeStamp\": \"2023-11-28T00:00:00\"\n            },\n            {\n                \"clientRate\": \"248.900000000\",\n                \"rateTimeStamp\": \"2023-11-29T00:00:00\"\n            },\n            {\n                \"clientRate\": \"248.106666670\",\n                \"rateTimeStamp\": \"2023-11-30T00:00:00\"\n            },\n            {\n                \"clientRate\": \"250.405000000\",\n                \"rateTimeStamp\": \"2023-12-01T00:00:00\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Gold Rate History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/gold-rate-history/v1/rate-history?fromDate=2010-12-24&toDate=2024-01-24&aggregationType=M",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"gold-rate-history",
+										"v1",
+										"rate-history"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "2010-12-24",
+											"description": "(Required) From Date."
+										},
+										{
+											"key": "toDate",
+											"value": "2024-01-24",
+											"description": "(Required) To Date."
+										},
+										{
+											"key": "aggregationType",
+											"value": "M",
+											"description": "(Required) Aggregation Type.\nAllowed Values:\nD: Daily\nW: Weekly\nM: Monthly"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1ea5e058-4f4b-4874-8841-ba7dd73a8826"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b5367001340ef2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:19:44 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"2baa8ef4-b01b-4736-b982-a609dc53b3b2\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"goldRateHistoryList\": [\n            {\n                \"clientRate\": \"148.622175890\",\n                \"rateTimeStamp\": \"2017-04-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"145.377449100\",\n                \"rateTimeStamp\": \"2017-05-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"147.042541250\",\n                \"rateTimeStamp\": \"2017-06-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"144.415923740\",\n                \"rateTimeStamp\": \"2017-07-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"149.871309800\",\n                \"rateTimeStamp\": \"2017-08-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"153.310317640\",\n                \"rateTimeStamp\": \"2017-09-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"149.480186660\",\n                \"rateTimeStamp\": \"2017-10-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"149.601443020\",\n                \"rateTimeStamp\": \"2017-11-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"147.802366720\",\n                \"rateTimeStamp\": \"2017-12-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"155.430553570\",\n                \"rateTimeStamp\": \"2018-01-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"155.407007770\",\n                \"rateTimeStamp\": \"2018-02-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"154.790377260\",\n                \"rateTimeStamp\": \"2018-03-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"155.796153900\",\n                \"rateTimeStamp\": \"2018-04-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"152.099569010\",\n                \"rateTimeStamp\": \"2018-05-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"149.408065820\",\n                \"rateTimeStamp\": \"2018-06-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"144.445077200\",\n                \"rateTimeStamp\": \"2018-07-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"140.076010600\",\n                \"rateTimeStamp\": \"2018-08-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"139.817359420\",\n                \"rateTimeStamp\": \"2018-09-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"141.822523800\",\n                \"rateTimeStamp\": \"2018-10-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"142.485826860\",\n                \"rateTimeStamp\": \"2018-11-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"146.184681410\",\n                \"rateTimeStamp\": \"2018-12-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"150.854842860\",\n                \"rateTimeStamp\": \"2019-01-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"153.954217570\",\n                \"rateTimeStamp\": \"2019-02-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"151.796861120\",\n                \"rateTimeStamp\": \"2019-03-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"150.040639290\",\n                \"rateTimeStamp\": \"2019-04-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"149.844013400\",\n                \"rateTimeStamp\": \"2019-05-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"158.914557580\",\n                \"rateTimeStamp\": \"2019-06-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"165.203009680\",\n                \"rateTimeStamp\": \"2019-07-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"175.450212430\",\n                \"rateTimeStamp\": \"2019-08-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"175.969382430\",\n                \"rateTimeStamp\": \"2019-09-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"174.453852180\",\n                \"rateTimeStamp\": \"2019-10-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"171.565881570\",\n                \"rateTimeStamp\": \"2019-11-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"173.038398970\",\n                \"rateTimeStamp\": \"2019-12-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"182.001916620\",\n                \"rateTimeStamp\": \"2020-01-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"186.201037050\",\n                \"rateTimeStamp\": \"2020-02-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"185.885049120\",\n                \"rateTimeStamp\": \"2020-03-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"196.784914040\",\n                \"rateTimeStamp\": \"2020-04-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"200.558225840\",\n                \"rateTimeStamp\": \"2020-05-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"202.599490800\",\n                \"rateTimeStamp\": \"2020-06-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"215.461980050\",\n                \"rateTimeStamp\": \"2020-07-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"229.863145100\",\n                \"rateTimeStamp\": \"2020-08-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"224.444943730\",\n                \"rateTimeStamp\": \"2020-09-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"221.762451710\",\n                \"rateTimeStamp\": \"2020-10-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"217.793082770\",\n                \"rateTimeStamp\": \"2020-11-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"217.089095700\",\n                \"rateTimeStamp\": \"2020-12-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"217.902053360\",\n                \"rateTimeStamp\": \"2021-01-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"211.084248300\",\n                \"rateTimeStamp\": \"2021-02-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"200.939329340\",\n                \"rateTimeStamp\": \"2021-03-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"205.321075540\",\n                \"rateTimeStamp\": \"2021-04-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"216.236264840\",\n                \"rateTimeStamp\": \"2021-05-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"213.812946110\",\n                \"rateTimeStamp\": \"2021-06-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"210.754697270\",\n                \"rateTimeStamp\": \"2021-07-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"208.472574020\",\n                \"rateTimeStamp\": \"2021-08-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"207.442213190\",\n                \"rateTimeStamp\": \"2021-09-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"207.320236960\",\n                \"rateTimeStamp\": \"2021-10-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"212.238894240\",\n                \"rateTimeStamp\": \"2021-11-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"209.235812460\",\n                \"rateTimeStamp\": \"2021-12-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"211.990246210\",\n                \"rateTimeStamp\": \"2022-01-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"217.017588400\",\n                \"rateTimeStamp\": \"2022-02-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"227.795033010\",\n                \"rateTimeStamp\": \"2022-03-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"226.682210260\",\n                \"rateTimeStamp\": \"2022-04-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"223.750545950\",\n                \"rateTimeStamp\": \"2022-05-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"223.130624490\",\n                \"rateTimeStamp\": \"2022-06-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"212.274133510\",\n                \"rateTimeStamp\": \"2022-07-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"211.536996170\",\n                \"rateTimeStamp\": \"2022-08-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"204.383651120\",\n                \"rateTimeStamp\": \"2022-09-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"203.035875000\",\n                \"rateTimeStamp\": \"2022-10-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"209.662179490\",\n                \"rateTimeStamp\": \"2022-11-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"217.785560750\",\n                \"rateTimeStamp\": \"2022-12-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"225.909215290\",\n                \"rateTimeStamp\": \"2023-01-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"225.702457830\",\n                \"rateTimeStamp\": \"2023-02-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"221.476605920\",\n                \"rateTimeStamp\": \"2023-03-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"231.788555800\",\n                \"rateTimeStamp\": \"2023-04-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"236.615657370\",\n                \"rateTimeStamp\": \"2023-05-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"238.457209820\",\n                \"rateTimeStamp\": \"2023-06-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"234.898312880\",\n                \"rateTimeStamp\": \"2023-07-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"234.062349570\",\n                \"rateTimeStamp\": \"2023-08-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"181.646923080\",\n                \"rateTimeStamp\": \"2023-09-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"221.880483870\",\n                \"rateTimeStamp\": \"2023-10-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"237.344919090\",\n                \"rateTimeStamp\": \"2023-11-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"244.874924620\",\n                \"rateTimeStamp\": \"2023-12-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"246.418135590\",\n                \"rateTimeStamp\": \"2024-01-01T00:00:00\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Gold Rate History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/gold-rate-history/v1/rate-history?fromDate=2024-01-01&toDate=2024-10-01&aggregationType=W",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"gold-rate-history",
+										"v1",
+										"rate-history"
+									],
+									"query": [
+										{
+											"key": "fromDate",
+											"value": "2024-01-01",
+											"description": "(Required) From Date."
+										},
+										{
+											"key": "toDate",
+											"value": "2024-10-01",
+											"description": "(Required) To Date."
+										},
+										{
+											"key": "aggregationType",
+											"value": "W",
+											"description": "(Required) Aggregation Type.\nAllowed Values:\nD: Daily\nW: Weekly\nM: Monthly"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "854b8634-ef57-4005-aad2-0b6b2f7048e3"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b5369b01340f12"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 21:20:27 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"c1a3ca57-eb35-438e-84d8-1129c42e0f9f\",\n        \"statusDescription\": \"Success\"\n    },\n    \"body\": {\n        \"goldRateHistoryList\": [\n            {\n                \"clientRate\": \"248.944519230\",\n                \"rateTimeStamp\": \"2024-01-01T00:00:00\"\n            },\n            {\n                \"clientRate\": \"245.879431820\",\n                \"rateTimeStamp\": \"2024-01-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"245.370208330\",\n                \"rateTimeStamp\": \"2024-01-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"244.784636360\",\n                \"rateTimeStamp\": \"2024-01-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"247.990884960\",\n                \"rateTimeStamp\": \"2024-01-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"246.833484850\",\n                \"rateTimeStamp\": \"2024-02-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"243.871929820\",\n                \"rateTimeStamp\": \"2024-02-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"246.491157600\",\n                \"rateTimeStamp\": \"2024-02-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"245.584423080\",\n                \"rateTimeStamp\": \"2024-02-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"255.461894270\",\n                \"rateTimeStamp\": \"2024-03-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"251.282461540\",\n                \"rateTimeStamp\": \"2024-04-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"226.743425250\",\n                \"rateTimeStamp\": \"2024-04-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"272.887360340\",\n                \"rateTimeStamp\": \"2024-04-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"273.473541080\",\n                \"rateTimeStamp\": \"2024-04-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"281.758718310\",\n                \"rateTimeStamp\": \"2024-05-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"289.828741260\",\n                \"rateTimeStamp\": \"2024-05-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"282.967658960\",\n                \"rateTimeStamp\": \"2024-05-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"283.001594410\",\n                \"rateTimeStamp\": \"2024-05-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"230.598209790\",\n                \"rateTimeStamp\": \"2024-06-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"275.571828740\",\n                \"rateTimeStamp\": \"2024-06-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"223.442215990\",\n                \"rateTimeStamp\": \"2024-06-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"248.895733330\",\n                \"rateTimeStamp\": \"2024-06-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"289.997234040\",\n                \"rateTimeStamp\": \"2024-07-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"267.939272730\",\n                \"rateTimeStamp\": \"2024-07-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"291.560909090\",\n                \"rateTimeStamp\": \"2024-07-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"287.707818180\",\n                \"rateTimeStamp\": \"2024-07-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"227.384528300\",\n                \"rateTimeStamp\": \"2024-07-20T00:00:00\"\n            },\n            {\n                \"clientRate\": \"267.523333330\",\n                \"rateTimeStamp\": \"2024-08-20T00:00:00\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": ""
+		},
+		{
+			"key": "client-secret",
+			"value": ""
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		}
+	]
+}

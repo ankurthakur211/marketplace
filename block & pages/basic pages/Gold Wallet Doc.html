@@ -1,0 +1,1995 @@
+<div id="search-term-result">
+    <p>Gold Wallet APIs</p>
+
+    <p>
+        The primary objective of this project is to enable ARB to offer the Gold wallet through the API Marketplace.
+        This will provide a seamless, efficient, and accessible way for consumers to apply for ARB charge cards via
+        integrated API solutions.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Gold Wallet API
+            Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">Gold
+                            Wallet APIs</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Create Customer Paper Gold
+                                Wallet</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-3">Indicative Rate Inquiry</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-4">List Customer Paper Gold Wallet</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-5">Get Customer Paper Gold Wallet
+                                Details</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-6">List Available Bullions</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-7">Inquire Gold Rates</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-8">Confirm Rate</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-9">Get Gold Rate History</a>
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Gold Wallet APIs</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">The primary objective of this project is to enable ARB to offer the Gold
+                            wallet through the API Marketplace. This will provide a seamless, efficient, and accessible way
+                            for consumers to apply for ARB charge cards via integrated API solutions.
+                            </br></p>
+                        <p class="fob-welcome-text"></br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Gold_Wallet.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/GoldWalletSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+    
+                        <h1 class="fob-welcome-title">Gold Wallet Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../GoldWalletWorkflowImg">Click
+                            here</a>
+                        <div class="row flex mt-25 mb-25">
+                            <div class="col-lg-8">
+                                <p class="GoldWallet-flow-img"><br></p>
+                            </div>
+                        </div>
+                        <h1 class="fob-welcome-title">Gold Wallet Architecture</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../GoldWalletArchitectureImg">Click
+                            here</a>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="GoldWalletArchitecture-flow-img"><br></p>
+                            </div>
+                        </div>
+    
+                        <h1 class="fob-welcome-title" id="section-2">Create Customer Paper Gold Wallet</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: POST : /customers/gold-wallet/v1/create</br></p>
+                        <p class="fob-welcome-text">This path is used to create customer paper gold wallet.</br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/865/api/862#/CreateCustomerPaperGoldWallet_100/operation/%2Fcreate/post">Swagger
+                                Link</a></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "en",
+    } 
+    Request Body
+    {
+        "CIC": "0000000009013370",
+        "defaultAccountBranch": "35500",
+        "defaultAccountType": "001",
+        "defaultAccountNumber": "0006086017863",
+        "feesAccountBranch": "35200",
+        "feesAccountType": "001",
+        "feesAccountNumber": "0006086012567",
+        "commodityType": "1",
+        "comment": "CustomerID=0000000013026500,Channel=MOBILEWEB",
+        "VATPercentage": "1.0",
+        "defaultIBAN": "SA7880000382608016017556",
+        "feesIBAN": "SA7880000382608016017556"
+    } 
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('Create-Customer-Paper-Gold-Wallet-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="Create-Customer-Paper-Gold-Wallet-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/customers/gold-wallet/v1/create' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "CIC": "1900000000000618",
+        "defaultAccountBranch": "35500",
+        "defaultAccountType": "001",
+        "defaultAccountNumber": "0006086017863",
+        "feesAccountBranch": "35200",
+        "feesAccountType": "001",
+        "feesAccountNumber": "0006086012567",
+        "commodityType": "1",
+        "comment": "CustomerID=0000000013026500,Channel=MOBILEWEB",
+        "VATPercentage": "1.0",
+        "defaultIBAN": "SA7880000382608016017556",
+        "feesIBAN": "SA7880000382608016017556"
+    }'
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-Customer-Paper-Gold-Wallet')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-Customer-Paper-Gold-Wallet3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-Customer-Paper-Gold-Wallet4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-Customer-Paper-Gold-Wallet5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-Customer-Paper-Gold-Wallet6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-Customer-Paper-Gold-Wallet7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-Customer-Paper-Gold-Wallet8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-Customer-Paper-Gold-Wallet9')">500</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                        <code id="response-Create-Customer-Paper-Gold-Wallet" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "7d50c51e-5b94-4ce8-a188-476515afa2c1",
+            "statusDescription": "Successful Operation"
+        },
+        "body": {
+            "walletNumber": "GL000000996226"
+        }
+    }
+                        </code>
+                      <code id="response-Create-Customer-Paper-Gold-Wallet3" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }  
+                        </code>	
+                      
+                        <code id="response-Create-Customer-Paper-Gold-Wallet4" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }    
+                        </code>
+                      
+                        <code id="response-Create-Customer-Paper-Gold-Wallet5" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      
+                        <code id="response-Create-Customer-Paper-Gold-Wallet6" style=" display: none; "class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }
+                              
+                        </code>
+                      
+                        <code id="response-Create-Customer-Paper-Gold-Wallet7" style=" display: none; "class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }       
+                        </code>
+                      
+                        <code id="response-Create-Customer-Paper-Gold-Wallet8" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      
+                        <code id="response-Create-Customer-Paper-Gold-Wallet9" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      </pre>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <h1 class="fob-welcome-title" id="section-3">Indicative Rate Inquiry</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: POST:
+                                /pricing/transfer-fees/inquiry-requests/v1/submit</br></p>
+                            <p class="fob-welcome-text">This path is used to inquire about indicative rate.</br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/883/api/880#/IndicativeRateInquiry_100/operation/%2Fsubmit/post">Swagger
+                                    Link</a></p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                          <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "en",
+    } 
+    Request Body
+    {
+        "CIC": "0000000003070723",
+        "transactionKey": "9c26ccbf-d0e6-4b40-b66d-bd2f6d9eb77e",
+        "requester": "XAU-Indicative",
+        "buyCurrency": "SAR",
+        "sellCurrency": "SAR",
+        "dealtCurrency": "SAR",
+        "dealtQuantity": "25",
+        "valueDate": "2022-10-12",
+        "buyValueDate": "2022-10-12",
+        "sellValueDate": "2022-10-12",
+        "rateType": "Buy",
+        "supplier": "AlRajhi",
+        "weight": "225.2",
+        "productType": "Gold",
+        "measureUnit": "Kg",
+        "attributeOne": "Indicative_Rate",
+        "attributeTwo": "Indicative_Rate",
+        "comment": "CustomerSegment=Mass,TransactionType=,Entity=KSA,Requester=MubasherDesktop-Mass"
+    }
+                          </code>
+                        </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+    
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('Indicative-Rate-Inquiry-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+    
+                                        <pre id="generatedCurl">
+                            <code id="Indicative-Rate-Inquiry-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/pricing/transfer-fees/inquiry-requests/v1/submit' \
+    --header 'Accept-Language: en' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "CIC": "0000000003048480",
+        "transactionKey": "0eb6fcea-0165-482b-94ba-84d0cce31a0d",
+        "requester": "XAU-Indicative",
+        "buyCurrency": "SAR",
+        "sellCurrency": "SAR",
+        "dealtCurrency": "SAR",
+        "dealtQuantity": "25",
+        "valueDate": "2022-10-12",
+        "buyValueDate": "2022-10-12",
+        "sellValueDate": "2022-10-12",
+        "rateType": "Buy",
+        "supplier": "AlRajhi",
+        "weight": "225.2",
+        "productType": "Gold",
+        "measureUnit": "Kg",
+        "attributeOne": "Indicative_Rate",
+        "attributeTwo": "Indicative_Rate",
+        "comment": "CustomerSegment=Mass,TransactionType=,Entity=KSA,Requester=MubasherDesktop-Mass"
+    }'                            
+                            </code>
+                          </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Indicative-Rate-Inquiry')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Indicative-Rate-Inquiry3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Indicative-Rate-Inquiry4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Indicative-Rate-Inquiry5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Indicative-Rate-Inquiry6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Indicative-Rate-Inquiry7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Indicative-Rate-Inquiry8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Indicative-Rate-Inquiry9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                  <code id="response-Indicative-Rate-Inquiry" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "6b505ab9-90c4-4aa5-b767-903f48692337",
+            "statusDescription": "Successful Transaction"
+        },
+        "body": {
+            "transactionKey": "0eb6fcea-0165-482b-94ba-84d0cce31a0d",
+            "requester": "MubasherMobile-Mass",
+            "customerID": "0000000003048480",
+            "buyCurrency": "XA0",
+            "sellCurrency": "SAR",
+            "dealtCurrency": "XA0",
+            "dealtQuantity": "25",
+            "dealtAmount": "25",
+            "contraAmount": "6740.43",
+            "valueDate": "2024-05-29",
+            "buyValueDate": "2024-05-29",
+            "sellValueDate": "2024-05-29",
+            "valueDateChanged": "false",
+            "coverRate": "267.4814036781600",
+            "margin": "2.1357963218400",
+            "clientRate": "269.6172000000",
+            "timeToLive": "60",
+            "GIDID": "6067930",
+            "comment": "CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000003048480,TerminalID=RAJHIA1L018001A5,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=25"
+        }
+    }
+                   </code>
+                  <code id="response-Indicative-Rate-Inquiry3" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.401.001",
+          "message": "Unauthorized to call the target operation.",
+          "path": "authorization",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }
+                  
+                  </code>	
+                  
+                  <code id="response-Indicative-Rate-Inquiry4" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.403.001",
+          "message": "Can't find any valid subscription.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }   
+                  </code>
+                  
+                  
+                  <code id="response-Indicative-Rate-Inquiry5" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.404.001",
+          "message": "No resources match requested URI.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }     
+                  </code>
+                  
+                  
+                  <code id="response-Indicative-Rate-Inquiry6" style=" display: none; "class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.405.001",
+          "message": "The method is not allowed for the requested URL.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }
+                       
+                  </code>
+                   
+                  
+                  <code id="response-Indicative-Rate-Inquiry7" style=" display: none; "class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.406.001",
+          "message": "An appropriate representation of the requested resource could not be found",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }       
+                  </code>
+                   
+                  
+                  <code id="response-Indicative-Rate-Inquiry8" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.429.001",
+          "message": "Assembly Rate Limit exceeded",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }     
+                  </code>
+                  
+                  
+                  <code id="response-Indicative-Rate-Inquiry9" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.500.001",
+          "message": "Internal Error",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }    
+                  </code>
+                        </pre>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="fob-welcome-title" id="section-4">List Customer Paper Gold Wallet</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: GET : /customers/v1/gold-wallet</br></p>
+                            <p class="fob-welcome-text">This path is used to list customer paper gold wallet.</br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/901/api/898#/ListCustomerPaperGoldWallet_100/operation/%2Fgold-wallet/get">Swagger
+                                    Link</a></p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "en"
+    } 
+    
+    Query Parameters
+    {
+        "CIC": "0000000013026500",
+    } 
+                            </code>
+                          </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <button class="curlbtn fob-validate-OTP-top" type="submit"
+                                            onclick="show('List-Customer-Paper-Gold-Wallet-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+                                        <pre id="generatedCurl">
+                      <code id="List-Customer-Paper-Gold-Wallet-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/customers/v1/gold-wallet?CIC=0000000000012012' \
+    --header 'Accept-Language: ar' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'
+                       </code>
+                            </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+    
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-List-Customer-Paper-Gold-Wallet')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-List-Customer-Paper-Gold-Wallet3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-List-Customer-Paper-Gold-Wallet4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-List-Customer-Paper-Gold-Wallet5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-List-Customer-Paper-Gold-Wallet6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-List-Customer-Paper-Gold-Wallet7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-List-Customer-Paper-Gold-Wallet8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-List-Customer-Paper-Gold-Wallet9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                      <code id="response-List-Customer-Paper-Gold-Wallet" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "67295b36-6d0c-4f29-871b-cbe5c2252d91",
+            "statusDescription": "Successful Operation"
+        },
+        "body": {
+            "customerPaperGoldWalletsList": [
+                {
+                    "walletNumber": "GL000000996192",
+                    "status": "1"
+                }
+            ]
+        }
+    }
+                      </code>
+                     <code id="response-List-Customer-Paper-Gold-Wallet3" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.401.001",
+          "message": "Unauthorized to call the target operation.",
+          "path": "authorization",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }           
+                      </code>	
+                      
+                      <code id="response-List-Customer-Paper-Gold-Wallet4" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.403.001",
+          "message": "Can't find any valid subscription.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }
+                      </code>
+                      
+                      
+                      <code id="response-List-Customer-Paper-Gold-Wallet5" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.404.001",
+          "message": "No resources match requested URI.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }    
+                      </code>
+                      
+                      
+                      <code id="response-List-Customer-Paper-Gold-Wallet6" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.405.001",
+          "message": "The method is not allowed for the requested URL.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        } 
+                         
+                      </code>
+                      
+                      
+                      <code id="response-List-Customer-Paper-Gold-Wallet7" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.406.001",
+          "message": "An appropriate representation of the requested resource could not be found",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }      
+                      </code>
+                      
+                      
+                      <code id="response-List-Customer-Paper-Gold-Wallet8" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.429.001",
+          "message": "Assembly Rate Limit exceeded",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }     
+                      </code>
+                      
+                      
+                      <code id="response-List-Customer-Paper-Gold-Wallet9" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.500.001",
+          "message": "Internal Error",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }   
+                      </code>
+                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="fob-welcome-title" id="section-5">Get Customer Paper Gold Wallet Details</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint: GET : /customers/v1/gold-wallet-details</br></p>
+                                <p class="fob-welcome-text">This path is used to get customer paper gold wallet
+                                    details.</br></p>
+                                <p class="fob-welcome-text"><a id="downloadLink"
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/871/api/868#/GetCustomerPaperGoldWalletDetails_100/operation/%2Fgold-wallet-details/get">Swagger
+                                        Link</a></p>
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+    Headers
+    {
+    Accept-Language:”en”
+    }
+    Query Params
+    {
+    “CIC”:” 0000000013026500”,
+    “walletNumber “:”GL000001099930”,
+    “statusID”:” 2”,
+    “maximumRecords”:” 20”,
+    “offset”:” 1”
+                    } 
+                                        </code>
+                                      </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+    
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                onclick="show('Get-Customer-Paper-Gold-Wallet-Details-curl')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+    
+                                            <pre id="generatedCurl">
+                                          <code id="Get-Customer-Paper-Gold-Wallet-Details-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/customers/v1/gold-wallet-details?CIC=0000000125105232&walletNumber=GL000000996154&statusID=2&maximumRecords=5&offset=1' \
+    --header 'Accept-Language: ar' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'
+                                          </code>
+                                        </pre>
+                                        </div>
+                                    </div>
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-Customer-Paper-Gold-Wallet-Details')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-Customer-Paper-Gold-Wallet-Details3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-Customer-Paper-Gold-Wallet-Details4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-Customer-Paper-Gold-Wallet-Details5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-Customer-Paper-Gold-Wallet-Details6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-Customer-Paper-Gold-Wallet-Details7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-Customer-Paper-Gold-Wallet-Details8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-Customer-Paper-Gold-Wallet-Details9')">500</a>
+                                                </div>
+                                                <pre class="response-box">
+    
+                                <code id="response-Get-Customer-Paper-Gold-Wallet-Details" style=" display: block; " class="text">              
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "a26249a1-dc24-4eb4-8d2c-490ecdde2a3d",
+            "statusDescription": "Successful Operation"
+        },
+        "body": {
+            "walletNumber": "GL000000996154",
+            "status": "1",
+            "commodityType": "1",
+            "defaultAccountNumber": "204000010006085072238",
+            "defaultIBAN": "SA7780000204608015072238",
+            "feesAccountNumber": "204000010006085072238",
+            "feesIBAN": "SA7780000204608015072238",
+            "totalAmount": "151388.33",
+            "totalWeight": "20",
+            "weightType": "Free",
+            "totalFreeWeight": "20",
+            "totalFixedWeight": "0",
+            "walletDetailsList": [
+                {
+                    "serialNumber": "D326809",
+                    "fixedWeight": "1000",
+                    "weight": "4",
+                    "karat": "24",
+                    "purity": "999.9",
+                    "location": "Switzerland",
+                    "channel": "ARB_FINTECH",
+                    "transactionDate": "2024-07-16",
+                    "amount": "1072.624",
+                    "rate": "268.156",
+                    "ETID": "6073236",
+                    "quantity": "1",
+                    "transactionType": "Free",
+                    "rateType": "Buy",
+                    "vendorName": "MKS",
+                    "goldSource": "Switzerland",
+                    "transactionStatus": "Canceled",
+                    "currency": "XA0",
+                    "accountNumber": "SA9080000500608011416018",
+                    "IBAN": "SA9080000500608011416018",
+                    "feesAccountNumber": " ",
+                    "feesIBAN": " ",
+                    "safeKeeperName": "PAMP"
+                },
+                {
+                    "serialNumber": "D326796",
+                    "fixedWeight": "1000",
+                    "weight": "1",
+                    "karat": "24",
+                    "purity": "999.9",
+                    "location": "Switzerland",
+                    "channel": "ARB_FINTECH",
+                    "transactionDate": "2024-07-16",
+                    "amount": "268.156",
+                    "rate": "268.156",
+                    "ETID": "6073236",
+                    "quantity": "1",
+                    "transactionType": "Free",
+                    "rateType": "Buy",
+                    "vendorName": "MKS",
+                    "goldSource": "Switzerland",
+                    "transactionStatus": "Canceled",
+                    "currency": "XA0",
+                    "accountNumber": "SA9080000500608011416018",
+                    "IBAN": "SA9080000500608011416018",
+                    "feesAccountNumber": " ",
+                    "feesIBAN": " ",
+                    "safeKeeperName": "PAMP"
+                },
+                {
+                    "serialNumber": "D367693",
+                    "fixedWeight": "1000",
+                    "weight": "1",
+                    "karat": "24",
+                    "purity": "999.9",
+                    "location": "Switzerland",
+                    "channel": "ARB_FINTECH",
+                    "transactionDate": "2024-06-11",
+                    "amount": "266.608",
+                    "rate": "266.608",
+                    "ETID": "6069534",
+                    "quantity": "1",
+                    "transactionType": "Free",
+                    "rateType": "Buy",
+                    "vendorName": "MKS",
+                    "goldSource": "Switzerland",
+                    "transactionStatus": "Canceled",
+                    "currency": "XA0",
+                    "accountNumber": "SA9080000500608011416018",
+                    "IBAN": "SA9080000500608011416018",
+                    "feesAccountNumber": " ",
+                    "feesIBAN": " ",
+                    "safeKeeperName": "PAMP"
+                },
+                {
+                    "serialNumber": "D326809",
+                    "fixedWeight": "1000",
+                    "weight": "4",
+                    "karat": "24",
+                    "purity": "999.9",
+                    "location": "Switzerland",
+                    "channel": "ARB_FINTECH",
+                    "transactionDate": "2024-06-11",
+                    "amount": "1066.432",
+                    "rate": "266.608",
+                    "ETID": "6069534",
+                    "quantity": "1",
+                    "transactionType": "Free",
+                    "rateType": "Buy",
+                    "vendorName": "MKS",
+                    "goldSource": "Switzerland",
+                    "transactionStatus": "Canceled",
+                    "currency": "XA0",
+                    "accountNumber": "SA9080000500608011416018",
+                    "IBAN": "SA9080000500608011416018",
+                    "feesAccountNumber": " ",
+                    "feesIBAN": " ",
+                    "safeKeeperName": "PAMP"
+                },
+                {
+                    "serialNumber": "D385545",
+                    "fixedWeight": "1000",
+                    "weight": "10",
+                    "karat": "24",
+                    "purity": "999.9",
+                    "location": "Switzerland",
+                    "channel": "MOBILEWEB",
+                    "transactionDate": "2024-05-28",
+                    "amount": "2818.14",
+                    "rate": "281.814",
+                    "ETID": "6067828",
+                    "quantity": "1",
+                    "transactionType": "Free",
+                    "rateType": "Sell",
+                    "vendorName": "MKS",
+                    "goldSource": "Switzerland",
+                    "transactionStatus": "Confirmed",
+                    "currency": "XA0",
+                    "accountNumber": "204000010006085072238",
+                    "IBAN": "SA7780000204608015072238",
+                    "feesAccountNumber": " ",
+                    "feesIBAN": " ",
+                    "safeKeeperName": "PAMP"
+                }
+            ],
+            "sentRecords": 63,
+            "matchedRecords": 5,
+            "completedFlag": "N"
+        }
+    }                                   
+                                 </code>
+                                <code id="response-Get-Customer-Paper-Gold-Wallet-Details3" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.401.001",
+                "message": "Unauthorized to call the target operation.",
+                "path": "authorization",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                
+                                </code>	
+                                
+                                <code id="response-Get-Customer-Paper-Gold-Wallet-Details4" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.403.001",
+                "message": "Can't find any valid subscription.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }   
+                                </code>
+                                
+                                
+                                <code id="response-Get-Customer-Paper-Gold-Wallet-Details5" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="response-Get-Customer-Paper-Gold-Wallet-Details6" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                     
+                                </code>
+                                 
+                                
+                                <code id="response-Get-Customer-Paper-Gold-Wallet-Details7" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }       
+                                </code>
+                                 
+                                
+                                <code id="response-Get-Customer-Paper-Gold-Wallet-Details8" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="response-Get-Customer-Paper-Gold-Wallet-Details9" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }    
+                                </code>
+                                      </pre>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <h1 class="fob-welcome-title" id="section-6">List Available Bullions</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <p class="fob-welcome-text">Endpoint: GET :
+                                        /pricing/bullions/v1/commdities/{commodityType}/available-bullions</br>
+                                    </p>
+                                    <p class="fob-welcome-text">This path is used to list the available bullions for the
+                                        digital channel.</br>
+                                    </p>
+                                    <p class="fob-welcome-text"><a id="downloadLink"
+                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/895/api/892#/ListAvailableBullions_100/operation/%2Fcommdities%2F{commodityType}%2Favailable-bullions/get">Swagger
+                                            Link</a></p>
+    
+    
+                                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <h1 class="fob-welcome-title">Request Example</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <pre class="example_97 api-guides-example-fob ">
+                                            <code class="sample-code">
+    Headers
+    {
+    Accept-Language:”en”
+    }
+        Query parameters
+    {
+    “branchID”:” 88542”,
+    “commodityType”:” 1”
+    } 
+                                            </code>
+                                          </pre>
+                                            </div>
+                                            <div class="col-lg-4 mt-25">
+    
+                                                <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                    onclick="show('List-Available-Bullions-curl')">
+                                                    <p class="curlText">cURL</p>
+                                                </button>
+    
+                                                <pre id="generatedCurl">
+                                              <code id="List-Available-Bullions-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/pricing/bullions/v1/commdities/1/available-bullions?branchID=88542' \
+    --header 'Accept-Language: en' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'
+                                              </code>
+                                            </pre>
+                                            </div>
+                                        </div>
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <div class="code-box">
+                                                    <p
+                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                    <div class="response-box-div">
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-List-Available-Bullions')">200</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-List-Available-Bullions3')">401</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-List-Available-Bullions4')">403</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-List-Available-Bullions5')">404</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-List-Available-Bullions6')">405</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-List-Available-Bullions7')">406</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-List-Available-Bullions8')">429</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-List-Available-Bullions9')">500</a>
+                                                    </div>
+                                                    <pre class="response-box">
+    
+                                    <code id="response-List-Available-Bullions" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "0b1e7c88-8657-438b-a8d5-2d7aed18d2ba",
+            "statusDescription": "Success"
+        },
+        "body": {
+            "availableBullionsList": [
+                {
+                    "commodityType": "Gold",
+                    "availableFreeWeight": "1252117",
+                    "fixedBullionsList": [
+                        {
+                            "weight": "1000",
+                            "currency": "XA7"
+                        },
+                        {
+                            "weight": "50",
+                            "currency": "XA4"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+                                     </code>
+                                    <code id="response-List-Available-Bullions3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                    
+                                    </code>	
+                                    
+                                    <code id="response-List-Available-Bullions4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                                    </code>
+                                    
+                                    
+                                    <code id="response-List-Available-Bullions5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                    </code>
+                                    
+                                    
+                                    <code id="response-List-Available-Bullions6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                         
+                                    </code>
+                                     
+                                    
+                                    <code id="response-List-Available-Bullions7" style=" display: none; "class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.406.001",
+                    "message": "An appropriate representation of the requested resource could not be found",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }       
+                                    </code>
+                                     
+                                    
+                                    <code id="response-List-Available-Bullions8" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.429.001",
+                    "message": "Assembly Rate Limit exceeded",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }     
+                                    </code>
+                                    
+                                    
+                                    <code id="response-List-Available-Bullions9" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.500.001",
+                    "message": "Internal Error",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }    
+                                    </code>
+                                          </pre>
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h1 class="fob-welcome-title" id="section-7">Inquire Gold Rates</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <p class="fob-welcome-text">Endpoint: POST : /rates/gold-rates/v1/inquire</br>
+                                        <p class="fob-welcome-text">This path is used to inquire gold rates.</br>
+                                        </p>
+                                        <p class="fob-welcome-text"><a id="downloadLink"
+                                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/889/api/886#/InquireGoldRates_100/operation/%2Finquire/post">Swagger
+                                                Link</a></p>
+    
+                                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                                    <p class="fob-welcome-line"></p>
+                                                    <pre class="example_97 api-guides-example-fob ">
+                                                <code class="sample-code">
+    Headers
+    {
+    Accept-Language:”en”
+    }
+    Request Body
+    {
+        "CIC": "9013370",
+        "branchID": "88542",
+        "walletID": "GL000001099930",
+        "segment": "0260",
+        "city": "Dammam",
+        "region": "Eastern Province",
+        "fromCurrency": "SAR",
+        "toCurrency": "SAR",
+        "customerTier": "1",
+        "weight": "5",
+        "quantity": 1,
+        "bullionsList": [
+        {
+            "serialNumber": "12589",
+            "weight": "5",
+            "quantity": 1
+        }
+        ],
+        "dealQuantity": "5",
+        "dealQuantityCurrency": "XA0",
+        "valueDate": "2014-10-30T15:12:35.000Z",
+        "sellValueDate": "2014-10-30T15:12:35.000Z",
+        "transactionType": "Free-Weight",
+        "rateType": "Buy",
+        "productType": "Gold",
+        "purity": "1.0",
+        "supplierName": "MKS",
+        "measureUnit": "gm",
+        "sourceReferenceNumber": "12345678901234567000",
+        "remarks": "CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff,CustomerID=0000000013026500,TerminalID=,SourceSystemID=,Channel=MubasherMobile,TellerID=,ExecutingBranch=,Supplier=MKS",
+        "transactionKey": "d6ec52f6-46eb-4e16-ac5c-67954299dcd9",
+        "requester": "XAU-Indicative",
+        "buyCurrency": "XA0",
+        "sellCurrency": "SAR",
+        "buyValueDate": "2023-10-25T11:32:32",
+        "comment": "CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff"
+    }
+                                                </code>
+                                              </pre>
+                                                </div>
+                                                <div class="col-lg-4 mt-25">
+    
+                                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                        onclick="show('Inquire-Gold-Rates-curl')">
+                                                        <p class="curlText">cURL</p>
+                                                    </button>
+    
+                                                    <pre id="generatedCurl">
+                                                  <code id="Inquire-Gold-Rates-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/rates/gold-rates/v1/inquire' \
+    --header 'Accept-Language: ar' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "CIC": "0000000125105232",
+        "branchID": "88542",
+        "walletID": "GL000000996150",
+        "segment": "0260",
+        "city": "Dammam",
+        "region": "Eastern Province",
+        "fromCurrency": "SAR",
+        "toCurrency": "SAR",
+        "customerTier": "1",
+        "weight": "5",
+        "quantity": 1,
+        "bullionsList": [
+        {
+            "serialNumber": "12589",
+            "weight": "5",
+            "quantity": 1
+        }
+        ],
+        "dealQuantity": "5",
+        "dealQuantityCurrency": "XA0",
+        "transactionType": "Free-Weight",
+        "rateType": "Buy",
+        "productType": "Gold",
+        "purity": "1.0",
+        "supplierName": "MKS",
+        "measureUnit": "gm",
+        "sourceReferenceNumber": "012345678901234567890",
+        "remarks": "CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff,CustomerID=0000000013026500,TerminalID=,SourceSystemID=,Channel=MubasherMobile,TellerID=,ExecutingBranch=,Supplier=MKS",
+        "transactionKey": "8f093d9f-e6f5-40ee-8d6d-343f14327193",
+        "requester": "XAU-Indicative",
+        "buyCurrency": "XA0",
+        "sellCurrency": "SAR",
+        "buyValueDate": "2023-10-25T11:32:32",
+        "comment": "CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Staff"
+    }'
+                                                  </code>
+                                                </pre>
+                                                </div>
+                                            </div>
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <div class="code-box">
+                                                        <p
+                                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                        <div class="response-box-div">
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Inquire-Gold-Rates')">200</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Inquire-Gold-Rates3')">401</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Inquire-Gold-Rates4')">403</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Inquire-Gold-Rates5')">404</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Inquire-Gold-Rates6')">405</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Inquire-Gold-Rates7')">406</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Inquire-Gold-Rates8')">429</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Inquire-Gold-Rates9')">500</a>
+                                                        </div>
+                                                        <pre class="response-box">
+    
+                                        <code id="response-Inquire-Gold-Rates" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "62ddd38a-a672-46aa-a428-ae9c22b65306",
+            "statusDescription": "Success"
+        },
+        "body": {
+            "transactionKey": "8f093d9f-e6f5-40ee-8d6d-343f14327193",
+            "transactionID": "6073236",
+            "requestID": "62ddd38a-a672-46aa-a428-ae9c22b65306",
+            "rate": "268.156",
+            "supplierName": "MKS",
+            "timeToLive": "60",
+            "contraAmount": "1340.78",
+            "measureUnit": "gm",
+            "remarks": "CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000125105232,TerminalID=,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=5",
+            "weight": "5",
+            "quantity": 5,
+            "purity": "999.9",
+            "goldSource": "Switzerland"
+        }
+    }
+                                         </code>
+                                       <code id="response-Inquire-Gold-Rates3" style=" display: none; " class="text">
+                    {
+                    "errors": [
+                        {
+                        "code": "ERROR.401.001",
+                        "message": "Unauthorized to call the target operation.",
+                        "path": "authorization",
+                        "url": "https://{baseURL}/developer-portal/terms"
+                        }
+                    ]
+                    }
+                                        
+                                        </code>	
+                                        
+                                        <code id="response-Inquire-Gold-Rates4" style=" display: none; " class="text">
+                    {
+                    "errors": [
+                        {
+                        "code": "ERROR.403.001",
+                        "message": "Can't find any valid subscription.",
+                        "url": "https://{baseURL}/developer-portal/terms"
+                        }
+                    ]
+                    }   
+                                        </code>
+                                        
+                                        
+                                        <code id="response-Inquire-Gold-Rates5" style=" display: none; " class="text">
+                    {
+                    "errors": [
+                        {
+                        "code": "ERROR.404.001",
+                        "message": "No resources match requested URI.",
+                        "url": "https://{baseURL}/developer-portal/terms"
+                        }
+                    ]
+                    }     
+                                        </code>
+                                        
+                                        
+                                        <code id="response-Inquire-Gold-Rates6" style=" display: none; "class="text">
+                    {
+                    "errors": [
+                        {
+                        "code": "ERROR.405.001",
+                        "message": "The method is not allowed for the requested URL.",
+                        "url": "https://{baseURL}/developer-portal/terms"
+                        }
+                    ]
+                    }
+                                             
+                                        </code>
+                                         
+                                        
+                                        <code id="response-Inquire-Gold-Rates7" style=" display: none; "class="text">
+                    {
+                    "errors": [
+                        {
+                        "code": "ERROR.406.001",
+                        "message": "An appropriate representation of the requested resource could not be found",
+                        "url": "https://{baseURL}/developer-portal/terms"
+                        }
+                    ]
+                    }       
+                                        </code>
+                                         
+                                        
+                                        <code id="response-Inquire-Gold-Rates8" style=" display: none; " class="text">
+                    {
+                    "errors": [
+                        {
+                        "code": "ERROR.429.001",
+                        "message": "Assembly Rate Limit exceeded",
+                        "url": "https://{baseURL}/developer-portal/terms"
+                        }
+                    ]
+                    }     
+                                        </code>
+                                        
+                                        
+                                        <code id="response-Inquire-Gold-Rates9" style=" display: none; " class="text">
+                    {
+                    "errors": [
+                        {
+                        "code": "ERROR.500.001",
+                        "message": "Internal Error",
+                        "url": "https://{baseURL}/developer-portal/terms"
+                        }
+                    ]
+                    }    
+                                        </code>
+                                              </pre>
+    
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+    
+                                            <h1 class="fob-welcome-title" id="section-8">Confirm Rate</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <p class="fob-welcome-text">Endpoint: POST :
+                                                /rates/confirmation/v1/confirmation</br>
+                                            </p>
+                                            <p class="fob-welcome-text">This path is used to confirm rate.</br>
+                                            </p>
+                                            <p class="fob-welcome-text"><a id="downloadLink"
+                                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1021/api/853#/ConfirmRate_100/operation/%2Fconfirmation/post">Swagger
+                                                    Link</a></p>
+    
+                                            <div class="bx--snippet-container body"
+                                                data-testid="expandable-example-display">
+    
+                                                <div class="row flex mt-25">
+                                                    <div class="col-lg-8">
+                                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                                        <p class="fob-welcome-line"></p>
+                                                        <pre class="example_97 api-guides-example-fob ">
+                                                    <code class="sample-code">
+    Headers
+    {
+    Accept-Language:”en”
+    }
+    Request Body
+    {
+        "branchID": "88542",
+        "ETID": "234349907",
+        "transactionKey": "d6ec52f6-46eb-4e16-ac5c-67954299dcd9",
+        "rateStatus": "Confirmed",
+        "remarks": "reason for error",
+        "customerAccountType": "CA",
+        "customerAccountTransaction": "SA9080000500608011416018",
+        "transactionIBAN": "SA9080000500608011416018",
+        "customerAccountFee": "500000010006081416018",
+        "feeIBAN": "SA2230400108071086000028"
+    }
+                                                    </code>
+                                                  </pre>
+                                                    </div>
+                                                    <div class="col-lg-4 mt-25">
+    
+                                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                            onclick="show('Confirm-Rate-curl')">
+                                                            <p class="curlText">cURL</p>
+                                                        </button>
+    
+                                                        <pre id="generatedCurl">
+                                                      <code id="Confirm-Rate-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/rates/confirmation/v1/confirmation' \
+    --header 'Accept-Language: ar' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "branchID": "88542",
+        "ETID": "6073236",
+        "transactionKey": "8f093d9f-e6f5-40ee-8d6d-343f14327193",
+        "rateStatus": "Confirmed",
+        "remarks": "reason for error",
+        "customerAccountType": "CA",
+        "customerAccountTransaction": "SA9080000500608011416018",
+        "transactionIBAN": "SA9080000500608011416018",
+        "customerAccountFee": "500000010006081416018",
+        "feeIBAN": "SA2230400108071086000028"
+    }'
+                                                      </code>
+                                                    </pre>
+                                                    </div>
+                                                </div>
+                                                <div class="row flex mt-25">
+                                                    <div class="col-lg-8">
+                                                        <div class="code-box">
+                                                            <p
+                                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                            <div class="response-box-div">
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Confirm-Rate')">200</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Confirm-Rate3')">401</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Confirm-Rate4')">403</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Confirm-Rate5')">404</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Confirm-Rate6')">405</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Confirm-Rate7')">406</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Confirm-Rate8')">429</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Confirm-Rate9')">500</a>
+                                                            </div>
+                                                            <pre class="response-box">
+    
+                                            <code id="response-Confirm-Rate" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "3f6f5dbd-e6ee-4a95-9751-91cf9aed95ab",
+            "statusDescription": "Success"
+        },
+        "body": {
+            "ETID": "6073236",
+            "transactionKey": "8f093d9f-e6f5-40ee-8d6d-343f14327193",
+            "rateStatus": "Success"
+        }
+    }
+                                             </code>
+                                           <code id="response-Confirm-Rate3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                            
+                                            </code>	
+                                            
+                                            <code id="response-Confirm-Rate4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Confirm-Rate5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Confirm-Rate6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                                 
+                                            </code>
+                                             
+                                            
+                                            <code id="response-Confirm-Rate7" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }       
+                                            </code>
+                                             
+                                            
+                                            <code id="response-Confirm-Rate8" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Confirm-Rate9" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                                            </code>
+                                                  </pre>
+    
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+    
+                                                <h1 class="fob-welcome-title" id="section-9">Get Gold Rate History</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <p class="fob-welcome-text">Endpoint: GET :
+                                                    /gold-rate-history/v1/rate-history</br></p>
+                                                <p class="fob-welcome-text">This operation path is used to get gold rate
+                                                    history.</br>
+                                                </p>
+                                                <p class="fob-welcome-text"><a id="downloadLink"
+                                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/877/api/874#/GetGoldRateHistory_100/operation/%2Frate-history/get">Swagger
+                                                        Link</a></p>
+    
+    
+                                                <div class="bx--snippet-container body"
+                                                    data-testid="expandable-example-display">
+    
+                                                    <div class="row flex mt-25">
+                                                        <div class="col-lg-8">
+                                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                                            <p class="fob-welcome-line"></p>
+                                                            <pre class="example_97 api-guides-example-fob ">
+                                                    <code class="sample-code">
+    Headers
+    {
+    Accept-Language:”en”
+    }
+    Query parameters
+    {
+    “CIC”:” 000000003070723”,
+    “fromDate”:” 2023-11-03”,
+    “toDate”:” 2023-12-03”,
+    “aggregationType “:”D”
+    }
+                                                    </code>
+                                                  </pre>
+                                                        </div>
+                                                        <div class="col-lg-4 mt-25">
+    
+                                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                                onclick="show('Get-Gold-Rate-History-curl')">
+                                                                <p class="curlText">cURL</p>
+                                                            </button>
+    
+                                                            <pre id="generatedCurl">
+                                                      <code id="Get-Gold-Rate-History-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/gold-rate-history/v1/rate-history?fromDate=2023-12-24&toDate=2024-01-24&aggregationType=D' \
+    --header 'Accept-Language: en' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'                                                    
+                                                      </code>
+                                                    </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row flex mt-25">
+                                                        <div class="col-lg-8">
+                                                            <div class="code-box">
+                                                                <p
+                                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                                <div class="response-box-div">
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Get-Gold-Rate-History')">200</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Get-Gold-Rate-History3')">401</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Get-Gold-Rate-History4')">403</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Get-Gold-Rate-History5')">404</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Get-Gold-Rate-History6')">405</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Get-Gold-Rate-History7')">406</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Get-Gold-Rate-History8')">429</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Get-Gold-Rate-History9')">500</a>
+                                                                </div>
+                                                                <pre class="response-box">
+    
+                                            <code id="response-Get-Gold-Rate-History" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "2c3158b2-e2bc-4332-8ec1-dad3c3976c9e",
+            "statusDescription": "Success"
+        },
+        "body": {
+            "goldRateHistoryList": [
+                {
+                    "clientRate": "250.500000000",
+                    "rateTimeStamp": "2023-12-25T00:00:00"
+                },
+                {
+                    "clientRate": "250.334782610",
+                    "rateTimeStamp": "2023-12-26T00:00:00"
+                },
+                {
+                    "clientRate": "251.163478260",
+                    "rateTimeStamp": "2023-12-27T00:00:00"
+                },
+                {
+                    "clientRate": "250.543043480",
+                    "rateTimeStamp": "2023-12-28T00:00:00"
+                },
+                {
+                    "clientRate": "251.422272730",
+                    "rateTimeStamp": "2023-12-29T00:00:00"
+                },
+                {
+                    "clientRate": "251.140454550",
+                    "rateTimeStamp": "2024-01-01T00:00:00"
+                },
+                {
+                    "clientRate": "249.543125000",
+                    "rateTimeStamp": "2024-01-02T00:00:00"
+                },
+                {
+                    "clientRate": "249.235000000",
+                    "rateTimeStamp": "2024-01-03T00:00:00"
+                },
+                {
+                    "clientRate": "248.101818180",
+                    "rateTimeStamp": "2024-01-04T00:00:00"
+                },
+                {
+                    "clientRate": "246.865454550",
+                    "rateTimeStamp": "2024-01-05T00:00:00"
+                },
+                {
+                    "clientRate": "244.822727270",
+                    "rateTimeStamp": "2024-01-08T00:00:00"
+                },
+                {
+                    "clientRate": "245.378666670",
+                    "rateTimeStamp": "2024-01-09T00:00:00"
+                },
+                {
+                    "clientRate": "244.882857140",
+                    "rateTimeStamp": "2024-01-10T00:00:00"
+                },
+                {
+                    "clientRate": "246.610454550",
+                    "rateTimeStamp": "2024-01-11T00:00:00"
+                },
+                {
+                    "clientRate": "246.863636360",
+                    "rateTimeStamp": "2024-01-12T00:00:00"
+                },
+                {
+                    "clientRate": "249.065909090",
+                    "rateTimeStamp": "2024-01-15T00:00:00"
+                },
+                {
+                    "clientRate": "246.409545450",
+                    "rateTimeStamp": "2024-01-16T00:00:00"
+                },
+                {
+                    "clientRate": "241.965909090",
+                    "rateTimeStamp": "2024-01-17T00:00:00"
+                },
+                {
+                    "clientRate": "243.822272730",
+                    "rateTimeStamp": "2024-01-18T00:00:00"
+                },
+                {
+                    "clientRate": "245.967500000",
+                    "rateTimeStamp": "2024-01-19T00:00:00"
+                },
+                {
+                    "clientRate": "243.595000000",
+                    "rateTimeStamp": "2024-01-22T00:00:00"
+                },
+                {
+                    "clientRate": "245.127727270",
+                    "rateTimeStamp": "2024-01-23T00:00:00"
+                },
+                {
+                    "clientRate": "245.316363640",
+                    "rateTimeStamp": "2024-01-24T00:00:00"
+                }
+            ]
+        }
+    }
+                                             </code>
+                                            <code id="response-Get-Gold-Rate-History3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                            
+                                            </code>	
+                                            
+                                            <code id="response-Get-Gold-Rate-History4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Get-Gold-Rate-History5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Get-Gold-Rate-History6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                                 
+                                            </code>
+                                             
+                                            
+                                            <code id="response-Get-Gold-Rate-History7" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }       
+                                            </code>
+                                             
+                                            
+                                            <code id="response-Get-Gold-Rate-History8" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Get-Gold-Rate-History9" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                                            </code>
+                                                  </pre>
+    
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

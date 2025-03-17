@@ -1,0 +1,2403 @@
+{
+	"info": {
+		"_postman_id": "9a790c81-9b68-4512-bd52-307c8cbc2933",
+		"name": "ARB Personal Finance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23110150"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "ARB Microsite Token",
+					"item": [
+						{
+							"name": "OAuth Provider Authorize",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var locationHeader = pm.response.headers.get('Location');\r",
+											"var locationHeader2 = pm.response.headers.get('Location');\r",
+											"pm.collectionVariables.set(\"originalUrl\",decodeURIComponent(locationHeader.split(\"original-url=\")[1]));"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": false,
+								"disableUrlEncoding": true,
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=personal_finance_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}"
+										},
+										{
+											"key": "scope",
+											"value": "personal_finance_apis"
+										},
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "code_challenge",
+											"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OAuth Provider Authorize",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}"
+											}
+										],
+										"url": {
+											"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=personal_finance_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+											"protocol": "https",
+											"host": [
+												"{{inbound-gw}}"
+											],
+											"path": [
+												"sandbox-arb-microsite-oauth-provider",
+												"oauth2",
+												"authorize"
+											],
+											"query": [
+												{
+													"key": "client_id",
+													"value": "{{client-id}}"
+												},
+												{
+													"key": "scope",
+													"value": "personal_finance_apis"
+												},
+												{
+													"key": "response_type",
+													"value": "code"
+												},
+												{
+													"key": "code_challenge",
+													"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+												},
+												{
+													"key": "code_challenge_method",
+													"value": "S256"
+												}
+											]
+										}
+									},
+									"status": "Found",
+									"code": 302,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "x-request-id",
+											"value": "828eaec1-e767-4d3f-8643-0512d028c4ad"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.42.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "fb7b0ccd-84fe-4e9e-ad07-850f643bb9ff"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.73.89"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "6c5eecad66eac79900b05b30"
+										},
+										{
+											"key": "Location",
+											"value": "https://test.public.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/auth/initiate-redirect?original-url=https%3A%2F%2Fapimarketplace-ext-test-gw-svc-gw-gateway-traffic-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud%2Fapimarketplace-sit%2Fsandbox-inbound%2Fsandbox-arb-microsite-oauth-provider%2Foauth2%2Fauthorize%3Fclient_id%3D009407e30165d8f05d554e336acb0b26%26scope%3Dpersonal_finance_apis%26response_type%3Dcode%26code_challenge%3DGlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0%26code_challenge_method%3DS256%26state_nonce%3DZntmWxyxFolZKSzkCTH%252FckhVZgjtc3%252B%252FVSo0A%252FXr4aM%253D"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Sep 2024 12:29:13 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Generate Initiate Redirection Input",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = responseBody;\r",
+											"pm.collectionVariables.set(\"initiate-redirect-identity\", data);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "{{client-id}}",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/generate-jwt/sign-request"
+							},
+							"response": [
+								{
+									"name": "poiNumber = 1845490013",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "issuer",
+												"value": "009407e30165d8f05d554e336acb0b26",
+												"type": "text"
+											},
+											{
+												"key": "audience",
+												"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://{{inbound-gw}}/generate-jwt/sign-request"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "issuer",
+											"value": "009407e30165d8f05d554e336acb0b26"
+										},
+										{
+											"key": "audience",
+											"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.40.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "77b355d4-13d3-4b34-a6e9-36db392c1453"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.73.89"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "6c5eecad66b7d6b4019e7fe2"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "c10821be-e756-457a-91d3-54e3cb0dcd81"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Aug 2024 21:08:04 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIwMDc5ZDNlNS1jNGFiLTRhOTYtYmFlNS1hZGVjNWU2Yzk0YTUiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyNzY4NCwiaWF0IjoxNzIzMzI0MDg0LCJuYmYiOjE3MjMzMjQwODQsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiN2M0MmNkODQtMzllMS00MzIyLWI2YTctMGQ5MjM4NjA1ODRlIiwicG9pTnVtYmVyIjoiMTg0NTQ5MDAxMyJ9fQ.Nz-ihPlG_8DSFHdinRFr79FwIQHkA5JSkhn2sGmhWL0fDLj7Ltl5j9I1VjPFDDgl469mUcl08FRbqgNpd9CK3St9m0a6h3_YqheeIdiyECFoleTuWWWf_cj3GVUI4JbyLAtTut_vKZrpFD1DXyVz2o5OuDKXSi7N07KHh08IdRHqp0KxK26PKplX9fronGJ-FoamKj-gHY77AV3InwwP4z2uT6bPPkZqyORa1SMtv9DBeg2XgKLbs6A6XSbaEtOZ__Tql8FB78GpkuO2tjUztz6QpKv20k9ccRP6AYvX525hmbFbKe4FA_8UoMMhOnUH6ZQomp--xM7tOkel6k-yJw"
+								},
+								{
+									"name": "poiNumber = 1646701570",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "issuer",
+												"value": "009407e30165d8f05d554e336acb0b26",
+												"type": "text"
+											},
+											{
+												"key": "audience",
+												"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1646701570\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://{{inbound-gw}}/generate-jwt/sign-request"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "issuer",
+											"value": "009407e30165d8f05d554e336acb0b26"
+										},
+										{
+											"key": "audience",
+											"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.40.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "69263396-02fb-4e72-ad96-e145081fa842"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.116.160"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "6c5eecad66b7db4e00630a90"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "4a48d741-c2be-4003-9589-f89916419f9c"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Aug 2024 21:27:42 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJiZTgyZDM4NS1iOWRiLTQ0YjUtOWM2Yi1hZGVjNWU2Y2ViZDMiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODg2MiwiaWF0IjoxNzIzMzI1MjYyLCJuYmYiOjE3MjMzMjUyNjIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiODQxMjkzZWYtNDU0NC00OWZhLWE3ZWYtMjA3OGE2NmJlZDUwIiwicG9pTnVtYmVyIjoiMTY0NjcwMTU3MCJ9fQ.qrLok5CnoeV5Qkf15l5iVQnsQydtco0oZrIjvH5ixcL-rH27-GNXtb3fbuzoZms1eOc5OkJTtPKIadbKEnEP9ba320gxdV6wGbJiHYPXIlSRM7wdq5efcnRbXUxri8MHV5bRT_KbMOltX3dijF2MoJYxyKj_qsedoFt4XnYcxfqFvPTPmmmqf8ZLe3G94oCqHPo8SzYIkM5SzSe0SGvlChGXxnGKl6vEneT1XSu0rTq6x_KkS_OszfdgOiD9An4zA1c0EAp8PbHRTTU_gts0qXvbn7Aaor_oAo3qO7wy0LI9Niv1frh7_UACavN-jfmasp_qZ3wxMehVpIHvf4dyKw"
+								},
+								{
+									"name": "poiNumber = 1452525363",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "issuer",
+												"value": "009407e30165d8f05d554e336acb0b26",
+												"type": "text"
+											},
+											{
+												"key": "audience",
+												"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1452525363\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://{{inbound-gw}}/generate-jwt/sign-request"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "issuer",
+											"value": "009407e30165d8f05d554e336acb0b26"
+										},
+										{
+											"key": "audience",
+											"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.40.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "d14ad09e-c7f4-4b25-aaf5-6a34f12d5f73"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.116.160"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "6c5eecad66b7db7500630ac0"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "86467d55-94a5-4745-8117-e030e0a0ff93"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Aug 2024 21:28:21 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJlZGUzZWFjNy1iZjVlLTRlOGMtOTIxOC1hZGVjNWU2YzRmNzAiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODkwMSwiaWF0IjoxNzIzMzI1MzAxLCJuYmYiOjE3MjMzMjUzMDEsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiYjI2ZmFkMzMtYjQzNS00YWEyLWE2Y2ItZTY0MDgyOWE1NmI0IiwicG9pTnVtYmVyIjoiMTQ1MjUyNTM2MyJ9fQ.dbxu73j_fwPJv1v6Ej6UmYnOvUETR9AaWjt2xE8zixPBicQYzVGtZX9nhpTo3UA4HJ9I4XSzqkT3Nk_4iiXE0Ez5oGjy111ao6cuCsUCGtSW1zI-NIUY_8TvFkpBwnKVafyqHlDIDxsr1KLV-aQqpANVfbsRXMEF06o10jFk7MVeGTF2WzteSkeeuhWD_a3ZJLKmPCIzN-GBBUE4iQE6sH--WacFxbnuLDPy6k3Gic3aPhdsjrYIdAJfEGo3_4gbhbmqiPK0riWu-eukSKVmA2_Z5gQEAbZBR7X9-mCUo4CZ4PMfmw6xO2nY_uK-BpcUQRXUqpI8_Ezhshsb_IFNlA"
+								},
+								{
+									"name": "poiNumber = 1634378157",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "issuer",
+												"value": "009407e30165d8f05d554e336acb0b26",
+												"type": "text"
+											},
+											{
+												"key": "audience",
+												"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1634378157\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://{{inbound-gw}}/generate-jwt/sign-request"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "issuer",
+											"value": "009407e30165d8f05d554e336acb0b26"
+										},
+										{
+											"key": "audience",
+											"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.40.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "ce8de52d-89b3-4415-b4e9-65f79fcd76be"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.116.160"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "6c5eecad66b7dbda00630b10"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "8b759779-9d94-4da7-bd40-12bba3514388"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Aug 2024 21:30:02 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIxOGI4YmY0ZC0xZjc4LTQ4OWYtYTYzYS1hZGVjNWU2YzA3OWQiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyOTAwMiwiaWF0IjoxNzIzMzI1NDAyLCJuYmYiOjE3MjMzMjU0MDIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiMWQwYWQ3YjgtNmFmYy00NzlkLWI0MDktZjljNjNmYjBiNjg2IiwicG9pTnVtYmVyIjoiMTYzNDM3ODE1NyJ9fQ.aiArQSR9wrzq48xq0Q3WFa03gY1AhP9bOWMleWQwIn561CikvY9xD_054gvJ6ZroQKHoUs3gmH1_lFkKppcdbhf6iULhj_Ws_PYOHeQtBosYZbV8cM3ddqnPUesBtEwJtPrEoGHwbTgH6-RKrhYh8jAulx5-tVo_cj_rxudLrZAy3DTJ_bEGwJ6OvDcN5vFnkBZFPCdB9lcT8e0jVSnotLWHfdBoxmp29PxSRIraxdav6aalMLdFE7rjdTpLKhELpN3xgqzGW6asbc-e5Kh8rRVZl5KVMjFDS0dj78xMkl8IE3xYGDtt94ZR6l0oNiC-I8bdIadbUqAypCNOmFXE0w"
+								}
+							]
+						},
+						{
+							"name": "Initiate Redirection",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.code == 303){\r",
+											"    var locationHeader = pm.response.headers.get('Location');\r",
+											"    pm.collectionVariables.set(\"confirmationCode\", locationHeader.split(\"identity=\")[1]);\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{inbound-gw}}/auth/initiate-redirect?client_id={{client-id}}&identity={{initiate-redirect-identity}}",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"auth",
+										"initiate-redirect"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}"
+										},
+										{
+											"key": "identity",
+											"value": "{{initiate-redirect-identity}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OAuth Authorize Confirmation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.response.status != 400){\r",
+											"    var locationHeader = pm.response.headers.get('Location');\r",
+											"    var code = locationHeader.split(\"code=\")[1];\r",
+											"    pm.collectionVariables.set(\"authorizationCode\",code);\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": false,
+								"disableUrlEncoding": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": "{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}"
+							},
+							"response": []
+						},
+						{
+							"name": "OAuth Provider Access Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var response = pm.response.json()\r",
+											"if(pm.response.code == 200){\r",
+											"    pm.collectionVariables.set('security-token', 'Bearer ' + response.access_token);\r",
+											"    pm.collectionVariables.set('customer_access_token', response.access_token);\r",
+											"    pm.collectionVariables.set('customer_refresh_token',response.refresh_token);\r",
+											"}\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "personal_finance_apis",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "authorization_code",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "{{authorizationCode}}",
+											"type": "text"
+										},
+										{
+											"key": "code_verifier",
+											"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+											"type": "text"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256",
+											"type": "text"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "plain",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token"
+							},
+							"response": [
+								{
+									"name": "OAuth Provider Access Token",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "client_id",
+													"value": "{{client-id}}",
+													"type": "text"
+												},
+												{
+													"key": "scope",
+													"value": "personal_finance_apis",
+													"type": "text"
+												},
+												{
+													"key": "grant_type",
+													"value": "authorization_code",
+													"type": "text"
+												},
+												{
+													"key": "code",
+													"value": "{{authorizationCode}}",
+													"type": "text"
+												},
+												{
+													"key": "code_verifier",
+													"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+													"type": "text"
+												},
+												{
+													"key": "code_challenge_method",
+													"value": "S256",
+													"type": "text"
+												},
+												{
+													"key": "code_challenge_method",
+													"value": "plain",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.42.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "e64eb347-6873-4f71-a2de-cd4afa13467f"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.73.89"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "6c5eecad66eac7a70082cec1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "5dfdbd66-265e-4c55-91ea-a617336e2a4a"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Sep 2024 12:29:27 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjYO5VQZH_DhkyIuzJynhlSM4FijZc8a3pi-IjsQaco--ij3F89YXS3Wiw5-LIWhiWjJAmn1LZpgr2JvFNJyTAXP5N3MaSmnYvzKOgZykAOXU6Pvh9effU9lg_BPkh_GToqdrDfsXhCNt15jGhbkKCZKRGJBycLhY0uqhBGmmxoOpfUrzGQeJ3sE8IM2o0cqEnllJJIQzJzmJUyePru9PTAn1yOjtAGNHOv2J0KSEVF4VHWH0y2D3Ywzay9JmzqMv4k\",\n    \"scope\": \"personal_finance_apis\",\n    \"expires_in\": 1800,\n    \"consented_on\": 1726662567,\n    \"refresh_token\": \"AAJUItXp6XCaMSpUBJu3GBTRKHweU7-iI2XwXSSl6WgGJTQPSReFzaJQqg8Bz4H0aACSV8jmVFlDmkuBpSpNQJenuGbfAEl8t0678HHt2NTdxVcXXuimeAHq0pRq_0zpP04h8hHtWIkx9UcGrOEdKfRYhj2d4ColDld-2vw0owN_66bSNLK7UeSsOmVssmgTxLl8sTNMMn9t7NnJfp20ZJWwQU2B4EJBdbi_aG7ndVnY9vbKZGpwlYBUY2fw_MEJNQj3K-akWNlrAByoUE7IvQhn\",\n    \"refresh_token_expires_in\": 36000\n}"
+								}
+							]
+						},
+						{
+							"name": "OAuth Provider Refresh token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var response = pm.response.json()\r",
+											"pm.environment.set('security_token', 'Bearer ' + response.access_token);\r",
+											"    pm.collectionVariables.set('customer_access_token', response.access_token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "personal_finance_apis",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "{{customer_refresh_token}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token"
+							},
+							"response": [
+								{
+									"name": "OAuth Provider Refresh token",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "client_id",
+													"value": "{{client-id}}",
+													"type": "text"
+												},
+												{
+													"key": "scope",
+													"value": "personal_finance_apis",
+													"type": "text"
+												},
+												{
+													"key": "grant_type",
+													"value": "refresh_token",
+													"type": "text"
+												},
+												{
+													"key": "refresh_token",
+													"value": "{{customer_refresh_token}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.42.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "ca68b1d1-c638-4664-bfa4-98e73c1a334f"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.73.89"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "6c5eecad66eac7aa0082ced1"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "3daaed09-c0c3-410f-8829-6d731c55768f"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Sep 2024 12:29:30 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjYWw5j4KZqmaoXaqc9Ec43G23AjVVG5N6K6NEoB8msgAoyI70BeWifKBTYRqEKdILxIejjAF80viEwAiAnYw2sxxoNxGufPo7jyv8zNzq-8ERsqNcx0m9KqNQuEncf9GV90sOnxWqZCLXh3ReNsAT4ujyc4uGnYGifVWSXO_tnlr2U_PPT1Lze4auTVYVCb2iA1MQDetZDb5dhrSiTaCdWUW26lkRKiINtlYpo5bAWL4RtXRm9CejRcA8HcJBY3EQI\",\n    \"scope\": \"personal_finance_apis\",\n    \"expires_in\": 1800,\n    \"consented_on\": 1726662567,\n    \"refresh_token\": \"AAK5xynpuq_8BOP47h6NBUmYLArpjx96hXgTs_GXfsQOVNoHLf1evH5TeGvKImdHtHe6sg4kQBG0KkERJmG0Ru7Vm3w9I-5LuyNhb9Riiqg84ilmOC1PZwiTHhimICqlZGCt3AEq1xmzFobcPBkc1zZyMMtm23gTIerXvk7u1svkLL9UJH0V8InIhYWcnafJpG9sv8cJRzgU9R-jxFNFkoZ8ISQ2DwhJ_NSiMD-RaMBMOjCqqcO8FwFPdoVOpNjDvgmfpLm1W8f1kobUP0VVuh80\",\n    \"refresh_token_expires_in\": 36000\n}"
+								}
+							]
+						},
+						{
+							"name": "OAuth Introspect",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "token",
+											"value": "{{customer_access_token}}",
+											"type": "text"
+										},
+										{
+											"key": "token_type_hint",
+											"value": "access_token",
+											"type": "text"
+										}
+									]
+								},
+								"url": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/introspect"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Oauth2token",
+					"item": [
+						{
+							"name": "Generate Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = JSON.parse(responseBody);\r",
+											"pm.collectionVariables.set(\"access-token\", data.access_token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{client-secret}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "marketplace_apis",
+											"type": "text"
+										}
+									]
+								},
+								"url": "https://{{inbound-gw}}/oauth2security/oauth2/token"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ARB Personal Finance",
+			"item": [
+				{
+					"name": "Get Employer Departments List Of Values",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/utilities/v1/employer-departments-lov",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"utilities",
+								"v1",
+								"employer-departments-lov"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "maximumRecords",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Employer Departments List Of Values",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/utilities/v1/employer-departments-lov?maximumRecords=10&offset=1",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"utilities",
+										"v1",
+										"employer-departments-lov"
+									],
+									"query": [
+										{
+											"key": "maximumRecords",
+											"value": "10"
+										},
+										{
+											"key": "offset",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c059a562-66af-4e8f-8dec-bd8d38396195"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66c74eb500c5ea60"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Aug 2024 14:44:06 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"6b8faa76-acb4-4067-bce8-8dd4f91b627f\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"sentRecords\": 10,\n        \"matchedRecords\": 5050,\n        \"completedFlag\": \"N\",\n        \"lovList\": [\n            {\n                \"lovCode1\": \"1\",\n                \"itemDescription\": \"وزارة الشؤون البلدية و القروية و الإسكان  (الأسم سابقا :وزارة الإسكان)\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"1\"\n            },\n            {\n                \"lovCode1\": \"1\",\n                \"itemDescription\": \"Arabic Name\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"11\"\n            },\n            {\n                \"lovCode1\": \"1\",\n                \"itemDescription\": \"Sahlha ARABIC\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"55\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة الاعلام  فرع ابها\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"1\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وكالة الانباء السعودية ( واس )\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"10\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"المؤسسة العربية للاتصالات الفضائية (عربسات )\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"11\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"شركة الاعلام المتكاملة التجارية\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"12\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة  الاعلام بفرع جدة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"2\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة الاعلام بحائل\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"4\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة الاعلام بنجران\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"5\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Employer Departments List Of Values",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/utilities/v1/employer-departments-lov?maximumRecords=50&offset=2",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"utilities",
+										"v1",
+										"employer-departments-lov"
+									],
+									"query": [
+										{
+											"key": "maximumRecords",
+											"value": "50"
+										},
+										{
+											"key": "offset",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c059a562-66af-4e8f-8dec-bd8d38396195"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66c74eb500c5ea60"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Aug 2024 14:44:06 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"c671c57c-e729-4d1d-982b-0168a6894648\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"sentRecords\": 50,\n        \"matchedRecords\": 5050,\n        \"completedFlag\": \"N\",\n        \"lovList\": [\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Jeddah Province Traffic\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"106\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"Civil Affairs-East\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"107\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"Civil Affairs-Hail\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"108\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"Civil Affairs-Yanbu\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"109\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"Civil Affairs-Shaqra\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"110\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Dharma?a Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"111\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Wad Dawasir Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"112\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Sulial Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"113\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Mozahmiah Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"114\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Shaqra?s Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"115\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Afeef Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"116\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Dawadmi Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"117\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Horaimila?a Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"118\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Majma?a Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"119\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Jouf Region Traffic\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"12\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Premises Security\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"120\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Ramah Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"121\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Hotat Sidair Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"123\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Aflaj Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"124\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" AlJareeq Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"125\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Quwaiya Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"126\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Diriah Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"127\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Ghat Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"128\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Thadiq Province\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"129\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" General Directorate of Prisoners Al-Madinah\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"13\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Ehsa Region Principality\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"130\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Nairia Region Emirate\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"131\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Khobar Region Emirate\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"132\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Qateef Region Secretariat\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"133\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Hebail Region Principality\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"134\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"Abqhhq Region Principality\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"136\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Olaya Region Secretariat\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"138\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Khar Khair Region Principality\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"139\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Military affairs- (Administrative Affairs) Hail\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"14\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Yanbou Principality\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"140\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Rail-ways Police\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"141\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Jebail Region Police\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"142\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Khobar Province Police\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"143\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Hafr Al-Batin Traffic\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"145\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Jeddah Borders? Force\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"147\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Rabigh Borders? Force\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"148\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Al-Qonfozah Borders? Force\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"149\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Borders? Guard Force ? Riyadh\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"15\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" East Borders? Force\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"150\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Amlah Borders? Force\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"151\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Torba?a Provincial Principality\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"152\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"Ibqiq Traffic\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"154\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Riyadh Traffic\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"155\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \" Prisoners Department of Riyadh Region\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"156\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"General Directorate Of Narcotics Control\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"157\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Employer Departments List Of Values",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/utilities/v1/employer-departments-lov?maximumRecords=100&offset=1",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"utilities",
+										"v1",
+										"employer-departments-lov"
+									],
+									"query": [
+										{
+											"key": "maximumRecords",
+											"value": "100"
+										},
+										{
+											"key": "offset",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c059a562-66af-4e8f-8dec-bd8d38396195"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66c74eb500c5ea60"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Aug 2024 14:44:06 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"1c4cb265-e58a-4548-baf6-05dcf9704256\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"sentRecords\": 100,\n        \"matchedRecords\": 5050,\n        \"completedFlag\": \"N\",\n        \"lovList\": [\n            {\n                \"lovCode1\": \"1\",\n                \"itemDescription\": \"وزارة الشؤون البلدية و القروية و الإسكان  (الأسم سابقا :وزارة الإسكان)\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"1\"\n            },\n            {\n                \"lovCode1\": \"1\",\n                \"itemDescription\": \"Arabic Name\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"11\"\n            },\n            {\n                \"lovCode1\": \"1\",\n                \"itemDescription\": \"Sahlha ARABIC\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"55\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة الاعلام  فرع ابها\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"1\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وكالة الانباء السعودية ( واس )\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"10\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"المؤسسة العربية للاتصالات الفضائية (عربسات )\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"11\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"شركة الاعلام المتكاملة التجارية\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"12\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة  الاعلام بفرع جدة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"2\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة الاعلام بحائل\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"4\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة الاعلام بنجران\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"5\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة  والاعلام بفرع مكة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"6\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة الاعلام بالمدينة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"7\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"وزارة الاعلام بفرع المدينة المنورة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"8\"\n            },\n            {\n                \"lovCode1\": \"2\",\n                \"itemDescription\": \"هيئة الاذاعة والتلفزيون\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"9\"\n            },\n            {\n                \"lovCode1\": \"3\",\n                \"itemDescription\": \"وزارة الصناعة والثروة المعدنية - وكالة الوزارة للثروة المعدنية\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"1\"\n            },\n            {\n                \"lovCode1\": \"3\",\n                \"itemDescription\": \"وزارة الصناعة والثروة المعدنية المنطقة الشرقية\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"2\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية - الدمام\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"1\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية- حائل\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"13\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بينبع\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"14\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية - جدة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"15\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بالمجمعة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"18\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بنجران\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"19\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار )  بالدمام\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"20\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بالحديثة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"21\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بالمدينة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"23\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بابها\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"3\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية - تبوك\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"30\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية بالاحساء\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"32\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية بالقصيم - الرس\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"33\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية بالقريات\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"34\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية بالخرج\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"35\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية بحفر الباطن - غرفة حفر الباطن\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"36\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية بالمدينة المنورة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"37\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية بالمخواة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"38\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"غرفة مكة المكرمة للتجارة والصناعة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"39\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية  - الرياض\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"4\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية بالباحة\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"5\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية -ابها\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"6\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية- القطيف\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"7\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية - الجبيل\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"8\"\n            },\n            {\n                \"lovCode1\": \"4\",\n                \"itemDescription\": \"الغرفة التجارية الصناعية - الخفجي\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"9\"\n            },\n            {\n                \"lovCode1\": \"5\",\n                \"itemDescription\": \"Sahlha ARABIC NAME\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"05\"\n            },\n            {\n                \"lovCode1\": \"5\",\n                \"itemDescription\": \"مصلحة الاحصاءات العامة  ابها\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"3\"\n            },\n            {\n                \"lovCode1\": \"5\",\n                \"itemDescription\": \"TEST ARABIC NAME\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"52\"\n            },\n            {\n                \"lovCode1\": \"8\",\n                \"itemDescription\": \"معهد الامير سعود الفيصل للدراسات الدبلوماسية ( وزارة الخارجية )\",\n                \"itemAttribute1\": \"C\",\n                \"lovCode2\": \"2\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة منطقة الرياض\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"1\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"شرطة محافظة شرورة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"100\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"ادارة المجاهدين ـــ  منطقة مكة المكرمة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"101\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"الادارة العامة لمكافحة المخدرات ادارة الباحة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"104\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"ادارة مكافحة المخدرات بجدة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"105\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"مرور  محافظة جدة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"106\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"الأحوال المدنية  الشرقية\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"107\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"الأحوال المدنية  حائل\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"108\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"الأحوال المدنية  ينبع\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"109\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"الأحوال المدنية  شقراء\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"110\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة ضرماء\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"111\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة وادي الدواسر\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"112\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة السليل\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"113\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة المزاحمية\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"114\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة شقراء\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"115\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة عفيف\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"116\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة الدوادمي\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"117\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة حريملاء\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"118\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة المجمعة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"119\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"مرور منطقة الجوف\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"12\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"قوات امن المنشأت\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"120\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة الرماح\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"121\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة حوطة سدير\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"123\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة الافلاج\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"124\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة الحريق\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"125\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة القويعية\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"126\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة الدرعية\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"127\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة الغاط\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"128\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"محافظة ثادق\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"129\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"المديرية العامة للسجون بالمدينة المنورة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"13\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة المنطقة الأحساء\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"130\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة منطقة النعيرية\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"131\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة منطقةالخبر\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"132\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة منطقة القطيف\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"133\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة منطقة الجبيل\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"134\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة منطقة ابقيق\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"136\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة منطقة العليا\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"138\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة منطقة الخرخير\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"139\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"الشؤون العسكرية  حائل ( الشؤون الادارية )\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"14\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة ينبع\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"140\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"شرطة سكة الحديد\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"141\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"شرطة الجبيل\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"142\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"شرطة محافظة الخبر\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"143\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"مرور حفر الباطن\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"145\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"سلاح حرس الحدود- جدة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"147\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"سلاح حرس الحدود - رابغ\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"148\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"سلاح حرس الحدود- القنفذة\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"149\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"سلاح حرس الحدود- الرياض\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"15\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"سلاح حرس الحدود - الشرقية\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"150\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"سلاح حرس الحدود املج\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"151\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"امارة محافظة تربه\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"152\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"مرور بقيق\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"154\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"المرور- الرياض\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"155\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"مديرية السجون  - الرياض  ــــــــــــ   الخرج ـــــــــ   والإدارة العامة لصحة السجون\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"156\"\n            },\n            {\n                \"lovCode1\": \"9\",\n                \"itemDescription\": \"ادارة مكافحة المخدرات\",\n                \"itemAttribute1\": \"M\",\n                \"lovCode2\": \"157\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get personal finance product eligibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{customer_access_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/efinance/v1/personal-product-eligibility?customerSegment=001&salaryCurrency=SAR&militaryRankID=22&businessPositionID=002&employmentDate=1441-03-13&frequencyTypeID=1&propertyType=55&requestedTenure=100&xSellFinancialProductID=1&linkedDossierID=582655&onlyProfitOption=Y&rolloutFlag=Y&employerID=1&departmentID=1&salaryAmount=2000&requestedDownPayment=600&totalPropertyCost=12000&financialProductsList=[SFN,3PF,WRE]",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"efinance",
+								"v1",
+								"personal-product-eligibility"
+							],
+							"query": [
+								{
+									"key": "customerSegment",
+									"value": "001",
+									"description": "Customer Segment."
+								},
+								{
+									"key": "salaryCurrency",
+									"value": "SAR",
+									"description": "Salary Currency.\nDefault Value: 'SAR'"
+								},
+								{
+									"key": "militaryRankID",
+									"value": "22",
+									"description": "Military Rank ID."
+								},
+								{
+									"key": "businessPositionID",
+									"value": "002",
+									"description": "Business Position ID."
+								},
+								{
+									"key": "employmentDate",
+									"value": "1441-03-13",
+									"description": "Employment Date."
+								},
+								{
+									"key": "frequencyTypeID",
+									"value": "1",
+									"description": "Frequency Type ID."
+								},
+								{
+									"key": "propertyType",
+									"value": "55",
+									"description": "Property Type."
+								},
+								{
+									"key": "requestedTenure",
+									"value": "100",
+									"description": "Requested Tenure.\nTotal digits: 15 "
+								},
+								{
+									"key": "xSellFinancialProductID",
+									"value": "1",
+									"description": "xSell Financial Product ID."
+								},
+								{
+									"key": "linkedDossierID",
+									"value": "582655",
+									"description": "Linked Dossier ID."
+								},
+								{
+									"key": "onlyProfitOption",
+									"value": "Y",
+									"description": "Only Profit Option Flag.\nAllowed Vales:\n  Y: Yes\n  N: No"
+								},
+								{
+									"key": "rolloutFlag",
+									"value": "Y",
+									"description": "Rollout Flag.\nAllowed Vales:\n  Y: Yes\n  N: No"
+								},
+								{
+									"key": "employerID",
+									"value": "1"
+								},
+								{
+									"key": "departmentID",
+									"value": "1"
+								},
+								{
+									"key": "salaryAmount",
+									"value": "2000"
+								},
+								{
+									"key": "requestedDownPayment",
+									"value": "600"
+								},
+								{
+									"key": "totalPropertyCost",
+									"value": "12000"
+								},
+								{
+									"key": "financialProductsList",
+									"value": "[SFN,3PF,WRE]"
+								}
+							]
+						},
+						"description": "This path is used to get personal finance product eligibility."
+					},
+					"response": [
+						{
+							"name": "Get personal finance product eligibility",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/efinance/v1/personal-product-eligibility?customerSegment=001&salaryCurrency=SAR&militaryRankID=22&businessPositionID=002&employmentDate=1441-03-13&frequencyTypeID=1&propertyType=55&requestedTenure=100&xSellFinancialProductID=1&linkedDossierID=582655&onlyProfitOption=Y&rolloutFlag=Y&employerID=1&departmentID=1&salaryAmount=2000&requestedDownPayment=600&totalPropertyCost=12000&financialProductsList=[SFN,3PF,WRE]",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"efinance",
+										"v1",
+										"personal-product-eligibility"
+									],
+									"query": [
+										{
+											"key": "customerSegment",
+											"value": "001",
+											"description": "Customer Segment."
+										},
+										{
+											"key": "salaryCurrency",
+											"value": "SAR",
+											"description": "Salary Currency.\nDefault Value: 'SAR'"
+										},
+										{
+											"key": "militaryRankID",
+											"value": "22",
+											"description": "Military Rank ID."
+										},
+										{
+											"key": "businessPositionID",
+											"value": "002",
+											"description": "Business Position ID."
+										},
+										{
+											"key": "employmentDate",
+											"value": "1441-03-13",
+											"description": "Employment Date."
+										},
+										{
+											"key": "frequencyTypeID",
+											"value": "1",
+											"description": "Frequency Type ID."
+										},
+										{
+											"key": "propertyType",
+											"value": "55",
+											"description": "Property Type."
+										},
+										{
+											"key": "requestedTenure",
+											"value": "100",
+											"description": "Requested Tenure.\nTotal digits: 15 "
+										},
+										{
+											"key": "xSellFinancialProductID",
+											"value": "1",
+											"description": "xSell Financial Product ID."
+										},
+										{
+											"key": "linkedDossierID",
+											"value": "582655",
+											"description": "Linked Dossier ID."
+										},
+										{
+											"key": "onlyProfitOption",
+											"value": "Y",
+											"description": "Only Profit Option Flag.\nAllowed Vales:\n  Y: Yes\n  N: No"
+										},
+										{
+											"key": "rolloutFlag",
+											"value": "Y",
+											"description": "Rollout Flag.\nAllowed Vales:\n  Y: Yes\n  N: No"
+										},
+										{
+											"key": "employerID",
+											"value": "1"
+										},
+										{
+											"key": "departmentID",
+											"value": "1"
+										},
+										{
+											"key": "salaryAmount",
+											"value": "2000"
+										},
+										{
+											"key": "requestedDownPayment",
+											"value": "600"
+										},
+										{
+											"key": "totalPropertyCost",
+											"value": "12000"
+										},
+										{
+											"key": "financialProductsList",
+											"value": "[SFN,3PF,WRE]"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "dbc988d6-1788-4fef-84d4-65e5476fa145"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66eac7b40082cef1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2024 12:29:40 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"499e8ec3-bbcf-4648-a459-4acdc11f01f9\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"productsEligibilityList\": [\n            {\n                \"financeProductID\": \"SFN\",\n                \"featureCode\": \"ST\",\n                \"campaignID\": \"100000941\",\n                \"campaignName\": \"Doctors Camp\",\n                \"eligibilityAmount\": \"51193.79\",\n                \"eligibilityCurrency\": \"SAR\",\n                \"duration\": 36,\n                \"eligibleInstallmentAmount\": \"1666.5\",\n                \"eligibleInstallmentCurrency\": \"SAR\",\n                \"profitRate\": \"5.73\",\n                \"acceptableRequest\": \"A\",\n                \"installmentDataList\": [\n                    {\n                        \"endPeriod\": 36,\n                        \"installmentAmount\": \"1666.5\",\n                        \"installmentCurrency\": \"SAR\"\n                    }\n                ],\n                \"messageKeyList\": [\n                    {\n                        \"messageDescription\": \"Success\"\n                    }\n                ],\n                \"customerSegment\": \"001\",\n                \"statusCode\": \"I000000\",\n                \"messageCode\": \"Successful Operation\"\n            },\n            {\n                \"financeProductID\": \"CL2\",\n                \"featureCode\": \"ST\",\n                \"campaignID\": \"X\",\n                \"campaignName\": \"X\",\n                \"eligibilityAmount\": \"40754.72\",\n                \"eligibilityCurrency\": \"SAR\",\n                \"duration\": 60,\n                \"eligibleInstallmentAmount\": \"1186.1\",\n                \"eligibleInstallmentCurrency\": \"SAR\",\n                \"profitRate\": \"6.5\",\n                \"acceptableRequest\": \"A\",\n                \"installmentDataList\": [\n                    {\n                        \"startPeriod\": 1,\n                        \"endPeriod\": 60,\n                        \"installmentAmount\": \"1186.1\",\n                        \"installmentCurrency\": \"SAR\"\n                    }\n                ],\n                \"messageKeyList\": [\n                    {\n                        \"messageDescription\": \"RAC Min Income Deviation\"\n                    }\n                ],\n                \"customerSegment\": \"001\",\n                \"statusCode\": \"I000000\",\n                \"messageCode\": \"Successful Operation\"\n            },\n            {\n                \"financeProductID\": \"CAR\",\n                \"featureCode\": \"ST\",\n                \"campaignID\": \"X\",\n                \"campaignName\": \"X\",\n                \"eligibilityAmount\": \"20081.67\",\n                \"eligibilityCurrency\": \"SAR\",\n                \"duration\": 36,\n                \"eligibleInstallmentAmount\": \"615.48\",\n                \"eligibleInstallmentCurrency\": \"SAR\",\n                \"profitRate\": \"7.48\",\n                \"acceptableRequest\": \"A\",\n                \"installmentDataList\": [\n                    {\n                        \"startPeriod\": 1,\n                        \"endPeriod\": 36,\n                        \"installmentAmount\": \"615.48\",\n                        \"installmentCurrency\": \"SAR\"\n                    }\n                ],\n                \"messageKeyList\": [\n                    {\n                        \"messageDescription\": \"Success\"\n                    }\n                ],\n                \"customerSegment\": \"001\",\n                \"statusCode\": \"I000000\",\n                \"messageCode\": \"Successful Operation\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Stipulated Customer Data.",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{customer_access_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en"
+							}
+						],
+						"url": "https://{{inbound-gw}}/efinance/v1/stipulated-customer-data",
+						"description": "This path is used to get stipulated customer data."
+					},
+					"response": [
+						{
+							"name": "Get Stipulated Customer Data.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en"
+									}
+								],
+								"url": "https://{{inbound-gw}}/efinance/v1/stipulated-customer-data"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "9fa5f895-4bbf-4a91-9705-21e6100be0d5"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66eaca940082d901"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2024 12:41:56 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"aa73f0df-51b0-4a78-a9c3-308e1d602b08\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"employerID\": 14,\n        \"departmentID\": 12,\n        \"sectorID\": \"GGG\",\n        \"salaryAmount\": \"25000.000\",\n        \"salaryCurrency\": \"SAR\",\n        \"militaryRankID\": \"001\",\n        \"employmentDate\": \"2018-01-01\",\n        \"mobile\": \"0563089053\",\n        \"email\": \"kmqjkl@gmail.com\",\n        \"obsoleteData\": \"N\",\n        \"availableData\": \"Y\",\n        \"currentAccountBranch\": \"20400\",\n        \"currentAccountType\": \"001\",\n        \"currentAccountNumber\": \"6085245347\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Set Responsible Lending",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{customer_access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"martialStatus\": \"2\",\n  \"familyMembers\": 1,\n  \"ownHouse\": \"01\",\n  \"educationFees\": 1,\n  \"insurance\": \"Y\",\n  \"cityID\": \"00000002\",\n  \"workingStatus\": \"S\",\n  \"basicSalaryAmount\": \"25000\",\n  \"basicSalaryCurrency\": \"SAR\",\n  \"housingAllowanceAmount\": \"0.000\",\n  \"housingAllowanceCurrency\": \"SAR\",\n  \"fixedAllowanceAmount\": \"0.000\",\n  \"fixedAllowanceCurrency\": \"SAR\",\n  \"transportationAllowanceAmount\": \"0.000\",\n  \"transportationAllowanceCurrency\": \"SAR\",\n  \"customerExpensesList\": [\n    {\n      \"expenseID\": \"001\",\n      \"valueAmount\": \"840\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Food And Beverages\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"003\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Housing\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"007\",\n      \"valueAmount\": \"525\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Transport\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"008\",\n      \"valueAmount\": \"210\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Communications\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"010\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Education Fees\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"011\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Home Servants\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"012\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Fees on expats\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"900\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Other Income-Government support*\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"013\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Other future expenses\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"005\",\n      \"valueAmount\": \"105\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Insurance\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"004\",\n      \"valueAmount\": \"315\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Utilities\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"006\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Health Care Services\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    }\n  ],\n  \"residentialType\": \"001\",\n  \"houseHoldHelp\": 0,\n  \"publicSchoolDependants\": 0,\n  \"privateSchoolDependants\": 0,\n  \"breadWinnerFlag\": \"N\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/efinance/v1/responsible-lending",
+						"description": "This path is used to set customer responsible lending information."
+					},
+					"response": [
+						{
+							"name": "Set Responsible Lending",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"martialStatus\": \"2\",\n  \"familyMembers\": 1,\n  \"ownHouse\": \"01\",\n  \"educationFees\": 1,\n  \"insurance\": \"Y\",\n  \"cityID\": \"00000002\",\n  \"workingStatus\": \"S\",\n  \"basicSalaryAmount\": \"25000\",\n  \"basicSalaryCurrency\": \"SAR\",\n  \"housingAllowanceAmount\": \"0.000\",\n  \"housingAllowanceCurrency\": \"SAR\",\n  \"fixedAllowanceAmount\": \"0.000\",\n  \"fixedAllowanceCurrency\": \"SAR\",\n  \"transportationAllowanceAmount\": \"0.000\",\n  \"transportationAllowanceCurrency\": \"SAR\",\n  \"customerExpensesList\": [\n    {\n      \"expenseID\": \"001\",\n      \"valueAmount\": \"840\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Food And Beverages\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"003\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Housing\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"007\",\n      \"valueAmount\": \"525\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Transport\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"008\",\n      \"valueAmount\": \"210\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Communications\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"010\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Education Fees\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"011\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Home Servants\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"012\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Fees on expats\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"900\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Other Income-Government support*\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"013\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Other future expenses\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"005\",\n      \"valueAmount\": \"105\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Insurance\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"004\",\n      \"valueAmount\": \"315\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Utilities\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    },\n    {\n      \"expenseID\": \"006\",\n      \"valueAmount\": \"0.000\",\n      \"valueAmountCurrency\": \"SAR\",\n      \"description\": \"Health Care Services\",\n      \"baseAmount\": \"0.000\",\n      \"baseAmountCurrency\": \"SAR\"\n    }\n  ],\n  \"residentialType\": \"001\",\n  \"houseHoldHelp\": 0,\n  \"publicSchoolDependants\": 0,\n  \"privateSchoolDependants\": 0,\n  \"breadWinnerFlag\": \"N\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/efinance/v1/responsible-lending"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "315ce28f-2db5-454a-8ed9-98ab37b53651"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66eac9dd01dc8402"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2024 12:38:53 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"c1e6f2bb-14e2-49d8-a0e8-ddae6319423b\",\n        \"statusDescription\": \"Successful\"\n    },\n    \"body\": {\n        \"GOSIFlag\": \"O\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Responsible Lending",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{customer_access_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/efinance/v1/responsible-lending",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"efinance",
+								"v1",
+								"responsible-lending"
+							],
+							"query": [
+								{
+									"key": "dossierID",
+									"value": "24687780",
+									"disabled": true
+								},
+								{
+									"key": "GOSIFlag",
+									"value": "Y",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This path is used to get customer financial stipulated data."
+					},
+					"response": [
+						{
+							"name": "Get Responsible Lending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/efinance/v1/responsible-lending",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"efinance",
+										"v1",
+										"responsible-lending"
+									],
+									"query": [
+										{
+											"key": "dossierID",
+											"value": "24687780",
+											"disabled": true
+										},
+										{
+											"key": "GOSIFlag",
+											"value": "Y",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2814f288-5e2a-4ae8-b9f8-cfbde45d9209"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66eac9d500ed3760"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2024 12:38:46 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"13566602-eb67-4c76-ba9e-742718549067\",\n        \"statusDescription\": \"Successful\"\n    },\n    \"body\": {\n        \"martialStatus\": \"2\",\n        \"familyMembers\": 3,\n        \"ownHouse\": \"02\",\n        \"educationFees\": 0,\n        \"insurance\": \"N\",\n        \"cityID\": \"00000002\",\n        \"workingStatus\": \"S\",\n        \"housingAllowanceAmount\": \"0.000\",\n        \"housingAllowanceCurrency\": \"SAR\",\n        \"fixedAllowanceAmount\": \"0.000\",\n        \"fixedAllowanceCurrency\": \"SAR\",\n        \"transportationAllowanceAmount\": \"0.000\",\n        \"transportationAllowanceCurrency\": \"SAR\",\n        \"totalNetSalaryAmount\": \"63700.000\",\n        \"totalNetSalaryCurrency\": \"SAR\",\n        \"totalMonthlyIncomeAmount\": \"63700.000\",\n        \"totalMonthlyIncomeCurrency\": \"SAR\",\n        \"totalObligationsAmount\": \"0.000\",\n        \"totalObligationsCurrency\": \"SAR\",\n        \"customerExpensesList\": [\n            {\n                \"expenseID\": \"001\",\n                \"description\": \"Food And Beverages\",\n                \"baseAmount\": \"880.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"880.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"003\",\n                \"description\": \"Housing\",\n                \"baseAmount\": \"2750.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"2750.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"007\",\n                \"description\": \"Transport\",\n                \"baseAmount\": \"550.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"550.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"008\",\n                \"description\": \"Communications\",\n                \"baseAmount\": \"220.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"220.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"010\",\n                \"description\": \"Education Fees\",\n                \"baseAmount\": \"0.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"0.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"011\",\n                \"description\": \"Home Servants\",\n                \"baseAmount\": \"0.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"0.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"012\",\n                \"description\": \"Fees on expats\",\n                \"baseAmount\": \"0.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"0.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"900\",\n                \"description\": \"Other Income-Government support*\",\n                \"baseAmount\": \"0.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"0.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"013\",\n                \"description\": \"Other future expenses\",\n                \"baseAmount\": \"0.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"0.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"005\",\n                \"description\": \"Insurance\",\n                \"baseAmount\": \"110.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"110.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"004\",\n                \"description\": \"Utilities\",\n                \"baseAmount\": \"330.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"330.000\",\n                \"valueCurrency\": \"SAR\"\n            },\n            {\n                \"expenseID\": \"006\",\n                \"description\": \"Health Care Services\",\n                \"baseAmount\": \"0.000\",\n                \"baseCurrency\": \"SAR\",\n                \"valueAmount\": \"0.000\",\n                \"valueCurrency\": \"SAR\"\n            }\n        ],\n        \"residentialType\": \"001\",\n        \"houseHoldHelp\": 0,\n        \"publicSchoolDependants\": 0,\n        \"privateSchoolDependants\": 0,\n        \"breadWinnerFlag\": \"N\",\n        \"basicSalaryAmount\": \"70000.000\",\n        \"basicSalaryCurrency\": \"SAR\",\n        \"GOSIDeductionAmount\": \"6300.000\",\n        \"GOSIDeductionCurrency\": \"SAR\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get mandatory documents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{customer_access_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/efinance/v1/mandatory-documents?productID=CC&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierID=855268",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"efinance",
+								"v1",
+								"mandatory-documents"
+							],
+							"query": [
+								{
+									"key": "productID",
+									"value": "CC",
+									"description": "(Required) Customer Segment."
+								},
+								{
+									"key": "customerSegment",
+									"value": "001",
+									"description": "Rollout Flag.\nAllowed Values :\n- Y: Yes\n- N: No"
+								},
+								{
+									"key": "rolloutFlag",
+									"value": "Y",
+									"description": "Last Stipulated Dossier ID."
+								},
+								{
+									"key": "lastStipulatedDossierID",
+									"value": "855268"
+								}
+							]
+						},
+						"description": "This path is used to get the list of mandatory documents."
+					},
+					"response": [
+						{
+							"name": "Get mandatory documents",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/efinance/v1/mandatory-documents?productID=CC&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierID=855268",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"efinance",
+										"v1",
+										"mandatory-documents"
+									],
+									"query": [
+										{
+											"key": "productID",
+											"value": "CC",
+											"description": "(Required) Customer Segment."
+										},
+										{
+											"key": "customerSegment",
+											"value": "001",
+											"description": "Rollout Flag.\nAllowed Values :\n- Y: Yes\n- N: No"
+										},
+										{
+											"key": "rolloutFlag",
+											"value": "Y",
+											"description": "Last Stipulated Dossier ID."
+										},
+										{
+											"key": "lastStipulatedDossierID",
+											"value": "855268"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "31111af5-25a5-4c1d-87a8-9f5175894e90"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66eac7d601dc7e62"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2024 12:30:14 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"228eae76-cdc0-4aa2-862d-d26160a8d3e5\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"mandatoryDocumentsList\": [\n            {\n                \"mandatory\": \"Y\",\n                \"documentCode\": \"37\",\n                \"documentDescription\": \"Updated Salary Certificate\"\n            },\n            {\n                \"mandatory\": \"Y\",\n                \"documentCode\": \"7\",\n                \"documentDescription\": \"Updated Salary transfer\"\n            },\n            {\n                \"mandatory\": \"N\",\n                \"documentCode\": \"OTHERS\",\n                \"documentDescription\": \"Others\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Open new finance dossier.",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{customer_access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en"
+							},
+							{
+								"key": "channelID",
+								"value": "ARB_FINTECH",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"CIC\": \"0000000003070723\",\n  \"accountBranch\": \"20400\",\n  \"accountType\": \"001\",\n  \"accountNumber\": \"0006084155794\",\n  \"userID\": \"u3070723X\",\n  \"productID\": \"WRE\",\n  \"employerID\": 100,\n  \"departmentID\": 0,\n  \"businessPositionID\": \"102\",\n  \"employmentDate\": \"2012-10-01\",\n  \"salaryAmount\": \"48000\",\n  \"salaryAmountCurrency\": \"SAR\",\n  \"mobile\": \"0540764855\",\n  \"email\": \"u3109402X@banking.com.sa\",\n  \"requestedFinancingAmount\": \"3255\",\n  \"requestedFinancingAmountCurrency\": \"SAR\",\n  \"duration\": 3,\n  \"rolloutFlag\": \"Y\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/efinance/dossiers/v2/",
+						"description": "This operation path is used to open a new dossier for financing."
+					},
+					"response": [
+						{
+							"name": "Open new finance dossier.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en"
+									},
+									{
+										"key": "channelID",
+										"value": "ARB_FINTECH",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CIC\": \"0000000003070723\",\n  \"accountBranch\": \"20400\",\n  \"accountType\": \"001\",\n  \"accountNumber\": \"0006084155794\",\n  \"userID\": \"u3070723X\",\n  \"productID\": \"WRE\",\n  \"employerID\": 100,\n  \"departmentID\": 0,\n  \"businessPositionID\": \"102\",\n  \"employmentDate\": \"2012-10-01\",\n  \"salaryAmount\": \"48000\",\n  \"salaryAmountCurrency\": \"SAR\",\n  \"mobile\": \"0540764855\",\n  \"email\": \"u3109402X@banking.com.sa\",\n  \"requestedFinancingAmount\": \"3255\",\n  \"requestedFinancingAmountCurrency\": \"SAR\",\n  \"duration\": 3,\n  \"rolloutFlag\": \"Y\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/efinance/dossiers/v2/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "71f30106-a597-4b1d-bdce-e6ae17217e51"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66eaca3800ed3920"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2024 12:40:24 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"441550aa-3a12-4586-935d-4f291e9e5ad2\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"dossierID\": \"990001389326\",\n        \"displayMessagesList\": [\n            \"Instant Approval is Yes\"\n        ],\n        \"acceptableRequest\": \"A\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "originalUrl",
+			"value": ""
+		},
+		{
+			"key": "initiate-redirect-identity",
+			"value": ""
+		},
+		{
+			"key": "confirmationCode",
+			"value": ""
+		},
+		{
+			"key": "authorizationCode",
+			"value": ""
+		},
+		{
+			"key": "security-token",
+			"value": ""
+		},
+		{
+			"key": "customer_access_token",
+			"value": ""
+		},
+		{
+			"key": "customer_refresh_token",
+			"value": ""
+		},
+		{
+			"key": "client-secret",
+			"value": ""
+		}
+	]
+}

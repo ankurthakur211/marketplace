@@ -1,0 +1,2268 @@
+{
+	"info": {
+		"_postman_id": "26ff6ae3-9a88-4a8c-b687-faf281589eb0",
+		"name": "Emkan Personal Finance",
+		"description": "Loan Origination Services for Marketplace Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23110150"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access_token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Cookie",
+								"value": "cookiesession1=678A8C3997F36E43064F1EBED59975E1"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "009407e30165d8f05d554e336acb0b26",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "efc9584a7ff25456423a532040ebbd42",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://{{inbound-gw}}/oauth2security/oauth2/token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Emkan Personal Finance",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "{{$guid}}",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1851444462\",\n    \"idExpiryDate\": \"2025-02-02\",\n    \"idIssueDate\": \"2020-02-02\",\n    \"arbCIC\": \"0000000014055376\",\n    \"email\": \"OB3014m@hotfa1il.com\",\n    \"mobile\": \"966595267335\",\n    \"nationality\": \"113\",\n    \"dateOfBirth\": \"1994-08-12\",\n    \"gender\": \"M\",\n    \"firstNameEN\": \"Ahmad\",\n    \"firstNameAR\": \"أحمد\",\n    \"fatherNameEN\": \"Ahmad\",\n    \"fatherNameAR\": \"أحمد\",\n    \"familyNameEN\": \"alsalloum\",\n    \"familyNameAR\": \"السلوم\",\n    \"maritalStatus\": \"SINGLE\",\n    \"dependantCount\": \"0\",\n    \"preferredLanguage\": \"EN\",\n    \"address\": {\n        \"latlng\": \"35\",\n        \"buildingNumber\": \"3223\",\n        \"streetName\": \"Amer Bin Al Munthir\",\n        \"district\": \"Al Hamadaniyah Dist.\",\n        \"city\": \"3\",\n        \"additionalNumber\": \"22444\",\n        \"region\": \"1\",\n        \"unitNumber\": \"12345\"\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/customers/CreateCustomer"
+					},
+					"response": [
+						{
+							"name": "Create Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1851444462\",\n    \"idExpiryDate\": \"2025-02-02\",\n    \"idIssueDate\": \"2020-02-02\",\n    \"arbCIC\": \"0000000014055376\",\n    \"email\": \"OB3014m@hotfa1il.com\",\n    \"mobile\": \"966595267335\",\n    \"nationality\": \"113\",\n    \"dateOfBirth\": \"1994-08-12\",\n    \"gender\": \"M\",\n    \"firstNameEN\": \"Ahmad\",\n    \"firstNameAR\": \"أحمد\",\n    \"fatherNameEN\": \"Ahmad\",\n    \"fatherNameAR\": \"أحمد\",\n    \"familyNameEN\": \"alsalloum\",\n    \"familyNameAR\": \"السلوم\",\n    \"maritalStatus\": \"SINGLE\",\n    \"dependantCount\": \"0\",\n    \"preferredLanguage\": \"EN\",\n    \"address\": {\n        \"latlng\": \"35\",\n        \"buildingNumber\": \"3223\",\n        \"streetName\": \"Amer Bin Al Munthir\",\n        \"district\": \"Al Hamadaniyah Dist.\",\n        \"city\": \"3\",\n        \"additionalNumber\": \"22444\",\n        \"region\": \"1\",\n        \"unitNumber\": \"12345\"\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/customers/CreateCustomer"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e74be957-6794-4353-acd0-3c6077c0ec16"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20baf005401f3"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,60;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:40:31 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Create Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440756\",\n    \"idExpiryDate\": \"2027-06-19\",\n    \"idIssueDate\": \"2020-02-02\",\n    \"arbCIC\": \"0000000014037921\",\n    \"email\": \"mm516@gmail.com\",\n    \"mobile\": \"966593296331\",\n    \"nationality\": \"113\",\n    \"dateOfBirth\": \"2000-03-26\",\n    \"gender\": \"M\",\n    \"firstNameEN\": \"Moeen\",\n    \"firstNameAR\": \"معين\",\n    \"fatherNameEN\": \"Abdullah\",\n    \"fatherNameAR\": \"عبدالله\",\n    \"familyNameEN\": \"Mosawi\",\n    \"familyNameAR\": \"هوساوي\",\n    \"maritalStatus\": \"SINGLE\",\n    \"dependantCount\": \"0\",\n    \"preferredLanguage\": \"EN\",\n    \"address\": {\n        \"latlng\": \"35\",\n        \"buildingNumber\": \"3643\",\n        \"streetName\": \"Amer Bin Al Munthir\",\n        \"district\": \"Al Hamadaniyah Dist.\",\n        \"city\": \"3\",\n        \"additionalNumber\": \"22144\",\n        \"region\": \"1\",\n        \"unitNumber\": \"61479\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/customers/CreateCustomer"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3b7af987-202b-4bfc-9dfa-441fc70e7cc1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20bdc0071c171"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,59;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:41:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Create Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1111102447\",\n    \"idExpiryDate\": \"2025-12-11\",\n    \"idIssueDate\": \"2020-02-02\",\n    \"arbCIC\": \"0000000014075169\",\n    \"email\": \"ss367@gmail.com\",\n    \"mobile\": \"966593296331\",\n    \"nationality\": \"113\",\n    \"dateOfBirth\": \"2000-03-26\",\n    \"gender\": \"M\",\n    \"firstNameEN\": \"SUHAIR\",\n    \"firstNameAR\": \"سهير\",\n    \"fatherNameEN\": \"ISHAQ\",\n    \"fatherNameAR\": \"اسحاق\",\n    \"familyNameEN\": \"ALSAFADI\",\n    \"familyNameAR\": \"الصفدى\",\n    \"maritalStatus\": \"SINGLE\",\n    \"dependantCount\": \"0\",\n    \"preferredLanguage\": \"EN\",\n    \"address\": {\n        \"latlng\": \"35\",\n        \"buildingNumber\": \"3643\",\n        \"streetName\": \"Amer Bin Al Munthir\",\n        \"district\": \"Al Hamadaniyah Dist.\",\n        \"city\": \"3\",\n        \"additionalNumber\": \"22144\",\n        \"region\": \"1\",\n        \"unitNumber\": \"61479\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/customers/CreateCustomer"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "698d705c-4e75-4bcc-a21e-8735c33b81cb"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20cbf009d2360"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,57;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:45:04 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Create Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"2741626053\",\n    \"idExpiryDate\": \"2024-10-31\",\n    \"idIssueDate\": \"2020-02-02\",\n    \"arbCIC\": \"0000000014018675\",\n    \"email\": \"ss367@gmail.com\",\n    \"mobile\": \"966593296331\",\n    \"nationality\": \"113\",\n    \"dateOfBirth\": \"2000-03-26\",\n    \"gender\": \"M\",\n    \"firstNameEN\": \"DEMA\",\n    \"firstNameAR\": \"ديمه\",\n    \"fatherNameEN\": \"MAHDI\",\n    \"fatherNameAR\": \"مهدي\",\n    \"familyNameEN\": \"ALSIDRAN\",\n    \"familyNameAR\": \"السدران\",\n    \"maritalStatus\": \"SINGLE\",\n    \"dependantCount\": \"0\",\n    \"preferredLanguage\": \"EN\",\n    \"address\": {\n        \"latlng\": \"35\",\n        \"buildingNumber\": \"3643\",\n        \"streetName\": \"Amer Bin Al Munthir\",\n        \"district\": \"Al Hamadaniyah Dist.\",\n        \"city\": \"3\",\n        \"additionalNumber\": \"22144\",\n        \"region\": \"1\",\n        \"unitNumber\": \"61479\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/customers/CreateCustomer"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "6ba9c112-a336-4abc-9045-dc92001506c4"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20d050071c511"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,56;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:46:14 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"12025\",\n    \"message\": \"Id Expired\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Basic Eligibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "{{$guid}}",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1851444462\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/BasicEligibility"
+					},
+					"response": [
+						{
+							"name": "Get Basic Eligibility",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1851444462\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/BasicEligibility"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3ea6c316-3671-4e68-ae12-f2540e56e19a"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b2077f012cc122"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:22:40 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"eligible\": true\n}"
+						},
+						{
+							"name": "Get Basic Eligibility",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440756\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/BasicEligibility"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "46948ea9-25c9-4285-86cb-1d9a4f4ef995"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b207f1012cc3b2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,88;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:24:33 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"eligible\": true\n}"
+						},
+						{
+							"name": "Get Basic Eligibility",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1111102447\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/BasicEligibility"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "86242af8-f929-463a-989e-cc6cb2df60c2"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b207fc012cc3e2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,87;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:24:44 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"eligible\": true\n}"
+						},
+						{
+							"name": "Get Basic Eligibility",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"2741626051\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/BasicEligibility"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b25f8ed1-589a-4a83-9fb9-b875d9c7f4cb"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b208040071bd61"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,86;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:24:52 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"eligible\": false,\n    \"reason\": [\n        {\n            \"code\": \"10310\",\n            \"description\": \"Sorry, your age does not match Emkan policy\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Set Declaration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "{{$guid}}",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1851444462\",\n    \"declaration\": {\n        \"purposeOfFinance\": \"PRRPVEH\",\n        \"familySize\": \"1\",\n        \"familyWithEducationFees\": \"0\",\n        \"housingType\": \"RENTH\",\n        \"workingStatus\": \"SAL\",\n        \"martialStatus\": \"MARRIED\",\n        \"expenses\": {\n            \"housing\": 0,\n            \"expatFees\": 0,\n            \"foodBeverage\": 0,\n            \"tution\": 0,\n            \"healthInsurance\": 0,\n            \"transportation\": 10000,\n            \"totalAdditionalExpenses\": null,\n            \"hasOtherLoans\": null,\n            \"totalObligations\": 1555\n        },\n        \"employment\": {\n            \"sectorId\": \"GOV\",\n            \"departmentID\": \"AGN00007\",\n            \"employerName\": \"العسكرية\",\n            \"employmentStatus\": 0,\n            \"dateOfJoining\": \"2015-05-21\",\n            \"militaryRank\": \"JUNDI\",\n            \"wage\": {\n                \"basic\": 5003,\n                \"housing\": 5004,\n                \"otherAllowance\": 5005\n            },\n            \"customerWage\": null\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/SetDeclaration"
+					},
+					"response": [
+						{
+							"name": "Set Declaration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1851444462\",\n    \"declaration\": {\n        \"purposeOfFinance\": \"PRRPVEH\",\n        \"familySize\": \"1\",\n        \"familyWithEducationFees\": \"0\",\n        \"housingType\": \"RENTH\",\n        \"workingStatus\": \"SAL\",\n        \"martialStatus\": \"MARRIED\",\n        \"expenses\": {\n            \"housing\": 0,\n            \"expatFees\": 0,\n            \"foodBeverage\": 0,\n            \"tution\": 0,\n            \"healthInsurance\": 0,\n            \"transportation\": 10000,\n            \"totalAdditionalExpenses\": null,\n            \"hasOtherLoans\": null,\n            \"totalObligations\": 1555\n        },\n        \"employment\": {\n            \"sectorId\": \"GOV\",\n            \"departmentID\": \"AGN00007\",\n            \"employerName\": \"العسكرية\",\n            \"employmentStatus\": 0,\n            \"dateOfJoining\": \"2015-05-21\",\n            \"militaryRank\": \"JUNDI\",\n            \"wage\": {\n                \"basic\": 5003,\n                \"housing\": 5004,\n                \"otherAllowance\": 5005\n            },\n            \"customerWage\": null\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/SetDeclaration"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "562f8f7c-bd70-4a6c-b5cb-41a4feb01fad"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b2082a009d1880"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,85;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:25:30 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productId\": \"APL\",\n    \"subProductId\": \"Topup\",\n    \"packageId\": 379,\n    \"schemeId\": 465,\n    \"offerAmount\": 1500000,\n    \"tenure\": 60,\n    \"apr\": 17.29,\n    \"installmentAmount\": 36562.5\n}"
+						},
+						{
+							"name": "Set Declaration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440756\",\n    \"declaration\": {\n        \"purposeOfFinance\": \"EMRGEXP\",\n        \"familySize\": \"7\",\n        \"familyWithEducationFees\": \"0\",\n        \"housingType\": \"EMPLYR\",\n        \"workingStatus\": \"SAL\",\n        \"martialStatus\": \"SINGLE\",\n        \"expenses\": {\n            \"housing\": 1000,\n            \"expatFees\": 0,\n            \"foodBeverage\": 300,\n            \"tution\": 10,\n            \"healthInsurance\": 10,\n            \"transportation\": 10,\n            \"totalAdditionalExpenses\": 0,\n            \"totalObligations\": null,\n            \"hasOtherLoans\": false\n        },\n        \"employment\": {\n            \"sectorId\": \"SGV\",\n            \"departmentID\": \"AGN00002\",\n            \"employerName\": \"شركة انوار طريف للمقاولات (شركة شخص واحد ذات مسؤولية المحدودة)\",\n            \"employmentStatus\": null,\n            \"dateOfJoining\": \"04/05/2015\",\n            \"militaryRank\": null,\n            \"wage\": null,\n            \"customerWage\": {\n                \"basic\": 1234,\n                \"housing\": 1234,\n                \"otherAllowance\": 1255\n            }\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/SetDeclaration"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "6b9c342e-7fc9-466e-8cf5-9cbc52573e18"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20843009d1890"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,84;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:25:56 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productId\": \"MUR\",\n    \"subProductId\": \"Topup\",\n    \"packageId\": 675,\n    \"schemeId\": 361,\n    \"offerAmount\": 1350000,\n    \"tenure\": 50,\n    \"apr\": 18.13,\n    \"installmentAmount\": 31945\n}"
+						},
+						{
+							"name": "Set Declaration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1111102447\",\n    \"declaration\": {\n        \"purposeOfFinance\": \"EDUEXP\",\n        \"familySize\": \"3\",\n        \"familyWithEducationFees\": \"0\",\n        \"housingType\": \"EMPLYR\",\n        \"workingStatus\": \"SAL\",\n        \"martialStatus\": \"MARRIED\",\n        \"expenses\": {\n            \"housing\": 5000,\n            \"expatFees\": 0,\n            \"foodBeverage\": 1200,\n            \"tution\": 0,\n            \"healthInsurance\": 260,\n            \"transportation\": 350,\n            \"totalAdditionalExpenses\": 0,\n            \"totalObligations\": null,\n            \"hasOtherLoans\": false\n        },\n        \"employment\": {\n            \"sectorId\": \"SGV\",\n            \"departmentID\": \"AGN00003\",\n            \"employerName\": \"صيدلية البلسم الطبي الحادي عشر الطبية\",\n            \"employmentStatus\": null,\n            \"dateOfJoining\": \"04/05/2015\",\n            \"militaryRank\": null,\n            \"wage\": null,\n            \"customerWage\": {\n                \"basic\": 10000,\n                \"housing\": 3500,\n                \"otherAllowance\": 1100\n            }\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/SetDeclaration"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "98b0b8f3-bab4-4692-9dfd-1cedb528a770"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b2085f009d18a0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,83;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:26:23 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productId\": \"IJMB\",\n    \"subProductId\": \"Mic\",\n    \"packageId\": 293,\n    \"schemeId\": 534,\n    \"offerAmount\": 1120000,\n    \"tenure\": 45,\n    \"apr\": 19.37,\n    \"installmentAmount\": 29372.5\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Declaration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "{{$guid}}",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1851444462\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/GetDeclaration"
+					},
+					"response": [
+						{
+							"name": "Get Declaration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1851444462\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/GetDeclaration"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ba3d6559-4f58-4547-96ea-d91d3204a4d9"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b208740053ff13"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,82;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:26:45 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"purposeOfFinance\": \"PRRPVEH\",\n    \"familySize\": \"1\",\n    \"familyWithEducationFees\": \"0\",\n    \"housingType\": \"RENTH\",\n    \"workingStatus\": \"SAL\",\n    \"martialStatus\": \"MARRIED\",\n    \"expenses\": {\n        \"housing\": 0,\n        \"expatFees\": 0,\n        \"foodBeverage\": 0,\n        \"tution\": 0,\n        \"healthInsurance\": 0,\n        \"transportation\": 10000,\n        \"totalAdditionalExpenses\": null,\n        \"totalObligations\": null,\n        \"hasOtherLoans\": false\n    },\n    \"employment\": {\n        \"sectorId\": \"GOV\",\n        \"departmentID\": \"AGN00007\",\n        \"employerName\": \"العسكرية\",\n        \"employmentStatus\": null,\n        \"dateOfJoining\": \"21/05/2015\",\n        \"militaryRank\": \"JUNDI\",\n        \"wage\": {\n            \"basic\": 5003,\n            \"housing\": 5004,\n            \"otherAllowance\": 5005\n        },\n        \"customerWage\": null\n    }\n}"
+						},
+						{
+							"name": "Get Declaration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440756\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/GetDeclaration"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "dacdd770-3719-47d8-95a5-8e1b63cb8c19"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20887012cc712"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,81;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:27:03 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"purposeOfFinance\": \"EMRGEXP\",\n    \"familySize\": \"7\",\n    \"familyWithEducationFees\": \"0\",\n    \"housingType\": \"EMPLYR\",\n    \"workingStatus\": \"SAL\",\n    \"martialStatus\": \"SINGLE\",\n    \"expenses\": {\n        \"housing\": 1000,\n        \"expatFees\": 0,\n        \"foodBeverage\": 300,\n        \"tution\": 10,\n        \"healthInsurance\": 10,\n        \"transportation\": 10,\n        \"totalAdditionalExpenses\": 0,\n        \"totalObligations\": null,\n        \"hasOtherLoans\": false\n    },\n    \"employment\": {\n        \"sectorId\": \"SGV\",\n        \"departmentID\": \"AGN00002\",\n        \"employerName\": \"شركة انوار طريف للمقاولات (شركة شخص واحد ذات مسؤولية المحدودة)\",\n        \"employmentStatus\": null,\n        \"dateOfJoining\": \"04/05/2015\",\n        \"militaryRank\": null,\n        \"wage\": null,\n        \"customerWage\": {\n            \"basic\": 1234,\n            \"housing\": 1234,\n            \"otherAllowance\": 1255\n        }\n    }\n}"
+						},
+						{
+							"name": "Get Declaration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1111102447\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/GetDeclaration"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "705283db-6879-4aa6-acfe-2b57f28ee7fe"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b2092c012cc792"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,80;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:29:48 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"purposeOfFinance\": \"EDUEXP\",\n    \"familySize\": \"3\",\n    \"familyWithEducationFees\": \"0\",\n    \"housingType\": \"EMPLYR\",\n    \"workingStatus\": \"SAL\",\n    \"martialStatus\": \"MARRIED\",\n    \"expenses\": {\n        \"housing\": 5000,\n        \"expatFees\": 0,\n        \"foodBeverage\": 1200,\n        \"tution\": 0,\n        \"healthInsurance\": 260,\n        \"transportation\": 350,\n        \"totalAdditionalExpenses\": 0,\n        \"totalObligations\": null,\n        \"hasOtherLoans\": false\n    },\n    \"employment\": {\n        \"sectorId\": \"SGV\",\n        \"departmentID\": \"AGN00003\",\n        \"employerName\": \"صيدلية البلسم الطبي الحادي عشر الطبية\",\n        \"employmentStatus\": null,\n        \"dateOfJoining\": \"04/05/2015\",\n        \"militaryRank\": null,\n        \"wage\": null,\n        \"customerWage\": {\n            \"basic\": 10000,\n            \"housing\": 3500,\n            \"otherAllowance\": 1100\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Generate Otp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"strictSSL": false,
+						"followRedirects": true,
+						"disableUrlEncoding": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Correlation-ID",
+								"value": "{{$guid}}"
+							},
+							{
+								"key": "LNG",
+								"value": "EN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\":\"1851444462\",\n    \"serviceId\":\"CREATEAPP\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/otp/generate"
+					},
+					"response": [
+						{
+							"name": "Generate Otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "LNG",
+										"value": "EN"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\":\"1851444462\",\n    \"serviceId\":\"CREATEAPP\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/otp/generate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "4ca4909a-3dd7-4cca-aae8-78959ca126c3"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b209c3012ccc72"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,76;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:32:20 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": \"200\",\n    \"requestId\": \"67da439e-1742-4b3e-8327-8fcca3038d4e\"\n}"
+						},
+						{
+							"name": "Generate Otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "LNG",
+										"value": "EN"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\":\"1150440756\",\n    \"serviceId\":\"CREATEAPP\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/otp/generate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c24e0584-0a96-4e45-a427-428a187a0d8f"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b209cd012cce52"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,75;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:32:29 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": \"200\",\n    \"requestId\": \"77235522-c7e6-4621-975d-9a5d1aceba9a\"\n}"
+						},
+						{
+							"name": "Generate Otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "LNG",
+										"value": "EN"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\":\"1111102447\",\n    \"serviceId\":\"CREATEAPP\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/registration/otp/generate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "14650309-a6d1-470d-abae-7e775f96eff5"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b209d7009d1980"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,74;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:32:39 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": \"200\",\n    \"requestId\": \"440de21c-3e34-40f7-8384-9cb259c38a6a\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "{{$guid}}",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "OTP",
+								"value": "1234",
+								"description": "(Required) generated OTP to be validated"
+							},
+							{
+								"key": "transactionId",
+								"value": "93fc475e-b8fa-40f3-a3a6-5db259f257bc",
+								"description": "(Required) generated OTP transaction id to be validated"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\" : \"1851444462\",\n    \"requestedAmount\" : 96459.746,\n    \"productId\": \"APL\",\n    \"subProductId\": \"Topup\",\n    \"packageId\" : 371,\n    \"schemeId\" : 465\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/CreateApplication"
+					},
+					"response": [
+						{
+							"name": "Create Application",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "OTP",
+										"value": "1234",
+										"description": "(Required) generated OTP to be validated"
+									},
+									{
+										"key": "transactionId",
+										"value": "67da439e-1742-4b3e-8327-8fcca3038d4e",
+										"description": "(Required) generated OTP transaction id to be validated"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\" : \"1851444462\",\n    \"requestedAmount\" : 96459.746,\n    \"productId\": \"APL\",\n    \"subProductId\": \"Topup\",\n    \"packageId\" : 371,\n    \"schemeId\" : 465\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/CreateApplication"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "74682f85-b4b7-4553-8b8d-d7ae7bf6580e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20a18012cceb2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,73;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:33:45 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"applicationId\": \"12789832\"\n}"
+						},
+						{
+							"name": "Create Application",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "OTP",
+										"value": "1234",
+										"description": "(Required) generated OTP to be validated"
+									},
+									{
+										"key": "transactionId",
+										"value": "77235522-c7e6-4621-975d-9a5d1aceba9a",
+										"description": "(Required) generated OTP transaction id to be validated"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\" : \"1150440756\",\n    \"requestedAmount\" : 96459.746,\n    \"productId\": \"MUR\",\n    \"subProductId\": \"Topup\",\n    \"packageId\" : 371,\n    \"schemeId\" : 465\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/CreateApplication"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "84293c98-1b53-4e6b-b191-51cc984e741e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20a61009d1a40"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,67;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:34:58 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"applicationId\": \"12768791\"\n}"
+						},
+						{
+							"name": "Create Application",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "OTP",
+										"value": "1234",
+										"description": "(Required) generated OTP to be validated"
+									},
+									{
+										"key": "transactionId",
+										"value": "440de21c-3e34-40f7-8384-9cb259c38a6a",
+										"description": "(Required) generated OTP transaction id to be validated"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\" : \"1111102447\",\n    \"requestedAmount\" : 96459.746,\n    \"productId\": \"IJMB\",\n    \"subProductId\": \"Mic\",\n    \"packageId\" : 371,\n    \"schemeId\" : 465\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/CreateApplication"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "bfc3c9bf-7260-4690-9b1b-758a57b1f300"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20abd009d1bb0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,65;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:36:29 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"applicationId\": \"12735946\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Applications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "{{$guid}}",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1851444462\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/GetApplication"
+					},
+					"response": [
+						{
+							"name": "Get Applications",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1851444462\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/GetApplication"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8c01d69a-7879-46e1-9be6-3285a1da2ef4"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20b7d009d1c60"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,63;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:39:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"applications\": [\n        {\n            \"applicationId\": \"642248\",\n            \"stage\": \"PAL\",\n            \"product\": \"APL\",\n            \"subProduct\": \"Topup\",\n            \"totalFinancedAmount\": 46772.76,\n            \"amountRemaining\": 20268.06,\n            \"installmentAmount\": 779.55,\n            \"lastInstallmentDate\": \"27/04/2026\",\n            \"nextInstallmentDue\": \"27/08/2024\",\n            \"reasons\": null\n        }\n    ],\n    \"totalLoans\": \"1\"\n}"
+						},
+						{
+							"name": "Get Applications",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440756\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/GetApplication"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2cda2c3c-2aca-4f89-bf96-5c8ad4fc35df"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20b8b0071c0b1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,62;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:39:55 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"applications\": [\n        {\n            \"applicationId\": \"640692\",\n            \"stage\": \"PAL\",\n            \"product\": \"MUR\",\n            \"subProduct\": \"Topup\",\n            \"totalFinancedAmount\": 120.66,\n            \"amountRemaining\": 54.32,\n            \"installmentAmount\": 2.01,\n            \"lastInstallmentDate\": \"17/11/2026\",\n            \"nextInstallmentDue\": \"13/10/2024\",\n            \"reasons\": null\n        }\n    ],\n    \"totalLoans\": \"1\"\n}"
+						},
+						{
+							"name": "Get Applications",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "{{$guid}}",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1111102447\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/emkan/finance/v1/integration/loans/applications/GetApplication"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d1fb2430-6513-491e-ac91-c91ea66ab254"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b20b9a012cd1f2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,61;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 11:40:10 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"applications\": [\n        {\n            \"applicationId\": \"641385\",\n            \"stage\": \"PAL\",\n            \"product\": \"IJMB\",\n            \"subProduct\": \"Mic\",\n            \"totalFinancedAmount\": 6481.18,\n            \"amountRemaining\": 435.29,\n            \"installmentAmount\": 101.01,\n            \"lastInstallmentDate\": \"21/03/2027\",\n            \"nextInstallmentDue\": \"29/12/2024\",\n            \"reasons\": null\n        }\n    ],\n    \"totalLoans\": \"1\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"scope": "marketplace_apis",
+			"accessTokenUrl": "https://api-marketplace.alrajhigroup.com.sa/oauth2security/oauth2/token",
+			"grant_type": "client_credentials"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

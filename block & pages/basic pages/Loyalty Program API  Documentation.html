@@ -1,0 +1,1314 @@
+<div id="search-term-result">
+    <p>
+        Marketplace ARG Loyalty provides APIs to Inquire and redeem loyalty points. Loyalty programs can help
+        increase customer loyalty by rewarding customers for their interactions with the retailer's brand. Retailers can
+        create different earning and
+        redemption rules by tiers to differentiate the rewards for customers in different tiers.
+
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">ARG Loyalty API
+            Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">ARG
+                            Loyalty APIs</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Loyalty Customer Enrollment</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-3">Get Reward Points</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-4">List Loyalty Transactions</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-5">Get Loyalty Transaction Details</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-6">List Loyalty Statements</a>
+                            <!-- <a class="api-guides-noList apn-doc-menu " href="#section-7">Authorize Redemption</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-8">Execute Redemption</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-9">Redeemed Vouchers List</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-10">List Redemption Transactions</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-11">Reverse Redemption Transaction</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-12">Save Customer</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-13">Get Loyalty Customer Identifier</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-14">Generate Loyalty Customer
+                                Identifier</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-15">Get Customer Information</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-16">Earn Loyalty Points</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-17">Refund Accruals</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-18">Get Earning Transactions</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-19">Get Earn Transaction Details</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-20">Send Push Notification</a> -->
+    
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">ARG Loyalty APIs</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Marketplace ARG Loyalty provides APIs to Inquire and redeem
+                            loyalty points. Loyalty programs can help increase customer loyalty by rewarding customers for
+                            their interactions with the retailer's brand. Retailers can create different
+                            earning and redemption rules by tiers to differentiate the rewards for customers in different
+                            tiers.Customer will not re-fund the cash till buying in trades stock at least one time with the
+                            cash of the redeemed points. Customer’s Portfolio must be reflected with the redemption Cash and
+                            the Customer could see his credit Cash from
+                            all channels which can access his Portfolio from. The criteria of redemption method will be (280
+                            points = 1 SAR). </br>
+                            </br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/ARG_Loyalty.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/ARG_Loyalty_Sample_Data_Request.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+    
+                        <h1 class="fob-welcome-title">Loyalty Customers Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../loyaltyProductExposeWorkflowImg">Click
+                            here</a>
+                        <div class="row flex mt-25 mb-25">
+                            <div class="col-lg-8">
+                                <p class="loyalty-product-Expose-API-Authorize-Redemption-img"><br></p>
+                            </div>
+                        </div>
+                        <h1 class="fob-welcome-title" id="section-2">Loyalty Customer Enrollment</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /loyalty-management/v1/customers/enroll
+                            </br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/907/api/904#/LoyaltyCustomersEnrollSubsidiary_100/operation/%2Fcustomers%2Fenroll/post">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">It Enrolls loyalty customer.
+                            </br></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+        header
+        Content-Type: application/json
+        authorization: Bearer AAIgNGY5MGY5NzA5ZDhlNWY2MjU5Mzg2MzJjMGMxMDgxOGXVD9_f84b0_5viw-vLmTEvRQ8gBkP0qzGbdATi96wHt_iKEOTIXzpwQwjNfu7fY_18voKEw_rZOWGrHe8Ws_a3JdBuEDyNr44YTEBo5rq39RrhJ9xJnfJMNeFaMJlxro9SrroIvCxXtvWS30z_-YpH
+        channel: Urpay
+        Accept-Language: en
+        subsidiary: Neoleap
+        body{
+        "identifierNo": "1072560129",
+        "identifierType": "01",
+        "firstNameEn": "Mohamed",
+        "lastNameEn": "Ali",
+        "firstNameAr": "محمد",
+        "lastNameAr": "علي",
+        "birthDate": "1985-01-23",
+        "nationality": "005",
+        "gender": "Male",
+        "title": "01",
+        "mobileNumber": "966569959591",
+        "email": "mohamedali@gmail.com",
+        "address": {
+        "street": "Halimah Al Saadiyah",
+        "houseNo": "2",
+        "apartmentNo": "12",
+        "postalCode": "12345",
+        "city": "string",
+        "country": "stri",
+        "region": "01",
+        "additionalInfo": "string"
+        },
+        "termsAndConditions": "Y"
+        }
+                              
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('loyalty-customers-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="loyalty-customers-curl" style=" display: block;">
+        POST https://apic10-gw-01.ejada.com:9446/apimarketplace/api-marketplace-dev/loyalty-management/v1/customers/enroll HTTP/1.1
+        Content-Type: application/json
+        authorization: Bearer AAIgNGY5MGY5NzA5ZDhlNWY2MjU5Mzg2MzJjMGMxMDgxOGXVD9_f84b0_5viw-vLmTEvRQ8gBkP0qzGbdATi96wHt_iKEOTIXzpwQwjNfu7fY_18voKEw_rZOWGrHe8Ws_a3JdBuEDyNr44YTEBo5rq39RrhJ9xJnfJMNeFaMJlxro9SrroIvCxXtvWS30z_-YpH
+        channel: Urpay
+        Accept-Language: en
+        subsidiary: Neoleap
+        {
+            "identifierNo": "7634952400",
+            "identifierType": "IDNumber",
+            "firstNameEn": "Ahmed",
+            "lastNameEn": "Mohamed",
+            "title": "01",
+            "mobileNumber": "969780669501",
+            "email": "test@mail.com",
+            "termsAndConditions": "Y",
+            "firstNameAr": "أحمد",
+            "lastNameAr": "محمد",
+            "birthDate": "1990-01-20",
+            "nationality": "egy",
+            "gender": "Male",
+            "address": {
+                "street": "test",
+                "houseNo": "test",
+                "apartmentNo": "test",
+                "postalCode": "test",
+                "city": "test",
+                "country": "test",
+                "region": "test",
+                "additionalInfo": "test"
+            }
+        }                                
+                            
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('loyalty-customers')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('loyalty-customers2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('loyalty-customers3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('loyalty-customers4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('loyalty-customers6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('loyalty-customers7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('loyalty-customers8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('loyalty-customers9')">500</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                        <code id="loyalty-customers" style=" display: block; " class="text">
+    {
+        "data": {
+            "argId": "1234567890",
+            "mobileNumber": "966569959591",
+            "sameMobileNumber": "Y"
+        }
+        }    
+                              
+                        </code>
+                        <code id="loyalty-customers2" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.400.001",
+            "message": "Invalid POI Number",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }   
+                        </code>
+                        <code id="loyalty-customers3" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                        </code>	
+                      
+                        <code id="loyalty-customers4" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        } 
+                        </code>
+                      
+    
+                      
+                        <code id="loyalty-customers6" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+        ]
+        }
+                              
+                        </code>
+                      
+                        <code id="loyalty-customers7" style=" display: none; "class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            }      
+                        </code>
+                      
+                        <code id="loyalty-customers8" style=" display: none; " class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            } 
+                        </code>
+                      
+                        <code id="loyalty-customers9" style=" display: none; " class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            }    
+                        </code>
+                      </pre>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+    
+                            <h1 class="fob-welcome-title" id="section-3">Get Reward Points API</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint:
+                                /loyalty-redemption/v1/customers/{reference}/reward-points</br></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/913/api/910#/LoyaltyRewardPoints_100/operation/%2Fcustomers%2F{reference}%2Freward-points/get">Swagger
+                                    Link</a></p>
+                            <p class="fob-welcome-text">It provides loyalty reward points details of the user.</br></p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                          <code class="sample-code">
+        header
+        authorization: Bearer AAIgNGY5MGY5NzA5ZDhlNWY2MjU5Mzg2MzJjMGMxMDgxOGXWv3voi_cznJF6RKmPdkSbVcfpBcxta52QlwggstnmKfJdvMEQJYFgbLEnn1WaGdrKNLNzKBrP4h5CPgfp7uOO1TH-WMIBRfp0XgYuiP3vPuzOoiKSFlUKo2ySFKdGYnPSLhiT3bVsqoUwcwBZjQyB
+        channel: SuperApp
+        Accept-Language: en
+        subsidiary: ART
+        body{
+            "data": {
+            "availableBalance": 1250,
+            "expiredPoints": 0,
+            "redeemedPoints": 0,
+            "expiryPeriod": 0,
+            "nextExpiryDate": "2022-04-21 13:43:43",
+            "nextExpiringPoints": 0,
+            "userId": "20906"
+            }
+        }
+                            
+                              
+                    
+                          </code>
+                        </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+    
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('get-reward-points-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+    
+                                        <pre id="generatedCurl">
+                            <code id="get-reward-points-curl" style=" display: block;">
+        GET https://apic10-gw-01.ejada.com:9446/apimarketplace/api-marketplace-dev/loyalty-redemption/v1/customers/ARG0007634952409/reward-points?referenceType=%24%7BreferenceType%7D HTTP/1.1
+        authorization: Bearer AAIgNGY5MGY5NzA5ZDhlNWY2MjU5Mzg2MzJjMGMxMDgxOGXWv3voi_cznJF6RKmPdkSbVcfpBcxta52QlwggstnmKfJdvMEQJYFgbLEnn1WaGdrKNLNzKBrP4h5CPgfp7uOO1TH-WMIBRfp0XgYuiP3vPuzOoiKSFlUKo2ySFKdGYnPSLhiT3bVsqoUwcwBZjQyB
+        channel: SuperApp
+        Accept-Language: en
+        subsidiary: ART
+        '{
+            "mobile": "966780669501",
+            "currency": "SAR",
+            "lang": "ar",
+                "mappingPosID" : "1001"
+        }
+                            </code>
+                          </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points2')">400</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('get-reward-points9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                  <code id="get-reward-points" style=" display: block; " class="text">
+        {
+            "data": {
+                "availableBalance": 1250,
+                "expiredPoints": 0,
+                "redeemedPoints": 0,
+                "expiryPeriod": 0,
+                "nextExpiryDate": "2022-04-21 13:43:43",
+                "nextExpiringPoints": 0,
+                "userId": "20906"
+            }
+            }
+                    
+                      
+                   </code>
+                  <code id="get-reward-points2" style=" display: none; " class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.400.001",
+                "message": "Customer not Found.",
+                "path": "request.reference",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            } 
+                  </code>
+                  <code id="get-reward-points3" style=" display: none; " class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.401.003",
+                "message": "Unauthorized to call the target operation.",
+                "path": "authorization",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            }
+                  
+                  </code>	
+                  
+                  <code id="get-reward-points4" style=" display: none; " class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.403.001",
+                "message": "Can't find any valid subscription.",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            }   
+                  </code>
+                  
+                  
+                  <code id="get-reward-points5" style=" display: none; " class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }  
+                  </code>
+                  
+                  
+                  <code id="get-reward-points6" style=" display: none; "class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            }    
+                       
+                  </code>
+                   
+                  
+                  <code id="get-reward-points7" style=" display: none; "class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            }    
+                  </code>
+                   
+                  
+                  <code id="get-reward-points8" style=" display: none; " class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            } 
+                  </code>
+                  
+                  
+                  <code id="get-reward-points9" style=" display: none; " class="text">
+        {
+            "errors": [
+                {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+            }  
+                  </code>
+                        </pre>
+    
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <h1 class="fob-welcome-title" id="section-4">List Loyalty Transactions</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint: /loyalty-management/v1/transactions?</br></p>
+                                <p class="fob-welcome-text"><a
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1015/api/922#/LoyaltyTransactions_100/operation/%2Ftransactions/get">Swagger
+                                        Link</a></p>
+                                <p class="fob-welcome-text">It provides list loyalty points transactions for a
+                                    customer.</br></p>
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+        header
+        authorization: Bearer AAIgNGY5MGY5NzA5ZDhlNWY2MjU5Mzg2MzJjMGMxMDgxOGW-HdCfzZSY2THCt3aT73RRfLQKtX0BGUYJCHNUoPTE8rcpxj7eFxgmGdUawwP6wsoL2srarLspB1Zy1VpWcCN-3mKe-_phjappKpf418FMyl9-0dI4qZoJOtXje9PYZvRMGmiCr9g6lE5kxviQ0yc3
+        channel: SuperApp
+        Accept-Language: en
+        subsidiary: ART
+        body{
+            "data": {
+            "sentRecords": 2,
+            "matchedRecords": 2,
+            "completedFlag": "Y",
+            "loyaltyTransactionsList": [
+                {
+                "transactionId": "1231231",
+                "transactionTimestamp": "2022-04-17T11:48:48",
+                "partnerId": "1289832",
+                "storeId": "1238123",
+                "posId": "12837124",
+                "transactionType": "RW",
+                "pointsRewarded": "0",
+                "pointsRedeemed": "75000",
+                "pointsBalance": "25000",
+                "amountRewarded": {
+                    "value": "123",
+                    "currency": "SAR"
+                },
+                "amountRedeemed": {
+                    "value": "123",
+                    "currency": "SAR"
+                },
+                "totalAmount": {
+                    "value": "123",
+                    "currency": "SAR"
+                },
+                "quantity": 12,
+                "exchangeRate": "13.1",
+                "cashAmountPaid": {
+                    "value": "123",
+                    "currency": "SAR"
+                },
+                "reversedFlag": "Y",
+                "transactionClass": "Points Conversion",
+                "transactionReference": "1244323",
+                "notes": "Points Conversion Transaction"
+                }
+            ]
+            }
+        } 
+                            </code>
+                          </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+                                            <button class="curlbtn fob-validate-OTP-top" type="submit"
+                                                onclick="show('list-loyalty-transactions-curl')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+                                            <pre id="generatedCurl">
+                      <code id="list-loyalty-transactions-curl" style=" display: block;">
+        GET https://apic10-gw-01.ejada.com:9446/apimarketplace/api-marketplace-dev/loyalty-management/v1/transactions?customerIdKeyType=ID&customerIdKey=1100214863&statementPeriod=365&transactionType=ALL&sortBy=DSC&maximumRecords=30&offset=1 HTTP/1.1
+        authorization: Bearer AAIgNGY5MGY5NzA5ZDhlNWY2MjU5Mzg2MzJjMGMxMDgxOGW-HdCfzZSY2THCt3aT73RRfLQKtX0BGUYJCHNUoPTE8rcpxj7eFxgmGdUawwP6wsoL2srarLspB1Zy1VpWcCN-3mKe-_phjappKpf418FMyl9-0dI4qZoJOtXje9PYZvRMGmiCr9g6lE5kxviQ0yc3
+        channel: SuperApp
+        Accept-Language: en
+        subsidiary: ART
+                         
+                       </code>
+                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+    
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions2')">400</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('list-loyalty-transactions9')">500</a>
+                                                </div>
+                                                <pre class="response-box">
+    
+                      <code id="list-loyalty-transactions" style=" display: block; " class="text">
+    {
+        "data": {
+            "sentRecords": 2,
+            "matchedRecords": 2,
+            "completedFlag": "Y",
+            "loyaltyTransactionsList": [
+            {
+                "transactionId": "1231231",
+                "transactionTimestamp": "2022-04-17T11:48:48",
+                "partnerId": "1289832",
+                "storeId": "1238123",
+                "posId": "12837124",
+                "transactionType": "RW",
+                "pointsRewarded": "0",
+                "pointsRedeemed": "75000",
+                "pointsBalance": "25000",
+                "amountRewarded": {
+                "value": "123",
+                "currency": "SAR"
+                },
+                "amountRedeemed": {
+                "value": "123",
+                "currency": "SAR"
+                },
+                "totalAmount": {
+                "value": "123",
+                "currency": "SAR"
+                },
+                "quantity": 12,
+                "exchangeRate": "13.1",
+                "cashAmountPaid": {
+                "value": "123",
+                "currency": "SAR"
+                },
+                "reversedFlag": "Y",
+                "transactionClass": "Points Conversion",
+                "transactionReference": "1244323",
+                "notes": "Points Conversion Transaction"
+            }
+            ]
+        }
+        }
+                        
+                          
+                      </code>
+                      <code id="list-loyalty-transactions2" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.400.004",
+            "message": "Store is invalid.",
+            "path": "request.parameters.mappingPosID",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+                      <code id="list-loyalty-transactions3" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      
+                      </code>	
+                      
+                      <code id="list-loyalty-transactions4" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }   
+                      </code>
+                      
+                      
+                      <code id="list-loyalty-transactions5" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+        ]
+        }  
+                      </code>
+                      
+                      
+                      <code id="list-loyalty-transactions6" style=" display: none; "class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }    
+                         
+                      </code>
+                      
+                      
+                      <code id="list-loyalty-transactions7" style=" display: none; "class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+                      
+                      
+                      <code id="list-loyalty-transactions8" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }    
+                      </code>
+                      
+                      
+                      <code id="list-loyalty-transactions9" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+                            </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <h1 class="fob-welcome-title" id="section-5">Get Loyalty Transaction Details</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <p class="fob-welcome-text">Endpoint:
+                                        /loyalty-management/v1/transactions/{transactionId}?</br></p>
+                                    <p class="fob-welcome-text"><a
+                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1015/api/922#/LoyaltyTransactions_100/operation/%2Ftransactions%2F{transactionId}/get">Swagger
+                                            Link</a></p>
+                                    <p class="fob-welcome-text">It provides loyalty transaction details using the
+                                        transcationID. </br></p>
+    
+                                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <h1 class="fob-welcome-title">Request Example</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+        {
+        "data": {
+        "sentRecords": 2,
+        "matchedRecords": 2,
+        "completedFlag": "Y",
+        "fullName": "Ahmed Mohamed",
+        "mobile": "+966568482321",
+        "addressLineOne": "Tahlia Street",
+        "addressLineTwo": "Al Muhammadiyah",
+        "state": "Riyadh",
+        "city": "Riyadh",
+        "country": "KSA",
+        "subtotalPoints": 12,
+        "shippingCharges": 13,
+        "totalPointsRedeemed": 14,
+        "transactionDetailsList": [
+        {
+        "transactionId": "844405",
+        "transactionDescription": "Points Conversion Transaction",
+        "transactionQuantity": 22,
+        "transactionTotalPoints": 23
+        }
+        ]
+        }
+        }  
+                                        </code>
+                                      </pre>
+                                            </div>
+                                            <div class="col-lg-4 mt-25">
+    
+                                                <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                    onclick="show('get-loyalty-transaction-details-curl')">
+                                                    <p class="curlText">cURL</p>
+                                                </button>
+    
+                                                <pre id="generatedCurl">
+                                          <code id="get-loyalty-transaction-details-curl" style=" display: block;">
+        GET https://apic10-gw-01.ejada.com:9446/apimarketplace/api-marketplace-dev/loyalty-management/v1/transactions/123?maximumRecords=30&offset=1 HTTP/1.1
+        authorization: Bearer AAIgNGY5MGY5NzA5ZDhlNWY2MjU5Mzg2MzJjMGMxMDgxOGXddW6Kk7f7uEBiFPXSvT_DYELtMzRSyDWm5ZTZoitEhIPgjE0GffEjE6VkxMzREsY0ItXAL9HiXQl8Nmh3pqJJJ9QsVzbbPsrkhHpG5a7VVCVBDwC6dAT8tTWt-oZMGbh-D8FWV6NsmeZGHn5cw-Pq
+        channel: SuperApp
+        Accept-Language: en
+        subsidiary: ART
+                                          </code>
+                                        </pre>
+                                            </div>
+                                        </div>
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <div class="code-box">
+                                                    <p
+                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                    <div class="response-box-div">
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details')">200</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details2')">400</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details3')">401</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details4')">403</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details5')">404</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details6')">405</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details7')">406</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details8')">429</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('get-loyalty-transaction-details9')">500</a>
+                                                    </div>
+                                                    <pre class="response-box">
+    
+                                <code id="get-loyalty-transaction-details" style=" display: block; " class="text">
+        {
+            {
+                "data": {
+                  "sentRecords": 2,
+                  "matchedRecords": 2,
+                  "completedFlag": "Y",
+                  "fullName": "Ahmed Mohamed",
+                  "mobile": "+966568482321",
+                  "addressLineOne": "Tahlia Street",
+                  "addressLineTwo": "Al Muhammadiyah",
+                  "state": "Riyadh",
+                  "city": "Riyadh",
+                  "country": "KSA",
+                  "subtotalPoints": 12,
+                  "shippingCharges": 13,
+                  "totalPointsRedeemed": 14,
+                  "transactionDetailsList": [
+                    {
+                      "transactionId": "844405",
+                      "transactionDescription": "Points Conversion Transaction",
+                      "transactionQuantity": 22,
+                      "transactionTotalPoints": 23
+                    }
+                  ]
+                }
+              }            
+                                      
+                                 </code>
+                                <code id="get-loyalty-transaction-details2" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.400.004",
+            "message": "Store is invalid.",
+            "path": "request.parameters.mappingPosID",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                </code>
+                                <code id="get-loyalty-transaction-details3" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                
+                                </code>	
+                                
+                                <code id="get-loyalty-transaction-details4" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                </code>
+                                
+                                
+                                <code id="get-loyalty-transaction-details5" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                </code>
+                                
+                                
+                                <code id="get-loyalty-transaction-details6" style=" display: none; "class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                     
+                                </code>
+                                 
+                                
+                                <code id="get-loyalty-transaction-details7" style=" display: none; "class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }       
+                                </code>
+                                 
+                                
+                                <code id="get-loyalty-transaction-details8" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }    
+                                </code>
+                                
+                                
+                                <code id="get-loyalty-transaction-details9" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                </code>
+                                      </pre>
+    
+                                                </div>
+                                            </div>
+                                        </div>
+    
+    
+                                        <h1 class="fob-welcome-title" id="section-6">List Loyalty Statements</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <p class="fob-welcome-text">Endpoint: /loyalty-management/v1/statement?</br>
+                                        </p>
+                                        <p class="fob-welcome-text"><a
+                                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1009/api/916#/LoyaltyStatements_100/operation/%2Fstatement/get">Swagger
+                                                Link</a></p>
+                                        <p class="fob-welcome-text">It provides List Loyalty Statments.</br>
+                                        </p>
+    
+                                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                                    <p class="fob-welcome-line"></p>
+                                                    <pre class="example_97 api-guides-example-fob ">
+                                            <code class="sample-code">
+    {
+        "sentRecords": 2,
+        "matchedRecords": 2,
+        "completedFlag": "Y",
+        "loyaltyStatement": [
+            {
+            "transactionId": "string",
+            "transactionTimestamp": "string",
+            "partnerId": "string",
+            "partnerName": "string",
+            "productName": "string",
+            "subProductName": "string",
+            "storeId": "string",
+            "posId": "string",
+            "transactionType": "string",
+            "pointsRewarded": "0",
+            "pointsRedeemed": "75000",
+            "pointsBalance": "25000",
+            "amountRewarded": {
+                "value": "1000",
+                "currency": "SAR"
+            },
+            "amountRedeemed": {
+                "value": "1000",
+                "currency": "SAR"
+            },
+            "totalAmount": {
+                "value": "1000",
+                "currency": "SAR"
+            },
+            "quantity": "string",
+            "exchangeRate": "string",
+            "cashPayment": {
+                "value": "1000",
+                "currency": "SAR"
+            },
+            "reversedFlg": "string",
+            "transactionClass": "Points Conversion",
+            "transactionReference": "1244323",
+            "notes": "string"
+            }
+        ]
+        }      
+                                            </code>
+                                          </pre>
+                                                </div>
+                                                <div class="col-lg-4 mt-25">
+    
+                                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                        onclick="show('list-loyalty-statments-curl')">
+                                                        <p class="curlText">cURL</p>
+                                                    </button>
+    
+                                                    <pre id="generatedCurl">
+                                              <code id="list-loyalty-statments-curl" style=" display: block;">
+        GET https://apic10-gw-01.ejada.com:9446/apimarketplace/api-marketplace-dev/loyalty-management/v1/statement?argId=ARG0007634952409&StatementPeriod=365&TransactionType=ALL&SortBy=DSC&maximumRecords=30&offset=1 HTTP/1.1
+        authorization: Bearer AAIgNGY5MGY5NzA5ZDhlNWY2MjU5Mzg2MzJjMGMxMDgxOGXdaa7wwOOHqWefVsPf1rc6Ja_ZPkI-RdoQBUCrfSVfigXyl7QzsynJ3LkAmISarB58NPf7u7xr89DhCT5mHOqz1r73kb_lZ8e_FfxZEoLSD_Wbda-gpaD5LzdEWXrrFBvh6ipI_iL9iQCkVaO236y0
+        channel: SuperApp
+        Accept-Language: en
+        subsidiary: ART                              
+    
+                                              </code>
+                                            </pre>
+                                                </div>
+                                            </div>
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <div class="code-box">
+                                                        <p
+                                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                        <div class="response-box-div">
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments')">200</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments2')">400</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments3')">401</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments4')">403</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments5')">404</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments6')">405</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments7')">406</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments8')">429</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('list-loyalty-statments9')">500</a>
+                                                        </div>
+                                                        <pre class="response-box">
+    
+                                    <code id="list-loyalty-statments" style=" display: block; " class="text">
+    {
+        "sentRecords": 2,
+        "matchedRecords": 2,
+        "completedFlag": "Y",
+        "loyaltyStatement": [
+            {
+            "transactionId": "string",
+            "transactionTimestamp": "string",
+            "partnerId": "string",
+            "partnerName": "string",
+            "productName": "string",
+            "subProductName": "string",
+            "storeId": "string",
+            "posId": "string",
+            "transactionType": "string",
+            "pointsRewarded": "0",
+            "pointsRedeemed": "75000",
+            "pointsBalance": "25000",
+            "amountRewarded": {
+                "value": "1000",
+                "currency": "SAR"
+            },
+            "amountRedeemed": {
+                "value": "1000",
+                "currency": "SAR"
+            },
+            "totalAmount": {
+                "value": "1000",
+                "currency": "SAR"
+            },
+            "quantity": "string",
+            "exchangeRate": "string",
+            "cashPayment": {
+                "value": "1000",
+                "currency": "SAR"
+            },
+            "reversedFlg": "string",
+            "transactionClass": "Points Conversion",
+            "transactionReference": "1244323",
+            "notes": "string"
+            }
+        ]
+        }             
+                                     </code>
+                                    <code id="list-loyalty-statments2" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.400.004",
+            "message": "Store is invalid.",
+            "path": "request.parameters.mappingPosID",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                    <code id="list-loyalty-statments3" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    
+                                    </code>	
+                                    
+                                    <code id="list-loyalty-statments4" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                    
+                                    
+                                    <code id="list-loyalty-statments5" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        } 
+                                    </code>
+                                    
+                                    
+                                    <code id="list-loyalty-statments6" style=" display: none; "class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }                  
+                                    </code>
+                                     
+                                    
+                                    <code id="list-loyalty-statments7" style=" display: none; "class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                     
+                                    
+                                    <code id="list-loyalty-statments8" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                    
+                                    
+                                    <code id="list-loyalty-statments9" style=" display: none; " class="text">
+    {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                          </pre>
+    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

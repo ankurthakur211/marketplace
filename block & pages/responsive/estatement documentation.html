@@ -1,0 +1,892 @@
+<div class="api-doc-background">
+    <p class="api-doc-background-text ">E-Statement API
+        Documentation</p>
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="container">
+                <div>
+                    <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                        onkeyup="search_menu()" type="text" />
+
+                </div>
+                <br>
+                <div class="api-guides-vertical-menu ">
+
+
+                    <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                        onclick="show('expand2')">E-Statement APIs</a>
+
+                    <div class="api-guides-dropdown-container" id="expand2">
+                        <a class="api-guides-noList apn-doc-menu" href="#section-2">Create E-Statements</a>
+                        <a class="api-guides-noList apn-doc-menu" href="#section-3">Get E-Statements Request Details by
+                            Request Id</a>
+                        <a class="api-guides-noList apn-doc-menu " href="#section-4">Get E-Statement by Statement ID</a>
+                        <a class="api-guides-noList apn-doc-menu " href="#section-5">Get E-Statement PDF by Statement
+                            ID</a>
+                    </div>
+
+
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="container api-guides-text">
+                <div class="container api-guides-text p-0">
+                    <p class="fob-welcome-title" id="section-1">E-Statement APIs</p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">The API Marketplace enables consumers to apply for E-statment using
+                        Neotek.
+                        The primary objective of this project is to enable Neotek to avail E-statment through API
+                        Marketplace.
+                        </br></p>
+                    <p class="fob-welcome-text"></br></p>
+
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/E-Statements.postman_collection.json"
+                            download="">Download Postman Collection</a></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/E-StatementsSampleRequestData.xlsx"
+                            download="">Download Sample Data</a></p>
+
+                    <h1 class="fob-welcome-title">E-Statement Workflow</h1>
+                    <p class="fob-welcome-line"></p>
+                    <a class="fob-product-title-click" target="_blank" href="./EStatementWorkflowImg">Click
+                        here</a>
+                    <div class="row flex mt-25 mb-25">
+                        <div class="col-lg-8">
+                            <p class="E-Statement-flow-img">
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                    <h1 class="fob-welcome-title">E-Statement Architecture</h1>
+                    <p class="fob-welcome-line"></p>
+                    <a class="fob-product-title-click" target="_blank" href="./EStatementArchitectureImg">Click
+                        here</a>
+                    <div class="row flex mt-25">
+                        <div class="col-lg-8">
+                            <p class="E-Statement-architecture-img"><br></p>
+                        </div>
+                    </div>
+
+                    <h1 class="fob-welcome-title" id="section-2">Create-E-Statements</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: POST : /financial-statements/v1/estatements-request</br></p>
+                    <p class="fob-welcome-text">This path is used to create an affordability check request.
+                        </br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1363/api/1360#/EStatements_100/operation/%2Festatements-request/post">Swagger
+                            Link</a></p>
+                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+Header request
+{
+“x-request-id”:”174a889” }
+            Request Body
+{
+    "AccountsLinkIds": [
+    "string"
+    ],
+    "PSUId": "89423413245465123185",
+    "TransactionType": "KSAOB.BillPayments",
+    "TransactionFromTimestamp": "2024-10-01T12:44:22.863Z",
+    "TransactionToTimestamp": "2024-10-01T12:44:22.863Z",
+    "TransactionFromAmount": 5000,
+    "TransactionToAmount": 120000
+}
+                    </code>
+                  </pre>
+                            </div>
+                            <div class="col-lg-4 mt-25">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('Create-E-Statements-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+                                <pre id="generatedCurl">
+                    <code id="Create-E-Statements-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/financial-statements/v1/estatements-request' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+    "AccountsLinkIds": [
+        "171468954685818017635396932347"
+    ],
+    "PSUId": "1234",
+    "TransactionType": "KSAOB.BillPayments",
+    "TransactionFromTimestamp": "2023-11-23T14:25:28.943Z",
+    "TransactionToTimestamp": "2023-11-23T14:25:28.943Z",
+    "TransactionFromAmount": 5000,
+    "TransactionToAmount": 120000
+}'
+                    </code>
+                  </pre>
+                            </div>
+                        </div>
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <div class="code-box">
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Create-E-Statements')">200</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Create-E-Statements3')">401</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Create-E-Statements4')">403</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Create-E-Statements5')">404</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Create-E-Statements6')">405</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Create-E-Statements7')">406</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Create-E-Statements8')">429</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Create-E-Statements9')">500</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                    <code id="response-Create-E-Statements" style=" display: block; " class="text">
+{
+    "RequestId": "66",
+    "Status": "AwaitingAuthorization",
+    "RedirectionURL": "https://auth1.lab.openbanking.sa/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3Aefebf834-b304-4a58-a6bf-2c40cc92c058&client_id=c27042bb-fc24-4bc3-a844-73b2cf2bb97f&response_type=code&scope=accounts+openid"
+}{
+    "Data": {
+        "RequestId": "94",
+        "Status": "InProgress",
+        "EStatements": [
+            {
+                "StatementId": "181",
+                "Status": "Requested",
+                "StatusDescription": "Requested",
+                "AccountId": "100004000000000000000002",
+                "AccountsLinkId": "171468954685818017635396932347",
+                "FinancialInstitutionId": "SAMAModelBank"
+            },
+            {
+                "StatementId": "182",
+                "Status": "Requested",
+                "StatusDescription": "Requested",
+                "AccountId": "100004000000000000000003",
+                "AccountsLinkId": "171468954685818017635396932347",
+                "FinancialInstitutionId": "SAMAModelBank"
+            },
+            {
+                "StatementId": "183",
+                "Status": "Requested",
+                "StatusDescription": "Requested",
+                "AccountId": "100004000000000000000005",
+                "AccountsLinkId": "171468954685818017635396932347",
+                "FinancialInstitutionId": "SAMAModelBank"
+            }
+        ],
+        "AccountsLinkIds": [
+            "171468954685818017635396932347"
+        ]
+    }
+}
+                    </code>
+                  <code id="response-Create-E-Statements3" style=" display: none; " class="text">
+  {
+    "errors": [
+      {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+      }
+    ]
+  }  
+                    </code>	
+                  
+                    <code id="response-Create-E-Statements4" style=" display: none; " class="text">
+  {
+    "errors": [
+      {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+      }
+    ]
+  }    
+                    </code>
+                  
+                    <code id="response-Create-E-Statements5" style=" display: none; " class="text">
+  {
+    "errors": [
+      {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+      }
+    ]
+  }     
+                    </code>
+                  
+                    <code id="response-Create-E-Statements6" style=" display: none; "class="text">
+  {
+    "errors": [
+      {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+      }
+    ]
+  }
+                          
+                    </code>
+                  
+                    <code id="response-Create-E-Statements7" style=" display: none; "class="text">
+  {
+    "errors": [
+      {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+      }
+    ]
+  }       
+                    </code>
+                  
+                    <code id="response-Create-E-Statements8" style=" display: none; " class="text">
+  {
+    "errors": [
+      {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+      }
+    ]
+  }     
+                    </code>
+                  
+                    <code id="response-Create-E-Statements9" style=" display: none; " class="text">
+  {
+    "errors": [
+      {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+      }
+    ]
+  }     
+                    </code>
+                  </pre>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <h1 class="fob-welcome-title" id="section-3">Get E-Statements Request Details by Request Id</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: GET :
+                            /financial-statements/v1/estatements-request/{RequestId}</br></p>
+                        <p class="fob-welcome-text">Get E-Statements Request Details by Request Id.
+                            details.</br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1363/api/1360#/EStatements_100/operation/%2Festatements-request%2F{RequestId}/get">Swagger
+                                Link</a></p>
+
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                      <code class="sample-code">
+Header request
+{
+"x-request-id": "ca4777821",
+} 
+Path parameters
+{
+    " RequestId": "123",
+        }                        
+                      </code>
+                    </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Get-E-Statements-Request-Details-by-Request-Id-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                        <code id="Get-E-Statements-Request-Details-by-Request-Id-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/financial-statements/v1/estatements-request/93' \
+--header 'Authorization: ••••••'
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statements-Request-Details-by-Request-Id')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statements-Request-Details-by-Request-Id3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statements-Request-Details-by-Request-Id4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statements-Request-Details-by-Request-Id5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statements-Request-Details-by-Request-Id6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statements-Request-Details-by-Request-Id7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statements-Request-Details-by-Request-Id8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statements-Request-Details-by-Request-Id9')">500</a>
+                                        </div>
+                                        <pre class="response-box">
+
+              <code id="response-Get-E-Statements-Request-Details-by-Request-Id" style=" display: block; " class="text">
+{
+    "Data": {
+        "RequestId": "93",
+        "Status": "Completed",
+        "EStatements": [
+            {
+                "StatementId": "176",
+                "Status": "Completed",
+                "StatusDescription": "Completed",
+                "AccountId": "a313398d-b1a8-4ea8-8ccf-fd2966b08a93",
+                "AccountsLinkId": "169290479232337152123533326058",
+                "FinancialInstitutionId": "INMASARI"
+            },
+            {
+                "StatementId": "175",
+                "Status": "Completed",
+                "StatusDescription": "Completed",
+                "AccountId": "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e",
+                "AccountsLinkId": "169290479232337152123533326058",
+                "FinancialInstitutionId": "INMASARI"
+            },
+            {
+                "StatementId": "180",
+                "Status": "Completed",
+                "StatusDescription": "Completed",
+                "AccountId": "3f7e2e28-9d86-4173-bc57-f89297d57c22",
+                "AccountsLinkId": "169290479232337152123533326058",
+                "FinancialInstitutionId": "INMASARI"
+            },
+            {
+                "StatementId": "179",
+                "Status": "Completed",
+                "StatusDescription": "Completed",
+                "AccountId": "e0cab2d5-724f-445f-8ca5-0baa75d62298",
+                "AccountsLinkId": "169290479232337152123533326058",
+                "FinancialInstitutionId": "INMASARI"
+            },
+            {
+                "StatementId": "177",
+                "Status": "Completed",
+                "StatusDescription": "Completed",
+                "AccountId": "77885ba5-a0b2-4d9b-8e77-577d703834a6",
+                "AccountsLinkId": "169290479232337152123533326058",
+                "FinancialInstitutionId": "INMASARI"
+            },
+            {
+                "StatementId": "178",
+                "Status": "Completed",
+                "StatusDescription": "Completed",
+                "AccountId": "28529b27-fc67-40eb-8030-6690b0af644c",
+                "AccountsLinkId": "169290479232337152123533326058",
+                "FinancialInstitutionId": "INMASARI"
+            }
+        ],
+        "AccountsLinkIds": [
+            "169290479232337152123533326058"
+        ]
+    }
+} 
+               </code>
+              <code id="response-Get-E-Statements-Request-Details-by-Request-Id3" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.401.001",
+      "message": "Unauthorized to call the target operation.",
+      "path": "authorization",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }
+              
+              </code>	
+              
+              <code id="response-Get-E-Statements-Request-Details-by-Request-Id4" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.403.001",
+      "message": "Can't find any valid subscription.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }   
+              </code>
+              
+              <code id="response-Get-E-Statements-Request-Details-by-Request-Id5" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.404.001",
+      "message": "No resources match requested URI.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }     
+              </code>
+              
+              
+              <code id="response-Get-E-Statements-Request-Details-by-Request-Id6" style=" display: none; "class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.405.001",
+      "message": "The method is not allowed for the requested URL.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }
+                   
+              </code>
+               
+              
+              <code id="response-Get-E-Statements-Request-Details-by-Request-Id7" style=" display: none; "class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.406.001",
+      "message": "An appropriate representation of the requested resource could not be found",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }       
+              </code>
+               
+              
+              <code id="response-Get-E-Statements-Request-Details-by-Request-Id8" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.429.001",
+      "message": "Assembly Rate Limit exceeded",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }     
+              </code>
+              
+              
+              <code id="response-Get-E-Statements-Request-Details-by-Request-Id9" style=" display: none; " class="text">
+  {
+  "errors": [
+    {
+      "code": "ERROR.500.001",
+      "message": "Internal Error",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }    
+              </code>
+                    </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="fob-welcome-title" id="section-4">Get E-Statement by Statement ID</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: GET :
+                            /financial-statements/v1/e-statements/{EStatementId}</br></p>
+                        <p class="fob-welcome-text">This path is used to get E-Statement by E-Statement Id.</br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1363/api/1360#/EStatements_100/operation/%2Fe-statements%2F{EStatementId}/get">Swagger
+                                Link</a></p>
+
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+Header request
+{
+"x-request-id": "a47112v"
+} 
+Path parameters
+{
+“EStatementId “:”EStatementId “
+} 
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-validate-OTP-top" type="submit"
+                                        onclick="show('Get-E-Statement-by-Statement-ID-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+                                    <pre id="generatedCurl">
+                  <code id="Get-E-Statement-by-Statement-ID-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/financial-statements/v1/e-statements/183' \
+--header 'Authorization: ••••••'
+                   </code>
+                        </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statement-by-Statement-ID-')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statement-by-Statement-ID3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statement-by-Statement-ID4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statement-by-Statement-ID5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statement-by-Statement-ID6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statement-by-Statement-ID7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statement-by-Statement-ID8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-E-Statement-by-Statement-ID9')">500</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                  <code id="response-Get-E-Statement-by-Statement-ID" style=" display: block; " class="text">
+{
+    "Data": {
+        "Status": "Completed",
+        "EStatement": {
+            "CustomerName": "Mitsuhirato",
+            "StatementDate": "2024-08-27",
+            "BankName": "SAMA Model Bank",
+            "FromAmount": 5000,
+            "ToAmount": 120000,
+            "FromDate": "2023-11-23",
+            "ToDate": "2023-11-23",
+            "AccountCurrency": "SAR",
+            "OpeningBalance": 0,
+            "ClosingBalance": 0,
+            "NumberOfWithdraw": 0,
+            "TotalOfWithdraw": 0,
+            "AccountType": "Retail",
+            "Transactions": [],
+            "IBAN": "10000109010105"
+        }
+    }
+}           
+                  </code>
+                 <code id="response-Get-E-Statement-by-Statement-ID3" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.401.001",
+      "message": "Unauthorized to call the target operation.",
+      "path": "authorization",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }           
+                  </code>	
+                  
+                  <code id="response-Get-E-Statement-by-Statement-ID4" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.403.001",
+      "message": "Can't find any valid subscription.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }
+                  </code>
+                  
+                  
+                  <code id="response-Get-E-Statement-by-Statement-ID5" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.404.001",
+      "message": "No resources match requested URI.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }    
+                  </code>
+                  
+                  
+                  <code id="response-Get-E-Statement-by-Statement-ID6" style=" display: none; "class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.405.001",
+      "message": "The method is not allowed for the requested URL.",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    } 
+                     
+                  </code>
+                  
+                  
+                  <code id="response-Get-E-Statement-by-Statement-ID7" style=" display: none; "class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.406.001",
+      "message": "An appropriate representation of the requested resource could not be found",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }      
+                  </code>
+                  
+                  
+                  <code id="response-Get-E-Statement-by-Statement-ID8" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.429.001",
+      "message": "Assembly Rate Limit exceeded",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }     
+                  </code>
+                  
+                  
+                  <code id="response-Get-E-Statement-by-Statement-ID9" style=" display: none; " class="text">
+    {
+    "errors": [
+    {
+      "code": "ERROR.500.001",
+      "message": "Internal Error",
+      "url": "https://{baseURL}/developer-portal/terms"
+    }
+    ]
+    }   
+                  </code>
+                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="fob-welcome-title" id="section-5">Get E-Statement PDF by Statement ID</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: GET :
+                                /financial-statements/v1/e-statements/{EStatementId}/pdf</br></p>
+                            <p class="fob-welcome-text">This path is used to get E-Statement PDF by E-Statement Id.</br>
+                            </p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1363/api/1360#/EStatements_100/operation/%2Fe-statements%2F{EStatementId}%2Fpdf/get">Swagger
+                                    Link</a></p>
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+Header request
+{
+"x-request-id": "a47112v"
+} 
+Path parameters
+{
+“EStatementId “:”EStatementId “
+}                                        
+                                    </code>
+                                  </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('Get-E-Statement-PDF-by-Statement-ID-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+
+                                        <pre id="generatedCurl">
+                                      <code id="Get-E-Statement-PDF-by-Statement-ID-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/financial-statements/v1/e-statements/183/pdf' \
+--header 'Authorization: ••••••'
+                                      </code>
+                                    </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-E-Statement-PDF-by-Statement-ID')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-E-Statement-PDF-by-Statement-ID3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-E-Statement-PDF-by-Statement-ID4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-E-Statement-PDF-by-Statement-ID5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-E-Statement-PDF-by-Statement-ID6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-E-Statement-PDF-by-Statement-ID7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-E-Statement-PDF-by-Statement-ID8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Get-E-Statement-PDF-by-Statement-ID9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+
+                            <code id="response-Get-E-Statement-PDF-by-Statement-ID" style=" display: block; " class="text">
+{
+    "Data": {
+        "Status": "Completed",
+        "PDF": "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+En1SrOy8qTtsMSfZwyZeRRIYlNjuCQoRHfmS5BE+I31Jj+dTyadRL8gZ34RNbKChM1+2PYfXkG+KkATpMCjBTNyTu6V5rX99KxXjAE/kRpWR3k9cOv0ijrsVR2XtHhLUduvlHs5T/jgMff9tDic6elpOWD6f7r/MYQKZW5kc3RyZWFtCmVuZG9iagoxIDAgb2JqCjw8L1RhYnMvUy9Hcm91cDw8L1MvVHJhbnNwYXJlbmN5L1R5cGUvR3JvdXAvQ1MvRGV2aWNlUkdCPj4vQ29udGVudHMgNyAwIFIvVHlwZS9QYWdlL1Jlc291cmNlczw8L0NvbG9yU3BhY2U8PC9DUy9EZXZpY2VSR0I+Pi9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXS9FeHRHU3RhdGU8PC9HUzEgMyAwIFIvR1MyIDQgMCBSPj4vRm9udDw8L0YxIDIgMCBSPj4vWE9iamVjdDw8L2ltZzEgNiAwIFIvaW1nMCA1IDAgUj4+Pj4vUGFyZW50IDggMCBSL01lZGlhQm94WzAgMCA1OTUgODQyXT4+CmVuZG9iago5IDAgb2JqClsxIDAgUi9YWVogMCA4NTIgMF0KZW5kb2JqCjIgMCBvYmoKPDwvU3VidHlwZS9UeXBlMS9UeXBlL0ZvbnQvQmFzZUZvbnQvSGVsdmV0aWNhL0VuY29kaW5nL1dpbkFuc2lFbmNvZGluZz4+CmVuZG9iagozIDAgb2JqCjw8L0NBIDA+PgplbmRvYmoKNCAwIG9iago8PC9DQSAxPj4KZW5kb2JqCjggMCBvYmoKPDwvS2lkc1sxIDAgUl0vVHlwZS9QYWdlcy9Db3VudCAxL0lUWFQoMi4xLjcpPj4KZW5kb2JqCjEwIDAgb2JqCjw8L05hbWVzWyhKUl9QQUdFX0FOQ0hPUl8wXzEpIDkgMCBSXT4+CmVuZG9iagoxMSAwIG9iago8PC9EZXN0cyAxMCAwIFI+PgplbmRvYmoKMTIgMCBvYmoKPDwvTmFtZXMgMTEgMCBSL1R5cGUvQ2F0YWxvZy9QYWdlcyA4IDAgUi9WaWV3ZXJQcmVmZXJlbmNlczw8L1ByaW50U2NhbGluZy9BcHBEZWZhdWx0Pj4+PgplbmRvYmoKMTMgMCBvYmoKPDwvTW9kRGF0ZShEOjIwMjQwODI3MDkzNTU2WikvQ3JlYXRvcihKYXNwZXJSZXBvcnRzIExpYnJhcnkgdmVyc2lvbiA2LjIwLjAtMmJjN2FiNjFjNTZmNDU5ZTgxNzZlYjA1Yzc3MDVlMTQ1Y2Q0MDBhZCkvQ3JlYXRpb25EYXRlKEQ6MjAyNDA4MjcwOTM1NTZaKS9Qcm9kdWNlcihpVGV4dCAyLjEuNyBieSAxVDNYVCk+PgplbmRvYmoKeHJlZgowIDE0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwNjQ0MCAwMDAwMCBuIAowMDAwMDA2Nzg0IDAwMDAwIG4gCjAwMDAwMDY4NzIgMDAwMDAgbiAKMDAwMDAwNjg5NyAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDI0MjcgMDAwMDAgbiAKMDAwMDAwMzc5NSAwMDAwMCBuIAowMDAwMDA2OTIyIDAwMDAwIG4gCjAwMDAwMDY3NDkgMDAwMDAgbiAKMDAwMDAwNjk4NSAwMDAwMCBuIAowMDAwMDA3MDQwIDAwMDAwIG4gCjAwMDAwMDcwNzQgMDAwMDAgbiAKMDAwMDAwNzE3OSAwMDAwMCBuIAp0cmFpbGVyCjw8L0luZm8gMTMgMCBSL0lEIFs8YmY5NjkxNjI4ZDAxYjgyMmYyZGU2OWMzOTgzMDNiYTI+PDEyZTMwMzI1M2E4OGU0MDRjOTc5ODEyODQxM2IzZTY1Pl0vUm9vdCAxMiAwIFIvU2l6ZSAxND4+CnN0YXJ0eHJlZgo3Mzc3CiUlRU9GCg=="
+    }
+}     
+                             </code>
+                            <code id="response-Get-E-Statement-PDF-by-Statement-ID3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                            
+                            </code>	
+                            
+                            <code id="response-Get-E-Statement-PDF-by-Statement-ID4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                            </code>
+                            
+                            
+                            <code id="response-Get-E-Statement-PDF-by-Statement-ID5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                            </code>
+                            
+                            
+                            <code id="response-Get-E-Statement-PDF-by-Statement-ID6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                 
+                            </code>
+                             
+                            
+                            <code id="response-Get-E-Statement-PDF-by-Statement-ID7" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }       
+                            </code>
+                             
+                            
+                            <code id="response-Get-E-Statement-PDF-by-Statement-ID8" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                            </code>
+                            
+                            
+                            <code id="response-Get-E-Statement-PDF-by-Statement-ID9" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                            </code>
+                                  </pre>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

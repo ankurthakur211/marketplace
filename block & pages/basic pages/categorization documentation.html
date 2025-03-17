@@ -1,0 +1,270 @@
+<div id="search-term-result">
+    <p>About Categorization API Documentation</p>
+    <p>
+        The primary objective of this project is to enable Drahim to avail Categorization through API Marketplace.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Categorization API Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                            onclick="show('expand2')">Categorization</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Categorize Vote For ARB</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-3">Categorize Merchant For ARB</a>
+    
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Categorization APIS </p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">The primary objective of this project is to enable Drahim to avail
+                            Categorization through API Marketplace.</br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxDrahimCategorizationAPIs.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/DrahimCategorizationSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+                        <h1 class="fob-welcome-title">Categorization Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                       
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/Drahim'sCategorizationFlowDiagram v0.1.pdf"
+                                download="">Download Categorization Workflow</a></p>
+    
+                        
+                        </div>
+    
+    
+                        <h1 class="fob-welcome-title" id="section-2">Categorize Vote</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint:/mp-categorization/v1/merchants/category-vote</br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1417/api/1414#/Categorization_100/operation/%2Fmerchants%2Fcategory-vote/post">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">This path to help Drahim AI Engine to categorize better by passing the
+                            user change of merchant category, this change will be handled as a vote on the category. Drahim
+                            Engine analyzes the votes and enhances its self to give better results.</br></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    Request Body
+    {
+        "Data": {
+          "MerchantId": "01J46X0AAECE5RV653B6ACJN8A",
+          "UserId": "string",
+          "CategoryId": "14"
+        }
+    }
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('Categorize-VoteFor-ARB-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="Categorize-VoteFor-ARB-curl" style=" display: block;">
+    
+    curl --location 'https://sit.    api-marketplace.alrajhibank.com.sa/    apimarketplace-sit/mp-sandbox/    mp-categorization/v1/merchants/    category-vote' \--header 'x-request-id:     27e3609e-c7eb-4195-8881-96308d109415' \--header 'Content-Type: application/json' \--header 'Accept: application/json' \--header 'Authorization: ••••••' \--data '{  "Data": {    "MerchantId":         "01J46X0AAECE5RV653B6ACJN8A",    "UserId": "string",    "CategoryId": "14"  }}'
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Categorize-VoteFor-ARB')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Categorize-VoteFor-ARB3')">422</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                          <code id="Categorize-VoteFor-ARB" style=" display: block; " class="text">
+    {
+        "Data": {
+            "VotingMessage": "thanks for sharing the vote, system will be better because of you"
+        }
+    }                       
+                          </code>
+                          <code id="Categorize-VoteFor-ARB3" style=" display: none; " class="text">
+    {
+        "Errors": [
+            {
+            "Code": "NTSP.ERROR.422.001",
+            "Message": "Instructed identification is missing",
+            "Path": "Data.Initiation.InstructionIdentification",
+            "Url": "https://{baseURL}/developer-portal/term"
+            }
+        ]
+    }
+                          </code>	
+                        
+                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <h1 class="fob-welcome-title" id="section-3">Categorize Merchant For ARB</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: /mp-categorization/v1/merchants/categorize</br></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1417/api/1414#/Categorization_100/operation/%2Fmerchants%2Fcategorize/post">Swagger
+                                    Link</a></p>
+                            <p class="fob-welcome-text">This path is used to utilize Drahim AI Engine to categorize the passed merchant.</br>
+                            </p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+    Request Body
+    {
+        "Data": {
+          "MerchantName": "stc pay",
+          "MerchantId": "string",
+          "MerchantMccCode": "string",
+          "MerchantPaymentType": "string"
+        }
+    }                                                 
+                                    </code>
+                                  </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <!-- <div class="code-box"> -->
+    
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('Categorize-Merchant-For-ARB-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+    
+                                        <pre id="generatedCurl">
+                                      <code id="Categorize-Merchant-For-ARB-curl" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-categorization/v1/merchants/categorize' \
+    --header 'x-request-id: f0774dc2-6d0c-4d50-ad3a-65fd0c1d958d' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+    "Data": {
+    "MerchantName": "stc pay",
+    "MerchantId": "string",
+    "MerchantMccCode": "string",
+    "MerchantPaymentType": "string"
+    }
+    }'
+                                      </code>
+                                    </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Categorize-Merchant-For-ARB')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Categorize-Merchant-For-ARB3')">422</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                            <code id="Categorize-Merchant-For-ARB" style=" display: block; " class="text">
+    {
+        "Data": {
+            "Id": "01J5101BG3WW1K03YEQPFT3XT1",
+            "MerchantName": "stc pay",
+            "CategoryId": "2",
+            "CategoryName": "INTERNET"
+        }
+    }
+                             </code>
+          
+                            <code id="Categorize-Merchant-For-ARB3" style=" display: none; " class="text">
+    {
+        "Errors": [
+            {
+            "Code": "NTSP.ERROR.422.001",
+            "Message": "Instructed identification is missing",
+            "Path": "Data.Initiation.InstructionIdentification",
+            "Url": "https://{baseURL}/developer-portal/term"
+            }
+        ]
+    }
+                            
+                            </code>	
+                            
+                            <code id="Categorize-Merchant-For-ARB4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                            </code>
+                            
+                                  </pre>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

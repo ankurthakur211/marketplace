@@ -1,0 +1,994 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    let searchTerm = urlParams.get("search_api_fulltext");
+
+    // Check if searchTerm is defined
+    if (typeof searchTerm !== "undefined" && searchTerm !== null) {
+        if (searchTerm.trim() !== "") {
+            // Select all elements within the basic-page container
+            const allElements = document.querySelectorAll(".basic-page *");
+
+            // Create a regex for the search term to handle both exact and partial matches
+            // Create a regular expression pattern to match partial occurrences of the search term
+            const regexPattern = "\\b" + searchTerm.split('').join('\\w*') + "\\w*\\b";
+            const regexExact = new RegExp(regexPattern, "gi");
+
+            const searchWords = searchTerm.split(" ");
+            const wordPatterns = searchWords.map(word => `\\b${word}\\b`).join("|");
+            const regexPartial = new RegExp(wordPatterns, "gi");
+
+            // Iterate over each element
+            allElements.forEach((element) => {
+                // Check if this element contains the search term
+                const textContent = element.textContent;
+                const matchExact = textContent.match(regexExact);
+                const matchPartial = textContent.match(regexPartial);
+                if (matchExact) {
+                    // Handle exact match
+                    const searchTermIndex = textContent.indexOf(matchExact[0]);
+                    const startIndex = Math.max(0, searchTermIndex - 300); // Start 300 characters before the search term
+                    const endIndex = Math.min(textContent.length, searchTermIndex + searchTerm.length + 300); // End 300 characters after the search term
+                    const truncatedText = textContent.substring(startIndex, endIndex);
+                    // Replace the element's content with truncated text
+                    element.innerHTML = truncatedText.replace(regexExact, "<span class='highlight'>$&</span>");
+
+                    // Get the "about" attribute value from the closest ancestor article tag
+                    const article = element.closest("article");
+                    if (article) {
+                        const aboutValue = article.getAttribute("about");
+                        // Create a "Read More" button with a dynamic URL
+                        const readMoreButton = document.createElement("a");
+                        readMoreButton.href = aboutValue; // Use the "about" attribute value as URL
+                        readMoreButton.textContent = "..........Read More";
+                        // Append the "Read More" button to the element
+                        element.appendChild(readMoreButton);
+                    }
+                } else if (matchPartial) {
+                    // Handle partial match
+                    const startIndex = Math.max(0, textContent.indexOf(matchPartial[0]) - 300); // Start 300 characters before the search term
+                    const endIndex = Math.min(textContent.length, textContent.indexOf(matchPartial[0]) + searchTerm.length + 300); // End 300 characters after the search term
+                    const truncatedText = textContent.substring(startIndex, endIndex);
+                    // Replace the element's content with truncated text
+                    element.innerHTML = truncatedText.replace(regexPartial, "<span class='highlight'>$&</span>");
+
+                    // Get the "about" attribute value from the closest ancestor article tag
+                    const article = element.closest("article");
+                    if (article) {
+                        const aboutValue = article.getAttribute("about");
+                        // Create a "Read More" button with a dynamic URL
+                        const readMoreButton = document.createElement("a");
+                        readMoreButton.href = aboutValue; // Use the "about" attribute value as URL
+                        readMoreButton.textContent = "..........Read More";
+                        // Append the "Read More" button to the element
+                        element.appendChild(readMoreButton);
+                    }
+                } else {
+                    // Remove the element if it does not contain the search term
+                    element.remove();
+                }
+            });
+
+            // Remove classes from all elements under the basic-page container
+            const basicPages = document.querySelectorAll(".basic-page");
+            basicPages.forEach((basicPage) => {
+                const allElements = basicPage.querySelectorAll("*");
+                allElements.forEach((element) => {
+                    element.removeAttribute("class");
+                });
+            });
+
+            // Highlight the search term in the content
+            highlight();
+
+            const basicPageDivs = document.querySelectorAll(".basic-page");
+
+            basicPageDivs.forEach((div) => {
+                // Check if the basic-page div is empty
+                if (div.innerHTML.trim() === '') {
+                    // Find the previous sibling, which should be the search-term-result div
+                    const searchResult = div.previousElementSibling;
+                    if (searchResult && searchResult.id === "search-term-result") {
+                        // Make the display of the found search-term-result block
+                        searchResult.style.display = "block";
+
+                        const aboutValue = div.closest("article").getAttribute("about");
+                        // Create a "Read More" button with a dynamic URL
+                        const readMoreButton = document.createElement("a");
+                        readMoreButton.href = aboutValue; // Use the "about" attribute value as URL
+                        readMoreButton.textContent = "..........Read More";
+                        // Append the "Read More" button to the element
+                        searchResult.appendChild(readMoreButton);
+                    }
+                }
+            });
+
+
+
+        } else {
+            // Select all elements with the id "search-term-result"
+            const searchTermResults = document.querySelectorAll("#search-term-result");
+
+            // Loop through each element
+            searchTermResults.forEach((searchTermResult) => {
+                // Make the display of the current searchTermResult block
+                searchTermResult.style.display = "block";
+                const closestArticle = searchTermResult.closest("article");
+
+                if (closestArticle) {
+                    const aboutValue = closestArticle.getAttribute("about");
+                    // Create a "Read More" button with a dynamic URL
+                    const readMoreButton = document.createElement("a");
+                    readMoreButton.href = aboutValue; // Use the "about" attribute value as URL
+                    readMoreButton.textContent = "..........Read More";
+                    // Append the "Read More" button to the element
+                    searchTermResult.appendChild(readMoreButton);
+                }
+            });
+
+            // Remove the .basic-page element if searchTerm is empty
+            const basicPages = document.querySelectorAll(".basic-page");
+            basicPages.forEach((basicPage) => {
+                basicPage.remove();
+            });
+        }
+        // Add styles
+        const styleElement = document.createElement("style");
+        styleElement.textContent = `
+    #page-node-title {
+        display: inline-grid;
+        padding-bottom: 0%;
+    }
+    .highlight {
+        background-color: yellow;
+        font-weight: bold;
+    }
+`;
+        document.head.appendChild(styleElement);
+    }
+
+    // Function to highlight the search term in the content
+    function highlight() {
+        const searchTerm = urlParams.get("search_api_fulltext");
+        const searchRegEx = new RegExp(searchTerm, "gi");
+        const basicPageContainers = document.querySelectorAll(".basic-page");
+
+        basicPageContainers.forEach((basicPageContainer) => {
+            traverseAndHighlight(basicPageContainer, searchRegEx);
+        });
+    }
+
+    // Function to traverse and highlight text nodes containing the search term
+    function traverseAndHighlight(node, searchRegEx) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            // Check if the node is not a descendant of an anchor element
+            if (!node.parentElement.closest("a")) {
+                const text = node.textContent;
+                const highlightedText = text.replace(
+                    searchRegEx,
+                    '<span class="highlight">$&</span>'
+                );
+                const tempElement = document.createElement("div");
+                tempElement.innerHTML = highlightedText;
+
+                // Replace the text node with the highlighted version
+                while (tempElement.firstChild) {
+                    node.parentNode.insertBefore(tempElement.firstChild, node);
+                }
+                node.parentNode.removeChild(node);
+            }
+        } else {
+            // Recursively traverse child nodes
+            for (let i = 0; i < node.childNodes.length; i++) {
+                traverseAndHighlight(node.childNodes[i], searchRegEx);
+            }
+        }
+    }
+
+    // Select all elements with class 'basic-page'
+    const basicPages = document.querySelectorAll('.basic-page');
+    // Loop through each 'basic-page' element
+    basicPages.forEach(basicPage => {
+        let readMoreCount = 0; // Counter to track the number of 'Read More' links
+
+        // Select all anchor tags within this 'basic-page'
+        const anchorTags = basicPage.querySelectorAll('a');
+        // console.log(anchorTags);
+
+        // Loop through each anchor tag
+        anchorTags.forEach(anchorTag => {
+            // Check if the anchor tag contains 'Read More' in its text content
+            if (anchorTag.textContent.trim() === "..........Read More") {
+                // Increment the counter
+                readMoreCount++;
+
+                // If it's not the first 'Read More' link and the counter is greater than 1, remove it
+                if (readMoreCount > 1) {
+                    anchorTags[0].remove();
+                }
+            }
+        });
+    });
+
+
+    var feedback = window.location.pathname;
+
+    // Check if the path includes 'contact' or 'feedback'
+    if (feedback.includes('contact/feedback')) {
+        // Get the element with the class 'region-content'
+        var regionContentElement = document.querySelector('.region-content');
+
+        // Add the ID 'contact-feedback-form' to the element
+        if (regionContentElement) {
+            regionContentElement.id = 'contact-feedback-form';
+        }
+
+        var headingTarget = document.querySelector('.page-header');
+        if (headingTarget) {
+            headingTarget.id = 'contact-feedback-heading';
+        }
+
+
+    }
+
+
+    if (feedback.endsWith("/product")) {
+        var productHeader = document.querySelector('.page-header');
+        if (productHeader) {
+            productHeader.id = 'pageHeader';
+        }
+
+    }
+
+
+    if (window.location.pathname.includes('/api')) {
+        // Select the first <div> with class 'row'
+        var rowDiv = document.querySelector('.row-1');
+
+        // Check if the <div> exists before adding the class
+        if (rowDiv) {
+            rowDiv.classList.add('custom-articalbox');
+        } else {
+            console.warn('No element with class "row" found.');
+        }
+    }
+    const observer = new MutationObserver((mutationsList) => {
+        mutationsList.forEach(mutation => {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                const regionHighlighted = document.querySelector('.region.region-highlighted');
+
+                // Check if there is no 'div' with class 'alert' inside 'region region-highlighted'
+                if (regionHighlighted && regionHighlighted.querySelector('.alert')) {
+                    const apicMainContent = document.querySelector('.apicMainContent.container .region.region-highlighted');
+                    if (apicMainContent) {
+                        // Temporarily disconnect the observer to prevent infinite loop
+                        observer.disconnect();
+                        // Apply the styles
+                        apicMainContent.style.display = 'flex';
+                        apicMainContent.style.flexDirection = 'column';
+                        apicMainContent.style.padding = '62px 15px';
+                        // Reconnect the observer
+                        observer.observe(document.body, { childList: true, subtree: true });
+                    }
+                }
+            }
+        });
+    });
+
+    // Start observing the document body for changes
+    observer.observe(document.body, { childList: true, subtree: true });
+
+
+    if (window.location.pathname.includes('/FAQ')) {
+        // Select the div with class 'layout--onecol'
+        const faqSection = document.querySelector('.layout--onecol');
+        // If it exists, add the class 'custom-faqsec'
+        if (faqSection) {
+            faqSection.classList.add('custom-faqsec');
+        }
+    }
+
+
+
+
+});
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll(".faq-question").forEach(question => {
+        question.addEventListener("click", function () {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector(".faq-toggle path");
+
+            // Toggle answer visibility
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+
+            // Toggle icon rotation
+            if (answer.style.display === "block") {
+                icon.setAttribute("d", "M34.618 30.5945C34.1086 31.1352 33.2827 31.1352 32.7733 30.5945L25 22.3427L17.2267 30.5945C16.7173 31.1352 15.8914 31.1352 15.382 30.5945C14.8727 30.0538 14.8727 29.177 15.382 28.6363L24.0777 19.4055C24.5871 18.8648 25.413 18.8648 25.9224 19.4055L34.618 28.6363C35.1273 29.177 35.1273 30.0538 34.618 30.5945Z");
+            } else {
+                icon.setAttribute("d", "M15.382 19.4055C15.8914 18.8648 16.7173 18.8648 17.2267 19.4055L25 27.6573L32.7733 19.4055C33.2827 18.8648 34.1086 18.8648 34.618 19.4055C35.1273 19.9462 35.1273 20.823 34.618 21.3637L25.9224 30.5945C25.413 31.1352 24.5871 31.1352 24.0777 30.5945L15.382 21.3637C14.8727 20.823 14.8727 19.9462 15.382 19.4055Z");
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.querySelector("#contact-feedback-form");
+
+    if (contactForm) {
+        const bgImagesDiv = document.createElement("div");
+        bgImagesDiv.classList.add("bg-images");
+
+        bgImagesDiv.innerHTML = `
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+        `;
+
+        contactForm.insertBefore(bgImagesDiv, contactForm.firstChild);
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.href.includes('/taxonomy/term')) {
+        // Select all 'apicTeaser' divs
+        document.querySelectorAll('.apicTeaser').forEach(function (teaserDiv) {
+            // Select all 'apicTeaserMain' divs
+            document.querySelectorAll('.apicTeaserMain').forEach(function (teaserMain) {
+                // Check if there are at least two divs inside each 'apicTeaserMain'
+                const divs = teaserMain.querySelectorAll('div');
+                if (divs.length > 1) {
+                    divs[1].remove(); // Remove the second div
+                }
+            });
+            // Hide all 'basic-page' divs inside each 'apicTeaser'
+            teaserDiv.querySelectorAll('.basic-page').forEach(function (basicPageDiv) {
+                basicPageDiv.style.display = 'none';
+            });
+
+            // Show the element with id 'search-term-result' inside each 'apicTeaser'
+            const searchTermResult = teaserDiv.querySelector('#search-term-result');
+            if (searchTermResult) {
+                searchTermResult.style.display = 'block';
+            }
+        });
+
+    }
+
+    if (window.location.pathname.includes("/product")) {
+        let element = document.querySelector(".region-content");
+        if (element) {
+            element.classList.add("custom-APIproduct");
+            element.insertAdjacentHTML("afterbegin", `
+                    <div class="bg-images">
+                        <p class="pattern"></p>
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                    </div>
+                `);;
+        }
+
+        let header = document.getElementById("pageHeader");
+        if (header) {
+            header.insertAdjacentHTML("afterend", `
+                <p class="main-pera">
+                    Our APIs ensure seamless integration, secure access, and reliable
+                    communication for efficient development.
+                </p>
+            `);
+        }
+
+        let blazy = document.querySelector(".blazy.blazy--view.blazy--view--products");
+        if (blazy) {
+            blazy.classList.add("custom-productcards");
+        }
+
+     }
+});
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Function to extract the value of a parameter from the URL
+//         function getURLParameter(url, name) {
+//         name = name.replace(/[\[\]]/g, "\\$&");
+//         var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+//             results = regex.exec(url);
+//         if (!results) return null;
+//         if (!results[2]) return '';
+//         return decodeURIComponent(results[2].replace(/\+/g, " "));
+//         }
+
+//         // Get the URL of the current page
+//         var currentURL = window.location.href;
+
+//         // Get the value of the search_api_fulltext parameter from the URL
+//         var searchText = getURLParameter(currentURL, 'search_api_fulltext');
+
+//         // If the parameter exists and has a value
+//         if (searchText && searchText.trim() !== "") {
+//         // Highlight the text on the page
+//         var elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li'); // Target <p>, <h1>-<h6>, <li> elements
+//         elements.forEach(function(element) {
+//             // Check if the element contains an <a> tag
+//             var aTag = element.querySelector('a');
+//             if (aTag) {
+//                 // Highlight the innerHTML of the <a> tag only
+//                 var innerHTML = aTag.innerHTML;
+//                 var newHTML = innerHTML.replace(new RegExp(searchText, 'g'), '<span class="highlight">' + searchText + '</span>');
+//                 aTag.innerHTML = newHTML;
+//             } else {
+//                 // Highlight the element's innerText
+//                 var innerText = element.innerText;
+//                 var newText = innerText.replace(new RegExp(searchText, 'g'), '<span class="highlight">' + searchText + '</span>');
+//                 element.innerHTML = newText;
+//             }
+//         });
+//         }
+// });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var openSearchButton = document.querySelector('.opensearch');
+//   var searchContainer = document.querySelector('.bx--global-light-ui .views-exposed-form');
+
+//   openSearchButton.addEventListener('click', function() {
+//     if (searchContainer.style.display === 'none' || searchContainer.style.display === '') {
+//       searchContainer.style.display = 'flex';
+//     } else {
+//       searchContainer.style.display = 'none';
+//     }
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var openSearchButton = document.querySelector(".opensearch");
+
+    openSearchButton.addEventListener("click", function () {
+        var searchContainer = document.querySelector(
+            "section#block-marketplace-latest-exposedformsearch-apipage-1"
+        );
+
+        console.log(searchContainer); // Log searchContainer to debug
+
+        if (searchContainer) {
+            if (
+                searchContainer.style.display === "none" ||
+                searchContainer.style.display === ""
+            ) {
+                searchContainer.style.display = "flex";
+            } else {
+                searchContainer.style.display = "none";
+            }
+        } else {
+            console.log("Search container not found");
+        }
+    });
+});
+
+function show(expand) {
+    if (document.getElementById(expand)) {
+        if (
+            document.getElementById(expand).style.display == "" ||
+            document.getElementById(expand).style.display == "none"
+        )
+            document.getElementById(expand).style.display = "block";
+        else document.getElementById(expand).style.display = "none";
+    }
+}
+
+function toggle(img1, img2) {
+    if (
+        document.getElementById("img1").style.display == "" ||
+        document.getElementById("img1").style.display == "none"
+    ) {
+        document.getElementById("img1").style.display = "block";
+        document.getElementById("img2").style.display = "none";
+    } else {
+        document.getElementById("img1").style.display = "none";
+        document.getElementById("img2").style.display = "block";
+    }
+}
+
+function tgl(myBtn) {
+    var myButton = document.getElementById(myBtn);
+    if (myButton) {
+        if (myButton.value == "+") {
+            myButton.value = "x";
+            myButton.src =
+                "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/files/inline-images/xmark.jpg";
+        } else {
+            myButton.value = "+";
+            myButton.src =
+                "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/files/inline-images/plus.png";
+        }
+    }
+}
+
+//Market Place Products-business domains page
+function tglApi1(myArr) {
+    var myArrow = document.getElementById(myArr);
+    if (myArrow) {
+        if (myArrow.value == "^") {
+            myArrow.value = "-";
+            myArrow.src =
+                "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/arrowbelow.png";
+        } else {
+            myArrow.value = "^";
+            myArrow.src =
+                "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/arrowup.png";
+        }
+    }
+}
+
+function generateCode(language) {
+    const curlCommand = document.getElementById("curlCommand").value;
+
+    let generatedCode = "";
+
+    if (language === "ruby") {
+        generatedCode = generateRubyCode(curlCommand);
+    } else if (language === "php") {
+        generatedCode = generatePHPCode(curlCommand);
+    } else if (language === "node") {
+        generatedCode = generateNodeCode(curlCommand);
+    }
+
+    const codeElement = document.getElementById("generatedCode");
+    codeElement.textContent = generatedCode;
+}
+
+function generateRubyCode(curlCommand) {
+    const rubyCode = `
+require 'net/http'
+
+url = '${curlCommand}'
+uri = URI(url)
+
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true if uri.scheme === 'https'
+
+request = Net::HTTP::Get.new(uri)
+# Add headers if needed
+# request['Header-Name'] = 'Header-Value'
+
+response = http.request(request)
+puts response.body
+`;
+
+    return rubyCode;
+}
+
+function generatePHPCode(curlCommand) {
+    const phpCode = `<?php
+$url = '${curlCommand}';
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+
+// Add headers if needed
+// curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+//   'Header-Name: Header-Value',
+// ));
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+`;
+
+    return phpCode;
+}
+
+function generateNodeCode(curlCommand) {
+    const nodeCode = `const http = require('http');
+
+const options = {
+  hostname: '${curlCommand}',
+  method: 'GET',
+  // Add headers if needed
+  // headers: {
+  //   'Header-Name': 'Header-Value',
+  // },
+};
+
+const req = http.request(options, (res) => {
+  let data = '';
+
+  res.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  res.on('end', () => {
+    console.log(data);
+  });
+});
+
+req.on('error', (error) => {
+  console.error(error);
+});
+
+req.end();
+`;
+
+    return nodeCode;
+}
+
+function toggleBodyField() {
+    const method = document.getElementById("method").value;
+    const bodyField = document.getElementById("bodyField");
+    bodyField.style.display = method === "POST" ? "block" : "none";
+}
+function homeImageFlip(textId) {
+    // console.log("textID");
+    // console.log(textId);
+
+    // Hide all image elements
+    document.querySelectorAll('.home-account-image, .home-insurance-image, .home-finance-image').forEach(el => {
+        el.style.display = 'none';
+    });
+
+
+
+    // Show the relevant image and text section based on the clicked link
+    if (textId === 'text2') {
+        document.querySelector('.home-insurance-image').style.display = 'block';
+    } else if (textId === 'text1') {
+        document.querySelector('.home-account-image').style.display = 'block';
+    } else if (textId === 'text3') {
+        document.querySelector('.home-finance-image').style.display = 'block';
+        document.getElementById(textId).style.display = 'block';
+    } else {
+        // Show the default image if no specific text is selected
+        document.querySelector('.home-account-image').style.display = 'block';
+    }
+}
+/****old dynamic curl function
+/**function generateCurlCommand(url, headers, method, body) {
+  let curlCommand = '';
+
+  if (method) {
+    curlCommand += `curl -X ${method.toUpperCase()} `;
+  } else {
+    curlCommand += 'curl ';
+  }
+
+  curlCommand += `'${url}'`;
+
+  if (headers) {
+    for (let header in headers) {
+      curlCommand += ` -H '${header}: ${headers[header]}'`;
+    }
+  }
+
+  if (method && method.toLowerCase() === 'post' && body) {
+    // Escape single quotes in the body
+    const escapedBody = body.replace(/'/g, "'\\''");
+    curlCommand += ` -d '${escapedBody}'`;
+  }
+
+  return curlCommand;
+}**/
+function generateCurlCommand(url, method, headers) {
+    let curlCommand = "";
+
+    if (method) {
+        curlCommand += `curl -X ${method.toUpperCase()} `;
+    } else {
+        curlCommand += "curl ";
+    }
+
+    curlCommand += `'${url}'`;
+
+    if (headers) {
+        for (let header in headers) {
+            curlCommand += ` -H '${header}: ${headers[header]}'`;
+        }
+    }
+
+    return curlCommand;
+}
+
+function generateAndDisplayCurl(event) {
+    event.preventDefault();
+
+    // Set the URL, method, and headers inside the function
+    const url = "https://example.com"; // Replace 'https://example.com' with your desired URL
+    const method = "get"; // Replace 'post' with your desired HTTP method ('get', 'put', 'delete', etc.)
+    const headers = {
+        "Content-Type": "application/json", // Replace with your desired headers
+        Authorization: "Bearer YOUR_ACCESS_TOKEN", // Replace with any authorization headers
+    };
+
+    const curlCommand = generateCurlCommand(url, method, headers);
+    document.getElementById("generatedCurl").textContent = curlCommand;
+}
+
+/**old dynamic generate curl function
+/**function generateAndDisplayCurl(event) {
+  event.preventDefault();
+
+  const url = document.getElementById('url').value;
+  const method = document.getElementById('method').value;
+  const headersString = document.getElementById('headers').value;
+  const body = document.getElementById('body').value;
+  let headers = null;
+
+  try {
+    headers = JSON.parse(headersString);
+  } catch (error) {
+    alert('Invalid JSON format for headers');
+    return;
+  }
+
+  const curlCommand = generateCurlCommand(url, headers, method, body);
+  document.getElementById('generatedCurl').textContent = curlCommand;
+}**/
+
+function displayText(textId) {
+    // Hide all text elements
+    var textElements = document.querySelectorAll(".text");
+    textElements.forEach(function (element) {
+        element.style.display = "none";
+    });
+
+    // Display the clicked text element
+    var text = document.getElementById(textId);
+    text.style.display = "block";
+}
+
+/*var myElement = document.getElementById('myElement');
+
+myElement.addEventListener('click', function() {
+  myElement.style.backgroundColor = '#E9EEFD';
+});
+
+
+myElement.addEventListener('mouseout', function() {
+  myElement.style.backgroundColor = 'transparent';
+});*/
+
+var listcolor = document.getElementById("listcolor");
+
+listcolor.addEventListener("click", function () {
+    listcolor.style.color = "#556ff8";
+    listcolor.style.border = "2px solid #556ff8";
+});
+
+listcolor.addEventListener("mouseout", function () {
+    listcolor.style.color = "#556ff8";
+    listcolor.style.border = "2px solid #556ff8";
+});
+
+var myElement = document.getElementById("myElement");
+var isClicked = false;
+
+myElement.addEventListener("click", function () {
+    if (isClicked) {
+        myElement.style.backgroundColor = "#E9EEFD";
+    } else {
+        myElement.style.backgroundColor = "#E9EEFD";
+    }
+    isClicked = !isClicked;
+});
+
+myElement.addEventListener("mouseout", function () {
+    if (!isClicked) {
+        myElement.style.backgroundColor = "#E9EEFD";
+    }
+});
+
+/*function toggleDiv(divId) {
+  var div = document.getElementById(divId);
+  div.classList.toggle('hidden');
+}*/
+
+function showDiv(divId) {
+    var div1 = document.getElementById("div1");
+    var div2 = document.getElementById("div2");
+
+    if (divId === "div1") {
+        div1.classList.remove("hidden");
+        div2.classList.add("hidden");
+    } else if (divId === "div2") {
+        div1.classList.add("hidden");
+        div2.classList.remove("hidden");
+    }
+}
+
+function responseText(errorId) {
+    // Hide all text elements
+    var textElements = document.querySelectorAll(".text");
+    textElements.forEach(function (element) {
+        element.style.display = "none";
+    });
+
+    // Display the clicked text element
+    var text = document.getElementById(errorId);
+    text.style.display = "block";
+}
+
+/*function showcode(divId) {
+  var code1 = document.getElementById("response-rate");
+  var code2 = document.getElementById("response-rate2");
+  var code3 = document.getElementById("response-rate3");
+  var code4 = document.getElementById("response-rate4");
+  var code5 = document.getElementById("response-rate5");
+  var code6 = document.getElementById("response-rate6");
+  var code7 = document.getElementById("response-rate7");
+  var code8 = document.getElementById("response-rate8");
+  var code9 = document.getElementById("response-rate9");
+  
+  if (divId === "response-rate") {
+    code1.style.display = "block";
+    code2.style.display = "none";
+    code3.style.display = "none";
+    code4.style.display = "none";
+    code5.style.display = "none";
+    code6.style.display = "none";
+    code7.style.display = "none";
+    code8.style.display = "none";
+    code9.style.display = "none";
+  } else if (divId === "response-rate2") {
+    code1.style.display = "none";
+    code2.style.display = "block";
+    code3.style.display = "none";
+    code4.style.display = "none";
+    code5.style.display = "none";
+    code6.style.display = "none";
+    code7.style.display = "none";
+    code8.style.display = "none";
+    code9.style.display = "none";
+  }
+  else if (divId === "response-rate3") {
+    code1.style.display = "none";
+    code2.style.display = "none";
+    code3.style.display = "block";
+    code4.style.display = "none";
+    code5.style.display = "none";
+    code6.style.display = "none";
+    code7.style.display = "none";
+    code8.style.display = "none";
+    code9.style.display = "none";
+  }
+  else if (divId === "response-rate4") {
+    code1.style.display = "none";
+    code2.style.display = "none";
+    code3.style.display = "none";
+    code4.style.display = "block";
+    code5.style.display = "none";
+    code6.style.display = "none";
+    code7.style.display = "none";
+    code8.style.display = "none";
+    code9.style.display = "none";
+  }
+  else if (divId === "response-rate5") {
+    code1.style.display = "none";
+    code2.style.display = "none";
+    code3.style.display = "none";
+    code4.style.display = "none";
+    code5.style.display = "block";
+    code6.style.display = "none";
+    code7.style.display = "none";
+    code8.style.display = "none";
+    code9.style.display = "none";
+  }
+  else if (divId === "response-rate6") {
+    code1.style.display = "none";
+    code2.style.display = "none";
+    code3.style.display = "none";
+    code4.style.display = "none";
+    code5.style.display = "none";
+    code6.style.display = "block";
+    code7.style.display = "none";
+    code8.style.display = "none";
+    code9.style.display = "none";
+  }
+  else if (divId === "response-rate7") {
+    code1.style.display = "none";
+    code2.style.display = "none";
+    code3.style.display = "none";
+    code4.style.display = "none";
+    code5.style.display = "none";
+    code6.style.display = "none";
+    code7.style.display = "block";
+    code8.style.display = "none";
+    code9.style.display = "none";
+  }
+  else if (divId === "response-rate8") {
+    code1.style.display = "none";
+    code2.style.display = "none";
+    code3.style.display = "none";
+    code4.style.display = "none";
+    code5.style.display = "none";
+    code6.style.display = "none";
+    code7.style.display = "none";
+    code8.style.display = "block";
+    code9.style.display = "none";
+  }
+  else if (divId === "response-rate9") {
+    code1.style.display = "none";
+    code2.style.display = "none";
+    code3.style.display = "none";
+    code4.style.display = "none";
+    code5.style.display = "none";
+    code6.style.display = "none";
+    code7.style.display = "none";
+    code8.style.display = "none";
+    code9.style.display = "block";
+  }
+}*/
+
+/**function filterMenuItems() {
+  const searchText = searchBar.value.toLowerCase();
+  const menuItems = document.getElementById('menuItems');
+
+  for (let i = 0; i < menuItems.length; i++) {
+    const menuItem = menuItems[i];
+    const itemText = menuItem.innerText.toLowerCase();
+
+    if (itemText.includes(searchText)) {
+      menuItem.style.display = 'list-item';
+    } else {
+      menuItem.style.display = 'none';
+    }
+  }
+}
+
+const searchBar = document.getElementById('searchBar');
+searchBar.addEventListener('input', filterMenuItems);**/
+
+function search_menu() {
+    let input = document.getElementById("searchbar").value;
+    input = input.toLowerCase();
+    let x = document.getElementsByClassName("menus");
+
+    for (i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display = "none";
+        } else {
+            x[i].style.display = "list-item";
+        }
+    }
+}
+
+// JavaScript code
+function search_menu() {
+    let input = document.getElementById("searchbar").value;
+    input = input.toLowerCase();
+    let x = document.getElementsByClassName("apn-doc-menu");
+
+    for (i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display = "none";
+        } else {
+            x[i].style.display = "block";
+        }
+    }
+}
+
+//MP
+function faq(myBtn) {
+    var myButton = document.getElementById(myBtn);
+    if (myButton) {
+        if (myButton.value == "+") {
+            myButton.value = "x";
+            myButton.src =
+                "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/arrowbelow.png";
+        } else {
+            myButton.value = "+";
+            myButton.src =
+                "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/arrowup.png";
+        }
+    }
+}
+
+function faq2(myBtn) {
+    var myButton = document.getElementById(myBtn);
+    if (myButton) {
+        if (myButton.value == "+") {
+            myButton.value = "x";
+            myButton.src =
+                "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/arrowbelow.png";
+        } else {
+            myButton.value = "+";
+            myButton.src =
+                "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/arrowup.png";
+        }
+    }
+}

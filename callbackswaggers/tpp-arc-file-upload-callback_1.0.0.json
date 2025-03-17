@@ -1,0 +1,200 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "ARC To Third Party File Upload Callback API Documentation",
+    "version": "1.0.0",
+    "title": "TPP ARC File Upload Callback",
+    "x-ibm-name": "tpp-arc-file-upload-callback"
+  },
+  "basePath": "/v1/arc/third-party",
+  "securityDefinitions": {
+    "clientID": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "client_id",
+      "x-key-type": "client_id",
+      "description": "Client ID generated for the consumer. It is used for authentication purpose."
+    },
+    "clientSecret": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "client_secret",
+      "x-key-type": "client_secret",
+      "description": "Client secret generated for the consumer. It is used for authentication purpose."
+    }
+  },
+  "security": [
+    {
+      "clientID": [],
+      "clientSecret": []
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/file-upload-callback": {
+      "post": {
+        "summary": "ARC To Third Party File Upload Callback",
+        "operationId": "tppFileUploadCallback",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ThirdPartyFileUploadCallbackRequestBody",
+            "description": "Third Party File Upload Callback Request Body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ThirdPartyFileUploadCallbackRq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ThirdPartyFileUploadCallbackRs"
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "schema": {
+              "$ref": "#/definitions/errorReply"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/errorReply"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/errorReply"
+            }
+          },
+          "500": {
+            "description": "InternalServerError",
+            "schema": {
+              "$ref": "#/definitions/errorReply"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ThirdPartyFileUploadCallbackRq": {
+      "type": "object",
+      "required": [
+        "requestID",
+        "serviceName",
+        "messageTime",
+        "fileId",
+        "processingStatus",
+        "processingStatusDescription",
+        "fileContent"
+      ],
+      "properties": {
+        "requestID": {
+          "type": "string",
+          "description": "unique identifier for request",
+          "example": "cc47c0b3-64bd-4bf4-a3e8-de73ee9cb85b",
+          "format": "uuid"
+        },
+        "serviceName": {
+          "type": "string",
+          "description": "Service Name",
+          "example": "ThirdPartyReconFeedback",
+          "enum": [
+            "ThirdPartyReconFeedback"
+          ]
+        },
+        "messageTime": {
+          "type": "string",
+          "description": "Message Timestamp YYYY-MM-DDTHH:MI:SS",
+          "example": "2024-01-17T12:40:35.000Z"
+        },
+        "fileId": {
+          "type": "string",
+          "description": "File Id",
+          "example": "TPP_Portfolios_EODFeedback_20240117"
+        },
+        "processingStatus": {
+          "type": "string",
+          "description": "Processing Status",
+          "example": "PASS",
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "processingStatusDescription": {
+          "type": "string",
+          "description": "Processing Status Description",
+          "example": "Success"
+        },
+        "fileContent": {
+          "type": "string",
+          "description": "Reconciliation feedback file (in Bytes, base64)",
+          "format": "byte"
+        }
+      }
+    },
+    "ThirdPartyFileUploadCallbackRs": {
+      "type": "object",
+      "required": [
+        "statusCode",
+        "requestId"
+      ],
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "description": "Status Code",
+          "example": "I000000"
+        },
+        "statusDescription": {
+          "type": "string",
+          "description": "Status Description",
+          "example": "Success"
+        },
+        "requestId": {
+          "type": "string",
+          "description": "Request ID",
+          "example": "b2063721-258f-49b1-85cb-2204c2ae1ad0"
+        }
+      }
+    },
+    "errorReply": {
+      "type": "object",
+      "properties": {
+        "errorResponse": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "error code",
+              "example": "4xx"
+            },
+            "message": {
+              "type": "string",
+              "description": "error message",
+              "example": "error message"
+            },
+            "moreInformation": {
+              "type": "string",
+              "description": "error description",
+              "example": "error description"
+            }
+          }
+        }
+      }
+    }
+  }
+}
