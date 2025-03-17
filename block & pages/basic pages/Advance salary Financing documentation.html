@@ -1,0 +1,2530 @@
+<div id="search-term-result">
+    <p>Advance salary Financing API Documentation</p>
+
+    <p>
+        The main goal for this project is to enable Emkan to avail applying for Advance salary Financing through API
+        Marketplace.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Advance Salary Financing API
+            Documentation</p>
+    </div>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here"
+                            id="searchbar" onkeyup="search_menu()" type="text" />
+
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+
+
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                            onclick="show('expand2')">Advance Salary Financing APIs</a>
+
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Create Customers in Emkan
+                                Systems</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-3">Get basic eligibility for
+                                customers</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-4">Set loan declaration
+                                information
+                                and creates a draft application</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-5">Get loan declaration</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-6">Generate OTP</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-7">Create the loan application</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-8">Get Applications</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-9">Gets Occupation List</a>
+                            <a class="api-guides-noList apn-doc-menu " href="#section-10">Gets Address List</a>
+                        </div>
+
+
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Advance Salary Financing APIs</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">The main goal for this project is to enable Emkan to avail applying
+                            for
+                            Advance salary Financing through API Marketplace.
+                            </br></p>
+                        <p class="fob-welcome-text"></br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Advance_Salary_Financing.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/AdvanceSalaryFinancingSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+
+
+                        <h1 class="fob-welcome-title">Advance Salary Financing Architecture</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank"
+                            href="../AdvanceSalaryFinancingArcitectureImg">Click
+                            here</a>
+                        <div class="row flex mt-25 mb-25">
+                            <div class="col-lg-8">
+                                <p class="AdvanceSalaryFinancing-architecture-img"><br></p>
+                            </div>
+                        </div>
+
+                        <h1 class="fob-welcome-title" id="section-2">Create customers in Emkan system</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: POST:
+                            /emkan/advance-salary/v1/registration/customers/CreateCustomer</br></p>
+                        <p class="fob-welcome-text">Operations for customer KYC.
+                            </br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1201/api/1144#/EmkanAdvancedSalary_100/operation/%2Fregistration%2Fcustomers%2FCreateCustomer/post">Swagger
+                                Link</a></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    {
+        "nid": "1234567891",
+        "idExpiryDate": "2024-10-10",
+        "idIssueDate": "2024-10-10",
+        "arbCIC": "string",
+        "email": "user@example.com",
+        "mobile": "string",
+        "nationality": "string",
+        "dateOfBirth": "2024-10-10",
+        "gender": "M",
+        "firstNameEN": "string",
+        "firstNameAR": "string",
+        "fatherNameEN": "string",
+        "fatherNameAR": "string",
+        "familyNameEN": "string",
+        "familyNameAR": "string",
+        "maritalStatus": "string",
+        "dependantCount": 0,
+        "preferredLanguage": "AR",
+        "address": {
+            "latlng": "string",
+            "buildingNumber": "string",
+            "streetName": "string",
+            "district": "string",
+            "city": "string",
+            "additionalNumber": "string",
+            "region": "string",
+            "unitNumber": "string"
+        }
+        }                                   
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('Create-the-loan-application')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                        <code id="Create-the-loan-application" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/advance-salary/v1/registration/customers/CreateCustomer' \
+    --header 'LNG: EN' \
+    --header 'X-Correlation-ID: 123' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: */*' \
+    --header 'Authorization: ••••••' \
+    --data-raw '{
+        "nid": "1150440754",
+        "idExpiryDate": "2025-02-02",
+        "idIssueDate": "2020-02-02",
+        "arbCIC": "0000000014055511",
+        "email": "OB3088q@hotfa1il.com",
+        "mobile": "966595268770",
+        "nationality": "113",
+        "dateOfBirth": "1994-08-12",
+        "gender": "M",
+        "firstNameEN": "Ahmad",
+        "firstNameAR": "أحمد",
+        "fatherNameEN": "Ahmad",
+        "fatherNameAR": "أحمد",
+        "familyNameEN": "alsalloum",
+        "familyNameAR": "السلوم",
+        "maritalStatus": "SINGLE",
+        "dependantCount": "0",
+        "preferredLanguage": "EN",
+        "address": {
+            "latlng": "35",
+            "buildingNumber": "3223",
+            "streetName": "Amer Bin Al Munthir",
+            "district": "Al Hamadaniyah Dist.",
+            "city": "3",
+            "additionalNumber": "22444",
+            "region": "1",
+            "unitNumber": "12345"
+        }
+    }
+    '                        
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-the-loan-application')">201</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-the-loan-application3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-the-loan-application4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-the-loan-application5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-the-loan-application6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-the-loan-application7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-the-loan-application8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Create-the-loan-application9')">500</a>
+                                        </div>
+
+                                        <pre class="response-box">
+
+                        <code id="response-Create-the-loan-application" style=" display: block; " class="text">
+    201 Created
+                        </code>
+                      <code id="response-Create-the-loan-application3" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }  
+                        </code>	
+                      
+                        <code id="response-Create-the-loan-application4" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }    
+                        </code>
+                      
+                        <code id="response-Create-the-loan-application5" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      
+                        <code id="response-Create-the-loan-application6" style=" display: none; "class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }
+                              
+                        </code>
+                      
+                        <code id="response-Create-the-loan-application7" style=" display: none; "class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }       
+                        </code>
+                      
+                        <code id="response-Create-the-loan-application8" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      
+                        <code id="response-Create-the-loan-application9" style=" display: none; " class="text">
+      {
+        "errors": [
+          {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+          }
+        ]
+      }     
+                        </code>
+                      </pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <h1 class="fob-welcome-title" id="section-3">Gets basic eligibility for customers</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: POST: /emkan/advance-salary/v1
+                                /integration/loans/BasicEligibility</br></p>
+                            <p class="fob-welcome-text">Gets basic eligibility for customers.</br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1201/api/1144#/EmkanAdvancedSalary_100/operation/%2Fintegration%2Floans%2FBasicEligibility/post">Swagger
+                                    Link</a></p>
+
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                          <code class="sample-code">
+    Headers
+    {
+    LNG:”EN”
+    }
+    Request Body
+    {
+        "nid": "1234567891",
+        "productCode": "string"
+    }
+                          </code>
+                        </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('Gets-basic-eligibility-for-customers')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+
+                                        <pre id="generatedCurl">
+                            <code id="Gets-basic-eligibility-for-customers" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/advance-salary/v1/integration/loans/BasicEligibility' \
+    --header 'LNG: EN' \
+    --header 'X-Correlation-ID: 123' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: */*' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "productCode": "ADSAL", 
+        "nid": "1150440754"
+    }'                            
+                            </code>
+                          </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Gets-basic-eligibility-for-customers')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Gets-basic-eligibility-for-customers3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Gets-basic-eligibility-for-customers4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Gets-basic-eligibility-for-customers5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Gets-basic-eligibility-for-customers6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Gets-basic-eligibility-for-customers7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Gets-basic-eligibility-for-customers8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Gets-basic-eligibility-for-customers9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+
+                  <code id="response-Gets-basic-eligibility-for-customers" style=" display: block; " class="text">
+    {
+        "reason": [
+            {
+                "code": "7083",
+                "description": "Sorry, you're not eligible to apply for this product. you must have an active loan in Emkan or Alrajhi bank"
+            }
+        ],
+        "transactionId": null,
+        "paidPercentage": 0,
+        "paidAmount": 0,
+        "proceedFlag": false
+    }                
+                   </code>
+                  <code id="response-Gets-basic-eligibility-for-customers3" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.401.001",
+          "message": "Unauthorized to call the target operation.",
+          "path": "authorization",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }
+                  
+                  </code>	
+                  
+                  <code id="response-Gets-basic-eligibility-for-customers4" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.403.001",
+          "message": "Can't find any valid subscription.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }   
+                  </code>
+                  
+                  
+                  <code id="response-Gets-basic-eligibility-for-customers5" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.404.001",
+          "message": "No resources match requested URI.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }     
+                  </code>
+                  
+                  
+                  <code id="response-Gets-basic-eligibility-for-customers6" style=" display: none; "class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.405.001",
+          "message": "The method is not allowed for the requested URL.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }
+                       
+                  </code>
+                   
+                  
+                  <code id="response-Gets-basic-eligibility-for-customers7" style=" display: none; "class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.406.001",
+          "message": "An appropriate representation of the requested resource could not be found",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }       
+                  </code>
+                   
+                  
+                  <code id="response-Gets-basic-eligibility-for-customers8" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.429.001",
+          "message": "Assembly Rate Limit exceeded",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }     
+                  </code>
+                  
+                  
+                  <code id="response-Gets-basic-eligibility-for-customers9" style=" display: none; " class="text">
+      {
+      "errors": [
+        {
+          "code": "ERROR.500.001",
+          "message": "Internal Error",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+      ]
+      }    
+                  </code>
+                        </pre>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="fob-welcome-title" id="section-4">Set loan declaration information and
+                                creates a draft application</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: POST: v1/loans/applications/SetDeclaration</br></p>
+                            <p class="fob-welcome-text">Sets loan declaration information and creates a draft
+                                application.</br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1201/api/1144#/EmkanAdvancedSalary_100/operation/%2Fintegration%2Floans%2Fapplications%2FSetDeclaration/post">Swagger
+                                    Link</a></p>
+
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+    Headers:
+    {
+    “LNG”:”En”
+    }
+    Request Body:
+    {
+        "nid": "string",
+        "declaration": {
+        "purposeOfFinance": "PRRPVEH",
+        "familySize": 0,
+        "familyWithEducationFees": 0,
+        "housingType": "RENTH",
+        "workingStatus": "SAL",
+        "martialStatus": "SINGLE",
+        "expenses": {
+            "housing": 0,
+            "expatFees": 0,
+            "foodBeverage": 0,
+            "tution": 0,
+            "healthInsurance": 0,
+            "transportation": 0,
+            "totalAdditionalExpenses": 0,
+            "totalObligations": 0,
+            "hasOtherLoans": true
+        },
+        "employment": {
+            "sectorId": "GOV",
+            "departmentID": "GOV00012",
+            "wage": {
+            "basic": 0,
+            "housing": 0,
+            "otherAllowance": 0
+            },
+            "customerWage": {
+            "basic": 0,
+            "housing": 0,
+            "otherAllowance": 0
+            },
+            "employerName": "string",
+            "dateOfJoining": "14/05/1421",
+            "employmentStatus": "string",
+            "militaryRank": "JUNDI"
+        }
+        }
+    }
+                            </code>
+                          </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <button class="curlbtn fob-validate-OTP-top" type="submit"
+                                            onclick="show('Sets-loan-declaration-information-creates-draft-application')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+                                        <pre id="generatedCurl">
+                      <code id="Sets-loan-declaration-information-creates-draft-application" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/advance-salary/v1/integration/loans/applications/SetDeclaration' \
+    --header 'X-Correlation-ID: 123' \
+    --header 'LNG: EN' \
+    --header 'CHN: ARB' \
+    --header 'SUB-CHN: marketplace_apis' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "nid": "1150440756",
+        "declaration": {
+            "purposeOfFinance": "PRRPVEH",
+            "familySize": "1",
+            "familyWithEducationFees": "0",
+            "housingType": "RENTH",
+            "workingStatus": "SAL",
+            "martialStatus": "MARRIED"
+        },
+        "expenses": {
+            "housing": "0",
+            "expatFees": "0",
+            "foodBeverage": "0",
+            "tution": "0",
+            "healthInsurance": "0",
+            "transportation": "10000",
+            "totalObligations": "1555"
+        },
+        "employment": {
+            "sectorId": "GOV",
+            "departmentID": "AGN00007"
+        },
+        "wage": {
+            "basic": "5003",
+            "housing": "5004",
+            "otherAllowance": "5005"
+        },
+        "customerWage": {},
+        "employerName": "salma",
+        "dateOfJoining": "2024-01-01",
+        "employmentStatus": "salma",
+        "militaryRank": "JUNDI"
+    }'                    
+                       </code>
+                            </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Sets-loan-declaration-information-creates-draft-application')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Sets-loan-declaration-information-creates-draft-application3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Sets-loan-declaration-information-creates-draft-application4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Sets-loan-declaration-information-creates-draft-application5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Sets-loan-declaration-information-creates-draft-application6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Sets-loan-declaration-information-creates-draft-application7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Sets-loan-declaration-information-creates-draft-application8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Sets-loan-declaration-information-creates-draft-application9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+
+                      <code id="response-Sets-loan-declaration-information-creates-draft-application" style=" display: block; " class="text">
+        {
+            "productId": "APL",
+            "subProductId": "Topup",
+            "packageId": 379,
+            "schemeId": 465,
+            "offerAmount": 1500000.0,
+            "tenure": 60,
+            "apr": 17.29,
+            "installmentAmount": 36562.5
+        }                    
+                      </code>
+                     <code id="response-Sets-loan-declaration-information-creates-draft-application3" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.401.001",
+          "message": "Unauthorized to call the target operation.",
+          "path": "authorization",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }           
+                      </code>	
+                      
+                      <code id="response-Sets-loan-declaration-information-creates-draft-application4" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.403.001",
+          "message": "Can't find any valid subscription.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }
+                      </code>
+                      
+                      
+                      <code id="response-Sets-loan-declaration-information-creates-draft-application5" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.404.001",
+          "message": "No resources match requested URI.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }    
+                      </code>
+                      
+                      
+                      <code id="response-Sets-loan-declaration-information-creates-draft-application6" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.405.001",
+          "message": "The method is not allowed for the requested URL.",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        } 
+                         
+                      </code>
+                      
+                      
+                      <code id="response-Sets-loan-declaration-information-creates-draft-application7" style=" display: none; "class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.406.001",
+          "message": "An appropriate representation of the requested resource could not be found",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }      
+                      </code>
+                      
+                      
+                      <code id="response-Sets-loan-declaration-information-creates-draft-application8" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.429.001",
+          "message": "Assembly Rate Limit exceeded",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }     
+                      </code>
+                      
+                      
+                      <code id="response-Sets-loan-declaration-information-creates-draft-application9" style=" display: none; " class="text">
+        {
+        "errors": [
+        {
+          "code": "ERROR.500.001",
+          "message": "Internal Error",
+          "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+        }   
+                      </code>
+                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="fob-welcome-title" id="section-5">Get loan declaration</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint: POST: /emkan/advance-salary/v1
+                                    /integration/loans/applications/GetDeclaration</br></p>
+                                <p class="fob-welcome-text">Gets loan declaration information and creates a draft
+                                    application. </br></p>
+                                <p class="fob-welcome-text"><a id="downloadLink"
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1201/api/1144#/EmkanAdvancedSalary_100/operation/%2Fintegration%2Floans%2Fapplications%2FGetDeclaration/post">Swagger
+                                        Link</a></p>
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+    Headers:
+    {
+    “LNG”:”En”
+    }
+    Request Body:
+    {
+        "nid": "1234567891",
+        "productCode": "string"
+    }                             
+                                        </code>
+                                      </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                onclick="show('Get-loan-declaration')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+
+                                            <pre id="generatedCurl">
+                                          <code id="Get-loan-declaration" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/advance-salary/v1/integration/loans/applications/GetDeclaration' \
+    --header 'X-Correlation-ID: 123' \
+    --header 'LNG: EN' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "nid": "1150440754"
+    }'                                        
+                                          </code>
+                                        </pre>
+                                        </div>
+                                    </div>
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-loan-declaration')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-loan-declaration3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-loan-declaration4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-loan-declaration5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-loan-declaration6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-loan-declaration7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-loan-declaration8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Get-loan-declaration9')">500</a>
+                                                </div>
+                                                <pre class="response-box">
+
+                                <code id="response-Get-loan-declaration" style=" display: block; " class="text">
+    {
+        "purposeOfFinance": "PRRPVEH",
+        "familySize": "0",
+        "familyWithEducationFees": "0",
+        "housingType": "RENTH",
+        "workingStatus": "SAL",
+        "martialStatus": "MARRIED",
+        "expenses": {
+            "housing": 0,
+            "expatFees": 0,
+            "foodBeverage": 0,
+            "tution": 0,
+            "healthInsurance": 0,
+            "transportation": 10000,
+            "totalAdditionalExpenses": 0,
+            "totalObligations": null,
+            "hasOtherLoans": false
+        },
+        "employment": {
+            "sectorId": "GOV",
+            "departmentID": "AGN00007",
+            "employerName": "salma",
+            "employmentStatus": null,
+            "dateOfJoining": "29/04/2023",
+            "militaryRank": "JUNDI",
+            "wage": null,
+            "customerWage": {
+                "basic": 0,
+                "housing": 0,
+                "otherAllowance": 0
+            }
+        }
+    }                                 
+                                 </code>
+                                <code id="response-Get-loan-declaration3" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.401.001",
+                "message": "Unauthorized to call the target operation.",
+                "path": "authorization",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                
+                                </code>	
+                                
+                                <code id="response-Get-loan-declaration4" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.403.001",
+                "message": "Can't find any valid subscription.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }   
+                                </code>
+                                
+                                
+                                <code id="response-Get-loan-declaration5" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="response-Get-loan-declaration6" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                     
+                                </code>
+                                 
+                                
+                                <code id="response-Get-loan-declaration7" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }       
+                                </code>
+                                 
+                                
+                                <code id="response-Get-loan-declaration8" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                </code>
+                                
+                                
+                                <code id="response-Get-loan-declaration9" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }    
+                                </code>
+                                      </pre>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h1 class="fob-welcome-title" id="section-6">Generate OTP</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <p class="fob-welcome-text">Endpoint: POST:
+                                        /emkan/advance-salary/v1/registration/v1/otp/generate</br>
+                                    </p>
+                                    <p class="fob-welcome-text">Generate OTP for confirm and start loan excution
+                                        operation.</br>
+                                    </p>
+                                    <p class="fob-welcome-text"><a id="downloadLink"
+                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1201/api/1144#/EmkanAdvancedSalary_100/operation/%2Fregistration%2Fotp%2Fgenerate/post">Swagger
+                                            Link</a></p>
+
+
+                                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <h1 class="fob-welcome-title">Request Example</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <pre class="example_97 api-guides-example-fob ">
+                                            <code class="sample-code">
+    Headers:
+    {
+    ” LNG”:”En”
+    }
+    
+    Request Body
+    {
+        "nid": "1932008991",
+        "serviceId": "CREATEAPP"
+    }
+                                            </code>
+                                          </pre>
+                                            </div>
+                                            <div class="col-lg-4 mt-25">
+
+                                                <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                    onclick="show('Generate-OTP')">
+                                                    <p class="curlText">cURL</p>
+                                                </button>
+
+                                                <pre id="generatedCurl">
+                                              <code id="Generate-OTP" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/advance-salary/v1/registration/otp/generate' \
+    --header 'X-Correlation-ID: 1234' \
+    --header 'LNG: EN' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "nid":"1150440756",
+        "serviceId":"CREATEAPP"
+    }'                                            
+                                              </code>
+                                            </pre>
+                                            </div>
+                                        </div>
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <div class="code-box">
+                                                    <p
+                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                    <div class="response-box-div">
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Generate-OTP')">200</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Generate-OTP3')">401</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Generate-OTP4')">403</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Generate-OTP5')">404</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Generate-OTP6')">405</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Generate-OTP7')">406</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Generate-OTP8')">429</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Generate-OTP9')">500</a>
+                                                    </div>
+                                                    <pre class="response-box">
+
+                                    <code id="response-Generate-OTP" style=" display: block; " class="text">
+    {
+        "statusCode": "200",
+        "requestId": "efcf853d-8c3a-4620-a0ed-f484bdee8dc1"
+    }                                    
+                                     </code>
+                                    <code id="response-Generate-OTP3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                    
+                                    </code>	
+                                    
+                                    <code id="response-Generate-OTP4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                                    </code>
+                                    
+                                    
+                                    <code id="response-Generate-OTP5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                    </code>
+                                    
+                                    
+                                    <code id="response-Generate-OTP6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                         
+                                    </code>
+                                     
+                                    
+                                    <code id="response-Generate-OTP7" style=" display: none; "class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.406.001",
+                    "message": "An appropriate representation of the requested resource could not be found",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }       
+                                    </code>
+                                     
+                                    
+                                    <code id="response-Generate-OTP8" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.429.001",
+                    "message": "Assembly Rate Limit exceeded",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }     
+                                    </code>
+                                    
+                                    
+                                    <code id="response-Generate-OTP9" style=" display: none; " class="text">
+                {
+                "errors": [
+                    {
+                    "code": "ERROR.500.001",
+                    "message": "Internal Error",
+                    "url": "https://{baseURL}/developer-portal/terms"
+                    }
+                ]
+                }    
+                                    </code>
+                                          </pre>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h1 class="fob-welcome-title" id="section-7">Create the loan application</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <p class="fob-welcome-text">Endpoint: POST: /emkan/advance-salary/v1
+                                            /integration/loans/applications/CreateApplication</br>
+                                        <p class="fob-welcome-text">Creates the loan application.</br>
+                                        </p>
+                                        <p class="fob-welcome-text"><a id="downloadLink"
+                                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1201/api/1144#/EmkanAdvancedSalary_100/operation/%2Fintegration%2Floans%2Fapplications%2FCreateApplication/post">Swagger
+                                                Link</a></p>
+
+                                        <div class="bx--snippet-container body"
+                                            data-testid="expandable-example-display">
+
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                                    <p class="fob-welcome-line"></p>
+                                                    <pre class="example_97 api-guides-example-fob ">
+                                                <code class="sample-code">
+    Headers:
+    {
+    “LNG”:”En”,
+    “OTP”:”1234”,
+    “transactionID”:”y123”
+    }
+    
+    Request Body:
+    {
+        "nid": "string",
+        "requestedAmount": 0,
+        "productId": "MUR",
+        "subProductId": "Mic",
+        "packageId": 0,
+        "schemeId": 0
+    }  
+                                                </code>
+                                              </pre>
+                                                </div>
+                                                <div class="col-lg-4 mt-25">
+
+                                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                        onclick="show('Creates-the-loan-application')">
+                                                        <p class="curlText">cURL</p>
+                                                    </button>
+
+                                                    <pre id="generatedCurl">
+                                                  <code id="Creates-the-loan-application" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/advance-salary/v1/integration/loans/applications/CreateApplication' \
+    --header 'LNG: EN' \
+    --header 'X-Correlation-ID: 123' \
+    --header 'OTP: 1234' \
+    --header 'transactionId: 823daceb-09aa-4457-a186-2bb8200e70b6' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: */*' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "nid": "1150440754",
+        "emkanProduct": "advanceSalary"
+    }'                                                
+                                                  </code>
+                                                </pre>
+                                                </div>
+                                            </div>
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <div class="code-box">
+                                                        <p
+                                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                        <div class="response-box-div">
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Creates-the-loan-application')">200</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Creates-the-loan-application3')">401</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Creates-the-loan-application4')">403</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Creates-the-loan-application5')">404</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Creates-the-loan-application6')">405</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Creates-the-loan-application7')">406</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Creates-the-loan-application8')">429</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Creates-the-loan-application9')">500</a>
+                                                        </div>
+                                                        <pre class="response-box">
+
+                                        <code id="response-Creates-the-loan-application" style=" display: block; " class="text">
+    {
+        "compApplId": "12788584",
+        "customerId": "12320043"
+    }
+                                         </code>
+                                       <code id="response-Creates-the-loan-application3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                        
+                                        </code>	
+                                        
+                                        <code id="response-Creates-the-loan-application4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }   
+                                        </code>
+                                        
+                                        
+                                        <code id="response-Creates-the-loan-application5" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                        </code>
+                                        
+                                        
+                                        <code id="response-Creates-the-loan-application6" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                             
+                                        </code>
+                                         
+                                        
+                                        <code id="response-Creates-the-loan-application7" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                                        </code>
+                                         
+                                        
+                                        <code id="response-Creates-the-loan-application8" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                        </code>
+                                        
+                                        
+                                        <code id="response-Creates-the-loan-application9" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                                        </code>
+                                              </pre>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <h1 class="fob-welcome-title" id="section-8">Get Applications</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <p class="fob-welcome-text">Endpoint: POST: /emkan/advance-salary/v1
+                                                /integration/loans/applications/GetApplication</br>
+                                            </p>
+                                            <p class="fob-welcome-text">Returns all applications for a customer.</br>
+                                            </p>
+                                            <p class="fob-welcome-text"><a id="downloadLink"
+                                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1201/api/1144#/EmkanAdvancedSalary_100/operation/%2Fintegration%2Floans%2Fapplications%2FGetApplication/post">Swagger
+                                                    Link</a></p>
+
+                                            <div class="bx--snippet-container body"
+                                                data-testid="expandable-example-display">
+
+                                                <div class="row flex mt-25">
+                                                    <div class="col-lg-8">
+                                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                                        <p class="fob-welcome-line"></p>
+                                                        <pre class="example_97 api-guides-example-fob ">
+                                                    <code class="sample-code">
+    Headers:
+    {
+    “LNG “:”En”
+    }
+    
+    Request Body:
+    {
+        "nid": "1234567891",
+        "productCode": "string"
+    }
+                                                    </code>
+                                                  </pre>
+                                                    </div>
+                                                    <div class="col-lg-4 mt-25">
+
+                                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                            onclick="show('Get-Applications')">
+                                                            <p class="curlText">cURL</p>
+                                                        </button>
+
+                                                        <pre id="generatedCurl">
+                                                      <code id="Get-Applications" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/advance-salary/v1/integration/loans/applications/GetApplication' \
+    --header 'LNG: EN' \
+    --header 'X-Correlation-ID: 123' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: */*' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "nid": "1150440754"
+    }'                                                    
+                                                      </code>
+                                                    </pre>
+                                                    </div>
+                                                </div>
+                                                <div class="row flex mt-25">
+                                                    <div class="col-lg-8">
+                                                        <div class="code-box">
+                                                            <p
+                                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                            <div class="response-box-div">
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Applications')">200</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Applications3')">401</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Applications4')">403</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Applications5')">404</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Applications6')">405</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Applications7')">406</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Applications8')">429</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Applications9')">500</a>
+                                                            </div>
+                                                            <pre class="response-box">
+
+                                            <code id="response-Get-Applications" style=" display: block; " class="text">
+    {
+        "applications": [
+            {
+                "applicationId": "12788584",
+                "compApplId": "12788584",
+                "stage": "CRE",
+                "product": "APL",
+                "subProduct": "Refintop",
+                "emkanProduct": "refinanceTopup",
+                "totalFinancedAmount": null,
+                "amountRemaining": null,
+                "installmentAmount": null,
+                "lastInstallmentDate": null,
+                "nextInstallmentDue": null,
+                "source": "2.0",
+                "digitalApp": null,
+                "status": "PENDING",
+                "substage": null,
+                "installmentRemainDuration": null,
+                "remainingInstallmentNumber": 0,
+                "reasons": [
+                    {
+                        "reasonCode": null,
+                        "reasonMsg": null
+                    }
+                ],
+                "merchantId": null,
+                "amount": 1500000,
+                "merchantName": null,
+                "eligibleForRefinance": false,
+                "loannumber": null,
+                "subsourcingChannel": null,
+                "isHidden": false
+            },
+            {
+                "applicationId": "640692",
+                "compApplId": "640692",
+                "stage": "PAL",
+                "product": "APL",
+                "subProduct": "Topup",
+                "emkanProduct": "topupFinance",
+                "totalFinancedAmount": 120.66,
+                "amountRemaining": 54.32,
+                "installmentAmount": 2.01,
+                "lastInstallmentDate": "27/04/2026",
+                "nextInstallmentDue": "27/07/2024",
+                "source": "2.0",
+                "digitalApp": null,
+                "status": "ONGOING",
+                "substage": null,
+                "installmentRemainDuration": -22,
+                "remainingInstallmentNumber": 6,
+                "reasons": [
+                    {
+                        "reasonCode": null,
+                        "reasonMsg": null
+                    }
+                ],
+                "merchantId": null,
+                "amount": 1500000,
+                "merchantName": null,
+                "eligibleForRefinance": true,
+                "loannumber": "APL3413453",
+                "subsourcingChannel": null,
+                "isHidden": false
+            },
+            {
+                "applicationId": null,
+                "compApplId": null,
+                "stage": "CURRENT",
+                "product": null,
+                "subProduct": null,
+                "emkanProduct": "BNPL",
+                "totalFinancedAmount": 100000,
+                "amountRemaining": 100000,
+                "installmentAmount": 8300,
+                "lastInstallmentDate": "20240325",
+                "nextInstallmentDue": null,
+                "source": null,
+                "digitalApp": null,
+                "status": "CURRENT",
+                "substage": null,
+                "installmentRemainDuration": null,
+                "remainingInstallmentNumber": 8,
+                "reasons": null,
+                "merchantId": null,
+                "amount": 0,
+                "merchantName": null,
+                "eligibleForRefinance": false,
+                "loannumber": "12122D1",
+                "subsourcingChannel": null,
+                "isHidden": false
+            },
+            {
+                "applicationId": null,
+                "compApplId": null,
+                "stage": "AUTH",
+                "product": null,
+                "subProduct": null,
+                "emkanProduct": "BNPL",
+                "totalFinancedAmount": 10000,
+                "amountRemaining": 10000,
+                "installmentAmount": 750,
+                "lastInstallmentDate": "20240325",
+                "nextInstallmentDue": null,
+                "source": null,
+                "digitalApp": null,
+                "status": "AUTH",
+                "substage": null,
+                "installmentRemainDuration": null,
+                "remainingInstallmentNumber": 8,
+                "reasons": null,
+                "merchantId": null,
+                "amount": 0,
+                "merchantName": null,
+                "eligibleForRefinance": false,
+                "loannumber": "12122D1",
+                "subsourcingChannel": null,
+                "isHidden": false
+            }
+        ],
+        "productsList": [
+            {
+                "order": 1,
+                "code": "PF",
+                "name_ar": "التمويل الشخصي",
+                "name_en": "Personal Finance",
+                "desc_ar": "ابدأ طلب التمويل الشخصي وتحقق من أهليتك عبر تجربة رقمية سريعة ومتكاملة!",
+                "desc_en": "start your personal finance application and check your eligible offer!"
+            },
+            {
+                "order": 2,
+                "code": "REF",
+                "name_ar": "إعادة تمويل",
+                "name_en": "Refinance",
+                "desc_ar": "سدد تمويلك القائم لدى إمكان واحصل على مبلغ تمويل أعلى وفترة سداد جديدة عبر رحلة سريعة ورقمية بالكامل.",
+                "desc_en": "Pay off your Emkan finance and get an increased finance amount with a new repayment period through a fast and fully digital journey."
+            },
+            {
+                "order": 3,
+                "code": "BUYOUT",
+                "name_ar": "سداد المديونية",
+                "name_en": "BUYOUT",
+                "desc_ar": "سدد مديونيتك وانضم لنا للاستفادة من هامش ربح منافس عبر تجربة سريعة ورقمية بالكامل.",
+                "desc_en": "Pay your debts and join us to benefit from a competitive profit margin through a fast and fully digital experience."
+            },
+            {
+                "order": 5,
+                "code": "RF",
+                "name_ar": "تمويل المشتريات",
+                "name_en": "Retail Finance",
+                "desc_ar": "قسّط مشترياتك بكل سرعة وسهولة لدى شركائنا، بشروط وإجراءات ميسرة من خلال تجربة رقمية بالكامل.",
+                "desc_en": "Finance your purchases quickly and easily with our partners, with easy terms and procedures through a fully digital experience."
+            },
+            {
+                "order": 6,
+                "code": "CC",
+                "name_ar": "البطاقة الإئتمانية",
+                "name_en": "Credit Card",
+                "desc_ar": "بطاقة “يو كارد” المميزة تتيح لك شراء كل ما تريد وتقسيط المبلغ بآقساط شهرية ميسرة عبر تجربة رقمية سريعة ومتكاملة.",
+                "desc_en": "The unique “UCard” card allows you to buy everything you want and pay it back in easy monthly installments through a fast and integrated digital experience."
+            },
+            {
+                "order": 7,
+                "code": "AL",
+                "name_ar": "التمويل التأجيري للسيارات",
+                "name_en": "Autolease",
+                "desc_ar": " اشترِ سيارتك الجديدة مع امكان من راحة منزلك عبر تجربة رقمية بالكامل",
+                "desc_en": "Buy your new car with emkan from the comfort of your own home through a fully digital experince."
+            }
+        ],
+        "totalLoans": 4,
+        "hiddenFeatures": null,
+        "vouchers": [],
+        "offers": [],
+        "cifid": "53044"
+    }                                                                                  
+                                             </code>
+                                           <code id="response-Get-Applications3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                            
+                                            </code>	
+                                            
+                                            <code id="response-Get-Applications4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Get-Applications5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Get-Applications6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                                 
+                                            </code>
+                                             
+                                            
+                                            <code id="response-Get-Applications7" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }       
+                                            </code>
+                                             
+                                            
+                                            <code id="response-Get-Applications8" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Get-Applications9" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                                            </code>
+                                                  </pre>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <h1 class="fob-welcome-title" id="section-9">Gets Occupation List</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <p class="fob-welcome-text">Endpoint: POST:
+                                                    /emkan/api/v2/applications/getOccupationsList</br></p>
+                                                <p class="fob-welcome-text">Gets Occupation List.</br>
+                                                </p>
+                                                <p class="fob-welcome-text"><a id="downloadLink"
+                                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1189/api/1186#/GetOccupationAddressList_100/operation/%2FgetOccupationsList/post">Swagger
+                                                        Link</a></p>
+
+
+                                                <div class="bx--snippet-container body"
+                                                    data-testid="expandable-example-display">
+
+                                                    <div class="row flex mt-25">
+                                                        <div class="col-lg-8">
+                                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                                            <p class="fob-welcome-line"></p>
+                                                            <pre class="example_97 api-guides-example-fob ">
+                                                    <code class="sample-code">
+    Headers:
+    {
+    “LNG “:”En”
+    }
+                                                    </code>
+                                                  </pre>
+                                                        </div>
+                                                        <div class="col-lg-4 mt-25">
+
+                                                            <button class="curlbtn fob-activate-fetching-top"
+                                                                type="submit" onclick="show('Gets-Occupation-List')">
+                                                                <p class="curlText">cURL</p>
+                                                            </button>
+
+                                                            <pre id="generatedCurl">
+                                                      <code id="Gets-Occupation-List" style=" display: block;">curl --location --request POST 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/api/v2/applications/getOccupationsList' \
+    --header 'accept: application/json' \
+    --header 'content-type: application/json' \
+    --header 'X-Correlation-ID: fd7acf70-ea54-11ed-b737-098c44e7f2c8' \
+    --header 'LNG: EN' \
+    --header 'Authorization: ••••••'                                                    
+                                                      </code>
+                                                    </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row flex mt-25">
+                                                        <div class="col-lg-8">
+                                                            <div class="code-box">
+                                                                <p
+                                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                                <div class="response-box-div">
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Gets-Occupation-List')">200</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Gets-Occupation-List3')">401</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Gets-Occupation-List4')">403</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Gets-Occupation-List5')">404</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Gets-Occupation-List6')">405</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Gets-Occupation-List7')">406</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Gets-Occupation-List8')">429</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Gets-Occupation-List9')">500</a>
+                                                                </div>
+                                                                <pre class="response-box">
+
+                                            <code id="response-Gets-Occupation-List" style=" display: block; " class="text">
+    [
+    {
+        "key": "1",
+        "value": "1",
+        "label": "ACCOUNTANT or Auditor"
+    },
+    {
+        "key": "2",
+        "value": "2",
+        "label": "AMBASSADOR or CONSUL"
+    },
+    {
+        "key": "3",
+        "value": "3",
+        "label": "ATTORNEY AT LAW"
+    },
+    {
+        "key": "4",
+        "value": "4",
+        "label": "CEO"
+    },
+    {
+        "key": "5",
+        "value": "5",
+        "label": "CHAIRMAN OF THE SHURA COUNCIL"
+    },
+    {
+        "key": "6",
+        "value": "6",
+        "label": "DEPUTY AMBASSADOR or CONSUL"
+    },
+    {
+        "key": "7",
+        "value": "7",
+        "label": "GOVERNOR or DEPUTY GOVERNOR"
+    },
+    {
+        "key": "8",
+        "value": "8",
+        "label": "Husband of Saudi Woman"
+    },
+    {
+        "key": "9",
+        "value": "9",
+        "label": "JUDGE"
+    },
+    {
+        "key": "10",
+        "value": "10",
+        "label": "MEMEBER OF THE SHURA COUNCIL"
+    },
+    {
+        "key": "11",
+        "value": "11",
+        "label": "MINISTER or DEPUTY MINISTER"
+    },
+    {
+        "key": "12",
+        "value": "12",
+        "label": "MILITARY"
+    },
+    {
+        "key": "16",
+        "value": "16",
+        "label": "NOTARY PUBLIC"
+    },
+    {
+        "key": "18",
+        "value": "18",
+        "label": "PRINCE"
+    },
+    {
+        "key": "19",
+        "value": "19",
+        "label": "SON OF SAUDI WOMAN"
+    },
+    {
+        "key": "20",
+        "value": "20",
+        "label": "WIFE OF SAUDI MAN"
+    },
+    {
+        "key": "21",
+        "value": "21",
+        "label": "CONTRACTOR"
+    },
+    {
+        "key": "26",
+        "value": "26",
+        "label": "FACULITY MEMBER"
+    },
+    {
+        "key": "27",
+        "value": "27",
+        "label": "INVESTIGATOR"
+    },
+    {
+        "key": "28",
+        "value": "28",
+        "label": "ADVISOR"
+    },
+    {
+        "key": "29",
+        "value": "29",
+        "label": "STUDENT"
+    },
+    {
+        "key": "30",
+        "value": "30",
+        "label": "ENGINEER"
+    },
+    {
+        "key": "31",
+        "value": "31",
+        "label": " TECHNICIAN"
+    },
+    {
+        "key": "32",
+        "value": "32",
+        "label": "CRAFTSMAN"
+    },
+    {
+        "key": "33",
+        "value": "33",
+        "label": "ANNOUNCER"
+    },
+    {
+        "key": "34",
+        "value": "34",
+        "label": "CASHIER"
+    },
+    {
+        "key": "35",
+        "value": "35",
+        "label": "CHEMIST"
+    },
+    {
+        "key": "36",
+        "value": "36",
+        "label": "DRIVER"
+    },
+    {
+        "key": "37",
+        "value": "37",
+        "label": "JOURNALIST"
+    },
+    {
+        "key": "38",
+        "value": "38",
+        "label": "MEDICAL PRACTICIAN"
+    },
+    {
+        "key": "39",
+        "value": "39",
+        "label": "OFFICER"
+    },
+    {
+        "key": "40",
+        "value": "40",
+        "label": "OPERATOR"
+    },
+    {
+        "key": "41",
+        "value": "41",
+        "label": "PHYSICIST"
+    },
+    {
+        "key": "42",
+        "value": "42",
+        "label": "PILOT"
+    },
+    {
+        "key": "43",
+        "value": "43",
+        "label": "PRAYER LEADER OR CRIER"
+    },
+    {
+        "key": "44",
+        "value": "44",
+        "label": "PRIVATE SECURITY"
+    },
+    {
+        "key": "45",
+        "value": "45",
+        "label": "RESTAURANT MANAGER"
+    },
+    {
+        "key": "46",
+        "value": "46",
+        "label": "SALESMAN"
+    },
+    {
+        "key": "47",
+        "value": "47",
+        "label": "SECRETARY"
+    },
+    {
+        "key": "48",
+        "value": "48",
+        "label": "SECURITY"
+    },
+    {
+        "key": "50",
+        "value": "50",
+        "label": "STATISTICIAN"
+    },
+    {
+        "key": "51",
+        "value": "51",
+        "label": "TEACHER"
+    },
+    {
+        "key": "52",
+        "value": "52",
+        "label": "TELLER"
+    },
+    {
+        "key": "999",
+        "value": "999",
+        "label": "Other"
+    }
+    ]
+                                             </code>
+                                            <code id="response-Gets-Occupation-List3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                            
+                                            </code>	
+                                            
+                                            <code id="response-Gets-Occupation-List4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Gets-Occupation-List5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Gets-Occupation-List6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                                 
+                                            </code>
+                                             
+                                            
+                                            <code id="response-Gets-Occupation-List7" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }       
+                                            </code>
+                                             
+                                            
+                                            <code id="response-Gets-Occupation-List8" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                                            </code>
+                                            
+                                            
+                                            <code id="response-Gets-Occupation-List9" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                                            </code>
+                                                  </pre>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h1 class="fob-welcome-title" id="section-10">Gets Address List</h1>
+                                                    <p class="fob-welcome-line"></p>
+                                                    <p class="fob-welcome-text">Endpoint: POST:
+                                                        /emkan/api/v2/applications/getAddInfo</br></p>
+                                                    <p class="fob-welcome-text">Gets Address List.</br>
+                                                    </p>
+                                                    <p class="fob-welcome-text"><a id="downloadLink"
+                                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1189/api/1186#/GetOccupationAddressList_100/operation/%2FgetAddInfo/post">Swagger
+                                                            Link</a></p>
+
+
+                                                    <div class="bx--snippet-container body"
+                                                        data-testid="expandable-example-display">
+
+                                                        <div class="row flex mt-25">
+                                                            <div class="col-lg-8">
+                                                                <h1 class="fob-welcome-title">Request Example</h1>
+                                                                <p class="fob-welcome-line"></p>
+                                                                <pre class="example_97 api-guides-example-fob ">
+                                                        <code class="sample-code">
+    Headers:
+    {
+    “LNG “:”En”
+    }
+    
+    Request body
+    {
+        "pageCode": "string"
+    }
+                                                        </code>
+                                                      </pre>
+                                                            </div>
+                                                            <div class="col-lg-4 mt-25">
+
+                                                                <button class="curlbtn fob-activate-fetching-top"
+                                                                    type="submit" onclick="show('Gets-Address-List')">
+                                                                    <p class="curlText">cURL</p>
+                                                                </button>
+
+                                                                <pre id="generatedCurl">
+                                                          <code id="Gets-Address-List" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/emkan/api/v2/applications/getAddInfo?LNG=EN' \
+    --header 'accept: application/json' \
+    --header 'content-type: application/json' \
+    --header 'X-Correlation-ID: fd7acf70-ea54-11ed-b737-098c44e7f2c8' \
+    --header 'LNG: EN' \
+    --header 'Authorization: ••••••' \
+    --data '{
+        "pageCode": "addInfo"
+    }'                                                                           
+                                                          </code>
+                                                        </pre>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row flex mt-25">
+                                                            <div class="col-lg-8">
+                                                                <div class="code-box">
+                                                                    <p
+                                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                                                    <div class="response-box-div">
+                                                                        <a type="button" class="response-box-error"
+                                                                            onclick="responseText('response-Gets-Address-List')">200</a>
+                                                                        <a type="button" class="response-box-error"
+                                                                            onclick="responseText('response-Gets-Address-List3')">401</a>
+                                                                        <a type="button" class="response-box-error"
+                                                                            onclick="responseText('response-Gets-Address-List4')">403</a>
+                                                                        <a type="button" class="response-box-error"
+                                                                            onclick="responseText('response-Gets-Address-List5')">404</a>
+                                                                        <a type="button" class="response-box-error"
+                                                                            onclick="responseText('response-Gets-Address-List6')">405</a>
+                                                                        <a type="button" class="response-box-error"
+                                                                            onclick="responseText('response-Gets-Address-List7')">406</a>
+                                                                        <a type="button" class="response-box-error"
+                                                                            onclick="responseText('response-Gets-Address-List8')">429</a>
+                                                                        <a type="button" class="response-box-error"
+                                                                            onclick="responseText('response-Gets-Address-List9')">500</a>
+                                                                    </div>
+                                                                    <pre class="response-box">
+
+                                                <code id="response-Gets-Address-List" style=" display: block; " class="text">
+    {
+        "purposesOfLoan": [
+            {
+                "key": "PRRPVEH",
+                "value": "PRRPVEH",
+                "label": "Purchasing or Repairing a Vehicle"
+            },
+            {
+                "key": "HMREN",
+                "value": "HMREN",
+                "label": "Home renovation"
+            },
+            {
+                "key": "WEXP",
+                "value": "WEXP",
+                "label": "Wedding expenses"
+            },
+            {
+                "key": "VACEXP",
+                "value": "VACEXP",
+                "label": "Vacation expenses"
+            },
+            {
+                "key": "EDUEXP",
+                "value": "EDUEXP",
+                "label": "Education expenses"
+            },
+            {
+                "key": "CONGIN",
+                "value": "CONGIN",
+                "label": "Consumer goods installments"
+            },
+            {
+                "key": "MEDTRT",
+                "value": "MEDTRT",
+                "label": "Medical treatment"
+            },
+            {
+                "key": "DBTCON",
+                "value": "DBTCON",
+                "label": "Debt Consolidation"
+            },
+            {
+                "key": "EMRGEXP",
+                "value": "EMRGEXP",
+                "label": "Emergency expenses"
+            },
+            {
+                "key": "OTHP",
+                "value": "OTHP",
+                "label": "Others"
+            }
+        ],
+        "educationFees": [
+            {
+                "key": "2533",
+                "value": "2533",
+                "label": "0"
+            },
+            {
+                "key": "254",
+                "value": "254",
+                "label": "1"
+            },
+            {
+                "key": "255",
+                "value": "255",
+                "label": "2"
+            },
+            {
+                "key": "2566",
+                "value": "2566",
+                "label": "3"
+            },
+            {
+                "key": "2577",
+                "value": "2577",
+                "label": "4"
+            },
+            {
+                "key": "2588",
+                "value": "2588",
+                "label": "5"
+            },
+            {
+                "key": "2599",
+                "value": "2599",
+                "label": "6"
+            },
+            {
+                "key": "2600",
+                "value": "2600",
+                "label": "7"
+            },
+            {
+                "key": "2611",
+                "value": "2611",
+                "label": "8"
+            },
+            {
+                "key": "2622",
+                "value": "2622",
+                "label": "9"
+            }
+        ],
+        "typeOfHousing": [
+            {
+                "key": "RENTH",
+                "value": "RENTH",
+                "label": "House Rent"
+            },
+            {
+                "key": "HOWN",
+                "value": "HOWN",
+                "label": "House Owner"
+            },
+            {
+                "key": "LIVOTH",
+                "value": "LIVOTH",
+                "label": "Lives with other"
+            },
+            {
+                "key": "EMPLYR",
+                "value": "EMPLYR",
+                "label": "Provided by Employer"
+            },
+            {
+                "key": "OTHRS",
+                "value": "OTHRS",
+                "label": "Others"
+            }
+        ],
+        "workingStatus": [
+            {
+                "key": "SAL",
+                "value": "SAL",
+                "label": "Salaried"
+            },
+            {
+                "key": "RTD",
+                "value": "RTD",
+                "label": "Pensioner"
+            },
+            {
+                "key": "STU",
+                "value": "STU",
+                "label": "Student"
+            }
+        ],
+        "familyMembers": [
+            {
+                "key": "1",
+                "value": "1",
+                "label": "1"
+            },
+            {
+                "key": "2",
+                "value": "2",
+                "label": "2"
+            },
+            {
+                "key": "3",
+                "value": "3",
+                "label": "3"
+            },
+            {
+                "key": "4",
+                "value": "4",
+                "label": "4"
+            },
+            {
+                "key": "5",
+                "value": "5",
+                "label": "5"
+            },
+            {
+                "key": "6",
+                "value": "6",
+                "label": "6"
+            },
+            {
+                "key": "7",
+                "value": "7",
+                "label": "7"
+            },
+            {
+                "key": "8",
+                "value": "8",
+                "label": "8"
+            },
+            {
+                "key": "9",
+                "value": "9",
+                "label": "9"
+            },
+            {
+                "key": "10",
+                "value": "10",
+                "label": "10"
+            },
+            {
+                "key": "11",
+                "value": "11",
+                "label": "11"
+            },
+            {
+                "key": "12",
+                "value": "12",
+                "label": "12"
+            },
+            {
+                "key": "13",
+                "value": "13",
+                "label": "13"
+            },
+            {
+                "key": "14",
+                "value": "14",
+                "label": "14"
+            },
+            {
+                "key": "15",
+                "value": "15",
+                "label": "15"
+            },
+            {
+                "key": "16",
+                "value": "16",
+                "label": "16"
+            }
+        ],
+        "maritalStatus": [
+            {
+                "key": "MARRIED",
+                "value": "MARRIED",
+                "label": "Married"
+            },
+            {
+                "key": "WIDOW",
+                "value": "WIDOW",
+                "label": "Widower"
+            },
+            {
+                "key": "DIVORCED",
+                "value": "DIVORCED",
+                "label": "Divorced"
+            },
+            {
+                "key": "SINGLE",
+                "value": "SINGLE",
+                "label": "Single"
+            }
+        ]
+    }                                                
+                                                 </code>
+                                                <code id="response-Gets-Address-List3" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.401.001",
+                "message": "Unauthorized to call the target operation.",
+                "path": "authorization",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                                
+                                                </code>	
+                                                
+                                                <code id="response-Gets-Address-List4" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.403.001",
+                "message": "Can't find any valid subscription.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }   
+                                                </code>
+                                                
+                                                
+                                                <code id="response-Gets-Address-List5" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                                </code>
+                                                
+                                                
+                                                <code id="response-Gets-Address-List6" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }
+                                                     
+                                                </code>
+                                                 
+                                                
+                                                <code id="response-Gets-Address-List7" style=" display: none; "class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }       
+                                                </code>
+                                                 
+                                                
+                                                <code id="response-Gets-Address-List8" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }     
+                                                </code>
+                                                
+                                                
+                                                <code id="response-Gets-Address-List9" style=" display: none; " class="text">
+            {
+            "errors": [
+                {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+            }    
+                                                </code>
+                                                      </pre>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

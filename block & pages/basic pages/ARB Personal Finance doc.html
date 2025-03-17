@@ -1,0 +1,2340 @@
+<div id="search-term-result">
+    <p>About ARB Personal Finance </p>
+    <p>
+        Personal finance for Alrajhi bank revolves
+        around helping individuals manage their financial
+        matters effectively. Alrajhi bank play a crucial role by offering various
+        products
+        and services
+        tailored to personal finance needs.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">ARB Personal Finance API
+            Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">ARB
+                            Personal Finance</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Inquire for customer RL</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-3">Customer Fill RL</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-4">Check Customer Eligibility</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-5">Employer List API (& Department
+                                List)</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-6">Get Stipulated Customer Data</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-7">Get Mandatory Doc</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-8">Open New Dossier</a>
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">ARB Personal Finance APIS </p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Personal finance for Alrajhi bank revolves around helping individuals
+                            manage their financial matters effectively. Alrajhi bank play a crucial role by offering various
+                            products and services tailored to personal finance needs.
+                            The goal is to assist customers in achieving their financial goals, whether it's saving for
+                            retirement, purchasing a home, or funding education. Alrajhi bank provide tools and personalized
+                            investment advice to empower customers to make informed financial decisions.
+                            In essence, personal finance services offered by Alrajhi bank aim to enhance financial literacy,
+                            promote savings habits, and support customers in building a secure financial future.
+    
+                            </br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/ARB_Personal_Finance.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/ARBPersonalFinanceSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+                        <h1 class="fob-welcome-title">ARB Personal Finance Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../ARBPersonalFinanceWorkflowImg">Click
+                            here</a>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="ARB-Personal-Finance-flow-img"><br></p>
+                            </div>
+                        </div>
+                        <h1 class="fob-welcome-title">ARB Personal Finance Architecture</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../ARBPersonalFinanceArchitectureImg">Click
+                            here</a>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="ARB-Personal-Finance-architecture-img"><br></p>
+                            </div>
+                        </div>
+    
+                        <h1 class="fob-welcome-title" id="section-2">Inquire for customer RL</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /efinance/v1/responsible-lending</br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1099/api/718#/GetResponsibleLending_100/operation/%2Fresponsible-lending/get">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">Get Responsible Lending Details is used to get customer financial
+                            stipulated data.
+                            </br></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    {
+        "Accept-Language": " en ",
+        }                          
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('Inquire-for-customer-RL-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="Inquire-for-customer-RL-curl" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/efinance/v1/responsible-lending' \
+    --header 'Accept-Language: en' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'                        
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Inquire-for-customer-RL')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Inquire-for-customer-RL3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Inquire-for-customer-RL4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Inquire-for-customer-RL5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Inquire-for-customer-RL6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Inquire-for-customer-RL7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Inquire-for-customer-RL8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Inquire-for-customer-RL9')">500</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                          <code id="response-Inquire-for-customer-RL" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "a973aeef-0d37-4c6a-912a-61db87575c86",
+            "statusDescription": "Successful"
+        },
+        "body": {
+            "martialStatus": "2",
+            "familyMembers": 1,
+            "ownHouse": "01",
+            "educationFees": 1,
+            "insurance": "Y",
+            "cityID": "00000002",
+            "workingStatus": "S",
+            "housingAllowanceAmount": "0.000",
+            "housingAllowanceCurrency": "SAR",
+            "fixedAllowanceAmount": "0.000",
+            "fixedAllowanceCurrency": "SAR",
+            "transportationAllowanceAmount": "0.000",
+            "transportationAllowanceCurrency": "SAR",
+            "totalNetSalaryAmount": "22750.000",
+            "totalNetSalaryCurrency": "SAR",
+            "totalMonthlyIncomeAmount": "22750.000",
+            "totalMonthlyIncomeCurrency": "SAR",
+            "totalObligationsAmount": "0.000",
+            "totalObligationsCurrency": "SAR",
+            "customerExpensesList": [
+                {
+                    "expenseID": "001",
+                    "description": "Food And Beverages",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "840.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "003",
+                    "description": "Housing",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "0.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "007",
+                    "description": "Transport",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "525.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "008",
+                    "description": "Communications",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "210.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "010",
+                    "description": "Education Fees",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "0.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "011",
+                    "description": "Home Servants",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "0.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "012",
+                    "description": "Fees on expats",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "0.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "900",
+                    "description": "Other Income-Government support*",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "0.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "013",
+                    "description": "Other future expenses",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "0.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "005",
+                    "description": "Insurance",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "105.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "004",
+                    "description": "Utilities",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "315.000",
+                    "valueCurrency": "SAR"
+                },
+                {
+                    "expenseID": "006",
+                    "description": "Health Care Services",
+                    "baseAmount": "0.000",
+                    "baseCurrency": "SAR",
+                    "valueAmount": "0.000",
+                    "valueCurrency": "SAR"
+                }
+            ],
+            "residentialType": "001",
+            "houseHoldHelp": 0,
+            "publicSchoolDependants": 0,
+            "privateSchoolDependants": 0,
+            "breadWinnerFlag": "N",
+            "basicSalaryAmount": "25000.000",
+            "basicSalaryCurrency": "SAR",
+            "GOSIDeductionAmount": "2250.000",
+            "GOSIDeductionCurrency": "SAR"
+        }
+    }                        
+                          </code>
+                          <code id="response-Inquire-for-customer-RL3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }  
+                          </code>	
+                        
+                          <code id="response-Inquire-for-customer-RL4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                          </code>
+                        
+                          <code id="response-Inquire-for-customer-RL5" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        
+                          <code id="response-Inquire-for-customer-RL6" style=" display: none; "class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }
+                                
+                          </code>
+                        
+                          <code id="response-Inquire-for-customer-RL7" style=" display: none; "class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }       
+                          </code>
+                        
+                          <code id="response-Inquire-for-customer-RL8" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        
+                          <code id="response-Inquire-for-customer-RL9" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <h1 class="fob-welcome-title" id="section-3">Customer Fill RL</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint:
+                                /efinance/v1/responsible-lending</br></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1093/api/712#/SetResponsibleLending_100/operation/%2Fresponsible-lending/post">Swagger
+                                    Link</a></p>
+                            <p class="fob-welcome-text">Set Responsible Lending Details is used to set customer responsible
+                                lending information required by SAMA such as income ,obligations, expenses, …etc.</br></p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "en",
+    } 
+    Body request
+    {
+        "martialStatus": "2",
+        "familyMembers": 2,
+        "ownHouse": "02",
+        "educationFees": 0,
+        "insurance": "Y",
+        "cityID": "00000654",
+        "workingStatus": "S",
+        "basicSalaryAmount": "12000",
+        "basicSalaryCurrency": "SAR",
+        "housingAllowanceAmount": "500",
+        "housingAllowanceCurrency": "SAR",
+        "fixedAllowanceAmount": "100",
+        "fixedAllowanceCurrency": "SAR",
+        "transportationAllowanceAmount": "200",
+        "transportationAllowanceCurrency": "SAR"
+    }                               
+                                    </code>
+                                  </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('Customer-Fill-RL-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+    
+                                        <pre id="generatedCurl">
+                                      <code id="Customer-Fill-RL-curl" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/efinance/v1/responsible-lending' \
+    --header 'Accept-Language: en' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+    "martialStatus": "2",
+    "familyMembers": 2,
+    "ownHouse": "02",
+    "educationFees": 0,
+    "insurance": "Y",
+    "cityID": "00000654",
+    "workingStatus": "S",
+    "basicSalaryAmount": "12000",
+    "basicSalaryCurrency": "SAR",
+    "housingAllowanceAmount": "500",
+    "housingAllowanceCurrency": "SAR",
+    "fixedAllowanceAmount": "100",
+    "fixedAllowanceCurrency": "SAR",
+    "transportationAllowanceAmount": "200",
+    "transportationAllowanceCurrency": "SAR"
+    }'
+                                      </code>
+                                    </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Customer-Fill-RL')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Customer-Fill-RL3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Customer-Fill-RL4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Customer-Fill-RL5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Customer-Fill-RL6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Customer-Fill-RL7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Customer-Fill-RL8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('response-Customer-Fill-RL9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                            <code id="response-Customer-Fill-RL" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "54409ebb-fccd-4d0e-9462-3af6bcdb00dd",
+            "statusDescription": "Successful"
+        },
+        "body": {
+            "GOSIFlag": "O"
+        }
+    }
+    }
+                             </code>
+                            <code id="response-Customer-Fill-RL3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                            
+                            </code>	
+                            
+                            <code id="response-Customer-Fill-RL4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                            </code>
+                            
+                            
+                            <code id="response-Customer-Fill-RL5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                            </code>
+                            
+                            
+                            <code id="response-Customer-Fill-RL6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                 
+                            </code>
+                             
+                            
+                            <code id="response-Customer-Fill-RL7" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }       
+                            </code>
+                             
+                            
+                            <code id="response-Customer-Fill-RL8" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                            </code>
+                            
+                            
+                            <code id="response-Customer-Fill-RL9" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                            </code>
+                                  </pre>
+    
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <h1 class="fob-welcome-title" id="section-4">Check Customer Eligibility</h1>
+                                <p class="fob-welcome-line"></p>
+                                <p class="fob-welcome-text">Endpoint:
+                                    /efinance/v1/stipulated-customer-data</br></p>
+                                <p class="fob-welcome-text"><a
+                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1081/api/730#/GetStipulatedCustomerData_100/operation/%2Fstipulated-customer-data/get">Swagger
+                                        Link</a></p>
+                                <p class="fob-welcome-text">Get Stipulated Customer Data Details is used to get stipulated
+                                    customer data.</br></p>
+    
+                                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <h1 class="fob-welcome-title">Request Example</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+    {
+        "Accept-Language": "en"
+        }                                                   
+                                        </code>
+                                      </pre>
+                                        </div>
+                                        <div class="col-lg-4 mt-25">
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                                onclick="show('Check-Customer-Eligibility-curl')">
+                                                <p class="curlText">cURL</p>
+                                            </button>
+    
+                                            <pre id="generatedCurl">
+                                          <code id="Check-Customer-Eligibility-curl" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/efinance/v1/stipulated-customer-data' \
+    --header 'Accept-Language: en' \
+    --header 'Authorization: ••••••'                                        
+                                          </code>
+                                        </pre>
+                                        </div>
+                                    </div>
+                                    <div class="row flex mt-25">
+                                        <div class="col-lg-8">
+                                            <div class="code-box">
+                                                <p
+                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                <div class="response-box-div">
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Check-Customer-Eligibility')">200</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Check-Customer-Eligibility3')">401</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Check-Customer-Eligibility4')">403</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Check-Customer-Eligibility5')">404</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Check-Customer-Eligibility6')">405</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Check-Customer-Eligibility7')">406</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Check-Customer-Eligibility8')">429</a>
+                                                    <a type="button" class="response-box-error"
+                                                        onclick="responseText('response-Check-Customer-Eligibility9')">500</a>
+                                                </div>
+                                                <pre class="response-box">
+    
+                                <code id="response-Check-Customer-Eligibility" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "2e6bc2bf-623a-4b6c-923f-7868c6760780",
+            "statusDescription": "Successful Operation"
+        },
+        "body": {
+            "availableData": "N"
+        }
+    }                                
+                                 </code>
+                                <code id="response-Check-Customer-Eligibility3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                
+                                </code>	
+                                
+                                <code id="response-Check-Customer-Eligibility4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }   
+                                </code>
+                                
+                                
+                                <code id="response-Check-Customer-Eligibility5" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                </code>
+                                
+                                
+                                <code id="response-Check-Customer-Eligibility6" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }                 
+                                </code>
+                                 
+                                
+                                <code id="response-Check-Customer-Eligibility7" style=" display: none; "class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                                </code>
+                                 
+                                
+                                <code id="response-Check-Customer-Eligibility8" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }     
+                                </code>
+                                
+                                
+                                <code id="response-Check-Customer-Eligibility9" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                                </code>
+                                      </pre>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <h1 class="fob-welcome-title" id="section-5">Employer List API (& Department List)</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <p class="fob-welcome-text">Endpoint: /utilities/employer-departments-lov/v2</br></p>
+                                    <p class="fob-welcome-text"><a
+                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1351/api/1342#/GetEmployerDepartmentsListOfValues_100/operation/%2Femployer-departments-lov/get">Swagger
+                                            Link</a></p>
+                                    <p class="fob-welcome-text">Get Employer Departments List Of Values Details is used to
+                                        inquire about ARB employer departments list of values.
+                                        </br></p>
+                                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "ar"
+    } 
+    
+    Query Params
+    {
+    " maximumRecords": 100,
+    "offset":1
+    }                                                 
+                                    </code>
+                                  </pre>
+                                            </div>
+                                            <div class="col-lg-4 mt-25">
+                                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                                    onclick="show('Employer-List-API-curl')">
+                                                    <p class="curlText">cURL</p>
+                                                </button>
+    
+                                                <pre id="generatedCurl">
+                                    <code id="Employer-List-API-curl" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/utilities/v1/employer-departments-lov?maximumRecords=100&offset=1' \
+    --header 'Accept-Language: ar' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'                                                          
+                                    </code>
+                                  </pre>
+                                            </div>
+                                        </div>
+                                        <div class="row flex mt-25">
+                                            <div class="col-lg-8">
+                                                <div class="code-box">
+                                                    <p
+                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                    <div class="response-box-div">
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Employer-List-API')">200</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Employer-List-API3')">401</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Employer-List-API4')">403</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Employer-List-API5')">404</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Employer-List-API6')">405</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Employer-List-API7')">406</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Employer-List-API8')">429</a>
+                                                        <a type="button" class="response-box-error"
+                                                            onclick="responseText('response-Employer-List-API9')">500</a>
+                                                    </div>
+    
+                                                    <pre class="response-box">
+    
+                                      <code id="response-Employer-List-API" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "fa08893e-0413-4fca-86dc-5287b565a172",
+            "statusDescription": "Successful Operation"
+        },
+        "body": {
+            "sentRecords": 100,
+            "matchedRecords": 5045,
+            "completedFlag": "N",
+            "lovList": [
+                {
+                    "lovCode1": "1",
+                    "itemDescription": "وزارة الشؤون البلدية و القروية و الإسكان  (الأسم سابقا :وزارة الإسكان)",
+                    "itemAttribute1": "C",
+                    "lovCode2": "1"
+                },
+                {
+                    "lovCode1": "1",
+                    "itemDescription": "Arabic Name",
+                    "itemAttribute1": "C",
+                    "lovCode2": "11"
+                },
+                {
+                    "lovCode1": "1",
+                    "itemDescription": "Sahlha ARABIC",
+                    "itemAttribute1": "C",
+                    "lovCode2": "55"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "وزارة الاعلام  فرع ابها",
+                    "itemAttribute1": "C",
+                    "lovCode2": "1"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "وكالة الانباء السعودية ( واس )",
+                    "itemAttribute1": "C",
+                    "lovCode2": "10"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "المؤسسة العربية للاتصالات الفضائية (عربسات )",
+                    "itemAttribute1": "C",
+                    "lovCode2": "11"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "شركة الاعلام المتكاملة التجارية",
+                    "itemAttribute1": "C",
+                    "lovCode2": "12"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "وزارة  الاعلام بفرع جدة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "2"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "وزارة الاعلام بحائل",
+                    "itemAttribute1": "C",
+                    "lovCode2": "4"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "وزارة الاعلام بنجران",
+                    "itemAttribute1": "C",
+                    "lovCode2": "5"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "وزارة  والاعلام بفرع مكة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "6"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "وزارة الاعلام بالمدينة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "7"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "وزارة الاعلام بفرع المدينة المنورة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "8"
+                },
+                {
+                    "lovCode1": "2",
+                    "itemDescription": "هيئة الاذاعة والتلفزيون",
+                    "itemAttribute1": "C",
+                    "lovCode2": "9"
+                },
+                {
+                    "lovCode1": "3",
+                    "itemDescription": "وزارة الصناعة والثروة المعدنية - وكالة الوزارة للثروة المعدنية",
+                    "itemAttribute1": "C",
+                    "lovCode2": "1"
+                },
+                {
+                    "lovCode1": "3",
+                    "itemDescription": "وزارة الصناعة والثروة المعدنية المنطقة الشرقية",
+                    "itemAttribute1": "C",
+                    "lovCode2": "2"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية - الدمام",
+                    "itemAttribute1": "C",
+                    "lovCode2": "1"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية- حائل",
+                    "itemAttribute1": "C",
+                    "lovCode2": "13"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بينبع",
+                    "itemAttribute1": "C",
+                    "lovCode2": "14"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية - جدة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "15"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بالمجمعة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "18"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بنجران",
+                    "itemAttribute1": "C",
+                    "lovCode2": "19"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار )  بالدمام",
+                    "itemAttribute1": "C",
+                    "lovCode2": "20"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بالحديثة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "21"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بالمدينة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "23"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "فرع وزارة التجارة     ( الاسم القديم وزارة التجارة والاستثمار ) بابها",
+                    "itemAttribute1": "C",
+                    "lovCode2": "3"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية - تبوك",
+                    "itemAttribute1": "C",
+                    "lovCode2": "30"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية بالاحساء",
+                    "itemAttribute1": "C",
+                    "lovCode2": "32"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية بالقصيم - الرس",
+                    "itemAttribute1": "C",
+                    "lovCode2": "33"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية بالقريات",
+                    "itemAttribute1": "C",
+                    "lovCode2": "34"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية بالخرج",
+                    "itemAttribute1": "C",
+                    "lovCode2": "35"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية بحفر الباطن - غرفة حفر الباطن",
+                    "itemAttribute1": "C",
+                    "lovCode2": "36"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية بالمدينة المنورة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "37"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية بالمخواة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "38"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "غرفة مكة المكرمة للتجارة والصناعة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "39"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية  - الرياض",
+                    "itemAttribute1": "C",
+                    "lovCode2": "4"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية بالباحة",
+                    "itemAttribute1": "C",
+                    "lovCode2": "5"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية -ابها",
+                    "itemAttribute1": "C",
+                    "lovCode2": "6"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية- القطيف",
+                    "itemAttribute1": "C",
+                    "lovCode2": "7"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية - الجبيل",
+                    "itemAttribute1": "C",
+                    "lovCode2": "8"
+                },
+                {
+                    "lovCode1": "4",
+                    "itemDescription": "الغرفة التجارية الصناعية - الخفجي",
+                    "itemAttribute1": "C",
+                    "lovCode2": "9"
+                },
+                {
+                    "lovCode1": "5",
+                    "itemDescription": "Sahlha ARABIC NAME",
+                    "itemAttribute1": "C",
+                    "lovCode2": "05"
+                },
+                {
+                    "lovCode1": "5",
+                    "itemDescription": "مصلحة الاحصاءات العامة  ابها",
+                    "itemAttribute1": "C",
+                    "lovCode2": "3"
+                },
+                {
+                    "lovCode1": "5",
+                    "itemDescription": "TEST ARABIC NAME",
+                    "itemAttribute1": "C",
+                    "lovCode2": "52"
+                },
+                {
+                    "lovCode1": "8",
+                    "itemDescription": "معهد الامير سعود الفيصل للدراسات الدبلوماسية ( وزارة الخارجية )",
+                    "itemAttribute1": "C",
+                    "lovCode2": "2"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة منطقة الرياض",
+                    "itemAttribute1": "M",
+                    "lovCode2": "1"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "شرطة محافظة شرورة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "100"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "ادارة المجاهدين ـــ  منطقة مكة المكرمة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "101"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "الادارة العامة لمكافحة المخدرات ادارة الباحة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "104"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "ادارة مكافحة المخدرات بجدة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "105"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "مرور  محافظة جدة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "106"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "الأحوال المدنية  الشرقية",
+                    "itemAttribute1": "M",
+                    "lovCode2": "107"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "الأحوال المدنية  حائل",
+                    "itemAttribute1": "M",
+                    "lovCode2": "108"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "الأحوال المدنية  ينبع",
+                    "itemAttribute1": "M",
+                    "lovCode2": "109"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "الأحوال المدنية  شقراء",
+                    "itemAttribute1": "M",
+                    "lovCode2": "110"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة ضرماء",
+                    "itemAttribute1": "M",
+                    "lovCode2": "111"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة وادي الدواسر",
+                    "itemAttribute1": "M",
+                    "lovCode2": "112"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة السليل",
+                    "itemAttribute1": "M",
+                    "lovCode2": "113"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة المزاحمية",
+                    "itemAttribute1": "M",
+                    "lovCode2": "114"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة شقراء",
+                    "itemAttribute1": "M",
+                    "lovCode2": "115"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة عفيف",
+                    "itemAttribute1": "M",
+                    "lovCode2": "116"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة الدوادمي",
+                    "itemAttribute1": "M",
+                    "lovCode2": "117"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة حريملاء",
+                    "itemAttribute1": "M",
+                    "lovCode2": "118"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة المجمعة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "119"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "مرور منطقة الجوف",
+                    "itemAttribute1": "M",
+                    "lovCode2": "12"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "قوات امن المنشأت",
+                    "itemAttribute1": "M",
+                    "lovCode2": "120"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة الرماح",
+                    "itemAttribute1": "M",
+                    "lovCode2": "121"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة حوطة سدير",
+                    "itemAttribute1": "M",
+                    "lovCode2": "123"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة الافلاج",
+                    "itemAttribute1": "M",
+                    "lovCode2": "124"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة الحريق",
+                    "itemAttribute1": "M",
+                    "lovCode2": "125"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة القويعية",
+                    "itemAttribute1": "M",
+                    "lovCode2": "126"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة الدرعية",
+                    "itemAttribute1": "M",
+                    "lovCode2": "127"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة الغاط",
+                    "itemAttribute1": "M",
+                    "lovCode2": "128"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "محافظة ثادق",
+                    "itemAttribute1": "M",
+                    "lovCode2": "129"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "المديرية العامة للسجون بالمدينة المنورة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "13"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة المنطقة الأحساء",
+                    "itemAttribute1": "M",
+                    "lovCode2": "130"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة منطقة النعيرية",
+                    "itemAttribute1": "M",
+                    "lovCode2": "131"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة منطقةالخبر",
+                    "itemAttribute1": "M",
+                    "lovCode2": "132"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة منطقة القطيف",
+                    "itemAttribute1": "M",
+                    "lovCode2": "133"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة منطقة الجبيل",
+                    "itemAttribute1": "M",
+                    "lovCode2": "134"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة منطقة ابقيق",
+                    "itemAttribute1": "M",
+                    "lovCode2": "136"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة منطقة العليا",
+                    "itemAttribute1": "M",
+                    "lovCode2": "138"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة منطقة الخرخير",
+                    "itemAttribute1": "M",
+                    "lovCode2": "139"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "الشؤون العسكرية  حائل ( الشؤون الادارية )",
+                    "itemAttribute1": "M",
+                    "lovCode2": "14"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة ينبع",
+                    "itemAttribute1": "M",
+                    "lovCode2": "140"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "شرطة سكة الحديد",
+                    "itemAttribute1": "M",
+                    "lovCode2": "141"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "شرطة الجبيل",
+                    "itemAttribute1": "M",
+                    "lovCode2": "142"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "شرطة محافظة الخبر",
+                    "itemAttribute1": "M",
+                    "lovCode2": "143"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "مرور حفر الباطن",
+                    "itemAttribute1": "M",
+                    "lovCode2": "145"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "سلاح حرس الحدود- جدة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "147"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "سلاح حرس الحدود - رابغ",
+                    "itemAttribute1": "M",
+                    "lovCode2": "148"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "سلاح حرس الحدود- القنفذة",
+                    "itemAttribute1": "M",
+                    "lovCode2": "149"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "سلاح حرس الحدود- الرياض",
+                    "itemAttribute1": "M",
+                    "lovCode2": "15"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "سلاح حرس الحدود - الشرقية",
+                    "itemAttribute1": "M",
+                    "lovCode2": "150"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "سلاح حرس الحدود املج",
+                    "itemAttribute1": "M",
+                    "lovCode2": "151"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "امارة محافظة تربه",
+                    "itemAttribute1": "M",
+                    "lovCode2": "152"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "مرور بقيق",
+                    "itemAttribute1": "M",
+                    "lovCode2": "154"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "المرور- الرياض",
+                    "itemAttribute1": "M",
+                    "lovCode2": "155"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "مديرية السجون  - الرياض  ــــــــــــ   الخرج ـــــــــ   والإدارة العامة لصحة السجون",
+                    "itemAttribute1": "M",
+                    "lovCode2": "156"
+                },
+                {
+                    "lovCode1": "9",
+                    "itemDescription": "ادارة مكافحة المخدرات",
+                    "itemAttribute1": "M",
+                    "lovCode2": "157"
+                }
+            ]
+        }
+    }                                                       
+                                      </code>
+                                      <code id="response-Employer-List-API3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }  
+                                      </code>	
+                                    
+                                      <code id="response-Employer-List-API4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                                      </code>
+                                    
+                                      <code id="response-Employer-List-API5" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                      </code>
+                                    
+                                      <code id="response-Employer-List-API6" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                                            
+                                      </code>
+                                    
+                                      <code id="response-Employer-List-API7" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }       
+                                      </code>
+                                    
+                                      <code id="response-Employer-List-API8" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                      </code>
+                                    
+                                      <code id="response-Employer-List-API9" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                      </code>
+                                    </pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h1 class="fob-welcome-title" id="section-6">Get Stipulated Customer Data</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <p class="fob-welcome-text">Endpoint: /efinance/v1/personal-product-eligibility</br>
+                                        </p>
+                                        <p class="fob-welcome-text"><a
+                                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1057/api/979#/GetPersonalFinanceProductEligibility_100/operation/%2Fpersonal-product-eligibility/get">Swagger
+                                                Link</a></p>
+                                        <p class="fob-welcome-text">Get personal finance product eligibility Details is used
+                                            to get personal finance product eligibility.
+                                            </br></p>
+                                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                                    <p class="fob-welcome-line"></p>
+                                                    <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "ar"
+    } 
+    Query request
+    {
+        "customerSegment": "001",
+        "salaryCurrency": "SAR",
+        "militaryRankID": "22",
+        "businessPositionID": "002",
+        " employmentDate ": 1441-03-13,
+        " frequencyTypeID ": "1",
+        " propertyType ": "55",
+        " requestedTenure ": 100,
+        " xSellFinancialProductID ": 1,
+        " linkedDossierID ": "582655",
+        " onlyProfitOption ": " Y ",
+        " rolloutFlag ": " Y ",
+        " employerID ": 1,
+        " departmentID ": 1,
+        " salaryAmount ": "2000",
+        " requestedDownPayment ": "600",
+        " totalPropertyCost ": "12000",
+        " financialProductsList": " [SFN,3PF,WRE]"
+    
+    }                                                            
+                                        </code>
+                                      </pre>
+                                                </div>
+                                                <div class="col-lg-4 mt-25">
+                                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                                        onclick="show('Get-Stipulated-Customer-Data-curl')">
+                                                        <p class="curlText">cURL</p>
+                                                    </button>
+    
+                                                    <pre id="generatedCurl">
+                                        <code id="Get-Stipulated-Customer-Data-curl" style=" display: block;">
+    curl --location --globoff 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/efinance/v1/personal-product-eligibility?customerSegment=001&salaryCurrency=SAR&militaryRankID=22&businessPositionID=002&employmentDate=1441-03-13&frequencyTypeID=1&propertyType=55&requestedTenure=100&xSellFinancialProductID=1&linkedDossierID=582655&onlyProfitOption=Y&rolloutFlag=Y&employerID=1&departmentID=1&salaryAmount=2000&requestedDownPayment=600&totalPropertyCost=12000&financialProductsList=[SFN%2C3PF%2CWRE]' \
+    --header 'Accept-Language: ar' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'                                                      
+                                        </code>
+                                      </pre>
+                                                </div>
+                                            </div>
+                                            <div class="row flex mt-25">
+                                                <div class="col-lg-8">
+                                                    <div class="code-box">
+                                                        <p
+                                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                        <div class="response-box-div">
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Get-Stipulated-Customer-Data')">200</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Get-Stipulated-Customer-Data3')">401</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Get-Stipulated-Customer-Data4')">403</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Get-Stipulated-Customer-Data5')">404</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Get-Stipulated-Customer-Data6')">405</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Get-Stipulated-Customer-Data7')">406</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Get-Stipulated-Customer-Data8')">429</a>
+                                                            <a type="button" class="response-box-error"
+                                                                onclick="responseText('response-Get-Stipulated-Customer-Data9')">500</a>
+                                                        </div>
+    
+                                                        <pre class="response-box">
+    
+                                          <code id="response-Get-Stipulated-Customer-Data" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "cb24a987-df3c-43d0-9ee8-05052afd2cd0",
+            "statusDescription": "Successful Operation"
+        },
+        "body": {
+            "productsEligibilityList": [
+                {
+                    "financeProductID": "SFN",
+                    "featureCode": "ST",
+                    "campaignID": "X",
+                    "campaignName": "X",
+                    "eligibilityAmount": "51193.79",
+                    "eligibilityCurrency": "SAR",
+                    "duration": 36,
+                    "eligibleInstallmentAmount": "1666.5",
+                    "eligibleInstallmentCurrency": "SAR",
+                    "profitRate": "5.73",
+                    "acceptableRequest": "A",
+                    "installmentDataList": [
+                        {
+                            "startPeriod": 1,
+                            "endPeriod": 36,
+                            "installmentAmount": "1666.5",
+                            "installmentCurrency": "SAR"
+                        }
+                    ],
+                    "messageKeyList": [
+                        {
+                            "messageDescription": "Success"
+                        }
+                    ],
+                    "customerSegment": "001",
+                    "statusCode": "I000000",
+                    "messageCode": "Successful Operation"
+                },
+                {
+                    "financeProductID": "CL2",
+                    "featureCode": "ST",
+                    "campaignID": "X",
+                    "campaignName": "X",
+                    "eligibilityAmount": "40754.72",
+                    "eligibilityCurrency": "SAR",
+                    "duration": 60,
+                    "eligibleInstallmentAmount": "1186.1",
+                    "eligibleInstallmentCurrency": "SAR",
+                    "profitRate": "6.5",
+                    "acceptableRequest": "A",
+                    "installmentDataList": [
+                        {
+                            "startPeriod": 1,
+                            "endPeriod": 60,
+                            "installmentAmount": "1186.1",
+                            "installmentCurrency": "SAR"
+                        }
+                    ],
+                    "messageKeyList": [
+                        {
+                            "messageDescription": "RAC Min Income Deviation"
+                        }
+                    ],
+                    "customerSegment": "001",
+                    "statusCode": "I000000",
+                    "messageCode": "Successful Operation"
+                },
+                {
+                    "financeProductID": "CAR",
+                    "featureCode": "ST",
+                    "campaignID": "X",
+                    "campaignName": "X",
+                    "eligibilityAmount": "20081.67",
+                    "eligibilityCurrency": "SAR",
+                    "duration": 36,
+                    "eligibleInstallmentAmount": "615.48",
+                    "eligibleInstallmentCurrency": "SAR",
+                    "profitRate": "7.48",
+                    "acceptableRequest": "A",
+                    "installmentDataList": [
+                        {
+                            "startPeriod": 1,
+                            "endPeriod": 36,
+                            "installmentAmount": "615.48",
+                            "installmentCurrency": "SAR"
+                        }
+                    ],
+                    "messageKeyList": [
+                        {
+                            "messageDescription": "Success"
+                        }
+                    ],
+                    "customerSegment": "001",
+                    "statusCode": "I000000",
+                    "messageCode": "Successful Operation"
+                }
+            ]
+        }
+    }                                        
+                                          </code>	
+                                          <code id="response-Get-Stipulated-Customer-Data3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }  
+                                                              </code>	
+                                          <code id="response-Get-Stipulated-Customer-Data4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                                          </code>
+                                        
+                                          <code id="response-Get-Stipulated-Customer-Data5" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                          </code>
+                                        
+                                          <code id="response-Get-Stipulated-Customer-Data6" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                                                
+                                          </code>
+                                        
+                                          <code id="response-Get-Stipulated-Customer-Data7" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }       
+                                          </code>
+                                        
+                                          <code id="response-Get-Stipulated-Customer-Data8" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                          </code>
+                                        
+                                          <code id="response-Get-Stipulated-Customer-Data9" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                          </code>
+                                        </pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <h1 class="fob-welcome-title" id="section-7">Get Mandatory Doc</h1>
+                                            <p class="fob-welcome-line"></p>
+                                            <p class="fob-welcome-text">Endpoint: /efinance/mandatory-documents/v1</br></p>
+                                            <p class="fob-welcome-text"><a
+                                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/988/api/985#/GetMandatoryDocuments_100/operation/%2Fmandatory-documents/get">Swagger
+                                                    Link</a></p>
+                                            <p class="fob-welcome-text">Get Mandatory Documents Details is used to list the
+                                                mandatory documents depending on the product type and the customer segment.
+                                                </br></p>
+                                            <div class="bx--snippet-container body"
+                                                data-testid="expandable-example-display">
+    
+                                                <div class="row flex mt-25">
+                                                    <div class="col-lg-8">
+                                                        <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                                        <p class="fob-welcome-line"></p>
+                                                        <pre class="example_97 api-guides-example-fob ">
+                                            <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "en"
+    } 
+    Query Params
+    {
+        "productID": "CLQ",
+        "customerSegment": "001",
+        "rolloutFlag": "Y",
+        "lastStipulatedDossierID": "855268
+    }                                                                                                                
+                                            </code>
+                                          </pre>
+                                                    </div>
+                                                    <div class="col-lg-4 mt-25">
+                                                        <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                                            onclick="show('Get-Mandatory-Documents-Details-curl')">
+                                                            <p class="curlText">cURL</p>
+                                                        </button>
+    
+                                                        <pre id="generatedCurl">
+                                            <code id="Get-Mandatory-Documents-Details-curl" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/efinance/v1/mandatory-documents?productID=CLQ&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierID=855268' \
+    --header 'Accept-Language: en' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••'                                                                  
+                                            </code>
+                                          </pre>
+                                                    </div>
+                                                </div>
+                                                <div class="row flex mt-25">
+                                                    <div class="col-lg-8">
+                                                        <div class="code-box">
+                                                            <p
+                                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                            <div class="response-box-div">
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Mandatory-Documents-Details')">200</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Mandatory-Documents-Details3')">401</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Mandatory-Documents-Details4')">403</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Mandatory-Documents-Details5')">404</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Mandatory-Documents-Details6')">405</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Mandatory-Documents-Details7')">406</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Mandatory-Documents-Details8')">429</a>
+                                                                <a type="button" class="response-box-error"
+                                                                    onclick="responseText('response-Get-Mandatory-Documents-Details9')">500</a>
+                                                            </div>
+    
+                                                            <pre class="response-box">
+    
+                                              <code id="response-Get-Mandatory-Documents-Details" style=" display: block; " class="text">
+    {
+    "header": {
+            "statusCode": "I000000",
+            "requestID": "8734ca00-0f32-4644-af20-713ef404c529",
+            "statusDescription": "Successful Operation"
+        },
+    "body": {
+            "mandatoryDocumentsList": [
+                {
+                    "mandatory": "Y",
+                    "documentCode": "37",
+                    "documentDescription": "Updated Salary Certificate"
+                },
+                {
+                    "mandatory": "N",
+                    "documentCode": "BNK_STAT",
+                    "documentDescription": "Updated Bank statement"
+                },
+                {
+                    "mandatory": "N",
+                    "documentCode": "GOSI_CERT",
+                    "documentDescription": "Updated GOSI Certificate"
+                },
+                {
+                    "mandatory": "N",
+                    "documentCode": "NA",
+                    "documentDescription": "National Address"
+                },
+                {
+                    "mandatory": "Y",
+                    "documentCode": "NIDA",
+                    "documentDescription": "National ID with expiry date retrieved from Absher"
+                },
+                {
+                    "mandatory": "N",
+                    "documentCode": "OTHERS",
+                    "documentDescription": "Others"
+                },
+                {
+                    "mandatory": "Y",
+                    "documentCode": "PRICE_QUOTATION",
+                    "documentDescription": "Price Quotation"
+                },
+                {
+                    "mandatory": "N",
+                    "documentCode": "SALTRAN",
+                    "documentDescription": "Salary Transfer Form (for companies with no contracts with ARB)"
+                }
+            ]
+        }
+    }                                        
+                                              </code>
+                                              <code id="response-Get-Mandatory-Documents-Details3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }  
+                                              </code>	
+                                            
+                                              <code id="response-Get-Mandatory-Documents-Details4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                                              </code>
+                                            
+                                              <code id="response-Get-Mandatory-Documents-Details5" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                              </code>
+                                            
+                                              <code id="response-Get-Mandatory-Documents-Details6" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                                                    
+                                              </code>
+                                            
+                                              <code id="response-Get-Mandatory-Documents-Details7" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }       
+                                              </code>
+                                            
+                                              <code id="response-Get-Mandatory-Documents-Details8" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                              </code>
+                                            
+                                              <code id="response-Get-Mandatory-Documents-Details9" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                              </code>
+                                            </pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h1 class="fob-welcome-title" id="section-8">Open New Dossier</h1>
+                                                <p class="fob-welcome-line"></p>
+                                                <p class="fob-welcome-text">Endpoint: /efinance/v1/dossiers</br></p>
+                                                <p class="fob-welcome-text"><a
+                                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/727/api/724#/OpenNewFinanceDossier_100/operation/%2F/post">Swagger
+                                                        Link</a></p>
+                                                <p class="fob-welcome-text">Open New Finance Dossier Details is used to open
+                                                    a new CTF dossier for financing.
+                                                    </br></p>
+                                                <div class="bx--snippet-container body"
+                                                    data-testid="expandable-example-display">
+    
+                                                    <div class="row flex mt-25">
+                                                        <div class="col-lg-8">
+                                                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                                            <p class="fob-welcome-line"></p>
+                                                            <pre class="example_97 api-guides-example-fob ">
+                                                <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "en"
+    } 
+    Body request
+    {
+        "accountBranch": "21900",
+        "accountType": "001",
+        "accountNumber": "6080087465999",
+        "userID": "u3060143x",
+        "productID": "WRE",
+        "customerSegment": "002",
+        "employerID": 3959,
+        "departmentID": 1,
+        "militaryRankID": "123",
+        "businessPositionID": "102",
+        "employmentDate": "2014-10-10",
+        "salaryAmount": "100.55",
+        "salaryAmountCurrency": "SAR",
+        "mobile": "545057951",
+        "email": "mbc.sa@hotmail.com",
+        "frequencyTypeID": "1",
+        "requestedFinancingAmount": "100.00",
+        "requestedFinancingAmountCurrency": "SAR",
+        "requestedDownPayment": "100.00",
+        "requestedEndPayment": "100.00",
+        "requestedDownPaymentAmount": "100.00",
+        "requestedDownPaymentAmountCurrency": "SAR",
+        "duration": 60,
+        "propertyType": "MH",
+        "propertyDetailsPath": "4654565",
+        "MOHPropertyType": "M",
+        "linkedDossierID": "51288131",
+        "holidayInstallmentsNumber": 335,
+        "onlyProfitOption": "Y",
+        "stepUpFlag": "Y",
+        "stepDownFlag": "Y",
+        "hasPreEvaluatedProperty": "P",
+        "PNAllowedFlag": "Y",
+        "digitalSignatureAllowedFlag": "Y",
+        "rolloutFlag": "Y",
+        "customerOwnsLand": "Y",
+        "landAmount": "100.00",
+        "customerOwnsConstructionLicence": "Y",
+        "constructionLicenceAmount": "100.00",
+        "healthQuestionnaireFormsList": [
+        {
+            "questionnaireCode": "100",
+            "questionnaireAnswer": "Y"
+        }
+        ],
+        "propertyGuaranteeType": "001",
+        "lastStipulatedDossierID": "51288131"
+    }               
+                                                </code>
+                                              </pre>
+                                                        </div>
+                                                        <div class="col-lg-4 mt-25">
+                                                            <button class="curlbtn fob-create-person-profile-top"
+                                                                type="submit" onclick="show('Open-New-Dossier-curl')">
+                                                                <p class="curlText">cURL</p>
+                                                            </button>
+    
+                                                            <pre id="generatedCurl">
+                                                <code id="Open-New-Dossier-curl" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/efinance/dossiers/v2/' \
+    --header 'Accept-Language: en' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: ••••••' \
+    --data-raw '{
+        "accountBranch": "21900",
+        "accountType": "001",
+        "accountNumber": "6080087465999",
+        "userID": "u3060143x",
+        "productID": "WRE",
+        "customerSegment": "002",
+        "employerID": 3959,
+        "departmentID": 1,
+        "militaryRankID": "123",
+        "businessPositionID": "102",
+        "employmentDate": "2014-10-10",
+        "salaryAmount": "100.55",
+        "salaryAmountCurrency": "SAR",
+        "mobile": "545057951",
+        "email": "mbc.sa@hotmail.com",
+        "frequencyTypeID": "1",
+        "requestedFinancingAmount": "100.00",
+        "requestedFinancingAmountCurrency": "SAR",
+        "requestedDownPayment": "100.00",
+        "requestedEndPayment": "100.00",
+        "requestedDownPaymentAmount": "100.00",
+        "requestedDownPaymentAmountCurrency": "SAR",
+        "duration": 60,
+        "propertyType": "MH",
+        "propertyDetailsPath": "4654565",
+        "MOHPropertyType": "M",
+        "linkedDossierID": "51288131",
+        "holidayInstallmentsNumber": 335,
+        "onlyProfitOption": "Y",
+        "stepUpFlag": "Y",
+        "stepDownFlag": "Y",
+        "hasPreEvaluatedProperty": "P",
+        "PNAllowedFlag": "Y",
+        "digitalSignatureAllowedFlag": "Y",
+        "rolloutFlag": "Y",
+        "customerOwnsLand": "Y",
+        "landAmount": "100.00",
+        "customerOwnsConstructionLicence": "Y",
+        "constructionLicenceAmount": "100.00",
+        "healthQuestionnaireFormsList": [
+        {
+            "questionnaireCode": "100",
+            "questionnaireAnswer": "Y"
+        }
+        ],
+        "propertyGuaranteeType": "001",
+        "lastStipulatedDossierID": "51288131"
+    }'                                                                      
+                                                </code>
+                                              </pre>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row flex mt-25">
+                                                        <div class="col-lg-8">
+                                                            <div class="code-box">
+                                                                <p
+                                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                                                <div class="response-box-div">
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Open-New-Dossier')">200</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Open-New-Dossier3')">401</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Open-New-Dossier4')">403</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Open-New-Dossier5')">404</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Open-New-Dossier6')">405</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Open-New-Dossier7')">406</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Open-New-Dossier8')">429</a>
+                                                                    <a type="button" class="response-box-error"
+                                                                        onclick="responseText('response-Open-New-Dossier9')">500</a>
+                                                                </div>
+    
+                                                                <pre class="response-box">
+    
+                                                  <code id="response-Open-New-Dossier" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "60dcc9e5-e68f-457c-b312-afe031bf6e21",
+            "statusDescription": "Successful Operation"
+        },
+        "body": {
+            "dossierID": "990001386381",
+            "displayMessagesList": [],
+            "acceptableRequest": "A"
+        }
+    }  
+                                                  </code>
+                                                  <code id="response-Open-New-Dossier3" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }  
+                                                  </code>	
+                                                
+                                                  <code id="response-Open-New-Dossier4" style=" display: none; " class="text">
+    {
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                                                  </code>
+                                                
+                                                  <code id="response-Open-New-Dossier5" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                                  </code>
+                                                
+                                                  <code id="response-Open-New-Dossier6" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }                  
+                                                  </code>
+                                                
+                                                  <code id="response-Open-New-Dossier7" style=" display: none; "class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }       
+                                                  </code>
+                                                
+                                                  <code id="response-Open-New-Dossier8" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                                  </code>
+                                                
+                                                  <code id="response-Open-New-Dossier9" style=" display: none; " class="text">
+    {
+        "errors": [
+        {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }     
+                                                  </code>
+                                                </pre>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

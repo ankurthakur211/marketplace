@@ -1,0 +1,774 @@
+{
+	"info": {
+		"_postman_id": "c95dc56f-e22c-4415-b335-60b16249e23a",
+		"name": "MP  Modern Sandbox IPS Bank Transfer APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22086553",
+		"_collection_link": "https://speeding-water-900262.postman.co/workspace/Modern-Sandbox~54d8660f-9568-4428-bcb2-e6d7c82cb248/collection/22086553-c95dc56f-e22c-4415-b335-60b16249e23a?action=share&source=collection_link&creator=22086553"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base-url}}/oauth2security/oauth2/token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IPS Bank Transfer Copy",
+			"item": [
+				{
+					"name": "Create IPS Bank Transfer Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Data\": {\r\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\r\n    \"BeneficiaryBankId\": \"030\",\r\n    \"BeneficiaryAddress\": \"Riyadh\",\r\n    \"BeneficiaryIBAN\": \"SA2230400108071086000028\",\r\n    \"RemitterIBAN\": \"SA4880000203608010103500\",\r\n    \"BeneficiaryAccountCurrency\": \"SAR\",\r\n    \"BeneficiaryName\": \"Hero\",\r\n    \"BeneficiaryProxyType\": \"NATID\",\r\n    \"BeneficiaryProxyValue\": \"1108613546\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate"
+					},
+					"response": [
+						{
+							"name": "Create IPS Bank Transfer Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\r\n    \"BeneficiaryBankId\": \"030\",\r\n    \"BeneficiaryAddress\": \"Riyadh\",\r\n    \"BeneficiaryIBAN\": \"SA1481001100110001695811\",\r\n    \"RemitterIBAN\": \"SA4880000203608010103500\",\r\n    \"BeneficiaryAccountCurrency\": \"SAR\",\r\n    \"BeneficiaryName\": \"Mohamed ahmed\",\r\n    \"BeneficiaryProxyType\": \"NATID\",\r\n    \"BeneficiaryProxyValue\": \"1108613546\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8b31b448-4eda-4f3c-bed8-fcb5eab41897"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a667a0b78301c7afe0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,62;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 12:33:08 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"BusinessMessageId\": \"20240526SARJHIRJHI7BPXY10000015002\"\n    }\n}"
+						},
+						{
+							"name": "Create IPS Bank Transfer Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\r\n    \"BeneficiaryBankId\": \"030\",\r\n    \"BeneficiaryAddress\": \"Riyadh\",\r\n    \"BeneficiaryIBAN\": \"SA4130000204608019865462\",\r\n    \"RemitterIBAN\": \"SA4880000203608010103500\",\r\n    \"BeneficiaryAccountCurrency\": \"SAR\",\r\n    \"BeneficiaryName\": \"Eman\",\r\n    \"BeneficiaryProxyType\": \"NATID\",\r\n    \"BeneficiaryProxyValue\": \"1108613546\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "08449743-0788-4f64-813b-711e2af1cb04"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a667a0c29601462f11"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 13:20:22 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"BusinessMessageId\": \"20240605SARJHIRJHI7BPXY10000016004\"\n    }\n}"
+						},
+						{
+							"name": "Create IPS Bank Transfer Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\r\n    \"BeneficiaryBankId\": \"030\",\r\n    \"BeneficiaryAddress\": \"Riyadh\",\r\n    \"BeneficiaryIBAN\": \"SA2230400108071086000028\",\r\n    \"RemitterIBAN\": \"SA4880000203608010103500\",\r\n    \"BeneficiaryAccountCurrency\": \"SAR\",\r\n    \"BeneficiaryName\": \"Hero\",\r\n    \"BeneficiaryProxyType\": \"NATID\",\r\n    \"BeneficiaryProxyValue\": \"1108613546\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "6c09c9a5-b87a-46c8-ab03-dc82e0e3749e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a667a0c2b301480b83"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,91;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 13:20:51 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"BusinessMessageId\": \"20240509SARJHIRJHI7BPXY11358013687\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Instant Payment Participant Banks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-ips-transfer/v1/participant-banks",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-ips-transfer",
+								"v1",
+								"participant-banks"
+							],
+							"query": [
+								{
+									"key": "participantID",
+									"value": "095",
+									"description": "Participant ID",
+									"disabled": true
+								},
+								{
+									"key": "participantName",
+									"value": "SAALBYl",
+									"description": "Participant Name",
+									"disabled": true
+								},
+								{
+									"key": "participantStatus",
+									"value": "01",
+									"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This path is used to list participant banks IPS Transfer."
+					},
+					"response": [
+						{
+							"name": "List Instant Payment Participant Banks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-ips-transfer/v1/participant-banks?participantName=SAALBY&participantStatus=01",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-ips-transfer",
+										"v1",
+										"participant-banks"
+									],
+									"query": [
+										{
+											"key": "participantID",
+											"value": "015",
+											"description": "Participant ID",
+											"disabled": true
+										},
+										{
+											"key": "participantName",
+											"value": "SAALBY",
+											"description": "Participant Name"
+										},
+										{
+											"key": "participantStatus",
+											"value": "01",
+											"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f442999c-4016-4aba-8cd2-c98815be8557"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a667a0ac2e0145ea31"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 11:44:46 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"ParticipantBanksList\": [\n            {\n                \"ParticipantId\": \"015\",\n                \"ParticipantName\": \"SAALBI\",\n                \"ParticipantFullNameAr\": \"بنك البلاد\",\n                \"ParticipantFullNameEn\": \"AlBilad Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"005\",\n                \"ParticipantName\": \"SAINMA\",\n                \"ParticipantFullNameAr\": \"مصرف الانماء\",\n                \"ParticipantFullNameEn\": \"AlInma Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"080\",\n                \"ParticipantName\": \"SARJHI\",\n                \"ParticipantFullNameAr\": \"مصرف الراجحي\",\n                \"ParticipantFullNameEn\": \"AlRajhi Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"030\",\n                \"ParticipantName\": \"SAARNB\",\n                \"ParticipantFullNameAr\": \"البنك العربي الوطني\",\n                \"ParticipantFullNameEn\": \"Arab National Bank\",\n                \"ParticipantStatus\": \"02\"\n            },\n            {\n                \"ParticipantId\": \"085\",\n                \"ParticipantName\": \"SABNPA\",\n                \"ParticipantFullNameAr\": \"بنك باريباس \",\n                \"ParticipantFullNameEn\": \"BNP PARIBAS BANK\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"060\",\n                \"ParticipantName\": \"SABJAZ\",\n                \"ParticipantFullNameAr\": \"البنك السعودي للاستثمار\",\n                \"ParticipantFullNameEn\": \"Bank AlJazira\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"076\",\n                \"ParticipantName\": \"SABMUS\",\n                \"ParticipantFullNameAr\": \"بنك مسقط\",\n                \"ParticipantFullNameEn\": \"Bank Muscat\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"055\",\n                \"ParticipantName\": \"SABSFR\",\n                \"ParticipantFullNameAr\": \"البنك السعودي الفرنسي\",\n                \"ParticipantFullNameEn\": \"Banque Saudi Fransi\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"036\",\n                \"ParticipantName\": \"SADBAK\",\n                \"ParticipantFullNameAr\": \"بنك دال ٣٦٠\",\n                \"ParticipantFullNameEn\": \"D360 bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"081\",\n                \"ParticipantName\": \"SADEUT\",\n                \"ParticipantFullNameAr\": \"البنك الألماني\",\n                \"ParticipantFullNameEn\": \"Deutsche Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"095\",\n                \"ParticipantName\": \"SAEBIL\",\n                \"ParticipantFullNameAr\": \"بنك الامارات\",\n                \"ParticipantFullNameEn\": \"Emirates Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"073\",\n                \"ParticipantName\": \"SAFABM\",\n                \"ParticipantFullNameAr\": \"بنك إم يو إف جي \",\n                \"ParticipantFullNameEn\": \"First Abu Dhabi Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"090\",\n                \"ParticipantName\": \"SAGULF\",\n                \"ParticipantFullNameAr\": \"بنك الخليج الدولي\",\n                \"ParticipantFullNameEn\": \"Gulf International Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"087\",\n                \"ParticipantName\": \"SAICBK\",\n                \"ParticipantFullNameAr\": \"البنك الصناعي والتجاري الصيني\",\n                \"ParticipantFullNameEn\": \"Industrial \\\"&\\\" Commercial Bank of China (ICBC)\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"086\",\n                \"ParticipantName\": \"SACHAS\",\n                \"ParticipantFullNameAr\": \"ج. ب. مورجان تشيس\",\n                \"ParticipantFullNameEn\": \"JP Morgan Chase\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"088\",\n                \"ParticipantName\": \"SAMUFG\",\n                \"ParticipantFullNameAr\": \"بنك إم يو إف جي \",\n                \"ParticipantFullNameEn\": \"MUFG BANK RIYADH\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"071\",\n                \"ParticipantName\": \"SANBOB\",\n                \"ParticipantFullNameAr\": \"بنك البحرين الوطني\",\n                \"ParticipantFullNameEn\": \"National Bank of Bahrain\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"079\",\n                \"ParticipantName\": \"SANBIQ\",\n                \"ParticipantFullNameAr\": \"بنك العراق الوطني\",\n                \"ParticipantFullNameEn\": \"National Bank of Iraq\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"075\",\n                \"ParticipantName\": \"SANBOK\",\n                \"ParticipantFullNameAr\": \"بنك الكويت الوطني\",\n                \"ParticipantFullNameEn\": \"National Bank of Kuwait\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"082\",\n                \"ParticipantName\": \"SANBOP\",\n                \"ParticipantFullNameAr\": \"البنك الوطني الباكستاني\",\n                \"ParticipantFullNameEn\": \"National Bank of Pakistan\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"072\",\n                \"ParticipantName\": \"SAQNBA\",\n                \"ParticipantFullNameAr\": \"بنك قطر الوطنى\",\n                \"ParticipantFullNameEn\": \"Qatar National Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"020\",\n                \"ParticipantName\": \"SARIBL\",\n                \"ParticipantFullNameAr\": \"بنك الرياض\",\n                \"ParticipantFullNameEn\": \"Riyad Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"001\",\n                \"ParticipantName\": \"SASAMA\",\n                \"ParticipantFullNameAr\": \"البنك المركزي السعودي  \",\n                \"ParticipantFullNameEn\": \"SAMA\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"040\",\n                \"ParticipantName\": \"SASAMB\",\n                \"ParticipantFullNameAr\": \"سامبا للخدمات الماليه\",\n                \"ParticipantFullNameEn\": \"Samba Financial Services\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"045\",\n                \"ParticipantName\": \"SASABB\",\n                \"ParticipantFullNameAr\": \"الأول\",\n                \"ParticipantFullNameEn\": \"Saudi Awwal Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"065\",\n                \"ParticipantName\": \"SASIBC\",\n                \"ParticipantFullNameAr\": \"البنك السعودي للاستثمار\",\n                \"ParticipantFullNameEn\": \"Saudi Investment Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"010\",\n                \"ParticipantName\": \"SANCBK\",\n                \"ParticipantFullNameAr\": \"البنك الأهلي السعودي\",\n                \"ParticipantFullNameEn\": \"Saudi National Bank\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"084\",\n                \"ParticipantName\": \"SATCZT\",\n                \"ParticipantFullNameAr\": \"البنك الزراعي لجمهورية تركيا\",\n                \"ParticipantFullNameEn\": \"Turkiye Cumhuriyeti Ziraat Bankasi\",\n                \"ParticipantStatus\": \"01\"\n            },\n            {\n                \"ParticipantId\": \"093\",\n                \"ParticipantName\": \"SAVIIO\",\n                \"ParticipantFullNameAr\": \"بنك فيجن\",\n                \"ParticipantFullNameEn\": \"Vision bank\",\n                \"ParticipantStatus\": \"01\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Instant Payment Participant Banks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-ips-transfer/v1/participant-banks?participantID=060&participantName=SAALBYl&participantStatus=01",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-ips-transfer",
+										"v1",
+										"participant-banks"
+									],
+									"query": [
+										{
+											"key": "participantID",
+											"value": "060",
+											"description": "Participant ID"
+										},
+										{
+											"key": "participantName",
+											"value": "SAALBYl",
+											"description": "Participant Name"
+										},
+										{
+											"key": "participantStatus",
+											"value": "01",
+											"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2eef2368-8c77-45c4-916c-9bcd450bbb17"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a667a1d45e0483dcb2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,82;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Feb 2025 08:48:31 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"ParticipantBanksList\": [\n            {\n                \"ParticipantId\": \"060\",\n                \"ParticipantName\": \"SABJAZ\",\n                \"ParticipantFullNameAr\": \"البنك السعودي للاستثمار\",\n                \"ParticipantFullNameEn\": \"Bank AlJazira\",\n                \"ParticipantStatus\": \"01\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Instant Payment Participant Banks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-ips-transfer/v1/participant-banks?participantID=055&participantName=SAALBYl&participantStatus=01",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-ips-transfer",
+										"v1",
+										"participant-banks"
+									],
+									"query": [
+										{
+											"key": "participantID",
+											"value": "055",
+											"description": "Participant ID"
+										},
+										{
+											"key": "participantName",
+											"value": "SAALBYl",
+											"description": "Participant Name"
+										},
+										{
+											"key": "participantStatus",
+											"value": "01",
+											"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "16da22f3-9247-40e7-96dc-ee2714340c58"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a1dbac009b2fb2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Feb 2025 09:19:40 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"ParticipantBanksList\": [\n            {\n                \"ParticipantId\": \"055\",\n                \"ParticipantName\": \"SABSFR\",\n                \"ParticipantFullNameAr\": \"البنك السعودي الفرنسي\",\n                \"ParticipantFullNameEn\": \"Banque Saudi Fransi\",\n                \"ParticipantStatus\": \"01\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Instant Payment Participant Banks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-ips-transfer/v1/participant-banks?participantID=095&participantName=SAALBYl&participantStatus=01",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-ips-transfer",
+										"v1",
+										"participant-banks"
+									],
+									"query": [
+										{
+											"key": "participantID",
+											"value": "095",
+											"description": "Participant ID"
+										},
+										{
+											"key": "participantName",
+											"value": "SAALBYl",
+											"description": "Participant Name"
+										},
+										{
+											"key": "participantStatus",
+											"value": "01",
+											"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "dddb7033-0369-4e4a-902b-378592c7fbd1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a1dbc40049c971"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Feb 2025 09:20:04 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"ParticipantBanksList\": [\n            {\n                \"ParticipantId\": \"095\",\n                \"ParticipantName\": \"SAEBIL\",\n                \"ParticipantFullNameAr\": \"بنك الامارات\",\n                \"ParticipantFullNameEn\": \"Emirates Bank\",\n                \"ParticipantStatus\": \"01\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

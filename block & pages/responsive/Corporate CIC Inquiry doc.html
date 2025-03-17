@@ -1,0 +1,284 @@
+<div class="api-doc-background">
+    <p class="api-doc-background-text ">Corporate CIC Inquiry</p>
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="container">
+                <div>
+                    <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                        onkeyup="search_menu()" type="text" />
+
+                </div>
+                <br>
+                <div class="api-guides-vertical-menu ">
+
+
+                    <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                        onclick="show('expand2')">Corporate CIC Inquiry</a>
+
+                    <div class="api-guides-dropdown-container" id="expand2">
+                        <a class="api-guides-noList apn-doc-menu" href="#section-2">Corporate CIC Inquiry</a>
+                    </div>
+
+
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="container api-guides-text">
+                <div class="container api-guides-text p-0">
+                    <p class="fob-welcome-title" id="section-1">Corporate CIC Inquiry </p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">The Corporate CIC Inquiry is a product designed to retrieve basic corporate data.
+                        </br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxCorporateCICInquiryAPIs.postman_collection.json"
+                            download="">Download Postman Collection</a></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/CorporateCICInquirySampleRequestData.xlsx"
+                            download="">Download Sample Data</a></p>
+
+
+                    <h1 class="fob-welcome-title">Corporate CIC Inquiry Workflow</h1>
+                    <p class="fob-welcome-line"></p>
+                    
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/CorporateCICInquiryFlowDiagramv0.1.pdf"
+                        download="">Download Corporate CIC Inquiry Workflow</a></p>
+                    
+                    </div>
+
+                    <h1 class="fob-welcome-title" id="section-2">Customer Basic Data</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: /mp-corporate/v1/inquire{ReferenceId}</br></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/91/api/20#/YakeenPersonInformation_100/operation/%2Farb%2Fpersons%2F{poiNumber}/get">Swagger
+                            Link</a></p>
+                    <p class="fob-welcome-text">The endpoint is used to return corporate basic data like the name, ID information, mobile number and gender.
+                        </br></p>
+                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+Query Params:
+customerStatus:1
+page:1
+pageSize:10
+
+Path Variables:
+ReferenceId:7003259999
+                    </code>
+                  </pre>
+                            </div>
+                            <div class="col-lg-4 mt-25">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('yakeen-inf')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+                                <pre id="generatedCurl">
+                    <code id="yakeen-inf" style=" display: block;">
+ccurl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7049409151?customerStatus=1&page=1&pageSize=10' \
+--header 'x-request-id: cac6cc0a-e79f-47c6-9fae-2e77d57012ea' \
+--header 'accept-language: EN' \
+--header 'Authorization: ••••••'
+                    </code>
+                  </pre>
+                            </div>
+                        </div>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <div class="code-box">
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info')">200</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info2')">400</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info3')">401</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info4')">403</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info5')">404</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info6')">405</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info7')">406</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info8')">429</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info9')">500</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-info10')">503</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                      <code id="response-info" style=" display: block; " class="text">
+{
+    "Data": {
+        "StatusCode": "I000000",
+        "RequestID": "7b5422bd-5ab6-4794-80f2-42ed30ce59e4",
+        "StatusDescription": "Successful Operation",
+        "CustomerInformationList": [
+            {
+                "CICNumber": "0000000003172389",
+                "FirstNameEn": "TDM ARB COMPANY LTD",
+                "FirstNameAr": "لغص",
+                "CustomerSinceDate": "1999-10-23",
+                "IdNumber": "7049409151",
+                "IdType": "X",
+                "CustomerType": "D",
+                "customerStatus": "1",
+                "GregExpiryDate": "2025-03-14"
+            }
+        ]
+    },
+    "Links": {
+        "Self": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1",
+        "First": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1",
+        "Last": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1"
+    },
+    "Meta": {
+        "TotalPages": 1
+    }
+}
+                    
+                      </code>
+                      <code id="response-info2" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.400.001",
+    "Message": "Bad Request",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                          </code>	                      
+                      <code id="response-info3" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.401.001",
+    "Message": "Unauthorized to call the target operation.",
+    "Path": "authorization",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+} 
+                      </code>	
+                    
+                      <code id="response-info4" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.403.001",
+    "Message": "Invalid token",
+    "Path": "authorization",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                      </code>
+                    
+                      <code id="response-info5" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.404.001",
+    "Message": "No resources match requested URI.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                      </code>
+                    
+                      <code id="response-info6" style=" display: none; "class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.405.001",
+    "Message": "The method is not allowed for the requested URL.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                            
+                      </code>
+                    
+                      <code id="response-info7" style=" display: none; "class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.406.001",
+    "Message": "An appropriate representation of the requested resource could not be found",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}    
+                      </code>
+                    
+                      <code id="response-info8" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.429.001",
+    "Message": "Assembly Rate Limit exceeded.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                      </code>
+                    
+                      <code id="response-info9" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.500.001",
+    "Message": "Internal Error.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                      </code>
+                      <code id="response-info10" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.503.001",
+    "Message": "Service Unavailable.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                              </code>
+                    </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,1312 @@
+{
+	"info": {
+		"_postman_id": "4377f194-2aff-47dd-a988-8ad16c81f523",
+		"name": "Account Finder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23110150"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://{{inbound-gw}}/oauth2security/oauth2/token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account Finder",
+			"item": [
+				{
+					"name": "Activate Account Finder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CIC\": \"0000000125117700\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/accounts/account-finder/v1/activate"
+					},
+					"response": [
+						{
+							"name": "Activate account finder",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CIC\": \"0000000125117700\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/accounts/account-finder/v1/activate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5d4776c0-2094-47a6-8b85-077b32c0f919"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b0dafb0062edd0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Aug 2024 14:00:28 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"requestID\": \"62e6bdc0-c220-4d28-8247-f84a3f069bee\",\n        \"statusCode\": \"I000000\",\n        \"statusDescription\": \"Success\"\n    }\n}"
+						},
+						{
+							"name": "Activate account finder",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CIC\": \"0000000003179820\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/accounts/account-finder/v1/activate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "11a3496b-2943-46cb-89fe-1f3a112cb76e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b0db10017c8212"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Aug 2024 14:00:48 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"requestID\": \"6eccbe7a-d1e5-4ace-a973-9216dbdf5df9\",\n        \"statusCode\": \"I000000\",\n        \"statusDescription\": \"Success\"\n    }\n}"
+						},
+						{
+							"name": "Activate account finder",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CIC\": \"0000000003170819\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/accounts/account-finder/v1/activate"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "97aa2b9b-00a9-4a01-990a-7564e90f0b20"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b0db19017c8232"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Aug 2024 14:00:57 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"requestID\": \"334c48e9-d91c-4776-946e-2aa776f7f2c9\",\n        \"statusCode\": \"I000000\",\n        \"statusDescription\": \"Success\"\n    }\n}"
+						},
+						{
+							"name": "Activate account finder",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"CIC\": \"0000000003170178\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/accounts/account-finder/v1/activate"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "32a687eb-0072-43f0-9293-4ef79f915bbf"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b0db220062ee20"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Aug 2024 14:01:07 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"requestID\": \"459db822-8c3d-46c9-a15f-65d432884d86\",\n        \"statusCode\": \"E116888\",\n        \"statusDescription\": \"Customer Already Exists\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Account Finder List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{inbound-gw}}/accounts/account-finder-list/v1/?CIC=0000000125117700",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"accounts",
+								"account-finder-list",
+								"v1",
+								""
+							],
+							"query": [
+								{
+									"key": "CIC",
+									"value": "0000000125117700"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Account Finder List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{inbound-gw}}/accounts/account-finder-list/v1/?CIC=0000000125117700",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"accounts",
+										"account-finder-list",
+										"v1",
+										""
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000125117700"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8b47eb63-8b26-4e8d-9d64-eddc4ca26048"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b1c0ad00539663"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:20:30 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"f88dd97d-ed9c-46fd-9ab3-e87fc3728b22\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"sentRecords\": 25,\n        \"matchedRecords\": 25,\n        \"completedFlag\": \"Y\",\n        \"isEligible\": \"Y\",\n        \"isComplete\": \"Y\",\n        \"firstRequestCreationTimestamp\": \"2024-04-29 10:12:18\",\n        \"beneficiariesList\": [\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012629\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"084\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012628\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"010\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012627\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"065\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012626\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"045\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012625\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"040\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"REJECTED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012624\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"020\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"REJECTED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012623\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"072\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"REJECTED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012622\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"082\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012621\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"075\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012620\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"079\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012619\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"071\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"REJECTED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012618\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"088\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012617\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"086\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012616\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"087\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012615\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"090\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012614\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"073\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012613\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"095\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012612\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"081\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012611\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"036\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012610\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"055\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"REJECTED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012609\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"076\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"REJECTED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012608\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"060\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"REJECTED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012607\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"085\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"REJECTED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012606\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"005\",\n                \"creationTimestamp\": \"2024-04-29T10:12:18\",\n                \"updateTimestamp\": \"2024-04-29T10:12:18\",\n                \"status\": \"VERIFIED\"\n            },\n            {\n                \"businessMessageID\": \"20240429SARJHIRJHI7BPXY11358012605\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"015\",\n                \"creationTimestamp\": \"2024-04-29T10:12:17\",\n                \"updateTimestamp\": \"2024-04-29T10:12:17\",\n                \"status\": \"VERIFIED\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Account Finder List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{inbound-gw}}/accounts/account-finder-list/v1/?CIC=0000000003179820",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"accounts",
+										"account-finder-list",
+										"v1",
+										""
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000003179820"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b670ab25-0c5f-44d9-8d6f-290e8896102e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b1c0d3009d1430"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:21:07 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"7f60e29a-3858-4754-9eae-3e9cc94ab78a\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"sentRecords\": 26,\n        \"matchedRecords\": 26,\n        \"completedFlag\": \"Y\",\n        \"isEligible\": \"N\",\n        \"isComplete\": \"N\",\n        \"firstRequestCreationTimestamp\": \"2024-08-04 13:15:38\",\n        \"beneficiariesList\": [\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000856\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"093\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000855\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"084\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000854\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"010\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000853\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"065\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000852\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"045\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000851\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"040\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000850\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"020\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000849\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"072\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000848\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"082\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000847\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"075\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000846\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"079\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000845\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"071\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000844\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"088\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000843\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"086\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000842\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"087\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000841\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"090\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000840\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"073\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000839\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"095\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000838\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"081\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000837\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"036\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000836\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"055\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000835\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"076\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000834\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"060\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000833\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"085\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000832\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"005\",\n                \"creationTimestamp\": \"2024-08-04T13:15:38\",\n                \"updateTimestamp\": \"2024-08-04T13:15:38\",\n                \"status\": \"ACV_PENDING\"\n            },\n            {\n                \"businessMessageID\": \"20240804SARJHIRJHI7BPXY11315000831\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"015\",\n                \"creationTimestamp\": \"2024-08-04T13:15:37\",\n                \"updateTimestamp\": \"2024-08-04T13:15:37\",\n                \"status\": \"ACV_PENDING\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Account Finder List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{inbound-gw}}/accounts/account-finder-list/v1/?CIC=0000000003170819",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"accounts",
+										"account-finder-list",
+										"v1",
+										""
+									],
+									"query": [
+										{
+											"key": "CIC",
+											"value": "0000000003170819"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "dab062fa-fcdd-452e-a1af-f19e5b479a8d"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b1c0e4009d1450"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:21:24 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"2f88e981-c5ed-412a-9424-46d47ec95ea8\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"sentRecords\": 26,\n        \"matchedRecords\": 26,\n        \"completedFlag\": \"Y\",\n        \"isEligible\": \"N\",\n        \"isComplete\": \"Y\",\n        \"firstRequestCreationTimestamp\": \"2024-08-01 16:22:41\",\n        \"beneficiariesList\": [\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000826\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"093\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000825\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"084\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000824\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"010\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000823\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"065\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000822\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"045\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000821\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"040\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000820\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"020\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000819\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"072\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000818\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"082\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000817\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"075\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000816\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"079\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000815\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"071\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000814\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"088\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000813\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"086\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000812\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"087\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000811\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"090\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000810\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"073\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000809\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"095\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000808\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"081\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000807\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"036\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000806\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"055\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000805\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"076\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000804\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"060\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000803\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"085\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000802\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"005\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            },\n            {\n                \"businessMessageID\": \"20240801SARJHIRJHI7BPXY11619000801\",\n                \"beneficiaryIBAN\": \"SA0000000000000000000000UC0003\",\n                \"beneficiaryBankID\": \"015\",\n                \"creationTimestamp\": \"2024-08-01T16:19:29\",\n                \"updateTimestamp\": \"2024-08-01T16:22:41\",\n                \"status\": \"FAILED\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Instant Payment Participant Banks Account Finder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"accounts",
+								"outwards-verification",
+								"v1",
+								"account-finder"
+							],
+							"query": [
+								{
+									"key": "participantID",
+									"value": "015",
+									"description": "Participant ID",
+									"disabled": true
+								},
+								{
+									"key": "participantName",
+									"value": "SAALBI",
+									"description": "Participant Name",
+									"disabled": true
+								},
+								{
+									"key": "participantStatus",
+									"value": "01",
+									"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This path is used to find participant banks account."
+					},
+					"response": [
+						{
+							"name": "List Instant Payment Participant Banks Account Finder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"accounts",
+										"outwards-verification",
+										"v1",
+										"account-finder"
+									],
+									"query": [
+										{
+											"key": "participantID",
+											"value": "015",
+											"description": "Participant ID",
+											"disabled": true
+										},
+										{
+											"key": "participantName",
+											"value": "SAALBI",
+											"description": "Participant Name",
+											"disabled": true
+										},
+										{
+											"key": "participantStatus",
+											"value": "01",
+											"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "de3eb7fc-5a61-4c4b-bffb-6ac9b85d77ba"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b1c102009d1480"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:21:54 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"25e9fe01-c6b1-49fd-a470-24368811fd3d\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"participantBanksList\": [\n            {\n                \"participantID\": \"015\",\n                \"participantName\": \"SAALBI\",\n                \"participantArabicFullName\": \"بنك البلاد\",\n                \"participantEnglishFullName\": \"AlBilad Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"005\",\n                \"participantName\": \"SAINMA\",\n                \"participantArabicFullName\": \"مصرف الانماء\",\n                \"participantEnglishFullName\": \"AlInma Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"080\",\n                \"participantName\": \"SARJHI\",\n                \"participantArabicFullName\": \"مصرف الراجحي\",\n                \"participantEnglishFullName\": \"AlRajhi Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"030\",\n                \"participantName\": \"SAARNB\",\n                \"participantArabicFullName\": \"البنك العربي الوطني\",\n                \"participantEnglishFullName\": \"Arab National Bank\",\n                \"participantStatus\": \"02\"\n            },\n            {\n                \"participantID\": \"085\",\n                \"participantName\": \"SABNPA\",\n                \"participantArabicFullName\": \"بنك باريباس \",\n                \"participantEnglishFullName\": \"BNP PARIBAS BANK\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"060\",\n                \"participantName\": \"SABJAZ\",\n                \"participantArabicFullName\": \"البنك السعودي للاستثمار\",\n                \"participantEnglishFullName\": \"Bank AlJazira\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"076\",\n                \"participantName\": \"SABMUS\",\n                \"participantArabicFullName\": \"بنك مسقط\",\n                \"participantEnglishFullName\": \"Bank Muscat\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"055\",\n                \"participantName\": \"SABSFR\",\n                \"participantArabicFullName\": \"البنك السعودي الفرنسي\",\n                \"participantEnglishFullName\": \"Banque Saudi Fransi\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"036\",\n                \"participantName\": \"SADBAK\",\n                \"participantArabicFullName\": \"بنك دال ٣٦٠\",\n                \"participantEnglishFullName\": \"D360 bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"081\",\n                \"participantName\": \"SADEUT\",\n                \"participantArabicFullName\": \"البنك الألماني\",\n                \"participantEnglishFullName\": \"Deutsche Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"095\",\n                \"participantName\": \"SAEBIL\",\n                \"participantArabicFullName\": \"بنك الامارات\",\n                \"participantEnglishFullName\": \"Emirates Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"073\",\n                \"participantName\": \"SAFABM\",\n                \"participantArabicFullName\": \"بنك إم يو إف جي \",\n                \"participantEnglishFullName\": \"First Abu Dhabi Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"090\",\n                \"participantName\": \"SAGULF\",\n                \"participantArabicFullName\": \"بنك الخليج الدولي\",\n                \"participantEnglishFullName\": \"Gulf International Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"087\",\n                \"participantName\": \"SAICBK\",\n                \"participantArabicFullName\": \"البنك الصناعي والتجاري الصيني\",\n                \"participantEnglishFullName\": \"Industrial \\\"&\\\" Commercial Bank of China (ICBC)\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"086\",\n                \"participantName\": \"SACHAS\",\n                \"participantArabicFullName\": \"ج. ب. مورجان تشيس\",\n                \"participantEnglishFullName\": \"JP Morgan Chase\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"088\",\n                \"participantName\": \"SAMUFG\",\n                \"participantArabicFullName\": \"بنك إم يو إف جي \",\n                \"participantEnglishFullName\": \"MUFG BANK RIYADH\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"071\",\n                \"participantName\": \"SANBOB\",\n                \"participantArabicFullName\": \"بنك البحرين الوطني\",\n                \"participantEnglishFullName\": \"National Bank of Bahrain\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"079\",\n                \"participantName\": \"SANBIQ\",\n                \"participantArabicFullName\": \"بنك العراق الوطني\",\n                \"participantEnglishFullName\": \"National Bank of Iraq\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"075\",\n                \"participantName\": \"SANBOK\",\n                \"participantArabicFullName\": \"بنك الكويت الوطني\",\n                \"participantEnglishFullName\": \"National Bank of Kuwait\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"082\",\n                \"participantName\": \"SANBOP\",\n                \"participantArabicFullName\": \"البنك الوطني الباكستاني\",\n                \"participantEnglishFullName\": \"National Bank of Pakistan\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"072\",\n                \"participantName\": \"SAQNBA\",\n                \"participantArabicFullName\": \"بنك قطر الوطنى\",\n                \"participantEnglishFullName\": \"Qatar National Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"020\",\n                \"participantName\": \"SARIBL\",\n                \"participantArabicFullName\": \"بنك الرياض\",\n                \"participantEnglishFullName\": \"Riyad Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"001\",\n                \"participantName\": \"SASAMA\",\n                \"participantArabicFullName\": \"البنك المركزي السعودي  \",\n                \"participantEnglishFullName\": \"SAMA\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"040\",\n                \"participantName\": \"SASAMB\",\n                \"participantArabicFullName\": \"سامبا للخدمات الماليه\",\n                \"participantEnglishFullName\": \"Samba Financial Services\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"045\",\n                \"participantName\": \"SASABB\",\n                \"participantArabicFullName\": \"الأول\",\n                \"participantEnglishFullName\": \"Saudi Awwal Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"065\",\n                \"participantName\": \"SASIBC\",\n                \"participantArabicFullName\": \"البنك السعودي للاستثمار\",\n                \"participantEnglishFullName\": \"Saudi Investment Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"010\",\n                \"participantName\": \"SANCBK\",\n                \"participantArabicFullName\": \"البنك الأهلي السعودي\",\n                \"participantEnglishFullName\": \"Saudi National Bank\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"084\",\n                \"participantName\": \"SATCZT\",\n                \"participantArabicFullName\": \"البنك الزراعي لجمهورية تركيا\",\n                \"participantEnglishFullName\": \"Turkiye Cumhuriyeti Ziraat Bankasi\",\n                \"participantStatus\": \"01\"\n            },\n            {\n                \"participantID\": \"093\",\n                \"participantName\": \"SAVIIO\",\n                \"participantArabicFullName\": \"بنك فيجن\",\n                \"participantEnglishFullName\": \"Vision bank\",\n                \"participantStatus\": \"01\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Instant Payment Participant Banks Account Finder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder?participantID=015",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"accounts",
+										"outwards-verification",
+										"v1",
+										"account-finder"
+									],
+									"query": [
+										{
+											"key": "participantID",
+											"value": "015",
+											"description": "Participant ID"
+										},
+										{
+											"key": "participantName",
+											"value": "SAALBI",
+											"description": "Participant Name",
+											"disabled": true
+										},
+										{
+											"key": "participantStatus",
+											"value": "01",
+											"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "13909d30-507e-40b4-b227-cc96c520e043"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b1c121012b53f2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:22:25 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"44edc9de-11f7-4ea0-bb77-f5b62a9044ce\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"participantBanksList\": [\n            {\n                \"participantID\": \"015\",\n                \"participantName\": \"SAALBI\",\n                \"participantArabicFullName\": \"بنك البلاد\",\n                \"participantEnglishFullName\": \"AlBilad Bank\",\n                \"participantStatus\": \"01\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Instant Payment Participant Banks Account Finder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder?participantID=005",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"accounts",
+										"outwards-verification",
+										"v1",
+										"account-finder"
+									],
+									"query": [
+										{
+											"key": "participantID",
+											"value": "005",
+											"description": "Participant ID"
+										},
+										{
+											"key": "participantName",
+											"value": "SAALBI",
+											"description": "Participant Name",
+											"disabled": true
+										},
+										{
+											"key": "participantStatus",
+											"value": "01",
+											"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8599fabe-62a4-42da-9b68-9e5908c499e1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b1c1290071baa1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,91;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:22:33 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"4a391bb7-b93a-4a06-8846-e86c60cd4819\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"participantBanksList\": [\n            {\n                \"participantID\": \"005\",\n                \"participantName\": \"SAINMA\",\n                \"participantArabicFullName\": \"مصرف الانماء\",\n                \"participantEnglishFullName\": \"AlInma Bank\",\n                \"participantStatus\": \"01\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "List Instant Payment Participant Banks Account Finder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Default Value : en\nAccepted Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder?participantID=080",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"accounts",
+										"outwards-verification",
+										"v1",
+										"account-finder"
+									],
+									"query": [
+										{
+											"key": "participantID",
+											"value": "080",
+											"description": "Participant ID"
+										},
+										{
+											"key": "participantName",
+											"value": "SAALBI",
+											"description": "Participant Name",
+											"disabled": true
+										},
+										{
+											"key": "participantStatus",
+											"value": "01",
+											"description": "Participant Status\nAllowed Values:\n  - '01': Available\n  - '02': Unavailable\n  - '03': Unsubscribed",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "cc62631a-0f0d-47ee-841b-f2b7f2c7ea0a"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66b1c135009d14a0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,90;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:22:45 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"292c8aa8-c78f-409f-8193-b21d7455dc3a\",\n        \"statusDescription\": \"Successful Operation\"\n    },\n    \"body\": {\n        \"participantBanksList\": [\n            {\n                \"participantID\": \"080\",\n                \"participantName\": \"SARJHI\",\n                \"participantArabicFullName\": \"مصرف الراجحي\",\n                \"participantEnglishFullName\": \"AlRajhi Bank\",\n                \"participantStatus\": \"01\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Initiate Outwards Account Finder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clientTimestamp\": \"{{$isoTimestamp}}\",\n  \"CIC\": \"0000000125117700\",\n  \"beneficiaryBankID\": \"030\",\n  \"beneficiaryAddress\": \"Riyadh\",\n  \"beneficiaryProxyType\": \"NATID\",\n  \"beneficiaryProxyValue\": \"1108613546\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder",
+						"description": "This path is used to initiate outwards account verification."
+					},
+					"response": [
+						{
+							"name": "Initiate Outwards Account Finder",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"clientTimestamp\": \"{{$isoTimestamp}}\",\n  \"CIC\": \"0000000125117700\",\n  \"beneficiaryBankID\": \"030\",\n  \"beneficiaryAddress\": \"Riyadh\",\n  \"beneficiaryProxyType\": \"NATID\",\n  \"beneficiaryProxyValue\": \"1108613546\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8d544bc4-f86d-4cf8-8aa1-8e7e8ed3f5eb"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b1be8b0062eee0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:11:24 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"97e638dc-8cd4-4f47-be48-02f0181737b5\",\n        \"statusDescription\": \"Successful Operation\"\n    }\n}"
+						},
+						{
+							"name": "Initiate Outwards Account Finder",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"clientTimestamp\": \"{{$isoTimestamp}}\",\n  \"CIC\": \"0000000003179820\",\n  \"beneficiaryBankID\": \"030\",\n  \"beneficiaryAddress\": \"Riyadh\",\n  \"beneficiaryProxyType\": \"NATID\",\n  \"beneficiaryProxyValue\": \"1720819785\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "eb1ec471-5e8b-4002-ad08-bb232e26dd4c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b1bed20180da12"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:12:35 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"9b4f3d82-6efe-4eed-9f71-967aee138770\",\n        \"statusDescription\": \"Successful Operation\"\n    }\n}"
+						},
+						{
+							"name": "Initiate Outwards Account Finder",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"clientTimestamp\": \"{{$isoTimestamp}}\",\n  \"CIC\": \"0000000003170819\",\n  \"beneficiaryBankID\": \"030\",\n  \"beneficiaryAddress\": \"Riyadh\",\n  \"beneficiaryProxyType\": \"NATID\",\n  \"beneficiaryProxyValue\": \"1159408851\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/accounts/outwards-verification/v1/account-finder"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "a6c347ea-1a90-4a3e-88a1-f947d8c35175"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b1bee8004a0ea1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Aug 2024 06:12:56 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"83ab9dc4-7336-4ccf-9db1-1f07d962d18f\",\n        \"statusDescription\": \"Successful Operation\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

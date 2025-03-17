@@ -1,0 +1,1401 @@
+{
+	"info": {
+		"_postman_id": "d729f139-b95b-45f4-8e7a-e6e5cbf0d893",
+		"name": "MP Modern Sandbox Drahim Categorization APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23110150"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base-url}}/oauth2security/oauth2/token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categorization",
+			"item": [
+				{
+					"name": "Categorize Merchant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"stc pay\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/mp-categorization/v1/merchants/categorize",
+						"description": "urlize Drahim AI Engine to categorize the passed merchant."
+					},
+					"response": [
+						{
+							"name": "Categorize Merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"mobily elife\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/categorize"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3b1967ae-26cd-43c5-a1bb-73cf8a68e385"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a492be0048f603"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:45:19 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Id\": \"01HWMVJN59Q2EX4A3GDXQ0MAGS\",\n        \"MerchantName\": \"mobily elife\",\n        \"CategoryId\": \"14\",\n        \"CategoryName\": \"UNKNOWN\"\n    }\n}"
+						},
+						{
+							"name": "Categorize Merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"stc pay\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/categorize"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b5b4cfe8-d526-4a2a-90ac-d4e4b35dea31"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a492ce006c0861"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:45:35 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Id\": \"01J5101BG3WW1K03YEQPFT3XT1\",\n        \"MerchantName\": \"stc pay\",\n        \"CategoryId\": \"2\",\n        \"CategoryName\": \"INTERNET\"\n    }\n}"
+						},
+						{
+							"name": "Categorize Merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"ناصر\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/categorize"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "929200f2-1694-4622-9f91-c9a1616b0235"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a492d800e46b32"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:45:44 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Id\": \"01J6PJ7SJF1AFGVP22WE8K453D\",\n        \"MerchantName\": \"ناصر\",\n        \"CategoryId\": \"14\",\n        \"CategoryName\": \"UNKNOWN\"\n    }\n}"
+						},
+						{
+							"name": "Categorize Merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"مبلغ :  ريال\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/categorize"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "be5aafff-dfc9-4e06-9235-21e53c167aaa"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a492ed006c08d1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:46:05 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Id\": \"01HWKVDE022CHE56R37BCBVYF8\",\n        \"MerchantName\": \"مبلغ :  ريال\",\n        \"CategoryId\": \"15\",\n        \"CategoryName\": \"SAVING_AND_INVESTMENT\"\n    }\n}"
+						},
+						{
+							"name": "Categorize Merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"مبلغ سابق في الحساب\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/categorize"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1c677093-d652-4763-a739-9728838fe93e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a492f700a4b1f0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:46:15 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Id\": \"01HWKVDE023RZVQRA9NV18SW9P\",\n        \"MerchantName\": \"مبلغ سابق في الحساب\",\n        \"CategoryId\": \"13\",\n        \"CategoryName\": \"INCOME\"\n    }\n}"
+						},
+						{
+							"name": "Categorize Merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"ماك كافيه\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/categorize"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "37605372-d305-4ba1-a0dd-5eebb0a23287"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a492ff0048f8d3"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:46:23 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Id\": \"01HWKVDE01SC49FX2AYDZQYHNE\",\n        \"MerchantName\": \"ماك كافيه\",\n        \"CategoryId\": \"9\",\n        \"CategoryName\": \"CAFES\"\n    }\n}"
+						},
+						{
+							"name": "Categorize Merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"مان أنصاري علي\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/categorize"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "62c3a6ff-3250-4e92-be07-e3ef8a504fd9"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4930800e47242"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:46:33 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Id\": \"01HWKVDE01309BW9XKXRB8FJFA\",\n        \"MerchantName\": \"مان أنصاري علي\",\n        \"CategoryId\": \"4\",\n        \"CategoryName\": \"HEALTH\"\n    }\n}"
+						},
+						{
+							"name": "Categorize Merchant",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantName\": \"hadi Ghazi Mahmoud Altaqaz\",\n    \"MerchantId\": \"string\",\n    \"MerchantMccCode\": \"string\",\n    \"MerchantPaymentType\": \"string\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/categorize"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0f462193-ebd6-4564-9c62-e9622807e4e1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4931500e473e2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:46:45 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Id\": \"01J46X0AAECE5RV653B6ACJN8A\",\n        \"MerchantName\": \"hadi ghazi mahmoud altaqaz\",\n        \"CategoryId\": \"14\",\n        \"CategoryName\": \"UNKNOWN\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Category Vote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01J46X0AAECE5RV653B6ACJN8A\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"14\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote",
+						"description": "help Drahim AI Engine to categorize better by passing the user change of merchant category, this change will be handled as a vote on the category.\nDrahim Engine analyzes the votes and enhances its self to give better results."
+					},
+					"response": [
+						{
+							"name": "Category Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01HWMVJN59Q2EX4A3GDXQ0MAGS\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"14\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c2df26bf-35f9-49c3-a986-3d5f2272479f"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4936f006c10d1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,91;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:48:16 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"VotingMessage\": \"thanks for sharing the vote, system will be better because of you\"\n    }\n}"
+						},
+						{
+							"name": "Category Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01J5101BG3WW1K03YEQPFT3XT1\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"2\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "73b8de49-c090-4b1c-a8b4-a1b3e84a6e42"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4937c00a4be30"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,90;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:48:30 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"VotingMessage\": \"thanks for sharing the vote, system will be better because of you\"\n    }\n}"
+						},
+						{
+							"name": "Category Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01J6PJ7SJF1AFGVP22WE8K453D\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"14\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e5d9ac4c-1a60-4ed5-9118-7a3eb64ab78f"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4939500a4c250"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,87;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:48:53 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"VotingMessage\": \"thanks for sharing the vote, system will be better because of you\"\n    }\n}"
+						},
+						{
+							"name": "Category Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01HWKVDE022CHE56R37BCBVYF8\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"15\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5486db59-2af5-4f60-8216-0c1dca063a6e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a493a100e479f2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,86;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:49:06 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"VotingMessage\": \"thanks for sharing the vote, system will be better because of you\"\n    }\n}"
+						},
+						{
+							"name": "Category Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01HWKVDE023RZVQRA9NV18SW9P\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"13\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c529d621-d302-4df4-a5a7-fbee892b784b"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a493ad006c1541"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,85;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:49:18 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"VotingMessage\": \"thanks for sharing the vote, system will be better because of you\"\n    }\n}"
+						},
+						{
+							"name": "Category Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01HWKVDE01SC49FX2AYDZQYHNE\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"9\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2edb1599-23b5-47a3-928a-c9f93a6d73a0"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a493b90048fc43"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,84;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:49:29 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"VotingMessage\": \"thanks for sharing the vote, system will be better because of you\"\n    }\n}"
+						},
+						{
+							"name": "Category Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01HWKVDE01309BW9XKXRB8FJFA\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"4\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "582ca456-62e0-4548-95d9-9c81b2e34c99"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a493c3006c1791"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,83;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:49:39 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"VotingMessage\": \"thanks for sharing the vote, system will be better because of you\"\n    }\n}"
+						},
+						{
+							"name": "Category Vote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"MerchantId\": \"01J46X0AAECE5RV653B6ACJN8A\",\n    \"UserId\": \"string\",\n    \"CategoryId\": \"14\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/mp-categorization/v1/merchants/category-vote"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "a36041c3-9308-40f9-8814-aa56322a6435"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a493d000e47bd2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,82;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 10:49:52 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"VotingMessage\": \"thanks for sharing the vote, system will be better because of you\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"scope": "marketplace_apis",
+			"accessTokenUrl": "https://apic10-gw-01.ejada.com:9446/apimarketplace/api-marketplace-dev/oauth2security/oauth2/token",
+			"grant_type": "client_credentials"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

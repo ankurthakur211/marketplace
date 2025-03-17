@@ -1,0 +1,1088 @@
+{
+	"info": {
+		"_postman_id": "4908bd60-d321-411f-b287-488022032438",
+		"name": "MP Modern Sandbox SMS Gateway APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23110150"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base-url}}/oauth2security/oauth2/token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification Engine - SMS Gateway",
+			"item": [
+				{
+					"name": "Generate Marketplace OTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"POINumber\": \"1003055037\",\n    \"MobileNumber\": \"0544524481\",\n    \"Purpose\": \"LOG\",\n    \"OTPMethodData\": \"QAE\",\n    \"ParametersList\": [\n      {\n        \"ParameterCode\": \"Amount\",\n        \"ParameterValue\": \"1000.0\"\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/generate-otp",
+						"description": "This path is used to generate marketplace OTP."
+					},
+					"response": [
+						{
+							"name": "Generate Marketplace OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"POINumber\": \"2057153647\",\n    \"MobileNumber\": \"552062712\",\n    \"Purpose\": \"LOG\",\n    \"OTPMethodData\": \"QAE\",\n    \"ParametersList\": [\n      {\n        \"ParameterCode\": \"Amount\",\n        \"ParameterValue\": \"1000.0\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/generate-otp"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ad94ba1a-5533-4f37-a635-f01d8527177a"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4990600a563d0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:12:08 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Generate Marketplace OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"POINumber\": \"1720819785\",\n    \"MobileNumber\": \"542061794\",\n    \"Purpose\": \"LOG\",\n    \"OTPMethodData\": \"QAE\",\n    \"ParametersList\": [\n      {\n        \"ParameterCode\": \"Amount\",\n        \"ParameterValue\": \"1000.0\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/generate-otp"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8d6cf56e-7637-4070-ad04-bb4bb63f971b"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a49916006c8c31"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:12:23 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Generate Marketplace OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"POINumber\": \"2159408851\",\n    \"MobileNumber\": \"562125461\",\n    \"Purpose\": \"LOG\",\n    \"OTPMethodData\": \"QAE\",\n    \"ParametersList\": [\n      {\n        \"ParameterCode\": \"Amount\",\n        \"ParameterValue\": \"1000.0\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/generate-otp"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8348bc25-79e6-4792-867d-a349a86dc806"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4992300492813"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:12:35 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Generate Marketplace OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"POINumber\": \"1003055037\",\n    \"MobileNumber\": \"544524481\",\n    \"Purpose\": \"LOG\",\n    \"OTPMethodData\": \"QAE\",\n    \"ParametersList\": [\n      {\n        \"ParameterCode\": \"Amount\",\n        \"ParameterValue\": \"1000.0\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/generate-otp"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "9df2770b-cdc3-46df-970c-1ada3d6cf9d9"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4993000492863"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,91;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:12:49 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Validate Marketplace OTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"OTP\": \"2030\",\n    \"POINumber\": \"1003055037\",\n    \"MobileNumber\": \"0544524481\",\n    \"Purpose\": \"LOG\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/validate-otp",
+						"description": "This path is used to validate marketplace OTP."
+					},
+					"response": [
+						{
+							"name": "Validate Marketplace OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"OTP\": \"2030\",\n    \"POINumber\": \"1003055037\",\n    \"MobileNumber\": \"544524481\",\n    \"Purpose\": \"LOG\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/validate-otp"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ce004fd6-275a-401b-9e8f-c86afbb0f3d0"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a497fe00a54760"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:07:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Validate Marketplace OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"OTP\": \"1234\",\n    \"POINumber\": \"2159408851\",\n    \"MobileNumber\": \"562125461\",\n    \"Purpose\": \"LOG\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/validate-otp"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "08f547d5-dfe1-46db-9576-e1d4e49fc2bf"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4981100e4ebc2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:08:01 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Validate Marketplace OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"OTP\": \"6491\",\n    \"POINumber\": \"1720819785\",\n    \"MobileNumber\": \"542061794\",\n    \"Purpose\": \"LOG\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/validate-otp"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f09ae314-e804-4ae8-a4e8-57d0546bd8f7"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4982200e4ed02"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:08:19 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Validate Marketplace OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value : en\nAllowed Values :\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"OTP\": \"9372\",\n    \"POINumber\": \"2057153647\",\n    \"MobileNumber\": \"552062712\",\n    \"Purpose\": \"LOG\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/validate-otp"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "631a7eac-714d-4335-9940-90be8a8d43c7"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4984200e4f002"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:08:50 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Send Registered Event SMS Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"EventCode\": \"QAEMALOG\",\n    \"RecipientsList\": [\n      {\n        \"PreferredLanguage\": \"EN\",\n        \"NotificationsMethodsInformationList\": [\n          {\n            \"Contact\": \"966500000111\"\n          }\n        ],\n        \"ParametersList\": [\n          {\n            \"ParameterCode\": \"TRN_AMNT\",\n            \"ParameterValue\": \"1000\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/registered-event",
+						"description": "This path is used to send registered event SMS notification"
+					},
+					"response": [
+						{
+							"name": "Send Registered Event SMS Notification",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"EventCode\": \"QAEMA_01\",\n    \"RecipientsList\": [\n      {\n        \"PreferredLanguage\": \"EN\",\n        \"NotificationsMethodsInformationList\": [\n          {\n            \"Contact\": \"966500000111\"\n          }\n        ],\n        \"ParametersList\": [\n          {\n            \"ParameterCode\": \"TRN_AMNT\",\n            \"ParameterValue\": \"1000\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/registered-event"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "dc86697c-6a82-4045-b761-709bf027be82"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4970a00491bc3"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:03:38 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Send Registered Event SMS Notification",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"EventCode\": \"EMKAN01\",\n    \"RecipientsList\": [\n      {\n        \"PreferredLanguage\": \"EN\",\n        \"NotificationsMethodsInformationList\": [\n          {\n            \"Contact\": \"966500000111\"\n          }\n        ],\n        \"ParametersList\": [\n          {\n            \"ParameterCode\": \"TRN_AMNT\",\n            \"ParameterValue\": \"1000\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/registered-event"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "151aaf75-5d11-4ca7-85e5-b171f9c9d0bd"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4971e00e4d732"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:03:58 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Send Registered Event SMS Notification",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"EventCode\": \"ACQAEMA\",\n    \"RecipientsList\": [\n      {\n        \"PreferredLanguage\": \"EN\",\n        \"NotificationsMethodsInformationList\": [\n          {\n            \"Contact\": \"966500000111\"\n          }\n        ],\n        \"ParametersList\": [\n          {\n            \"ParameterCode\": \"TRN_AMNT\",\n            \"ParameterValue\": \"1000\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/registered-event"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5e2f97a8-3881-42f9-87af-4b45dc7e65ef"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a4972d00a52cf0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:04:13 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Send Registered Event SMS Notification",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"ClientTimestamp\": \"2022-02-17T18:25:43.511+03:00\",\n    \"EventCode\": \"QAEMALOG\",\n    \"RecipientsList\": [\n      {\n        \"PreferredLanguage\": \"EN\",\n        \"NotificationsMethodsInformationList\": [\n          {\n            \"Contact\": \"966500000111\"\n          }\n        ],\n        \"ParametersList\": [\n          {\n            \"ParameterCode\": \"TRN_AMNT\",\n            \"ParameterValue\": \"1000\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base-url}}/gwt.alrajhibank.com.sa/mp-notification-sms/v1/registered-event"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "480c762e-2eb4-408d-819e-3e0856441eb1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a49739006c61e1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 11:04:25 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client-secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		}
+	]
+}

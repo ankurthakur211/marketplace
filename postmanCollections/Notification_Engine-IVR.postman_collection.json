@@ -1,0 +1,573 @@
+{
+	"info": {
+		"_postman_id": "99b78bc4-4acf-433c-a6c0-9763a8cbe603",
+		"name": "Notification Engine - IVR",
+		"description": "This API is used to send registered-event IVR notifications to a customer.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29982339"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Access Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Cookie",
+								"value": "cookiesession1=678A8C3997F36E43064F1EBED59975E1"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/oauth2security/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Send IVR Notification",
+			"item": [
+				{
+					"name": "Send Registered Event IVR Notification Using Mobile Number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"clientTimestamp\": \"2024-10-24T15:12:00.000+03:00\",\n  \"eventCode\":\"IVR0001\",\n  \"eventTransactionId\": \"503dedbe-4a89-4fff-b1cd-3659bf19a8eb\",\n  \"recipientsList\":[\n    {\n      \"preferredLanguage\":\"en\",\n      \"notificationsMethodsInformationList\":[\n        {\n          \"contact\":\"549138726\"\n        }\n      ],\n      \"parametersList\":[\n        {\n          \"parameterCode\":\"MSG_BDY\",\n          \"parameterValue\":\"مرحبا حسن.نأمل سرعة سداد قسط التمويل 524.70 ريال المستحق عليكم للاستفسار تواصل معنا : 8001240251\"\n        }\n      ]\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/ivr-notifications/v1/customers/mobile-number/registered-events/send",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"ivr-notifications",
+								"v1",
+								"customers",
+								"mobile-number",
+								"registered-events",
+								"send"
+							]
+						},
+						"description": "This path is used to send registered-event IVR notifications using his or her mobile number."
+					},
+					"response": [
+						{
+							"name": "Send Registered Event IVR Notification Using Mobile Number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n  \"clientTimestamp\": \"2024-10-24T15:12:00.000+03:00\",\n  \"eventCode\":\"IVR0001\",\n  \"eventTransactionId\": \"503dedbe-4a89-4fff-b1cd-3659bf19a8eb\",\n  \"recipientsList\":[\n    {\n      \"preferredLanguage\":\"en\",\n      \"notificationsMethodsInformationList\":[\n        {\n          \"contact\":\"549138726\"\n        }\n      ],\n      \"parametersList\":[\n        {\n          \"parameterCode\":\"MSG_BDY\",\n          \"parameterValue\":\"مرحبا حسن.نأمل سرعة سداد قسط التمويل 524.70 ريال المستحق عليكم للاستفسار تواصل معنا : 8001240251\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/ivr-notifications/v1/customers/mobile-number/registered-events/send",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"ivr-notifications",
+										"v1",
+										"customers",
+										"mobile-number",
+										"registered-events",
+										"send"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "7dc3ccc1-25fa-4324-bb61-8c499089764b"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc671ddfdf0034e850"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Oct 2024 06:38:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"d4b9db02-55ee-4e74-801b-de59d9e20020\"\n    }\n}"
+						},
+						{
+							"name": "Send Registered Event IVR Notification Using Mobile Number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n  \"clientTimestamp\": \"2024-10-24T15:12:00.000+03:00\",\n  \"eventCode\":\"IVR0002\",\n  \"eventTransactionId\": \"d7a1d1ff-cdcb-48bc-84d7-690926ebfafb\",\n  \"recipientsList\":[\n    {\n      \"preferredLanguage\":\"en\",\n      \"notificationsMethodsInformationList\":[\n        {\n          \"contact\":\"549138726\"\n        }\n      ],\n      \"parametersList\":[\n        {\n          \"parameterCode\":\"MSG_BDY\",\n          \"parameterValue\":\"مرحبا حسن.نأمل سرعة سداد قسط التمويل 524.70 ريال المستحق عليكم للاستفسار تواصل معنا : 8001240251\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/ivr-notifications/v1/customers/mobile-number/registered-events/send",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"ivr-notifications",
+										"v1",
+										"customers",
+										"mobile-number",
+										"registered-events",
+										"send"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "30b06abe-a54a-41e4-a8a0-6dddf1728cd3"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc671de007005e80a2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Oct 2024 06:39:22 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"4541fcc7-f543-43a2-8a2a-d82652a2ade9\"\n    }\n}"
+						},
+						{
+							"name": "Send Registered Event IVR Notification Using Mobile Number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n  \"clientTimestamp\": \"2024-10-24T15:12:00.000+03:00\",\n  \"eventCode\":\"EMKAN01\",\n  \"eventTransactionId\": \"3ac3eb8f-2dbf-428f-b43e-8973a912ac53\",\n  \"recipientsList\":[\n    {\n      \"preferredLanguage\":\"en\",\n      \"notificationsMethodsInformationList\":[\n        {\n          \"contact\":\"549138726\"\n        }\n      ],\n      \"parametersList\":[\n        {\n          \"parameterCode\":\"MSG_BDY\",\n          \"parameterValue\":\"مرحبا حسن.نأمل سرعة سداد قسط التمويل 524.70 ريال المستحق عليكم للاستفسار تواصل معنا : 8001240251\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/ivr-notifications/v1/customers/mobile-number/registered-events/send",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"ivr-notifications",
+										"v1",
+										"customers",
+										"mobile-number",
+										"registered-events",
+										"send"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ee43ba65-40c3-4966-abb8-cb81e57fcb7b"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc671de02a005e80b2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Oct 2024 06:39:38 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"316b10e8-cd85-46f0-b4b8-d0c393033e74\"\n    }\n}"
+						},
+						{
+							"name": "Send Registered Event IVR Notification Using Mobile Number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n  \"clientTimestamp\": \"2024-10-24T15:12:00.000+03:00\",\n  \"eventCode\":\"QAEMA_01\",\n  \"eventTransactionId\": \"fcf23da6-8191-437b-8e63-283bfa421636\",\n  \"recipientsList\":[\n    {\n      \"preferredLanguage\":\"en\",\n      \"notificationsMethodsInformationList\":[\n        {\n          \"contact\":\"549138726\"\n        }\n      ],\n      \"parametersList\":[\n        {\n          \"parameterCode\":\"MSG_BDY\",\n          \"parameterValue\":\"مرحبا حسن.نأمل سرعة سداد قسط التمويل 524.70 ريال المستحق عليكم للاستفسار تواصل معنا : 8001240251\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/ivr-notifications/v1/customers/mobile-number/registered-events/send",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"ivr-notifications",
+										"v1",
+										"customers",
+										"mobile-number",
+										"registered-events",
+										"send"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3cb870e7-f3d6-4792-9322-495e794e75bf"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc671de03700257951"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Oct 2024 06:39:52 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"header\": {\n        \"statusCode\": \"I000000\",\n        \"requestID\": \"acc44055-cd1d-4e49-a937-80a78b0dbeae\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "marketplace_apis",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://api-marketplace.alrajhigroup.com.sa/oauth2security/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client-secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

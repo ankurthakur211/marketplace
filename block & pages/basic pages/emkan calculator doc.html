@@ -1,0 +1,350 @@
+<div id="search-term-result">
+
+    <p>
+        Emkan Calculator is publishing their services in our API marketplace
+        portal to be consumed by anyone of al-Rajhi group company.With Emkan Calculator, customers gain
+        the ability to accurately assess their loan eligibility across a spectrum of products, including
+        Top-up and Microfinance, Refinance, Retail Finance, Credit Cards, Auto Lease, and Auto Lease
+        50/50 and experience personalized financial insights as our platform generates initial loan
+        offers based on specific product types entered by the user.Empower your financial journey with
+        Emkan Calculator's intuitive tools, now available for consumption by all al-Rajhi group through
+        the API Marketplace.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Emkan Calculator API
+            Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">Emkan
+                            Calculator</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Emkan Calculator</a>
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Emkan Calculator</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Emkan Calculator is publishing their services in our API marketplace
+                            portal to be consumed by anyone of al-Rajhi group company.With Emkan Calculator, customers gain
+                            the ability to accurately assess their loan eligibility across a spectrum of products, including
+                            Top-up and Microfinance, Refinance, Retail Finance, Credit Cards, Auto Lease, and Auto Lease
+                            50/50 and experience personalized financial insights as our platform generates initial loan
+                            offers based on specific product types entered by the user.Empower your financial journey with
+                            Emkan Calculator's intuitive tools, now available for consumption by all al-Rajhi group through
+                            the API Marketplace.
+                            </br></p>
+                        <p class="fob-welcome-text"></br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/EmkanCalculator.postman_collection.json"
+                            download="">Download Postman Collection</a></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/EmkanCalculatorSampleRequestData.xlsx"
+                            download="">Download Sample Data</a></p>
+    
+    
+                        <h1 class="fob-welcome-title">Emkan Calculator Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../EmkanCalculatorWorkflowImg">Click
+                            here</a>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="emkan-flow-img"><br></p>
+                            </div>
+                        </div>
+                        <h1 class="fob-welcome-title" id="section-2">Emkan Calculator (Calculates loans for products)</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /calculator/calculate-loans</br></p>
+                        <p class="fob-welcome-text">This path is used to calculate initial loan offer for each products
+                            based on productType user input.
+                            </br></p>
+                            <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/35/api/11#/EmkanCalculator_100/operation/%2Fcalculate-loans/post">Swagger
+                                Link</a></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+        Request Body
+        {
+        "productType": "AL",
+        "pfType": "TOPUP",
+        "sector": "GOVERNMENT",
+        "arbCustomer": true,
+        "loanObligations": 200,
+        "mortgageObligations": 500,
+        "saudi": true,
+        "age": 100,
+        "monthlyIncome": 8000,
+        "tenureInMonths": 60,
+        "installmentType": "MONTHLY",
+        "rank": "RAED"
+        }           
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('emkan-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="emkan-curl" style=" display: block;">
+    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/calculator/calculate-loans' \
+    --header 'LNG: 1234' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODFKz4k4L1Z2yM5NKKsXk-lXHTSW_bbV-j16ux7NciPL-SgtWUYosOdsCWI0xVR-qBJq0N4m_Jd0pr-A8R5ZP0KsfvgL9Zeyw5iu956dPnuf7GfbmKhjAtWDqho9nlnVhGgiQ6Fh9mmH9WkvUKu1ZjvN' \
+    --header 'Cookie: d70c4b71d548cdbd2b531dc96408ca96=3c9bc14826e94f3004136fe292af06cd' \
+    --data '{
+        "productType": "AL",
+        "pfType": "TOPUP",
+        "sector": "GOVERNMENT",
+        "arbCustomer": true,
+        "loanObligations": 200,
+        "mortgageObligations": 500,
+        "saudi": true,
+        "age": 60,
+        "monthlyIncome": 8000,
+        "tenureInMonths": 50,
+        "installmentType": "MONTHLY",
+        "rank": "JUNDI"
+    }'
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('emkan')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('emkan3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('emkan4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('emkan5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('emkan6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('emkan7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('emkan8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('emkan9')">500</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                          <code id="emkan" style=" display: block; " class="text">
+        {
+            "alMonthly": {
+                "eligible": true,
+                "carPrice": 0,
+                "downPayment": 0,
+                "balloonPayment": 0,
+                "profitRate": 0,
+                "monthlyInstallment": 0,
+                "insurance": 0,
+                "comments": [
+                "string"
+                ]
+            },
+            "al5050": {
+                "eligible": true,
+                "carPrice": 0,
+                "downPayment": 0,
+                "balloonPayment": 0,
+                "profitRate": 0,
+                "monthlyInstallment": 0,
+                "insurance": 0,
+                "comments": [
+                "string"
+                ]
+            },
+            "cc": {
+                "eligible": true,
+                "cardLimit": "string",
+                "cardType": "string",
+                "insuranceFees": 0,
+                "cashback": "string",
+                "profitRate": "string",
+                "monthlyInstallment": 0,
+                "comments": [
+                "string"
+                ]
+            },
+            "rf": {
+                "eligible": true,
+                "financeAmount": 0,
+                "totalContractValue": 0,
+                "profitRate": 0,
+                "monthlyInstallment": 0,
+                "comments": [
+                "string"
+                ]
+            },
+            "pfMicro": {
+                "eligible": true,
+                "financeAmount": "string",
+                "totalContractValue": 0,
+                "profitRate": "string",
+                "monthlyInstallment": 0,
+                "comments": [
+                "string"
+                ]
+            },
+            "pfTopUp": {
+                "eligible": true,
+                "financeAmount": "string",
+                "totalContractValue": 0,
+                "profitRate": "string",
+                "monthlyInstallment": 0,
+                "comments": [
+                "string"
+                ]
+            },
+            "refinance": {
+                "eligible": true,
+                "financeAmount": "string",
+                "totalContractValue": 0,
+                "profitRate": "string",
+                "monthlyInstallment": 0,
+                "comments": [
+                "string"
+                ]
+            }
+            }
+                              
+                          </code>
+                          <code id="emkan3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }  
+                          </code>	
+                        
+                          <code id="emkan4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                          </code>
+                        
+                          <code id="emkan5" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        
+                          <code id="emkan6" style=" display: none; "class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }
+                                
+                          </code>
+                        
+                          <code id="emkan7" style=" display: none; "class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }       
+                          </code>
+                        
+                          <code id="emkan8" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        
+                          <code id="emkan9" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

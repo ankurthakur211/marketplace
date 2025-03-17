@@ -1,0 +1,650 @@
+<div id="search-term-result">
+    <p>Apply for ARB Prepaid Card APIS </p>
+    <p>
+        The primary objective of this project is to enable ARB to offer the
+        Prepaid card application process through the API Marketplace. This will provide a seamless,
+        efficient, and accessible way for consumers to apply for ARB Prepaid cards via integrated API
+        solutions.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Apply for ARB Prepaid Card API Documentation</p>
+    </div>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div>
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                            onkeyup="search_menu()" type="text" />
+    
+                    </div>
+                    <br>
+                    <div class="api-guides-vertical-menu ">
+    
+    
+                        <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">Apply
+                            for ARB Prepaid Card</a>
+    
+                        <div class="api-guides-dropdown-container" id="expand2">
+                            <a class="api-guides-noList apn-doc-menu" href="#section-2">Inquire Card Issuance
+                                Eligibility</a>
+                            <a class="api-guides-noList apn-doc-menu" href="#section-3">Issue Credit Card</a>
+                        </div>
+    
+    
+                    </div>
+                    <br>
+                </div>
+            </div>
+    
+            <div class="col-md-9">
+                <div class="container api-guides-text">
+                    <div class="container api-guides-text p-0">
+                        <p class="fob-welcome-title" id="section-1">Apply for ARB Prepaid Card APIS </p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">The primary objective of this project is to enable ARB to offer the
+                            Prepaid card application process through the API Marketplace. This will provide a seamless,
+                            efficient, and accessible way for consumers to apply for ARB Prepaid cards via integrated API
+                            solutions.
+                            </br></p>
+                        <p class="fob-welcome-text"><a id="downloadLink"
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Apply_for_ARB_Prepaid_Card.postman_collection.json"
+                                download="">Download Postman Collection</a></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/ApplyforARBPrepaidCardSampleRequestData.xlsx"
+                                download="">Download Sample Data</a></p>
+    
+                        <h1 class="fob-welcome-title">Apply for ARB Prepaid Card Workflow</h1>
+                        <p class="fob-welcome-line"></p>
+                        <a class="fob-product-title-click" target="_blank" href="../ApplyforARBPrepaidCardWorkflowImg">Click
+                            here</a>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="ApplyforARBPrepaidCard-flow-img"><br></p>
+                            </div>
+                        </div>
+    
+    
+                        <h1 class="fob-welcome-title">Apply for ARB Prepaid Card Architecture</h1>
+    
+                        <p class="fob-welcome-line">&nbsp;</p>
+                        <a class="fob-product-title-click" href="../ApplyforARBPrepaidCardArchitectureWorkflowImg"
+                            target="_blank">Click here</a>
+    
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <p class="ApplyforARBChargeCardArchitecture-flow-img">&nbsp;</p>
+                            </div>
+                        </div>
+    
+    
+                        <h1 class="fob-welcome-title" id="section-2">Inquire Card Issuance
+                            Eligibility</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /card-issuance-eligibility/v1</br></p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1003/api/997#/ARBInquireCardIssuanceEligibility_100/operation/%2Finquire/post">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">This path is used to inquire card issuance eligibility.</br></p>
+                        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "en",
+    } 
+    Request Body
+    {
+        "customerIdentifiersList": [
+        {
+            "customerID": "1106366398",
+            "IDNumber": "1106368598",
+            "customerCode": "12563068598",
+            "externalCustomerCode": "0000000014522400",
+            "institutionCode": "0029"
+        }
+        ],
+        "cardProduct": "CLQ",
+        "cardType": "CHRG",
+        "returnEligibleCardsCount": "Y"
+    }                          
+                        </code>
+                      </pre>
+                                </div>
+                                <div class="col-lg-4 mt-25">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                        onclick="show('Inquire-Card-Issuance-Eligibility-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+    
+                                    <pre id="generatedCurl">
+                        <code id="Inquire-Card-Issuance-Eligibility-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/card-issuance-eligibility/v1/inquire' \
+    --header 'Content-Type: application/json' \
+    --data '{
+    "customerIdentifiersList": [
+    {
+        "customerID": "1106366398",
+        "IDNumber": "1106368598",
+        "customerCode": "12563068598",
+        "externalCustomerCode": "0000000003089053",
+        "institutionCode": "0029"
+    }
+    ],
+    "cardProduct": "CLQ",
+    "cardType": "PRPD",
+    "returnEligibleCardsCount": "Y"
+    }'                                  
+                        </code>
+                      </pre>
+                                </div>
+                            </div>
+                            <div class="row flex mt-25">
+                                <div class="col-lg-8">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Inquire-Card-Issuance-Eligibility')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Inquire-Card-Issuance-Eligibility3')">401</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Inquire-Card-Issuance-Eligibility4')">403</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Inquire-Card-Issuance-Eligibility5')">404</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Inquire-Card-Issuance-Eligibility6')">405</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Inquire-Card-Issuance-Eligibility7')">406</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Inquire-Card-Issuance-Eligibility8')">429</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('Inquire-Card-Issuance-Eligibility9')">500</a>
+                                        </div>
+    
+                                        <pre class="response-box">
+    
+                          <code id="Inquire-Card-Issuance-Eligibility" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "e12682aa-7f94-4d74-b28a-4655d6397ce4",
+            "statusDescription": "Successful Operation"
+        },
+        "body": {
+            "eligibleCardTypesList": [
+                {
+                    "cardTypesList": [
+                        {
+                            "cardType": "PRPD",
+                            "cardTypeDescription": "Prepaid Products Group"
+                        }
+                    ],
+                    "maximumNumberOfPrimaryCards": "10",
+                    "maximumNumberOfSupplementaryCards": "5",
+                    "remainingNumberOfPrimaryCards": "10",
+                    "remainingNumberOfSupplementaryCards": "5",
+                    "eligibleCardProductsList": [
+                        {
+                            "cardProductsList": [
+                                {
+                                    "ID": "61",
+                                    "institutionCode": "ARB",
+                                    "productCode": "VENS",
+                                    "description": "VISA ENSAN",
+                                    "bin": "405433"
+                                }
+                            ],
+                            "maximumNumberOfPrimaryCards": "5",
+                            "maximumNumberOfSupplementaryCards": "0",
+                            "remainingNumberOfPrimaryCards": "5",
+                            "remainingNumberOfSupplementaryCards": "0"
+                        },
+                        {
+                            "cardProductsList": [
+                                {
+                                    "ID": "63",
+                                    "institutionCode": "ARB",
+                                    "productCode": "TSWQ",
+                                    "description": "VISA TASAWAQ",
+                                    "bin": "405433"
+                                }
+                            ],
+                            "maximumNumberOfPrimaryCards": "5",
+                            "maximumNumberOfSupplementaryCards": "0",
+                            "remainingNumberOfPrimaryCards": "4",
+                            "remainingNumberOfSupplementaryCards": "0"
+                        },
+                        {
+                            "cardProductsList": [
+                                {
+                                    "ID": "301",
+                                    "institutionCode": "ARB",
+                                    "productCode": "VIRP",
+                                    "description": "VISA VIRTUAL",
+                                    "bin": "445827",
+                                    "deniedServicesList": [
+                                        {
+                                            "deniedServices": 9
+                                        },
+                                        {
+                                            "deniedServices": 10
+                                        },
+                                        {
+                                            "deniedServices": 11
+                                        },
+                                        {
+                                            "deniedServices": 23
+                                        },
+                                        {
+                                            "deniedServices": 9100
+                                        },
+                                        {
+                                            "deniedServices": 28
+                                        },
+                                        {
+                                            "deniedServices": 38
+                                        },
+                                        {
+                                            "deniedServices": 21
+                                        }
+                                    ]
+                                }
+                            ],
+                            "maximumNumberOfPrimaryCards": "5",
+                            "maximumNumberOfSupplementaryCards": "0",
+                            "remainingNumberOfPrimaryCards": "5",
+                            "remainingNumberOfSupplementaryCards": "0"
+                        },
+                        {
+                            "cardProductsList": [
+                                {
+                                    "ID": "221",
+                                    "institutionCode": "ARB",
+                                    "productCode": "VMCC",
+                                    "description": "VISA OMLAH PREPAID",
+                                    "bin": "429927"
+                                }
+                            ],
+                            "maximumNumberOfPrimaryCards": "5",
+                            "maximumNumberOfSupplementaryCards": "0",
+                            "remainingNumberOfPrimaryCards": "5",
+                            "remainingNumberOfSupplementaryCards": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    }                        
+                          </code>
+                          <code id="Inquire-Card-Issuance-Eligibility3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }  
+                          </code>	
+                        
+                          <code id="Inquire-Card-Issuance-Eligibility4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                          </code>
+                        
+                          <code id="Inquire-Card-Issuance-Eligibility5" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.404.001",
+                "message": "No resources match requested URI.",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        
+                          <code id="Inquire-Card-Issuance-Eligibility6" style=" display: none; "class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.405.001",
+                "message": "The method is not allowed for the requested URL.",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }
+                                
+                          </code>
+                        
+                          <code id="Inquire-Card-Issuance-Eligibility7" style=" display: none; "class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.406.001",
+                "message": "An appropriate representation of the requested resource could not be found",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }       
+                          </code>
+                        
+                          <code id="Inquire-Card-Issuance-Eligibility8" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.429.001",
+                "message": "Assembly Rate Limit exceeded",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        
+                          <code id="Inquire-Card-Issuance-Eligibility9" style=" display: none; " class="text">
+        {
+            "errors": [
+            {
+                "code": "ERROR.500.001",
+                "message": "Internal Error",
+                "url": "https://{baseURL}/developer-portal/terms"
+            }
+            ]
+        }     
+                          </code>
+                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <h1 class="fob-welcome-title" id="section-3">Issue Credit Card</h1>
+                            <p class="fob-welcome-line"></p>
+                            <p class="fob-welcome-text">Endpoint: /credit-cards-issuing/1.0.0</br></p>
+                            <p class="fob-welcome-text"><a
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1105/api/991#/IssueCreditCard_100/operation/%2Fcards/post">Swagger
+                                    Link</a></p>
+                            <p class="fob-welcome-text">This operation path is used to create request of prepaid credit
+                                card.</br></p>
+    
+                            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+    
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <h1 class="fob-welcome-title">Request Example</h1>
+                                        <p class="fob-welcome-line"></p>
+                                        <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+    Header request
+    {
+    "Accept-Language": "en",
+    } 
+    Request Body
+    {
+        "IDType": "01",
+        "IDNumber": "1083308922",
+        "cardSegment": "Fursan",
+        "cardEmbossingName": "NISHTHA",
+        "cardProduct": "CLQ",
+        "customerSegment": "001",
+        "firstName": "AHMED",
+        "familyName": "GOMAA",
+        "cardIssueReason": "New",
+        "cardLinkedAccountBranch": "20400",
+        "cardLinkedAccountType": "001",
+        "cardLinkedAccountNumber": "0006084545655",
+        "cardMembershipID": "1",
+        "cardMembershipContact": "01200123123",
+        "deliveryAddress1": "AL RIYADH",
+        "deliveryAddress2": "AL RIYADH",
+        "deliveryAddress3": "AL RIYADH",
+        "deliveryAddress4": "AL RIYADH",
+        "deliveryAddressCity": "AL RIYADH",
+        "deliveryAddressProvince": "East Province",
+        "deliveryAddressDistrict": "East District",
+        "deliveryAddressPostalCode": "11113",
+        "deliveryAddressCountryCode": "608",
+        "deliveryAddressLatitude": "31.23",
+        "deliveryAddressLongitude": "30.22",
+        "cardRequestorEmployeeCIC": "0000000009013370",
+        "cardRequestorEmployeeID": "12345",
+        "cardRequestorDocumentID": "01",
+        "cardRequestorDocumentCode": "1083308922",
+        "cardRequestorFirstNameEnglish": "Ahmed",
+        "cardRequestorLastNameEnglish": "Gomaa",
+        "cardRequestorEmbossingName": "Embossing Name",
+        "cardRequestorNationality": "KSA",
+        "cardRequestorCity": "Riyadh",
+        "cardRequestorStreetName": "Ahmed Shawki st.",
+        "cardRequestorStreetNumber": "570",
+        "cardRequestorUnitNumber": "110",
+        "cardRequestorCountryCode": "KSA",
+        "cardRequestorRegion": "East Region",
+        "cardRequestorPostalCode": "25925",
+        "cardRequestorAdditionalCode": "1234567890",
+        "cardRequestorEmail": "cardRequestorEMail@ejada.com",
+        "cardRequestorMobileNumber": "01001234567",
+        "cardRequestorPosition": "User Position",
+        "cardRequestorEmploymentDate": "2014-10-30",
+        "cardRequestorCivilStatus": "M",
+        "cardRequestorGender": "M",
+        "cardRequestorBirthDate": "2014-10-30",
+        "cardRequestorContactMode": "01",
+        "cardRequestorHouseOwnerID": "01",
+        "cardRequestorFamilySize": 2,
+        "cardRequestorNumberOfCars": 2,
+        "skipOwnerVerficationFlag": "Y",
+        "cardDesignPreference": "1",
+        "deliveryFlag": "D",
+        "rolloutFlag": "Y"
+    }                                                                                                    
+                                    </code>
+                                  </pre>
+                                    </div>
+                                    <div class="col-lg-4 mt-25">
+                                        <!-- <div class="code-box"> -->
+    
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                            onclick="show('Issue-Credit-Card-curl')">
+                                            <p class="curlText">cURL</p>
+                                        </button>
+    
+                                        <pre id="generatedCurl">
+                                      <code id="Issue-Credit-Card-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/credit-cards-issuing/1.0.0/cards' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "cardSegment": "SMEPrepaid",
+        "cardEmbossingName": "SIRUTHAI K JAKIN",
+        "cardLinkedAccountBranch": "20400",
+        "cardLinkedAccountType": "001",
+        "cardLinkedAccountNumber": "0006085178233",
+        "CIC": "0000000125118176",
+        "userID": "ARGx",
+        "IDType": "01",
+        "IDNumber": "1200520979",
+        "cardProduct": "PLT",
+        "firstName": "SIRUTHAI",
+        "familyName": "JAKIN",
+        "cardIssueReason": "New",
+        "deliveryAddress1": "AL RIYADH",
+        "deliveryAddress2": "AL RIYADH",
+        "deliveryAddress3": "AL RIYADH",
+        "deliveryAddress4": "AL RIYADH",
+        "deliveryAddressCity": "AL RIYADH",
+        "deliveryAddressDistrict": "al riyadh",
+        "deliveryAddressPostalCode": "11111",
+        "deliveryAddressCountryCode": "608",
+        "cardDesignPreference":"1",
+        "deliveryFlag": "D",
+        "rolloutFlag": "Y"
+    }'                      
+                                      </code>
+                                    </pre>
+                                    </div>
+                                </div>
+                                <div class="row flex mt-25">
+                                    <div class="col-lg-8">
+                                        <div class="code-box">
+                                            <p
+                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+    
+    
+                                            <div class="response-box-div">
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Issue-Credit-Card')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Issue-Credit-Card3')">401</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Issue-Credit-Card4')">403</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Issue-Credit-Card5')">404</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Issue-Credit-Card6')">405</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Issue-Credit-Card7')">406</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Issue-Credit-Card8')">429</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('Issue-Credit-Card9')">500</a>
+                                            </div>
+                                            <pre class="response-box">
+    
+                            <code id="Issue-Credit-Card" style=" display: block; " class="text">
+    {
+        "header": {
+            "statusCode": "I000000",
+            "requestID": "dfc9acc9-f0ab-46ea-a76b-b3454e80ba7a",
+            "statusDescription": "Success"
+        },
+        "body": {
+            "acceptableRequest": "Y",
+            "cardOrderID": "8800000061675"
+        }
+    }
+                             </code>
+          
+                            <code id="Issue-Credit-Card3" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.401.001",
+            "message": "Unauthorized to call the target operation.",
+            "path": "authorization",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                            
+                            </code>	
+                            
+                            <code id="Issue-Credit-Card4" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.403.001",
+            "message": "Can't find any valid subscription.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }   
+                            </code>
+                            
+                            
+                            <code id="Issue-Credit-Card5" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.404.001",
+            "message": "No resources match requested URI.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                            </code>
+                            
+                            
+                            <code id="Issue-Credit-Card6" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.405.001",
+            "message": "The method is not allowed for the requested URL.",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                 
+                            </code>
+                             
+                            
+                            <code id="Issue-Credit-Card7" style=" display: none; "class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.406.001",
+            "message": "An appropriate representation of the requested resource could not be found",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }       
+                            </code>
+                             
+                            
+                            <code id="Issue-Credit-Card8" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.429.001",
+            "message": "Assembly Rate Limit exceeded",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }     
+                            </code>
+                            
+                            
+                            <code id="Issue-Credit-Card9" style=" display: none; " class="text">
+        {
+        "errors": [
+            {
+            "code": "ERROR.500.001",
+            "message": "Internal Error",
+            "url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }    
+                            </code>
+                                  </pre>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

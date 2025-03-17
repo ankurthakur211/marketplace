@@ -1,0 +1,1582 @@
+{
+	"info": {
+		"_postman_id": "9341bc2d-d656-45bf-8eb9-e1d378632022",
+		"name": "Advance Salary Financing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29982339"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/oauth2security/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Advanced Salary",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "123",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1150440754\",\n    \"idExpiryDate\": \"2025-02-02\",\n    \"idIssueDate\": \"2020-02-02\",\n    \"arbCIC\": \"0000000014055511\",\n    \"email\": \"OB3088q@hotfa1il.com\",\n    \"mobile\": \"966595268770\",\n    \"nationality\": \"113\",\n    \"dateOfBirth\": \"1994-08-12\",\n    \"gender\": \"M\",\n    \"firstNameEN\": \"Ahmad\",\n    \"firstNameAR\": \"أحمد\",\n    \"fatherNameEN\": \"Ahmad\",\n    \"fatherNameAR\": \"أحمد\",\n    \"familyNameEN\": \"alsalloum\",\n    \"familyNameAR\": \"السلوم\",\n    \"maritalStatus\": \"SINGLE\",\n    \"dependantCount\": \"0\",\n    \"preferredLanguage\": \"EN\",\n    \"address\": {\n        \"latlng\": \"35\",\n        \"buildingNumber\": \"3223\",\n        \"streetName\": \"Amer Bin Al Munthir\",\n        \"district\": \"Al Hamadaniyah Dist.\",\n        \"city\": \"3\",\n        \"additionalNumber\": \"22444\",\n        \"region\": \"1\",\n        \"unitNumber\": \"12345\"\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/registration/customers/CreateCustomer",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"advance-salary",
+								"v1",
+								"registration",
+								"customers",
+								"CreateCustomer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "123",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440754\",\n    \"idExpiryDate\": \"2025-02-02\",\n    \"idIssueDate\": \"2020-02-02\",\n    \"arbCIC\": \"0000000014055511\",\n    \"email\": \"OB3088q@hotfa1il.com\",\n    \"mobile\": \"966595268770\",\n    \"nationality\": \"113\",\n    \"dateOfBirth\": \"1994-08-12\",\n    \"gender\": \"M\",\n    \"firstNameEN\": \"Ahmad\",\n    \"firstNameAR\": \"أحمد\",\n    \"fatherNameEN\": \"Ahmad\",\n    \"fatherNameAR\": \"أحمد\",\n    \"familyNameEN\": \"alsalloum\",\n    \"familyNameAR\": \"السلوم\",\n    \"maritalStatus\": \"SINGLE\",\n    \"dependantCount\": \"0\",\n    \"preferredLanguage\": \"EN\",\n    \"address\": {\n        \"latlng\": \"35\",\n        \"buildingNumber\": \"3223\",\n        \"streetName\": \"Amer Bin Al Munthir\",\n        \"district\": \"Al Hamadaniyah Dist.\",\n        \"city\": \"3\",\n        \"additionalNumber\": \"22444\",\n        \"region\": \"1\",\n        \"unitNumber\": \"12345\"\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/registration/customers/CreateCustomer",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"advance-salary",
+										"v1",
+										"registration",
+										"customers",
+										"CreateCustomer"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 22 Aug 2024 12:13:31 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=c5a72722ef23af2ef262e9239fd3b9b7; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "58f2380a66c72b6a00009120"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c0f4b9b3-b5f7-4553-8bd4-c7d0e074e264"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Get Basic Eligibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "123",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productCode\": \"ADSAL\", \n    \"nid\": \"1150440754\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/BasicEligibility",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"advance-salary",
+								"v1",
+								"integration",
+								"loans",
+								"BasicEligibility"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Basic Eligibility",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "123",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productCode\": \"ADSAL\", \n    \"nid\": \"1150440754\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/BasicEligibility",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"advance-salary",
+										"v1",
+										"integration",
+										"loans",
+										"BasicEligibility"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 22 Aug 2024 12:11:12 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=c5a72722ef23af2ef262e9239fd3b9b7; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "58f2380a66c72ae000006451"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "22f73f23-6f42-48df-bb48-059a0450d4b4"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reason\": [\n        {\n            \"code\": \"7083\",\n            \"description\": \"Sorry, you're not eligible to apply for this product. you must have an active loan in Emkan or Alrajhi bank\"\n        }\n    ],\n    \"transactionId\": null,\n    \"paidPercentage\": 0,\n    \"paidAmount\": 0,\n    \"proceedFlag\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Set Loan Declaration Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Correlation-ID",
+								"value": "123",
+								"description": "(Required) could be EN for english  or AR for Arabic",
+								"type": "text"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) A unique number for tracking",
+								"type": "text"
+							},
+							{
+								"key": "CHN",
+								"value": "ARB",
+								"type": "text"
+							},
+							{
+								"key": "SUB-CHN",
+								"value": "marketplace_apis",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1150440756\",\n    \"declaration\": {\n        \"purposeOfFinance\": \"PRRPVEH\",\n        \"familySize\": \"1\",\n        \"familyWithEducationFees\": \"0\",\n        \"housingType\": \"RENTH\",\n        \"workingStatus\": \"SAL\",\n        \"martialStatus\": \"MARRIED\"\n    },\n    \"expenses\": {\n        \"housing\": \"0\",\n        \"expatFees\": \"0\",\n        \"foodBeverage\": \"0\",\n        \"tution\": \"0\",\n        \"healthInsurance\": \"0\",\n        \"transportation\": \"10000\",\n        \"totalObligations\": \"1555\"\n    },\n    \"employment\": {\n        \"sectorId\": \"GOV\",\n        \"departmentID\": \"AGN00007\"\n    },\n    \"wage\": {\n        \"basic\": \"5003\",\n        \"housing\": \"5004\",\n        \"otherAllowance\": \"5005\"\n    },\n    \"customerWage\": {},\n    \"employerName\": \"salma\",\n    \"dateOfJoining\": \"2024-01-01\",\n    \"employmentStatus\": \"salma\",\n    \"militaryRank\": \"JUNDI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/applications/SetDeclaration",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"advance-salary",
+								"v1",
+								"integration",
+								"loans",
+								"applications",
+								"SetDeclaration"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Set Loan Declaration Info",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Correlation-ID",
+										"value": "123",
+										"description": "(Required) could be EN for english  or AR for Arabic",
+										"type": "text"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) A unique number for tracking",
+										"type": "text"
+									},
+									{
+										"key": "CHN",
+										"value": "ARB",
+										"type": "text"
+									},
+									{
+										"key": "SUB-CHN",
+										"value": "marketplace_apis",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440756\",\n    \"declaration\": {\n        \"purposeOfFinance\": \"PRRPVEH\",\n        \"familySize\": \"1\",\n        \"familyWithEducationFees\": \"0\",\n        \"housingType\": \"RENTH\",\n        \"workingStatus\": \"SAL\",\n        \"martialStatus\": \"MARRIED\"\n    },\n    \"expenses\": {\n        \"housing\": \"0\",\n        \"expatFees\": \"0\",\n        \"foodBeverage\": \"0\",\n        \"tution\": \"0\",\n        \"healthInsurance\": \"0\",\n        \"transportation\": \"10000\",\n        \"totalObligations\": \"1555\"\n    },\n    \"employment\": {\n        \"sectorId\": \"GOV\",\n        \"departmentID\": \"AGN00007\"\n    },\n    \"wage\": {\n        \"basic\": \"5003\",\n        \"housing\": \"5004\",\n        \"otherAllowance\": \"5005\"\n    },\n    \"customerWage\": {},\n    \"employerName\": \"salma\",\n    \"dateOfJoining\": \"2024-01-01\",\n    \"employmentStatus\": \"salma\",\n    \"militaryRank\": \"JUNDI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/applications/SetDeclaration",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"advance-salary",
+										"v1",
+										"integration",
+										"loans",
+										"applications",
+										"SetDeclaration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 03 Oct 2024 09:13:17 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=a9385ad3df38c3950949a65af4064c38; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "36972ec066fe602d00073142"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d0a3ed32-3351-4e05-8e1f-6a679330e9ae"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productId\": \"APL\",\n    \"subProductId\": \"Topup\",\n    \"packageId\": 379,\n    \"schemeId\": 465,\n    \"offerAmount\": 1500000,\n    \"tenure\": 60,\n    \"apr\": 17.29,\n    \"installmentAmount\": 36562.5\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Loan Declaration Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Correlation-ID",
+								"value": "123",
+								"description": "(Required) could be EN for english  or AR for Arabic",
+								"type": "text"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) A unique number for tracking",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1150440754\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/applications/GetDeclaration",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"advance-salary",
+								"v1",
+								"integration",
+								"loans",
+								"applications",
+								"GetDeclaration"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Loan Declaration Info",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Correlation-ID",
+										"value": "123",
+										"description": "(Required) could be EN for english  or AR for Arabic",
+										"type": "text"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) A unique number for tracking",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440754\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/applications/GetDeclaration",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"advance-salary",
+										"v1",
+										"integration",
+										"loans",
+										"applications",
+										"GetDeclaration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 22 Aug 2024 12:13:51 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=c5a72722ef23af2ef262e9239fd3b9b7; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "58f2380a66c72b7f00009140"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "971ac0a5-b72d-4f15-8ca8-4980cc7fcebc"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"purposeOfFinance\": \"PRRPVEH\",\n    \"familySize\": \"0\",\n    \"familyWithEducationFees\": \"0\",\n    \"housingType\": \"RENTH\",\n    \"workingStatus\": \"SAL\",\n    \"martialStatus\": \"MARRIED\",\n    \"expenses\": {\n        \"housing\": 0,\n        \"expatFees\": 0,\n        \"foodBeverage\": 0,\n        \"tution\": 0,\n        \"healthInsurance\": 0,\n        \"transportation\": 10000,\n        \"totalAdditionalExpenses\": 0,\n        \"totalObligations\": null,\n        \"hasOtherLoans\": false\n    },\n    \"employment\": {\n        \"sectorId\": \"GOV\",\n        \"departmentID\": \"AGN00007\",\n        \"employerName\": \"salma\",\n        \"employmentStatus\": null,\n        \"dateOfJoining\": \"29/04/2023\",\n        \"militaryRank\": \"JUNDI\",\n        \"wage\": null,\n        \"customerWage\": {\n            \"basic\": 0,\n            \"housing\": 0,\n            \"otherAllowance\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Generate OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"strictSSL": false,
+						"followRedirects": true,
+						"disableUrlEncoding": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Correlation-ID",
+								"value": "1234"
+							},
+							{
+								"key": "LNG",
+								"value": "EN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\":\"1150440756\",\n    \"serviceId\":\"CREATEAPP\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/registration/otp/generate",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"advance-salary",
+								"v1",
+								"registration",
+								"otp",
+								"generate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Generate OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Correlation-ID",
+										"value": "1234"
+									},
+									{
+										"key": "LNG",
+										"value": "EN"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\":\"1150440756\",\n    \"serviceId\":\"CREATEAPP\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/registration/otp/generate",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"advance-salary",
+										"v1",
+										"registration",
+										"otp",
+										"generate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 22 Aug 2024 13:13:46 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=c5a72722ef23af2ef262e9239fd3b9b7; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "04ee24c766c7398a000096f0"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ba8dddc0-ae8a-404a-81a1-6d010fb7f169"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": \"200\",\n    \"requestId\": \"efcf853d-8c3a-4620-a0ed-f484bdee8dc1\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Loan Application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "123",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "OTP",
+								"value": "1234",
+								"description": "(Required) generated OTP to be validated"
+							},
+							{
+								"key": "transactionId",
+								"value": "823daceb-09aa-4457-a186-2bb8200e70b6",
+								"description": "(Required) generated OTP transaction id to be validated"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1150440754\",\n    \"emkanProduct\": \"advanceSalary\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/applications/CreateApplication",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"advance-salary",
+								"v1",
+								"integration",
+								"loans",
+								"applications",
+								"CreateApplication"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Loan Application",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "123",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "OTP",
+										"value": "1234",
+										"description": "(Required) generated OTP to be validated"
+									},
+									{
+										"key": "transactionId",
+										"value": "823daceb-09aa-4457-a186-2bb8200e70b6",
+										"description": "(Required) generated OTP transaction id to be validated"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440754\",\n    \"emkanProduct\": \"advanceSalary\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/applications/CreateApplication",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"advance-salary",
+										"v1",
+										"integration",
+										"loans",
+										"applications",
+										"CreateApplication"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 22 Aug 2024 12:14:14 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=c5a72722ef23af2ef262e9239fd3b9b7; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "58f2380a66c72b9600009160"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "929796c5-669e-4c3b-afcf-7bf4e33849ed"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,89;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"compApplId\": \"12788584\",\n    \"customerId\": \"12320043\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Applications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "LNG",
+								"value": "EN",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "123",
+								"description": "(Required) A unique number for tracking"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nid\": \"1150440754\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/applications/GetApplication",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"advance-salary",
+								"v1",
+								"integration",
+								"loans",
+								"applications",
+								"GetApplication"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Applications",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "LNG",
+										"value": "EN",
+										"description": "(Required) could be EN for english  or AR for Arabic"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "123",
+										"description": "(Required) A unique number for tracking"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nid\": \"1150440754\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/advance-salary/v1/integration/loans/applications/GetApplication",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"advance-salary",
+										"v1",
+										"integration",
+										"loans",
+										"applications",
+										"GetApplication"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 22 Aug 2024 12:14:23 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=c5a72722ef23af2ef262e9239fd3b9b7; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "36972ec066c72b9f000558a2"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8684dc92-9c71-4992-948b-bf45771fbd40"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,88;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"applications\": [\n        {\n            \"applicationId\": \"12788584\",\n            \"compApplId\": \"12788584\",\n            \"stage\": \"CRE\",\n            \"product\": \"APL\",\n            \"subProduct\": \"Refintop\",\n            \"emkanProduct\": \"refinanceTopup\",\n            \"totalFinancedAmount\": null,\n            \"amountRemaining\": null,\n            \"installmentAmount\": null,\n            \"lastInstallmentDate\": null,\n            \"nextInstallmentDue\": null,\n            \"source\": \"2.0\",\n            \"digitalApp\": null,\n            \"status\": \"PENDING\",\n            \"substage\": null,\n            \"installmentRemainDuration\": null,\n            \"remainingInstallmentNumber\": 0,\n            \"reasons\": [\n                {\n                    \"reasonCode\": null,\n                    \"reasonMsg\": null\n                }\n            ],\n            \"merchantId\": null,\n            \"amount\": 1500000,\n            \"merchantName\": null,\n            \"eligibleForRefinance\": false,\n            \"loannumber\": null,\n            \"subsourcingChannel\": null,\n            \"isHidden\": false\n        },\n        {\n            \"applicationId\": \"640692\",\n            \"compApplId\": \"640692\",\n            \"stage\": \"PAL\",\n            \"product\": \"APL\",\n            \"subProduct\": \"Topup\",\n            \"emkanProduct\": \"topupFinance\",\n            \"totalFinancedAmount\": 120.66,\n            \"amountRemaining\": 54.32,\n            \"installmentAmount\": 2.01,\n            \"lastInstallmentDate\": \"27/04/2026\",\n            \"nextInstallmentDue\": \"27/07/2024\",\n            \"source\": \"2.0\",\n            \"digitalApp\": null,\n            \"status\": \"ONGOING\",\n            \"substage\": null,\n            \"installmentRemainDuration\": -22,\n            \"remainingInstallmentNumber\": 6,\n            \"reasons\": [\n                {\n                    \"reasonCode\": null,\n                    \"reasonMsg\": null\n                }\n            ],\n            \"merchantId\": null,\n            \"amount\": 1500000,\n            \"merchantName\": null,\n            \"eligibleForRefinance\": true,\n            \"loannumber\": \"APL3413453\",\n            \"subsourcingChannel\": null,\n            \"isHidden\": false\n        },\n        {\n            \"applicationId\": null,\n            \"compApplId\": null,\n            \"stage\": \"CURRENT\",\n            \"product\": null,\n            \"subProduct\": null,\n            \"emkanProduct\": \"BNPL\",\n            \"totalFinancedAmount\": 100000,\n            \"amountRemaining\": 100000,\n            \"installmentAmount\": 8300,\n            \"lastInstallmentDate\": \"20240325\",\n            \"nextInstallmentDue\": null,\n            \"source\": null,\n            \"digitalApp\": null,\n            \"status\": \"CURRENT\",\n            \"substage\": null,\n            \"installmentRemainDuration\": null,\n            \"remainingInstallmentNumber\": 8,\n            \"reasons\": null,\n            \"merchantId\": null,\n            \"amount\": 0,\n            \"merchantName\": null,\n            \"eligibleForRefinance\": false,\n            \"loannumber\": \"12122D1\",\n            \"subsourcingChannel\": null,\n            \"isHidden\": false\n        },\n        {\n            \"applicationId\": null,\n            \"compApplId\": null,\n            \"stage\": \"AUTH\",\n            \"product\": null,\n            \"subProduct\": null,\n            \"emkanProduct\": \"BNPL\",\n            \"totalFinancedAmount\": 10000,\n            \"amountRemaining\": 10000,\n            \"installmentAmount\": 750,\n            \"lastInstallmentDate\": \"20240325\",\n            \"nextInstallmentDue\": null,\n            \"source\": null,\n            \"digitalApp\": null,\n            \"status\": \"AUTH\",\n            \"substage\": null,\n            \"installmentRemainDuration\": null,\n            \"remainingInstallmentNumber\": 8,\n            \"reasons\": null,\n            \"merchantId\": null,\n            \"amount\": 0,\n            \"merchantName\": null,\n            \"eligibleForRefinance\": false,\n            \"loannumber\": \"12122D1\",\n            \"subsourcingChannel\": null,\n            \"isHidden\": false\n        }\n    ],\n    \"productsList\": [\n        {\n            \"order\": 1,\n            \"code\": \"PF\",\n            \"name_ar\": \"التمويل الشخصي\",\n            \"name_en\": \"Personal Finance\",\n            \"desc_ar\": \"ابدأ طلب التمويل الشخصي وتحقق من أهليتك عبر تجربة رقمية سريعة ومتكاملة!\",\n            \"desc_en\": \"start your personal finance application and check your eligible offer!\"\n        },\n        {\n            \"order\": 2,\n            \"code\": \"REF\",\n            \"name_ar\": \"إعادة تمويل\",\n            \"name_en\": \"Refinance\",\n            \"desc_ar\": \"سدد تمويلك القائم لدى إمكان واحصل على مبلغ تمويل أعلى وفترة سداد جديدة عبر رحلة سريعة ورقمية بالكامل.\",\n            \"desc_en\": \"Pay off your Emkan finance and get an increased finance amount with a new repayment period through a fast and fully digital journey.\"\n        },\n        {\n            \"order\": 3,\n            \"code\": \"BUYOUT\",\n            \"name_ar\": \"سداد المديونية\",\n            \"name_en\": \"BUYOUT\",\n            \"desc_ar\": \"سدد مديونيتك وانضم لنا للاستفادة من هامش ربح منافس عبر تجربة سريعة ورقمية بالكامل.\",\n            \"desc_en\": \"Pay your debts and join us to benefit from a competitive profit margin through a fast and fully digital experience.\"\n        },\n        {\n            \"order\": 5,\n            \"code\": \"RF\",\n            \"name_ar\": \"تمويل المشتريات\",\n            \"name_en\": \"Retail Finance\",\n            \"desc_ar\": \"قسّط مشترياتك بكل سرعة وسهولة لدى شركائنا، بشروط وإجراءات ميسرة من خلال تجربة رقمية بالكامل.\",\n            \"desc_en\": \"Finance your purchases quickly and easily with our partners, with easy terms and procedures through a fully digital experience.\"\n        },\n        {\n            \"order\": 6,\n            \"code\": \"CC\",\n            \"name_ar\": \"البطاقة الإئتمانية\",\n            \"name_en\": \"Credit Card\",\n            \"desc_ar\": \"بطاقة “يو كارد” المميزة تتيح لك شراء كل ما تريد وتقسيط المبلغ بآقساط شهرية ميسرة عبر تجربة رقمية سريعة ومتكاملة.\",\n            \"desc_en\": \"The unique “UCard” card allows you to buy everything you want and pay it back in easy monthly installments through a fast and integrated digital experience.\"\n        },\n        {\n            \"order\": 7,\n            \"code\": \"AL\",\n            \"name_ar\": \"التمويل التأجيري للسيارات\",\n            \"name_en\": \"Autolease\",\n            \"desc_ar\": \" اشترِ سيارتك الجديدة مع امكان من راحة منزلك عبر تجربة رقمية بالكامل\",\n            \"desc_en\": \"Buy your new car with emkan from the comfort of your own home through a fully digital experince.\"\n        }\n    ],\n    \"totalLoans\": 4,\n    \"hiddenFeatures\": null,\n    \"vouchers\": [],\n    \"offers\": [],\n    \"cifid\": \"53044\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get Occupation Address List",
+			"item": [
+				{
+					"name": "Get Occupation List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"description": "(Required) could be EN for english  or AR for Arabic",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "fd7acf70-ea54-11ed-b737-098c44e7f2c8",
+								"type": "text"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/api/v2/applications/getOccupationsList",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"api",
+								"v2",
+								"applications",
+								"getOccupationsList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Occupation List",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json",
+										"description": "(Required) could be EN for english  or AR for Arabic",
+										"type": "text"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "fd7acf70-ea54-11ed-b737-098c44e7f2c8",
+										"type": "text"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/api/v2/applications/getOccupationsList",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"api",
+										"v2",
+										"applications",
+										"getOccupationsList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 22 Aug 2024 11:57:23 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=c5a72722ef23af2ef262e9239fd3b9b7; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66c727a300632593"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d586af3d-a17f-4fe7-9614-b1beeb8aca1e"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"key\": \"1\",\n        \"value\": \"1\",\n        \"label\": \"ACCOUNTANT or Auditor\"\n    },\n    {\n        \"key\": \"2\",\n        \"value\": \"2\",\n        \"label\": \"AMBASSADOR or CONSUL\"\n    },\n    {\n        \"key\": \"3\",\n        \"value\": \"3\",\n        \"label\": \"ATTORNEY AT LAW\"\n    },\n    {\n        \"key\": \"4\",\n        \"value\": \"4\",\n        \"label\": \"CEO\"\n    },\n    {\n        \"key\": \"5\",\n        \"value\": \"5\",\n        \"label\": \"CHAIRMAN OF THE SHURA COUNCIL\"\n    },\n    {\n        \"key\": \"6\",\n        \"value\": \"6\",\n        \"label\": \"DEPUTY AMBASSADOR or CONSUL\"\n    },\n    {\n        \"key\": \"7\",\n        \"value\": \"7\",\n        \"label\": \"GOVERNOR or DEPUTY GOVERNOR\"\n    },\n    {\n        \"key\": \"8\",\n        \"value\": \"8\",\n        \"label\": \"Husband of Saudi Woman\"\n    },\n    {\n        \"key\": \"9\",\n        \"value\": \"9\",\n        \"label\": \"JUDGE\"\n    },\n    {\n        \"key\": \"10\",\n        \"value\": \"10\",\n        \"label\": \"MEMEBER OF THE SHURA COUNCIL\"\n    },\n    {\n        \"key\": \"11\",\n        \"value\": \"11\",\n        \"label\": \"MINISTER or DEPUTY MINISTER\"\n    },\n    {\n        \"key\": \"12\",\n        \"value\": \"12\",\n        \"label\": \"MILITARY\"\n    },\n    {\n        \"key\": \"16\",\n        \"value\": \"16\",\n        \"label\": \"NOTARY PUBLIC\"\n    },\n    {\n        \"key\": \"18\",\n        \"value\": \"18\",\n        \"label\": \"PRINCE\"\n    },\n    {\n        \"key\": \"19\",\n        \"value\": \"19\",\n        \"label\": \"SON OF SAUDI WOMAN\"\n    },\n    {\n        \"key\": \"20\",\n        \"value\": \"20\",\n        \"label\": \"WIFE OF SAUDI MAN\"\n    },\n    {\n        \"key\": \"21\",\n        \"value\": \"21\",\n        \"label\": \"CONTRACTOR\"\n    },\n    {\n        \"key\": \"26\",\n        \"value\": \"26\",\n        \"label\": \"FACULITY MEMBER\"\n    },\n    {\n        \"key\": \"27\",\n        \"value\": \"27\",\n        \"label\": \"INVESTIGATOR\"\n    },\n    {\n        \"key\": \"28\",\n        \"value\": \"28\",\n        \"label\": \"ADVISOR\"\n    },\n    {\n        \"key\": \"29\",\n        \"value\": \"29\",\n        \"label\": \"STUDENT\"\n    },\n    {\n        \"key\": \"30\",\n        \"value\": \"30\",\n        \"label\": \"ENGINEER\"\n    },\n    {\n        \"key\": \"31\",\n        \"value\": \"31\",\n        \"label\": \" TECHNICIAN\"\n    },\n    {\n        \"key\": \"32\",\n        \"value\": \"32\",\n        \"label\": \"CRAFTSMAN\"\n    },\n    {\n        \"key\": \"33\",\n        \"value\": \"33\",\n        \"label\": \"ANNOUNCER\"\n    },\n    {\n        \"key\": \"34\",\n        \"value\": \"34\",\n        \"label\": \"CASHIER\"\n    },\n    {\n        \"key\": \"35\",\n        \"value\": \"35\",\n        \"label\": \"CHEMIST\"\n    },\n    {\n        \"key\": \"36\",\n        \"value\": \"36\",\n        \"label\": \"DRIVER\"\n    },\n    {\n        \"key\": \"37\",\n        \"value\": \"37\",\n        \"label\": \"JOURNALIST\"\n    },\n    {\n        \"key\": \"38\",\n        \"value\": \"38\",\n        \"label\": \"MEDICAL PRACTICIAN\"\n    },\n    {\n        \"key\": \"39\",\n        \"value\": \"39\",\n        \"label\": \"OFFICER\"\n    },\n    {\n        \"key\": \"40\",\n        \"value\": \"40\",\n        \"label\": \"OPERATOR\"\n    },\n    {\n        \"key\": \"41\",\n        \"value\": \"41\",\n        \"label\": \"PHYSICIST\"\n    },\n    {\n        \"key\": \"42\",\n        \"value\": \"42\",\n        \"label\": \"PILOT\"\n    },\n    {\n        \"key\": \"43\",\n        \"value\": \"43\",\n        \"label\": \"PRAYER LEADER OR CRIER\"\n    },\n    {\n        \"key\": \"44\",\n        \"value\": \"44\",\n        \"label\": \"PRIVATE SECURITY\"\n    },\n    {\n        \"key\": \"45\",\n        \"value\": \"45\",\n        \"label\": \"RESTAURANT MANAGER\"\n    },\n    {\n        \"key\": \"46\",\n        \"value\": \"46\",\n        \"label\": \"SALESMAN\"\n    },\n    {\n        \"key\": \"47\",\n        \"value\": \"47\",\n        \"label\": \"SECRETARY\"\n    },\n    {\n        \"key\": \"48\",\n        \"value\": \"48\",\n        \"label\": \"SECURITY\"\n    },\n    {\n        \"key\": \"50\",\n        \"value\": \"50\",\n        \"label\": \"STATISTICIAN\"\n    },\n    {\n        \"key\": \"51\",\n        \"value\": \"51\",\n        \"label\": \"TEACHER\"\n    },\n    {\n        \"key\": \"52\",\n        \"value\": \"52\",\n        \"label\": \"TELLER\"\n    },\n    {\n        \"key\": \"999\",\n        \"value\": \"999\",\n        \"label\": \"Other\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Address List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Correlation-ID",
+								"value": "fd7acf70-ea54-11ed-b737-098c44e7f2c8",
+								"type": "text"
+							},
+							{
+								"key": "LNG",
+								"value": "EN",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pageCode\": \"addInfo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/emkan/api/v2/applications/getAddInfo?LNG=EN",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"emkan",
+								"api",
+								"v2",
+								"applications",
+								"getAddInfo"
+							],
+							"query": [
+								{
+									"key": "LNG",
+									"value": "EN"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Address List",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Correlation-ID",
+										"value": "fd7acf70-ea54-11ed-b737-098c44e7f2c8",
+										"type": "text"
+									},
+									{
+										"key": "LNG",
+										"value": "EN",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pageCode\": \"addInfo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/emkan/api/v2/applications/getAddInfo?LNG=EN",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"emkan",
+										"api",
+										"v2",
+										"applications",
+										"getAddInfo"
+									],
+									"query": [
+										{
+											"key": "LNG",
+											"value": "EN"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 22 Aug 2024 11:57:10 GMT"
+								},
+								{
+									"key": "set-cookie",
+									"value": "0ae8a5c727da4f403686f8e3ca236c16=c5a72722ef23af2ef262e9239fd3b9b7; path=/; HttpOnly"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "ed7e63dc66c72795008eebc1"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "25ec35b3-dbbf-4407-9997-af6e95131ebf"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"purposesOfLoan\": [\n        {\n            \"key\": \"PRRPVEH\",\n            \"value\": \"PRRPVEH\",\n            \"label\": \"Purchasing or Repairing a Vehicle\"\n        },\n        {\n            \"key\": \"HMREN\",\n            \"value\": \"HMREN\",\n            \"label\": \"Home renovation\"\n        },\n        {\n            \"key\": \"WEXP\",\n            \"value\": \"WEXP\",\n            \"label\": \"Wedding expenses\"\n        },\n        {\n            \"key\": \"VACEXP\",\n            \"value\": \"VACEXP\",\n            \"label\": \"Vacation expenses\"\n        },\n        {\n            \"key\": \"EDUEXP\",\n            \"value\": \"EDUEXP\",\n            \"label\": \"Education expenses\"\n        },\n        {\n            \"key\": \"CONGIN\",\n            \"value\": \"CONGIN\",\n            \"label\": \"Consumer goods installments\"\n        },\n        {\n            \"key\": \"MEDTRT\",\n            \"value\": \"MEDTRT\",\n            \"label\": \"Medical treatment\"\n        },\n        {\n            \"key\": \"DBTCON\",\n            \"value\": \"DBTCON\",\n            \"label\": \"Debt Consolidation\"\n        },\n        {\n            \"key\": \"EMRGEXP\",\n            \"value\": \"EMRGEXP\",\n            \"label\": \"Emergency expenses\"\n        },\n        {\n            \"key\": \"OTHP\",\n            \"value\": \"OTHP\",\n            \"label\": \"Others\"\n        }\n    ],\n    \"educationFees\": [\n        {\n            \"key\": \"2533\",\n            \"value\": \"2533\",\n            \"label\": \"0\"\n        },\n        {\n            \"key\": \"254\",\n            \"value\": \"254\",\n            \"label\": \"1\"\n        },\n        {\n            \"key\": \"255\",\n            \"value\": \"255\",\n            \"label\": \"2\"\n        },\n        {\n            \"key\": \"2566\",\n            \"value\": \"2566\",\n            \"label\": \"3\"\n        },\n        {\n            \"key\": \"2577\",\n            \"value\": \"2577\",\n            \"label\": \"4\"\n        },\n        {\n            \"key\": \"2588\",\n            \"value\": \"2588\",\n            \"label\": \"5\"\n        },\n        {\n            \"key\": \"2599\",\n            \"value\": \"2599\",\n            \"label\": \"6\"\n        },\n        {\n            \"key\": \"2600\",\n            \"value\": \"2600\",\n            \"label\": \"7\"\n        },\n        {\n            \"key\": \"2611\",\n            \"value\": \"2611\",\n            \"label\": \"8\"\n        },\n        {\n            \"key\": \"2622\",\n            \"value\": \"2622\",\n            \"label\": \"9\"\n        }\n    ],\n    \"typeOfHousing\": [\n        {\n            \"key\": \"RENTH\",\n            \"value\": \"RENTH\",\n            \"label\": \"House Rent\"\n        },\n        {\n            \"key\": \"HOWN\",\n            \"value\": \"HOWN\",\n            \"label\": \"House Owner\"\n        },\n        {\n            \"key\": \"LIVOTH\",\n            \"value\": \"LIVOTH\",\n            \"label\": \"Lives with other\"\n        },\n        {\n            \"key\": \"EMPLYR\",\n            \"value\": \"EMPLYR\",\n            \"label\": \"Provided by Employer\"\n        },\n        {\n            \"key\": \"OTHRS\",\n            \"value\": \"OTHRS\",\n            \"label\": \"Others\"\n        }\n    ],\n    \"workingStatus\": [\n        {\n            \"key\": \"SAL\",\n            \"value\": \"SAL\",\n            \"label\": \"Salaried\"\n        },\n        {\n            \"key\": \"RTD\",\n            \"value\": \"RTD\",\n            \"label\": \"Pensioner\"\n        },\n        {\n            \"key\": \"STU\",\n            \"value\": \"STU\",\n            \"label\": \"Student\"\n        }\n    ],\n    \"familyMembers\": [\n        {\n            \"key\": \"1\",\n            \"value\": \"1\",\n            \"label\": \"1\"\n        },\n        {\n            \"key\": \"2\",\n            \"value\": \"2\",\n            \"label\": \"2\"\n        },\n        {\n            \"key\": \"3\",\n            \"value\": \"3\",\n            \"label\": \"3\"\n        },\n        {\n            \"key\": \"4\",\n            \"value\": \"4\",\n            \"label\": \"4\"\n        },\n        {\n            \"key\": \"5\",\n            \"value\": \"5\",\n            \"label\": \"5\"\n        },\n        {\n            \"key\": \"6\",\n            \"value\": \"6\",\n            \"label\": \"6\"\n        },\n        {\n            \"key\": \"7\",\n            \"value\": \"7\",\n            \"label\": \"7\"\n        },\n        {\n            \"key\": \"8\",\n            \"value\": \"8\",\n            \"label\": \"8\"\n        },\n        {\n            \"key\": \"9\",\n            \"value\": \"9\",\n            \"label\": \"9\"\n        },\n        {\n            \"key\": \"10\",\n            \"value\": \"10\",\n            \"label\": \"10\"\n        },\n        {\n            \"key\": \"11\",\n            \"value\": \"11\",\n            \"label\": \"11\"\n        },\n        {\n            \"key\": \"12\",\n            \"value\": \"12\",\n            \"label\": \"12\"\n        },\n        {\n            \"key\": \"13\",\n            \"value\": \"13\",\n            \"label\": \"13\"\n        },\n        {\n            \"key\": \"14\",\n            \"value\": \"14\",\n            \"label\": \"14\"\n        },\n        {\n            \"key\": \"15\",\n            \"value\": \"15\",\n            \"label\": \"15\"\n        },\n        {\n            \"key\": \"16\",\n            \"value\": \"16\",\n            \"label\": \"16\"\n        }\n    ],\n    \"maritalStatus\": [\n        {\n            \"key\": \"MARRIED\",\n            \"value\": \"MARRIED\",\n            \"label\": \"Married\"\n        },\n        {\n            \"key\": \"WIDOW\",\n            \"value\": \"WIDOW\",\n            \"label\": \"Widower\"\n        },\n        {\n            \"key\": \"DIVORCED\",\n            \"value\": \"DIVORCED\",\n            \"label\": \"Divorced\"\n        },\n        {\n            \"key\": \"SINGLE\",\n            \"value\": \"SINGLE\",\n            \"label\": \"Single\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client-secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,1552 @@
+{
+	"info": {
+		"_postman_id": "2b1d7a86-f9c4-407c-94d5-960087a50e47",
+		"name": "E-Statements",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29982339"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Cookie",
+								"value": "d70c4b71d548cdbd2b531dc96408ca96=86b7432f4a100650ebec8b640f28a1d6"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/oauth2security/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "E-Statements",
+			"item": [
+				{
+					"name": "Create E-Statements",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"AccountsLinkIds\": [\r\n        \"171468954685818017635396932347\"\r\n    ],\r\n    \"PSUId\": \"1234\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionToTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"financial-statements",
+								"v1",
+								"estatements-request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create E-Statements",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AccountsLinkIds\": [\r\n        \"171468954685818017635396932347\"\r\n    ],\r\n    \"PSUId\": \"1234\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionToTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"estatements-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "7f059f32-222f-4e9c-b80f-bffc5bb13dd5"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14dc000a4e4d0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 07:58:57 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"94\",\n        \"Status\": \"InProgress\",\n        \"EStatements\": [\n            {\n                \"StatementId\": \"181\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"171468954685818017635396932347\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"182\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"171468954685818017635396932347\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"183\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"171468954685818017635396932347\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"171468954685818017635396932347\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Create E-Statements",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AccountsLinkIds\": [\r\n        \"330901325966405398232918138898\"\r\n    ],\r\n    \"PSUId\": \"1234567890\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionToTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"estatements-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "027e7ccf-a1dc-41a1-8486-58e8afb6effd"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14dd800a4e4f0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 07:59:21 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"100\",\n        \"Status\": \"InProgress\",\n        \"EStatements\": [\n            {\n                \"StatementId\": \"190\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"330901325966405398232918138898\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"191\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"330901325966405398232918138898\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"192\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"330901325966405398232918138898\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"330901325966405398232918138898\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Create E-Statements",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AccountsLinkIds\": [\r\n        \"330901325966405398232918138898\"\r\n    ],\r\n    \"PSUId\": \"1234\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionToTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"estatements-request"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "18408235-65ed-49fd-abb3-0954e4de0e7f"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66effc8c0086f431"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Sep 2024 11:16:28 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Errors\": [\n        {\n            \"Code\": \"NTSP.ERROR.400.002\",\n            \"Message\": \"Account Link 330901325966405398232918138898 is not valid for psuId 1234\",\n            \"Url\": \"https://portal-www.apic1012.ejada.com\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Create E-Statement",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AccountsLinkIds\": [\r\n        \"110779714035550993609797183843\"\r\n    ],\r\n    \"PSUId\": \"147852369514783254\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionToTimestamp\": \"2023-11-23T14:25:28.943Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"estatements-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ccfd40a8-8ddf-41a0-a384-4831f0872154"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14df4007a89f1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 07:59:48 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"102\",\n        \"Status\": \"InProgress\",\n        \"EStatements\": [\n            {\n                \"StatementId\": \"193\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"110779714035550993609797183843\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"194\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"110779714035550993609797183843\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"195\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"110779714035550993609797183843\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"110779714035550993609797183843\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Request Details by Request ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request/:RequestId",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"financial-statements",
+								"v1",
+								"estatements-request",
+								":RequestId"
+							],
+							"variable": [
+								{
+									"key": "RequestId",
+									"value": "93"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Request Details by Request ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request/:RequestId",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"estatements-request",
+										":RequestId"
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "93"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c35912e8-cf5d-4c37-9357-7b3e1c49d21f"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e2702122462"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:00:39 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"93\",\n        \"Status\": \"Completed\",\n        \"EStatements\": [\n            {\n                \"StatementId\": \"176\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"a313398d-b1a8-4ea8-8ccf-fd2966b08a93\",\n                \"AccountsLinkId\": \"169290479232337152123533326058\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"StatementId\": \"175\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"39225ad7-7a63-4c92-b1da-b2cf3b5eba5e\",\n                \"AccountsLinkId\": \"169290479232337152123533326058\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"StatementId\": \"180\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"3f7e2e28-9d86-4173-bc57-f89297d57c22\",\n                \"AccountsLinkId\": \"169290479232337152123533326058\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"StatementId\": \"179\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"e0cab2d5-724f-445f-8ca5-0baa75d62298\",\n                \"AccountsLinkId\": \"169290479232337152123533326058\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"StatementId\": \"177\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"77885ba5-a0b2-4d9b-8e77-577d703834a6\",\n                \"AccountsLinkId\": \"169290479232337152123533326058\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"StatementId\": \"178\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"28529b27-fc67-40eb-8030-6690b0af644c\",\n                \"AccountsLinkId\": \"169290479232337152123533326058\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"169290479232337152123533326058\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Request Details by Request ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request/:RequestId",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"estatements-request",
+										":RequestId"
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "94"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b935d749-dd88-4f3d-a167-d9759bc266a6"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e3b00b0e3d3"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:00:59 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"94\",\n        \"Status\": \"Completed\",\n        \"EStatements\": [\n            {\n                \"StatementId\": \"183\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"171468954685818017635396932347\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"181\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"171468954685818017635396932347\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"182\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"171468954685818017635396932347\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"171468954685818017635396932347\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Request Details by Request ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request/:RequestId",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"estatements-request",
+										":RequestId"
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "fae850ca-0e2d-4f46-a4b7-03a5096e55af"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e4502122472"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:01:09 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"100\",\n        \"Status\": \"Completed\",\n        \"EStatements\": [\n            {\n                \"StatementId\": \"192\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"330901325966405398232918138898\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"190\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"330901325966405398232918138898\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"191\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"330901325966405398232918138898\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"330901325966405398232918138898\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Request Details by Request ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/estatements-request/:RequestId",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"estatements-request",
+										":RequestId"
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "102"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c8c23e27-cf9f-44f7-a3c6-5e915fc48717"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e4d02122482"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:01:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"102\",\n        \"Status\": \"Completed\",\n        \"EStatements\": [\n            {\n                \"StatementId\": \"194\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"110779714035550993609797183843\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"193\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"110779714035550993609797183843\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"StatementId\": \"195\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"110779714035550993609797183843\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"110779714035550993609797183843\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get E-Statement by Statement ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"financial-statements",
+								"v1",
+								"e-statements",
+								":EStatementId"
+							],
+							"variable": [
+								{
+									"key": "EStatementId",
+									"value": "183"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get E-Statement by Statement ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"e-statements",
+										":EStatementId"
+									],
+									"variable": [
+										{
+											"key": "EStatementId",
+											"value": "183"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3151398d-02ca-4699-86f7-d10505b8c59c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e6400a4e7e0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:01:40 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"EStatement\": {\n            \"CustomerName\": \"Mitsuhirato\",\n            \"StatementDate\": \"2024-08-27\",\n            \"BankName\": \"SAMA Model Bank\",\n            \"FromAmount\": 5000,\n            \"ToAmount\": 120000,\n            \"FromDate\": \"2023-11-23\",\n            \"ToDate\": \"2023-11-23\",\n            \"AccountCurrency\": \"SAR\",\n            \"OpeningBalance\": 0,\n            \"ClosingBalance\": 0,\n            \"NumberOfWithdraw\": 0,\n            \"TotalOfWithdraw\": 0,\n            \"AccountType\": \"Retail\",\n            \"Transactions\": [],\n            \"IBAN\": \"10000109010105\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Get E-Statement by Statement ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"e-statements",
+										":EStatementId"
+									],
+									"variable": [
+										{
+											"key": "EStatementId",
+											"value": "191"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "6db0f5f0-5664-48b8-ac42-f4418fcecd74"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e6b007a8b81"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:01:48 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"EStatement\": {\n            \"CustomerName\": \"Mitsuhirato\",\n            \"StatementDate\": \"2024-08-27\",\n            \"BankName\": \"SAMA Model Bank\",\n            \"FromAmount\": 5000,\n            \"ToAmount\": 120000,\n            \"FromDate\": \"2023-11-23\",\n            \"ToDate\": \"2023-11-23\",\n            \"AccountCurrency\": \"SAR\",\n            \"OpeningBalance\": 0,\n            \"ClosingBalance\": 0,\n            \"NumberOfWithdraw\": 0,\n            \"TotalOfWithdraw\": 0,\n            \"AccountType\": \"Retail\",\n            \"Transactions\": [],\n            \"IBAN\": \"10000109010103\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Get E-Statement by Statement ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"e-statements",
+										":EStatementId"
+									],
+									"variable": [
+										{
+											"key": "EStatementId",
+											"value": "193"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2bee5979-4685-4466-90fe-c116355f7ff2"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e75007a8ba1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:01:57 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"EStatement\": {\n            \"CustomerName\": \"Mitsuhirato\",\n            \"StatementDate\": \"2024-08-27\",\n            \"BankName\": \"SAMA Model Bank\",\n            \"FromAmount\": 5000,\n            \"ToAmount\": 120000,\n            \"FromDate\": \"2023-11-23\",\n            \"ToDate\": \"2023-11-23\",\n            \"AccountCurrency\": \"SAR\",\n            \"OpeningBalance\": 0,\n            \"ClosingBalance\": 0,\n            \"NumberOfWithdraw\": 0,\n            \"TotalOfWithdraw\": 0,\n            \"AccountType\": \"Retail\",\n            \"Transactions\": [],\n            \"IBAN\": \"10000109010102\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Get E-Statement by Statement ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"e-statements",
+										":EStatementId"
+									],
+									"variable": [
+										{
+											"key": "EStatementId",
+											"value": "195"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5a8262d7-9102-48f8-905c-2f6fb8d5e1c0"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e81007a8bb1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,90;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:02:09 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"EStatement\": {\n            \"CustomerName\": \"Mitsuhirato\",\n            \"StatementDate\": \"2024-08-27\",\n            \"BankName\": \"SAMA Model Bank\",\n            \"FromAmount\": 5000,\n            \"ToAmount\": 120000,\n            \"FromDate\": \"2023-11-23\",\n            \"ToDate\": \"2023-11-23\",\n            \"AccountCurrency\": \"SAR\",\n            \"OpeningBalance\": 0,\n            \"ClosingBalance\": 0,\n            \"NumberOfWithdraw\": 0,\n            \"TotalOfWithdraw\": 0,\n            \"AccountType\": \"Retail\",\n            \"Transactions\": [],\n            \"IBAN\": \"10000109010105\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get E-Statement PDF by Statement ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId/pdf",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"financial-statements",
+								"v1",
+								"e-statements",
+								":EStatementId",
+								"pdf"
+							],
+							"variable": [
+								{
+									"key": "EStatementId",
+									"value": "183"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get E-Statement PDF by Statement ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId/pdf",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"e-statements",
+										":EStatementId",
+										"pdf"
+									],
+									"variable": [
+										{
+											"key": "EStatementId",
+											"value": "183"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d29a8d66-fe0f-4999-baed-831150dbd496"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e9500a4e940"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,89;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:02:30 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"PDF\": \"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+En1SrOy8qTtsMSfZwyZeRRIYlNjuCQoRHfmS5BE+I31Jj+dTyadRL8gZ34RNbKChM1+2PYfXkG+KkATpMCjBTNyTu6V5rX99KxXjAE/kRpWR3k9cOv0ijrsVR2XtHhLUduvlHs5T/jgMff9tDic6elpOWD6f7r/MYQKZW5kc3RyZWFtCmVuZG9iagoxIDAgb2JqCjw8L1RhYnMvUy9Hcm91cDw8L1MvVHJhbnNwYXJlbmN5L1R5cGUvR3JvdXAvQ1MvRGV2aWNlUkdCPj4vQ29udGVudHMgNyAwIFIvVHlwZS9QYWdlL1Jlc291cmNlczw8L0NvbG9yU3BhY2U8PC9DUy9EZXZpY2VSR0I+Pi9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXS9FeHRHU3RhdGU8PC9HUzEgMyAwIFIvR1MyIDQgMCBSPj4vRm9udDw8L0YxIDIgMCBSPj4vWE9iamVjdDw8L2ltZzEgNiAwIFIvaW1nMCA1IDAgUj4+Pj4vUGFyZW50IDggMCBSL01lZGlhQm94WzAgMCA1OTUgODQyXT4+CmVuZG9iago5IDAgb2JqClsxIDAgUi9YWVogMCA4NTIgMF0KZW5kb2JqCjIgMCBvYmoKPDwvU3VidHlwZS9UeXBlMS9UeXBlL0ZvbnQvQmFzZUZvbnQvSGVsdmV0aWNhL0VuY29kaW5nL1dpbkFuc2lFbmNvZGluZz4+CmVuZG9iagozIDAgb2JqCjw8L0NBIDA+PgplbmRvYmoKNCAwIG9iago8PC9DQSAxPj4KZW5kb2JqCjggMCBvYmoKPDwvS2lkc1sxIDAgUl0vVHlwZS9QYWdlcy9Db3VudCAxL0lUWFQoMi4xLjcpPj4KZW5kb2JqCjEwIDAgb2JqCjw8L05hbWVzWyhKUl9QQUdFX0FOQ0hPUl8wXzEpIDkgMCBSXT4+CmVuZG9iagoxMSAwIG9iago8PC9EZXN0cyAxMCAwIFI+PgplbmRvYmoKMTIgMCBvYmoKPDwvTmFtZXMgMTEgMCBSL1R5cGUvQ2F0YWxvZy9QYWdlcyA4IDAgUi9WaWV3ZXJQcmVmZXJlbmNlczw8L1ByaW50U2NhbGluZy9BcHBEZWZhdWx0Pj4+PgplbmRvYmoKMTMgMCBvYmoKPDwvTW9kRGF0ZShEOjIwMjQwODI3MDkzNTU2WikvQ3JlYXRvcihKYXNwZXJSZXBvcnRzIExpYnJhcnkgdmVyc2lvbiA2LjIwLjAtMmJjN2FiNjFjNTZmNDU5ZTgxNzZlYjA1Yzc3MDVlMTQ1Y2Q0MDBhZCkvQ3JlYXRpb25EYXRlKEQ6MjAyNDA4MjcwOTM1NTZaKS9Qcm9kdWNlcihpVGV4dCAyLjEuNyBieSAxVDNYVCk+PgplbmRvYmoKeHJlZgowIDE0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwNjQ0MCAwMDAwMCBuIAowMDAwMDA2Nzg0IDAwMDAwIG4gCjAwMDAwMDY4NzIgMDAwMDAgbiAKMDAwMDAwNjg5NyAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDI0MjcgMDAwMDAgbiAKMDAwMDAwMzc5NSAwMDAwMCBuIAowMDAwMDA2OTIyIDAwMDAwIG4gCjAwMDAwMDY3NDkgMDAwMDAgbiAKMDAwMDAwNjk4NSAwMDAwMCBuIAowMDAwMDA3MDQwIDAwMDAwIG4gCjAwMDAwMDcwNzQgMDAwMDAgbiAKMDAwMDAwNzE3OSAwMDAwMCBuIAp0cmFpbGVyCjw8L0luZm8gMTMgMCBSL0lEIFs8YmY5NjkxNjI4ZDAxYjgyMmYyZGU2OWMzOTgzMDNiYTI+PDEyZTMwMzI1M2E4OGU0MDRjOTc5ODEyODQxM2IzZTY1Pl0vUm9vdCAxMiAwIFIvU2l6ZSAxND4+CnN0YXJ0eHJlZgo3Mzc3CiUlRU9GCg==\"\n    }\n}"
+						},
+						{
+							"name": "Get E-Statement PDF by Statement ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId/pdf",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"e-statements",
+										":EStatementId",
+										"pdf"
+									],
+									"variable": [
+										{
+											"key": "EStatementId",
+											"value": "191"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "125934d1-86df-4c3d-aa13-00b2096add3b"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14e9d00a4e9b0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,88;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:02:37 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"PDF\": \"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T6pXmpWVJ22HJf48Y8jMo0ASmxrDJUEhujNfgiTCb6w3+el8Mukk+gU584uokRUkbPbDtv/wCvJVAZogBR4tmJFzcq80r+2nZ71iDPiJ1LA6yuuBW6dX1GGv6rikxVuK2n6l3Mt5wgePue+nxeFMT0/LAdP/A1yZMYIKZW5kc3RyZWFtCmVuZG9iagoxIDAgb2JqCjw8L1RhYnMvUy9Hcm91cDw8L1MvVHJhbnNwYXJlbmN5L1R5cGUvR3JvdXAvQ1MvRGV2aWNlUkdCPj4vQ29udGVudHMgNyAwIFIvVHlwZS9QYWdlL1Jlc291cmNlczw8L0NvbG9yU3BhY2U8PC9DUy9EZXZpY2VSR0I+Pi9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXS9FeHRHU3RhdGU8PC9HUzEgMyAwIFIvR1MyIDQgMCBSPj4vRm9udDw8L0YxIDIgMCBSPj4vWE9iamVjdDw8L2ltZzEgNiAwIFIvaW1nMCA1IDAgUj4+Pj4vUGFyZW50IDggMCBSL01lZGlhQm94WzAgMCA1OTUgODQyXT4+CmVuZG9iago5IDAgb2JqClsxIDAgUi9YWVogMCA4NTIgMF0KZW5kb2JqCjIgMCBvYmoKPDwvU3VidHlwZS9UeXBlMS9UeXBlL0ZvbnQvQmFzZUZvbnQvSGVsdmV0aWNhL0VuY29kaW5nL1dpbkFuc2lFbmNvZGluZz4+CmVuZG9iagozIDAgb2JqCjw8L0NBIDA+PgplbmRvYmoKNCAwIG9iago8PC9DQSAxPj4KZW5kb2JqCjggMCBvYmoKPDwvS2lkc1sxIDAgUl0vVHlwZS9QYWdlcy9Db3VudCAxL0lUWFQoMi4xLjcpPj4KZW5kb2JqCjEwIDAgb2JqCjw8L05hbWVzWyhKUl9QQUdFX0FOQ0hPUl8wXzEpIDkgMCBSXT4+CmVuZG9iagoxMSAwIG9iago8PC9EZXN0cyAxMCAwIFI+PgplbmRvYmoKMTIgMCBvYmoKPDwvTmFtZXMgMTEgMCBSL1R5cGUvQ2F0YWxvZy9QYWdlcyA4IDAgUi9WaWV3ZXJQcmVmZXJlbmNlczw8L1ByaW50U2NhbGluZy9BcHBEZWZhdWx0Pj4+PgplbmRvYmoKMTMgMCBvYmoKPDwvTW9kRGF0ZShEOjIwMjQwODI3MDkzOTUxWikvQ3JlYXRvcihKYXNwZXJSZXBvcnRzIExpYnJhcnkgdmVyc2lvbiA2LjIwLjAtMmJjN2FiNjFjNTZmNDU5ZTgxNzZlYjA1Yzc3MDVlMTQ1Y2Q0MDBhZCkvQ3JlYXRpb25EYXRlKEQ6MjAyNDA4MjcwOTM5NTFaKS9Qcm9kdWNlcihpVGV4dCAyLjEuNyBieSAxVDNYVCk+PgplbmRvYmoKeHJlZgowIDE0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwNjQ0MCAwMDAwMCBuIAowMDAwMDA2Nzg0IDAwMDAwIG4gCjAwMDAwMDY4NzIgMDAwMDAgbiAKMDAwMDAwNjg5NyAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDI0MjcgMDAwMDAgbiAKMDAwMDAwMzc5NSAwMDAwMCBuIAowMDAwMDA2OTIyIDAwMDAwIG4gCjAwMDAwMDY3NDkgMDAwMDAgbiAKMDAwMDAwNjk4NSAwMDAwMCBuIAowMDAwMDA3MDQwIDAwMDAwIG4gCjAwMDAwMDcwNzQgMDAwMDAgbiAKMDAwMDAwNzE3OSAwMDAwMCBuIAp0cmFpbGVyCjw8L0luZm8gMTMgMCBSL0lEIFs8MDg0NTZjODRjMTMyMTMyZjA3YTgzMDViMTIwNjY5OGE+PGEyZmNkNWI3Yjk2YmUyMDc3MWYxYTIzMTFmYmQ0NzhiPl0vUm9vdCAxMiAwIFIvU2l6ZSAxND4+CnN0YXJ0eHJlZgo3Mzc3CiUlRU9GCg==\"\n    }\n}"
+						},
+						{
+							"name": "Get E-Statement PDF by Statement ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId/pdf",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"e-statements",
+										":EStatementId",
+										"pdf"
+									],
+									"variable": [
+										{
+											"key": "EStatementId",
+											"value": "193"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "a98a6933-a3aa-4e79-a60c-4b88ac24591c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14ea2007a8bf1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,87;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:02:43 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"PDF\": \"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+En1SrOy8qTtsMSfZwyZeRRIYlNjuCQoRHfmS5BE+I31Jj+dTyadRL8gZ34RNbKChM1+2PYfXkG+KkATpMCjBTNyTu6V5rX99KxXjAE/kRpWR3k9cOv0ijrsVR2XtHhLUduvlHs5T/jgMff9tDic6elpOWD6fy1mMYEKZW5kc3RyZWFtCmVuZG9iagoxIDAgb2JqCjw8L1RhYnMvUy9Hcm91cDw8L1MvVHJhbnNwYXJlbmN5L1R5cGUvR3JvdXAvQ1MvRGV2aWNlUkdCPj4vQ29udGVudHMgNyAwIFIvVHlwZS9QYWdlL1Jlc291cmNlczw8L0NvbG9yU3BhY2U8PC9DUy9EZXZpY2VSR0I+Pi9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXS9FeHRHU3RhdGU8PC9HUzEgMyAwIFIvR1MyIDQgMCBSPj4vRm9udDw8L0YxIDIgMCBSPj4vWE9iamVjdDw8L2ltZzEgNiAwIFIvaW1nMCA1IDAgUj4+Pj4vUGFyZW50IDggMCBSL01lZGlhQm94WzAgMCA1OTUgODQyXT4+CmVuZG9iago5IDAgb2JqClsxIDAgUi9YWVogMCA4NTIgMF0KZW5kb2JqCjIgMCBvYmoKPDwvU3VidHlwZS9UeXBlMS9UeXBlL0ZvbnQvQmFzZUZvbnQvSGVsdmV0aWNhL0VuY29kaW5nL1dpbkFuc2lFbmNvZGluZz4+CmVuZG9iago0IDAgb2JqCjw8L0NBIDE+PgplbmRvYmoKMyAwIG9iago8PC9DQSAwPj4KZW5kb2JqCjggMCBvYmoKPDwvS2lkc1sxIDAgUl0vVHlwZS9QYWdlcy9Db3VudCAxL0lUWFQoMi4xLjcpPj4KZW5kb2JqCjEwIDAgb2JqCjw8L05hbWVzWyhKUl9QQUdFX0FOQ0hPUl8wXzEpIDkgMCBSXT4+CmVuZG9iagoxMSAwIG9iago8PC9EZXN0cyAxMCAwIFI+PgplbmRvYmoKMTIgMCBvYmoKPDwvTmFtZXMgMTEgMCBSL1R5cGUvQ2F0YWxvZy9QYWdlcyA4IDAgUi9WaWV3ZXJQcmVmZXJlbmNlczw8L1ByaW50U2NhbGluZy9BcHBEZWZhdWx0Pj4+PgplbmRvYmoKMTMgMCBvYmoKPDwvTW9kRGF0ZShEOjIwMjQwODI3MDk0MDEzWikvQ3JlYXRvcihKYXNwZXJSZXBvcnRzIExpYnJhcnkgdmVyc2lvbiA2LjIwLjAtMmJjN2FiNjFjNTZmNDU5ZTgxNzZlYjA1Yzc3MDVlMTQ1Y2Q0MDBhZCkvQ3JlYXRpb25EYXRlKEQ6MjAyNDA4MjcwOTQwMTNaKS9Qcm9kdWNlcihpVGV4dCAyLjEuNyBieSAxVDNYVCk+PgplbmRvYmoKeHJlZgowIDE0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwNjQ0MCAwMDAwMCBuIAowMDAwMDA2Nzg0IDAwMDAwIG4gCjAwMDAwMDY4OTcgMDAwMDAgbiAKMDAwMDAwNjg3MiAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDI0MjcgMDAwMDAgbiAKMDAwMDAwMzc5NSAwMDAwMCBuIAowMDAwMDA2OTIyIDAwMDAwIG4gCjAwMDAwMDY3NDkgMDAwMDAgbiAKMDAwMDAwNjk4NSAwMDAwMCBuIAowMDAwMDA3MDQwIDAwMDAwIG4gCjAwMDAwMDcwNzQgMDAwMDAgbiAKMDAwMDAwNzE3OSAwMDAwMCBuIAp0cmFpbGVyCjw8L0luZm8gMTMgMCBSL0lEIFs8NWZmZWQzODgwZWM3NDg0ODlkZjA1Y2VjNDE2NzUwZWQ+PDk2NjhhNmM4ZDZiMDE0Y2JhYmVhYzVlMmZkMDY0MzEwPl0vUm9vdCAxMiAwIFIvU2l6ZSAxND4+CnN0YXJ0eHJlZgo3Mzc3CiUlRU9GCg==\"\n    }\n}"
+						},
+						{
+							"name": "Get E-Statement PDF by Statement ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/financial-statements/v1/e-statements/:EStatementId/pdf",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"financial-statements",
+										"v1",
+										"e-statements",
+										":EStatementId",
+										"pdf"
+									],
+									"variable": [
+										{
+											"key": "EStatementId",
+											"value": "195"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c75e0128-0dd8-443a-9462-547fea0d5dba"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66e14ed0007a8c21"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,85;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Sep 2024 08:03:28 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"PDF\": \"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+En1SrOy8qTtsMSfZwyZeRRIYlNjuCQoRHfmS5BE+I31Jj+dTyadRL8gZ34RNbKChM1+2PYfXkG+KkATpMCjBTNyTu6V5rX99KxXjAE/kRpWR3k9cOv0ijrsVR2XtHhLUduvlHs5T/jgMff9tDic6elpOWD6f7r/MYQKZW5kc3RyZWFtCmVuZG9iagoxIDAgb2JqCjw8L1RhYnMvUy9Hcm91cDw8L1MvVHJhbnNwYXJlbmN5L1R5cGUvR3JvdXAvQ1MvRGV2aWNlUkdCPj4vQ29udGVudHMgNyAwIFIvVHlwZS9QYWdlL1Jlc291cmNlczw8L0NvbG9yU3BhY2U8PC9DUy9EZXZpY2VSR0I+Pi9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXS9FeHRHU3RhdGU8PC9HUzEgMyAwIFIvR1MyIDQgMCBSPj4vRm9udDw8L0YxIDIgMCBSPj4vWE9iamVjdDw8L2ltZzEgNiAwIFIvaW1nMCA1IDAgUj4+Pj4vUGFyZW50IDggMCBSL01lZGlhQm94WzAgMCA1OTUgODQyXT4+CmVuZG9iago5IDAgb2JqClsxIDAgUi9YWVogMCA4NTIgMF0KZW5kb2JqCjIgMCBvYmoKPDwvU3VidHlwZS9UeXBlMS9UeXBlL0ZvbnQvQmFzZUZvbnQvSGVsdmV0aWNhL0VuY29kaW5nL1dpbkFuc2lFbmNvZGluZz4+CmVuZG9iagozIDAgb2JqCjw8L0NBIDA+PgplbmRvYmoKNCAwIG9iago8PC9DQSAxPj4KZW5kb2JqCjggMCBvYmoKPDwvS2lkc1sxIDAgUl0vVHlwZS9QYWdlcy9Db3VudCAxL0lUWFQoMi4xLjcpPj4KZW5kb2JqCjEwIDAgb2JqCjw8L05hbWVzWyhKUl9QQUdFX0FOQ0hPUl8wXzEpIDkgMCBSXT4+CmVuZG9iagoxMSAwIG9iago8PC9EZXN0cyAxMCAwIFI+PgplbmRvYmoKMTIgMCBvYmoKPDwvTmFtZXMgMTEgMCBSL1R5cGUvQ2F0YWxvZy9QYWdlcyA4IDAgUi9WaWV3ZXJQcmVmZXJlbmNlczw8L1ByaW50U2NhbGluZy9BcHBEZWZhdWx0Pj4+PgplbmRvYmoKMTMgMCBvYmoKPDwvTW9kRGF0ZShEOjIwMjQwODI3MDk0MDI0WikvQ3JlYXRvcihKYXNwZXJSZXBvcnRzIExpYnJhcnkgdmVyc2lvbiA2LjIwLjAtMmJjN2FiNjFjNTZmNDU5ZTgxNzZlYjA1Yzc3MDVlMTQ1Y2Q0MDBhZCkvQ3JlYXRpb25EYXRlKEQ6MjAyNDA4MjcwOTQwMjRaKS9Qcm9kdWNlcihpVGV4dCAyLjEuNyBieSAxVDNYVCk+PgplbmRvYmoKeHJlZgowIDE0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwNjQ0MCAwMDAwMCBuIAowMDAwMDA2Nzg0IDAwMDAwIG4gCjAwMDAwMDY4NzIgMDAwMDAgbiAKMDAwMDAwNjg5NyAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDI0MjcgMDAwMDAgbiAKMDAwMDAwMzc5NSAwMDAwMCBuIAowMDAwMDA2OTIyIDAwMDAwIG4gCjAwMDAwMDY3NDkgMDAwMDAgbiAKMDAwMDAwNjk4NSAwMDAwMCBuIAowMDAwMDA3MDQwIDAwMDAwIG4gCjAwMDAwMDcwNzQgMDAwMDAgbiAKMDAwMDAwNzE3OSAwMDAwMCBuIAp0cmFpbGVyCjw8L0luZm8gMTMgMCBSL0lEIFs8OTRhYTcyMGYxMmQyMWRmNDg0YTUxM2RhNWNkNTdiMmU+PDc1ZjE1YzczNmNkYTZmNGIxYzk2OTY0ZDkyZDEwYWVjPl0vUm9vdCAxMiAwIFIvU2l6ZSAxND4+CnN0YXJ0eHJlZgo3Mzc3CiUlRU9GCg==\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
