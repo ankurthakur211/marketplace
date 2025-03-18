@@ -17310,11 +17310,11 @@ div#edit-actions button {
     height: 84px;
     font-style: normal;
     font-weight: 700;
-    font-size: 60px;
-    line-height: 84px;
+    font-size: 47px;
+    line-height: 63px;
     color: #11183b;
     text-align: center;
-    padding-left: 75px;
+    padding-left: 102px;
     margin-bottom: 20px;
 }
 
@@ -17344,7 +17344,7 @@ form#contact-message-feedback-form {
 
 form#contact-message-feedback-form {
     padding-left: 8rem;
-    padding-top: 8rem;
+    padding-top: 5rem;
     padding-bottom: 8rem;
     font-family: 'Inter';
     font-style: normal;
@@ -17430,33 +17430,54 @@ form#contact-message-feedback-form textarea#edit-message-0-value {
     background-position: center center;
     background-repeat: no-repeat;
     content: "";
-    transform: translate(-7%, 20%);
+    /* transform: translate(0%, 11%); */
     width: 100%;
     min-height: 625px;
+}
+
+form#contact-message-feedback-form {
+    margin-right: 50px;
 }
 
 @media (max-width: 1200px) {
     #contact-feedback-form {
         display: flex;
-        flex-direction: column;
-        padding-top: 5rem;
+        flex-direction: column-reverse;
+        padding-top: unset;
         position: relative;
         align-items: center;
         justify-content: space-between;
     }
+    #contact-feedback-form {
+        gap: unset;
+    }
     #contact-feedback-heading {
         padding-left: unset;
         padding-top: 1rem;
+        padding: 1rem 2rem;
     }
     #contact-feedback-form::after {
         transform: none;
     }
     form#contact-message-feedback-form {
-        padding-bottom: unset;
+        padding-bottom: 5rem;
         padding-left: unset;
+        padding-top: unset;
     }
     #contact-feedback-form::after {
         width: 100%;
+        min-height: 390px;
+    }
+    #contact-feedback-heading {
+        position: relative !important;
+        order: 3;
+    }
+    #contact-feedback-form::after {
+        position: relative;
+        order: 2;
+    }
+    form#contact-message-feedback-form {
+        order: 0;
     }
 }
 
@@ -17464,6 +17485,10 @@ form#contact-message-feedback-form textarea#edit-message-0-value {
     #contact-feedback-heading {
         font-size: 43px;
         line-height: 108px;
+        padding: 1rem 2rem;
+    }
+    #contact-feedback-form::after {
+        min-height: 300px;
     }
 }
 
