@@ -231,6 +231,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
+        if (feedback.includes('user/register')) {
+            var apicSignupForm = document.querySelector('.apic-user-form');
+                apicSignupForm.classList.add('custom-signup');
+                const bgImages = `
+                <div class="bg-images">
+                    <div class="circle-1"></div>
+                    <div class="circle-2"></div>
+                </div>
+            `;
+            apicSignupForm .insertAdjacentHTML('afterbegin', bgImages);   
+            }
+
+
+
     if (feedback.endsWith("/product")) {
         var productHeader = document.querySelector('.page-header');
         if (productHeader) {
@@ -238,6 +252,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
     }
+
+
 
 
     if (window.location.pathname.includes('/api')) {
