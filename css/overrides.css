@@ -17511,5 +17511,95 @@ form#user-login-form input {
     border-radius: 15px !important;
 }
 
+.apic-login-wrapper .apic-user-form-inner-wrapper button#edit-submit {
+    background: #5464f2;
+    box-shadow: none;
+    border-radius: 9px !important;
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 19px;
+    width: 262.92px;
+}
+
+.apic-login-wrapper .apic-user-form-inner-wrapper .bx--label {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: .5rem;
+    padding: 0;
+    letter-spacing: .32px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 36px;
+    color: #4D4D4D;
+}
+
+.apic-login-wrapper .apic-login-wrapper .apic-user-form-header {
+    width: 40%;
+    font-family: "SF Pro Display" !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 84px;
+    color: #11183B;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.apic-login-wrapper .apic-user-form-inner-wrapper .apic-user-forgot-password {
+    position: relative;
+    padding: 0;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #5464F2;
+}
+
+.apic-login-wrapper .apic-user-form-footer {
+    display: flex;
+    flex-direction: column;
+    margin-left: -27rem !important;
+}
+
+.apic-login-wrapper .apic-user-forgot-password {
+    position: relative;
+    padding: 0;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #5464F2;
+    order: 1;
+}
+
+.apic-login-wrapper .apic-user-form-footer .apic-user-form-text {
+    display: flex;
+    position: relative;
+    order: 2;
+    text-align: center;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    padding-left: unset !important;
+}
+
+.apic-login-wrapper:after {
+    background: url("images/sign-in-updated.jpg");
+}
+
+.apic-login-wrapper:before {
+    background: url("images/sign-in-updated.jpg");
+}
+
 
 /*sign in new updated merna*/
