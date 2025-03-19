@@ -17514,7 +17514,7 @@ form#user-login-form input {
 .apic-login-wrapper .apic-user-form-inner-wrapper button#edit-submit {
     background: #5464f2;
     box-shadow: none;
-    border-radius: 9px !important;
+    border-radius: 82px !important;
     font-family: "SF Pro Display";
     font-style: normal;
     font-weight: 600;
@@ -17549,7 +17549,8 @@ form#user-login-form input {
     flex-grow: 0;
 }
 
-.apic-login-wrapper .apic-user-form-inner-wrapper .apic-user-forgot-password {
+
+/* .apic-login-wrapper .apic-user-form-inner-wrapper .apic-user-forgot-password {
     position: relative;
     padding: 0;
     font-style: normal;
@@ -17560,15 +17561,17 @@ form#user-login-form input {
     align-items: center;
     text-align: center;
     color: #5464F2;
-}
+} */
 
-.apic-login-wrapper .apic-user-form-footer {
+
+/* .apic-login-wrapper .apic-user-form-footer {
     display: flex;
     flex-direction: column;
     margin-left: -27rem !important;
-}
+} */
 
-.apic-login-wrapper .apic-user-forgot-password {
+
+/* .apic-login-wrapper .apic-user-forgot-password {
     position: relative;
     padding: 0;
     font-style: normal;
@@ -17580,7 +17583,7 @@ form#user-login-form input {
     text-align: center;
     color: #5464F2;
     order: 1;
-}
+} */
 
 .apic-login-wrapper .apic-user-form-footer .apic-user-form-text {
     display: flex;
@@ -17593,12 +17596,83 @@ form#user-login-form input {
     padding-left: unset !important;
 }
 
-.apic-login-wrapper:after {
-    background: url("images/sign-in-updated.jpg");
+
+/* .apic-login-wrapper:after {
+    background: url("images/sign-in-updated.png");
+    z-index: 2;
+    position: absolute;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    bottom: 0%;
+    left: 0%;
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    content: "";
+    width: 84%;
+    min-height: 601px;
+} */
+
+.user-login-form {
+    position: relative;
+    background: #f6f7fa;
+    border-radius: 8px;
+    transform: translate(90%, 0%);
 }
 
-.apic-login-wrapper:before {
-    background: url("images/sign-in-updated.jpg");
+.apic-login-wrapper:after {
+    z-index: 2;
+    position: absolute;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    background-position: bottom;
+    bottom: 0%;
+    left: 0%;
+    height: auto;
+    min-height: 500px;
+}
+
+.apic-login-wrapper:after {
+    background: url("images/sign-in-updated.png");
+    z-index: 2;
+    position: absolute;
+    box-shadow: none;
+    bottom: 0%;
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    content: "";
+    min-height: 372px;
+    top: 20%;
+    max-width: 371px;
+    max-height: 337px;
+    margin-top: 4rem;
+    left: 9%;
+}
+
+.apic-login-wrapper div#edit-actions {
+    align-items: center;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.apic-login-wrapper .apic-user-forgot-password {
+    position: relative;
+    top: unset;
+    left: unset;
+    padding: 0;
+}
+
+.apic-login-wrapper .apic-user-form-footer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: max-content;
+    position: relative;
+    border-radius: 8px;
+    transform: translate(5%, 0);
 }
 
 

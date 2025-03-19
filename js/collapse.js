@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     let searchTerm = urlParams.get("search_api_fulltext");
 
@@ -291,9 +291,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll(".faq-question").forEach(question => {
-        question.addEventListener("click", function () {
+        question.addEventListener("click", function() {
             const answer = this.nextElementSibling;
             const icon = this.querySelector(".faq-toggle path");
 
@@ -309,29 +309,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.querySelector("#contact-feedback-form");
+document.addEventListener("DOMContentLoaded", function() {
+    function addBackgroundImages(selector) {
+        const targetElement = document.querySelector(selector);
 
-    if (contactForm) {
-        const bgImagesDiv = document.createElement("div");
-        bgImagesDiv.classList.add("bg-images");
+        if (targetElement) {
+            const bgImagesDiv = document.createElement("div");
+            bgImagesDiv.classList.add("bg-images");
 
-        bgImagesDiv.innerHTML = `
-            <div class="circle-1"></div>
-            <div class="circle-2"></div>
-        `;
+            bgImagesDiv.innerHTML = `
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+            `;
 
-        contactForm.insertBefore(bgImagesDiv, contactForm.firstChild);
+            targetElement.insertBefore(bgImagesDiv, targetElement.firstChild);
+        }
     }
+
+    addBackgroundImages("#contact-feedback-form");
+    addBackgroundImages(".apic-login-wrapper");
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', function() {
     if (window.location.href.includes('/taxonomy/term')) {
         // Select all 'apicTeaser' divs
-        document.querySelectorAll('.apicTeaser').forEach(function (teaserDiv) {
+        document.querySelectorAll('.apicTeaser').forEach(function(teaserDiv) {
             // Select all 'apicTeaserMain' divs
-            document.querySelectorAll('.apicTeaserMain').forEach(function (teaserMain) {
+            document.querySelectorAll('.apicTeaserMain').forEach(function(teaserMain) {
                 // Check if there are at least two divs inside each 'apicTeaserMain'
                 const divs = teaserMain.querySelectorAll('div');
                 if (divs.length > 1) {
@@ -339,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
             // Hide all 'basic-page' divs inside each 'apicTeaser'
-            teaserDiv.querySelectorAll('.basic-page').forEach(function (basicPageDiv) {
+            teaserDiv.querySelectorAll('.basic-page').forEach(function(basicPageDiv) {
                 basicPageDiv.style.display = 'none';
             });
 
@@ -380,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
             blazy.classList.add("custom-productcards");
         }
 
-     }
+    }
 });
 
 // document.addEventListener("DOMContentLoaded", function() {
@@ -435,10 +441,10 @@ document.addEventListener('DOMContentLoaded', function () {
 //   });
 // });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     var openSearchButton = document.querySelector(".opensearch");
 
-    openSearchButton.addEventListener("click", function () {
+    openSearchButton.addEventListener("click", function() {
         var searchContainer = document.querySelector(
             "section#block-marketplace-latest-exposedformsearch-apipage-1"
         );
@@ -614,6 +620,7 @@ function toggleBodyField() {
     const bodyField = document.getElementById("bodyField");
     bodyField.style.display = method === "POST" ? "block" : "none";
 }
+
 function homeImageFlip(textId) {
     // console.log("textID");
     // console.log(textId);
@@ -723,7 +730,7 @@ function generateAndDisplayCurl(event) {
 function displayText(textId) {
     // Hide all text elements
     var textElements = document.querySelectorAll(".text");
-    textElements.forEach(function (element) {
+    textElements.forEach(function(element) {
         element.style.display = "none";
     });
 
@@ -745,12 +752,12 @@ myElement.addEventListener('mouseout', function() {
 
 var listcolor = document.getElementById("listcolor");
 
-listcolor.addEventListener("click", function () {
+listcolor.addEventListener("click", function() {
     listcolor.style.color = "#556ff8";
     listcolor.style.border = "2px solid #556ff8";
 });
 
-listcolor.addEventListener("mouseout", function () {
+listcolor.addEventListener("mouseout", function() {
     listcolor.style.color = "#556ff8";
     listcolor.style.border = "2px solid #556ff8";
 });
@@ -758,7 +765,7 @@ listcolor.addEventListener("mouseout", function () {
 var myElement = document.getElementById("myElement");
 var isClicked = false;
 
-myElement.addEventListener("click", function () {
+myElement.addEventListener("click", function() {
     if (isClicked) {
         myElement.style.backgroundColor = "#E9EEFD";
     } else {
@@ -767,7 +774,7 @@ myElement.addEventListener("click", function () {
     isClicked = !isClicked;
 });
 
-myElement.addEventListener("mouseout", function () {
+myElement.addEventListener("mouseout", function() {
     if (!isClicked) {
         myElement.style.backgroundColor = "#E9EEFD";
     }
@@ -794,7 +801,7 @@ function showDiv(divId) {
 function responseText(errorId) {
     // Hide all text elements
     var textElements = document.querySelectorAll(".text");
-    textElements.forEach(function (element) {
+    textElements.forEach(function(element) {
         element.style.display = "none";
     });
 
