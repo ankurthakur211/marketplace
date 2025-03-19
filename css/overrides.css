@@ -17471,6 +17471,7 @@ form#contact-message-feedback-form {
     #contact-feedback-heading {
         position: relative !important;
         order: 3;
+        padding-top: 8rem;
     }
     #contact-feedback-form::after {
         position: relative;
@@ -17483,9 +17484,10 @@ form#contact-message-feedback-form {
 
 @media (max-width: 576px) {
     #contact-feedback-heading {
-        font-size: 43px;
+        font-size: 30px;
         line-height: 108px;
         padding: 1rem 2rem;
+        padding-top: 8rem;
     }
     #contact-feedback-form::after {
         min-height: 300px;
