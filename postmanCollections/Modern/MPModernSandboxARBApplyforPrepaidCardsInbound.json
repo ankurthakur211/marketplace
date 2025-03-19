@@ -1,0 +1,2202 @@
+{
+	"info": {
+		"_postman_id": "3a3fc17f-4689-4834-9153-2b59da228a97",
+		"name": "MP Modern Sandbox ARB Apply for Prepaid Cards Inbound Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31748034"
+	},
+	"item": [
+		{
+			"name": "ARB Microsite Token",
+			"item": [
+				{
+					"name": "OAuth Provider Authorize",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var locationHeader = pm.response.headers.get('Location');\r",
+									"var locationHeader2 = pm.response.headers.get('Location');\r",
+									"pm.collectionVariables.set(\"originalUrl\",decodeURIComponent(locationHeader.split(\"original-url=\")[1]));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false,
+						"disableUrlEncoding": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}"
+							}
+						],
+						"url": {
+							"raw": "{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=prepaid_card_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}"
+								},
+								{
+									"key": "scope",
+									"value": "prepaid_card_apis"
+								},
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "code_challenge",
+									"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: payroll_lending_apis",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=payroll_lending_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}"
+										},
+										{
+											"key": "scope",
+											"value": "payroll_lending_apis"
+										},
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "code_challenge",
+											"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256"
+										}
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-request-id",
+									"value": "210c3aab-3a85-42b1-b1ac-37f052166158"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "dbbb05fd-dafa-462e-8ca9-f32a92a11eb5"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1b7000bf9610"
+								},
+								{
+									"key": "Location",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/auth/initiate-redirect?original-url=https%3A%2F%2Fapimarketplace-ext-test-gw-svc-gw-gateway-traffic-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud%2Fapimarketplace-sit%2Fsandbox-inbound%2Fsandbox-arb-microsite-oauth-provider%2Foauth2%2Fauthorize%3Fclient_id%3D009407e30165d8f05d554e336acb0b26%26scope%3Dpayroll_lending_apis%26response_type%3Dcode%26code_challenge%3DGlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0%26code_challenge_method%3DS256%26state_nonce%3D0Njr94lOCL7qFT1oLyCGUomeQEH55eQgc2BLmUzGWnc%253D"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:54:24 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Generate Initiate Redirection Input",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = responseBody;\r",
+									"pm.collectionVariables.set(\"initiate-redirect-identity\", data);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "issuer",
+								"value": "{{client-id}}",
+								"type": "text"
+							},
+							{
+								"key": "audience",
+								"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/generate-jwt/sign-request",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"generate-jwt",
+								"sign-request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "poiNumber = 1845490013",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "77b355d4-13d3-4b34-a6e9-36db392c1453"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.73.89"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7d6b4019e7fe2"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c10821be-e756-457a-91d3-54e3cb0dcd81"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:08:04 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIwMDc5ZDNlNS1jNGFiLTRhOTYtYmFlNS1hZGVjNWU2Yzk0YTUiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyNzY4NCwiaWF0IjoxNzIzMzI0MDg0LCJuYmYiOjE3MjMzMjQwODQsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiN2M0MmNkODQtMzllMS00MzIyLWI2YTctMGQ5MjM4NjA1ODRlIiwicG9pTnVtYmVyIjoiMTg0NTQ5MDAxMyJ9fQ.Nz-ihPlG_8DSFHdinRFr79FwIQHkA5JSkhn2sGmhWL0fDLj7Ltl5j9I1VjPFDDgl469mUcl08FRbqgNpd9CK3St9m0a6h3_YqheeIdiyECFoleTuWWWf_cj3GVUI4JbyLAtTut_vKZrpFD1DXyVz2o5OuDKXSi7N07KHh08IdRHqp0KxK26PKplX9fronGJ-FoamKj-gHY77AV3InwwP4z2uT6bPPkZqyORa1SMtv9DBeg2XgKLbs6A6XSbaEtOZ__Tql8FB78GpkuO2tjUztz6QpKv20k9ccRP6AYvX525hmbFbKe4FA_8UoMMhOnUH6ZQomp--xM7tOkel6k-yJw"
+						},
+						{
+							"name": "poiNumber = 1646701570",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1646701570\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "69263396-02fb-4e72-ad96-e145081fa842"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7db4e00630a90"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "4a48d741-c2be-4003-9589-f89916419f9c"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:27:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJiZTgyZDM4NS1iOWRiLTQ0YjUtOWM2Yi1hZGVjNWU2Y2ViZDMiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODg2MiwiaWF0IjoxNzIzMzI1MjYyLCJuYmYiOjE3MjMzMjUyNjIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiODQxMjkzZWYtNDU0NC00OWZhLWE3ZWYtMjA3OGE2NmJlZDUwIiwicG9pTnVtYmVyIjoiMTY0NjcwMTU3MCJ9fQ.qrLok5CnoeV5Qkf15l5iVQnsQydtco0oZrIjvH5ixcL-rH27-GNXtb3fbuzoZms1eOc5OkJTtPKIadbKEnEP9ba320gxdV6wGbJiHYPXIlSRM7wdq5efcnRbXUxri8MHV5bRT_KbMOltX3dijF2MoJYxyKj_qsedoFt4XnYcxfqFvPTPmmmqf8ZLe3G94oCqHPo8SzYIkM5SzSe0SGvlChGXxnGKl6vEneT1XSu0rTq6x_KkS_OszfdgOiD9An4zA1c0EAp8PbHRTTU_gts0qXvbn7Aaor_oAo3qO7wy0LI9Niv1frh7_UACavN-jfmasp_qZ3wxMehVpIHvf4dyKw"
+						},
+						{
+							"name": "poiNumber = 1452525363",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1452525363\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "d14ad09e-c7f4-4b25-aaf5-6a34f12d5f73"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7db7500630ac0"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "86467d55-94a5-4745-8117-e030e0a0ff93"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:28:21 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJlZGUzZWFjNy1iZjVlLTRlOGMtOTIxOC1hZGVjNWU2YzRmNzAiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODkwMSwiaWF0IjoxNzIzMzI1MzAxLCJuYmYiOjE3MjMzMjUzMDEsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiYjI2ZmFkMzMtYjQzNS00YWEyLWE2Y2ItZTY0MDgyOWE1NmI0IiwicG9pTnVtYmVyIjoiMTQ1MjUyNTM2MyJ9fQ.dbxu73j_fwPJv1v6Ej6UmYnOvUETR9AaWjt2xE8zixPBicQYzVGtZX9nhpTo3UA4HJ9I4XSzqkT3Nk_4iiXE0Ez5oGjy111ao6cuCsUCGtSW1zI-NIUY_8TvFkpBwnKVafyqHlDIDxsr1KLV-aQqpANVfbsRXMEF06o10jFk7MVeGTF2WzteSkeeuhWD_a3ZJLKmPCIzN-GBBUE4iQE6sH--WacFxbnuLDPy6k3Gic3aPhdsjrYIdAJfEGo3_4gbhbmqiPK0riWu-eukSKVmA2_Z5gQEAbZBR7X9-mCUo4CZ4PMfmw6xO2nY_uK-BpcUQRXUqpI8_Ezhshsb_IFNlA"
+						},
+						{
+							"name": "poiNumber = 1634378157",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1634378157\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "ce8de52d-89b3-4415-b4e9-65f79fcd76be"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7dbda00630b10"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8b759779-9d94-4da7-bd40-12bba3514388"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:30:02 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIxOGI4YmY0ZC0xZjc4LTQ4OWYtYTYzYS1hZGVjNWU2YzA3OWQiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyOTAwMiwiaWF0IjoxNzIzMzI1NDAyLCJuYmYiOjE3MjMzMjU0MDIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiMWQwYWQ3YjgtNmFmYy00NzlkLWI0MDktZjljNjNmYjBiNjg2IiwicG9pTnVtYmVyIjoiMTYzNDM3ODE1NyJ9fQ.aiArQSR9wrzq48xq0Q3WFa03gY1AhP9bOWMleWQwIn561CikvY9xD_054gvJ6ZroQKHoUs3gmH1_lFkKppcdbhf6iULhj_Ws_PYOHeQtBosYZbV8cM3ddqnPUesBtEwJtPrEoGHwbTgH6-RKrhYh8jAulx5-tVo_cj_rxudLrZAy3DTJ_bEGwJ6OvDcN5vFnkBZFPCdB9lcT8e0jVSnotLWHfdBoxmp29PxSRIraxdav6aalMLdFE7rjdTpLKhELpN3xgqzGW6asbc-e5Kh8rRVZl5KVMjFDS0dj78xMkl8IE3xYGDtt94ZR6l0oNiC-I8bdIadbUqAypCNOmFXE0w"
+						}
+					]
+				},
+				{
+					"name": "Initiate Redirection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.code == 303){\r",
+									"    var locationHeader = pm.response.headers.get('Location');\r",
+									"    pm.collectionVariables.set(\"confirmationCode\", locationHeader.split(\"identity=\")[1]);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{inbound-gw}}/auth/initiate-redirect?client_id=d2bcf0e72d79c1de1d202141cdefb581&identity={{initiate-redirect-identity}}",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"auth",
+								"initiate-redirect"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "d2bcf0e72d79c1de1d202141cdefb581"
+								},
+								{
+									"key": "identity",
+									"value": "{{initiate-redirect-identity}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Authorize Confirmation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.status != 400){\r",
+									"    var locationHeader = pm.response.headers.get('Location');\r",
+									"    var code = locationHeader.split(\"code=\")[1];\r",
+									"    pm.collectionVariables.set(\"authorizationCode\",code);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false,
+						"disableUrlEncoding": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}",
+							"host": [
+								"{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Provider Access Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"if(pm.response.code == 200){\r",
+									"    pm.collectionVariables.set('security-token', 'Bearer ' + response.access_token);\r",
+									"    pm.collectionVariables.set('customer_access_token', response.access_token);\r",
+									"    pm.collectionVariables.set('customer_refresh_token',response.refresh_token);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "payroll_lending_apis",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "{{authorizationCode}}",
+									"type": "text"
+								},
+								{
+									"key": "code_verifier",
+									"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+									"type": "text"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256",
+									"type": "text"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "plain",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: payroll_lending_apis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "payroll_lending_apis",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "authorization_code",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "{{authorizationCode}}",
+											"type": "text"
+										},
+										{
+											"key": "code_verifier",
+											"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+											"type": "text"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256",
+											"type": "text"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "plain",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "677bbbe2-00b3-46dc-9e76-3496b2cebd42"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1b9900bf9680"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c30d1b94-7313-4b20-b26a-5b7b86212ef0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:55:05 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjYYwka87xSbRYma77OTiI2F-Bn90QjgrY8cfarOAEAZDSZiQgCSFExF1ICpgck1YULyxckW-fctu9-VfspAc8CHz4uIQP4atThIGGouIE4wRW740RBthuJqYuEowgkh8PzBaPaAzzwlFkYHZqo_IomkDaCIhcn6O4p4l5xo1ohiTWTYWtn4WdkG4RfAqQ2oRaD6F4tRN7Tem2D6z-MmzOi880Av5L9dMzLdFKRTX3wCi0GiWMvgIbPZF_i7p4Owwho\",\n    \"scope\": \"payroll_lending_apis\",\n    \"expires_in\": 1800,\n    \"consented_on\": 1724586905,\n    \"refresh_token\": \"AAJwbKYEV4HYDYD5Gy5Nau_zOzxhY1hNqNkW2n7_AjyS_mF1qR-MOTRn_AvWdyRNW7wxFaNJ4uUhvUiqV0V5a5uOG4T8YV0zl4noMPw8LAdY5jrCbHGKq5q9gJwBTJ59QUFD_en0M3S0dEgV9_Ez2jtl7PZfN4Gruf3Se2Vf_8mvqOYKgfMebKig5pPsscKAuseTEPXvgetL0mdDrHfHWM0eIJT1oWD3dga2bGy55VJCry-hfZ-QynX5SeNz1XtDuX5KW9PdmWiyyLY7UtT5sb8O\",\n    \"refresh_token_expires_in\": 36000\n}"
+						}
+					]
+				},
+				{
+					"name": "OAuth Provider Refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"pm.environment.set('security_token', 'Bearer ' + response.access_token);\r",
+									"    pm.collectionVariables.set('customer_access_token', response.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "payroll_lending_apis",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{customer_refresh_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: payroll_lending_apis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "payroll_lending_apis",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "{{customer_refresh_token}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "b8cbfba7-e0bc-4741-b3e6-a5e018f951a3"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1ba600bf9690"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c3b4c621-e014-436c-8a87-72e936356cff"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:55:18 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZuAgtEk8kE4721AhnmlqIqT1wP3N1DX7H2Ii0bLbPeFAZsY4bzjtrc1Qtk21IXpjG3jzaEKbGXwVmCEuLEhC_Ck1Q-IaIp39TkcGMQEFzdxmt-uvCL7NI2HncEjT5na1dk-tko8Vc_oN9V4x9-TJc6b835hZ_AcRVwmzbGAj3qlS_c1G07T0eMjdgM7YB9ByGCZKKNKDYPWkohvWw64kZ9PAPsAqOZimfZlVfkK3hL3TvcUs--Cd05GbMcYH7VFHM\",\n    \"scope\": \"payroll_lending_apis\",\n    \"expires_in\": 1800,\n    \"consented_on\": 1724586905,\n    \"refresh_token\": \"AAJqM1qxjf8uu78_NbxV60cvZQa-181WkKOiQ6RgcH7vx4AkHGAsaVy9ZFtkQ5fXo_hjSvqFGa0Ft0S96vBNzBHUMq9MH0EAkJFKr_cDRJB8TLVztn12WXHWRqWraLkhWi2IUk_WUyhAjJLZR_QXKwG4KvMM9fTizCDl5QBl5YwLRSdYzALDbfWTS1YCPrTi94-GpIawk9YoDe6YjYkixdCc2g_GHvYA9iU2pPFVTUPHGKkGswXpCY8-Ix08IC8uorpzFHGvjECOL_UCrH5EOp8k\",\n    \"refresh_token_expires_in\": 36000\n}"
+						}
+					]
+				},
+				{
+					"name": "OAuth Introspect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "text"
+								},
+								{
+									"key": "token_type_hint",
+									"value": "access_token",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/introspect",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"introspect"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Business APIs",
+			"item": [
+				{
+					"name": "MP Inquire Card Issuance",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "channelID",
+								"value": "EMKAN",
+								"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-IBM-Client-Id",
+								"value": "d02c19954bda615b8f2cd12583183b52",
+								"disabled": true
+							},
+							{
+								"key": "X-IBM-Client-Secret",
+								"value": "2783abcb79d95178ad42dfad1ae4432e",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Data\": {\r\n    \"CustomerIdentifiersList\": [\r\n      {\r\n        \"CustomerId\": \"1106366398\",\r\n        \"IdNumber\": \"1106368598\",\r\n        \"CustomerCode\": \"12563068598\",\r\n        \"ExternalCustomerCode\": \"0000000003089053\",\r\n        \"InstitutionCode\": \"0029\"\r\n      }\r\n    ],\r\n    \"CardProduct\": \"CLQ\",\r\n    \"CardType\": \"PRPD\",\r\n    \"ReturnEligibleCardsCount\": \"Y\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-prepaid-card/v2/card-issuance-eligibility",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-prepaid-card",
+								"v2",
+								"card-issuance-eligibility"
+							],
+							"query": [
+								{
+									"key": "accept-language",
+									"value": "en",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This operation path is used to list customer financial summaries."
+					},
+					"response": [
+						{
+							"name": "MP Inquire Card Issuance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "d02c19954bda615b8f2cd12583183b52",
+										"disabled": true
+									},
+									{
+										"key": "X-IBM-Client-Secret",
+										"value": "2783abcb79d95178ad42dfad1ae4432e",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"CustomerIdentifiersList\": [\r\n      {\r\n        \"CustomerId\": \"1106366398\",\r\n        \"IdNumber\": \"1106368598\",\r\n        \"CustomerCode\": \"12563068598\",\r\n        \"ExternalCustomerCode\": \"0000000003089053\",\r\n        \"InstitutionCode\": \"0029\"\r\n      }\r\n    ],\r\n    \"CardProduct\": \"CLQ\",\r\n    \"CardType\": \"PRPD\",\r\n    \"ReturnEligibleCardsCount\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-prepaid-card/v2/card-issuance-eligibility",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-prepaid-card",
+										"v2",
+										"card-issuance-eligibility"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "29f30309-ba92-4250-94b4-445329f023f6"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67c58e2c02f4af60"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Mar 2025 11:10:38 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"EligibleCardTypesList\": [\n            {\n                \"CardTypesList\": [\n                    {\n                        \"CardType\": \"PRPD\",\n                        \"CardTypeDescription\": \"Prepaid Products Group\"\n                    }\n                ],\n                \"MaximumNumberOfPrimaryCards\": \"10\",\n                \"MaximumNumberOfSupplementaryCards\": \"5\",\n                \"RemainingNumberOfPrimaryCards\": \"10\",\n                \"RemainingNumberOfSupplementaryCards\": \"5\",\n                \"EligibleCardProductsList\": [\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"61\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VENS\",\n                                \"Description\": \"VISA ENSAN\",\n                                \"Bin\": \"405433\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"63\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"TSWQ\",\n                                \"Description\": \"VISA TASAWAQ\",\n                                \"Bin\": \"405433\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"4\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"301\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VIRP\",\n                                \"Description\": \"VISA VIRTUAL\",\n                                \"Bin\": \"445827\",\n                                \"DeniedServicesList\": [\n                                    {\n                                        \"DeniedServices\": 9\n                                    },\n                                    {\n                                        \"DeniedServices\": 10\n                                    },\n                                    {\n                                        \"DeniedServices\": 11\n                                    },\n                                    {\n                                        \"DeniedServices\": 23\n                                    },\n                                    {\n                                        \"DeniedServices\": 9100\n                                    },\n                                    {\n                                        \"DeniedServices\": 28\n                                    },\n                                    {\n                                        \"DeniedServices\": 38\n                                    },\n                                    {\n                                        \"DeniedServices\": 21\n                                    }\n                                ]\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"221\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VMCC\",\n                                \"Description\": \"VISA OMLAH PREPAID\",\n                                \"Bin\": \"429927\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "MP Inquire Card Issuance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "d02c19954bda615b8f2cd12583183b52",
+										"disabled": true
+									},
+									{
+										"key": "X-IBM-Client-Secret",
+										"value": "2783abcb79d95178ad42dfad1ae4432e",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"CustomerIdentifiersList\": [\r\n      {\r\n        \"CustomerId\": \"1106366398\",\r\n        \"IdNumber\": \"1106368598\",\r\n        \"CustomerCode\": \"12563068598\",\r\n        \"ExternalCustomerCode\": \"0000000003089053\",\r\n        \"InstitutionCode\": \"0029\"\r\n      }\r\n    ],\r\n    \"CardProduct\": \"CLQ\",\r\n    \"CardType\": \"PRPD\",\r\n    \"ReturnEligibleCardsCount\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-prepaid-card/v2/card-issuance-eligibility",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-prepaid-card",
+										"v2",
+										"card-issuance-eligibility"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f95666ce-1dc6-44a7-8db1-c476cb8d0de4"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67c58ebf02f4b270"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Mar 2025 11:13:04 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"EligibleCardTypesList\": [\n            {\n                \"CardTypesList\": [\n                    {\n                        \"CardType\": \"PRPD\",\n                        \"CardTypeDescription\": \"Prepaid Products Group\"\n                    }\n                ],\n                \"MaximumNumberOfPrimaryCards\": \"10\",\n                \"MaximumNumberOfSupplementaryCards\": \"5\",\n                \"RemainingNumberOfPrimaryCards\": \"10\",\n                \"RemainingNumberOfSupplementaryCards\": \"5\",\n                \"EligibleCardProductsList\": [\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"61\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VENS\",\n                                \"Description\": \"VISA ENSAN\",\n                                \"Bin\": \"405433\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"63\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"TSWQ\",\n                                \"Description\": \"VISA TASAWAQ\",\n                                \"Bin\": \"405433\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"4\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"301\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VIRP\",\n                                \"Description\": \"VISA VIRTUAL\",\n                                \"Bin\": \"445827\",\n                                \"DeniedServicesList\": [\n                                    {\n                                        \"DeniedServices\": 9\n                                    },\n                                    {\n                                        \"DeniedServices\": 10\n                                    },\n                                    {\n                                        \"DeniedServices\": 11\n                                    },\n                                    {\n                                        \"DeniedServices\": 23\n                                    },\n                                    {\n                                        \"DeniedServices\": 9100\n                                    },\n                                    {\n                                        \"DeniedServices\": 28\n                                    },\n                                    {\n                                        \"DeniedServices\": 38\n                                    },\n                                    {\n                                        \"DeniedServices\": 21\n                                    }\n                                ]\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"221\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VMCC\",\n                                \"Description\": \"VISA OMLAH PREPAID\",\n                                \"Bin\": \"429927\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "MP Inquire Card Issuance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "d02c19954bda615b8f2cd12583183b52",
+										"disabled": true
+									},
+									{
+										"key": "X-IBM-Client-Secret",
+										"value": "2783abcb79d95178ad42dfad1ae4432e",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"CustomerIdentifiersList\": [\r\n      {\r\n        \"CustomerId\": \"1106366398\",\r\n        \"IdNumber\": \"1106368598\",\r\n        \"CustomerCode\": \"12563068598\",\r\n        \"ExternalCustomerCode\": \"0000000003089053\",\r\n        \"InstitutionCode\": \"0029\"\r\n      }\r\n    ],\r\n    \"CardProduct\": \"CLQ\",\r\n    \"CardType\": \"PRPD\",\r\n    \"ReturnEligibleCardsCount\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-prepaid-card/v2/card-issuance-eligibility",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-prepaid-card",
+										"v2",
+										"card-issuance-eligibility"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0027b830-9483-42e2-9f94-1f324d77376c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67c58ee101f2bbf1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Mar 2025 11:13:38 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"EligibleCardTypesList\": [\n            {\n                \"CardTypesList\": [\n                    {\n                        \"CardType\": \"PRPD\",\n                        \"CardTypeDescription\": \"Prepaid Products Group\"\n                    }\n                ],\n                \"MaximumNumberOfPrimaryCards\": \"10\",\n                \"MaximumNumberOfSupplementaryCards\": \"5\",\n                \"RemainingNumberOfPrimaryCards\": \"10\",\n                \"RemainingNumberOfSupplementaryCards\": \"5\",\n                \"EligibleCardProductsList\": [\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"61\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VENS\",\n                                \"Description\": \"VISA ENSAN\",\n                                \"Bin\": \"405433\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"63\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"TSWQ\",\n                                \"Description\": \"VISA TASAWAQ\",\n                                \"Bin\": \"405433\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"4\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"301\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VIRP\",\n                                \"Description\": \"VISA VIRTUAL\",\n                                \"Bin\": \"445827\",\n                                \"DeniedServicesList\": [\n                                    {\n                                        \"DeniedServices\": 9\n                                    },\n                                    {\n                                        \"DeniedServices\": 10\n                                    },\n                                    {\n                                        \"DeniedServices\": 11\n                                    },\n                                    {\n                                        \"DeniedServices\": 23\n                                    },\n                                    {\n                                        \"DeniedServices\": 9100\n                                    },\n                                    {\n                                        \"DeniedServices\": 28\n                                    },\n                                    {\n                                        \"DeniedServices\": 38\n                                    },\n                                    {\n                                        \"DeniedServices\": 21\n                                    }\n                                ]\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"221\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VMCC\",\n                                \"Description\": \"VISA OMLAH PREPAID\",\n                                \"Bin\": \"429927\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "MP Inquire Card Issuance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "d02c19954bda615b8f2cd12583183b52",
+										"disabled": true
+									},
+									{
+										"key": "X-IBM-Client-Secret",
+										"value": "2783abcb79d95178ad42dfad1ae4432e",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"CustomerIdentifiersList\": [\r\n      {\r\n        \"CustomerId\": \"1106366398\",\r\n        \"IdNumber\": \"1106368598\",\r\n        \"CustomerCode\": \"12563068598\",\r\n        \"ExternalCustomerCode\": \"0000000003089053\",\r\n        \"InstitutionCode\": \"0029\"\r\n      }\r\n    ],\r\n    \"CardProduct\": \"CLQ\",\r\n    \"CardType\": \"PRPD\",\r\n    \"ReturnEligibleCardsCount\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-prepaid-card/v2/card-issuance-eligibility",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-prepaid-card",
+										"v2",
+										"card-issuance-eligibility"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "16c485b5-3ca4-4a53-a84f-adad04478eff"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67c58efa03f8ee92"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Mar 2025 11:14:02 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"EligibleCardTypesList\": [\n            {\n                \"CardTypesList\": [\n                    {\n                        \"CardType\": \"PRPD\",\n                        \"CardTypeDescription\": \"Prepaid Products Group\"\n                    }\n                ],\n                \"MaximumNumberOfPrimaryCards\": \"10\",\n                \"MaximumNumberOfSupplementaryCards\": \"5\",\n                \"RemainingNumberOfPrimaryCards\": \"10\",\n                \"RemainingNumberOfSupplementaryCards\": \"5\",\n                \"EligibleCardProductsList\": [\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"61\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VENS\",\n                                \"Description\": \"VISA ENSAN\",\n                                \"Bin\": \"405433\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"63\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"TSWQ\",\n                                \"Description\": \"VISA TASAWAQ\",\n                                \"Bin\": \"405433\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"4\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"301\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VIRP\",\n                                \"Description\": \"VISA VIRTUAL\",\n                                \"Bin\": \"445827\",\n                                \"DeniedServicesList\": [\n                                    {\n                                        \"DeniedServices\": 9\n                                    },\n                                    {\n                                        \"DeniedServices\": 10\n                                    },\n                                    {\n                                        \"DeniedServices\": 11\n                                    },\n                                    {\n                                        \"DeniedServices\": 23\n                                    },\n                                    {\n                                        \"DeniedServices\": 9100\n                                    },\n                                    {\n                                        \"DeniedServices\": 28\n                                    },\n                                    {\n                                        \"DeniedServices\": 38\n                                    },\n                                    {\n                                        \"DeniedServices\": 21\n                                    }\n                                ]\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    },\n                    {\n                        \"CardProductsList\": [\n                            {\n                                \"Id\": \"221\",\n                                \"InstitutionCode\": \"ARB\",\n                                \"ProductCode\": \"VMCC\",\n                                \"Description\": \"VISA OMLAH PREPAID\",\n                                \"Bin\": \"429927\"\n                            }\n                        ],\n                        \"MaximumNumberOfPrimaryCards\": \"5\",\n                        \"MaximumNumberOfSupplementaryCards\": \"0\",\n                        \"RemainingNumberOfPrimaryCards\": \"5\",\n                        \"RemainingNumberOfSupplementaryCards\": \"0\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Issue Credit Card",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "channelID",
+								"value": "EMKAN",
+								"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-IBM-Client-Id",
+								"value": "d02c19954bda615b8f2cd12583183b52"
+							},
+							{
+								"key": "X-IBM-Client-Secret",
+								"value": "2783abcb79d95178ad42dfad1ae4432e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Data\": {\r\n    \"IdType\": \"01\",\r\n    \"IdNumber\": \"1083308922\",\r\n    \"CardSegment\": \"SMEPrepaid\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"East District\",\r\n    \"DeliveryAddressPostalCode\": \"11113\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEnglish\": \"Ahmed\",\r\n    \"CardRequestorLastNameEnglish\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerficationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-prepaid-card/v2/prepaid-cards-issuing",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-prepaid-card",
+								"v2",
+								"prepaid-cards-issuing"
+							],
+							"query": [
+								{
+									"key": "accept-language",
+									"value": "en",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This operation path is used to list customer financial summaries."
+					},
+					"response": [
+						{
+							"name": "MP Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "d02c19954bda615b8f2cd12583183b52"
+									},
+									{
+										"key": "X-IBM-Client-Secret",
+										"value": "2783abcb79d95178ad42dfad1ae4432e"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"IdType\": \"01\",\r\n    \"IdNumber\": \"1083308922\",\r\n    \"CardSegment\": \"SMEPrepaid\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"East District\",\r\n    \"DeliveryAddressPostalCode\": \"11113\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEnglish\": \"Ahmed\",\r\n    \"CardRequestorLastNameEnglish\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerficationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-prepaid-card/v2/prepaid-cards-issuing",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-prepaid-card",
+										"v2",
+										"prepaid-cards-issuing"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "086621f4-fb03-45ae-a8f9-9764b7126eeb"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67c5871a01425e73"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,87;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Mar 2025 10:40:27 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"AcceptableRequest\": \"Y\",\n        \"CardOrderId\": \"8800000061675\"\n    }\n}"
+						},
+						{
+							"name": "MP Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "d02c19954bda615b8f2cd12583183b52"
+									},
+									{
+										"key": "X-IBM-Client-Secret",
+										"value": "2783abcb79d95178ad42dfad1ae4432e"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"IdType\": \"01\",\r\n    \"IdNumber\": \"1083308922\",\r\n    \"CardSegment\": \"SMEPrepaid\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"East District\",\r\n    \"DeliveryAddressPostalCode\": \"11113\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEnglish\": \"Ahmed\",\r\n    \"CardRequestorLastNameEnglish\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerficationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-prepaid-card/v2/prepaid-cards-issuing",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-prepaid-card",
+										"v2",
+										"prepaid-cards-issuing"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "912edefc-e566-42e2-ada5-9f9010555ae4"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67c587aa014265c3"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,86;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Mar 2025 10:42:50 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"AcceptableRequest\": \"Y\",\n        \"CardOrderId\": \"8800000065612\"\n    }\n}"
+						},
+						{
+							"name": "MP Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "d02c19954bda615b8f2cd12583183b52"
+									},
+									{
+										"key": "X-IBM-Client-Secret",
+										"value": "2783abcb79d95178ad42dfad1ae4432e"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"IdType\": \"01\",\r\n    \"IdNumber\": \"1083308922\",\r\n    \"CardSegment\": \"SMEPrepaid\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"East District\",\r\n    \"DeliveryAddressPostalCode\": \"11113\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEnglish\": \"Ahmed\",\r\n    \"CardRequestorLastNameEnglish\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerficationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-prepaid-card/v2/prepaid-cards-issuing",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-prepaid-card",
+										"v2",
+										"prepaid-cards-issuing"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3d83792d-961b-4ac4-b3f3-283439bf2411"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67c5889d03f82222"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,85;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Mar 2025 10:46:53 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"AcceptableRequest\": \"Y\",\n        \"CardOrderId\": \"8800000065219\"\n    }\n}"
+						},
+						{
+							"name": "MP Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "d02c19954bda615b8f2cd12583183b52"
+									},
+									{
+										"key": "X-IBM-Client-Secret",
+										"value": "2783abcb79d95178ad42dfad1ae4432e"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"IdType\": \"01\",\r\n    \"IdNumber\": \"1083308922\",\r\n    \"CardSegment\": \"SMEPrepaid\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"East District\",\r\n    \"DeliveryAddressPostalCode\": \"11113\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEnglish\": \"Ahmed\",\r\n    \"CardRequestorLastNameEnglish\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerficationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-prepaid-card/v2/prepaid-cards-issuing",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-prepaid-card",
+										"v2",
+										"prepaid-cards-issuing"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c5d804cc-ae06-4250-acd6-b99783e95766"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67c588d801f26261"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,84;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Mar 2025 10:47:52 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"AcceptableRequest\": \"Y\",\n        \"CardOrderId\": \"8800000065197\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "apimarketplace-ext-test-gw-svc-gw-gateway-traffic-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/apimarketplace-sit/sandbox-inbound",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "inbound-gw",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "client-secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "originalUrl",
+			"value": ""
+		},
+		{
+			"key": "initiate-redirect-identity",
+			"value": ""
+		},
+		{
+			"key": "confirmationCode",
+			"value": ""
+		},
+		{
+			"key": "authorizationCode",
+			"value": ""
+		},
+		{
+			"key": "security-token",
+			"value": ""
+		},
+		{
+			"key": "customer_access_token",
+			"value": ""
+		},
+		{
+			"key": "customer_refresh_token",
+			"value": ""
+		}
+	]
+}

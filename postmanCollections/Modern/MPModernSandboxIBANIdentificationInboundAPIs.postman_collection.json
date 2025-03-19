@@ -1,0 +1,962 @@
+{
+	"info": {
+		"_postman_id": "2aefdaa2-4c82-4a1a-a1ec-d1ab58b055a8",
+		"name": "MP Modern Sandbox IBAN Identification Inbound APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31751639"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access-token\", data.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "marketplace_apis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base-url}}/oauth2security/oauth2/token",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"oauth2security",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IBAN Identification Create Request-ARB",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA7980000330560529118374\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"mp-iban-identification",
+						"v1",
+						"identification-requests"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "IBAN Identification Create Request-ARB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA6180000204608015173697\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "552a5a4e-c319-222b-e5bc-f91425cae8f5"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "ed7e63dc66782b1500696b92"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Jun 2024 14:03:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,96;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"800e0ed6-f73b-4981-b4fb-464c1b003501\"\n    }\n}"
+				},
+				{
+					"name": "IBAN Identification Create Request-ARB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA9380000204608015173606\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "0c702d49-23e0-87d1-81b8-195a382ec64a"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "9e07f6a666782b9500aeca92"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Jun 2024 14:05:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,95;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"800e0ed6-f73b-4981-b4fb-464c1b003501\"\n    }\n}"
+				},
+				{
+					"name": "IBAN Identification Create Request-ARB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA8780000205220510700741\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "3890d48f-aef9-3f45-9a54-39489e54928a"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "9e07f6a666782bcb00aecba2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Jun 2024 14:06:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,94;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"800e0ed6-f73b-4981-b4fb-464c1b003501\"\n    }\n}"
+				},
+				{
+					"name": "IBAN Identification Create Request-ARB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA0980000204608015173663\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "6c5eecad67c02c8c04c606b2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Feb 2025 09:12:44 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2241a49e-0000-470c-b2d3-74aedfb3e834"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,87;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"ffadfc7c-f4ff-4124-a512-fb0af71ce5d1\"\n    }\n}"
+				},
+				{
+					"name": "IBAN Identification Create Request-ARB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA8380000969918243199848\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "ed7e63dc67c02c9f010f80f0"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Feb 2025 09:13:03 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "bc52a4d7-b7d0-4e43-864d-58a6ff3f6bb1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,86;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"6eb59a99-7572-4417-8f24-5f240612dc58\"\n    }\n}"
+				},
+				{
+					"name": "IBAN Identification Create Request-ARB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA9380000197654705413781\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "9e07f6a667c02ca901eac350"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Feb 2025 09:13:13 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "59e5bf04-2ffc-4ce6-b82f-7cf25370f761"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,85;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"dbffca8b-5274-4af3-9607-f705340e3995\"\n    }\n}"
+				},
+				{
+					"name": "IBAN Identification Create Request-ARB",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA7980000330560529118374\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "6c5eecad67c02cb401a4be13"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Feb 2025 09:13:24 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "9e39de02-037a-4fb8-a9e3-4c108f77ed8b"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,84;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"508634bb-648b-4b5b-9c7c-2f91eac11457\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "IBAN Identification Create Request-Saudi Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"Saudi-Payment\",\r\n        \"IBAN\": \"SA8790000205220510700741\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"mp-iban-identification",
+						"v1",
+						"identification-requests"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "IBAN Identification Create Request-Saudi Payment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"Saudi-Payment\",\r\n        \"IBAN\": \"SA6190000204608015173697\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "9e07f6a66678288400aeabe2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Jun 2024 13:52:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,95;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"20240527SARJHIRJHI7BPXY10000015113\"\n    }\n}"
+				},
+				{
+					"name": "IBAN Identification Create Request-Saudi Payment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"Saudi-Payment\",\r\n        \"IBAN\": \"SA9390000204608015173606\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "6c5eecad66782c1800aabfe2"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Jun 2024 14:07:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,93;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"20240527SARJHIRJHI7BPXY10000015114\"\n    }\n}"
+				},
+				{
+					"name": "IBAN Identification Create Request-Saudi Payment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"Saudi-Payment\",\r\n        \"IBAN\": \"SA8790000205220510700741\",\r\n        \"Name\": \"Mohamed Ahmed\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-iban-identification/v1/identification-requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-iban-identification",
+								"v1",
+								"identification-requests"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "9e07f6a666782c3e00aece62"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Jun 2024 14:07:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,92;"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"RequestId\": \"20240527SARJHIRJHI7BPXY10000015147\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox"
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

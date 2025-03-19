@@ -1,0 +1,582 @@
+{
+	"info": {
+		"_postman_id": "cdf86bdd-bc70-479c-90dd-1193f332c7ab",
+		"name": "MP Modern Sandbox IBAN Verification Inbound APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23110150"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{inbound-client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{inbound-client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://{{inbound-gw}}/oauth2security/oauth2/token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IBAN Verification",
+			"item": [
+				{
+					"name": "IBAN Verification Create Request-Saudi Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"Saudi-Payment\",\r\n        \"IBAN\": \"SA4420000001234567891234\",\r\n        \"POIType\": \"IQA\",\r\n        \"POINumber\": \"2512023454\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/mp-iban-verification/v1/verification-requests"
+					},
+					"response": [
+						{
+							"name": "IBAN Verification Create Request-Saudi Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"Saudi-Payment\",\r\n        \"IBAN\": \"SA9845000000011473394001\",\r\n        \"POIType\": \"NAT\",\r\n        \"POINumber\": \"1893914539\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/mp-iban-verification/v1/verification-requests"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "4dda2966-d450-4d70-8493-67902a3d245b"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a8bed3009b8911"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Feb 2025 14:42:28 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"20240630SARJHIRJHI7BPXY10000017405\"\n    }\n}"
+						},
+						{
+							"name": "IBAN Verification Create Request-Saudi Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"Saudi-Payment\",\r\n        \"IBAN\": \"SA82550000000A2890500182\",\r\n        \"POIType\": \"NAT\",\r\n        \"POINumber\": \"1059425882\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/mp-iban-verification/v1/verification-requests"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "36cca7f4-4152-49a1-9e06-98d8f7637638"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a8c565013a8fe2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Feb 2025 15:10:30 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"20240627SARJHIRJHI7BPXY10000017361\"\n    }\n}"
+						},
+						{
+							"name": "IBAN Verification Create Request-Saudi Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"Saudi-Payment\",\r\n        \"IBAN\": \"SA4420000001234567891234\",\r\n        \"POIType\": \"IQA\",\r\n        \"POINumber\": \"2512023454\",\r\n        \"Meta\": {\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"beneficiaryId\",\r\n                    \"Value\": \"99662cee-5125-49ed-aa43-40213c37cfe6\"\r\n                },\r\n                {\r\n                    \"Name\": \"externalPartyId\",\r\n                    \"Value\": \"3044877\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/mp-iban-verification/v1/verification-requests"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "bbaae799-9ca9-43f9-82ae-5fb9a79f0ce1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a8c58600ec2940"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Feb 2025 15:11:04 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"20240626SARJHIRJHI7BPXY10000017359\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "IBAN Verification Create Request-ARB",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access-token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA5880000504608010062371\",\r\n        \"POIType\": \"IQA\",\r\n        \"POINumber\": \"2548589759\",\r\n        \"Meta\": {\r\n            \"FinancialInstitutionId\": \"RJHISARI\",\r\n            \"PSUId\": \"2548589759\",\r\n            \"UserLoginId\": \"example\",\r\n            \"Purpose\": [\r\n                \"Account Aggregation\"\r\n            ],\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"channelRedirectionUrl\",\r\n                    \"Value\": \"https://www.example.com\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://{{inbound-gw}}/mp-iban-verification/v1/verification-requests"
+					},
+					"response": [
+						{
+							"name": "IBAN Verification Create Request-ARB",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA0480000204608015177730\",\r\n        \"POIType\": \"IQA\",\r\n        \"POINumber\": \"2910929849\",\r\n        \"Meta\": {\r\n            \"FinancialInstitutionId\": \"RJHISARI\",\r\n            \"PSUId\": \"2910929849\",\r\n            \"UserLoginId\": \"example\",\r\n            \"Purpose\": [\r\n                \"Account Aggregation\"\r\n            ],\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"channelRedirectionUrl\",\r\n                    \"Value\": \"https://www.example.com\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/mp-iban-verification/v1/verification-requests"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e8838150-fe4d-4388-a468-3615a20c63f6"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a8c4a400ec23e0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Feb 2025 15:07:16 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"f428deb3-2842-408d-878e-7904f61be27b\"\n    }\n}"
+						},
+						{
+							"name": "IBAN Verification Create Request-ARB",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Source\": \"ARB\",\r\n        \"IBAN\": \"SA5880000504608010062371\",\r\n        \"POIType\": \"IQA\",\r\n        \"POINumber\": \"2548589759\",\r\n        \"Meta\": {\r\n            \"FinancialInstitutionId\": \"RJHISARI\",\r\n            \"PSUId\": \"2548589759\",\r\n            \"UserLoginId\": \"example\",\r\n            \"Purpose\": [\r\n                \"Account Aggregation\"\r\n            ],\r\n            \"EchoList\": [\r\n                {\r\n                    \"Name\": \"channelRedirectionUrl\",\r\n                    \"Value\": \"https://www.example.com\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/mp-iban-verification/v1/verification-requests"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e32e6e40-0c46-442c-b4c9-f92d286e4f10"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a8c4c300ec2530"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Feb 2025 15:07:48 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"438e2521-8e3f-4acf-806f-c13e9db48978\"\n    }\n}"
+						},
+						{
+							"name": "IBAN Verification Create Request-ARB",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"Source\": \"ARB\",\r\n    \"IBAN\": \"SA8180000204608015226008\",\r\n    \"POIType\": \"NAT\",\r\n    \"POINumber\": \"1200328910\",\r\n    \"Meta\": {\r\n      \"FinancialInstitutionId\": \"RJHISARI\",\r\n      \"PSUId\": \"1200328910\",\r\n      \"UserLoginId\": \"example\",\r\n      \"Purpose\": [\r\n        \"Account Aggregation\"\r\n      ],\r\n      \"EchoList\": [\r\n        {\r\n          \"Name\": \"channelRedirectionUrl\",\r\n          \"Value\": \"https://www.example.com\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{inbound-gw}}/mp-iban-verification/v1/verification-requests"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2d119b49-e364-4974-a41b-fb1e8b47b97e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67a8becf00eb89b0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Feb 2025 14:42:24 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"addc0f46-ea07-4781-a005-07677f66483e\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox"
+		},
+		{
+			"key": "inbound-client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "inbound-client-secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		}
+	]
+}

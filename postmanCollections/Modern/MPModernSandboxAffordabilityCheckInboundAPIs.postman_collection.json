@@ -1,0 +1,775 @@
+{
+	"info": {
+		"_postman_id": "21fbc5c0-abb7-48e3-8665-7b00834c0763",
+		"name": "MP Modern Sandbox Affordability Check Inbound APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22335175"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "OAuth2 Token",
+					"item": [
+						{
+							"name": "Generate Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = JSON.parse(responseBody);\r",
+											"pm.collectionVariables.set(\"access-token\", data.access_token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "affordability_check",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/oauth2security/oauth2/token",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"oauth2security",
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AffordabilityCheck",
+			"item": [
+				{
+					"name": "Create Affordability Check Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"request-id\", data.Data.RequestId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"FinancialInstitutionId\": \"INMASARI\",\r\n        \"POINumber\": \"1545818534\",\r\n        \"POIType\": \"IqamaID\",\r\n        \"AccountTypes\": [\r\n            \"Retail\"\r\n        ],\r\n        \"SecurityProfile\": \"Redirection\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-affordability-check",
+								"v1",
+								"requests"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Affordability Check Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"FinancialInstitutionId\": \"SAMAModelBank\",\r\n        \"POINumber\": \"1545818534\",\r\n        \"POIType\": \"IqamaID\",\r\n        \"AccountTypes\": [\r\n            \"Retail\"\r\n        ],\r\n        \"SecurityProfile\": \"Redirection\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-affordability-check",
+										"v1",
+										"requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e19f1c00-5c18-4e4c-8d38-98366613cdf4"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67b2e5fc01a711e0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,84;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 07:32:13 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"66\",\n        \"Status\": \"AwaitingAuthorization\",\n        \"RedirectionURL\": \"https://auth1.lab.openbanking.sa/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3Aefebf834-b304-4a58-a6bf-2c40cc92c058&client_id=c27042bb-fc24-4bc3-a844-73b2cf2bb97f&response_type=code&scope=accounts+openid\"\n    }\n}"
+						},
+						{
+							"name": "Create Affordability Check Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"FinancialInstitutionId\": \"INMASARI\",\r\n        \"POINumber\": \"1545818534\",\r\n        \"POIType\": \"IqamaID\",\r\n        \"AccountTypes\": [\r\n            \"Retail\"\r\n        ],\r\n        \"SecurityProfile\": \"Redirection\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-affordability-check",
+										"v1",
+										"requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d3082f01-521f-4c82-9941-ee1f2f170146"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67b2f24202312052"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 08:24:37 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"19\",\n        \"Status\": \"AwaitingAuthorization\",\n        \"RedirectionURL\": \"https://auth-ob-sb.alinma.com/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3Af1fde008-bf66-46bc-ba99-928a9fa4084e&client_id=bcd77d15-2682-4390-86ad-79644f7acfa6&response_type=code&scope=accounts+openid\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Execute Affordability Check Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"RequestId\": \"66\",\r\n        \"POINumber\": \"1545818534\",\r\n        \"MainAccountId\": \"100004000000000000000002\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests/execute",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-affordability-check",
+								"v1",
+								"requests",
+								"execute"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Execute Affordability Check Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"RequestId\": \"66\",\r\n        \"POINumber\": \"1545818534\",\r\n        \"MainAccountId\": \"100004000000000000000002\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests/execute",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-affordability-check",
+										"v1",
+										"requests",
+										"execute"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e7050e12-fd99-4f76-ad7d-074da206b03a"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67b2f5370231b4c2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,90;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 08:37:11 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "BE error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"RequestId\": \"19\",\r\n        \"POINumber\": \"1545818534\",\r\n        \"MainAccountId\": \"39225ad7-7a63-4c92-b1da-b2cf3b5eba5e\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests/execute",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-affordability-check",
+										"v1",
+										"requests",
+										"execute"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d0822e19-f37f-475a-b76b-36ebdd14a940"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67b30f5d00b48d83"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 10:28:45 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"httpCode\": \"400\",\n    \"httpMessage\": \"Bad Request\",\n    \"moreInformation\": \"BackEnd Error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Affordability Check Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"POINumber\": \"1545818534\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests/:RequestId",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-affordability-check",
+								"v1",
+								"requests",
+								":RequestId"
+							],
+							"variable": [
+								{
+									"key": "RequestId",
+									"value": "66"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Affordability Check Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"POINumber\": \"1545818534\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests/:RequestId",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-affordability-check",
+										"v1",
+										"requests",
+										":RequestId"
+									],
+									"query": [
+										{
+											"key": "POINum",
+											"value": "1545818534",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "19"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "a558bff1-90fd-40b0-bcd5-79a9d980392a"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67b2f2a901a8a830"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 08:26:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"19\",\n        \"POINumber\": \"1545818534\",\n        \"POIType\": \"IqamaID\",\n        \"FinancialInstitution\": {\n            \"FinancialInstitutionId\": \"INMASARI\",\n            \"NameEn\": \"Alinma Bank\",\n            \"NameAr\": \"مصرف الانماء\"\n        },\n        \"CreationDateTime\": \"2024-07-02T13:32:53.776+00:00\",\n        \"Status\": \"Completed\",\n        \"StatusDescription\": \"Request Completed Successfully\",\n        \"StatusUpdateDateTime\": \"2024-07-02T13:34:08.971+00:00\",\n        \"MainAccountId\": \"39225ad7-7a63-4c92-b1da-b2cf3b5eba5e\",\n        \"RequestData\": {\n            \"BankStatement\": {\n                \"AverageBalance\": 47.57,\n                \"AverageSalary\": 0,\n                \"LastSalaryCredited\": 16.03,\n                \"CreditAmountSummary\": [\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Jul\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Jun\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"May\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Apr\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Mar\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Feb\",\n                        \"TotalAmount\": 0\n                    }\n                ],\n                \"DebitAmountSummary\": [\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Jul\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Jun\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"May\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Apr\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Mar\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Feb\",\n                        \"TotalAmount\": 0\n                    }\n                ],\n                \"LastDividendAmount\": 31.2,\n                \"AverageDividend\": 0\n            },\n            \"CreditBalance\": [\n                {\n                    \"BalanceType\": \"KSAOB.ClosingAvailable\",\n                    \"Amount\": 1500,\n                    \"Currency\": \"SAR\"\n                },\n                {\n                    \"BalanceType\": \"KSAOB.ClosingAvailable\",\n                    \"Amount\": 1500,\n                    \"Currency\": \"SAR\"\n                }\n            ],\n            \"ScheduledPayments\": [\n                {\n                    \"ScheduledPaymentId\": \"140ab1c8-634a-44dd-935a-7d02fb233922\",\n                    \"ScheduledType\": \"KSAOB.Arrival\",\n                    \"ScheduledPaymentDateTime\": \"2023-02-22T22:21:11.761Z\",\n                    \"CreditorReference\": \"reference\",\n                    \"DebtorReference\": \"debtorReference\",\n                    \"InstructedAmount\": {\n                        \"Amount\": \"35.53\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"CreditorAgent\": {\n                        \"IdentificationType\": \"KSAOB.BICFI\",\n                        \"Identification\": \"identification\"\n                    },\n                    \"CreditorAccount\": [\n                        {\n                            \"IdentificationType\": \"KSAOB.IBAN\",\n                            \"Identification\": \"096260283686\"\n                        }\n                    ]\n                }\n            ],\n            \"StandingOrders\": [\n                {\n                    \"StandingOrderId\": \"d00a23ff-42f1-48c1-adb0-d2969251ebcb\",\n                    \"StandingOrderType\": \"KSAOB.InternationalTransfer\",\n                    \"Frequency\": \"EvryDay\",\n                    \"CreditorReference\": \"Allowance\",\n                    \"Purpose\": \"Bills and expenses\",\n                    \"FirstPaymentDateTime\": \"2023-02-22T22:21:11.762Z\",\n                    \"NextPaymentDateTime\": \"2023-02-22T22:21:11.762Z\",\n                    \"LastPaymentDateTime\": \"2023-02-22T22:21:11.762Z\",\n                    \"FinalPaymentDateTime\": \"2024-01-23T22:21:11.762Z\",\n                    \"NumberOfPayments\": \"4\",\n                    \"StandingOrderStatusCode\": \"KSAOB.Active\",\n                    \"FirstPaymentAmount\": {\n                        \"Amount\": \"38.48\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"NextPaymentAmount\": {\n                        \"Amount\": \"24.18\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"LastPaymentAmount\": {\n                        \"Amount\": \"62.14\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"FinalPaymentAmount\": {\n                        \"Amount\": \"21.69\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"CreditorAgent\": {\n                        \"IdentificationType\": \"KSAOB.BICFI\",\n                        \"Identification\": \"bWkSN9JILgJrzn\"\n                    },\n                    \"CreditorAccount\": [\n                        {\n                            \"IdentificationType\": \"KSAOB.IBAN\",\n                            \"Identification\": \"009034203556\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"OBAccounts\": [\n            \"39225ad7-7a63-4c92-b1da-b2cf3b5eba5e\"\n        ],\n        \"AccountTypes\": [\n            \"Retail\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Affordability Check Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"POINumber\": \"1545818534\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-affordability-check/v1/requests/:RequestId",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-affordability-check",
+										"v1",
+										"requests",
+										":RequestId"
+									],
+									"query": [
+										{
+											"key": "POINum",
+											"value": "1545818534",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "66"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3dd095eb-b4d5-410e-b4db-d16b273815ce"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67b2f2b401a8a850"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 08:26:29 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"66\",\n        \"POINumber\": \"1545818534\",\n        \"POIType\": \"IqamaID\",\n        \"FinancialInstitution\": {\n            \"FinancialInstitutionId\": \"SAMAModelBank\",\n            \"NameEn\": \"SAMA Model Bank\",\n            \"NameAr\": \"البنك المركزي السعودي\"\n        },\n        \"CreationDateTime\": \"2024-08-04T11:36:03.717+00:00\",\n        \"Status\": \"Completed\",\n        \"StatusDescription\": \"Request Completed Successfully\",\n        \"StatusUpdateDateTime\": \"2024-08-04T11:39:09.748+00:00\",\n        \"MainAccountId\": \"100004000000000000000002\",\n        \"RequestData\": {\n            \"BankStatement\": {\n                \"AverageBalance\": 16.2,\n                \"AverageSalary\": 0,\n                \"LastSalaryCredited\": 2512,\n                \"CreditAmountSummary\": [\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Aug\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Jul\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Jun\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"May\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Apr\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Mar\",\n                        \"TotalAmount\": 0\n                    }\n                ],\n                \"DebitAmountSummary\": [\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Aug\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Jul\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Jun\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"May\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Apr\",\n                        \"TotalAmount\": 0\n                    },\n                    {\n                        \"Year\": \"2024\",\n                        \"Month\": \"Mar\",\n                        \"TotalAmount\": 0\n                    }\n                ],\n                \"LastDividendAmount\": 0,\n                \"AverageDividend\": 0\n            },\n            \"CreditBalance\": [\n                {\n                    \"BalanceType\": \"KSAOB.ClosingAvailable\",\n                    \"Amount\": 1091.7,\n                    \"Currency\": \"SAR\"\n                }\n            ],\n            \"ScheduledPayments\": [\n                {\n                    \"ScheduledPaymentId\": \"001011000000000000000107\",\n                    \"ScheduledType\": \"KSAOB.Arrival\",\n                    \"ScheduledPaymentDateTime\": \"2020-01-27T05:00:00Z\",\n                    \"CreditorReference\": \"reference\",\n                    \"DebtorReference\": \"debtorReference\",\n                    \"InstructedAmount\": {\n                        \"Amount\": \"10.00\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"CreditorAgent\": {\n                        \"IdentificationType\": \"KSAOB.BICFI\",\n                        \"Identification\": \"identification\"\n                    },\n                    \"CreditorAccount\": [\n                        {\n                            \"IdentificationType\": \"KSAOB.IBAN\",\n                            \"Identification\": \"20304012345678\"\n                        }\n                    ]\n                },\n                {\n                    \"ScheduledPaymentId\": \"001011000000000000000108\",\n                    \"ScheduledType\": \"KSAOB.Arrival\",\n                    \"ScheduledPaymentDateTime\": \"2020-01-28T05:00:00Z\",\n                    \"CreditorReference\": \"reference\",\n                    \"DebtorReference\": \"debtorReference\",\n                    \"InstructedAmount\": {\n                        \"Amount\": \"10.00\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"CreditorAgent\": {\n                        \"IdentificationType\": \"KSAOB.BICFI\",\n                        \"Identification\": \"identification\"\n                    },\n                    \"CreditorAccount\": [\n                        {\n                            \"IdentificationType\": \"KSAOB.IBAN\",\n                            \"Identification\": \"20304012345678\"\n                        }\n                    ]\n                },\n                {\n                    \"ScheduledPaymentId\": \"5e0e5cea-b28c-407f-b5b4-6a0ed9a6791a\",\n                    \"ScheduledType\": \"KSAOB.Arrival\",\n                    \"ScheduledPaymentDateTime\": \"2023-03-04T16:22:37.396Z\",\n                    \"CreditorReference\": \"reference\",\n                    \"DebtorReference\": \"debtorReference\",\n                    \"InstructedAmount\": {\n                        \"Amount\": \"24.04\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"CreditorAgent\": {\n                        \"IdentificationType\": \"KSAOB.BICFI\",\n                        \"Identification\": \"identification\"\n                    },\n                    \"CreditorAccount\": [\n                        {\n                            \"IdentificationType\": \"KSAOB.IBAN\",\n                            \"Identification\": \"472282348582\"\n                        }\n                    ]\n                }\n            ],\n            \"StandingOrders\": [\n                {\n                    \"StandingOrderId\": \"001010000000000000000113\",\n                    \"StandingOrderType\": \"KSAOB.LocalBankTransfer\",\n                    \"Frequency\": \"WkInMnthDay:02:05\",\n                    \"CreditorReference\": \"GSG 10 BANK ROAD\",\n                    \"Purpose\": \"Bills and expenses\",\n                    \"FirstPaymentDateTime\": \"2014-05-15T00:00:00Z\",\n                    \"NextPaymentDateTime\": \"2018-01-15T00:00:00Z\",\n                    \"LastPaymentDateTime\": \"2018-01-15T00:00:00Z\",\n                    \"FinalPaymentDateTime\": \"2020-01-10T00:00:00Z\",\n                    \"NumberOfPayments\": \"3\",\n                    \"StandingOrderStatusCode\": \"KSAOB.Active\",\n                    \"FirstPaymentAmount\": {\n                        \"Amount\": \"84.09\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"NextPaymentAmount\": {\n                        \"Amount\": \"84.09\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"LastPaymentAmount\": {\n                        \"Amount\": \"10.20\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"FinalPaymentAmount\": {\n                        \"Amount\": \"2.50\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"CreditorAgent\": {\n                        \"IdentificationType\": \"KSAOB.BICFI\",\n                        \"Identification\": \"INDRUK00XXX\"\n                    },\n                    \"CreditorAccount\": [\n                        {\n                            \"IdentificationType\": \"KSAOB.IBAN\",\n                            \"Identification\": \"GB04INDR90872921098674\"\n                        }\n                    ]\n                },\n                {\n                    \"StandingOrderId\": \"001010000000000000000114\",\n                    \"StandingOrderType\": \"KSAOB.InternationalTransfer\",\n                    \"Frequency\": \"IntrvlMnthDay:12:-05\",\n                    \"CreditorReference\": \"Tim 920111011\",\n                    \"Purpose\": \"Bills and expenses\",\n                    \"FirstPaymentDateTime\": \"2015-02-17T00:00:00Z\",\n                    \"NextPaymentDateTime\": \"2018-01-17T00:00:00Z\",\n                    \"LastPaymentDateTime\": \"2018-01-17T00:00:00Z\",\n                    \"FinalPaymentDateTime\": \"2022-02-17T00:00:00Z\",\n                    \"NumberOfPayments\": \"3\",\n                    \"StandingOrderStatusCode\": \"KSAOB.Active\",\n                    \"FirstPaymentAmount\": {\n                        \"Amount\": \"92.10\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"NextPaymentAmount\": {\n                        \"Amount\": \"92.10\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"LastPaymentAmount\": {\n                        \"Amount\": \"10.20\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"FinalPaymentAmount\": {\n                        \"Amount\": \"100.00\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"CreditorAgent\": {\n                        \"IdentificationType\": \"KSAOB.BICFI\",\n                        \"Identification\": \"GHTTUK00XXX\"\n                    },\n                    \"CreditorAccount\": [\n                        {\n                            \"IdentificationType\": \"KSAOB.IBAN\",\n                            \"Identification\": \"GB14GHTT10010289048910\"\n                        }\n                    ]\n                },\n                {\n                    \"StandingOrderId\": \"5db813ce-802b-4655-bdc0-594b24cc1e5e\",\n                    \"StandingOrderType\": \"KSAOB.InternationalTransfer\",\n                    \"Frequency\": \"EvryDay\",\n                    \"CreditorReference\": \"Allowance\",\n                    \"Purpose\": \"Bills and expenses\",\n                    \"FirstPaymentDateTime\": \"2023-03-04T16:22:37.397Z\",\n                    \"NextPaymentDateTime\": \"2023-03-04T16:22:37.397Z\",\n                    \"LastPaymentDateTime\": \"2023-03-04T16:22:37.397Z\",\n                    \"FinalPaymentDateTime\": \"2024-02-02T16:22:37.397Z\",\n                    \"NumberOfPayments\": \"1\",\n                    \"StandingOrderStatusCode\": \"KSAOB.Active\",\n                    \"FirstPaymentAmount\": {\n                        \"Amount\": \"20.69\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"NextPaymentAmount\": {\n                        \"Amount\": \"59.15\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"LastPaymentAmount\": {\n                        \"Amount\": \"69.63\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"FinalPaymentAmount\": {\n                        \"Amount\": \"63.97\",\n                        \"Currency\": \"SAR\"\n                    },\n                    \"CreditorAgent\": {\n                        \"IdentificationType\": \"KSAOB.BICFI\",\n                        \"Identification\": \"604473840003\"\n                    },\n                    \"CreditorAccount\": [\n                        {\n                            \"IdentificationType\": \"KSAOB.IBAN\",\n                            \"Identification\": \"523188505295\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"OBAccounts\": [\n            \"100004000000000000000003\",\n            \"100004000000000000000005\",\n            \"100004000000000000000002\"\n        ],\n        \"AccountTypes\": [\n            \"Retail\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "https://apimarketplace-ext-test-gw-svc-gw-gateway-traffic-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/apimarketplace-sit/sandbox-inbound",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "009407e30165d8f05d554e336acb0b26",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "request-id",
+			"value": ""
+		}
+	]
+}
