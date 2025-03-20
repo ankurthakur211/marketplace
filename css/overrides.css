@@ -17889,8 +17889,8 @@ form#user-login-form input {
     background-position: left center;
     background-repeat: no-repeat;
     content: "";
-    min-height: 372px;
-    top: 26%;
+    min-height: 334px;
+    top: 20%;
     max-width: 371px;
     max-height: 337px;
     margin-top: 4rem;
@@ -17972,6 +17972,27 @@ form#user-login-form input {
     flex-direction: column;
     margin-left: unset !important;
     margin-right: unset;
+}
+
+.apic-login-wrapper .apic-user-form-header {
+    width: 40%;
+    font-family: "SF Pro Display" !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 84px;
+    color: #11183b;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    position: absolute;
+    left: 0;
+    top: 4rem;
+    margin-left: 20px !important;
+}
+
+.apic-user-form-wrapper {
+    padding-left: unset !important;
 }
 
 
