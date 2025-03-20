@@ -44,26 +44,23 @@
             request. This data is validated against Saudi Payment Network, and subsequently pushed to the user.
             </br></p>
           <p class="fob-welcome-text"><a id="downloadLink"
-              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/IBANVerification.postman_collection.json"
+              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxIBANVerificationInboundAPIs.postman_collection.json"
               download="">Download Postman Collection</a></p>
           <p class="fob-welcome-text"><a
-              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/IBANVerificationSampleDataRequest.xlsx"
+              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/IBANVerificationSampleDataRequest.xlsx"
               download="">Download Sample Data</a></p>
 
-          <h1 class="fob-welcome-title">Iban Verification Workflow</h1>
+          <h1 class="fob-welcome-title">Iban Verification Sequence Diagram</h1>
           <p class="fob-welcome-line"></p>
-          <a class="fob-product-title-click" target="_blank" href="./ibanVerificationWorkflowImg">Click
-            here</a>
-          <div class="row flex mt-25 mb-25">
-            <div class="col-lg-8">
-              <p class="ibanVerification-flow-img"><br></p>
-            </div>
-          </div>
+          <p class="fob-welcome-text"><a
+            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/IbanVerificationSequenceDiagram.pdf"
+            download="">Download Iban Sequence Diagram</a></p>
+
           <h1 class="fob-welcome-title" id="section-2">IBAN Verification</h1>
           <p class="fob-welcome-line"></p>
-          <p class="fob-welcome-text">Endpoint: /v1/Verification-requests</br></p>
+          <p class="fob-welcome-text">Endpoint: /mp-iban-verification/v1/verification-requests</br></p>
           <p class="fob-welcome-text"><a
-              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/298/api/277#/IBANVerification_100/operation/%2Fverification-requests/post">Swagger
+              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3175/api/3169#/MPIBANVerification_100/operation/%2Fverification-requests/post">Swagger
               Link</a></p>
           <p class="fob-welcome-text">This path is used to create IBAN verification inquiry request using preferred
             source.
@@ -77,31 +74,28 @@
                 <pre class="example_97 api-guides-example-fob ">
                     <code class="sample-code">
 Request Body:
-
 {
-    "Data": {
-    "Source": "ARB",
-    "IBAN": "SA2230400108071086000028",
-    "POIType": "NAT",
-    "POINumber": "2369874521",
-    "Meta": {
-        "FinancialInstitutionId": "RJHISARI",
-        "PSUId": "string",
-        "UserLoginId": "string",
-        "Purpose": [
-        "Account Aggregation"
-        ],
-        "EchoList": [
-        {
-            "Name": "channelRedirectionUrl",
-            "Value": "https://www.example.com"
-        }
-        ]
-    }
-    }
+  "Data": {
+      "Source": "ARB",
+      "IBAN": "SA5880000504608010062371",
+      "POIType": "IQA",
+      "POINumber": "2548589759",
+      "Meta": {
+          "FinancialInstitutionId": "RJHISARI",
+          "PSUId": "2548589759",
+          "UserLoginId": "example",
+          "Purpose": [
+              "Account Aggregation"
+          ],
+          "EchoList": [
+              {
+                  "Name": "channelRedirectionUrl",
+                  "Value": "https://www.example.com"
+              }
+          ]
+      }
+  }
 }
-                        
-                          
                     </code>
                   </pre>
               </div>
@@ -113,29 +107,34 @@ Request Body:
 
                 <pre id="generatedCurl">
                     <code id="IBAN-Verification-Requests" style=" display: block;">
-https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/iban-verification/v1/verification-requests' \
---header 'x-request-id: 123456789' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer AAIgYjY0MzE3ZDg1N2IyYTM3Y2E5ZmQyZjkxNTBlNDFiM2OzIYliy1hYuYi7w53pUEQx3lAxD-nkh9TOh_WG4LT3g4B4HtNg0mPaY-cXqdKfULB_N7hDPQy5xnCnwG677SfM93pcj91K2WDU-7SS3ZOEW_fU7keYI5Pu4puYNj30q-zGB9JardW1NM1Zpw3oJCi-' \
---header 'Cookie: d70c4b71d548cdbd2b531dc96408ca96=3c9bc14826e94f3004136fe292af06cd' \
---data '{
+  curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/iban-verification/v1/verification-requests' \
+  --header 'x-request-id: 899d8365-e2dd-4fab-9938-1c325aebf67d' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: ••••••' \
+  --data '{
     "Data": {
-        "Source": "Saudi-Payment",
-        "IBAN": "SA2230400108071086000028",
-        "POIType": "NAT",
-        "POINumber": "2369874521",
-        "Meta": {
-            "EchoList": [
-                {
-                    "Name": "channelRedirectionUrl",
-                    "Value": "https://www.example.com"
-                }
-            ]
-        }
+      "Source": "ARB",
+      "IBAN": "SA8180000204608015226008",
+      "POIType": "NAT",
+      "POINumber": "1200328910",
+      "Meta": {
+        "FinancialInstitutionId": "RJHISARI",
+        "PSUId": "1200328910",
+        "UserLoginId": "example",
+        "Purpose": [
+          "Account Aggregation"
+        ],
+        "EchoList": [
+          {
+            "Name": "channelRedirectionUrl",
+            "Value": "https://www.example.com"
+          }
+        ]
+      }
     }
-}'
+  }'
 
-                        
+
                     </code>
                   </pre>
               </div>
@@ -150,7 +149,9 @@ https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplac
 
                   <div class="response-box-div">
                     <a type="button" class="response-box-error"
-                      onclick="responseText('response-IBAN-Verification-Requests')">200</a>
+                      onclick="responseText('response-IBAN-Verification-Requests')">201</a>
+                    <a type="button" class="response-box-error"
+                      onclick="responseText('response-IBAN-Verification-Requests2')">400</a>
                     <a type="button" class="response-box-error"
                       onclick="responseText('response-IBAN-Verification-Requests3')">401</a>
                     <a type="button" class="response-box-error"
@@ -171,99 +172,110 @@ https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplac
 
                     <code id="response-IBAN-Verification-Requests" style=" display: block; " class="text">
 {
-"Data": {
-    "RequestId": "1234567891",
-    "PASPRedirectionUrl": "https://www.example.com"
-}
-}
-    
-    
-                    </code>
-        
-                    <code id="response-IBAN-Verification-Requests3" style=" display: none; " class="text">
-  {
-    "errors": [
-      {
-        "code": "ERROR.401.001",
-        "message": "Unauthorized to call the target operation.",
-        "path": "authorization",
-        "url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }  
-                    </code>	
-                  
-                    <code id="response-IBAN-Verification-Requests4" style=" display: none; " class="text">
-  {
-    "errors": [
-      {
-        "code": "ERROR.403.001",
-        "message": "Can't find any valid subscription.",
-        "url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }    
-                    </code>
-                  
-                    <code id="response-IBAN-Verification-Requests5" style=" display: none; " class="text">
-  {
-    "errors": [
-      {
-        "code": "ERROR.404.001",
-        "message": "No resources match requested URI.",
-        "url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }     
-                    </code>
-                  
-                    <code id="response-IBAN-Verification-Requests6" style=" display: none; "class="text">
-  {
-    "errors": [
-      {
-        "code": "ERROR.405.001",
-        "message": "The method is not allowed for the requested URL.",
-        "url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
+  "Data": {
+      "RequestId": "f428deb3-2842-408d-878e-7904f61be27b"
   }
-                          
+}
+
                     </code>
-                  
+
+                    <code id="response-IBAN-Verification-Requests2" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.400.001",
+      "Message": "Customer POINumber is invalid.",
+      "Path": "request.body.POINumber",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests3" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.401.001",
+      "Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests4" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.403.001",
+      "Message": "Can't find any valid subscription.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests5" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.404.001",
+      "Message": "No resources match requested URI.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests6" style=" display: none; "class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.405.001",
+      "Message": "The method is not allowed for the requested URL.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+
+                    </code>
+
                     <code id="response-IBAN-Verification-Requests7" style=" display: none; "class="text">
-  {
-    "errors": [
-      {
-        "code": "ERROR.406.001",
-        "message": "An appropriate representation of the requested resource could not be found",
-        "url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }       
+{
+  "Errors": [
+    {
+      "Code": "ERROR.406.001",
+      "Message": "An appropriate representation of the requested resource could not be found",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
                     </code>
-                  
+
                     <code id="response-IBAN-Verification-Requests8" style=" display: none; " class="text">
-  {
-    "errors": [
-      {
-        "code": "ERROR.429.001",
-        "message": "Assembly Rate Limit exceeded",
-        "url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }     
+{
+  "Errors": [
+    {
+      "Code": "ERROR.429.001",
+      "Message": "Assembly Rate Limit exceeded",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
                     </code>
-                  
+
                     <code id="response-IBAN-Verification-Requests9" style=" display: none; " class="text">
-  {
-    "errors": [
-      {
-        "code": "ERROR.500.001",
-        "message": "Internal Error",
-        "url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }     
+{
+  "Errors": [
+    {
+      "Code": "ERROR.500.001",
+      "Message": "Internal Error",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
                     </code>
                   </pre>
                 </div>
@@ -275,8 +287,78 @@ https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplac
               a specific Request.<a
                 href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/callbackswaggers/ibancallback.json"
                 download="">Download Iban Callback Swagger</a></p></br></br>
+                <div class="row flex mt-25">
+                  <div class="col-lg-8">
+                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                    <p class="fob-welcome-line"></p>
+                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+Request Body:
+{
+"Data": {
+  "RequestId": "1234567891",
+  "RequestStatus": "Valid",
+  "FailureCode": "ACO6",
+  "AccountStatus": "Blocked",
+  "Name": "Mohamed Ahamed",
+  "Source": "ARB",
+  "IBAN": "SA2230400108071086000028",
+  "POIType": "NAT",
+  "POINumber": "2369874521",
+  "EchoList": [
+    {
+      "Name": "channelRedirectionUrl",
+      "Value": "https://www.example.com"
+    }
+  ]
+}
+}
+                        </code>
+                      </pre>
+                  </div>
+                </div>
 
-            <!-- 
+                <div class="row flex mt-25">
+                  <div class="col-lg-8">
+                    <div class="code-box">
+                      <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                      <div class="response-box-div">
+                        <a type="button" class="response-box-error"
+                          onclick="responseText('response-IBAN-Verification-Callback-Requests')">202</a>
+                        <a type="button" class="response-box-error"
+                          onclick="responseText('response-IBAN-Callback-Requests1')">500</a>
+                      </div>
+
+                      <pre class="response-box">
+
+                        <code id="response-IBAN-Callback-Requests" style=" display: block; " class="text">
+    {
+      "Data": {
+          "RequestId": "f428deb3-2842-408d-878e-7904f61be27b"
+      }
+    }
+
+                        </code>
+
+                        <code id="response-IBAN-Callback-Requests1" style=" display: none; " class="text">
+{
+"Errors": [
+  {
+    "Code": "ERROR.500.001",
+    "Message": "Internal Error",
+    "Url": "https://{baseURL}/developer-portal/terms"
+  }
+]
+}
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+            <!--
                         <h1 class="fob-welcome-title" id="section-3">IBAN Verification Callback</h1>
                         <p class="fob-welcome-line"></p>
                         <p class="fob-welcome-text">This path is used to return IBAN Verification Data from all required sources for a specific Request.</br></p>
@@ -299,9 +381,9 @@ Request Body:
     "StatusDesc": "699",
     "RqID": "46878"
 }
-                        
-    
-                
+
+
+
                       </code>
                     </pre>
                                 </div>
@@ -333,7 +415,7 @@ curl --location https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-si
     "RqID": "46878"
 }'
 
-                            
+
                         </code>
                       </pre>
                                 </div>
@@ -367,99 +449,99 @@ curl --location https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-si
                                         <pre class="response-box">
 
               <code id="IBAN-Verification-Callback" style=" display: block; " class="text">
-   
+
                </code>
-       
+
               <code id="response-IBAN-Verification-Callback3" style=" display: none; " class="text">
   {
-  "errors": [
+  "Errors": [
     {
-      "code": "ERROR.401.001",
-      "message": "Unauthorized to call the target operation.",
-      "path": "authorization",
-      "url": "https://{baseURL}/developer-portal/terms"
+      "Code": "ERROR.401.001",
+      "Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+      "Url": "https://{baseURL}/developer-portal/terms"
     }
   ]
   }
-              
-              </code>	
-              
+
+              </code>
+
               <code id="response-IBAN-Verification-Callback4" style=" display: none; " class="text">
   {
-  "errors": [
+  "Errors": [
     {
-      "code": "ERROR.403.001",
-      "message": "Can't find any valid subscription.",
-      "url": "https://{baseURL}/developer-portal/terms"
-    }
-  ]
-  }   
-              </code>
-              
-              
-              <code id="response-IBAN-Verification-Callback5" style=" display: none; " class="text">
-  {
-  "errors": [
-    {
-      "code": "ERROR.404.001",
-      "message": "No resources match requested URI.",
-      "url": "https://{baseURL}/developer-portal/terms"
-    }
-  ]
-  }     
-              </code>
-              
-              
-              <code id="response-IBAN-Verification-Callback6" style=" display: none; "class="text">
-  {
-  "errors": [
-    {
-      "code": "ERROR.405.001",
-      "message": "The method is not allowed for the requested URL.",
-      "url": "https://{baseURL}/developer-portal/terms"
+      "Code": "ERROR.403.001",
+      "Message": "Can't find any valid subscription.",
+      "Url": "https://{baseURL}/developer-portal/terms"
     }
   ]
   }
-                   
               </code>
-               
-              
+
+
+              <code id="response-IBAN-Verification-Callback5" style=" display: none; " class="text">
+  {
+  "Errors": [
+    {
+      "Code": "ERROR.404.001",
+      "Message": "No resources match requested URI.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }
+              </code>
+
+
+              <code id="response-IBAN-Verification-Callback6" style=" display: none; "class="text">
+  {
+  "Errors": [
+    {
+      "Code": "ERROR.405.001",
+      "Message": "The method is not allowed for the requested URL.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+  }
+
+              </code>
+
+
               <code id="response-IBAN-Verification-Callback7" style=" display: none; "class="text">
   {
-  "errors": [
+  "Errors": [
     {
-      "code": "ERROR.406.001",
-      "message": "An appropriate representation of the requested resource could not be found",
-      "url": "https://{baseURL}/developer-portal/terms"
+      "Code": "ERROR.406.001",
+      "Message": "An appropriate representation of the requested resource could not be found",
+      "Url": "https://{baseURL}/developer-portal/terms"
     }
   ]
-  }       
+  }
               </code>
-               
-              
+
+
               <code id="response-IBAN-Verification-Callback8" style=" display: none; " class="text">
   {
-  "errors": [
+  "Errors": [
     {
-      "code": "ERROR.429.001",
-      "message": "Assembly Rate Limit exceeded",
-      "url": "https://{baseURL}/developer-portal/terms"
+      "Code": "ERROR.429.001",
+      "Message": "Assembly Rate Limit exceeded",
+      "Url": "https://{baseURL}/developer-portal/terms"
     }
   ]
-  }     
+  }
               </code>
-              
-              
+
+
               <code id="response-IBAN-Verification-Callback9" style=" display: none; " class="text">
   {
-  "errors": [
+  "Errors": [
     {
-      "code": "ERROR.500.001",
-      "message": "Internal Error",
-      "url": "https://{baseURL}/developer-portal/terms"
+      "Code": "ERROR.500.001",
+      "Message": "Internal Error",
+      "Url": "https://{baseURL}/developer-portal/terms"
     }
   ]
-  }    
+  }
               </code>
                     </pre>
 

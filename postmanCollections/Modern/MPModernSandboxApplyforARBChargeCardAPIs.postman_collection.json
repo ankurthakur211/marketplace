@@ -1,0 +1,2930 @@
+{
+	"info": {
+		"_postman_id": "00ade6de-8712-43d2-ba58-793f9656b407",
+		"name": "MP Modern Sandbox Apply for ARB Charge Card APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32970629"
+	},
+	"item": [
+		{
+			"name": "Business APIs",
+			"item": [
+				{
+					"name": "MP Issue Credit Card",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+							},
+							{
+								"key": "channelID",
+								"value": "EMKAN",
+								"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Data\": {\r\n    \"POIType\": \"01\",\r\n    \"POINumber\": \"1845490013\",\r\n    \"UserId\": \"u324235x\",\r\n    \"CardSegment\": \"Charge\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CardProduct\": \"PLT\",\r\n    \"CardRequestorDepartmentId\": 126,\r\n    \"CardRequestorMilitaryRankId\": \"009\",\r\n    \"CardRequestorSalaryAmount\": \"1200000\",\r\n    \"CardRequestorSalaryCurrency\": \"608\",\r\n    \"CardRequestorEmployerId\": 10,\r\n    \"CardRequestorEmployerSubId\": \"126\",\r\n    \"CardRequestorMilitaryNumber\": \"6789000\",\r\n    \"CardRequestorRequestedFinancingAmount\": \"15\",\r\n    \"CardRequestorRequestedFinancingAmountCurrency\": \"608\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"al riyadh\",\r\n    \"DeliveryAddressPostalCode\": \"11111\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEn\": \"Ahmed\",\r\n    \"CardRequestorLastNameEn\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerificationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/charge-cards-issuing",
+							"host": [
+								"{{MP_In_nonprod}}"
+							],
+							"path": [
+								"mp-charge-card",
+								"v2",
+								"charge-cards-issuing"
+							],
+							"query": [
+								{
+									"key": "accept-language",
+									"value": "en",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This operation path is used to list customer financial summaries."
+					},
+					"response": [
+						{
+							"name": "MP Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"POIType\": \"01\",\r\n    \"POINumber\": \"1845490013\",\r\n    \"UserId\": \"u324235x\",\r\n    \"CardSegment\": \"Fursan\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CardProduct\": \"MRCC\",\r\n    \"CardRequestorDepartmentId\": 126,\r\n    \"CardRequestorMilitaryRankId\": \"009\",\r\n    \"CardRequestorSalaryAmount\": \"1200000\",\r\n    \"CardRequestorSalaryCurrency\": \"608\",\r\n    \"CardRequestorEmployerId\": 10,\r\n    \"CardRequestorEmployerSubId\": \"126\",\r\n    \"CardRequestorMilitaryNumber\": \"6789000\",\r\n    \"CardRequestorRequestedFinancingAmount\": \"15\",\r\n    \"CardRequestorRequestedFinancingAmountCurrency\": \"608\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"al riyadh\",\r\n    \"DeliveryAddressPostalCode\": \"11111\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEn\": \"Ahmed\",\r\n    \"CardRequestorLastNameEn\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerificationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/charge-cards-issuing",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"charge-cards-issuing"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "75086712-64fa-4b4d-9d55-fea2661c1f81"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc334302484770"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:52:25 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"AcceptableRequest\": \"Y\",\n        \"CardOrderId\": \"8800000063741\"\n    }\n}"
+						},
+						{
+							"name": "MP Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"POIType\": \"01\",\r\n    \"POINumber\": \"1646701570\",\r\n    \"UserId\": \"u324235x\",\r\n    \"CardSegment\": \"Charge\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CardProduct\": \"CC\",\r\n    \"CardRequestorDepartmentId\": 126,\r\n    \"CardRequestorMilitaryRankId\": \"009\",\r\n    \"CardRequestorSalaryAmount\": \"1200000\",\r\n    \"CardRequestorSalaryCurrency\": \"608\",\r\n    \"CardRequestorEmployerId\": 10,\r\n    \"CardRequestorEmployerSubId\": \"126\",\r\n    \"CardRequestorMilitaryNumber\": \"6789000\",\r\n    \"CardRequestorRequestedFinancingAmount\": \"15\",\r\n    \"CardRequestorRequestedFinancingAmountCurrency\": \"608\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"al riyadh\",\r\n    \"DeliveryAddressPostalCode\": \"11111\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEn\": \"Ahmed\",\r\n    \"CardRequestorLastNameEn\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerificationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/charge-cards-issuing",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"charge-cards-issuing"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "fe4b2fe0-6970-44b3-bc20-20cee1fe9cce"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc34c903155072"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:58:49 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"AcceptableRequest\": \"Y\",\n        \"CardOrderId\": \"8800000061727\"\n    }\n}"
+						},
+						{
+							"name": "MP Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"POIType\": \"01\",\r\n    \"POINumber\": \"1452525363\",\r\n    \"UserId\": \"u324235x\",\r\n    \"CardSegment\": \"Charge\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CardProduct\": \"CLQ\",\r\n    \"CardRequestorDepartmentId\": 126,\r\n    \"CardRequestorMilitaryRankId\": \"009\",\r\n    \"CardRequestorSalaryAmount\": \"1200000\",\r\n    \"CardRequestorSalaryCurrency\": \"608\",\r\n    \"CardRequestorEmployerId\": 10,\r\n    \"CardRequestorEmployerSubId\": \"126\",\r\n    \"CardRequestorMilitaryNumber\": \"6789000\",\r\n    \"CardRequestorRequestedFinancingAmount\": \"15\",\r\n    \"CardRequestorRequestedFinancingAmountCurrency\": \"608\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"al riyadh\",\r\n    \"DeliveryAddressPostalCode\": \"11111\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEn\": \"Ahmed\",\r\n    \"CardRequestorLastNameEn\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerificationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/charge-cards-issuing",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"charge-cards-issuing"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "65accb93-5907-4b9d-9c28-b2b857cc3f6d"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc355503156bf2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:01:09 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"AcceptableRequest\": \"Y\",\n        \"CardOrderId\": \"8800000061697\"\n    }\n}"
+						},
+						{
+							"name": "MP Issue Credit Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept Language\nDefault Value: en\nAllowed Values:\n  en: English\n  ar: Arabic"
+									},
+									{
+										"key": "channelID",
+										"value": "EMKAN",
+										"description": "(Required) Channel ID.\nThis is mandatory only if the agreement between API consumer and provider."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"POIType\": \"01\",\r\n    \"POINumber\": \"1634378157\",\r\n    \"UserId\": \"u324235x\",\r\n    \"CardSegment\": \"Charge\",\r\n    \"CardEmbossingName\": \"NISHTHA\",\r\n    \"CardProduct\": \"CCR\",\r\n    \"CardRequestorDepartmentId\": 126,\r\n    \"CardRequestorMilitaryRankId\": \"009\",\r\n    \"CardRequestorSalaryAmount\": \"1200000\",\r\n    \"CardRequestorSalaryCurrency\": \"608\",\r\n    \"CardRequestorEmployerId\": 10,\r\n    \"CardRequestorEmployerSubId\": \"126\",\r\n    \"CardRequestorMilitaryNumber\": \"6789000\",\r\n    \"CardRequestorRequestedFinancingAmount\": \"15\",\r\n    \"CardRequestorRequestedFinancingAmountCurrency\": \"608\",\r\n    \"CustomerSegment\": \"001\",\r\n    \"FirstNameEn\": \"AHMED\",\r\n    \"LastNameEn\": \"GOMAA\",\r\n    \"CardIssueReason\": \"New\",\r\n    \"CardLinkedAccountBranch\": \"20400\",\r\n    \"CardLinkedAccountType\": \"001\",\r\n    \"CardLinkedAccountNumber\": \"0006084545655\",\r\n    \"CardMembershipId\": \"1\",\r\n    \"CardMembershipContact\": \"01200123123\",\r\n    \"DeliveryAddress1\": \"AL RIYADH\",\r\n    \"DeliveryAddress2\": \"AL RIYADH\",\r\n    \"DeliveryAddress3\": \"AL RIYADH\",\r\n    \"DeliveryAddress4\": \"AL RIYADH\",\r\n    \"DeliveryAddressCity\": \"AL RIYADH\",\r\n    \"DeliveryAddressProvince\": \"East Province\",\r\n    \"DeliveryAddressDistrict\": \"al riyadh\",\r\n    \"DeliveryAddressPostalCode\": \"11111\",\r\n    \"DeliveryAddressCountryCode\": \"608\",\r\n    \"DeliveryAddressLatitude\": \"31.23\",\r\n    \"DeliveryAddressLongitude\": \"30.22\",\r\n    \"CardRequestorEmployeeCIC\": \"0000000009013370\",\r\n    \"CardRequestorEmployeeId\": \"12345\",\r\n    \"CardRequestorDocumentId\": \"01\",\r\n    \"CardRequestorDocumentCode\": \"1083308922\",\r\n    \"CardRequestorFirstNameEn\": \"Ahmed\",\r\n    \"CardRequestorLastNameEn\": \"Gomaa\",\r\n    \"CardRequestorEmbossingName\": \"Embossing Name\",\r\n    \"CardRequestorNationality\": \"KSA\",\r\n    \"CardRequestorCity\": \"Riyadh\",\r\n    \"CardRequestorStreetName\": \"Ahmed Shawki st.\",\r\n    \"CardRequestorStreetNumber\": \"570\",\r\n    \"CardRequestorUnitNumber\": \"110\",\r\n    \"CardRequestorCountryCode\": \"KSA\",\r\n    \"CardRequestorRegion\": \"East Region\",\r\n    \"CardRequestorPostalCode\": \"25925\",\r\n    \"CardRequestorAdditionalCode\": \"1234567890\",\r\n    \"CardRequestorEmail\": \"cardRequestorEMail@ejada.com\",\r\n    \"CardRequestorMobileNumber\": \"01001234567\",\r\n    \"CardRequestorPosition\": \"User Position\",\r\n    \"CardRequestorEmploymentDate\": \"2014-10-30\",\r\n    \"CardRequestorCivilStatus\": \"M\",\r\n    \"CardRequestorGender\": \"M\",\r\n    \"CardRequestorBirthDate\": \"2014-10-30\",\r\n    \"CardRequestorContactMode\": \"01\",\r\n    \"CardRequestorHouseOwnerId\": \"01\",\r\n    \"CardRequestorFamilySize\": 2,\r\n    \"CardRequestorNumberOfCars\": 2,\r\n    \"SkipOwnerVerificationFlag\": \"Y\",\r\n    \"CardDesignPreference\": \"1\",\r\n    \"DeliveryFlag\": \"D\",\r\n    \"RolloutFlag\": \"Y\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/charge-cards-issuing",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"charge-cards-issuing"
+									],
+									"query": [
+										{
+											"key": "accept-language",
+											"value": "en",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "65342e01-2037-4d9a-b15e-b1d50366794c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc35c6024871e0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:03:03 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"AcceptableRequest\": \"Y\",\n        \"CardOrderId\": \"8800000062584\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Get Mandatory Documents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/mandatory-documents?productId=CCR&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierId=855268",
+							"host": [
+								"{{MP_In_nonprod}}"
+							],
+							"path": [
+								"mp-charge-card",
+								"v2",
+								"mandatory-documents"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "CCR"
+								},
+								{
+									"key": "customerSegment",
+									"value": "001"
+								},
+								{
+									"key": "rolloutFlag",
+									"value": "Y"
+								},
+								{
+									"key": "lastStipulatedDossierId",
+									"value": "855268"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MP Get Mandatory Documents",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/mandatory-documents?productId=CLQ&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierId=855268",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"mandatory-documents"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "CLQ"
+										},
+										{
+											"key": "customerSegment",
+											"value": "001"
+										},
+										{
+											"key": "rolloutFlag",
+											"value": "Y"
+										},
+										{
+											"key": "lastStipulatedDossierId",
+											"value": "855268"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "fe6750ee-0bbe-4926-ade6-5e470c5db713"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc339300faca03"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:53:40 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MandatoryDocumentsList\": [\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"37\",\n                \"DocumentDescription\": \"Updated Salary Certificate\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"BNK_STAT\",\n                \"DocumentDescription\": \"Updated Bank statement\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"GOSI_CERT\",\n                \"DocumentDescription\": \"Updated GOSI Certificate\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"NA\",\n                \"DocumentDescription\": \"National Address\"\n            },\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"NIDA\",\n                \"DocumentDescription\": \"National ID with expiry date retrieved from Absher\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"OTHERS\",\n                \"DocumentDescription\": \"Others\"\n            },\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"PRICE_QUOTATION\",\n                \"DocumentDescription\": \"Price Quotation\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"SALTRAN\",\n                \"DocumentDescription\": \"Salary Transfer Form (for companies with no contracts with ARB)\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "MP Get Mandatory Documents",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/mandatory-documents?productId=CC&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierId=855268",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"mandatory-documents"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "CC"
+										},
+										{
+											"key": "customerSegment",
+											"value": "001"
+										},
+										{
+											"key": "rolloutFlag",
+											"value": "Y"
+										},
+										{
+											"key": "lastStipulatedDossierId",
+											"value": "855268"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "26f15bc1-7674-47bb-bfed-47c062bbdc51"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc34db02485e20"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:59:07 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MandatoryDocumentsList\": [\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"37\",\n                \"DocumentDescription\": \"Updated Salary Certificate\"\n            },\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"7\",\n                \"DocumentDescription\": \"Updated Salary transfer\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"OTHERS\",\n                \"DocumentDescription\": \"Others\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "MP Get Mandatory Documents",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/mandatory-documents?productId=RCC&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierId=855268",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"mandatory-documents"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "RCC"
+										},
+										{
+											"key": "customerSegment",
+											"value": "001"
+										},
+										{
+											"key": "rolloutFlag",
+											"value": "Y"
+										},
+										{
+											"key": "lastStipulatedDossierId",
+											"value": "855268"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b04cfeac-4292-47b0-904e-c9bec7e2f9c3"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc356703156d02"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:01:27 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MandatoryDocumentsList\": [\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"BNK_STAT\",\n                \"DocumentDescription\": \"Updated Bank statement\"\n            },\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"NA\",\n                \"DocumentDescription\": \"National Address\"\n            },\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"NIDA\",\n                \"DocumentDescription\": \"National ID with expiry date retrieved from Absher\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"PRICE_QUOTATION\",\n                \"DocumentDescription\": \"Price Quotation\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "MP Get Mandatory Documents",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/mandatory-documents?productId=CCR&customerSegment=001&rolloutFlag=Y&lastStipulatedDossierId=855268",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"mandatory-documents"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "CCR"
+										},
+										{
+											"key": "customerSegment",
+											"value": "001"
+										},
+										{
+											"key": "rolloutFlag",
+											"value": "Y"
+										},
+										{
+											"key": "lastStipulatedDossierId",
+											"value": "855268"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "56853767-43a8-4984-a7dd-be18b40a7c56"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc35e303157f12"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:03:31 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MandatoryDocumentsList\": [\n            {\n                \"Mandatory\": \"Y\",\n                \"DocumentCode\": \"37\",\n                \"DocumentDescription\": \"Updated Salary Certificate\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"GOSI_CERT\",\n                \"DocumentDescription\": \"Updated GOSI Certificate\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"OTHERS\",\n                \"DocumentDescription\": \"Others\"\n            },\n            {\n                \"Mandatory\": \"N\",\n                \"DocumentCode\": \"SALTRAN\",\n                \"DocumentDescription\": \"Salary Transfer Form (for companies with no contracts with ARB)\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Get Customer Preliminary Check",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/preliminary-check?productId=CCR",
+							"host": [
+								"{{MP_In_nonprod}}"
+							],
+							"path": [
+								"mp-charge-card",
+								"v2",
+								"preliminary-check"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "CCR"
+								},
+								{
+									"key": "increaseDecreaseFlag",
+									"value": "INC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MP Get Customer Preliminary Check",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/preliminary-check?productId=CC",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"preliminary-check"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "CC"
+										},
+										{
+											"key": "increaseDecreaseFlag",
+											"value": "INC",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d6399736-868f-4c8d-8f79-55788b54e905"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc33a703152562"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:53:59 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"CheckStatus\": \"1\"\n    }\n}"
+						},
+						{
+							"name": "MP Get Customer Preliminary Check",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/preliminary-check?productId=MRCC",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"preliminary-check"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "MRCC"
+										},
+										{
+											"key": "increaseDecreaseFlag",
+											"value": "INC",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1f0b1cea-41f5-43b8-a7a2-67a094033d2e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc34f3018254e1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:59:33 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"CheckStatus\": \"1\"\n    }\n}"
+						},
+						{
+							"name": "MP Get Customer Preliminary Check",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/preliminary-check?productId=CLQ",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"preliminary-check"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "CLQ"
+										},
+										{
+											"key": "increaseDecreaseFlag",
+											"value": "INC",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e9b61de3-8b5f-4b79-924e-1666d3925e87"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc357601826081"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:01:43 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"CheckStatus\": \"0\"\n    }\n}"
+						},
+						{
+							"name": "MP Get Customer Preliminary Check",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/preliminary-check?productId=CCR",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"preliminary-check"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "CCR"
+										},
+										{
+											"key": "increaseDecreaseFlag",
+											"value": "INC",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5a026c0a-ac88-4fb3-b5e9-da835886c1ed"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc35f203158392"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:03:48 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"CheckStatus\": \"0\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Get Responsible Lending",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+							"host": [
+								"{{MP_In_nonprod}}"
+							],
+							"path": [
+								"mp-charge-card",
+								"v2",
+								"responsible-lending"
+							],
+							"query": [
+								{
+									"key": "dossierId",
+									"value": "24687780",
+									"disabled": true
+								},
+								{
+									"key": "gosiFlag",
+									"value": "Y",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MP Get Responsible Lending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"responsible-lending"
+									],
+									"query": [
+										{
+											"key": "dossierId",
+											"value": "24687780",
+											"disabled": true
+										},
+										{
+											"key": "gosiFlag",
+											"value": "Y",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0514c832-428a-41ee-9a19-1b6b0a78ca3a"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc33b903152802"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:54:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MartialStatus\": \"2\",\n        \"FamilyMembers\": 1,\n        \"OwnHouse\": \"01\",\n        \"EducationFees\": 1,\n        \"Insurance\": \"Y\",\n        \"CityId\": \"00000002\",\n        \"WorkingStatus\": \"S\",\n        \"HousingAllowanceAmount\": \"0.000\",\n        \"HousingAllowanceCurrency\": \"SAR\",\n        \"FixedAllowanceAmount\": \"0.000\",\n        \"FixedAllowanceCurrency\": \"SAR\",\n        \"TransportationAllowanceAmount\": \"0.000\",\n        \"TransportationAllowanceCurrency\": \"SAR\",\n        \"TotalNetSalaryAmount\": \"22750.000\",\n        \"TotalNetSalaryCurrency\": \"SAR\",\n        \"TotalMonthlyIncomeAmount\": \"22750.000\",\n        \"TotalMonthlyIncomeCurrency\": \"SAR\",\n        \"TotalObligationsAmount\": \"0.000\",\n        \"TotalObligationsCurrency\": \"SAR\",\n        \"CustomerExpensesList\": [\n            {\n                \"ExpenseId\": \"001\",\n                \"Description\": \"Food And Beverages\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"840.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"003\",\n                \"Description\": \"Housing\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"007\",\n                \"Description\": \"Transport\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"525.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"008\",\n                \"Description\": \"Communications\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"210.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"010\",\n                \"Description\": \"Education Fees\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"011\",\n                \"Description\": \"Home Servants\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"012\",\n                \"Description\": \"Fees on expats\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"900\",\n                \"Description\": \"Other Income-Government support*\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"013\",\n                \"Description\": \"Other future expenses\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"005\",\n                \"Description\": \"Insurance\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"105.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"004\",\n                \"Description\": \"Utilities\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"315.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"006\",\n                \"Description\": \"Health Care Services\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            }\n        ],\n        \"ResidentialType\": \"001\",\n        \"HouseHoldHelp\": 0,\n        \"PublicSchoolDependants\": 0,\n        \"PrivateSchoolDependants\": 0,\n        \"BreadWinnerFlag\": \"N\",\n        \"BasicSalaryAmount\": \"25000.000\",\n        \"BasicSalaryCurrency\": \"SAR\"\n    }\n}"
+						},
+						{
+							"name": "MP Get Responsible Lending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"responsible-lending"
+									],
+									"query": [
+										{
+											"key": "dossierId",
+											"value": "24687780",
+											"disabled": true
+										},
+										{
+											"key": "gosiFlag",
+											"value": "Y",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "7a722ec4-cbfe-400a-9960-0133f87c0dd4"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc34fe031557a2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:59:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MartialStatus\": \"2\",\n        \"FamilyMembers\": 3,\n        \"OwnHouse\": \"02\",\n        \"EducationFees\": 0,\n        \"Insurance\": \"N\",\n        \"CityId\": \"00000002\",\n        \"WorkingStatus\": \"S\",\n        \"HousingAllowanceAmount\": \"0.000\",\n        \"HousingAllowanceCurrency\": \"SAR\",\n        \"FixedAllowanceAmount\": \"0.000\",\n        \"FixedAllowanceCurrency\": \"SAR\",\n        \"TransportationAllowanceAmount\": \"0.000\",\n        \"TransportationAllowanceCurrency\": \"SAR\",\n        \"TotalNetSalaryAmount\": \"63700.000\",\n        \"TotalNetSalaryCurrency\": \"SAR\",\n        \"TotalMonthlyIncomeAmount\": \"63700.000\",\n        \"TotalMonthlyIncomeCurrency\": \"SAR\",\n        \"TotalObligationsAmount\": \"0.000\",\n        \"TotalObligationsCurrency\": \"SAR\",\n        \"CustomerExpensesList\": [\n            {\n                \"ExpenseId\": \"001\",\n                \"Description\": \"Food And Beverages\",\n                \"BaseAmount\": \"880.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"880.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"003\",\n                \"Description\": \"Housing\",\n                \"BaseAmount\": \"2750.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"2750.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"007\",\n                \"Description\": \"Transport\",\n                \"BaseAmount\": \"550.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"550.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"008\",\n                \"Description\": \"Communications\",\n                \"BaseAmount\": \"220.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"220.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"010\",\n                \"Description\": \"Education Fees\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"011\",\n                \"Description\": \"Home Servants\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"012\",\n                \"Description\": \"Fees on expats\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"900\",\n                \"Description\": \"Other Income-Government support*\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"013\",\n                \"Description\": \"Other future expenses\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"005\",\n                \"Description\": \"Insurance\",\n                \"BaseAmount\": \"110.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"110.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"004\",\n                \"Description\": \"Utilities\",\n                \"BaseAmount\": \"330.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"330.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"006\",\n                \"Description\": \"Health Care Services\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            }\n        ],\n        \"ResidentialType\": \"001\",\n        \"HouseHoldHelp\": 0,\n        \"PublicSchoolDependants\": 0,\n        \"PrivateSchoolDependants\": 0,\n        \"BreadWinnerFlag\": \"N\",\n        \"BasicSalaryAmount\": \"70000.000\",\n        \"BasicSalaryCurrency\": \"SAR\",\n        \"GOSIDeductionAmount\": \"6300.000\",\n        \"GOSIDeductionCurrency\": \"SAR\"\n    }\n}"
+						},
+						{
+							"name": "MP Get Responsible Lending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"responsible-lending"
+									],
+									"query": [
+										{
+											"key": "dossierId",
+											"value": "24687780",
+											"disabled": true
+										},
+										{
+											"key": "gosiFlag",
+											"value": "Y",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "58bffe4f-3c2f-4365-b702-3fc9e331dd0d"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc358003157212"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:01:54 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MartialStatus\": \"2\",\n        \"FamilyMembers\": 2,\n        \"OwnHouse\": \"02\",\n        \"EducationFees\": 0,\n        \"Insurance\": \"Y\",\n        \"CityId\": \"00000654\",\n        \"WorkingStatus\": \"S\",\n        \"HousingAllowanceAmount\": \"500.000\",\n        \"HousingAllowanceCurrency\": \"SAR\",\n        \"FixedAllowanceAmount\": \"100.000\",\n        \"FixedAllowanceCurrency\": \"SAR\",\n        \"TransportationAllowanceAmount\": \"200.000\",\n        \"TransportationAllowanceCurrency\": \"SAR\",\n        \"TotalNetSalaryAmount\": \"10920.000\",\n        \"TotalNetSalaryCurrency\": \"SAR\",\n        \"TotalMonthlyIncomeAmount\": \"10920.000\",\n        \"TotalMonthlyIncomeCurrency\": \"SAR\",\n        \"TotalObligationsAmount\": \"0.000\",\n        \"TotalObligationsCurrency\": \"SAR\",\n        \"ResidentialType\": \"001\",\n        \"HouseHoldHelp\": 0,\n        \"PublicSchoolDependants\": 0,\n        \"PrivateSchoolDependants\": 0,\n        \"BreadWinnerFlag\": \"N\",\n        \"BasicSalaryAmount\": \"12000.000\",\n        \"BasicSalaryCurrency\": \"SAR\"\n    }\n}"
+						},
+						{
+							"name": "MP Get Responsible Lending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"responsible-lending"
+									],
+									"query": [
+										{
+											"key": "dossierId",
+											"value": "24687780",
+											"disabled": true
+										},
+										{
+											"key": "gosiFlag",
+											"value": "Y",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f9315d11-fbe5-4952-a339-7b9c2debadcd"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc35fc02487330"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:03:56 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MartialStatus\": \"2\",\n        \"FamilyMembers\": 2,\n        \"OwnHouse\": \"02\",\n        \"EducationFees\": 0,\n        \"Insurance\": \"Y\",\n        \"CityId\": \"00000654\",\n        \"WorkingStatus\": \"S\",\n        \"HousingAllowanceAmount\": \"500.000\",\n        \"HousingAllowanceCurrency\": \"SAR\",\n        \"FixedAllowanceAmount\": \"100.000\",\n        \"FixedAllowanceCurrency\": \"SAR\",\n        \"TransportationAllowanceAmount\": \"200.000\",\n        \"TransportationAllowanceCurrency\": \"SAR\",\n        \"TotalNetSalaryAmount\": \"11675.000\",\n        \"TotalNetSalaryCurrency\": \"SAR\",\n        \"TotalMonthlyIncomeAmount\": \"11675.000\",\n        \"TotalMonthlyIncomeCurrency\": \"SAR\",\n        \"TotalObligationsAmount\": \"0.000\",\n        \"TotalObligationsCurrency\": \"SAR\",\n        \"ResidentialType\": \"001\",\n        \"HouseHoldHelp\": 0,\n        \"PublicSchoolDependants\": 0,\n        \"PrivateSchoolDependants\": 0,\n        \"BreadWinnerFlag\": \"N\",\n        \"BasicSalaryAmount\": \"12000.000\",\n        \"BasicSalaryCurrency\": \"SAR\",\n        \"GOSIDeductionAmount\": \"1125.000\",\n        \"GOSIDeductionCurrency\": \"SAR\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Set Responsible Lending",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"Data\": {\r\n\t\t\"MartialStatus\": \"2\",\r\n\t\t\"FamilyMembers\": 1,\r\n\t\t\"OwnHouse\": \"01\",\r\n\t\t\"EducationFees\": 1,\r\n\t\t\"Insurance\": \"Y\",\r\n\t\t\"CityId\": \"00000002\",\r\n\t\t\"WorkingStatus\": \"S\",\r\n\t\t\"BasicSalaryAmount\": \"25000\",\r\n\t\t\"BasicSalaryCurrency\": \"SAR\",\r\n\t\t\"HousingAllowanceAmount\": \"0.000\",\r\n\t\t\"HousingAllowanceCurrency\": \"SAR\",\r\n\t\t\"FixedAllowanceAmount\": \"0.000\",\r\n\t\t\"FixedAllowanceCurrency\": \"SAR\",\r\n\t\t\"TransportationAllowanceAmount\": \"0.000\",\r\n\t\t\"TransportationAllowanceCurrency\": \"SAR\",\r\n\t\t\"CustomerExpensesList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"001\",\r\n\t\t\t\t\"ValueAmount\": \"840\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Food And Beverages\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"003\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Housing\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"007\",\r\n\t\t\t\t\"ValueAmount\": \"525\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Transport\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"008\",\r\n\t\t\t\t\"ValueAmount\": \"210\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Communications\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"010\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Education Fees\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"011\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Home Servants\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"012\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Fees on expats\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"900\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other Income-Government support*\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"013\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other future expenses\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"005\",\r\n\t\t\t\t\"ValueAmount\": \"105\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Insurance\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"004\",\r\n\t\t\t\t\"ValueAmount\": \"315\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Utilities\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"006\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Health Care Services\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"ResidentialType\": \"001\",\r\n\t\t\"HouseHoldHelp\": 0,\r\n\t\t\"PublicSchoolDependants\": 0,\r\n\t\t\"PrivateSchoolDependants\": 0,\r\n\t\t\"BreadWinnerFlag\": \"N\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+							"host": [
+								"{{MP_In_nonprod}}"
+							],
+							"path": [
+								"mp-charge-card",
+								"v2",
+								"responsible-lending"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MP Set Responsible Lending",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Data\": {\r\n\t\t\"MartialStatus\": \"2\",\r\n\t\t\"FamilyMembers\": 1,\r\n\t\t\"OwnHouse\": \"01\",\r\n\t\t\"EducationFees\": 1,\r\n\t\t\"Insurance\": \"Y\",\r\n\t\t\"CityId\": \"00000002\",\r\n\t\t\"WorkingStatus\": \"S\",\r\n\t\t\"BasicSalaryAmount\": \"25000\",\r\n\t\t\"BasicSalaryCurrency\": \"SAR\",\r\n\t\t\"HousingAllowanceAmount\": \"0.000\",\r\n\t\t\"HousingAllowanceCurrency\": \"SAR\",\r\n\t\t\"FixedAllowanceAmount\": \"0.000\",\r\n\t\t\"FixedAllowanceCurrency\": \"SAR\",\r\n\t\t\"TransportationAllowanceAmount\": \"0.000\",\r\n\t\t\"TransportationAllowanceCurrency\": \"SAR\",\r\n\t\t\"CustomerExpensesList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"001\",\r\n\t\t\t\t\"ValueAmount\": \"840\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Food And Beverages\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"003\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Housing\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"007\",\r\n\t\t\t\t\"ValueAmount\": \"525\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Transport\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"008\",\r\n\t\t\t\t\"ValueAmount\": \"210\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Communications\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"010\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Education Fees\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"011\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Home Servants\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"012\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Fees on expats\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"900\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other Income-Government support*\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"013\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other future expenses\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"005\",\r\n\t\t\t\t\"ValueAmount\": \"105\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Insurance\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"004\",\r\n\t\t\t\t\"ValueAmount\": \"315\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Utilities\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"006\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Health Care Services\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"ResidentialType\": \"001\",\r\n\t\t\"HouseHoldHelp\": 0,\r\n\t\t\"PublicSchoolDependants\": 0,\r\n\t\t\"PrivateSchoolDependants\": 0,\r\n\t\t\"BreadWinnerFlag\": \"N\"\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"responsible-lending"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "abf390d5-6870-4636-b194-16b702274647"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc33ca01824971"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:54:34 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"GOSIFlag\": \"O\"\n    }\n}"
+						},
+						{
+							"name": "MP Set Responsible Lending",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Data\": {\r\n\t\t\"MartialStatus\": \"2\",\r\n\t\t\"FamilyMembers\": 1,\r\n\t\t\"OwnHouse\": \"01\",\r\n\t\t\"EducationFees\": 1,\r\n\t\t\"Insurance\": \"Y\",\r\n\t\t\"CityId\": \"00000002\",\r\n\t\t\"WorkingStatus\": \"S\",\r\n\t\t\"BasicSalaryAmount\": \"25000\",\r\n\t\t\"BasicSalaryCurrency\": \"SAR\",\r\n\t\t\"HousingAllowanceAmount\": \"0.000\",\r\n\t\t\"HousingAllowanceCurrency\": \"SAR\",\r\n\t\t\"FixedAllowanceAmount\": \"0.000\",\r\n\t\t\"FixedAllowanceCurrency\": \"SAR\",\r\n\t\t\"TransportationAllowanceAmount\": \"0.000\",\r\n\t\t\"TransportationAllowanceCurrency\": \"SAR\",\r\n\t\t\"CustomerExpensesList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"001\",\r\n\t\t\t\t\"ValueAmount\": \"840\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Food And Beverages\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"003\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Housing\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"007\",\r\n\t\t\t\t\"ValueAmount\": \"525\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Transport\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"008\",\r\n\t\t\t\t\"ValueAmount\": \"210\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Communications\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"010\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Education Fees\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"011\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Home Servants\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"012\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Fees on expats\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"900\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other Income-Government support*\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"013\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other future expenses\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"005\",\r\n\t\t\t\t\"ValueAmount\": \"105\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Insurance\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"004\",\r\n\t\t\t\t\"ValueAmount\": \"315\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Utilities\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"006\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Health Care Services\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"ResidentialType\": \"001\",\r\n\t\t\"HouseHoldHelp\": 0,\r\n\t\t\"PublicSchoolDependants\": 0,\r\n\t\t\"PrivateSchoolDependants\": 0,\r\n\t\t\"BreadWinnerFlag\": \"N\"\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"responsible-lending"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "576de756-967a-4039-a3a8-b37a5fce86bb"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc350902486070"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 08:59:53 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"GOSIFlag\": \"O\"\n    }\n}"
+						},
+						{
+							"name": "MP Set Responsible Lending",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Data\": {\r\n\t\t\"MartialStatus\": \"2\",\r\n\t\t\"FamilyMembers\": 1,\r\n\t\t\"OwnHouse\": \"01\",\r\n\t\t\"EducationFees\": 1,\r\n\t\t\"Insurance\": \"Y\",\r\n\t\t\"CityId\": \"00000002\",\r\n\t\t\"WorkingStatus\": \"S\",\r\n\t\t\"BasicSalaryAmount\": \"25000\",\r\n\t\t\"BasicSalaryCurrency\": \"SAR\",\r\n\t\t\"HousingAllowanceAmount\": \"0.000\",\r\n\t\t\"HousingAllowanceCurrency\": \"SAR\",\r\n\t\t\"FixedAllowanceAmount\": \"0.000\",\r\n\t\t\"FixedAllowanceCurrency\": \"SAR\",\r\n\t\t\"TransportationAllowanceAmount\": \"0.000\",\r\n\t\t\"TransportationAllowanceCurrency\": \"SAR\",\r\n\t\t\"CustomerExpensesList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"001\",\r\n\t\t\t\t\"ValueAmount\": \"840\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Food And Beverages\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"003\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Housing\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"007\",\r\n\t\t\t\t\"ValueAmount\": \"525\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Transport\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"008\",\r\n\t\t\t\t\"ValueAmount\": \"210\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Communications\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"010\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Education Fees\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"011\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Home Servants\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"012\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Fees on expats\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"900\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other Income-Government support*\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"013\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other future expenses\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"005\",\r\n\t\t\t\t\"ValueAmount\": \"105\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Insurance\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"004\",\r\n\t\t\t\t\"ValueAmount\": \"315\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Utilities\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"006\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Health Care Services\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"ResidentialType\": \"001\",\r\n\t\t\"HouseHoldHelp\": 0,\r\n\t\t\"PublicSchoolDependants\": 0,\r\n\t\t\"PrivateSchoolDependants\": 0,\r\n\t\t\"BreadWinnerFlag\": \"N\"\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"responsible-lending"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "07b002d2-6817-4428-b16f-93ddfcb7058e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc358e02486fc0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:02:06 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"GOSIFlag\": \"O\"\n    }\n}"
+						},
+						{
+							"name": "MP Set Responsible Lending",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Data\": {\r\n\t\t\"MartialStatus\": \"2\",\r\n\t\t\"FamilyMembers\": 1,\r\n\t\t\"OwnHouse\": \"01\",\r\n\t\t\"EducationFees\": 1,\r\n\t\t\"Insurance\": \"Y\",\r\n\t\t\"CityId\": \"00000002\",\r\n\t\t\"WorkingStatus\": \"S\",\r\n\t\t\"BasicSalaryAmount\": \"25000\",\r\n\t\t\"BasicSalaryCurrency\": \"SAR\",\r\n\t\t\"HousingAllowanceAmount\": \"0.000\",\r\n\t\t\"HousingAllowanceCurrency\": \"SAR\",\r\n\t\t\"FixedAllowanceAmount\": \"0.000\",\r\n\t\t\"FixedAllowanceCurrency\": \"SAR\",\r\n\t\t\"TransportationAllowanceAmount\": \"0.000\",\r\n\t\t\"TransportationAllowanceCurrency\": \"SAR\",\r\n\t\t\"CustomerExpensesList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"001\",\r\n\t\t\t\t\"ValueAmount\": \"840\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Food And Beverages\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"003\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Housing\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"007\",\r\n\t\t\t\t\"ValueAmount\": \"525\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Transport\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"008\",\r\n\t\t\t\t\"ValueAmount\": \"210\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Communications\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"010\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Education Fees\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"011\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Home Servants\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"012\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Fees on expats\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"900\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other Income-Government support*\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"013\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other future expenses\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"005\",\r\n\t\t\t\t\"ValueAmount\": \"105\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Insurance\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"004\",\r\n\t\t\t\t\"ValueAmount\": \"315\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Utilities\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"006\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Health Care Services\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"ResidentialType\": \"001\",\r\n\t\t\"HouseHoldHelp\": 0,\r\n\t\t\"PublicSchoolDependants\": 0,\r\n\t\t\"PrivateSchoolDependants\": 0,\r\n\t\t\"BreadWinnerFlag\": \"N\"\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MP_In_nonprod}}/mp-charge-card/v2/responsible-lending",
+									"host": [
+										"{{MP_In_nonprod}}"
+									],
+									"path": [
+										"mp-charge-card",
+										"v2",
+										"responsible-lending"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0e47632c-fc2a-436b-b6f7-f859e0da2f8c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bc360702487370"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2025 09:04:08 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"GOSIFlag\": \"O\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Generate Customer Token Sandbox Mock",
+			"item": [
+				{
+					"name": "OAuth Provider Authorize",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var locationHeader = pm.response.headers.get('Location');\r",
+									"var locationHeader2 = pm.response.headers.get('Location');\r",
+									"pm.collectionVariables.set(\"originalUrl\",decodeURIComponent(locationHeader.split(\"original-url=\")[1]));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false,
+						"disableUrlEncoding": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}"
+							}
+						],
+						"url": {
+							"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=charge_card_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}"
+								},
+								{
+									"key": "scope",
+									"value": "charge_card_apis"
+								},
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "code_challenge",
+									"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Initiate Redirection Input",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = responseBody;\r",
+									"pm.collectionVariables.set(\"initiate-redirect-identity\", data);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "issuer",
+								"value": "009407e30165d8f05d554e336acb0b26",
+								"type": "text"
+							},
+							{
+								"key": "audience",
+								"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1634378157\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"generate-jwt",
+								"sign-request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Generate Initiate Redirection Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "77b355d4-13d3-4b34-a6e9-36db392c1453"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.73.89"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7d6b4019e7fe2"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c10821be-e756-457a-91d3-54e3cb0dcd81"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:08:04 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIwMDc5ZDNlNS1jNGFiLTRhOTYtYmFlNS1hZGVjNWU2Yzk0YTUiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyNzY4NCwiaWF0IjoxNzIzMzI0MDg0LCJuYmYiOjE3MjMzMjQwODQsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiN2M0MmNkODQtMzllMS00MzIyLWI2YTctMGQ5MjM4NjA1ODRlIiwicG9pTnVtYmVyIjoiMTg0NTQ5MDAxMyJ9fQ.Nz-ihPlG_8DSFHdinRFr79FwIQHkA5JSkhn2sGmhWL0fDLj7Ltl5j9I1VjPFDDgl469mUcl08FRbqgNpd9CK3St9m0a6h3_YqheeIdiyECFoleTuWWWf_cj3GVUI4JbyLAtTut_vKZrpFD1DXyVz2o5OuDKXSi7N07KHh08IdRHqp0KxK26PKplX9fronGJ-FoamKj-gHY77AV3InwwP4z2uT6bPPkZqyORa1SMtv9DBeg2XgKLbs6A6XSbaEtOZ__Tql8FB78GpkuO2tjUztz6QpKv20k9ccRP6AYvX525hmbFbKe4FA_8UoMMhOnUH6ZQomp--xM7tOkel6k-yJw"
+						},
+						{
+							"name": "Generate Initiate Redirection Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1646701570\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "69263396-02fb-4e72-ad96-e145081fa842"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7db4e00630a90"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "4a48d741-c2be-4003-9589-f89916419f9c"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:27:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJiZTgyZDM4NS1iOWRiLTQ0YjUtOWM2Yi1hZGVjNWU2Y2ViZDMiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODg2MiwiaWF0IjoxNzIzMzI1MjYyLCJuYmYiOjE3MjMzMjUyNjIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiODQxMjkzZWYtNDU0NC00OWZhLWE3ZWYtMjA3OGE2NmJlZDUwIiwicG9pTnVtYmVyIjoiMTY0NjcwMTU3MCJ9fQ.qrLok5CnoeV5Qkf15l5iVQnsQydtco0oZrIjvH5ixcL-rH27-GNXtb3fbuzoZms1eOc5OkJTtPKIadbKEnEP9ba320gxdV6wGbJiHYPXIlSRM7wdq5efcnRbXUxri8MHV5bRT_KbMOltX3dijF2MoJYxyKj_qsedoFt4XnYcxfqFvPTPmmmqf8ZLe3G94oCqHPo8SzYIkM5SzSe0SGvlChGXxnGKl6vEneT1XSu0rTq6x_KkS_OszfdgOiD9An4zA1c0EAp8PbHRTTU_gts0qXvbn7Aaor_oAo3qO7wy0LI9Niv1frh7_UACavN-jfmasp_qZ3wxMehVpIHvf4dyKw"
+						},
+						{
+							"name": "Generate Initiate Redirection Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1452525363\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "d14ad09e-c7f4-4b25-aaf5-6a34f12d5f73"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7db7500630ac0"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "86467d55-94a5-4745-8117-e030e0a0ff93"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:28:21 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJlZGUzZWFjNy1iZjVlLTRlOGMtOTIxOC1hZGVjNWU2YzRmNzAiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODkwMSwiaWF0IjoxNzIzMzI1MzAxLCJuYmYiOjE3MjMzMjUzMDEsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiYjI2ZmFkMzMtYjQzNS00YWEyLWE2Y2ItZTY0MDgyOWE1NmI0IiwicG9pTnVtYmVyIjoiMTQ1MjUyNTM2MyJ9fQ.dbxu73j_fwPJv1v6Ej6UmYnOvUETR9AaWjt2xE8zixPBicQYzVGtZX9nhpTo3UA4HJ9I4XSzqkT3Nk_4iiXE0Ez5oGjy111ao6cuCsUCGtSW1zI-NIUY_8TvFkpBwnKVafyqHlDIDxsr1KLV-aQqpANVfbsRXMEF06o10jFk7MVeGTF2WzteSkeeuhWD_a3ZJLKmPCIzN-GBBUE4iQE6sH--WacFxbnuLDPy6k3Gic3aPhdsjrYIdAJfEGo3_4gbhbmqiPK0riWu-eukSKVmA2_Z5gQEAbZBR7X9-mCUo4CZ4PMfmw6xO2nY_uK-BpcUQRXUqpI8_Ezhshsb_IFNlA"
+						},
+						{
+							"name": "Generate Initiate Redirection Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1634378157\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "ce8de52d-89b3-4415-b4e9-65f79fcd76be"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7dbda00630b10"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8b759779-9d94-4da7-bd40-12bba3514388"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:30:02 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIxOGI4YmY0ZC0xZjc4LTQ4OWYtYTYzYS1hZGVjNWU2YzA3OWQiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyOTAwMiwiaWF0IjoxNzIzMzI1NDAyLCJuYmYiOjE3MjMzMjU0MDIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiMWQwYWQ3YjgtNmFmYy00NzlkLWI0MDktZjljNjNmYjBiNjg2IiwicG9pTnVtYmVyIjoiMTYzNDM3ODE1NyJ9fQ.aiArQSR9wrzq48xq0Q3WFa03gY1AhP9bOWMleWQwIn561CikvY9xD_054gvJ6ZroQKHoUs3gmH1_lFkKppcdbhf6iULhj_Ws_PYOHeQtBosYZbV8cM3ddqnPUesBtEwJtPrEoGHwbTgH6-RKrhYh8jAulx5-tVo_cj_rxudLrZAy3DTJ_bEGwJ6OvDcN5vFnkBZFPCdB9lcT8e0jVSnotLWHfdBoxmp29PxSRIraxdav6aalMLdFE7rjdTpLKhELpN3xgqzGW6asbc-e5Kh8rRVZl5KVMjFDS0dj78xMkl8IE3xYGDtt94ZR6l0oNiC-I8bdIadbUqAypCNOmFXE0w"
+						}
+					]
+				},
+				{
+					"name": "Initiate Redirection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.code == 303){\r",
+									"    var locationHeader = pm.response.headers.get('Location');\r",
+									"    pm.collectionVariables.set(\"confirmationCode\", locationHeader.split(\"identity=\")[1]);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{public-gw-mock}}/auth/initiate-redirect?client_id={{client-id}}&identity={{initiate-redirect-identity}}",
+							"protocol": "https",
+							"host": [
+								"{{public-gw-mock}}"
+							],
+							"path": [
+								"auth",
+								"initiate-redirect"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}"
+								},
+								{
+									"key": "identity",
+									"value": "{{initiate-redirect-identity}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Authorize Confirmation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.status != 400){\r",
+									"    var locationHeader = pm.response.headers.get('Location');\r",
+									"    var code = locationHeader.split(\"code=\")[1];\r",
+									"    pm.collectionVariables.set(\"authorizationCode\",code);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false,
+						"disableUrlEncoding": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}",
+							"host": [
+								"{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Provider Access Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"if(pm.response.code == 200){\r",
+									"    pm.collectionVariables.set('security_token', 'Bearer ' + response.access_token);\r",
+									"    pm.collectionVariables.set('customer_access_token', response.access_token);\r",
+									"    pm.collectionVariables.set('customer_refresh_token',response.refresh_token);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "prepaid_card_apis",
+									"description": "onboarding, personal_finance_apis",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "{{authorizationCode}}",
+									"type": "text"
+								},
+								{
+									"key": "code_verifier",
+									"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+									"type": "text"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256",
+									"type": "text"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "plain",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Provider Refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"pm.environment.set('security_token', 'Bearer ' + response.access_token);\r",
+									"    pm.collectionVariables.set('customer_access_token', response.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Request-Id",
+								"value": "UnrestrictedInternal",
+								"disabled": true
+							},
+							{
+								"key": "X-Session-Id",
+								"value": "1515",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "c3VwZXJhcHA2OkJlYXJlciBleUpsYm1NaU9pSkJNVEk0UTBKRExVaFRNalUySWl3aVlXeG5Jam9pVWxOQk1WODFJaXdpWTNSNUlqb2lTbGRVSW4wLlotYk5HUGJMZHJZVmR5aU5rNXRPMUZzY0p1RXo5aEtjNENTNmp6eTU2bWEyZ1dXR0hmMEVDUm44TDVfdk9jU2xHYlRlVE9qZV9pYmdKYlNXbmhSdzRwckVoU2c3UGl2MnY3cWNxX1RwOEZ1My0tWE1vemp3OHpJOXpjd2Z0aEZQVmJFOWpIdDNIS1VYN1VjRUR3MjJlVTJFSDBhMVZZanRHalMyc0w5bnYxNHZWdmViX1JtdzBOSTd0REVldTZvNU5nOW5CM3BjTHRlN2hCdGZncEJxZ0VqeHZtekpPR01HbXh3Qll3Zkh6SnZiSEJmOGZNWDIzM2Y5NTh1elNQQkxrSWhnMmZHbFBHZHYxWHlkWkJPX0ZmNWZsZjM2VFZaNTRsZ2ExMzNNSGlKa2Z5WjBLUy1iV196bnVnVUN1WWpOQk43LUw5UWxnLTI2cHd5NGloMWl4dy5vZlZSRkJPbHpib01USEFFRUU4b0dBLldENmhvN254bXc1bG54ZjVqM214cG5sc0xMc1JjSzlQQzFZRjNvVTE4VkpnSEhHS1dfWnZhUl8wOWxKUU5xanpDZ0ZIQWs4Z2hFeWpndU5EY1NFaW53OV9NcHNPYXF2V2wxbGJuM251VU80NlNxejNjWENqVGFCZEtZbUlyamh2S0F3Z0ptWWpWbXlINlZDbGg2X2RJN28zUmprZ1lOVndCZmNyQlRoS3F2cldObHRnWmFrN0tWNUlLOUJfZXFUQnF2c3JsMHVoNGVCMnFjTkJBQW5VdE1HQWp6LXBZSHNTcmQtSlBFLUNiNHVWRURqRHVCNC1YVG95VFlMd2dxcTExVWkxRmRZM0Zma0FISExVb3dNa2ZFOHNxQjdlalJBTGlqZ1djTllualRpekdUM0dCU0Z3SFhTVHpUTUgtYzNiYkJ3YzdXbVhmcEhTMUIyNjBUaWtvU2FCZmZJc3dFXzlrcmNOUC1pQkt6bVpPS0tkcUlmZWphVlpnemVCbHlERXFueXBIWHlOdE8zSVhpUUJMeFQ0UDE2XzZTX2l1YW1fZVdfVkJHanYzUFluWjdfUjNUaUt0dDFlNm9FTXp4WVhHdDZ5WXFXMkZhaEdXWGNJSGFVZ0pOaHpxUnFUUTExNEYtdXl3QnZrR09PbktkcllWd0hLVkVwVFZjdDVDcy14Q2VKX1hoMVUxNTlLZS1FRzlYTE9PMDlXSld3RHBRWFhoS0llRU1NNjl2RERNdm1SN181RHNoQjZZTElKcGwzVHVMM3Y1eW9KTWg5NmpPcVVsZVJhN2duSnVISTM0LTREaVVkaWx3Tmgzc0liTWZwWUk4QW9XMEFVd1dGajVqRnlmSjl3aXRUVmtMeHdYUzNwVC1yejhvUzlGQkV3cjBZZ1BhNDUzd01EbUZFUDN2d1JBYmh6eGszZjlMT0lPWWZrSTk1aHlMcjhXMWptQ21XQlFkUDBLTXhrU3hpRjlHVFlSaVFnaTN4MmY0TEZuWHA4aVNrZ0ZVanpZclZkTTdiV2U4dXdKSFZ2WXJrSkk3SzVsbHNvQndVYm0tUVRoZ2V6clVzalpjRHlQZ3hlYkY0ZWNCd3pmekZtX09pTnlsV0tJejJWRTZPaGFuWkFnRUQ0NmZ3bEZNYmg1NmRMWUJZQkYwQmlxU29ZZHRvTGxLLVRmTllFMTU2dWpsRG94aDBxS1hRZ2ttcjM5a21xQWE3OV91ZWYydGd3RmpLNDJqNDVmNVV1TllSUjEyWjRkdlM0X2JxRXBHM3JIMVBwS0FyOG1nS3NES09paUs5NjF2cGlFZzZBYmJvU0dMdnQ1cV9lNE5feUFhc09jamo0dHhacUR5UEFMVTE4ZVVoeHk4M00uNGs0d083SXdWQUF0UWxPMlYxWjZ5Zw==",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"disabled": true
+							},
+							{
+								"key": "client_secret",
+								"value": "30691f5a63934c238e2e4474574a7d60",
+								"disabled": true
+							},
+							{
+								"key": "client_id",
+								"value": "3ace19c852d74371c1d92567002b0415",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "prepaid_card_apis",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{customer_refresh_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Introspect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "text"
+								},
+								{
+									"key": "token_type_hint",
+									"value": "access_token",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/introspect",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"introspect"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "MP_In_nonprod",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "MP_In_non-prod_client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "MP_In_non-prod_client-secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "originalUrl",
+			"value": ""
+		},
+		{
+			"key": "authorizationCode",
+			"value": ""
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "tppBaseURL",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit",
+			"type": "string"
+		},
+		{
+			"key": "code_challange",
+			"value": ""
+		},
+		{
+			"key": "security_token",
+			"value": ""
+		},
+		{
+			"key": "customer_refresh_token",
+			"value": ""
+		},
+		{
+			"key": "customer_access_token",
+			"value": ""
+		},
+		{
+			"key": "code_verifier",
+			"value": ""
+		},
+		{
+			"key": "ConfirmationCode",
+			"value": "0000000003070900",
+			"type": "string"
+		},
+		{
+			"key": "POINumber",
+			"value": "1121244709",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "initiate-redirect-identity",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "process-redirect-identity",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "confirmation-code",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "MP_Pub_nonprod",
+			"value": "https://sit.public.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-public-sit",
+			"type": "string"
+		},
+		{
+			"key": "landingToken",
+			"value": ""
+		},
+		{
+			"key": "loginToken",
+			"value": ""
+		},
+		{
+			"key": "businessToken",
+			"value": ""
+		},
+		{
+			"key": "micrositeIdentity",
+			"value": ""
+		},
+		{
+			"key": "redirect-identity",
+			"value": ""
+		},
+		{
+			"key": "inbound-gw",
+			"value": "sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit",
+			"type": "string"
+		},
+		{
+			"key": "client-secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "public-gw-mock",
+			"value": "sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "confirmationCode",
+			"value": ""
+		}
+	]
+}
