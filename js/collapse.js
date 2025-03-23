@@ -231,17 +231,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-        if (feedback.includes('user/register')) {
-            var apicSignupForm = document.querySelector('.apic-user-form');
-                apicSignupForm.classList.add('custom-signup');
-                const bgImages = `
+    if (feedback.includes('user/register')) {
+        var apicSignupForm = document.querySelector('.apic-user-form');
+        apicSignupForm.classList.add('custom-signup');
+        const bgImages = `
                 <div class="bg-images">
                     <div class="circle-1"></div>
                     <div class="circle-2"></div>
                 </div>
             `;
-            apicSignupForm .insertAdjacentHTML('afterbegin', bgImages);   
-            }
+        apicSignupForm.insertAdjacentHTML('afterbegin', bgImages);
+    }
 
 
 
@@ -344,9 +344,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     addBackgroundImages("#contact-feedback-form");
     addBackgroundImages(".apic-login-wrapper");
+
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const loginWrapper = document.querySelector(".apic-login-wrapper");
+    if (loginWrapper) {
+        const style = document.createElement("style");
+        style.innerHTML = `
+            .bx--global-light-ui .apic-user-form-wrapper .form-group {
+                margin-bottom: 0 !important;
+                align-items: center !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
 
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.href.includes('/taxonomy/term')) {

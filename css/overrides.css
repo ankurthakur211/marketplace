@@ -17796,42 +17796,6 @@ form#user-login-form input {
     flex-grow: 0;
 }
 
-
-/* .apic-login-wrapper .apic-user-form-inner-wrapper .apic-user-forgot-password {
-    position: relative;
-    padding: 0;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #5464F2;
-} */
-
-
-/* .apic-login-wrapper .apic-user-form-footer {
-    display: flex;
-    flex-direction: column;
-    margin-left: -27rem !important;
-} */
-
-
-/* .apic-login-wrapper .apic-user-forgot-password {
-    position: relative;
-    padding: 0;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #5464F2;
-    order: 1;
-} */
-
 .apic-login-wrapper .apic-user-form-footer .apic-user-form-text {
     display: flex;
     position: relative;
@@ -17843,41 +17807,11 @@ form#user-login-form input {
     padding-left: unset !important;
 }
 
-
-/* .apic-login-wrapper:after {
-    background: url("images/sign-in-updated.png");
-    z-index: 2;
-    position: absolute;
-    background-repeat: no-repeat;
-    box-shadow: none;
-    bottom: 0%;
-    left: 0%;
-    background-size: contain;
-    background-position: left center;
-    background-repeat: no-repeat;
-    content: "";
-    width: 84%;
-    min-height: 601px;
-} */
-
 .user-login-form {
     position: relative;
     background: unset;
     border-radius: 8px;
 }
-
-
-/* .apic-login-wrapper:after {
-    z-index: 2;
-    position: absolute;
-    background-repeat: no-repeat;
-    box-shadow: none;
-    background-position: bottom;
-    bottom: 0%;
-    left: 0%;
-    height: auto;
-    min-height: 500px;
-} */
 
 .apic-login-wrapper:after {
     background: url("images/sign-in-updated.png");
@@ -17991,8 +17925,91 @@ form#user-login-form input {
     margin-left: 20px !important;
 }
 
-.apic-user-form-wrapper {
+.apic-login-wrapper .apic-user-form-wrapper {
     padding-left: unset !important;
+}
+
+.apic-login-wrapper {
+    display: flex;
+    flex-direction: column;
+    ALIGN-ITEMS: CENTER;
+}
+
+.apic-login-wrapper .apic-user-form-footer {
+    padding-left: unset;
+}
+
+@media (max-width: 991px) {
+    .apic-login-wrapper .apic-user-form-header {
+        width: 100%;
+        TEXT-ALIGN: CENTER;
+        font-family: "SF Pro Display" !important;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 84px;
+        color: #11183b;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        position: absolute;
+        left: 0;
+        top: 4rem;
+        margin-left: unset !important;
+        padding-left: unset;
+    }
+    .apic-login-wrapper {
+        display: flex;
+        flex-direction: COLUMN;
+        ALIGN-ITEMS: CENTER;
+        WIDTH: 100%;
+    }
+    .apic-user-form.apic-user-form-login {
+        margin-left: UNSET;
+        margin-right: unset;
+        padding-left: unset;
+        padding-right: unset;
+        ALIGN-ITEMS: CENTER;
+        max-width: unset;
+    }
+    .apic-login-wrapper:after {
+        min-height: 270px;
+        top: unset;
+        max-width: 350px;
+        max-height: 281px;
+        margin-top: 4rem;
+        left: unset;
+        HEIGHT: 522PX;
+        WIDTH: 100%;
+        order: 0;
+    }
+    .user-login-form {
+        order: 3;
+        position: relative;
+        background: unset;
+        border-radius: 8px;
+        align-items: center;
+    }
+    .user-login-form .apic-user-form-inner-wrapper {
+        align-items: center;
+    }
+    @media (max-width: 576px) {
+        .apic-login-wrapper .apic-user-form-header {
+            font-size: 40px;
+            top: unset;
+        }
+        .apic-login-wrapper:after {
+            min-height: 229px;
+            top: unset;
+            max-width: 320px;
+            max-height: 233px;
+            left: unset;
+            HEIGHT: 488PX;
+            WIDTH: 100%;
+            order: 0;
+            margin-top: 7rem;
+        }
+    }
 }
 
 
