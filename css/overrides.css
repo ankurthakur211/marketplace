@@ -17030,7 +17030,6 @@ div#edit-actions button {
     }
   }
   
-  /*# sourceMappingURL=demo.css.map */
 
   /* -------------- Sign in -------------- */
 
@@ -17050,11 +17049,22 @@ div#edit-actions button {
       padding-bottom: 110px;
     }
   }
+  @media (max-width: 991px) {
+    .custom-signinsec {
+      padding-left: 0% !important;
+      padding-top: 170px;
+    }
+  }
+  @media (max-width: 576px) {
+    .custom-signinsec {
+      padding-top: 0px;
+    }
+  }
   .custom-signinsec::before {
     content: "";
     width: 104%;
     height: 451px;
-    background: url('data:image/svg+xml,<svg width="1345" height="316" viewBox="0 0 1345 316" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.257812 0H1349.26V289C1349.26 289 963.758 348 811.758 289C659.758 230 618.258 143.445 490.509 98C294.011 28.0989 0.257984 30.5 0.257984 30.5L0.257812 0Z" fill="%23E3E5FC"/></svg>') no-repeat;
+    background: url("data:image/svg+xml,%3Csvg width='1345' height='316' viewBox='0 0 1345 316' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.257812 0H1349.26V289C1349.26 289 963.758 348 811.758 289C659.758 230 618.258 143.445 490.509 98C294.011 28.0989 0.257984 30.5 0.257984 30.5L0.257812 0Z' fill='%23E3E5FC'/%3E%3C/svg%3E") no-repeat;
     background-size: cover;
     position: absolute;
     left: -30px;
@@ -17065,6 +17075,12 @@ div#edit-actions button {
       height: 311px;
     }
   }
+  @media (max-width: 991px) {
+    .custom-signinsec::before {
+      left: -20px;
+      top: -90px;
+    }
+  }
   .custom-signinsec .apic-login-wrapper {
     padding-top: 20px;
   }
@@ -17072,6 +17088,16 @@ div#edit-actions button {
     font-weight: bold;
     color: #11183b;
     font-family: "main-font", sans-serif !important;
+  }
+  @media (max-width: 991px) {
+    .custom-signinsec .apic-login-wrapper .apic-user-form-header {
+      z-index: 3;
+    }
+  }
+  @media (max-width: 576px) {
+    .custom-signinsec .apic-login-wrapper .apic-user-form-header {
+      position: relative;
+    }
   }
   .custom-signinsec .apic-login-wrapper::after {
     bottom: unset;
@@ -17088,6 +17114,12 @@ div#edit-actions button {
       max-width: 481px;
     }
   }
+  @media (max-width: 991px) {
+    .custom-signinsec .apic-login-wrapper::after {
+      position: relative;
+      transform: unset;
+    }
+  }
   .custom-signinsec .apic-login-wrapper .user-login-form {
     display: flex;
     justify-content: center;
@@ -17097,6 +17129,11 @@ div#edit-actions button {
   }
   .custom-signinsec .apic-login-wrapper .apic-user-form-footer {
     padding-top: 50px;
+  }
+  @media (max-width: 991px) {
+    .custom-signinsec .apic-login-wrapper .apic-user-form-footer {
+      order: 3;
+    }
   }
   .custom-signinsec .apic-login-wrapper .apic-user-form-footer .apic-user-forgot-password {
     font-size: 20px;
@@ -17108,10 +17145,8 @@ div#edit-actions button {
   .custom-signinsec .apic-login-wrapper .apic-user-form-footer .apic-user-form-text a {
     font-size: 22px;
   }
-
   
-
-
+  
 /*updating home page feb ankiee*/
 
 
