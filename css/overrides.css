@@ -17145,6 +17145,979 @@ div#edit-actions button {
   .custom-signinsec .apic-login-wrapper .apic-user-form-footer .apic-user-form-text a {
     font-size: 22px;
   }
+
+
+  .custom-APIproduct.custom-ARBproduct {
+    padding-top: 60px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct .bg-images .circle-2 {
+    top: -120px;
+  }
+  
+  .custom-cardIssuance #node-1003-title {
+    font-family: "main-font", sans-serif !important;
+    font-weight: 700;
+    font-size: 74px;
+    line-height: 84px;
+    text-align: start;
+    white-space: normal;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct {
+    padding-top: 60px;
+  }
+  .custom-APIproduct.custom-ARBproduct .apicProductTitleText {
+    flex-direction: column;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProductTitleText
+    h1.productName.apicTruncate {
+    white-space: normal;
+    width: 70%;
+    margin-bottom: 22px;
+  }
+  .custom-APIproduct.custom-ARBproduct .apicProductTitleText .banner-subtext {
+    font-size: 20px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct .apicProduct .apicProductHeader {
+    border-bottom: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody {
+    padding-left: 45px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field--label {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item
+    a {
+    background: #ebedff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #11183b;
+    display: inline-block;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item.active
+    a {
+    background: #5464f2;
+    color: #ffffff;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item::after {
+    content: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--items {
+    gap: 18px;
+    margin-bottom: 50px;
+  }
+  .custom-APIproduct.custom-ARBproduct .views-element-container {
+    padding: 0;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .product-discriptionbox {
+    background: #f1f2ff;
+    padding: 40px;
+    border-radius: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .field--label {
+    font-weight: 700;
+    font-size: 32px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .field--item {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    h3.field__label.label {
+    display: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .node--type-api.node--view-mode-embedded.bx--card {
+    min-height: 347px;
+    margin: 0;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicApiCard.apicApiEmbedded {
+    height: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicProductApiList
+    .views-bootstrap-list-group
+    .list-group-item {
+    width: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicProductApiList
+    .views-bootstrap-list-group
+    .list-group-item
+    .bx--card
+    .apicCardFooter {
+    left: 0;
+    height: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    h3.field__label.label {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #11183b;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .subHeading {
+    padding: 0;
+    margin-bottom: 60px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .subHeading
+    p {
+    color: #11183b;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable {
+    /* width: calc(100% / 3 - 20px); */
+    width: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct {
+    padding-top: 60px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct .bg-images .circle-2 {
+    top: -120px;
+  }
+  
+  .custom-cardIssuance #node-1003-title {
+    font-family: "main-font", sans-serif !important;
+    font-weight: 700;
+    font-size: 74px;
+    line-height: 84px;
+    text-align: start;
+    white-space: normal;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct {
+    padding-top: 60px;
+  }
+  .custom-APIproduct.custom-ARBproduct .apicProductTitleText {
+    flex-direction: column;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProductTitleText
+    h1.productName.apicTruncate {
+    white-space: normal;
+    width: 70%;
+    margin-bottom: 22px;
+  }
+  .custom-APIproduct.custom-ARBproduct .apicProductTitleText .banner-subtext {
+    font-size: 20px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct .apicProduct .apicProductHeader {
+    border-bottom: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody {
+    padding-left: 45px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field--label {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item
+    a {
+    background: #ebedff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #11183b;
+    display: inline-block;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item.active
+    a {
+    background: #5464f2;
+    color: #ffffff;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item::after {
+    content: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--items {
+    gap: 18px;
+    margin-bottom: 50px;
+  }
+  .custom-APIproduct.custom-ARBproduct .views-element-container {
+    padding: 0;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .product-discriptionbox {
+    background: #f1f2ff;
+    padding: 40px;
+    border-radius: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .field--label {
+    font-weight: 700;
+    font-size: 32px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .field--item {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    h3.field__label.label {
+    display: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .node--type-api.node--view-mode-embedded.bx--card {
+    min-height: 347px;
+    margin: 0;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicApiCard.apicApiEmbedded {
+    height: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicProductApiList
+    .views-bootstrap-list-group
+    .list-group-item {
+    width: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicProductApiList
+    .views-bootstrap-list-group
+    .list-group-item
+    .bx--card
+    .apicCardFooter {
+    left: 0;
+    height: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    h3.field__label.label {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #11183b;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .subHeading {
+    padding: 0;
+    margin-bottom: 60px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .subHeading
+    p {
+    color: #11183b;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable {
+    /* width: calc(100% / 3 - 20px); */
+    width: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct {
+    padding-top: 60px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct .bg-images .circle-2 {
+    top: -120px;
+  }
+  
+  .custom-cardIssuance #node-1003-title {
+    font-family: "main-font", sans-serif !important;
+    font-weight: 700;
+    font-size: 74px;
+    line-height: 84px;
+    text-align: start;
+    white-space: normal;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct {
+    padding-top: 60px;
+  }
+  .custom-APIproduct.custom-ARBproduct .apicProductTitleText {
+    flex-direction: column;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProductTitleText
+    h1.productName.apicTruncate {
+    white-space: normal;
+    width: 70%;
+    margin-bottom: 22px;
+  }
+  .custom-APIproduct.custom-ARBproduct .apicProductTitleText .banner-subtext {
+    font-size: 20px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct .apicProduct .apicProductHeader {
+    border-bottom: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody {
+    padding-left: 45px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field--label {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item
+    a {
+    background: #ebedff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #11183b;
+    display: inline-block;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item.active
+    a {
+    background: #5464f2;
+    color: #ffffff;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--item::after {
+    content: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .apicProductTags
+    .field--items {
+    gap: 18px;
+    margin-bottom: 50px;
+  }
+  .custom-APIproduct.custom-ARBproduct .views-element-container {
+    padding: 0;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .product-discriptionbox {
+    background: #f1f2ff;
+    padding: 40px;
+    border-radius: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .field--label {
+    font-weight: 700;
+    font-size: 32px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .field--item {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    h3.field__label.label {
+    display: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .node--type-api.node--view-mode-embedded.bx--card {
+    min-height: 347px;
+    margin: 0;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicApiCard.apicApiEmbedded {
+    height: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicProductApiList
+    .views-bootstrap-list-group
+    .list-group-item {
+    width: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .product-discriptionbox
+    .apicProductApiList
+    .views-bootstrap-list-group
+    .list-group-item
+    .bx--card
+    .apicCardFooter {
+    left: 0;
+    height: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    h3.field__label.label {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #11183b;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .subHeading {
+    padding: 0;
+    margin-bottom: 60px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .subHeading
+    p {
+    color: #11183b;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable {
+    width: 100%;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard {
+    width: calc(100% / 3 - 20px);
+    align-items: start;
+    background: #fff;
+    border: 1px solid #ececec;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planTitle
+    .text {
+    font-family: "main-font", sans-serif !important;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planTitle {
+    margin-bottom: 20px;
+    height: auto;
+  }
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .productive-heading-02 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 29px;
+    color: #5e5e5e;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .btn.btn-sm {
+    margin-bottom: 0;
+    text-align: center;
+    border-radius: 50px;
+    font-family: "main-font", sans-serif !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 29px;
+    margin-right: 0;
+    padding: 10px;
+    height: auto;
+    border: 2px solid #5464f2;
+    background: #fff;
+    color: #5464f2;
+    width: 100%;
+    margin-bottom: 70px;
+    position: relative;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .btn.btn-sm::after {
+    position: absolute;
+    content: "";
+    width: 120%;
+    border: 1px solid #d9d9d9;
+    bottom: -40px;
+    left: -40px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planDescription {
+    margin-bottom: 10px;
+    overflow: hidden;
+    min-height: auto;
+    height: auto;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planDescription
+    span {
+    font-family: "main-font", sans-serif !important;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planDescription
+    span
+    p {
+    display: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planDescription
+    span::before {
+    color: #11183b;
+    font-weight: 600;
+    font-size: 16px;
+    content: "FEATURES";
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planDescription
+    span::after {
+    content: "Everything in our default plan.";
+    color: #5e5e5e;
+    font-weight: 400;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planApiList
+    li
+    .planApiCheckMark {
+    display: none;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planApiList
+    li
+    span {
+    font-family: "main-font", sans-serif !important;
+    font-size: 14px;
+    color: #5e5e5e;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planApiList
+    li
+    span.planApiTitle {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planApiList
+    li
+    span.planApiTitle::before {
+    content: "";
+    min-width: 16px;
+    min-height: 16px;
+    background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20y%3D%220.5%22%20width%3D%2215.1426%22%20height%3D%2215.1426%22%20rx%3D%227.57129%22%20fill%3D%22%235464F2%22%2F%3E%3Cpath%20d%3D%22M5.32071%207.82539C5.20895%207.82571%205.09956%207.85848%205.00519%207.91992C4.91083%207.98136%204.83535%208.06895%204.78749%208.17255C4.73963%208.27616%204.72134%208.39155%204.73474%208.50537C4.74814%208.61919%204.79268%208.7268%204.86321%208.81574L6.36672%2010.7051C6.42033%2010.7734%206.48905%2010.8276%206.56716%2010.8631C6.64528%2010.8987%206.73054%2010.9146%206.81587%2010.9096C6.99836%2010.8996%207.16312%2010.7994%207.26817%2010.6348L10.3913%205.475C10.3919%205.47414%2010.3924%205.47329%2010.3929%205.47244C10.4222%205.42629%2010.4127%205.33482%2010.3523%205.27735C10.3356%205.26157%2010.3161%205.24945%2010.2947%205.24173C10.2733%205.23401%2010.2507%205.23086%2010.2281%205.23246C10.2055%205.23407%2010.1835%205.24041%2010.1633%205.25108C10.1432%205.26175%2010.1255%205.27653%2010.1111%205.29451C10.11%205.29592%2010.1089%205.29732%2010.1077%205.29869L6.9579%208.94935C6.94592%208.96325%206.93136%208.97456%206.91508%208.98263C6.8988%208.9907%206.88111%208.99537%206.86305%208.99638C6.845%208.99738%206.82692%208.99469%206.80989%208.98847C6.79285%208.98224%206.77719%208.97261%206.76381%208.96012L5.71847%207.98428C5.6099%207.88219%205.468%207.8255%205.32071%207.82539Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E");
+    display: inline-block;
+  }
+  
+  .custom-APIproduct.custom-ARBproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard
+    .planViewDetails
+    a {
+    font-size: 18px;
+    font-weight: 600; 
+    line-height: 29px;
+    color: #ffffff;
+    background: #5464f2;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    border-radius: 50px;
+    text-align: center;
+  }
+  
+  
+  
   
 
 /*updating home page feb ankiee*/

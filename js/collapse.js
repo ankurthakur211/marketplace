@@ -261,6 +261,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
+     
+        const pattern = /\/product\/\d+$/;  // Matches /product/{id} with numeric ID
+
+        if (pattern.test(feedback)) {
+        let element = document.querySelector(".region-content");
+        if (element) {
+        element.classList.add("custom-ARBproduct");
+       
+         }
+        }
+
+
     
 
 
