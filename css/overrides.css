@@ -18697,6 +18697,12 @@ form#user-login-form input {
     }
 }
 
+@media (max-width: 700px) {
+    .custom-signinsec::before {
+        background: unset;
+    }
+}
+
 
 /*sign in new updated merna*/
 
@@ -18731,6 +18737,66 @@ form#user-login-form input {
     height: 153vh;
     background: #d3d8ff;
     transform: rotate(65deg);
+}
+
+.custom-termsconditions-par {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding-left: unset;
+    padding-bottom: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+@media (max-width: 1000px) {
+    .rotated-bg-tsandcond {
+        position: absolute;
+        right: -53%;
+        top: -6%;
+        width: 105%;
+        height: 144vh;
+        background: #d3d8ff;
+        transform: rotate(65deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .rotated-bg-tsandcond {
+        display: none;
+    }
+    #page-node-title {
+        padding-left: unset;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .custom-termsconditions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+    }
+    .custom-termsconditions-par {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        padding-left: unset;
+        padding-bottom: 8rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        padding-left: unset;
+        padding-bottom: 4rem;
+    }
 }
 
 
