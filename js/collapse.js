@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var apicSigninForm = document.querySelector('.apic-user-form');
         apicSigninForm.classList.add('custom-signinsec');
 
-       }
+    }
 
 
 
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-    
+
 
 
 
@@ -356,7 +356,55 @@ document.addEventListener("DOMContentLoaded", function() {
     addBackgroundImages(".apic-login-wrapper");
 
 });
+//modifications to apply figma on terms and conditions 
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.href.includes('/tsandcs')) {
+        const pageNodeTitle = document.querySelector("#page-node-title");
+        if (pageNodeTitle) {
+            pageNodeTitle.style.display = "block";
+        }
+        let titleElement = document.querySelector("span#page-node-title"); // Select the title element
+        if (titleElement) {
+            titleElement.innerHTML = "Terms<br>and Conditions"; // Insert line break
+        }
+        const bgImagesDiv = document.createElement("div");
+        bgImagesDiv.classList.add("bg-images");
+        bgImagesDiv.innerHTML = `
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+        `;
+        const paragraph = document.querySelector(
+            "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field--item p"
+        );
+        if (paragraph) {
+            targetDiv.insertBefore(bgImagesDiv, paragraph);
+            paragraph.style.width = "48%";
+            paragraph.style.fontFamily = "Inter";
+            paragraph.style.fontStyle = "normal";
+            paragraph.style.fontWeight = "500";
+            paragraph.style.fontSize = "16px";
+            paragraph.style.lineHeight = "24px";
+            paragraph.style.color = "#000000";
+            paragraph.style.paddingLeft = "4rem";
+            paragraph.style.paddingBottom = "8rem";
+        }
+        const container = document.querySelector(".container");
 
+        if (container) {
+            container.style.paddingRight = "0px";
+        }
+    }
+    const header = document.querySelector(".page-header");
+
+    if (header) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "rotated-bg-wrapper-tsandcond";
+        const innerDiv = document.createElement("div");
+        innerDiv.className = "rotated-bg-tsandcond";
+        wrapper.appendChild(innerDiv);
+        header.prepend(wrapper);
+    }
+});
 document.addEventListener('DOMContentLoaded', function() {
     const loginWrapper = document.querySelector(".apic-login-wrapper");
     if (loginWrapper) {
