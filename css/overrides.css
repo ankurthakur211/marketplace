@@ -18801,3 +18801,288 @@ form#user-login-form input {
 
 
 /*terms and conditions merna*/
+
+
+/*janet about us new*/
+
+
+/*About Us Page Design Janet*/
+
+.about-us-sec .col-md-6 {
+    width: 100%;
+}
+
+.about-block-1 .row.flex {
+    display: flex !important;
+    flex-direction: row-reverse;
+}
+
+.about-us-header {
+    font-style: normal;
+    font-size: 18px;
+    color: #5464f2;
+    float: "Noto Sans";
+    margin-top: 0;
+}
+
+.about-block-1 .about-us-header,
+.about-block-3 .about-us-header {
+    font-style: normal;
+    font-size: 18px;
+    color: #5464F2;
+    float: "Noto Sans";
+    margin-top: 8%;
+    background-color: #E3E6FF;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 60px;
+}
+
+.about-us-content {
+    line-height: 60px;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 54px;
+    color: #11183B;
+}
+
+.about-us-text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    color: #11183B;
+    width: 100%;
+    text-align: left;
+}
+
+.about-us-background {
+    width: 90%;
+    margin-left: unset;
+    padding: 50px 0;
+    background-color: #FFFFFF;
+    margin: 0px 55px 0px 55px;
+}
+
+.about-block-2 {
+    position: relative;
+    z-index: 2;
+    background-color: #1a2c90;
+    padding: 55px 55px 55px 55px;
+}
+
+.about-block-2 .about-us-header {
+    font-style: normal;
+    font-size: 18px;
+    color: #5464F2;
+    float: "Noto Sans";
+    margin-top: 8%;
+    background-color: #FFFFFF;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 60px;
+}
+
+.about-block-2 .about-us-content {
+    line-height: 60px;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 54px;
+    color: #FFFFFF;
+}
+
+.about-block-2 .about-us-text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    color: #FFFFFF;
+    width: 100%;
+    text-align: left;
+}
+
+.about-block-2 .row.flex {
+    display: flex !important;
+    flex-direction: row-reverse;
+}
+
+.about-block-3 {
+    position: relative;
+    z-index: 2;
+    padding: 55px 55px 55px 55px;
+}
+
+.about-block-3 .row.flex {
+    display: flex !important;
+    flex-direction: row-reverse;
+}
+
+.about-us-image {
+    content: url("images/about-us-who.jpg");
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-us-image-2 {
+    content: url("images/about-us-methodologies.jpg");
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-us-inspiring-image {
+    content: url("images/about-us-values.jpg");
+    margin-top: 18%;
+    width: 88%;
+}
+
+.our-values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accelarate-your-business-card {
+    display: block;
+    align-items: center;
+}
+
+.accelarate-your-business-search-header,
+.accelarate-your-business-api-header,
+.accelarate-your-business-diagram-header {
+    position: unset;
+    margin-left: auto;
+    margin-top: unset;
+    font-size: 20px;
+    color: #1B2C90;
+    line-height: 32px;
+}
+
+.accelarate-your-business-search-text,
+.accelarate-your-business-api-text,
+.accelarate-your-business-diagram-text {
+    position: unset;
+    margin-left: auto;
+    font-size: 16px;
+    line-height: 24px;
+    color: #11183B;
+}
+
+.about-block-0 .about-us-header {
+    content: url("images/about-us-header.png");
+    width: 100%;
+}
+
+.updated-aboutus .api-doc-background-text {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    line-height: unset;
+    margin-left: 100px;
+    text-align: left;
+}
+
+.about-us-sec .api-doc-background {
+    background: linear-gradient(43.72deg, #5464F2 -38.08%, #22329C 10.38%, #0D1E78 101.7%);
+}
+
+.about-us-Integrity {
+    content: url("images/Integrity.png");
+    top: 43%;
+    width: 15%;
+    background-color: #E3E6FF;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.about-us-Trust {
+    content: url("images/Trust.png");
+    top: 43%;
+    width: 15%;
+    background-color: #E3E6FF;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.about-us-Excellence {
+    content: url("images/Excellence.png");
+    top: 43%;
+    width: 15%;
+    height: 10%;
+    background-color: #E3E6FF;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.about-us-lets-get-started-background {
+    background-repeat: no-repeat;
+    margin-top: 2%;
+    background-size: cover;
+    width: 80%;
+    color: #FFF;
+    margin: auto;
+    background-color: #0D1E78;
+    border-radius: 35px 35px 0px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: none !important;
+}
+
+.about-us-lets-get-started-text {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 19px;
+    line-height: 29px;
+    text-align: center;
+    color: #fff;
+    width: 52%;
+    margin: auto;
+}
+
+.lets-get-started-button,
+.lets-get-started-Expert-button {
+    padding: 10px 30px;
+    width: fit-content;
+    background-color: #FFFFFF;
+    border: #556FF8;
+    color: #556FF8;
+    margin-top: 30px;
+}
+
+.about-us-lets-get-started-header {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.about-block-0 svg {
+    position: absolute;
+    top: 75px;
+}
+
+.about-us-lets-get-started-background .square {
+    position: absolute;
+    width: 150px;
+    height: 110px;
+    background-color: #5a66ff;
+    transform: rotate(0deg);
+    border-radius: 10px;
+}
+
+.about-us-lets-get-started-background .left {
+    top: 70px;
+    left: -30px;
+    transform: skewX(-10deg);
+}
+
+.about-us-lets-get-started-background .right {
+    bottom: 20px;
+    right: -30px;
+    background-color: #9da7ff;
+    transform: skewX(-10deg);
+}
+
+
+/*Janet about us new*/
