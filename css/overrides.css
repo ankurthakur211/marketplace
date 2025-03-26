@@ -18803,9 +18803,9 @@ form#user-login-form input {
 /*terms and conditions merna*/
 
 
-
-
 /*janet about us new*/
+
+
 /*About Us Page Design Janet*/
 
 .about-us-sec .col-md-6 {
@@ -18816,7 +18816,7 @@ form#user-login-form input {
     display: flex !important;
     flex-direction: row-reverse;
 }
- 
+
 .about-us-header {
     font-style: normal;
     font-size: 18px;
@@ -18825,7 +18825,8 @@ form#user-login-form input {
     margin-top: 0;
 }
 
-.about-block-1 .about-us-header, .about-block-3 .about-us-header{
+.about-block-1 .about-us-header,
+.about-block-3 .about-us-header {
     font-style: normal;
     font-size: 18px;
     color: #5464F2;
@@ -18836,7 +18837,7 @@ form#user-login-form input {
     padding: 10px;
     border-radius: 60px;
 }
- 
+
 .about-us-content {
     line-height: 60px;
     font-style: normal;
@@ -18844,7 +18845,7 @@ form#user-login-form input {
     font-size: 54px;
     color: #11183B;
 }
- 
+
 .about-us-text {
     font-style: normal;
     font-weight: 300;
@@ -18862,14 +18863,14 @@ form#user-login-form input {
     background-color: #FFFFFF;
     margin: 0px 55px 0px 55px;
 }
- 
+
 .about-block-2 {
     position: relative;
     z-index: 2;
     background-color: #1a2c90;
     padding: 55px 55px 55px 55px;
 }
- 
+
 .about-block-2 .about-us-header {
     font-style: normal;
     font-size: 18px;
@@ -18881,7 +18882,7 @@ form#user-login-form input {
     padding: 10px;
     border-radius: 60px;
 }
- 
+
 .about-block-2 .about-us-content {
     line-height: 60px;
     font-style: normal;
@@ -18889,7 +18890,7 @@ form#user-login-form input {
     font-size: 54px;
     color: #FFFFFF;
 }
- 
+
 .about-block-2 .about-us-text {
     font-style: normal;
     font-weight: 300;
@@ -18910,7 +18911,7 @@ form#user-login-form input {
     z-index: 2;
     padding: 55px 55px 55px 55px;
 }
- 
+
 .about-block-3 .row.flex {
     display: flex !important;
     flex-direction: row-reverse;
@@ -18921,30 +18922,32 @@ form#user-login-form input {
     width: 100%;
     border-radius: 10px;
 }
- 
+
 .about-us-image-2 {
     content: url("images/about-us-methodologies.jpg");
     width: 100%;
     border-radius: 10px;
 }
- 
+
 .about-us-inspiring-image {
     content: url("images/about-us-values.jpg");
     margin-top: 18%;
     width: 88%;
 }
- 
-.our-values{
-    display:flex;
+
+.our-values {
+    display: flex;
     justify-content: space-between;
 }
- 
+
 .accelarate-your-business-card {
     display: block;
     align-items: center;
 }
- 
-.accelarate-your-business-search-header, .accelarate-your-business-api-header, .accelarate-your-business-diagram-header {
+
+.accelarate-your-business-search-header,
+.accelarate-your-business-api-header,
+.accelarate-your-business-diagram-header {
     position: unset;
     margin-left: auto;
     margin-top: unset;
@@ -18952,15 +18955,17 @@ form#user-login-form input {
     color: #1B2C90;
     line-height: 32px;
 }
- 
-.accelarate-your-business-search-text, .accelarate-your-business-api-text, .accelarate-your-business-diagram-text {
+
+.accelarate-your-business-search-text,
+.accelarate-your-business-api-text,
+.accelarate-your-business-diagram-text {
     position: unset;
     margin-left: auto;
     font-size: 16px;
     line-height: 24px;
     color: #11183B;
 }
- 
+
 .about-block-0 .about-us-header {
     content: url("images/about-us-header.png");
     width: 100%;
@@ -18978,7 +18983,6 @@ form#user-login-form input {
 .about-us-sec .api-doc-background {
     background: linear-gradient(43.72deg, #5464F2 -38.08%, #22329C 10.38%, #0D1E78 101.7%);
 }
-
 
 .about-us-Integrity {
     content: url("images/Integrity.png");
@@ -19034,7 +19038,8 @@ form#user-login-form input {
     margin: auto;
 }
 
-.lets-get-started-button, .lets-get-started-Expert-button {
+.lets-get-started-button,
+.lets-get-started-Expert-button {
     padding: 10px 30px;
     width: fit-content;
     background-color: #FFFFFF;
@@ -19078,5 +19083,6 @@ form#user-login-form input {
     background-color: #9da7ff;
     transform: skewX(-10deg);
 }
+
 
 /*Janet about us new*/
