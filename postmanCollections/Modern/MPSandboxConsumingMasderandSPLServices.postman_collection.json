@@ -1,0 +1,1758 @@
+{
+	"info": {
+		"_postman_id": "56aa29dc-5a36-4f97-9dc5-b3cf24155255",
+		"name": "MP Sandbox Consuming Masder and SPL Services Modern APi",
+		"description": "The API provides comprehensive employment data for persons and establishments.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22335175"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/oauth2security/oauth2/token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Establishment Employment Information",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"description": "An RFC4122 UID used as a correlation id."
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "consumerId",
+						"value": "test-app",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base-url}}/mp-employment-info/v1/establishments/:EstablishmentNationalId/employees",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"mp-employment-info",
+						"v1",
+						"establishments",
+						":EstablishmentNationalId",
+						"employees"
+					],
+					"variable": [
+						{
+							"key": "EstablishmentNationalId",
+							"value": "7011111111"
+						}
+					]
+				},
+				"description": "Establishment Employment Information"
+			},
+			"response": [
+				{
+					"name": "Get Establishment Employment Information",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "consumerId",
+								"value": "test-app",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-employment-info/v1/establishments/:EstablishmentNationalId/employees",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-employment-info",
+								"v1",
+								"establishments",
+								":EstablishmentNationalId",
+								"employees"
+							],
+							"variable": [
+								{
+									"key": "EstablishmentNationalId",
+									"value": "7021311123"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "76588fc4-e019-425c-8706-5b175fb9a7e2"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b1f2910218d0a2"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,99;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 14:13:38 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EstablishmentInfo\": {\n            \"NameAr\": \"محل بيع الايسكريم\",\n            \"HRSDRegistrationNumber\": \"12-123\",\n            \"CommercialRegistrationNumber\": 4650000000,\n            \"GOSIRegistrationNumber\": 120111111,\n            \"Status\": \"Active\",\n            \"EstablishmentNationalId\": 7021311123\n        },\n        \"ActivityInfo\": {\n            \"TypeAr\": \"محلات البوظة ( الايسكريم ) (563014)\",\n            \"TypeEn\": \"Ice cream shops (563014)\"\n        },\n        \"EmployeesInfo\": {\n            \"TotalEmployeesCount\": 5,\n            \"Employees\": [\n                {\n                    \"PersonalInfo\": {\n                        \"FirstNameAr\": \"MOHAMMED ZAHIR\",\n                        \"SecondNameAr\": \"-\",\n                        \"ThirdNameAr\": \"-\",\n                        \"LastNameAr\": \"MOHAMMED\",\n                        \"Nationality\": \"Bangladesh\",\n                        \"Gender\": \"Male\",\n                        \"GregBirthDate\": \"1971-02-26\",\n                        \"HijriBirthDate\": \"1391-01-01\"\n                    },\n                    \"EmploymentInfo\": {\n                        \"JobCode\": \"6331025\",\n                        \"JobTitleAr\": \"عامل عادي\",\n                        \"JobTitleEn\": \"Common labour\",\n                        \"Status\": \"LIVE\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 10000,\n                            \"HousingAllowance\": 0,\n                            \"OtherAllowances\": 500,\n                            \"Commission\": 0,\n                            \"TotalSalary\": 1200\n                        },\n                        \"HijriJoiningDate\": \"2012-07-08T00:00:00.000+03:00\"\n                    },\n                    \"IdentificationInfo\": {\n                        \"POIType\": \"IQA\",\n                        \"POINumber\": 2123456789,\n                        \"GregExpiryDate\": \"2024-07-21T00:00:00.000+03:00\"\n                    }\n                },\n                {\n                    \"PersonalInfo\": {\n                        \"FirstNameAr\": \"عبدالخالق\",\n                        \"SecondNameAr\": \"محمد\",\n                        \"ThirdNameAr\": \"عبدالقادر\",\n                        \"LastNameAr\": \"علي\",\n                        \"Nationality\": \"Yemen\",\n                        \"Gender\": \"Male\",\n                        \"GregBirthDate\": \"1974-01-24\",\n                        \"HijriBirthDate\": \"1394-01-01\"\n                    },\n                    \"EmploymentInfo\": {\n                        \"JobCode\": \"9140000\",\n                        \"JobTitleAr\": \"مهن تشغيل وقيادة وسائط النقل وآليات الطرق\",\n                        \"JobTitleEn\": \"Transport,road machines operation and driving occupations\",\n                        \"Status\": \"LIVE\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 10000,\n                            \"HousingAllowance\": 0,\n                            \"OtherAllowances\": 500,\n                            \"Commission\": 0,\n                            \"TotalSalary\": 1200\n                        },\n                        \"HijriJoiningDate\": \"2012-07-08T00:00:00.000+03:00\"\n                    },\n                    \"IdentificationInfo\": {\n                        \"POIType\": \"IQA\",\n                        \"POINumber\": 2223456789,\n                        \"GregExpiryDate\": \"2024-06-11T00:00:00.000+03:00\"\n                    }\n                },\n                {\n                    \"PersonalInfo\": {\n                        \"SecondNameAr\": \"عمر\",\n                        \"ThirdNameAr\": \"خالد\",\n                        \"LastNameAr\": \"أحمد\",\n                        \"FullNameEn\": \"Jamal Omar Khalid\",\n                        \"Nationality\": \"Saudi\",\n                        \"Gender\": \"Male\",\n                        \"MaritalStatusAr\": \"متزوج\",\n                        \"MaritalStatusEn\": \"Married\",\n                        \"GregBirthDate\": \"1985-11-15\",\n                        \"HijriBirthDate\": \"1406-02-12\"\n                    },\n                    \"EmploymentInfo\": {\n                        \"JobCode\": \"8223055\",\n                        \"JobTitleAr\": \"عامل خط إنتاج أكياس بلاستيكية\",\n                        \"JobTitleEn\": \"Worker, plastic bags production line\",\n                        \"Status\": \"LIVE\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 15000,\n                            \"HousingAllowance\": 2000,\n                            \"OtherAllowances\": 800,\n                            \"Commission\": 0,\n                            \"TotalSalary\": 17800\n                        },\n                        \"GregJoiningDate\": \"2018-09-01T00:00:00.000+03:00\"\n                    },\n                    \"IdentificationInfo\": {\n                        \"POIType\": \"NAT\",\n                        \"POINumber\": 1234567890,\n                        \"GregExpiryDate\": \"2025-05-20T00:00:00.000+03:00\"\n                    }\n                },\n                {\n                    \"PersonalInfo\": {\n                        \"SecondNameAr\": \"محمد\",\n                        \"ThirdNameAr\": \"علي\",\n                        \"LastNameAr\": \"خان\",\n                        \"FullNameEn\": \"Sarah Mohammed Ali\",\n                        \"Nationality\": \"Pakistan\",\n                        \"Gender\": \"Female\",\n                        \"MaritalStatusAr\": \"متزوجة\",\n                        \"MaritalStatusEn\": \"Married\",\n                        \"GregBirthDate\": \"1992-07-30\",\n                        \"HijriBirthDate\": \"1413-05-20\"\n                    },\n                    \"EmploymentInfo\": {\n                        \"JobCode\": \"932101\",\n                        \"JobTitleAr\": \"عامل تعبئة وتغليف\",\n                        \"JobTitleEn\": \"Packaging worker\",\n                        \"Status\": \"LIVE\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 20000,\n                            \"HousingAllowance\": 3000,\n                            \"OtherAllowances\": 1000,\n                            \"Commission\": 0,\n                            \"TotalSalary\": 24000\n                        },\n                        \"GregJoiningDate\": \"2019-05-15T00:00:00.000+03:00\"\n                    },\n                    \"IdentificationInfo\": {\n                        \"POIType\": \"IQA\",\n                        \"POINumber\": 2312345678,\n                        \"GregExpiryDate\": \"2026-08-14T00:00:00.000+03:00\"\n                    }\n                },\n                {\n                    \"PersonalInfo\": {\n                        \"SecondNameAr\": \"محمد\",\n                        \"ThirdNameAr\": \"علي\",\n                        \"LastNameAr\": \"خان\",\n                        \"FullNameEn\": \"Sarah Mohammed Ali\",\n                        \"Nationality\": \"Pakistan\",\n                        \"Gender\": \"Female\",\n                        \"MaritalStatusAr\": \"متزوجة\",\n                        \"MaritalStatusEn\": \"Married\",\n                        \"GregBirthDate\": \"1992-07-30\",\n                        \"HijriBirthDate\": \"1413-05-20\"\n                    },\n                    \"EmploymentInfo\": {\n                        \"JobCode\": \"932101\",\n                        \"JobTitleAr\": \"عامل تعبئة وتغليف\",\n                        \"JobTitleEn\": \"Packaging worker\",\n                        \"Status\": \"LIVE\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 20000,\n                            \"HousingAllowance\": 3000,\n                            \"OtherAllowances\": 1000,\n                            \"Commission\": 1500,\n                            \"TotalSalary\": 24500\n                        },\n                        \"GregJoiningDate\": \"2019-05-15T00:00:00.000+03:00\"\n                    },\n                    \"IdentificationInfo\": {\n                        \"POIType\": \"IQA\",\n                        \"POINumber\": 2345678912,\n                        \"GregExpiryDate\": \"2026-08-14T00:00:00.000+03:00\"\n                    }\n                }\n            ]\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Establishment Employment Information",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "consumerId",
+								"value": "test-app",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-employment-info/v1/establishments/:EstablishmentNationalId/employees",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-employment-info",
+								"v1",
+								"establishments",
+								":EstablishmentNationalId",
+								"employees"
+							],
+							"variable": [
+								{
+									"key": "EstablishmentNationalId",
+									"value": "7111111112"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "7c84d1a0-dbdb-4ac3-bc95-be0746bd1f47"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b1f2d80218daa2"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,98;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 14:14:49 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EstablishmentInfo\": {\n            \"EstablishmentNationalId\": 7111111112,\n            \"NameAr\": \"شركة الرياض\",\n            \"NameEn\": \"Riyadh Corporation\",\n            \"CommercialRegistrationNumber\": \"9876543210\",\n            \"GOSIRegistrationNumber\": \"55667788\",\n            \"HRSDRegistrationNumber\": \"22-456\",\n            \"Status\": \"Inactive\"\n        },\n        \"ActivityInfo\": {\n            \"TypeAr\": \"التجارة العامة للأجهزة الإلكترونية\",\n            \"TypeEn\": \"General trade in electronic devices\"\n        },\n        \"EmployeesInfo\": {\n            \"TotalEmployeesCount\": 150,\n            \"Employees\": [\n                {\n                    \"PersonalInfo\": {\n                        \"FirstNameAr\": \"سعيد\",\n                        \"SecondNameAr\": \"علي\",\n                        \"ThirdNameAr\": \"فهد\",\n                        \"LastNameAr\": \"الناصر\",\n                        \"FullNameEn\": \"Saeed Ali Fahad Al-Nasser\",\n                        \"Nationality\": \"Saudi Arabia\",\n                        \"GregBirthDate\": \"1985-06-15T00:00:00.000Z\",\n                        \"HijriBirthDate\": \"1405-03-15T00:00:00.000Z\",\n                        \"Gender\": \"MALE\",\n                        \"MaritalStatusAr\": \"أعزب\",\n                        \"MaritalStatusEn\": \"Single\"\n                    },\n                    \"IdentificationInfo\": {\n                        \"POIType\": \"NAT\",\n                        \"POINumber\": \"6789345678\",\n                        \"GregExpiryDate\": \"2024-06-14T21:00:00.000Z\",\n                        \"HijriExpiryDate\": \"1445-11-05T21:00:00.000Z\"\n                    },\n                    \"EmploymentInfo\": {\n                        \"JobCode\": \"7421018\",\n                        \"JobTitleAr\": \"محاسب\",\n                        \"JobTitleEn\": \"Accountant\",\n                        \"GregJoiningDate\": \"2022-01-10T21:00:00.000Z\",\n                        \"HijriJoiningDate\": \"1443-06-07T21:00:00.000Z\",\n                        \"Status\": \"ACTIVE\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 7500,\n                            \"HousingAllowance\": 3000,\n                            \"OtherAllowances\": 1500,\n                            \"Commission\": 500,\n                            \"TotalSalary\": 12500\n                        }\n                    }\n                }\n            ]\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Establishment Employment Information",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "consumerId",
+								"value": "test-app",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-employment-info/v1/establishments/:EstablishmentNationalId/employees",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-employment-info",
+								"v1",
+								"establishments",
+								":EstablishmentNationalId",
+								"employees"
+							],
+							"variable": [
+								{
+									"key": "EstablishmentNationalId",
+									"value": "7011111111"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "a4977503-995e-4191-971a-74831e81c84d"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b1f2e000aa6453"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,97;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 14:14:56 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EstablishmentInfo\": {\n            \"EstablishmentNationalId\": 7011111111,\n            \"NameAr\": \"شركة المستقبل\",\n            \"NameEn\": \"Future Enterprises\",\n            \"CommercialRegistrationNumber\": \"3456789012\",\n            \"GOSIRegistrationNumber\": \"11223344\",\n            \"HRSDRegistrationNumber\": \"33-789\",\n            \"Status\": \"Active\"\n        },\n        \"ActivityInfo\": {\n            \"TypeAr\": \"التسويق الرقمي\",\n            \"TypeEn\": \"Digital Marketing\"\n        },\n        \"EmployeesInfo\": {\n            \"TotalEmployeesCount\": 75,\n            \"Employees\": [\n                {\n                    \"PersonalInfo\": {\n                        \"FirstNameAr\": \"أمل\",\n                        \"SecondNameAr\": \"خالد\",\n                        \"ThirdNameAr\": \"سعيد\",\n                        \"LastNameAr\": \"الجبري\",\n                        \"FullNameEn\": \"Amal Khalid Saeed Al-Jubri\",\n                        \"Nationality\": \"Saudi Arabia\",\n                        \"GregBirthDate\": \"1990-11-22T00:00:00.000Z\",\n                        \"HijriBirthDate\": \"1411-09-07T00:00:00.000Z\",\n                        \"Gender\": \"FEMALE\",\n                        \"MaritalStatusAr\": \"أعزب\",\n                        \"MaritalStatusEn\": \"Single\"\n                    },\n                    \"IdentificationInfo\": {\n                        \"POIType\": \"NAT\",\n                        \"POINumber\": \"9876543210\",\n                        \"GregExpiryDate\": \"2025-11-21T21:00:00.000Z\",\n                        \"HijriExpiryDate\": \"1447-07-10T21:00:00.000Z\"\n                    },\n                    \"EmploymentInfo\": {\n                        \"JobCode\": \"5520091\",\n                        \"JobTitleAr\": \"مسؤول تسويق\",\n                        \"JobTitleEn\": \"Marketing Specialist\",\n                        \"GregJoiningDate\": \"2023-02-20T21:00:00.000Z\",\n                        \"HijriJoiningDate\": \"1444-08-09T21:00:00.000Z\",\n                        \"Status\": \"ACTIVE\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 8200,\n                            \"HousingAllowance\": 3200,\n                            \"OtherAllowances\": 1800,\n                            \"Commission\": 0,\n                            \"TotalSalary\": 13200\n                        }\n                    }\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Person Employment Information",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"description": "An RFC4122 UID used as a correlation id."
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "consumerId",
+						"value": "test-app",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ar",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base-url}}/mp-social-insurance-info/v1/persons/:POINumber",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"mp-social-insurance-info",
+						"v1",
+						"persons",
+						":POINumber"
+					],
+					"variable": [
+						{
+							"key": "POINumber",
+							"value": "1949318422"
+						}
+					]
+				},
+				"description": "Person Employment Information"
+			},
+			"response": [
+				{
+					"name": "Get Person Employment Information",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "consumerId",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-social-insurance-info/v1/persons/:POINumber",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-social-insurance-info",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "1010312901"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "6f277a00-e108-4eb9-9a95-18f92e64a92f"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b1f425010d9571"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,99;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 14:20:22 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"PersonalInfo\": {\n            \"FullNameAr\": \"محمد خالد\"\n        },\n        \"EmploymentInfo\": {\n            \"ActiveJobsNumber\": 1,\n            \"TotalWorkingMonths\": 40,\n            \"JobList\": [\n                {\n                    \"EmployerInfo\": {\n                        \"UnifiedId\": \"7011111111\",\n                        \"NameAr\": \" شركه أحمد للتأمين\",\n                        \"GosiNumber\": \"500000000\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"JoiningDate\": \"2023-12-03\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2023-12-03\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 3000,\n                            \"HousingAllowance\": 1000,\n                            \"OtherAllowances\": 200\n                        }\n                    },\n                    \"JobTitleAr\": \"مندوب مبيعات\",\n                    \"JobTitleEn\": \"Sales Representative\"\n                }\n            ]\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Person Employment Information",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "consumerId",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-social-insurance-info/v1/persons/:POINumber",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-social-insurance-info",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "1010312902"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "367e1dbe-6a5b-4dc5-8fb3-faceae6d9dc7"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b1f42f010d9581"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,98;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 14:20:34 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"PersonalInfo\": {\n            \"FullNameAr\": \"محمد عبدالله\"\n        },\n        \"EmploymentInfo\": {\n            \"ActiveJobsNumber\": 2,\n            \"TotalWorkingMonths\": 100,\n            \"JobList\": [\n                {\n                    \"EmployerInfo\": {\n                        \"UnifiedId\": \"7111111111\",\n                        \"NameAr\": \"مؤسسة عبدالعزيز للمقاولات\",\n                        \"GosiNumber\": \"500000001\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"JoiningDate\": \"2024-01-01\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2024-01-01\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 3000,\n                            \"HousingAllowance\": 1000,\n                            \"OtherAllowances\": 100\n                        }\n                    },\n                    \"JobTitleAr\": \"أخصائي تسويق\",\n                    \"JobTitleEn\": \"Marketing Specialist\"\n                },\n                {\n                    \"EmployerInfo\": {\n                        \"UnifiedId\": \"7111111112\",\n                        \"NameAr\": \"شركة ابراهيم للتنمية المحدودة\",\n                        \"GosiNumber\": \"500000002\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"JoiningDate\": \"2024-01-01\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2024-01-01\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 3000,\n                            \"HousingAllowance\": 1000,\n                            \"OtherAllowances\": 100\n                        }\n                    },\n                    \"JobTitleAr\": \"مسؤول إجراءات جوازات\",\n                    \"JobTitleEn\": \"Passport Officer\"\n                }\n            ]\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Person Employment Information",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "consumerId",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-social-insurance-info/v1/persons/:POINumber",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-social-insurance-info",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "1949318422"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "a360e8c9-a431-4a61-8199-4e1f76778bac"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b1f4390218e382"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,97;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 14:20:41 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"PersonalInfo\": {\n            \"FullNameAr\": \"محمد أحمد\"\n        },\n        \"EmploymentInfo\": {\n            \"ActiveJobsNumber\": 2,\n            \"TotalWorkingMonths\": 103,\n            \"JobList\": [\n                {\n                    \"EmployerInfo\": {\n                        \"UnifiedId\": \"7032000859\",\n                        \"NameAr\": \"شركة أحمد\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"JoiningDate\": \"2023-11-08\",\n                    \"JobTitleAr\": \"اختصاصي تسويق\",\n                    \"JobTitleEn\": \"Specialist, marketing\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2023-11-08\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 5900,\n                            \"HousingAllowance\": 2666.67,\n                            \"OtherAllowances\": 2342\n                        }\n                    }\n                }\n            ],\n            \"PensionsList\": [\n                {\n                    \"Salary\": 6500,\n                    \"PensionType\": \"Private Pension\",\n                    \"PensionStartDate\": \"2024-02-25\"\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Establishment Employees Details List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"description": "An RFC4122 UID used as a correlation id."
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base-url}}/mp-social-insurance-info/v1/establishments/:EstablishmentNationalId",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"mp-social-insurance-info",
+						"v1",
+						"establishments",
+						":EstablishmentNationalId"
+					],
+					"variable": [
+						{
+							"key": "EstablishmentNationalId",
+							"value": "7111111112"
+						}
+					]
+				},
+				"description": "Get Establishment Employees Details List"
+			},
+			"response": [
+				{
+					"name": "Get Establishment Employees Details List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-social-insurance-info/v1/establishments/:EstablishmentNationalId",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-social-insurance-info",
+								"v1",
+								"establishments",
+								":EstablishmentNationalId"
+							],
+							"variable": [
+								{
+									"key": "EstablishmentNationalId",
+									"value": "7011111111"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "a3b74280-139c-43c3-955d-a9f0af3f1c11"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b1fdd90199bdb0"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,99;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 15:01:45 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EstablishmentInfo\": {\n            \"NameAr\": \"وكالة ناصر للسياحة\",\n            \"GOSIRegistrationNumber\": \"22222222\",\n            \"EmployeesInfo\": {\n                \"TotalEmployeesCount\": 50,\n                \"EmployeesCountMeetingCutoff\": 45\n            },\n            \"StartDate:\": \"2024-01-01\",\n            \"CommercialRegistrationNumber\": \"1724571051\",\n            \"LegalInfo\": {\n                \"EntityTypeAr\": \"منشأة فردية\",\n                \"EntityTypeEn\": \"Private Company\"\n            },\n            \"CityInfo\": {\n                \"NameAr\": \"الرياض\",\n                \"NameEn\": \"Riyadh\"\n            },\n            \"ActivityInfo\": {\n                \"TypeAr\": \"وكالة السفر والسياحة\",\n                \"TypeEn\": \"Travel and Tourism Agency\"\n            }\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Establishment Employees Details List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-social-insurance-info/v1/establishments/:EstablishmentNationalId",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-social-insurance-info",
+								"v1",
+								"establishments",
+								":EstablishmentNationalId"
+							],
+							"variable": [
+								{
+									"key": "EstablishmentNationalId",
+									"value": "123345"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "58914fd9-ac1f-4b19-90ae-5efa0c3397b7"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b1fde502199bc2"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,98;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 15:01:57 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"PersonalInfo\": {\n            \"FullName\": \"محمد أحمد\"\n        },\n        \"EmploymentInfo\": {\n            \"ActiveJobsNumber\": 2,\n            \"TotalWorkingMonths\": 103,\n            \"JobList\": [\n                {\n                    \"EmployerInfo\": {\n                        \"UnifiedId\": \"7032000859\",\n                        \"Name\": \"شركة أحمد\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"JoiningDate\": \"2023-11-08\",\n                    \"JobTitleAr\": \"اختصاصي تسويق\",\n                    \"JobTitleEn\": \"Specialist, marketing\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2023-11-08\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 5900,\n                            \"HousingAllowance\": 2666.67,\n                            \"OtherAllowances\": 2342\n                        }\n                    }\n                }\n            ],\n            \"PensionsList\": [\n                {\n                    \"Salary\": 6500,\n                    \"PensionType\": \"Private Pension\",\n                    \"PensionStartDate\": \"2024-02-25\"\n                }\n            ]\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Establishment Employees Details List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-social-insurance-info/v1/establishments/:EstablishmentNationalId",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-social-insurance-info",
+								"v1",
+								"establishments",
+								":EstablishmentNationalId"
+							],
+							"variable": [
+								{
+									"key": "EstablishmentNationalId",
+									"value": "7111111112"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "6f71a91a-2f6b-40b3-ba61-d6f34bab40b5"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b305c800b35c53"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,99;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 09:47:53 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EstablishmentInfo\": {\n            \"NameAr\": \"مؤسسة أحمد\",\n            \"StartDate:\": \"2017-12-26\",\n            \"GOSIRegistrationNumber\": \"22334455\",\n            \"CommercialRegistrationNumber\": \"1234567890\",\n            \"EmployeesInfo\": {\n                \"EmployeesCountMeetingCutoff\": 70,\n                \"TotalEmployeesCount\": 100\n            },\n            \"LegalInfo\": {\n                \"EntityTypeAr\": \"منشأة مساهمة\",\n                \"EntityTypeEn\": \"Stock Share Company\"\n            },\n            \"CityInfo\": {\n                \"NameAr\": \"الدمام\",\n                \"NameEn\": \"Dammam\"\n            },\n            \"ActivityInfo\": {\n                \"TypeAr\": \"الإنشاءات العامة للمباني السكنية\",\n                \"TypeEn\": \"Construction of all types of residential buildings\"\n            }\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Person Salary Certificate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"description": "An RFC4122 UID used as a correlation id."
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base-url}}/mp-salary-certificate/v1/persons/:POINumber?poiType=NAT&employmentSector=Non-Gov&birthDate=8915-78-28&birthDateType=Hijri&payMonth=9822-40&payMonthType=Greg",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"mp-salary-certificate",
+						"v1",
+						"persons",
+						":POINumber"
+					],
+					"query": [
+						{
+							"key": "poiType",
+							"value": "NAT",
+							"description": "(Required) Indicates the type of POI Number:\n<br> NAT: National Id\n<br> IQA: Iqama\n<br> GCC: GCC Countries Id\n<br> BORD: Border Number"
+						},
+						{
+							"key": "employmentSector",
+							"value": "Non-Gov",
+							"description": "(Required) Indicates the person's employment sector.\n<br> Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR)\n<br> Non-Gov: Data will be retrived from Masdr Private Salary Certificate (GOSI) \n<br> Semi-Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR) & if no records were found, Data will be retrived from Masdr Private Salary Certificate (GOSI)"
+						},
+						{
+							"key": "birthDate",
+							"value": "8915-78-28",
+							"description": "Employee Birth Date. (Required in case of Gov and Semi-Gov sector, accept birthDate in Hijri or birthDate in Gregorian)"
+						},
+						{
+							"key": "birthDateType",
+							"value": "Hijri",
+							"description": "Birth Date Type (Required in case of Gov and Semi-Gov sector)"
+						},
+						{
+							"key": "payMonth",
+							"value": "9822-40",
+							"description": "Pay Month. (Required in case of Gov and Semi-Gov sector, accept date in Hijri or Gregorian)"
+						},
+						{
+							"key": "payMonthType",
+							"value": "Greg",
+							"description": "PayMonth Date type. (Required in case of Gov and Semi-Gov sector)"
+						}
+					],
+					"variable": [
+						{
+							"key": "POINumber",
+							"value": "1160580661"
+						}
+					]
+				},
+				"description": "Person Salary Certificate"
+			},
+			"response": [
+				{
+					"name": "Get Person Salary Certificate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-salary-certificate/v1/persons/:POINumber?poiType=NAT&employmentSector=Non-Gov&birthDate=8915-78-28&birthDateType=Hijri&payMonth=9822-40&payMonthType=Greg",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-salary-certificate",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"query": [
+								{
+									"key": "poiType",
+									"value": "NAT",
+									"description": "(Required) Indicates the type of POI Number:\n<br> NAT: National Id\n<br> IQA: Iqama\n<br> GCC: GCC Countries Id\n<br> BORD: Border Number"
+								},
+								{
+									"key": "employmentSector",
+									"value": "Non-Gov",
+									"description": "(Required) Indicates the person's employment sector.\n<br> Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR)\n<br> Non-Gov: Data will be retrived from Masdr Private Salary Certificate (GOSI) \n<br> Semi-Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR) & if no records were found, Data will be retrived from Masdr Private Salary Certificate (GOSI)"
+								},
+								{
+									"key": "birthDate",
+									"value": "8915-78-28",
+									"description": "Employee Birth Date. (Required in case of Gov and Semi-Gov sector, accept birthDate in Hijri or birthDate in Gregorian)"
+								},
+								{
+									"key": "birthDateType",
+									"value": "Hijri",
+									"description": "Birth Date Type (Required in case of Gov and Semi-Gov sector)"
+								},
+								{
+									"key": "payMonth",
+									"value": "9822-40",
+									"description": "Pay Month. (Required in case of Gov and Semi-Gov sector, accept date in Hijri or Gregorian)"
+								},
+								{
+									"key": "payMonthType",
+									"value": "Greg",
+									"description": "PayMonth Date type. (Required in case of Gov and Semi-Gov sector)"
+								}
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "1160580661"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "403a7a56-f761-417a-ae04-8a1e420634f3"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b2f4cf023199d2"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,94;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 08:35:27 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EmploymentInfo\": {\n            \"TotalWorkingMonths\": 40,\n            \"ActiveJobsNumber\": 1,\n            \"JobList\": [\n                {\n                    \"EmployerInfo\": {\n                        \"GOSIRegistrationNumber\": \"500000000\",\n                        \"Name\": \" شركه أحمد للتأمين\",\n                        \"UnifiedId\": \"7011111111\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2023-12-03\",\n                        \"PayslipInfo\": {\n                            \"BasicSalary\": 3000,\n                            \"TotalAllowances\": 1200\n                        },\n                        \"Allowances\": [\n                            {\n                                \"AllowanceCode\": \"00000001\",\n                                \"AllowanceName\": \"بدل سكن (قطاع خاص)\",\n                                \"AllowanceAmount\": 1000\n                            },\n                            {\n                                \"AllowanceCode\": \"00000002\",\n                                \"AllowanceName\": \"أخرى (قطاع خاص)\",\n                                \"AllowanceAmount\": 200\n                            }\n                        ]\n                    },\n                    \"JobTitleAr\": \"مندوب مبيعات\",\n                    \"JobTitleEn\": \"Sales Representative\",\n                    \"Source\": \"GOSI\",\n                    \"GregJoiningDate\": \"2023-12-03\"\n                }\n            ]\n        },\n        \"PersonalInfo\": {\n            \"FullNameAr\": \"محمد خالد\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Person Salary Certificate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-salary-certificate/v1/persons/:POINumber?poiType=NAT&employmentSector=Gov&birthDate=8915-78-28&birthDateType=Hijri&payMonth=9822-40&payMonthType=Greg",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-salary-certificate",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"query": [
+								{
+									"key": "poiType",
+									"value": "NAT",
+									"description": "(Required) Indicates the type of POI Number:\n<br> NAT: National Id\n<br> IQA: Iqama\n<br> GCC: GCC Countries Id\n<br> BORD: Border Number"
+								},
+								{
+									"key": "employmentSector",
+									"value": "Gov",
+									"description": "(Required) Indicates the person's employment sector.\n<br> Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR)\n<br> Non-Gov: Data will be retrived from Masdr Private Salary Certificate (GOSI) \n<br> Semi-Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR) & if no records were found, Data will be retrived from Masdr Private Salary Certificate (GOSI)"
+								},
+								{
+									"key": "birthDate",
+									"value": "8915-78-28",
+									"description": "Employee Birth Date. (Required in case of Gov and Semi-Gov sector, accept birthDate in Hijri or birthDate in Gregorian)"
+								},
+								{
+									"key": "birthDateType",
+									"value": "Hijri",
+									"description": "Birth Date Type (Required in case of Gov and Semi-Gov sector)"
+								},
+								{
+									"key": "payMonth",
+									"value": "9822-40",
+									"description": "Pay Month. (Required in case of Gov and Semi-Gov sector, accept date in Hijri or Gregorian)"
+								},
+								{
+									"key": "payMonthType",
+									"value": "Greg",
+									"description": "PayMonth Date type. (Required in case of Gov and Semi-Gov sector)"
+								}
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "1186897433"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "1b0e3e0c-3ca8-458f-b7f5-d193075b5ec4"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b2f4ec02319c42"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,93;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 08:35:56 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EmploymentInfo\": {\n            \"JobList\": [\n                {\n                    \"EmployerInfo\": {\n                        \"GovAgencyCode\": \"022001000000\",\n                        \"Name\": \"وزارة الصحة - الديوان العام\"\n                    },\n                    \"BankAccountInfo\": {\n                        \"IBAN\": \"SA9080000621608010080389\",\n                        \"BankCode\": \"RJHI\",\n                        \"BankName\": \"مصرف الراجحي\"\n                    },\n                    \"SalaryInfo\": {\n                        \"Deductions\": [\n                            {\n                                \"DeductionAmount\": 1666,\n                                \"DeductionName\": \"حسم المؤسسة العامة للتقاعد\",\n                                \"DeductionCode\": \"63215\"\n                            }\n                        ],\n                        \"Allowances\": [\n                            {\n                                \"AllowanceCode\": \"1283\",\n                                \"AllowanceName\": \"بدل نقل أمتعة _ إنتداب\",\n                                \"AllowanceAmount\": 20\n                            },\n                            {\n                                \"AllowanceCode\": \"1023\",\n                                \"AllowanceName\": \"بدل تمييز\",\n                                \"AllowanceAmount\": 20\n                            }\n                        ],\n                        \"PayslipInfo\": {\n                            \"NetSalary\": 18374,\n                            \"TotalDeductions\": 1666,\n                            \"TotalAllowances\": 40,\n                            \"BasicSalary\": 20000,\n                            \"GregPayMonth\": \"2022-09\"\n                        }\n                    },\n                    \"GovJobTitle\": \"مهندس مدني\",\n                    \"JobNumber\": \"18991\",\n                    \"Status\": \"ACTIVE\",\n                    \"Source\": \"NCGR\",\n                    \"GregJoiningDate\": \"2000-11-20\"\n                }\n            ]\n        },\n        \"PersonalInfo\": {\n            \"FullNameAr\": \"علي خليل محمد المشلح\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Person Salary Certificate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-salary-certificate/v1/persons/:POINumber?poiType=IQA&employmentSector=Non-Gov&birthDate=8915-78-28&birthDateType=Hijri&payMonth=9822-40&payMonthType=Greg",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-salary-certificate",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"query": [
+								{
+									"key": "poiType",
+									"value": "IQA",
+									"description": "(Required) Indicates the type of POI Number:\n<br> NAT: National Id\n<br> IQA: Iqama\n<br> GCC: GCC Countries Id\n<br> BORD: Border Number"
+								},
+								{
+									"key": "employmentSector",
+									"value": "Non-Gov",
+									"description": "(Required) Indicates the person's employment sector.\n<br> Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR)\n<br> Non-Gov: Data will be retrived from Masdr Private Salary Certificate (GOSI) \n<br> Semi-Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR) & if no records were found, Data will be retrived from Masdr Private Salary Certificate (GOSI)"
+								},
+								{
+									"key": "birthDate",
+									"value": "8915-78-28",
+									"description": "Employee Birth Date. (Required in case of Gov and Semi-Gov sector, accept birthDate in Hijri or birthDate in Gregorian)"
+								},
+								{
+									"key": "birthDateType",
+									"value": "Hijri",
+									"description": "Birth Date Type (Required in case of Gov and Semi-Gov sector)"
+								},
+								{
+									"key": "payMonth",
+									"value": "9822-40",
+									"description": "Pay Month. (Required in case of Gov and Semi-Gov sector, accept date in Hijri or Gregorian)"
+								},
+								{
+									"key": "payMonthType",
+									"value": "Greg",
+									"description": "PayMonth Date type. (Required in case of Gov and Semi-Gov sector)"
+								}
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "2059689700"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "73c3bd8c-4f09-4044-b0c6-c108e74b23e0"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b2f50a0231a312"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,92;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 08:36:27 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EmploymentInfo\": {\n            \"TotalWorkingMonths\": 40,\n            \"ActiveJobsNumber\": 1,\n            \"JobList\": [\n                {\n                    \"EmployerInfo\": {\n                        \"GOSIRegistrationNumber\": \"500000000\",\n                        \"Name\": \" شركه أحمد للتأمين\",\n                        \"UnifiedId\": \"7011111111\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2023-12-03\",\n                        \"PayslipInfo\": {\n                            \"BasicSalary\": 3000,\n                            \"TotalAllowances\": 1200\n                        },\n                        \"Allowances\": [\n                            {\n                                \"AllowanceCode\": \"00000001\",\n                                \"AllowanceName\": \"بدل سكن (قطاع خاص)\",\n                                \"AllowanceAmount\": 1000\n                            },\n                            {\n                                \"AllowanceCode\": \"00000002\",\n                                \"AllowanceName\": \"أخرى (قطاع خاص)\",\n                                \"AllowanceAmount\": 200\n                            }\n                        ]\n                    },\n                    \"JobTitleAr\": \"مندوب مبيعات\",\n                    \"JobTitleEn\": \"Sales Representative\",\n                    \"Source\": \"GOSI\",\n                    \"GregJoiningDate\": \"2023-12-03\"\n                }\n            ]\n        },\n        \"PersonalInfo\": {\n            \"FullNameAr\": \"محمد خالد\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Person Salary Certificate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-salary-certificate/v1/persons/:POINumber?poiType=GCC&employmentSector=Gov&birthDate=8915-78-28&birthDateType=Hijri&payMonth=9822-40&payMonthType=Greg",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-salary-certificate",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"query": [
+								{
+									"key": "poiType",
+									"value": "GCC",
+									"description": "(Required) Indicates the type of POI Number:\n<br> NAT: National Id\n<br> IQA: Iqama\n<br> GCC: GCC Countries Id\n<br> BORD: Border Number"
+								},
+								{
+									"key": "employmentSector",
+									"value": "Gov",
+									"description": "(Required) Indicates the person's employment sector.\n<br> Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR)\n<br> Non-Gov: Data will be retrived from Masdr Private Salary Certificate (GOSI) \n<br> Semi-Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR) & if no records were found, Data will be retrived from Masdr Private Salary Certificate (GOSI)"
+								},
+								{
+									"key": "birthDate",
+									"value": "8915-78-28",
+									"description": "Employee Birth Date. (Required in case of Gov and Semi-Gov sector, accept birthDate in Hijri or birthDate in Gregorian)"
+								},
+								{
+									"key": "birthDateType",
+									"value": "Hijri",
+									"description": "Birth Date Type (Required in case of Gov and Semi-Gov sector)"
+								},
+								{
+									"key": "payMonth",
+									"value": "9822-40",
+									"description": "Pay Month. (Required in case of Gov and Semi-Gov sector, accept date in Hijri or Gregorian)"
+								},
+								{
+									"key": "payMonthType",
+									"value": "Greg",
+									"description": "PayMonth Date type. (Required in case of Gov and Semi-Gov sector)"
+								}
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "2338733907"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "8f954180-2211-495f-824d-c98197344e03"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b2f52901a90d30"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,91;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 08:36:57 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"EmploymentInfo\": {\n            \"ActiveJobsNumber\": 1,\n            \"TotalWorkingMonths\": 40,\n            \"JobList\": [\n                {\n                    \"EmployerInfo\": {\n                        \"UnifiedId\": \"7011111111\",\n                        \"Name\": \" شركه أحمد للتأمين\",\n                        \"GosiNumber\": \"500000000\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2023-12-03\",\n                        \"GosiSalaryInfo\": {\n                            \"BasicSalary\": 3000,\n                            \"HousingAllowance\": 1000,\n                            \"OtherAllowances\": 200\n                        }\n                    },\n                    \"JobTitleAr\": \"مندوب مبيعات\",\n                    \"JobTitleEn\": \"Sales Representative\",\n                    \"JoiningDate\": \"2023-12-03\"\n                }\n            ]\n        },\n        \"PersonalInfo\": {\n            \"FullName\": \"محمد خالد\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Person Salary Certificate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-salary-certificate/v1/persons/:POINumber?poiType=NAT&employmentSector=Semi-Gov&birthDate=8915-78-28&birthDateType=Hijri&payMonth=9822-40&payMonthType=Greg",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-salary-certificate",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"query": [
+								{
+									"key": "poiType",
+									"value": "NAT",
+									"description": "(Required) Indicates the type of POI Number:\n<br> NAT: National Id\n<br> IQA: Iqama\n<br> GCC: GCC Countries Id\n<br> BORD: Border Number"
+								},
+								{
+									"key": "employmentSector",
+									"value": "Semi-Gov",
+									"description": "(Required) Indicates the person's employment sector.\n<br> Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR)\n<br> Non-Gov: Data will be retrived from Masdr Private Salary Certificate (GOSI) \n<br> Semi-Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR) & if no records were found, Data will be retrived from Masdr Private Salary Certificate (GOSI)"
+								},
+								{
+									"key": "birthDate",
+									"value": "8915-78-28",
+									"description": "Employee Birth Date. (Required in case of Gov and Semi-Gov sector, accept birthDate in Hijri or birthDate in Gregorian)"
+								},
+								{
+									"key": "birthDateType",
+									"value": "Hijri",
+									"description": "Birth Date Type (Required in case of Gov and Semi-Gov sector)"
+								},
+								{
+									"key": "payMonth",
+									"value": "9822-40",
+									"description": "Pay Month. (Required in case of Gov and Semi-Gov sector, accept date in Hijri or Gregorian)"
+								},
+								{
+									"key": "payMonthType",
+									"value": "Greg",
+									"description": "PayMonth Date type. (Required in case of Gov and Semi-Gov sector)"
+								}
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "1010312901"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "4ea60fb5-8df9-435a-8e61-7bc05cb14ac9"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b2f53a01a91140"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,90;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 08:37:15 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"PersonalInfo\": {\n            \"FullNameAr\": \"محمد خالد\"\n        },\n        \"EmploymentInfo\": {\n            \"ActiveJobsNumber\": 1,\n            \"TotalWorkingMonths\": 40,\n            \"JobList\": [\n                {\n                    \"Source\": \"GOSI\",\n                    \"EmployerInfo\": {\n                        \"UnifiedId\": \"7011111111\",\n                        \"GOSIRegistrationNumber\": \"500000000\",\n                        \"Name\": \" شركه أحمد للتأمين\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"GregJoiningDate\": \"2023-12-03\",\n                    \"JobTitleAr\": \"مندوب مبيعات\",\n                    \"JobTitleEn\": \"Sales Representative\",\n                    \"SalaryInfo\": {\n                        \"SalaryStartDate\": \"2023-12-03\",\n                        \"PayslipInfo\": {\n                            \"BasicSalary\": 3000,\n                            \"TotalAllowances\": 1200\n                        },\n                        \"Allowances\": [\n                            {\n                                \"AllowanceCode\": \"00000001\",\n                                \"AllowanceName\": \"بدل سكن (قطاع خاص)\",\n                                \"AllowanceAmount\": 1000\n                            },\n                            {\n                                \"AllowanceCode\": \"00000002\",\n                                \"AllowanceName\": \"أخرى (قطاع خاص)\",\n                                \"AllowanceAmount\": 200\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Person Salary Certificate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-salary-certificate/v1/persons/:POINumber?poiType=NAT&employmentSector=Semi-Gov&birthDate=8915-78-28&birthDateType=Hijri&payMonth=9822-40&payMonthType=Greg",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-salary-certificate",
+								"v1",
+								"persons",
+								":POINumber"
+							],
+							"query": [
+								{
+									"key": "poiType",
+									"value": "NAT",
+									"description": "(Required) Indicates the type of POI Number:\n<br> NAT: National Id\n<br> IQA: Iqama\n<br> GCC: GCC Countries Id\n<br> BORD: Border Number"
+								},
+								{
+									"key": "employmentSector",
+									"value": "Semi-Gov",
+									"description": "(Required) Indicates the person's employment sector.\n<br> Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR)\n<br> Non-Gov: Data will be retrived from Masdr Private Salary Certificate (GOSI) \n<br> Semi-Gov: Data will be retrived from Masdr Government Salary Certificate (NCGR) & if no records were found, Data will be retrived from Masdr Private Salary Certificate (GOSI)"
+								},
+								{
+									"key": "birthDate",
+									"value": "8915-78-28",
+									"description": "Employee Birth Date. (Required in case of Gov and Semi-Gov sector, accept birthDate in Hijri or birthDate in Gregorian)"
+								},
+								{
+									"key": "birthDateType",
+									"value": "Hijri",
+									"description": "Birth Date Type (Required in case of Gov and Semi-Gov sector)"
+								},
+								{
+									"key": "payMonth",
+									"value": "9822-40",
+									"description": "Pay Month. (Required in case of Gov and Semi-Gov sector, accept date in Hijri or Gregorian)"
+								},
+								{
+									"key": "payMonthType",
+									"value": "Greg",
+									"description": "PayMonth Date type. (Required in case of Gov and Semi-Gov sector)"
+								}
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "1186897433"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "db645e25-c21d-46d9-9d9b-aab7b8ad2bc1"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67b2f54801188811"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,89;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Feb 2025 08:37:28 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"PersonalInfo\": {\n            \"FullNameAr\": \"علي خليل محمد المشلح\"\n        },\n        \"EmploymentInfo\": {\n            \"JobList\": [\n                {\n                    \"Source\": \"NCGR\",\n                    \"EmployerInfo\": {\n                        \"GovAgencyCode\": \"022001000000\",\n                        \"Name\": \"وزارة الصحة - الديوان العام\"\n                    },\n                    \"Status\": \"ACTIVE\",\n                    \"GregJoiningDate\": \"2000-11-20\",\n                    \"GovJobTitle\": \"مهندس مدني\",\n                    \"JobNumber\": \"18991\",\n                    \"BankAccountInfo\": {\n                        \"IBAN\": \"SA9080000621608010080389\",\n                        \"BankCode\": \"RJHI\",\n                        \"BankName\": \"مصرف الراجحي\"\n                    },\n                    \"SalaryInfo\": {\n                        \"PayslipInfo\": {\n                            \"GregPayMonth\": \"2022-09\",\n                            \"BasicSalary\": 20000,\n                            \"TotalAllowances\": 40,\n                            \"TotalDeductions\": 1666,\n                            \"NetSalary\": 18374\n                        },\n                        \"Allowances\": [\n                            {\n                                \"AllowanceCode\": \"1283\",\n                                \"AllowanceName\": \"بدل نقل أمتعة _ إنتداب\",\n                                \"AllowanceAmount\": 20\n                            },\n                            {\n                                \"AllowanceCode\": \"1023\",\n                                \"AllowanceName\": \"بدل تمييز\",\n                                \"AllowanceAmount\": 20\n                            }\n                        ],\n                        \"Deductions\": [\n                            {\n                                \"DeductionCode\": \"63215\",\n                                \"DeductionName\": \"حسم المؤسسة العامة للتقاعد\",\n                                \"DeductionAmount\": 1666\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		}
+	]
+}
