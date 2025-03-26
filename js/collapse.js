@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var apicSigninForm = document.querySelector('.apic-user-form');
         apicSigninForm.classList.add('custom-signinsec');
 
-       }
+    }
 
 
 
@@ -261,19 +261,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-     
-        const pattern = /\/product\/\d+$/;  // Matches /product/{id} with numeric ID
 
-        if (pattern.test(feedback)) {
+    const pattern = /\/product\/\d+$/; // Matches /product/{id} with numeric ID
+
+    if (pattern.test(feedback)) {
         let element = document.querySelector(".region-content");
         if (element) {
-        element.classList.add("custom-ARBproduct");
-       
-         }
+            element.classList.add("custom-ARBproduct");
+
         }
+    }
 
 
-    
+
 
 
 
@@ -368,6 +368,61 @@ document.addEventListener("DOMContentLoaded", function() {
     addBackgroundImages(".apic-login-wrapper");
 
 });
+//modifications to apply figma on terms and conditions 
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.href.includes("/tsandcs")) {
+        const pageNodeTitle = document.querySelector("#page-node-title");
+        if (pageNodeTitle) {
+            pageNodeTitle.style.display = "block";
+        }
+
+        let titleElement = document.querySelector("span#page-node-title");
+        if (titleElement) {
+            titleElement.innerHTML = "Terms<br>and Conditions"; // Insert line break
+        }
+
+        // Create background images
+        const bgImagesDiv = document.createElement("div");
+        bgImagesDiv.classList.add("bg-images");
+        bgImagesDiv.innerHTML = `
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+        `;
+
+        // Select paragraph and add a class instead of inline styles
+        const paragraph = document.querySelector(
+            "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field--item p"
+        );
+
+        if (paragraph) {
+            paragraph.classList.add("custom-termsconditions-par"); // Add class
+
+            // Insert background images before the paragraph
+            paragraph.parentNode.insertBefore(bgImagesDiv, paragraph);
+        }
+
+        // Remove padding-right from .container
+        const container = document.querySelector(".container");
+        if (container) {
+            container.style.paddingRight = "0px";
+        }
+    }
+
+    // Modify .page-header: Add custom class
+    const header = document.querySelector(".page-header");
+    if (header) {
+        header.classList.add("custom-termsconditions"); // Add class
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "rotated-bg-wrapper-tsandcond";
+        const innerDiv = document.createElement("div");
+        innerDiv.className = "rotated-bg-tsandcond";
+        wrapper.appendChild(innerDiv);
+        header.prepend(wrapper);
+    }
+});
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const loginWrapper = document.querySelector(".apic-login-wrapper");
