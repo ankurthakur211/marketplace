@@ -18797,6 +18797,12 @@ form#user-login-form input {
         padding-left: unset;
         padding-bottom: 4rem;
     }
+    .termsconditions-image {
+        content: "";
+        display: block;
+        background-image: url("images/terms_and_conditions.png");
+        background-size: contain;
+    }
 }
 
 
@@ -19010,7 +19016,7 @@ form#user-login-form input {
     background-color: #E3E6FF;
     padding: 10px;
     border-radius: 10px;
-} 
+}
 
 .about-us-lets-get-started-background {
     background-repeat: no-repeat;
