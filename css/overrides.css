@@ -19599,6 +19599,12 @@ form#user-login-form input {
         padding-left: unset;
         padding-bottom: 4rem;
     }
+    .termsconditions-image {
+        content: "";
+        display: block;
+        background-image: url("images/terms_and_conditions.png");
+        background-size: contain;
+    }
 }
 
 

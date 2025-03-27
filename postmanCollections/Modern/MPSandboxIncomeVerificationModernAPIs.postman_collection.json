@@ -1,0 +1,1187 @@
+{
+	"info": {
+		"_postman_id": "bdfe7f01-dfea-498d-a2d0-e304bcc84659",
+		"name": "MP Sandbox Income Verification Modern APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21664319"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Cookie",
+								"value": "d70c4b71d548cdbd2b531dc96408ca96=86b7432f4a100650ebec8b640f28a1d6"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "income_verification",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/oauth2security/oauth2/token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Income Verification",
+			"item": [
+				{
+					"name": "Create Income Verification Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"RequestId\", response.Data.RequestId);\r",
+									"pm.collectionVariables.set(\"IncomeVerificationId\", response.Data.IncomeVerifications[0].IncomeVerificationId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Data\": {\r\n    \"AccountsLinkIds\": [\r\n      \"string\"\r\n    ],\r\n    \"PSUId\": \"89423413245465123185\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionToTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-income-verification",
+								"v1",
+								"income-verification",
+								"requests"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Income Verification Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"AccountsLinkIds\": [\r\n      \"455388795953530740313566134178\"\r\n    ],\r\n    \"PSUId\": \"255cc\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionToTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										"requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0760cfe6-1176-47ee-8468-8b5a3e24673a"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab334501732ea2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:23:50 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"76\",\n        \"Status\": \"InProgress\",\n        \"IncomeVerifications\": [\n            {\n                \"IncomeVerificationId\": \"203\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"39225ad7-7a63-4c92-b1da-b2cf3b5eba5e\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\"\n            },\n            {\n                \"IncomeVerificationId\": \"204\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"a313398d-b1a8-4ea8-8ccf-fd2966b08a93\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\"\n            },\n            {\n                \"IncomeVerificationId\": \"205\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"77885ba5-a0b2-4d9b-8e77-577d703834a6\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\"\n            },\n            {\n                \"IncomeVerificationId\": \"206\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"28529b27-fc67-40eb-8030-6690b0af644c\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\"\n            },\n            {\n                \"IncomeVerificationId\": \"207\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"e0cab2d5-724f-445f-8ca5-0baa75d62298\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\"\n            },\n            {\n                \"IncomeVerificationId\": \"208\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"3f7e2e28-9d86-4173-bc57-f89297d57c22\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"455388795953530740313566134178\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Create Income Verification Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"AccountsLinkIds\": [\r\n      \"318277138619959493194352989475\"\r\n    ],\r\n    \"PSUId\": \"1234\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionToTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										"requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1dd94dba-e2e9-4095-b863-6971b6321667"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab336c011c4880"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:24:29 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"132\",\n        \"Status\": \"InProgress\",\n        \"IncomeVerifications\": [\n            {\n                \"IncomeVerificationId\": \"407\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"39225ad7-7a63-4c92-b1da-b2cf3b5eba5e\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"408\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"a313398d-b1a8-4ea8-8ccf-fd2966b08a93\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"409\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"77885ba5-a0b2-4d9b-8e77-577d703834a6\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"410\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"28529b27-fc67-40eb-8030-6690b0af644c\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"411\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"e0cab2d5-724f-445f-8ca5-0baa75d62298\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"412\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"3f7e2e28-9d86-4173-bc57-f89297d57c22\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"318277138619959493194352989475\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Create Income Verification Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"AccountsLinkIds\": [\r\n      \"747247331866494587526585091740\"\r\n    ],\r\n    \"PSUId\": \"1234\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionToTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										"requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f8af3cd3-1f70-4949-91f0-459214f2d5d0"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab337b00bbaa31"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:24:44 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"129\",\n        \"Status\": \"InProgress\",\n        \"IncomeVerifications\": [\n            {\n                \"IncomeVerificationId\": \"398\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"IncomeVerificationId\": \"399\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"IncomeVerificationId\": \"400\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"747247331866494587526585091740\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Create Income Verification Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"AccountsLinkIds\": [\r\n      \"169290479232337152123533326058\"\r\n    ],\r\n    \"PSUId\": \"1234\",\r\n    \"TransactionType\": \"KSAOB.BillPayments\",\r\n    \"TransactionFromTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionToTimestamp\": \"2025-02-11T11:20:55.621Z\",\r\n    \"TransactionFromAmount\": 5000,\r\n    \"TransactionToAmount\": 120000\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										"requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "fad855f9-75ee-4f9a-ad83-eee4c614129c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab3388011c4a20"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:24:56 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"127\",\n        \"Status\": \"InProgress\",\n        \"IncomeVerifications\": [\n            {\n                \"IncomeVerificationId\": \"392\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"IncomeVerificationId\": \"393\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"IncomeVerificationId\": \"394\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"747247331866494587526585091740\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Income Verification Request Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests/:RequestId",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-income-verification",
+								"v1",
+								"income-verification",
+								"requests",
+								":RequestId"
+							],
+							"variable": [
+								{
+									"key": "RequestId",
+									"value": "127"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Income Verification Request Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests/:RequestId",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										"requests",
+										":RequestId"
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "76"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3ed2b1ef-9766-4097-8b40-ece768b7837e"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab33c6007658a3"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:25:58 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"76\",\n        \"Status\": \"Failed\",\n        \"IncomeVerifications\": [\n            {\n                \"IncomeVerificationId\": \"203\",\n                \"Status\": \"Failed\",\n                \"StatusDescription\": \"no_access_token: invalid access token\",\n                \"AccountId\": \"39225ad7-7a63-4c92-b1da-b2cf3b5eba5e\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"204\",\n                \"Status\": \"Failed\",\n                \"StatusDescription\": \"no_access_token: invalid access token\",\n                \"AccountId\": \"a313398d-b1a8-4ea8-8ccf-fd2966b08a93\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"205\",\n                \"Status\": \"Failed\",\n                \"StatusDescription\": \"no_access_token: invalid access token\",\n                \"AccountId\": \"77885ba5-a0b2-4d9b-8e77-577d703834a6\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"207\",\n                \"Status\": \"Failed\",\n                \"StatusDescription\": \"no_access_token: invalid access token\",\n                \"AccountId\": \"e0cab2d5-724f-445f-8ca5-0baa75d62298\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"208\",\n                \"Status\": \"Failed\",\n                \"StatusDescription\": \"no_access_token: invalid access token\",\n                \"AccountId\": \"3f7e2e28-9d86-4173-bc57-f89297d57c22\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"206\",\n                \"Status\": \"Failed\",\n                \"StatusDescription\": \"no_access_token: invalid access token\",\n                \"AccountId\": \"28529b27-fc67-40eb-8030-6690b0af644c\",\n                \"AccountsLinkId\": \"455388795953530740313566134178\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"455388795953530740313566134178\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Income Verification Request Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests/:RequestId",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										"requests",
+										":RequestId"
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "132"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e63be1ad-cc03-4432-a273-dbe9a16e6ff1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab33d5011c4dc0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:26:13 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"132\",\n        \"Status\": \"Completed\",\n        \"IncomeVerifications\": [\n            {\n                \"IncomeVerificationId\": \"409\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"77885ba5-a0b2-4d9b-8e77-577d703834a6\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"408\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"a313398d-b1a8-4ea8-8ccf-fd2966b08a93\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"411\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"e0cab2d5-724f-445f-8ca5-0baa75d62298\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"407\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"39225ad7-7a63-4c92-b1da-b2cf3b5eba5e\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"410\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"28529b27-fc67-40eb-8030-6690b0af644c\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            },\n            {\n                \"IncomeVerificationId\": \"412\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"3f7e2e28-9d86-4173-bc57-f89297d57c22\",\n                \"AccountsLinkId\": \"318277138619959493194352989475\",\n                \"FinancialInstitutionId\": \"INMASARI\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"318277138619959493194352989475\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Income Verification Request Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests/:RequestId",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										"requests",
+										":RequestId"
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "129"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "293335de-9fdc-4f0b-af28-fb8ec380decc"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab33dc00bbad91"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:26:21 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"129\",\n        \"Status\": \"InProgress\",\n        \"IncomeVerifications\": [\n            {\n                \"IncomeVerificationId\": \"398\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"IncomeVerificationId\": \"399\",\n                \"Status\": \"Requested\",\n                \"StatusDescription\": \"Requested\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"IncomeVerificationId\": \"400\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"747247331866494587526585091740\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Income Verification Request Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/requests/:RequestId",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										"requests",
+										":RequestId"
+									],
+									"variable": [
+										{
+											"key": "RequestId",
+											"value": "127"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "47e63252-6a81-40f9-86cf-130eda0fb33c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab33e5011c4e00"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:26:29 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"RequestId\": \"127\",\n        \"Status\": \"Completed\",\n        \"IncomeVerifications\": [\n            {\n                \"IncomeVerificationId\": \"394\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000005\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"IncomeVerificationId\": \"392\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000002\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            },\n            {\n                \"IncomeVerificationId\": \"393\",\n                \"Status\": \"Completed\",\n                \"StatusDescription\": \"Completed\",\n                \"AccountId\": \"100004000000000000000003\",\n                \"AccountsLinkId\": \"747247331866494587526585091740\",\n                \"FinancialInstitutionId\": \"SAMAModelBank\"\n            }\n        ],\n        \"AccountsLinkIds\": [\n            \"747247331866494587526585091740\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Income Verification Inquiry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-income-verification/v1/income-verification/:IncomeVerificationId",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-income-verification",
+								"v1",
+								"income-verification",
+								":IncomeVerificationId"
+							],
+							"variable": [
+								{
+									"key": "IncomeVerificationId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Income Verification Inquiry",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/:IncomeVerificationId",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										":IncomeVerificationId"
+									],
+									"variable": [
+										{
+											"key": "IncomeVerificationId",
+											"value": "203"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "bfc0ef59-fadd-4cd8-b264-11dcb3815c73"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab341401734732"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,91;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:27:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"IncomeVerification\": {\n            \"CustomerName\": \"Mussaud Abu Zaki \",\n            \"LastMonthSalary\": 0,\n            \"AverageSalary\": 0,\n            \"LastDividendAmount\": 0,\n            \"AverageDividend\": 0,\n            \"Currency\": \"SAR\",\n            \"PerviousSalaryAmount\": 0\n        }\n    }\n}"
+						},
+						{
+							"name": "Income Verification Inquiry",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/:IncomeVerificationId",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										":IncomeVerificationId"
+									],
+									"variable": [
+										{
+											"key": "IncomeVerificationId",
+											"value": "149"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "05d164b6-c3f3-48f9-8ec2-b81ed8203a5d"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab3426011c4fe0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,90;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:27:34 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"IncomeVerification\": {\n            \"CustomerName\": \"Mussaud Abu Zaki \",\n            \"LastMonthSalary\": 0,\n            \"AverageSalary\": 0,\n            \"LastDividendAmount\": 0,\n            \"AverageDividend\": 0,\n            \"Currency\": \"SAR\",\n            \"PerviousSalaryAmount\": 0\n        }\n    }\n}"
+						},
+						{
+							"name": "Income Verification Inquiry",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/:IncomeVerificationId",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										":IncomeVerificationId"
+									],
+									"variable": [
+										{
+											"key": "IncomeVerificationId",
+											"value": "289"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ceec9805-308b-4a48-bb66-77bfc0abd37c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab342e01734ff2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,89;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:27:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Failed\"\n    }\n}"
+						},
+						{
+							"name": "Income Verification Inquiry",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-income-verification/v1/income-verification/:IncomeVerificationId",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-income-verification",
+										"v1",
+										"income-verification",
+										":IncomeVerificationId"
+									],
+									"variable": [
+										{
+											"key": "IncomeVerificationId",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "b15b9123-6ef2-4422-826e-b2b1e6757ab9"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab344c011c50e0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,88;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:28:13 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"Status\": \"Completed\",\n        \"IncomeVerification\": {\n            \"CustomerName\": \"Mitsuhirato\",\n            \"LastMonthSalary\": 0,\n            \"AverageSalary\": 348.61,\n            \"LastDividendAmount\": 0,\n            \"AverageDividend\": 0,\n            \"Currency\": \"SAR\",\n            \"PerviousSalaryAmount\": 2512,\n            \"PerviousSalaryDepositDate\": \"2017-01-20 00:00:00.0\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "009407e30165d8f05d554e336acb0b26",
+			"type": "string"
+		},
+		{
+			"key": "client-secret",
+			"value": "efc9584a7ff25456423a532040ebbd42",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "RequestId",
+			"value": ""
+		},
+		{
+			"key": "IncomeVerificationId",
+			"value": ""
+		}
+	]
+}
