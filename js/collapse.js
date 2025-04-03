@@ -406,20 +406,21 @@ document.addEventListener("DOMContentLoaded", function() {
         if (container) {
             container.style.paddingRight = "0px";
         }
+        // Modify .page-header: Add custom class
+        const header = document.querySelector(".page-header");
+        if (header) {
+            header.classList.add("custom-termsconditions"); // Add class
+
+            const wrapper = document.createElement("div");
+            wrapper.className = "rotated-bg-wrapper-tsandcond";
+            const innerDiv = document.createElement("div");
+            innerDiv.className = "rotated-bg-tsandcond";
+            wrapper.appendChild(innerDiv);
+            header.prepend(wrapper);
+        }
     }
 
-    // Modify .page-header: Add custom class
-    const header = document.querySelector(".page-header");
-    if (header) {
-        header.classList.add("custom-termsconditions"); // Add class
 
-        const wrapper = document.createElement("div");
-        wrapper.className = "rotated-bg-wrapper-tsandcond";
-        const innerDiv = document.createElement("div");
-        innerDiv.className = "rotated-bg-tsandcond";
-        wrapper.appendChild(innerDiv);
-        header.prepend(wrapper);
-    }
 });
 
 
