@@ -389,6 +389,15 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="circle-2"></div>
         `;
 
+        // Create wrapper div
+        const wrapperDiv = document.createElement("div");
+        wrapperDiv.classList.add("wrapperimagetext-termsconditions");
+
+
+        // Create termsconditions-image div
+        const termsConditionsImageDiv = document.createElement("div");
+        termsConditionsImageDiv.classList.add("termsconditions-image");
+
         // Select paragraph and add a class instead of inline styles
         const paragraph = document.querySelector(
             "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field--item p"
@@ -397,8 +406,15 @@ document.addEventListener("DOMContentLoaded", function() {
         if (paragraph) {
             paragraph.classList.add("custom-termsconditions-par"); // Add class
 
-            // Insert background images before the paragraph
+            // Append termsconditions-image and paragraph into the wrapper
+            wrapperDiv.appendChild(termsConditionsImageDiv);
+            wrapperDiv.appendChild(paragraph);
+
+            // Insert .bg-images before the wrapper
             paragraph.parentNode.insertBefore(bgImagesDiv, paragraph);
+
+            // Insert the wrapper after .bg-images
+            bgImagesDiv.after(wrapperDiv);
         }
 
         // Remove padding-right from .container
@@ -406,6 +422,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (container) {
             container.style.paddingRight = "0px";
         }
+
         // Modify .page-header: Add custom class
         const header = document.querySelector(".page-header");
         if (header) {
@@ -414,14 +431,14 @@ document.addEventListener("DOMContentLoaded", function() {
             const wrapper = document.createElement("div");
             wrapper.className = "rotated-bg-wrapper-tsandcond";
             const innerDiv = document.createElement("div");
-            innerDiv.className = "rotated-bg-tsandcond";
+            innerDiv.className = "termsconditions-bg";
             wrapper.appendChild(innerDiv);
             header.prepend(wrapper);
         }
     }
-
-
 });
+
+
 
 
 

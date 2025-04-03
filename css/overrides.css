@@ -18859,17 +18859,34 @@
             font-size: 16px;
             line-height: 24px;
             color: #000000;
+            order: 1;
         }
         
         .termsconditions-image {
-            content: "";
+            content: url("images/terms_and_conditions.png");
+            width: 100%;
+            max-width: 30%;
+            height: auto;
             display: block;
-            background-image: url("images/terms_and_conditions.png");
-            background-size: contain;
+            margin: 0 auto;
+            margin-top: -4rem;
+            margin-bottom: 4rem;
+            order: 2;
+            z-index: 2;
         }
         
         .termsconditions-bg {
             content: url("images/termsconditions-bgimg.png");
+            position: absolute;
+            right: -53%;
+            top: -6%;
+            width: 105%;
+            z-index: 1;
+        }
+        
+        .wrapperimagetext-termsconditions {
+            display: flex;
+            flex-direction: row;
         }
         
         @media (max-width: 1000px) {
@@ -18885,6 +18902,11 @@
         }
         
         @media (max-width: 900px) {
+            .wrapperimagetext-termsconditions {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .termsconditions-bg,
             .rotated-bg-wrapper-tsandcond,
             .rotated-bg-tsandcond {
                 display: none;
@@ -18926,6 +18948,7 @@
                 display: block;
                 margin: 0 auto;
                 margin-bottom: 3rem;
+                margin-top: unset;
             }
             h1.page-header.custom-termsconditions {
                 margin: unset;
