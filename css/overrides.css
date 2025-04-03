@@ -18868,6 +18868,10 @@
             background-size: contain;
         }
         
+        .termsconditions-bg {
+            content: url("images/termsconditions-bgimg.png");
+        }
+        
         @media (max-width: 1000px) {
             .rotated-bg-tsandcond {
                 position: absolute;
@@ -18881,6 +18885,7 @@
         }
         
         @media (max-width: 900px) {
+            .rotated-bg-wrapper-tsandcond,
             .rotated-bg-tsandcond {
                 display: none;
             }
