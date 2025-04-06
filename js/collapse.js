@@ -439,7 +439,70 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+//modifications to apply figma on privacy and policy 
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.href.includes("/privacy")) {
+        const pageNodeTitle = document.querySelector("#page-node-title");
+        if (pageNodeTitle) {
+            pageNodeTitle.style.display = "block";
+        }
 
+        // Create background images (always created)
+        const bgImagesDiv = document.createElement("div");
+        bgImagesDiv.classList.add("bg-images");
+        bgImagesDiv.innerHTML = `
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+            `;
+
+        // Create wrapper and image div
+        const wrapperDiv = document.createElement("div");
+        wrapperDiv.classList.add("wrapperimagetext-privacy");
+
+        const privacyImageDiv = document.createElement("div");
+        privacyImageDiv.classList.add("privacy-image");
+
+        // Paragraph selection
+        const paragraph = document.querySelector(
+            "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field--item p"
+        );
+
+        if (paragraph) {
+            paragraph.classList.add("custom-termsconditions-par");
+
+            // Insert bg-images before paragraph
+            paragraph.parentNode.insertBefore(bgImagesDiv, paragraph);
+
+            // Move paragraph into wrapper with image
+            wrapperDiv.appendChild(privacyImageDiv);
+            wrapperDiv.appendChild(paragraph);
+
+            // Now insert wrapper *after paragraph's original container*
+            bgImagesDiv.parentNode.insertBefore(wrapperDiv, bgImagesDiv.nextSibling);
+        } else {
+            const bodyField = document.querySelector(
+                "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field--item"
+            );
+            if (bodyField) {
+                bodyField.prepend(bgImagesDiv);
+            }
+        }
+
+        // Remove padding-right from .container
+        const container = document.querySelector(".container");
+        if (container) {
+            container.style.paddingRight = "0px";
+        }
+
+        const header = document.querySelector(".page-header");
+        if (header) {
+            header.classList.add("custom-termsconditions"); // Add class
+
+
+        }
+
+    }
+});
 
 
 document.addEventListener('DOMContentLoaded', function() {

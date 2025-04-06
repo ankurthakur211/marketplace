@@ -18969,6 +18969,47 @@
             }
         }
         /*terms and conditions merna*/
+        /*privacy and policy merna*/
+        
+        .wrapperimagetext-privacy {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .privacy-image {
+            content: url("images/terms_and_conditions.png");
+            width: 100%;
+            max-width: 30%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            margin-top: -4rem;
+            margin-bottom: 4rem;
+            order: 2;
+            z-index: 2;
+        }
+        
+        .privacy-frame {
+            content: url("images/privacypolicy-frame.png");
+        }
+        
+        @media (max-width: 900px) {
+            .wrapperimagetext-privacy {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .privacy-image {
+                content: url("images/privacypolicy-img.png");
+                align-items: center;
+                width: auto;
+                max-width: 59%;
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 3rem;
+                margin-top: unset;
+            }
+        }
+        /*privacy and policy merna*/
         /*About Us Page Design Janet*/
         
         .about-us-sec .col-md-6 {
