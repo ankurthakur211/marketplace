@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let titleElement = document.querySelector("span#page-node-title");
         if (titleElement) {
-            titleElement.innerHTML = "Terms<br>and Conditions"; // Insert line break
+            titleElement.innerHTML = "Terms<br>and Conditions";
         }
 
         // Create background images
@@ -389,32 +389,34 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="circle-2"></div>
         `;
 
-        // Create wrapper div
+        // Create wrapper and image container
         const wrapperDiv = document.createElement("div");
         wrapperDiv.classList.add("wrapperimagetext-termsconditions");
 
-
-        // Create termsconditions-image div
         const termsConditionsImageDiv = document.createElement("div");
         termsConditionsImageDiv.classList.add("termsconditions-image");
 
-        // Select paragraph and add a class instead of inline styles
         const paragraph = document.querySelector(
             "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field--item p"
         );
 
         if (paragraph) {
-            paragraph.classList.add("custom-termsconditions-par"); // Add class
+            paragraph.classList.add("custom-termsconditions-par");
 
-            // Append termsconditions-image and paragraph into the wrapper
+            // Insert bg-images BEFORE paragraph
+            const bodyContainer = paragraph.parentNode;
+            bodyContainer.insertBefore(bgImagesDiv, paragraph);
+
+            // Append image and paragraph to wrapper
             wrapperDiv.appendChild(termsConditionsImageDiv);
             wrapperDiv.appendChild(paragraph);
 
-            // Insert .bg-images before the wrapper
-            paragraph.parentNode.insertBefore(bgImagesDiv, paragraph);
-
-            // Insert the wrapper after .bg-images
-            bgImagesDiv.after(wrapperDiv);
+            // Insert wrapper after bgImagesDiv using insertBefore with nextSibling
+            if (bgImagesDiv.nextSibling) {
+                bodyContainer.insertBefore(wrapperDiv, bgImagesDiv.nextSibling);
+            } else {
+                bodyContainer.appendChild(wrapperDiv);
+            }
         }
 
         // Remove padding-right from .container
@@ -423,10 +425,10 @@ document.addEventListener("DOMContentLoaded", function() {
             container.style.paddingRight = "0px";
         }
 
-        // Modify .page-header: Add custom class
+        // Add decorative background to header
         const header = document.querySelector(".page-header");
         if (header) {
-            header.classList.add("custom-termsconditions"); // Add class
+            header.classList.add("custom-termsconditions");
 
             const wrapper = document.createElement("div");
             wrapper.className = "rotated-bg-wrapper-tsandcond";
@@ -437,6 +439,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 
 //modifications to apply figma on privacy and policy 
