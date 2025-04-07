@@ -15592,18 +15592,18 @@
             padding: 0;
         }
         /* .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-sort-by {
-    min-width: 150px;
-  }
-  
-  
-  .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-sort-order {
-    min-width: 113px;
-  }
-  
-  
-  .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-items-per-page {
-    min-width: 130px;
-} */
+            min-width: 150px;
+          }
+          
+          
+          .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-sort-order {
+            min-width: 113px;
+          }
+          
+          
+          .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-items-per-page {
+            min-width: 130px;
+          } */
         
         .bx--global-light-ui .view-filters.form-group .form-actions {
             margin: 0;
@@ -16035,8 +16035,8 @@
             margin-right: 0;
         }
         /* .updated-itworks .dicover-image {
-    content: url("/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/Discover_new.png");
-} */
+            content: url("/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/Discover_new.png");
+          } */
         
         .updated-itworks .howitworks-card {
             min-height: 100%;
@@ -17768,6 +17768,332 @@
         .about-us-sec.updated-aboutus {
             padding-top: 20px !important;
         }
+        /* ----------------------- */
+        
+        body.context--BusinessDomains .apicMainContent {
+            background: #fafafa;
+        }
+        
+        @media (max-width: 767px) {
+            body.context--BusinessDomains .apicMainContent {
+                background: #ffffff;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage {
+            padding-top: 50px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .Products-business-field-background {
+            width: calc(100% + 100px);
+            left: -50px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: contain;
+            background-color: #141313;
+            padding-bottom: 320px;
+        }
+        
+        @media (max-width: 576px) {
+            .products-businessbox.custom-business-domainpage .Products-business-field-background {
+                padding-bottom: 160px;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .Products-business-field-background .Products-business-text {
+            font-size: 74px;
+            font-family: "main-font", sans-serif !important;
+            color: #ffffff;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 576px) {
+            .products-businessbox.custom-business-domainpage .Products-business-field-background .Products-business-text {
+                font-size: 54px;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .Products-business-field-background .product-subtext {
+            text-align: center;
+            color: #6776ff;
+            font-weight: 600;
+            font-size: 74px;
+            font-family: "main-font", sans-serif !important;
+        }
+        
+        @media (max-width: 576px) {
+            .products-businessbox.custom-business-domainpage .Products-business-field-background .product-subtext {
+                font-size: 54px;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec {
+            margin-top: 70px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu {
+            position: sticky;
+            top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 767px) {
+            .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu {
+                display: none;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu {
+            box-shadow: 0px 10px 10px 0px rgba(38, 45, 118, 0.031372549);
+            border: 2px solid #f0f2ff;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            margin-top: 0;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu .sidemenu-navitems .api-list {
+            background: #ffffff;
+            gap: 20px;
+            padding: 25px 30px;
+            padding-left: 30px !important;
+            margin: 0;
+            font-size: 18px;
+            color: #5464f2;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            position: relative !important;
+            left: unset;
+            top: unset;
+            transition: 0.3s linear;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu .sidemenu-navitems .api-list::before {
+            content: "";
+            height: 100%;
+            width: 0;
+            transition: 0.3s linear;
+            background: #5464f2;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu .sidemenu-navitems .api-list:hover {
+            background: #f2f4ff;
+            padding-left: 40px !important;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu .sidemenu-navitems .api-list:hover::before {
+            width: 10px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu .sidemenu-navitems .api-list .svg-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu .sidemenu-navitems .Products-business-dropdown-btn {
+            margin: 0;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .question-box {
+            box-shadow: 0px 10px 10px 0px rgba(38, 45, 118, 0.031372549);
+            border: 2px solid #f0f2ff;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .question-box .question-img {
+            content: url("images/question-img.png");
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .question-box .Products-business-question-header {
+            font-size: 20px;
+            color: #2a2a2a;
+            font-weight: 700;
+            margin-bottom: 10px;
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .question-box .Products-business-question-text {
+            font-size: 16px;
+            text-align: center;
+            color: #7d87a1;
+            width: 100%;
+            order: unset;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .question-box .Products-business-button {
+            margin-right: 0 !important;
+            width: 100% !important;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec {
+            box-shadow: 0px 10px 10px 0px rgba(38, 45, 118, 0.031372549);
+            border: 2px solid #f0f2ff;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 767px) {
+            .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec {
+                padding: 0;
+                border: none;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-api-image {
+            margin-top: 0;
+            border-radius: 20px;
+            background-color: #5464f2;
+            background-blend-mode: hard-light;
+            min-height: 370px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        @media (max-width: 576px) {
+            .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-api-image {
+                padding: 20px;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-api-image .Products-business-api-header {
+            font-size: 60px;
+        }
+        
+        @media (max-width: 576px) {
+            .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-api-image .Products-business-api-header {
+                font-size: 40px;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-api-image .Products-business-api-text {
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one {
+            padding-top: 100px;
+            margin-top: -100px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .Products-business-title {
+            font-size: 32px;
+            color: #11183b;
+            text-align: left;
+        }
+        
+        @media (max-width: 576px) {
+            .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .Products-business-title {
+                font-size: 22px;
+                margin-top: 10px;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter {
+            display: flex;
+            align-items: unset;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+            border: 1.78px solid #eaeaea;
+            background: #ffffff;
+            box-shadow: 0px 0px 12.38px 0px rgba(119, 119, 119, 0.2588235294);
+            border-radius: 15px;
+            overflow: hidden;
+            width: calc(50% - 10px);
+            min-height: 100%;
+        }
+        
+        @media (max-width: 991px) {
+            .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+                width: calc(50% - 10px);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+                width: 100%;
+            }
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box {
+            max-height: 176px;
+            min-height: 176px;
+            height: 100%;
+            background: #dfdfdf;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img {
+            width: 100%;
+            height: 176px;
+            object-fit: cover;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .content-box {
+            padding: 30px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .content-box .product-tittle {
+            color: #161616;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 14px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .content-box .product-disc {
+            color: #6f717e;
+            font-size: 12px;
+            line-height: 19px;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .content-box .view-details-btn {
+            color: #5464f2;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+        }
+        
+        .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .content-box .view-details-btn .svg-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /*# sourceMappingURL=demo.css.map */
         /*updating home page feb ankiee*/
         /*new faq updates merna*/
         
