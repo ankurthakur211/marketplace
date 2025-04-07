@@ -437,8 +437,16 @@ document.addEventListener("DOMContentLoaded", function() {
             wrapper.appendChild(innerDiv);
             header.prepend(wrapper);
         }
+
+        // ✅ Apply margin and padding to h1.page-header
+        const h1Header = document.querySelector("h1.page-header");
+        if (h1Header) {
+            h1Header.style.margin = "0 2rem";
+            h1Header.style.padding = "1rem 0rem";
+        }
     }
 });
+
 
 
 
@@ -471,7 +479,7 @@ document.addEventListener("DOMContentLoaded", function() {
         );
 
         if (paragraph) {
-            paragraph.classList.add("custom-termsconditions-par");
+            paragraph.classList.add("custom-privacy-par");
 
             // Insert bg-images before paragraph
             paragraph.parentNode.insertBefore(bgImagesDiv, paragraph);

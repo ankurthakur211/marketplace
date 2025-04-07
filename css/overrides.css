@@ -19517,6 +19517,7 @@ form#user-login-form input {
     margin-bottom: 4rem;
     order: 2;
     z-index: 2;
+    margin-right: 4rem;
 }
 
 .termsconditions-bg {
@@ -19660,14 +19661,15 @@ form#user-login-form input {
 .privacy-image {
     content: url("images/privacypolicy-img.png");
     width: 100%;
-    max-width: 30%;
+    max-width: 41%;
     height: auto;
     display: block;
     margin: 0 auto;
-    margin-top: -7rem;
+    margin-top: -9rem;
     margin-bottom: 4rem;
     order: 2;
     z-index: 2;
+    MARGIN-LEFT: 7REM;
 }
 
 @media (max-width: 900px) {
