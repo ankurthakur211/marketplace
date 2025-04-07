@@ -2118,6 +2118,8 @@ margin-top: 5%; */
     left: 46%;
     margin-top: -3%;
 }
+
+
 /* .Motor-Insurance-doc-flow-img {
 content: url("images/Motor_Insurance-doc-flow.png");
 position: absolute;
@@ -3347,24 +3349,32 @@ width: 100%; */
     width: 100%;
     height: 652px;
 }
+
+
 /* .loyalty-product-Expose-API-Authorize-Redemption {
 content: url("images/Authorize-Redemption.png");
 margin-top: 6%;
 margin-left: 0%;
 width: 100%;
 } */
+
+
 /* .loyalty-product-Expose-API-Execute-Redemption {
 content: url("images/Execute-Redemption.png");
 margin-top: 6%;
 margin-left: 0%;
 width: 100%;
 } */
+
+
 /* .loyalty-product-Expose-API-List-Reverse-Redemption-Transaction {
 content: url("images/Reverse-Redemption-Transaction.png");
 margin-top: 6%;
 margin-left: 0%;
 width: 100%;
 } */
+
+
 /* .loyalty-product-Expose-API-List-Redemption-Transactions {
 content: url("images/List-Redemption-Transactions.png");
 margin-top: 6%;
@@ -4025,6 +4035,8 @@ margin-top: -4.7%; */
     font-size: 18px;
     color: #7b7b7b;
 }
+
+
 /* .Products-business-cards-row-one {
 left: -3%; 
 margin: 33px;
@@ -5048,6 +5060,8 @@ line-height: 62px; */
     order: 0;
     flex-grow: 1;
 }
+
+
 /*.search-for-api {
 box-sizing: border-box;
 display: flex;
@@ -5521,6 +5535,8 @@ border: 1.5px solid #5C5C5C;
     align-self: stretch;
     flex-grow: 0;
 }
+
+
 /* 
 .faq-title {
 width: 591px;
@@ -5949,6 +5965,8 @@ nav.block-login ul.nav>li>a:visited {
 .apicStickyHeader .navbar.container {
     width: 100%;
 }
+
+
 /* .dialog-off-canvas-main-canvas {
 background-image: url("https://portal-www.apic1012.ejada.com/ejada-tsp/alrajhi-bank/sites/ejada-tsp.alrajhi-bank.portal-www.apic1012.ejada.com/files/inline-images/MicrosoftTeams-image%20%281%29_4.png");
 background-repeat: no-repeat;
@@ -6007,6 +6025,8 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+
 /* For tablets and larger devices */
 
 @media (max-width: 992px) {
@@ -6054,6 +6074,8 @@ body {
         left: 0;
     }
 }
+
+
 /* For mobile phones */
 
 @media (max-width: 576px) {
@@ -6425,6 +6447,8 @@ margin: 0 auto auto; */
 .supportContentWrapper .contactDiv {
     display: none;
 }
+
+
 /* li.list-group-item {
 position: absolute;
 } */
@@ -7454,6 +7478,8 @@ form#application-create-form:after {
     box-shadow: none;
     background-position: bottom;
 }
+
+
 /**/
 
 form#application-create-form::before {
@@ -7566,6 +7592,8 @@ form#application-create-form::before {
     border-radius: 17px;
     margin-left: 19%;
 }
+
+
 /* .api-guides-example {
 height: fit-content;
 } */
@@ -8306,6 +8334,8 @@ img.totall-avgres-image {
     width: 15rem !important;
     height: 2rem;
 }
+
+
 /* div#apic-view-filter {
 
 position: relative;
@@ -8374,6 +8404,8 @@ select#edit-field-category {
     height: 50px;
     width: 100%;
 }
+
+
 /*.apicAppSubscriptions::before {
 position: absolute;
 left: 50px;
@@ -8632,6 +8664,8 @@ div#edit-name:before {
     top: 6%;
     left: 0%;
 }
+
+
 /* .bx--form-item.js-form-item.form-item.js-form-type-textfield.form-type-textfield.js-form-item-name.form-item-name.form-group:before{
 position: absolute;
 content: url(https://portal-www.apic1012.ejada.com/ejada-tsp/newtek-tsp-ob-gw-sandbox/sites/ejada-tsp.newtek-tsp-ob-gw-sandbox.portal-www.apic1012.ejada.com/files/inline-images/white-screen-1000-50.png);
@@ -10864,6 +10898,8 @@ section#block-searchicon {
 section#block-marketplace-new-searchicon {
     padding-top: 3%;
 }
+
+
 /**** done by ankur ****/
 
 .Speak-button {
@@ -11101,12 +11137,16 @@ section#block-marketplace-new-searchicon {
 .position-unset {
     position: unset;
 }
+
+
 /* --------------------- home-accelarate-your-business --------------------------- */
 
 .updated-sec.home-accelarate-your-business {
     margin-top: unset;
     padding: 50px 0;
 }
+
+
 /* 
 .updated-sec .img-box {
 width: 35%;
@@ -11160,6 +11200,8 @@ width: 35%;
 }
 
 @media (max-width: 767px) {}
+
+
 /* ---------------------------- serch Css ------------------ */
 
 .bx--global-light-ui .views-exposed-form .form-item input,
@@ -11186,7 +11228,11 @@ div#apic-view-filter {
 .bx--global-light-ui .views-exposed-form {
     justify-content: center;
 }
+
+
 /* ---------------------------- serch Css ------------------ */
+
+
 /* ----------------------------------- 14-05-24 - for search responsiveness -------------------------------- */
 
 .bx--global-light-ui .clearfix:before,
@@ -11292,6 +11338,8 @@ div#apic-view-filter {
         padding: 26px;
     }
 }
+
+
 /* --------- Home page css ------------------- */
 
 .how-itworks-sec .api-position {
@@ -11394,6 +11442,8 @@ div#apic-view-filter {
     padding-left: unset;
     padding-top: unset;
 }
+
+
 /* .accelarate-dev-sec #text1 {
 background: #556ff8;
 padding: 30px;
@@ -11453,6 +11503,8 @@ font-size: 20px;
 .position-relative {
     position: relative !important;
 }
+
+
 /* -------------------------- */
 
 .what-newsec {
@@ -11802,6 +11854,8 @@ font-size: 20px;
         width: 70%;
     }
 }
+
+
 /* ----------------- Header-Footer Styling ---------------------- */
 
 footer.footer {
@@ -11928,6 +11982,8 @@ footer::before {
         margin-bottom: 30px;
     }
 }
+
+
 /* ----------------- Updates + Header Part ---------------------- */
 
 .updated-home-expose .expose-button,
@@ -12030,6 +12086,8 @@ footer::before {
         width: 100%;
     }
 }
+
+
 /* ------------------------------- 23-05-2024 ----------------------------- */
 
 .fob-create-person-profile-top {
@@ -12137,6 +12195,8 @@ pre#generatedCurl {
 .code-box {
     position: relative;
 }
+
+
 /*fast on-boarding API*/
 
 .fob-activate-fetching-top {
@@ -12205,6 +12265,8 @@ justify-content: space-between; */
     padding-top: 10px !important;
     padding-left: 58px !important;
 }
+
+
 /* ---------------------- */
 
 .Products-business-text {
@@ -12408,6 +12470,8 @@ justify-content: space-between; */
         grid-row-gap: 21px;
     }
 }
+
+
 /* ------------------ About us ---------------- */
 
 .about-us-background {
@@ -12598,6 +12662,8 @@ select#edit-apic-tags {
 .bx--global-light-ui .views-exposed-form {
     padding-top: 100px;
 }
+
+
 /* --------- */
 
 article footer {
@@ -12630,6 +12696,8 @@ article.contextual-region {
         font-size: 34px;
     }
 }
+
+
 /* ---- */
 
 .get-started-field-button {
@@ -12665,6 +12733,8 @@ article.contextual-region {
         padding-bottom: 2%;
     }
 }
+
+
 /* --------- Contact us 10-06-2024 -------- */
 
 form#contact-message-feedback-form::before {
@@ -12682,6 +12752,8 @@ form#contact-message-feedback-form {
     align-items: center;
     justify-content: space-between;
 }
+
+
 /* #contact-feedback-form::before {
 content: url("images/contact-us.png");
 display: block;
@@ -12734,6 +12806,8 @@ h1.js-quickedit-page-title.page-header {
 .bx--card .apicProductCardVersion {
     right: 30px;
 }
+
+
 /* p:last-child,
 .form-group:last-child,
 .panel:last-child,
@@ -12770,6 +12844,8 @@ margin-bottom: 90px;
 .custom-articalbox .col {
     margin-bottom: 25px;
 }
+
+
 /* ----------------------- 18/09/2024 ----------------------- */
 
 .custom-faqsec p.api-doc-background-text {
@@ -12822,7 +12898,11 @@ margin-bottom: 90px;
         margin-top: 140px;
     }
 }
+
+
 /*for home page by ankur*/
+
+
 /*media for getstarted page*/
 
 @media only screen and (max-width: 425px) {
@@ -12914,7 +12994,11 @@ margin-bottom: 2%; */
         /* padding-bottom: 2%; */
     }
 }
+
+
 /*media for getstarted page*/
+
+
 /*for search*/
 
 input#edit-search-api-fulltext--2 {
@@ -12924,7 +13008,11 @@ input#edit-search-api-fulltext--2 {
 #search-result-only {
     display: none;
 }
+
+
 /*for search*/
+
+
 /*media for getstarted page*/
 
 @media only screen and (max-width: 425px) {
@@ -13016,8 +13104,14 @@ margin-bottom: 2%; */
         /* padding-bottom: 2%; */
     }
 }
+
+
 /*media for getstarted page*/
+
+
 /*for search*/
+
+
 /* input#edit-search-api-fulltext--2 {
 width: auto;
 } */
@@ -13029,7 +13123,11 @@ width: auto;
 #search-term-result {
     display: none;
 }
+
+
 /*for search*/
+
+
 /*for Voucher Redemption*/
 
 .Voucher-Redemption-img {
@@ -13072,7 +13170,11 @@ width: auto;
         margin-bottom: 30px !important;
     }
 }
+
+
 /*for Voucher Redemption*/
+
+
 /*for yakeen*/
 
 .yakeen-flow-img {
@@ -13097,7 +13199,11 @@ width: auto;
         margin-bottom: 30px !important;
     }
 }
+
+
 /*for yakeen*/
+
+
 /*for Travel*/
 
 .travel-flow-img {
@@ -13122,7 +13228,11 @@ width: auto;
         margin-bottom: 30px !important;
     }
 }
+
+
 /*for Travel*/
+
+
 /* media for Api documentation */
 
 @media (min-width: 1607px) {
@@ -13148,7 +13258,11 @@ width: auto;
         margin-top: -3%;
     }
 }
+
+
 /* media for Api documentation */
+
+
 /*logo*/
 
 .logo.navbar-btn.pull-left {
@@ -13167,6 +13281,8 @@ width: auto;
 .logo.navbar-btn.pull-left img {
     display: none;
 }
+
+
 /*logo*/
 
 .search-container {
@@ -13193,6 +13309,8 @@ width: auto;
     width: calc(100% - 40px);
     /* Adjust width to account for padding */
 }
+
+
 /*faq*/
 
 .faq-content {
@@ -13224,6 +13342,8 @@ margin-left: 38%; */
     text-align: center;
     margin: 0 auto;
 }
+
+
 /* Media query for screens less than 761px wide */
 
 @media (max-width: 871) {
@@ -13231,7 +13351,11 @@ margin-left: 38%; */
         width: 3%;
     }
 }
+
+
 /*faq*/
+
+
 /*home images*/
 
 .home-search-image {
@@ -13249,7 +13373,11 @@ margin-left: 38%; */
 .bluearrow-image {
     content: url("images/blue-arrow.png");
 }
+
+
 /*home images*/
+
+
 /*for api documentation*/
 
 @media (max-width: 991px) and (min-width: 614px) {
@@ -13266,7 +13394,11 @@ margin-left: 38%; */
         top: -15px;
     }
 }
+
+
 /*for api documentation*/
+
+
 /*single product page*/
 
 .single-product-header-image {
@@ -13406,7 +13538,11 @@ margin-left: 38%; */
         grid-template-columns: 100%;
     }
 }
+
+
 /*single product page*/
+
+
 /*emkan image*/
 
 .emkan-flow-img {
@@ -13431,7 +13567,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*emkan image*/
+
+
 /*Visit Visa image*/
 
 .Visit-Visa-flow-img {
@@ -13456,7 +13596,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Visit Visa image*/
+
+
 /*loyalty images*/
 
 .loyalty-product-Expose-API-Authorize-Redemption-img {
@@ -13541,6 +13685,8 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*loyalty images*/
 
 .Motor-Insurance-doc-flow-img {
@@ -13612,6 +13758,8 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*health mse images*/
 
 .Medical_SME-Health_Insurance-doc-flow-img {
@@ -13650,7 +13798,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*health mse images*/
+
+
 /*protection and saving images*/
 
 .Generate-Proposal-Quotation-img {
@@ -13765,7 +13917,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*protection and saving images*/
+
+
 /*load policy*/
 
 .Show-All-Insurance-Policies-img {
@@ -13790,7 +13946,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*load policy*/
+
+
 /*mutual fund*/
 
 .single-product-MF-End-to-End-Journey-Diagram-Workflow-img {
@@ -13835,7 +13995,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*mutual fund*/
+
+
 /* ARB Personal Finance*/
 
 .ARB-Personal-Finance-flow-img {
@@ -13880,7 +14044,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /* ARB Personal Finance*/
+
+
 /*IBAN Verification Alias (ARB) for Project C*/
 
 .IBANVerificationAlias-flow-img {
@@ -13923,7 +14091,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*IBAN Verification Alias (ARB) for Project C*/
+
+
 /*Consumer Digital Wallet Inquiry for Top-up*/
 
 .ConsumerDigitalWalletInquiryforTop-up-flow-img {
@@ -13966,7 +14138,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Consumer Digital Wallet Inquiry for Top-up*/
+
+
 /* Emkan Personal Finance*/
 
 .Emkan-Personal-Finance-flow-img {
@@ -14009,7 +14185,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /* Emkan Personal Finance*/
+
+
 /* IPS Bank Transfer*/
 
 .IPS-Bank-Transfer-workflow-img {
@@ -14052,7 +14232,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /* IPS Bank Transfer*/
+
+
 /*Account Finder*/
 
 .AccountFinder-flow-img {
@@ -14095,7 +14279,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Account Finder*/
+
+
 /*iban identification*/
 
 .ibanIdentification-flow-img {
@@ -14120,7 +14308,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*iban identification*/
+
+
 /*iban verification*/
 
 .ibanVerification-flow-img {
@@ -14145,7 +14337,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*iban verification*/
+
+
 /*11/9*/
 
 .accelarate-dev-sec .home-finance-image {
@@ -14171,6 +14367,8 @@ margin-left: 38%; */
     width: 100%;
     margin-bottom: 0;
 }
+
+
 /*11/9*/
 
 .bx--card .apicCardFooter {
@@ -14250,6 +14448,8 @@ margin-left: 38%; */
     flex-direction: column;
     padding: 10px 15px;
 }
+
+
 /*Apply for ARB Charge Card*/
 
 .ApplyforARBChargeCard-flow-img {
@@ -14292,7 +14492,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Apply for ARB Charge Card*/
+
+
 /*Apply for ARB Prepaid Card*/
 
 .ApplyforARBPrepaidCard-flow-img {
@@ -14317,7 +14521,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Apply for ARB Prepaid Card*/
+
+
 /*Apply for ARB credit Card*/
 
 .ApplyforARBCreditCard-flow-img {
@@ -14342,7 +14550,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Apply for ARB credit Card*/
+
+
 /*affordability check*/
 
 .AffordabilityCheck-flow-img {
@@ -14385,7 +14597,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Affordability check*/
+
+
 /*Gold Wallet */
 
 .GoldWallet-flow-img {
@@ -14428,7 +14644,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Gold Wallet */
+
+
 /*Home insurance */
 
 .HomeInsurance-flow-img {
@@ -14471,7 +14691,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*home insurance */
+
+
 /*medical malpractice */
 
 .MedicalMalpractice-flow-img {
@@ -14496,7 +14720,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*medical malpractice */
+
+
 /*E-Statement*/
 
 .E-Statement-flow-img {
@@ -14539,7 +14767,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*E-Statement */
+
+
 /*income verification*/
 
 .IncomeVerification-flow-img {
@@ -14564,7 +14796,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*income verification */
+
+
 /*Categorization*/
 
 .Categorization-flow-img {
@@ -14607,7 +14843,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Categorization */
+
+
 /*Notification Engine - SMS GW*/
 
 .send-event-Notification-Engine-workflow-flow-img {
@@ -14668,7 +14908,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Notification Engine - SMS GW */
+
+
 /*Advance Salary Financing*/
 
 .AdvanceSalaryFinancing-architecture-img {
@@ -14693,7 +14937,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Advance Salary Financing */
+
+
 /*Corporate Historical Transactions Throughput*/
 
 .CorporateHistoricalTransactionsThroughput-flow-img {
@@ -14736,11 +14984,15 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Corporate Historical Transactions Throughput */
 
 .single-product-About-product-title {
     line-height: 1em;
 }
+
+
 /*motor insurance new version*/
 
 .MotorInsurance-flow-img {
@@ -14783,7 +15035,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*motor insurance new version*/
+
+
 /*Notification Engine - IVR*/
 
 .NotificationEngineIVR-flow-img {
@@ -14826,7 +15082,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*Notification Engine - IVR*/
+
+
 /*ApplyForAutoLease*/
 
 .ApplyForAutoLease-flow-img {
@@ -14869,7 +15129,11 @@ margin-left: 38%; */
         margin-bottom: 30px !important;
     }
 }
+
+
 /*ApplyForAutoLease*/
+
+
 /*modifications*/
 
 section#block-marketplace-latest-exposedformsearch-apipage-1 {
@@ -14879,6 +15143,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 .bx--global-light-ui .views-exposed-form {
     display: flex;
 }
+
+
 /*updating home page feb ankiee*/
 
 .container-fluid {
@@ -15270,6 +15536,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     border: 2px solid;
     padding: 10px 20px;
 }
+
+
 /* -------------------------- */
 
 .customwhat-newsec .home-whats-new {
@@ -15375,6 +15643,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 .custom-footer .copyright-box .links a:hover {
     color: #ffffffa4;
 }
+
+
 /* ------------------------ About us  -------------------------- */
 
 .updated-aboutus .api-doc-background {
@@ -15390,6 +15660,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     line-height: unset;
     text-align: center;
 }
+
+
 /* ---------------------------- New Design Figma -------------------------- */
 
 .section-header #navbar {
@@ -15435,7 +15707,11 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 .section-header #navbar nav.block-login ul.nav>li.last a:hover {
     background: #3c47a8 !important;
 }
+
+
 /* -------------------------- API Styling ----------------------- */
+
+
 /* --------------------- API Product ---------------- */
 
 .custom-APIproduct {
@@ -15591,6 +15867,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 .custom-APIproduct .views-exposed-form .form-item {
     padding: 0;
 }
+
+
 /* .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-sort-by {
     min-width: 150px;
   }
@@ -15762,6 +16040,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     width: 100%;
     justify-content: center;
 }
+
+
 /* ------ */
 
 .custom-APIproduct .custom-productcards .grid .bx--card .apicProductCard {
@@ -15852,6 +16132,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
         margin-bottom: 60px;
     }
 }
+
+
 /* ----------------------- */
 
 form#user-login-form input {
@@ -15905,7 +16187,11 @@ div#edit-actions button {
     left: 0;
     padding-left: 30px;
 }
+
+
 /* ----------------------------------- */
+
+
 /* --------------------------------------------------------- */
 
 .custom-herosec.updated-herosec .welcome-background {
@@ -16034,6 +16320,8 @@ div#edit-actions button {
     margin-left: 0;
     margin-right: 0;
 }
+
+
 /* .updated-itworks .dicover-image {
     content: url("/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/css/images/Discover_new.png");
   } */
@@ -16416,6 +16704,8 @@ div#edit-actions button {
         font-size: 34px;
     }
 }
+
+
 /*signup new*/
 
 .custom-signup {
@@ -16664,6 +16954,8 @@ div#edit-actions button {
         padding-left: 0px !important;
     }
 }
+
+
 /* -------------- Sign in -------------- */
 
 .custom-signinsec {
@@ -17347,6 +17639,8 @@ div#edit-actions button {
     border-radius: 50px;
     text-align: center;
 }
+
+
 /* --------------------- Business Domain ---------------- */
 
 body.context--BusinessDomains .apicMainContent {
@@ -17768,6 +18062,8 @@ body.context--BusinessDomains .apicMainContent {
 .about-us-sec.updated-aboutus {
     padding-top: 20px !important;
 }
+
+
 /* ----------------------- */
 
 body.context--BusinessDomains .apicMainContent {
@@ -18093,8 +18389,14 @@ body.context--BusinessDomains .apicMainContent {
     align-items: center;
     justify-content: center;
 }
+
+
 /*# sourceMappingURL=demo.css.map */
+
+
 /*updating home page feb ankiee*/
+
+
 /*new faq updates merna*/
 
 .faq-section {
@@ -18462,7 +18764,11 @@ body.context--BusinessDomains .apicMainContent {
         height: 15px;
     }
 }
+
+
 /*new faq updates merna*/
+
+
 /*rest of faq updates*/
 
 .bg-images .circle-1 {
@@ -18663,7 +18969,11 @@ body.context--BusinessDomains .apicMainContent {
         font-size: 34px;
     }
 }
+
+
 /*rest of faq updates*/
+
+
 /*contact us new updates merna*/
 
 #contact-feedback-form {
@@ -18868,7 +19178,11 @@ form#contact-message-feedback-form {
         min-height: 300px;
     }
 }
+
+
 /*contact us new updates merna*/
+
+
 /*sign in new updated merna*/
 
 form#user-login-form input {
@@ -19141,7 +19455,11 @@ form#user-login-form input {
         background: unset;
     }
 }
+
+
 /*sign in new updated merna*/
+
+
 /*terms and conditions merna*/
 
 #page-node-title {
@@ -19199,6 +19517,7 @@ form#user-login-form input {
     margin-bottom: 4rem;
     order: 2;
     z-index: 2;
+    margin-right: 4rem;
 }
 
 .termsconditions-bg {
@@ -19213,6 +19532,24 @@ form#user-login-form input {
 .wrapperimagetext-termsconditions {
     display: flex;
     flex-direction: row;
+}
+
+.termsconditions-bg {
+    position: absolute;
+    right: -53%;
+    top: -6%;
+    width: 101%;
+    z-index: 1;
+    height: auto;
+}
+
+.rotated-bg-wrapper-tsandcond {
+    position: absolute;
+    top: unset;
+    left: 0;
+    width: 100%;
+    height: 1028px;
+    overflow: hidden;
 }
 
 @media (max-width: 1000px) {
@@ -19294,8 +19631,27 @@ form#user-login-form input {
         padding-top: 4rem;
     }
 }
+
+
 /*terms and conditions merna*/
+
+
 /*privacy and policy merna*/
+
+.custom-privacy-par {
+    width: 50%;
+    text-align: left;
+    align-items: center;
+    padding-left: 4rem;
+    padding-bottom: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    order: 1;
+    padding-top: 3rem;
+}
 
 .wrapperimagetext-privacy {
     display: flex;
@@ -19303,20 +19659,17 @@ form#user-login-form input {
 }
 
 .privacy-image {
-    content: url("images/terms_and_conditions.png");
+    content: url("images/privacypolicy-img.png");
     width: 100%;
-    max-width: 30%;
+    max-width: 41%;
     height: auto;
     display: block;
     margin: 0 auto;
-    margin-top: -4rem;
+    margin-top: -9rem;
     margin-bottom: 4rem;
     order: 2;
     z-index: 2;
-}
-
-.privacy-frame {
-    content: url("images/privacypolicy-frame.png");
+    MARGIN-LEFT: 7REM;
 }
 
 @media (max-width: 900px) {
@@ -19334,8 +19687,27 @@ form#user-login-form input {
         margin-bottom: 3rem;
         margin-top: unset;
     }
+    .custom-privacy-par {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        padding-left: unset;
+        padding-bottom: 8rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        padding-left: unset;
+        padding-bottom: 4rem;
+        padding-top: unset;
+    }
 }
+
+
 /*privacy and policy merna*/
+
+
 /*About Us Page Design Janet*/
 
 .about-us-sec .col-md-6 {
@@ -19634,4 +20006,6 @@ form#user-login-form input {
 .context--about-us footer.footer {
     border-top: 0px solid #e0e0e0 !important;
 }
+
+
 /*Janet about us new*/
