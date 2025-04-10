@@ -1,0 +1,238 @@
+<div id="search-term-result">
+  <p>Consumer Digital Wallet Inquiry for Top-up Documentation</p>
+
+  <p>
+    The Consumer Digital Wallet Inquiry for Top-up API is an application
+    that provides a streamlined and efficient process for onboarding new
+    users onto Marketplace to be able to use all of its capabilities.
+    The main goal for this project is to enable ARB to avail Consumer
+    Digital Wallet Inquiry for Top-upprocess through API Marketplace.
+  </p>
+</div>
+<div class="basic-page">
+  <div class="api-doc-background">
+      <p class="api-doc-background-text ">Consumer Digital Wallet Inquiry for Top-up
+          Documentation</p>
+  </div>
+
+  <div class="container ">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="container">
+                <div>
+                    <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                        onkeyup="search_menu()" type="text" />
+
+                </div>
+                <br>
+                <div class="api-guides-vertical-menu ">
+
+
+                    <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                        onclick="show('expand2')">Consumer Digital Wallet Inquiry for Top-ups</a>
+
+                    <div class="api-guides-dropdown-container" id="expand2">
+                        <a class="api-guides-noList apn-doc-menu" href="#section-2">Customer VIBAN Topup Eligibility Validate For ARG</a>
+                    </div>
+
+
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="container api-guides-text">
+                <div class="container api-guides-text p-0">
+                    <p class="fob-welcome-title" id="section-1">Consumer Digital Wallet Inquiry for Top-ups</p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">The Consumer Digital Wallet Inquiry for Top-up API is an application
+                        that provides a streamlined and efficient process for onboarding new
+                        users onto Marketplace to be able to use all of its capabilities.
+                        The main goal for this project is to enable ARB to avail Consumer
+                        Digital Wallet Inquiry for Top-upprocess through API Marketplace.
+                        </br></p>
+                    <p class="fob-welcome-text"></br></p>
+
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxCustomerVIBANTopup.postman_collection.json"
+                            download="">Download Postman Collection</a></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/ModernCustomerVIBANTopupsampleRequestData.xlsx"
+                            download="">Download Sample Data</a></p>
+
+                    <h1 class="fob-welcome-title">Consumer Digital Wallet Inquiry for Top-up Workflow</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text"><a
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ConsumerDigitalWalletInquiryforTop-upFlowDiagram.pdf",
+                        download="">Download Workflow</a></p>
+
+                    <h1 class="fob-welcome-title" id="section-2">Customer VIBAN Topup Eligibility Validate For ARG</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: POST: /mp-viban-topup-eligibility/v1/validation</br></p>
+                    <p class="fob-welcome-text">This path is used to Customer VIBAN Topup Eligibility Validate For
+                        ARG.</br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3433/api/3418#/MPCustomerVIBANTopupEligibilityValidateForARG_100/operation/%2Fvalidation/post">Swagger
+                            Link</a></p>
+                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+    RequestBody{
+        "Data": {
+            "Amount": {
+              "Currency": "SAR",
+              "Value": 30
+            },
+            "TargetPOI": {
+               "POINumber": "2303849687",
+               "POIType": "IQA"
+            }
+          }
+    }
+
+                    </code>
+                  </pre>
+                            </div>
+                            <div class="col-lg-4 mt-25">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('Consumer-Digital-Wallet-Inquiry-for-Top-up-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+                                <pre id="generatedCurl">
+                    <code id="Consumer-Digital-Wallet-Inquiry-for-Top-up-curl" style=" display: block;">curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-viban-topup-eligibility/v1/validation' \
+--header 'x-request-id: $362daed3-281d-47b3-a91e-a6436bdc7c59' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+    "Data": {
+        "TargetPOI": {
+            "POINumber": "2303849687",
+            "POIType": "IQA"
+        }
+    }
+}'
+                  </code>
+                  </pre>
+                            </div>
+                        </div>
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <div class="code-box">
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Consumer-Digital-Wallet-Inquiry-for-Top-up')">200</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Consumer-Digital-Wallet-Inquiry-for-Top-up2')">400</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Consumer-Digital-Wallet-Inquiry-for-Top-up3')">401</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Consumer-Digital-Wallet-Inquiry-for-Top-up4')">403</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Consumer-Digital-Wallet-Inquiry-for-Top-up5')">404</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('response-Consumer-Digital-Wallet-Inquiry-for-Top-up9')">500</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+
+                    <code id="response-Consumer-Digital-Wallet-Inquiry-for-Top-up" style=" display: block; " class="text">
+  {
+      "Data": {
+          "Wallets": [
+              {
+                  "WalletNumber": "10018",
+                  "VirtualIBAN": "SA1780200010018221234016",
+                  "Alias": "Main"
+              }
+          ]
+      }
+  }
+                    </code>
+                  <code id="response-Consumer-Digital-Wallet-Inquiry-for-Top-up2" style=" display: none; " class="text">
+  {
+      "Errors": [
+          {
+          "Code": "ERROR.400.001",
+          "Message": "Bad request.",
+          "Url": "https://{baseURL}/developer-portal/terms"
+          }
+  ]
+  }
+                    </code>
+                    <code id="response-Consumer-Digital-Wallet-Inquiry-for-Top-up3" style=" display: none; " class="text">
+  {
+      "Errors": [
+          {
+          "Code": "ERROR.401.001",
+          "Message": "Unauthorized to call the target operation.",
+          "Path": "authorization",
+          "Url": "https://{baseURL}/developer-portal/terms"
+          }
+      ]
+  }
+                    </code>
+
+                    <code id="response-Consumer-Digital-Wallet-Inquiry-for-Top-up4" style=" display: none; " class="text">
+  {
+      "Errors": [
+          {
+          "Code": "ERROR.403.001",
+          "Message": "Invalid token.",
+          "Url": "https://{baseURL}/developer-portal/terms"
+          }
+      ]
+  }
+                    </code>
+
+                    <code id="response-Consumer-Digital-Wallet-Inquiry-for-Top-up5" style=" display: none; " class="text">
+  {
+      "Errors": [
+          {
+          "Code": "ERROR.404.001",
+          "Message": "No resources match requested URI.",
+          "Url": "https://{baseURL}/developer-portal/terms"
+          }
+      ]
+  }
+                    </code>
+
+                    <code id="response-Consumer-Digital-Wallet-Inquiry-for-Top-up9" style=" display: none; " class="text">
+  {
+      "Errors": [
+          {
+          "Code": "ERROR.500.001",
+          "Message": "Internal Error",
+          "Url": "https://{baseURL}/developer-portal/terms"
+          }
+      ]
+  }
+                    </code>
+
+                  </pre>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

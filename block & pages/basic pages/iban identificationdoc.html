@@ -62,8 +62,6 @@
                 href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/MPModernIBANIdentificationSampleRequestData.xlsx"
                 download="">Download Sample Data</a></p>
   
-            <h1 class="fob-welcome-title">Iban Identification Workflow</h1>
-            <p class="fob-welcome-line"></p>
             <p class="fob-welcome-text"><a
               href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/identification-sequence-diagram.pdf"
               download="">Download Sequence Diagram</a></p>
@@ -177,24 +175,24 @@
                     <pre class="response-box">
   
                       <code id="response-IBAN-Identification-Requests" style=" display: block; " class="text">
-  {
-      "Data": {
-          "RequestId": "800e0ed6-f73b-4981-b4fb-464c1b003501"
-      }
-  }
+{
+    "Data": {
+        "RequestId": "800e0ed6-f73b-4981-b4fb-464c1b003501"
+    }
+}
                             
                       </code>
                       <code id="response-IBAN-Identification-Requests2" style=" display: none; " class="text">
-  {
-    "Errors": [
-      {
-        "Code": "NTSP.ERROR.400.001",
-        "Message": "Customer POINumber is invalid.",
-        "Path": "request.body.POINumber",
-        "Url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }  
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.400.001",
+      "Message": "Customer POINumber is invalid.",
+      "Path": "request.body.POINumber",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}  
                         </code>	
           
                       <code id="response-IBAN-Identification-Requests3" style=" display: none; " class="text">

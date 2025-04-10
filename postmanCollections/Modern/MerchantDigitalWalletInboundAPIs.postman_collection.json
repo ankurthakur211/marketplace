@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "16242e65-ce2b-4892-aec0-114bb340b52d",
+		"name": "MP Modern Sandbox ARG-373 Merchant Digital Wallet Inbound APIs",
+		"description": "API to check whether merchant exists and otherwise onboard merchant.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31751639"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access-token\", data.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "marketplace_apis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/oauth2security/oauth2/token",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"oauth2security",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corporate-b2b-merchant-onboarding",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"description": "(Required) "
+					},
+					{
+						"key": "accept-language",
+						"value": "AR",
+						"description": "(Required) could be EN for english  or AR for Arabic"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Data\": {\n        \"RequestInfo\": {\n            \"RequestId\": \"string\",\n            \"RequestType\": \"ONBOARDING\"\n        },\n        \"UserInfo\": {\n            \"AdditionalProperties\": {\n                \"Property1\": \"value\"\n            },\n            \"POI\": {\n                \"POINumber\": \"2252501971\",\n                \"POIType\": \"IQA\"\n            },\n            \"Mobile\": \"string\",\n            \"Email\": \"string\",\n            \"Name\": {\n                \"NameAr\": \"string\",\n                \"NameEn\": \"string\"\n            },\n            \"BirthDate\": \"yyyy-MM-dd\",\n            \"CRInfo\": {\n                \"CRNumber\": 0,\n                \"CREntityNumber\": \"string\",\n                \"CRName\": \"string\",\n                \"CRType\": \"SINGLE_OWNER\",\n                \"CRIssueDate\": \"string\",\n                \"CRExpiryDate\": \"string\",\n                \"CRMerchantCategorycode\": \"string\",\n                \"CRBusinessType\": \"string\"\n            },\n            \"BankAccountDetails\": {\n                \"MerchantCIC\": \"string\",\n                \"SettlementIban\": \"string\",\n                \"SettlementAccountNumber\": \"string\",\n                \"SettlementBankCode\": \"string\"\n            }\n        },\n        \"Brands\": [\n            {\n                \"BrandInfo\": {\n                    \"AdditionalProperties\": {\n                        \"Property1\": \"value\"\n                    },\n                    \"Name\": {\n                        \"NameAr\": \"string\",\n                        \"NameEn\": \"string\"\n                    },\n                    \"MerchantCategoryCode\": \"string\",\n                    \"FoodPickupFlag\": true\n                },\n                \"Stores\": [\n                    {\n                        \"AdditionalProperties\": {\n                            \"Property1\": \"value\"\n                        },\n                        \"StoreInfo\": {\n                            \"StoreNumber\": \"string\",\n                            \"Name\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"Description\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"FoodPickupFlag\": true\n                        },\n                        \"AddressDetail\": {\n                            \"AddressType\": \"CONTACT\",\n                            \"Country\": \"string\",\n                            \"City\": \"string\",\n                            \"District\": \"string\",\n                            \"LocationX\": \"string\",\n                            \"LocationY\": \"string\",\n                            \"ZipCode\": \"string\",\n                            \"Street\": \"string\",\n                            \"UnitNumber\": \"string\",\n                            \"UnitType\": \"string\",\n                            \"AdditionalNumber\": \"string\",\n                            \"Region\": \"string\",\n                            \"BuildingType\": \"string\",\n                            \"BuildingNumber\": \"string\",\n                            \"AdditionalDesc\": \"string\",\n                            \"ContactPerson\": \"string\",\n                            \"ContactNumber\": \"string\",\n                            \"NationalAddress\": \"string\",\n                            \"MobileNumber\": \"string\",\n                            \"FaxNumber\": \"string\"\n                        },\n                        \"CrossReference\": {\n                            \"OtherSysCode\": \"RGB\",\n                            \"OtherSysKey\": \"string\",\n                            \"OtherSysValue\": \"string\"\n                        }\n                    }\n                ],\n                \"CrossReference\": {\n                    \"OtherSysCode\": \"RGB\",\n                    \"OtherSysKey\": \"string\",\n                    \"OtherSysValue\": \"string\"\n                }\n            }\n        ],\n        \"KYCDetails\": {\n            \"YearsInBusinessNumber\": \"string\",\n            \"AnnualSales\": \"string\",\n            \"AverageTicketSize\": 0,\n            \"BranchesNumber\": 0,\n            \"NationalAddress\": {\n                \"City\": \"string\",\n                \"PostalCode\": \"string\",\n                \"SecondaryNumber\": \"string\",\n                \"BuildingNumber\": \"string\",\n                \"Street\": \"string\",\n                \"District\": \"string\"\n            },\n            \"BusinessMerchantCategoryCode\": \"string\",\n            \"ProfileNameAr\": \"string\",\n            \"ProfileNameEn\": \"string\"\n        },\n        \"Terminals\": {\n            \"BrandId\": \"string\",\n            \"StoreId\": \"string\",\n            \"QuantityNumber\": 0,\n            \"TerminalNumber\": \"string\",\n            \"SerialNumber\": \"string\",\n            \"ActivateOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredBy\": \"string\",\n            \"NextBillingOn\": \"2025-03-09T11:31:20.769Z\",\n            \"NextRenewal\": \"string\",\n            \"AndroidEightOrAbove\": true,\n            \"HolderName\": \"string\",\n            \"MobileNumber\": \"string\",\n            \"CICNumber\": \"string\",\n            \"CortexMerchant\": \"string\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/mp-merchants/v1/onboarding",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"mp-merchants",
+						"v1",
+						"onboarding"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "(Required) "
+							},
+							{
+								"key": "accept-language",
+								"value": "AR",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Data\": {\n        \"RequestInfo\": {\n            \"RequestId\": \"string\",\n            \"RequestType\": \"ONBOARDING\"\n        },\n        \"UserInfo\": {\n            \"AdditionalProperties\": {\n                \"Property1\": \"value\"\n            },\n            \"POI\": {\n                \"POINumber\": \"1006881328\",\n                \"POIType\": \"NAT\"\n            },\n            \"Mobile\": \"string\",\n            \"Email\": \"string\",\n            \"Name\": {\n                \"NameAr\": \"string\",\n                \"NameEn\": \"string\"\n            },\n            \"BirthDate\": \"yyyy-MM-dd\",\n            \"CRInfo\": {\n                \"CRNumber\": 0,\n                \"CREntityNumber\": \"string\",\n                \"CRName\": \"string\",\n                \"CRType\": \"SINGLE_OWNER\",\n                \"CRIssueDate\": \"string\",\n                \"CRExpiryDate\": \"string\",\n                \"CRMerchantCategorycode\": \"string\",\n                \"CRBusinessType\": \"string\"\n            },\n            \"BankAccountDetails\": {\n                \"MerchantCIC\": \"string\",\n                \"SettlementIban\": \"string\",\n                \"SettlementAccountNumber\": \"string\",\n                \"SettlementBankCode\": \"string\"\n            }\n        },\n        \"Brands\": [\n            {\n                \"BrandInfo\": {\n                    \"AdditionalProperties\": {\n                        \"Property1\": \"value\"\n                    },\n                    \"Name\": {\n                        \"NameAr\": \"string\",\n                        \"NameEn\": \"string\"\n                    },\n                    \"MerchantCategoryCode\": \"string\",\n                    \"FoodPickupFlag\": true\n                },\n                \"Stores\": [\n                    {\n                        \"AdditionalProperties\": {\n                            \"Property1\": \"value\"\n                        },\n                        \"StoreInfo\": {\n                            \"StoreNumber\": \"string\",\n                            \"Name\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"Description\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"FoodPickupFlag\": true\n                        },\n                        \"AddressDetail\": {\n                            \"AddressType\": \"CONTACT\",\n                            \"Country\": \"string\",\n                            \"City\": \"string\",\n                            \"District\": \"string\",\n                            \"LocationX\": \"string\",\n                            \"LocationY\": \"string\",\n                            \"ZipCode\": \"string\",\n                            \"Street\": \"string\",\n                            \"UnitNumber\": \"string\",\n                            \"UnitType\": \"string\",\n                            \"AdditionalNumber\": \"string\",\n                            \"Region\": \"string\",\n                            \"BuildingType\": \"string\",\n                            \"BuildingNumber\": \"string\",\n                            \"AdditionalDesc\": \"string\",\n                            \"ContactPerson\": \"string\",\n                            \"ContactNumber\": \"string\",\n                            \"NationalAddress\": \"string\",\n                            \"MobileNumber\": \"string\",\n                            \"FaxNumber\": \"string\"\n                        },\n                        \"CrossReference\": {\n                            \"OtherSysCode\": \"RGB\",\n                            \"OtherSysKey\": \"string\",\n                            \"OtherSysValue\": \"string\"\n                        }\n                    }\n                ],\n                \"CrossReference\": {\n                    \"OtherSysCode\": \"RGB\",\n                    \"OtherSysKey\": \"string\",\n                    \"OtherSysValue\": \"string\"\n                }\n            }\n        ],\n        \"KYCDetails\": {\n            \"YearsInBusinessNumber\": \"string\",\n            \"AnnualSales\": \"string\",\n            \"AverageTicketSize\": 0,\n            \"BranchesNumber\": 0,\n            \"NationalAddress\": {\n                \"City\": \"string\",\n                \"PostalCode\": \"string\",\n                \"SecondaryNumber\": \"string\",\n                \"BuildingNumber\": \"string\",\n                \"Street\": \"string\",\n                \"District\": \"string\"\n            },\n            \"BusinessMerchantCategoryCode\": \"string\",\n            \"ProfileNameAr\": \"string\",\n            \"ProfileNameEn\": \"string\"\n        },\n        \"Terminals\": {\n            \"BrandId\": \"string\",\n            \"StoreId\": \"string\",\n            \"QuantityNumber\": 0,\n            \"TerminalNumber\": \"string\",\n            \"SerialNumber\": \"string\",\n            \"ActivateOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredBy\": \"string\",\n            \"NextBillingOn\": \"2025-03-09T11:31:20.769Z\",\n            \"NextRenewal\": \"string\",\n            \"AndroidEightOrAbove\": true,\n            \"HolderName\": \"string\",\n            \"MobileNumber\": \"string\",\n            \"CICNumber\": \"string\",\n            \"CortexMerchant\": \"string\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/mp-merchants/v1/onboarding",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mp-merchants",
+								"v1",
+								"onboarding"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "d855aa06-12e9-45eb-8f4a-55e57bc17b70"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67cd884c02545fa1"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,99;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Mar 2025 12:23:40 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "(Required) "
+							},
+							{
+								"key": "accept-language",
+								"value": "AR",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Data\": {\n        \"RequestInfo\": {\n            \"RequestId\": \"string\",\n            \"RequestType\": \"ONBOARDING\"\n        },\n        \"UserInfo\": {\n            \"AdditionalProperties\": {\n                \"Property1\": \"value\"\n            },\n            \"POI\": {\n                \"POINumber\": \"1079448994\",\n                \"POIType\": \"NAT\"\n            },\n            \"Mobile\": \"string\",\n            \"Email\": \"string\",\n            \"Name\": {\n                \"NameAr\": \"string\",\n                \"NameEn\": \"string\"\n            },\n            \"BirthDate\": \"yyyy-MM-dd\",\n            \"CRInfo\": {\n                \"CRNumber\": 0,\n                \"CREntityNumber\": \"string\",\n                \"CRName\": \"string\",\n                \"CRType\": \"SINGLE_OWNER\",\n                \"CRIssueDate\": \"string\",\n                \"CRExpiryDate\": \"string\",\n                \"CRMerchantCategorycode\": \"string\",\n                \"CRBusinessType\": \"string\"\n            },\n            \"BankAccountDetails\": {\n                \"MerchantCIC\": \"string\",\n                \"SettlementIban\": \"string\",\n                \"SettlementAccountNumber\": \"string\",\n                \"SettlementBankCode\": \"string\"\n            }\n        },\n        \"Brands\": [\n            {\n                \"BrandInfo\": {\n                    \"AdditionalProperties\": {\n                        \"Property1\": \"value\"\n                    },\n                    \"Name\": {\n                        \"NameAr\": \"string\",\n                        \"NameEn\": \"string\"\n                    },\n                    \"MerchantCategoryCode\": \"string\",\n                    \"FoodPickupFlag\": true\n                },\n                \"Stores\": [\n                    {\n                        \"AdditionalProperties\": {\n                            \"Property1\": \"value\"\n                        },\n                        \"StoreInfo\": {\n                            \"StoreNumber\": \"string\",\n                            \"Name\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"Description\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"FoodPickupFlag\": true\n                        },\n                        \"AddressDetail\": {\n                            \"AddressType\": \"CONTACT\",\n                            \"Country\": \"string\",\n                            \"City\": \"string\",\n                            \"District\": \"string\",\n                            \"LocationX\": \"string\",\n                            \"LocationY\": \"string\",\n                            \"ZipCode\": \"string\",\n                            \"Street\": \"string\",\n                            \"UnitNumber\": \"string\",\n                            \"UnitType\": \"string\",\n                            \"AdditionalNumber\": \"string\",\n                            \"Region\": \"string\",\n                            \"BuildingType\": \"string\",\n                            \"BuildingNumber\": \"string\",\n                            \"AdditionalDesc\": \"string\",\n                            \"ContactPerson\": \"string\",\n                            \"ContactNumber\": \"string\",\n                            \"NationalAddress\": \"string\",\n                            \"MobileNumber\": \"string\",\n                            \"FaxNumber\": \"string\"\n                        },\n                        \"CrossReference\": {\n                            \"OtherSysCode\": \"RGB\",\n                            \"OtherSysKey\": \"string\",\n                            \"OtherSysValue\": \"string\"\n                        }\n                    }\n                ],\n                \"CrossReference\": {\n                    \"OtherSysCode\": \"RGB\",\n                    \"OtherSysKey\": \"string\",\n                    \"OtherSysValue\": \"string\"\n                }\n            }\n        ],\n        \"KYCDetails\": {\n            \"YearsInBusinessNumber\": \"string\",\n            \"AnnualSales\": \"string\",\n            \"AverageTicketSize\": 0,\n            \"BranchesNumber\": 0,\n            \"NationalAddress\": {\n                \"City\": \"string\",\n                \"PostalCode\": \"string\",\n                \"SecondaryNumber\": \"string\",\n                \"BuildingNumber\": \"string\",\n                \"Street\": \"string\",\n                \"District\": \"string\"\n            },\n            \"BusinessMerchantCategoryCode\": \"string\",\n            \"ProfileNameAr\": \"string\",\n            \"ProfileNameEn\": \"string\"\n        },\n        \"Terminals\": {\n            \"BrandId\": \"string\",\n            \"StoreId\": \"string\",\n            \"QuantityNumber\": 0,\n            \"TerminalNumber\": \"string\",\n            \"SerialNumber\": \"string\",\n            \"ActivateOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredBy\": \"string\",\n            \"NextBillingOn\": \"2025-03-09T11:31:20.769Z\",\n            \"NextRenewal\": \"string\",\n            \"AndroidEightOrAbove\": true,\n            \"HolderName\": \"string\",\n            \"MobileNumber\": \"string\",\n            \"CICNumber\": \"string\",\n            \"CortexMerchant\": \"string\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/mp-merchants/v1/onboarding",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mp-merchants",
+								"v1",
+								"onboarding"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "57f9c16f-132b-45e6-ba01-677a178c5e1f"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67cd89f7038a2d60"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,98;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Mar 2025 12:30:48 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "(Required) "
+							},
+							{
+								"key": "accept-language",
+								"value": "AR",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Data\": {\n        \"RequestInfo\": {\n            \"RequestId\": \"string\",\n            \"RequestType\": \"ONBOARDING\"\n        },\n        \"UserInfo\": {\n            \"AdditionalProperties\": {\n                \"Property1\": \"value\"\n            },\n            \"POI\": {\n                \"POINumber\": \"2303849687\",\n                \"POIType\": \"IQA\"\n            },\n            \"Mobile\": \"string\",\n            \"Email\": \"string\",\n            \"Name\": {\n                \"NameAr\": \"string\",\n                \"NameEn\": \"string\"\n            },\n            \"BirthDate\": \"yyyy-MM-dd\",\n            \"CRInfo\": {\n                \"CRNumber\": 0,\n                \"CREntityNumber\": \"string\",\n                \"CRName\": \"string\",\n                \"CRType\": \"SINGLE_OWNER\",\n                \"CRIssueDate\": \"string\",\n                \"CRExpiryDate\": \"string\",\n                \"CRMerchantCategorycode\": \"string\",\n                \"CRBusinessType\": \"string\"\n            },\n            \"BankAccountDetails\": {\n                \"MerchantCIC\": \"string\",\n                \"SettlementIban\": \"string\",\n                \"SettlementAccountNumber\": \"string\",\n                \"SettlementBankCode\": \"string\"\n            }\n        },\n        \"Brands\": [\n            {\n                \"BrandInfo\": {\n                    \"AdditionalProperties\": {\n                        \"Property1\": \"value\"\n                    },\n                    \"Name\": {\n                        \"NameAr\": \"string\",\n                        \"NameEn\": \"string\"\n                    },\n                    \"MerchantCategoryCode\": \"string\",\n                    \"FoodPickupFlag\": true\n                },\n                \"Stores\": [\n                    {\n                        \"AdditionalProperties\": {\n                            \"Property1\": \"value\"\n                        },\n                        \"StoreInfo\": {\n                            \"StoreNumber\": \"string\",\n                            \"Name\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"Description\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"FoodPickupFlag\": true\n                        },\n                        \"AddressDetail\": {\n                            \"AddressType\": \"CONTACT\",\n                            \"Country\": \"string\",\n                            \"City\": \"string\",\n                            \"District\": \"string\",\n                            \"LocationX\": \"string\",\n                            \"LocationY\": \"string\",\n                            \"ZipCode\": \"string\",\n                            \"Street\": \"string\",\n                            \"UnitNumber\": \"string\",\n                            \"UnitType\": \"string\",\n                            \"AdditionalNumber\": \"string\",\n                            \"Region\": \"string\",\n                            \"BuildingType\": \"string\",\n                            \"BuildingNumber\": \"string\",\n                            \"AdditionalDesc\": \"string\",\n                            \"ContactPerson\": \"string\",\n                            \"ContactNumber\": \"string\",\n                            \"NationalAddress\": \"string\",\n                            \"MobileNumber\": \"string\",\n                            \"FaxNumber\": \"string\"\n                        },\n                        \"CrossReference\": {\n                            \"OtherSysCode\": \"RGB\",\n                            \"OtherSysKey\": \"string\",\n                            \"OtherSysValue\": \"string\"\n                        }\n                    }\n                ],\n                \"CrossReference\": {\n                    \"OtherSysCode\": \"RGB\",\n                    \"OtherSysKey\": \"string\",\n                    \"OtherSysValue\": \"string\"\n                }\n            }\n        ],\n        \"KYCDetails\": {\n            \"YearsInBusinessNumber\": \"string\",\n            \"AnnualSales\": \"string\",\n            \"AverageTicketSize\": 0,\n            \"BranchesNumber\": 0,\n            \"NationalAddress\": {\n                \"City\": \"string\",\n                \"PostalCode\": \"string\",\n                \"SecondaryNumber\": \"string\",\n                \"BuildingNumber\": \"string\",\n                \"Street\": \"string\",\n                \"District\": \"string\"\n            },\n            \"BusinessMerchantCategoryCode\": \"string\",\n            \"ProfileNameAr\": \"string\",\n            \"ProfileNameEn\": \"string\"\n        },\n        \"Terminals\": {\n            \"BrandId\": \"string\",\n            \"StoreId\": \"string\",\n            \"QuantityNumber\": 0,\n            \"TerminalNumber\": \"string\",\n            \"SerialNumber\": \"string\",\n            \"ActivateOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredBy\": \"string\",\n            \"NextBillingOn\": \"2025-03-09T11:31:20.769Z\",\n            \"NextRenewal\": \"string\",\n            \"AndroidEightOrAbove\": true,\n            \"HolderName\": \"string\",\n            \"MobileNumber\": \"string\",\n            \"CICNumber\": \"string\",\n            \"CortexMerchant\": \"string\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/mp-merchants/v1/onboarding",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mp-merchants",
+								"v1",
+								"onboarding"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "06991988-bc29-4641-8d51-278c20dc13e6"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67cd8a0d038a2e70"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,97;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Mar 2025 12:31:09 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "(Required) "
+							},
+							{
+								"key": "accept-language",
+								"value": "AR",
+								"description": "(Required) could be EN for english  or AR for Arabic"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Data\": {\n        \"RequestInfo\": {\n            \"RequestId\": \"string\",\n            \"RequestType\": \"ONBOARDING\"\n        },\n        \"UserInfo\": {\n            \"AdditionalProperties\": {\n                \"Property1\": \"value\"\n            },\n            \"POI\": {\n                \"POINumber\": \"2252501971\",\n                \"POIType\": \"IQA\"\n            },\n            \"Mobile\": \"string\",\n            \"Email\": \"string\",\n            \"Name\": {\n                \"NameAr\": \"string\",\n                \"NameEn\": \"string\"\n            },\n            \"BirthDate\": \"yyyy-MM-dd\",\n            \"CRInfo\": {\n                \"CRNumber\": 0,\n                \"CREntityNumber\": \"string\",\n                \"CRName\": \"string\",\n                \"CRType\": \"SINGLE_OWNER\",\n                \"CRIssueDate\": \"string\",\n                \"CRExpiryDate\": \"string\",\n                \"CRMerchantCategorycode\": \"string\",\n                \"CRBusinessType\": \"string\"\n            },\n            \"BankAccountDetails\": {\n                \"MerchantCIC\": \"string\",\n                \"SettlementIban\": \"string\",\n                \"SettlementAccountNumber\": \"string\",\n                \"SettlementBankCode\": \"string\"\n            }\n        },\n        \"Brands\": [\n            {\n                \"BrandInfo\": {\n                    \"AdditionalProperties\": {\n                        \"Property1\": \"value\"\n                    },\n                    \"Name\": {\n                        \"NameAr\": \"string\",\n                        \"NameEn\": \"string\"\n                    },\n                    \"MerchantCategoryCode\": \"string\",\n                    \"FoodPickupFlag\": true\n                },\n                \"Stores\": [\n                    {\n                        \"AdditionalProperties\": {\n                            \"Property1\": \"value\"\n                        },\n                        \"StoreInfo\": {\n                            \"StoreNumber\": \"string\",\n                            \"Name\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"Description\": {\n                                \"NameAr\": \"string\",\n                                \"NameEn\": \"string\"\n                            },\n                            \"FoodPickupFlag\": true\n                        },\n                        \"AddressDetail\": {\n                            \"AddressType\": \"CONTACT\",\n                            \"Country\": \"string\",\n                            \"City\": \"string\",\n                            \"District\": \"string\",\n                            \"LocationX\": \"string\",\n                            \"LocationY\": \"string\",\n                            \"ZipCode\": \"string\",\n                            \"Street\": \"string\",\n                            \"UnitNumber\": \"string\",\n                            \"UnitType\": \"string\",\n                            \"AdditionalNumber\": \"string\",\n                            \"Region\": \"string\",\n                            \"BuildingType\": \"string\",\n                            \"BuildingNumber\": \"string\",\n                            \"AdditionalDesc\": \"string\",\n                            \"ContactPerson\": \"string\",\n                            \"ContactNumber\": \"string\",\n                            \"NationalAddress\": \"string\",\n                            \"MobileNumber\": \"string\",\n                            \"FaxNumber\": \"string\"\n                        },\n                        \"CrossReference\": {\n                            \"OtherSysCode\": \"RGB\",\n                            \"OtherSysKey\": \"string\",\n                            \"OtherSysValue\": \"string\"\n                        }\n                    }\n                ],\n                \"CrossReference\": {\n                    \"OtherSysCode\": \"RGB\",\n                    \"OtherSysKey\": \"string\",\n                    \"OtherSysValue\": \"string\"\n                }\n            }\n        ],\n        \"KYCDetails\": {\n            \"YearsInBusinessNumber\": \"string\",\n            \"AnnualSales\": \"string\",\n            \"AverageTicketSize\": 0,\n            \"BranchesNumber\": 0,\n            \"NationalAddress\": {\n                \"City\": \"string\",\n                \"PostalCode\": \"string\",\n                \"SecondaryNumber\": \"string\",\n                \"BuildingNumber\": \"string\",\n                \"Street\": \"string\",\n                \"District\": \"string\"\n            },\n            \"BusinessMerchantCategoryCode\": \"string\",\n            \"ProfileNameAr\": \"string\",\n            \"ProfileNameEn\": \"string\"\n        },\n        \"Terminals\": {\n            \"BrandId\": \"string\",\n            \"StoreId\": \"string\",\n            \"QuantityNumber\": 0,\n            \"TerminalNumber\": \"string\",\n            \"SerialNumber\": \"string\",\n            \"ActivateOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredOn\": \"2025-03-09T11:31:20.769Z\",\n            \"DeliveredBy\": \"string\",\n            \"NextBillingOn\": \"2025-03-09T11:31:20.769Z\",\n            \"NextRenewal\": \"string\",\n            \"AndroidEightOrAbove\": true,\n            \"HolderName\": \"string\",\n            \"MobileNumber\": \"string\",\n            \"CICNumber\": \"string\",\n            \"CortexMerchant\": \"string\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/mp-merchants/v1/onboarding",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mp-merchants",
+								"v1",
+								"onboarding"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "5acd5f0e-8007-44ed-97d8-06a06d1f1a16"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c67cd8a1802546d31"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,96;"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Mar 2025 12:31:20 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "marketplace_apis",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/oauth2security/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

@@ -118,35 +118,32 @@
                   </button>
 
                   <pre id="generatedCurl">
-                      <code id="IBAN-Verification-Requests" style=" display: block;">
-    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/iban-verification/v1/verification-requests' \
-    --header 'x-request-id: 899d8365-e2dd-4fab-9938-1c325aebf67d' \
-    --header 'Content-Type: application/json' \
-    --header 'Authorization: ••••••' \
-    --data '{
-      "Data": {
-        "Source": "ARB",
-        "IBAN": "SA8180000204608015226008",
-        "POIType": "NAT",
-        "POINumber": "1200328910",
-        "Meta": {
-          "FinancialInstitutionId": "RJHISARI",
-          "PSUId": "1200328910",
-          "UserLoginId": "example",
-          "Purpose": [
-            "Account Aggregation"
-          ],
-          "EchoList": [
-            {
-              "Name": "channelRedirectionUrl",
-              "Value": "https://www.example.com"
-            }
-          ]
+                      <code id="IBAN-Verification-Requests" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/iban-verification/v1/verification-requests' \
+--header 'x-request-id: 899d8365-e2dd-4fab-9938-1c325aebf67d' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+  "Data": {
+    "Source": "ARB",
+    "IBAN": "SA8180000204608015226008",
+    "POIType": "NAT",
+    "POINumber": "1200328910",
+    "Meta": {
+      "FinancialInstitutionId": "RJHISARI",
+      "PSUId": "1200328910",
+      "UserLoginId": "example",
+      "Purpose": [
+        "Account Aggregation"
+      ],
+      "EchoList": [
+        {
+          "Name": "channelRedirectionUrl",
+          "Value": "https://www.example.com"
         }
-      }
-    }'
-
-
+      ]
+    }
+  }
+}'
                       </code>
                     </pre>
                 </div>
@@ -305,26 +302,26 @@
                       <p class="fob-welcome-line"></p>
                       <pre class="example_97 api-guides-example-fob ">
                           <code class="sample-code">
-Request Body:
-{
-  "Data": {
-    "RequestId": "1234567891",
-    "RequestStatus": "Valid",
-    "FailureCode": "ACO6",
-    "AccountStatus": "Blocked",
-    "Name": "Mohamed Ahamed",
-    "Source": "ARB",
-    "IBAN": "SA2230400108071086000028",
-    "POIType": "NAT",
-    "POINumber": "2369874521",
-    "EchoList": [
-      {
-        "Name": "channelRedirectionUrl",
-        "Value": "https://www.example.com"
-      }
-    ]
+  Request Body:
+  {
+    "Data": {
+      "RequestId": "1234567891",
+      "RequestStatus": "Valid",
+      "FailureCode": "ACO6",
+      "AccountStatus": "Blocked",
+      "Name": "Mohamed Ahamed",
+      "Source": "ARB",
+      "IBAN": "SA2230400108071086000028",
+      "POIType": "NAT",
+      "POINumber": "2369874521",
+      "EchoList": [
+        {
+          "Name": "channelRedirectionUrl",
+          "Value": "https://www.example.com"
+        }
+      ]
+    }
   }
-}
                           </code>
                         </pre>
                     </div>
@@ -341,30 +338,30 @@ Request Body:
                           <a type="button" class="response-box-error"
                             onclick="responseText('response-IBAN-Verification-Callback-Requests')">202</a>
                           <a type="button" class="response-box-error"
-                            onclick="responseText('response-IBAN-Callback-Requests1')">500</a>
+                            onclick="responseText('response-IBAN-Verification-Callback-Requests1')">500</a>
                         </div>
 
                         <pre class="response-box">
 
-                          <code id="response-IBAN-Callback-Requests" style=" display: block; " class="text">
-      {
-        "Data": {
-            "RequestId": "f428deb3-2842-408d-878e-7904f61be27b"
-        }
-      }
+                          <code id="response-IBAN-Verification-Callback-Requests" style=" display: block; " class="text">
+  {
+    "Data": {
+        "RequestId": "f428deb3-2842-408d-878e-7904f61be27b"
+    }
+  }
 
                           </code>
 
-                          <code id="response-IBAN-Callback-Requests1" style=" display: none; " class="text">
-{
-  "Errors": [
-    {
-      "Code": "ERROR.500.001",
-      "Message": "Internal Error",
-      "Url": "https://{baseURL}/developer-portal/terms"
-    }
-  ]
-}
+                          <code id="response-IBAN-Verification-Callback-Requests1" style=" display: none; " class="text">
+  {
+    "Errors": [
+      {
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error",
+        "Url": "https://{baseURL}/developer-portal/terms"
+      }
+    ]
+  }
                           </code>
                         </pre>
                       </div>
