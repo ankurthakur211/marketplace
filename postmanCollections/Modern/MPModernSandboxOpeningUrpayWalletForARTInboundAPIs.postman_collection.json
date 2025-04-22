@@ -1,0 +1,786 @@
+{
+	"info": {
+		"_postman_id": "c02cee9c-caee-493c-ac47-ec87d74af00e",
+		"name": "MP Modern Sandbox Opening a urpay wallet for ART Inbound APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31751639"
+	},
+	"item": [
+		{
+			"name": "Access Token",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/oauth2security/oauth2/token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Business APIs",
+			"item": [
+				{
+					"name": "MP Create Prospect Api Documentation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							},
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-host-ip",
+								"value": "34.246.12",
+								"type": "text"
+							},
+							{
+								"key": "x-longitude",
+								"value": "24.7136",
+								"type": "text"
+							},
+							{
+								"key": "x-latitude",
+								"value": "46.6753",
+								"type": "text"
+							},
+							{
+								"key": "X-ARG-Token",
+								"value": "aaaaa",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"BirthGregorianDate\": \"2000-10-31\",\r\n        \"BirthHijriDate\": \"1421-08-04\",\r\n        \"KYCDetails\": {\r\n            \"AdditionalIncomeSource\": \"string\",\r\n            \"BasicIncomeSource\": \"string\",\r\n            \"Email\": \"Email@domain.com\",\r\n            \"Employer\": \"AlRajhi Bank\",\r\n            \"EmploymentStatus\": \"string\",\r\n            \"IncomeRange\": \"string\",\r\n            \"IsPoliticallyRelated\": true,\r\n            \"JobCategory\": \"string\"\r\n        },\r\n        \"MobileNumber\": \"+966568472298\",\r\n        \"POINumber\": \"1451505728\",\r\n        \"POIType\": \"NAT\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-prospect-registration/v1/prospects",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-prospect-registration",
+								"v1",
+								"prospects"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MP Create Prospect Api Documentation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									},
+									{
+										"key": "accept-language",
+										"value": "EN",
+										"type": "text"
+									},
+									{
+										"key": "x-host-ip",
+										"value": "34.246.12",
+										"type": "text"
+									},
+									{
+										"key": "x-longitude",
+										"value": "24.7136",
+										"type": "text"
+									},
+									{
+										"key": "x-latitude",
+										"value": "46.6753",
+										"type": "text"
+									},
+									{
+										"key": "X-ARG-Token",
+										"value": "aaaaa",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"BirthGregorianDate\": \"2000-10-31\",\r\n    \"BirthHijriDate\": \"1421-08-04\",\r\n    \"KYCDetails\": {\r\n      \"AdditionalIncomeSource\": \"string\",\r\n      \"BasicIncomeSource\": \"string\",\r\n      \"Email\": \"Email@domain.com\",\r\n      \"Employer\": \"AlRajhi Bank\",\r\n      \"EmploymentStatus\": \"string\",\r\n      \"IncomeRange\": \"string\",\r\n      \"IsPoliticallyRelated\": true,\r\n      \"JobCategory\": \"string\"\r\n    },\r\n    \"MobileNumber\": \"+966568472298\",\r\n    \"POINumber\": \"1079448944\",\r\n    \"POIType\": \"NAT\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-prospect-registration/v1/prospects",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-prospect-registration",
+										"v1",
+										"prospects"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f0711313-e468-4173-aeff-4e1c0439dee5"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab3b1300769c63"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 11:57:08 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "MP Create Prospect Api Documentation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									},
+									{
+										"key": "accept-language",
+										"value": "EN",
+										"type": "text"
+									},
+									{
+										"key": "x-host-ip",
+										"value": "34.246.12",
+										"type": "text"
+									},
+									{
+										"key": "x-longitude",
+										"value": "24.7136",
+										"type": "text"
+									},
+									{
+										"key": "x-latitude",
+										"value": "46.6753",
+										"type": "text"
+									},
+									{
+										"key": "X-ARG-Token",
+										"value": "aaaaa",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"BirthGregorianDate\": \"2000-10-31\",\r\n    \"BirthHijriDate\": \"1421-08-04\",\r\n    \"KYCDetails\": {\r\n      \"AdditionalIncomeSource\": \"string\",\r\n      \"BasicIncomeSource\": \"string\",\r\n      \"Email\": \"Email@domain.com\",\r\n      \"Employer\": \"AlRajhi Bank\",\r\n      \"EmploymentStatus\": \"string\",\r\n      \"IncomeRange\": \"string\",\r\n      \"IsPoliticallyRelated\": true,\r\n      \"JobCategory\": \"string\"\r\n    },\r\n    \"MobileNumber\": \"+966568472298\",\r\n    \"POINumber\": \"2101135614\",\r\n    \"POIType\": \"IQA\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-prospect-registration/v1/prospects",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-prospect-registration",
+										"v1",
+										"prospects"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "87f62793-be5e-4bd9-9473-2d877bdb3f06"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab4ab50175e572"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 13:03:49 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "MP Create Prospect Api Documentation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									},
+									{
+										"key": "accept-language",
+										"value": "EN",
+										"type": "text"
+									},
+									{
+										"key": "x-host-ip",
+										"value": "34.246.12",
+										"type": "text"
+									},
+									{
+										"key": "x-longitude",
+										"value": "24.7136",
+										"type": "text"
+									},
+									{
+										"key": "x-latitude",
+										"value": "46.6753",
+										"type": "text"
+									},
+									{
+										"key": "X-ARG-Token",
+										"value": "aaaaa",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"BirthGregorianDate\": \"2000-10-31\",\r\n    \"BirthHijriDate\": \"1421-08-04\",\r\n    \"KYCDetails\": {\r\n      \"AdditionalIncomeSource\": \"string\",\r\n      \"BasicIncomeSource\": \"string\",\r\n      \"Email\": \"Email@domain.com\",\r\n      \"Employer\": \"AlRajhi Bank\",\r\n      \"EmploymentStatus\": \"string\",\r\n      \"IncomeRange\": \"string\",\r\n      \"IsPoliticallyRelated\": true,\r\n      \"JobCategory\": \"string\"\r\n    },\r\n    \"MobileNumber\": \"+966568472298\",\r\n    \"POINumber\": \"1451505728\",\r\n    \"POIType\": \"NAT\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-prospect-registration/v1/prospects",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-prospect-registration",
+										"v1",
+										"prospects"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "11829620-8638-44ae-ab26-e3029d4d0da4"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab4ac90175f0b2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 13:04:09 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "MP Get Prospect Status Api Documentation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							},
+							{
+								"key": "accept-language",
+								"value": "EN",
+								"type": "text"
+							},
+							{
+								"key": "x-host-ip",
+								"value": "ss",
+								"type": "text"
+							},
+							{
+								"key": "x-latitude",
+								"value": "24.7136",
+								"type": "text"
+							},
+							{
+								"key": "x-longitude",
+								"value": "46.6753",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/mp-prospect-registration/v1/prospects/:POINumber/status?poiType=NAT&birthHijriDate=1421-08-04&birthGregorianDate=2000-10-31",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-prospect-registration",
+								"v1",
+								"prospects",
+								":POINumber",
+								"status"
+							],
+							"query": [
+								{
+									"key": "poiType",
+									"value": "NAT"
+								},
+								{
+									"key": "birthHijriDate",
+									"value": "1421-08-04"
+								},
+								{
+									"key": "birthGregorianDate",
+									"value": "2000-10-31"
+								}
+							],
+							"variable": [
+								{
+									"key": "POINumber",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MP Get Prospect Status Api Documentation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									},
+									{
+										"key": "accept-language",
+										"value": "EN",
+										"type": "text"
+									},
+									{
+										"key": "x-host-ip",
+										"value": "ss",
+										"type": "text"
+									},
+									{
+										"key": "x-latitude",
+										"value": "24.7136",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "x-longitude",
+										"value": "46.6753",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-prospect-registration/v1/prospects/:POINumber/status?poiType=NAT",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-prospect-registration",
+										"v1",
+										"prospects",
+										":POINumber",
+										"status"
+									],
+									"query": [
+										{
+											"key": "poiType",
+											"value": "NAT"
+										},
+										{
+											"key": "birthHijriDate",
+											"value": "1421-08-04",
+											"disabled": true
+										},
+										{
+											"key": "birthGregorianDate",
+											"value": "2000-10-31",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "POINumber",
+											"value": "1079448944"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "26f5ad23-6e4e-4f76-929e-15b5870821b5"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab3c1e00bbfc91"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 12:01:35 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"IsUrpayCustomer\": false,\n        \"IsProspect\": true\n    }\n}"
+						},
+						{
+							"name": "MP Get Prospect Status Api Documentation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									},
+									{
+										"key": "accept-language",
+										"value": "EN",
+										"type": "text"
+									},
+									{
+										"key": "x-host-ip",
+										"value": "ss",
+										"type": "text"
+									},
+									{
+										"key": "x-latitude",
+										"value": "24.7136",
+										"type": "text"
+									},
+									{
+										"key": "x-longitude",
+										"value": "46.6753",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base-url}}/mp-prospect-registration/v1/prospects/:POINumber/status?poiType=NAT&birthHijriDate=1421-08-04&birthGregorianDate=2000-10-31",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-prospect-registration",
+										"v1",
+										"prospects",
+										":POINumber",
+										"status"
+									],
+									"query": [
+										{
+											"key": "poiType",
+											"value": "NAT"
+										},
+										{
+											"key": "birthHijriDate",
+											"value": "1421-08-04"
+										},
+										{
+											"key": "birthGregorianDate",
+											"value": "2000-10-31"
+										}
+									],
+									"variable": [
+										{
+											"key": "POINumber",
+											"value": "123"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "02c15fcb-44c4-4382-ad02-ca9a189bd0ef"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67ab4a810175e382"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Feb 2025 13:02:58 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"IsUrpayCustomer\": false,\n        \"IsProspect\": false,\n        \"IsFullTierAcceptedRange\": true\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "client-id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client-secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

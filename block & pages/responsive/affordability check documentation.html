@@ -40,42 +40,25 @@
                     <p class="fob-welcome-text">The primary objective of this project is to enable Neotek to avail
                         affordability check through API Marketplace.</br></p>
                     <p class="fob-welcome-text"><a id="downloadLink"
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Affordability_Check.postman_collection.json"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxAffordabilityCheckInboundAPIs.postman_collection"
                             download="">Download Postman Collection</a></p>
                     <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/AffordabilityCheckSampleRequestData.xlsx"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/AffordabilityCheckSampleRequestData.xlsx"
                             download="">Download Sample Data</a></p>
 
                     <h1 class="fob-welcome-title">Affordability Check Workflow</h1>
                     <p class="fob-welcome-line"></p>
-                    <a class="fob-product-title-click" target="_blank" href="./AffordabilityCheckWorkflowImg">Click
-                        here</a>
-                    <div class="row flex mt-25">
-                        <div class="col-lg-8">
-                            <p class="AffordabilityCheck-flow-img"><br></p>
-                        </div>
-                    </div>
-
-
-                    <h1 class="fob-welcome-title">Affordability Check Architecture</h1>
-
-                    <p class="fob-welcome-line">&nbsp;</p>
-                    <a class="fob-product-title-click" href="./AffordabilityCheckArchitectureWorkflowImg"
-                        target="_blank">Click here</a>
-
-                    <div class="row flex mt-25">
-                        <div class="col-lg-8">
-                            <p class="AffordabilityCheckArchitecture-flow-img">&nbsp;</p>
-                        </div>
-                    </div>
+                    <p class="fob-welcome-text"><a
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ARGAffordabilityCheckv0.1.pdf"
+                        download="">Download Workflow</a></p>
 
 
                     <h1 class="fob-welcome-title" id="section-2">Create Affordability Check Request</h1>
                     <p class="fob-welcome-line"></p>
                     <p class="fob-welcome-text">Endpoint: POST :
-                        /affordability-check/v1/affordability-check-requests</br></p>
+                        /mp-affordability-check/v1/requests</br></p>
                     <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1141/api/1138#/AffordabilityCheckRequests_100/operation/%2Faffordability-check-requests/post">Swagger
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3996/api/3993#/MPAffordabilityCheckRequests_100/operation/%2Frequests/post">Swagger
                             Link</a></p>
                     <p class="fob-welcome-text">This path is used to create an affordability check request.</br></p>
                     <div class="bx--snippet-container body" data-testid="expandable-example-display">
@@ -86,18 +69,18 @@
                                 <p class="fob-welcome-line"></p>
                                 <pre class="example_97 api-guides-example-fob ">
                     <code class="sample-code">
-Header request
+
+Request Body
 {
-“x-request-id”:”174a889” }
-            Request Body
-{
-  "FinancialInstitutionId": "SAMAModelBank",
-  "POINum": "1545818534",
-  "POIType": "IqamaID",
-  "AccountTypes": [
-    "Retail"
-  ],
-  "SecurityProfile": "Redirection"
+    "Data": {
+        "FinancialInstitutionId": "INMASARI",
+        "POINumber": "1545818534",
+        "POIType": "IqamaID",
+        "AccountTypes": [
+            "Retail"
+        ],
+        "SecurityProfile": "Redirection"
+    }
 }
                     </code>
                   </pre>
@@ -109,17 +92,20 @@ Header request
                                 </button>
 
                                 <pre id="generatedCurl">
-                    <code id="Create-Affordability-Check-Request-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/affordability-check/v1/affordability-check-requests' \
+                    <code id="Create-Affordability-Check-Request-curl" style=" display: block;">ccurl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-affordability-check/v1/requests' \
+--header 'x-request-id: 7b5a97fa-0e6c-4124-9f20-eb70fed2e2e6' \
 --header 'Content-Type: application/json' \
---header 'Authorization: ••••••' \
+--header 'Authorization: ' \
 --data '{
-    "FinancialInstitutionId": "SAMAModelBank",
-    "POINum": "1545818534",
+"Data": {
+    "FinancialInstitutionId": "INMASARI",
+    "POINumber": "1545818534",
     "POIType": "IqamaID",
     "AccountTypes": [
         "Retail"
     ],
     "SecurityProfile": "Redirection"
+}
 }'
                     </code>
                   </pre>
@@ -136,12 +122,12 @@ Header request
                                     <div class="response-box-div">
                                         <a type="button" class="response-box-error"
                                             onclick="responseText('Create-Affordability-Check-Request')">200</a>
+                                            <a type="button" class="response-box-error"
+                                            onclick="responseText('Create-Affordability-Check-Request2')">400</a>
                                         <a type="button" class="response-box-error"
                                             onclick="responseText('Create-Affordability-Check-Request3')">401</a>
                                         <a type="button" class="response-box-error"
                                             onclick="responseText('Create-Affordability-Check-Request4')">403</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('Create-Affordability-Check-Request5')">404</a>
                                         <a type="button" class="response-box-error"
                                             onclick="responseText('Create-Affordability-Check-Request6')">405</a>
                                         <a type="button" class="response-box-error"
@@ -156,95 +142,97 @@ Header request
 
                       <code id="Create-Affordability-Check-Request" style=" display: block; " class="text">
 {
-    "RequestId": "66",
-    "Status": "AwaitingAuthorization",
-    "RedirectionURL": "https://auth1.lab.openbanking.sa/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3Aefebf834-b304-4a58-a6bf-2c40cc92c058&client_id=c27042bb-fc24-4bc3-a844-73b2cf2bb97f&response_type=code&scope=accounts+openid"
-}        
+    "Data": {
+        "RequestId": "19",
+        "Status": "AwaitingAuthorization",
+        "RedirectionURL": "https://auth-ob-sb.alinma.com/auth?request_uri=urn%3Aietf%3Aparams%3Aoauth%3Arequest_uri%3Af1fde008-bf66-46bc-ba99-928a9fa4084e&client_id=bcd77d15-2682-4390-86ad-79644f7acfa6&response_type=code&scope=accounts+openid"
+    }
+}
+                      </code>
+                      <code id="Create-Affordability-Check-Request2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "RequestId is invalid.",
+        "Path": "request.body.RequestId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
                       </code>
                       <code id="Create-Affordability-Check-Request3" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.401.001",
-        "message": "Unauthorized to call the target operation.",
-        "path": "authorization",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }  
-                      </code>	
-                    
+}
+                      </code>
+
                       <code id="Create-Affordability-Check-Request4" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.403.001",
-        "message": "Can't find any valid subscription.",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }    
+}
                       </code>
-                    
-                      <code id="Create-Affordability-Check-Request5" style=" display: none; " class="text">
-    {
-        "errors": [
-        {
-            "code": "ERROR.404.001",
-            "message": "No resources match requested URI.",
-            "url": "https://{baseURL}/developer-portal/terms"
-        }
-        ]
-    }     
-                      </code>
-                    
+
                       <code id="Create-Affordability-Check-Request6" style=" display: none; "class="text">
-    {
-        "errors": [
+{
+    "Errors": [
         {
-            "code": "ERROR.405.001",
-            "message": "The method is not allowed for the requested URL.",
-            "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-        ]
-    }
-                            
+    ]
+}
+
                       </code>
-                    
+
                       <code id="Create-Affordability-Check-Request7" style=" display: none; "class="text">
-    {
-        "errors": [
+{
+    "Errors": [
         {
-            "code": "ERROR.406.001",
-            "message": "An appropriate representation of the requested resource could not be found",
-            "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.406.001",
+        "Message": "An appropriate representation of the requested resource could not be found",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-        ]
-    }       
+    ]
+}
                       </code>
-                    
+
                       <code id="Create-Affordability-Check-Request8" style=" display: none; " class="text">
-    {
-        "errors": [
+{
+    "Errors": [
         {
-            "code": "ERROR.429.001",
-            "message": "Assembly Rate Limit exceeded",
-            "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-        ]
-    }     
+    ]
+}
                       </code>
-                    
+
                       <code id="Create-Affordability-Check-Request9" style=" display: none; " class="text">
-    {
-        "errors": [
+{
+    "Errors": [
         {
-            "code": "ERROR.500.001",
-            "message": "Internal Error",
-            "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-        ]
-    }     
+    ]
+}
                       </code>
                     </pre>
                                 </div>
@@ -254,9 +242,9 @@ Header request
                         <h1 class="fob-welcome-title" id="section-3">Get Affordability Check Request</h1>
                         <p class="fob-welcome-line"></p>
                         <p class="fob-welcome-text">Endpoint: POST :
-                            /affordability-check/v1/affordability-check-requests/{RequestId}</br></p>
+                            /mp-affordability-check/v1/requests/{RequestId}</br></p>
                         <p class="fob-welcome-text"><a
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1141/api/1138#/AffordabilityCheckRequests_100/operation/%2Faffordability-check-requests%2F{RequestId}/post">Swagger
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3996/api/3993#/MPAffordabilityCheckRequests_100/operation/%2Frequests%2F{RequestId}/post">Swagger
                                 Link</a></p>
                         <p class="fob-welcome-text">Retrieve the list of all AC Requests available in the system.</br>
                         </p>
@@ -268,15 +256,17 @@ Header request
                                     <h1 class="fob-welcome-title">Request Example</h1>
                                     <p class="fob-welcome-line"></p>
                                     <pre class="example_97 api-guides-example-fob ">
-                                <code class="sample-code">
-Header request
+                        <code class="sample-code">
+
+Path Variables:
+    "RequestId": "19"
+
+Request Body
 {
-"x-request-id": "ca4777821",
-} 
-Path parameters
-{
-    " RequestId": "123",
-        }                                                                
+    "Data": {
+        "POINumber": "1545818534"
+    }
+}
                                 </code>
                               </pre>
                                 </div>
@@ -289,11 +279,13 @@ Path parameters
                                     </button>
 
                                     <pre id="generatedCurl">
-                                  <code id="get-Affordability-Check-Request-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/affordability-check/v1/affordability-check-requests/19' \
+                                  <code id="get-Affordability-Check-Request-curl" style=" display: block;">curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-affordability-check/v1/requests/66' \
 --header 'Content-Type: application/json' \
---header 'Authorization: ••••••' \
+--header 'Authorization: ' \
 --data '{
-    "POINum": "1545818534"
+"Data": {
+    "POINumber": "1545818534"
+}
 }'
                                   </code>
                                 </pre>
@@ -310,12 +302,12 @@ Path parameters
                                         <div class="response-box-div">
                                             <a type="button" class="response-box-error"
                                                 onclick="responseText('get-Affordability-Check-Request')">200</a>
+                                                <a type="button" class="response-box-error"
+                                                onclick="responseText('get-Affordability-Check-Request2')">400</a>
                                             <a type="button" class="response-box-error"
                                                 onclick="responseText('get-Affordability-Check-Request3')">401</a>
                                             <a type="button" class="response-box-error"
                                                 onclick="responseText('get-Affordability-Check-Request4')">403</a>
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('get-Affordability-Check-Request5')">404</a>
                                             <a type="button" class="response-box-error"
                                                 onclick="responseText('get-Affordability-Check-Request6')">405</a>
                                             <a type="button" class="response-box-error"
@@ -330,32 +322,30 @@ Path parameters
                         <code id="get-Affordability-Check-Request" style=" display: block; " class="text">
 {
     "Data": {
-        "RequestId": "19",
-        "POINum": "1545818534",
+        "RequestId": "66",
+        "POINumber": "1545818534",
         "POIType": "IqamaID",
         "FinancialInstitution": {
-            "FinancialInstitutionId": "INMASARI",
-            "NameEn": "Alinma Bank",
-            "NameAr": "مصرف الانماء"
+            "FinancialInstitutionId": "SAMAModelBank",
+            "NameEn": "SAMA Model Bank",
+            "NameAr": "البنك المركزي السعودي"
         },
-        "CreationDateTime": "2024-07-02T13:32:53.776+00:00",
+        "CreationDateTime": "2024-08-04T11:36:03.717+00:00",
         "Status": "Completed",
         "StatusDescription": "Request Completed Successfully",
-        "StatusUpdateDateTime": "2024-07-02T13:34:08.971+00:00",
-        "OBAccounts": [
-            "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e"
-        ],
-        "MainAccountId": "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e",
-        "AccountTypes": [
-            "Retail"
-        ],
+        "StatusUpdateDateTime": "2024-08-04T11:39:09.748+00:00",
+        "MainAccountId": "100004000000000000000002",
         "RequestData": {
             "BankStatement": {
-                "AverageBalance": 47.57,
-                "AverageSalary": 0.0,
-                "LastSalaryCredited": 16.03,
-                "AverageDividend": 0.0,
+                "AverageBalance": 16.2,
+                "AverageSalary": 0,
+                "LastSalaryCredited": 2512,
                 "CreditAmountSummary": [
+                    {
+                        "Year": "2024",
+                        "Month": "Aug",
+                        "TotalAmount": 0
+                    },
                     {
                         "Year": "2024",
                         "Month": "Jul",
@@ -379,17 +369,17 @@ Path parameters
                     {
                         "Year": "2024",
                         "Month": "Mar",
-                        "TotalAmount": 0
-                    },
-                    {
-                        "Year": "2024",
-                        "Month": "Feb",
                         "TotalAmount": 0
                     }
                 ],
                 "DebitAmountSummary": [
                     {
                         "Year": "2024",
+                        "Month": "Aug",
+                        "TotalAmount": 0
+                    },
+                    {
+                        "Year": "2024",
                         "Month": "Jul",
                         "TotalAmount": 0
                     },
@@ -412,36 +402,27 @@ Path parameters
                         "Year": "2024",
                         "Month": "Mar",
                         "TotalAmount": 0
-                    },
-                    {
-                        "Year": "2024",
-                        "Month": "Feb",
-                        "TotalAmount": 0
                     }
                 ],
-                "LastDividendAmount": 31.20
+                "LastDividendAmount": 0,
+                "AverageDividend": 0
             },
             "CreditBalance": [
                 {
                     "BalanceType": "KSAOB.ClosingAvailable",
-                    "Amount": 1500.00,
-                    "Currency": "SAR"
-                },
-                {
-                    "BalanceType": "KSAOB.ClosingAvailable",
-                    "Amount": 1500.00,
+                    "Amount": 1091.7,
                     "Currency": "SAR"
                 }
             ],
             "ScheduledPayments": [
                 {
-                    "ScheduledPaymentId": "140ab1c8-634a-44dd-935a-7d02fb233922",
+                    "ScheduledPaymentId": "001011000000000000000107",
                     "ScheduledType": "KSAOB.Arrival",
-                    "ScheduledPaymentDateTime": "2023-02-22T22:21:11.761Z",
+                    "ScheduledPaymentDateTime": "2020-01-27T05:00:00Z",
                     "CreditorReference": "reference",
                     "DebtorReference": "debtorReference",
                     "InstructedAmount": {
-                        "Amount": "35.53",
+                        "Amount": "10.00",
                         "Currency": "SAR"
                     },
                     "CreditorAgent": {
@@ -451,147 +432,272 @@ Path parameters
                     "CreditorAccount": [
                         {
                             "IdentificationType": "KSAOB.IBAN",
-                            "Identification": "096260283686"
+                            "Identification": "20304012345678"
+                        }
+                    ]
+                },
+                {
+                    "ScheduledPaymentId": "001011000000000000000108",
+                    "ScheduledType": "KSAOB.Arrival",
+                    "ScheduledPaymentDateTime": "2020-01-28T05:00:00Z",
+                    "CreditorReference": "reference",
+                    "DebtorReference": "debtorReference",
+                    "InstructedAmount": {
+                        "Amount": "10.00",
+                        "Currency": "SAR"
+                    },
+                    "CreditorAgent": {
+                        "IdentificationType": "KSAOB.BICFI",
+                        "Identification": "identification"
+                    },
+                    "CreditorAccount": [
+                        {
+                            "IdentificationType": "KSAOB.IBAN",
+                            "Identification": "20304012345678"
+                        }
+                    ]
+                },
+                {
+                    "ScheduledPaymentId": "5e0e5cea-b28c-407f-b5b4-6a0ed9a6791a",
+                    "ScheduledType": "KSAOB.Arrival",
+                    "ScheduledPaymentDateTime": "2023-03-04T16:22:37.396Z",
+                    "CreditorReference": "reference",
+                    "DebtorReference": "debtorReference",
+                    "InstructedAmount": {
+                        "Amount": "24.04",
+                        "Currency": "SAR"
+                    },
+                    "CreditorAgent": {
+                        "IdentificationType": "KSAOB.BICFI",
+                        "Identification": "identification"
+                    },
+                    "CreditorAccount": [
+                        {
+                            "IdentificationType": "KSAOB.IBAN",
+                            "Identification": "472282348582"
                         }
                     ]
                 }
             ],
             "StandingOrders": [
                 {
-                    "StandingOrderId": "d00a23ff-42f1-48c1-adb0-d2969251ebcb",
-                    "StandingOrderType": "KSAOB.InternationalTransfer",
-                    "Frequency": "EvryDay",
-                    "CreditorReference": "Allowance",
+                    "StandingOrderId": "001010000000000000000113",
+                    "StandingOrderType": "KSAOB.LocalBankTransfer",
+                    "Frequency": "WkInMnthDay:02:05",
+                    "CreditorReference": "GSG 10 BANK ROAD",
                     "Purpose": "Bills and expenses",
-                    "FirstPaymentDateTime": "2023-02-22T22:21:11.762Z",
-                    "NextPaymentDateTime": "2023-02-22T22:21:11.762Z",
-                    "LastPaymentDateTime": "2023-02-22T22:21:11.762Z",
-                    "FinalPaymentDateTime": "2024-01-23T22:21:11.762Z",
-                    "NumberOfPayments": "4",
+                    "FirstPaymentDateTime": "2014-05-15T00:00:00Z",
+                    "NextPaymentDateTime": "2018-01-15T00:00:00Z",
+                    "LastPaymentDateTime": "2018-01-15T00:00:00Z",
+                    "FinalPaymentDateTime": "2020-01-10T00:00:00Z",
+                    "NumberOfPayments": "3",
                     "StandingOrderStatusCode": "KSAOB.Active",
                     "FirstPaymentAmount": {
-                        "Amount": "38.48",
+                        "Amount": "84.09",
                         "Currency": "SAR"
                     },
                     "NextPaymentAmount": {
-                        "Amount": "24.18",
+                        "Amount": "84.09",
                         "Currency": "SAR"
                     },
                     "LastPaymentAmount": {
-                        "Amount": "62.14",
+                        "Amount": "10.20",
                         "Currency": "SAR"
                     },
                     "FinalPaymentAmount": {
-                        "Amount": "21.69",
+                        "Amount": "2.50",
                         "Currency": "SAR"
                     },
                     "CreditorAgent": {
                         "IdentificationType": "KSAOB.BICFI",
-                        "Identification": "bWkSN9JILgJrzn"
+                        "Identification": "INDRUK00XXX"
                     },
                     "CreditorAccount": [
                         {
                             "IdentificationType": "KSAOB.IBAN",
-                            "Identification": "009034203556"
+                            "Identification": "GB04INDR90872921098674"
+                        }
+                    ]
+                },
+                {
+                    "StandingOrderId": "001010000000000000000114",
+                    "StandingOrderType": "KSAOB.InternationalTransfer",
+                    "Frequency": "IntrvlMnthDay:12:-05",
+                    "CreditorReference": "Tim 920111011",
+                    "Purpose": "Bills and expenses",
+                    "FirstPaymentDateTime": "2015-02-17T00:00:00Z",
+                    "NextPaymentDateTime": "2018-01-17T00:00:00Z",
+                    "LastPaymentDateTime": "2018-01-17T00:00:00Z",
+                    "FinalPaymentDateTime": "2022-02-17T00:00:00Z",
+                    "NumberOfPayments": "3",
+                    "StandingOrderStatusCode": "KSAOB.Active",
+                    "FirstPaymentAmount": {
+                        "Amount": "92.10",
+                        "Currency": "SAR"
+                    },
+                    "NextPaymentAmount": {
+                        "Amount": "92.10",
+                        "Currency": "SAR"
+                    },
+                    "LastPaymentAmount": {
+                        "Amount": "10.20",
+                        "Currency": "SAR"
+                    },
+                    "FinalPaymentAmount": {
+                        "Amount": "100.00",
+                        "Currency": "SAR"
+                    },
+                    "CreditorAgent": {
+                        "IdentificationType": "KSAOB.BICFI",
+                        "Identification": "GHTTUK00XXX"
+                    },
+                    "CreditorAccount": [
+                        {
+                            "IdentificationType": "KSAOB.IBAN",
+                            "Identification": "GB14GHTT10010289048910"
+                        }
+                    ]
+                },
+                {
+                    "StandingOrderId": "5db813ce-802b-4655-bdc0-594b24cc1e5e",
+                    "StandingOrderType": "KSAOB.InternationalTransfer",
+                    "Frequency": "EvryDay",
+                    "CreditorReference": "Allowance",
+                    "Purpose": "Bills and expenses",
+                    "FirstPaymentDateTime": "2023-03-04T16:22:37.397Z",
+                    "NextPaymentDateTime": "2023-03-04T16:22:37.397Z",
+                    "LastPaymentDateTime": "2023-03-04T16:22:37.397Z",
+                    "FinalPaymentDateTime": "2024-02-02T16:22:37.397Z",
+                    "NumberOfPayments": "1",
+                    "StandingOrderStatusCode": "KSAOB.Active",
+                    "FirstPaymentAmount": {
+                        "Amount": "20.69",
+                        "Currency": "SAR"
+                    },
+                    "NextPaymentAmount": {
+                        "Amount": "59.15",
+                        "Currency": "SAR"
+                    },
+                    "LastPaymentAmount": {
+                        "Amount": "69.63",
+                        "Currency": "SAR"
+                    },
+                    "FinalPaymentAmount": {
+                        "Amount": "63.97",
+                        "Currency": "SAR"
+                    },
+                    "CreditorAgent": {
+                        "IdentificationType": "KSAOB.BICFI",
+                        "Identification": "604473840003"
+                    },
+                    "CreditorAccount": [
+                        {
+                            "IdentificationType": "KSAOB.IBAN",
+                            "Identification": "523188505295"
                         }
                     ]
                 }
             ]
-        }
+        },
+        "OBAccounts": [
+            "100004000000000000000003",
+            "100004000000000000000005",
+            "100004000000000000000002"
+        ],
+        "AccountTypes": [
+            "Retail"
+        ]
     }
-}                            
+}
                          </code>
-      
+                         <code id="get-Affordability-Check-Request2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Customer POINumber is invalid.",
+        "Path": "request.body.POINumber",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+                        </code>
                         <code id="get-Affordability-Check-Request3" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.401.001",
-        "message": "Unauthorized to call the target operation.",
-        "path": "authorization",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }
-                        
-                        </code>	
-                        
+}
+
+                        </code>
+
                         <code id="get-Affordability-Check-Request4" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.403.001",
-        "message": "Can't find any valid subscription.",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }   
+}
                         </code>
-                        
-                        
-                        <code id="get-Affordability-Check-Request5" style=" display: none; " class="text">
-    {
-    "errors": [
-        {
-        "code": "ERROR.404.001",
-        "message": "No resources match requested URI.",
-        "url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-    }     
-                        </code>
-                        
-                        
+
                         <code id="get-Affordability-Check-Request6" style=" display: none; "class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.405.001",
-        "message": "The method is not allowed for the requested URL.",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }
-                             
+}
+
                         </code>
-                         
-                        
+
+
                         <code id="get-Affordability-Check-Request7" style=" display: none; "class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.406.001",
-        "message": "An appropriate representation of the requested resource could not be found",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.406.001",
+        "Message": "An appropriate representation of the requested resource could not be found",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }       
+}
                         </code>
-                         
-                        
+
+
                         <code id="get-Affordability-Check-Request8" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.429.001",
-        "message": "Assembly Rate Limit exceeded",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }     
+}
                         </code>
-                        
-                        
+
+
                         <code id="get-Affordability-Check-Request9" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.500.001",
-        "message": "Internal Error",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }    
+}
                         </code>
                               </pre>
 
@@ -603,9 +709,9 @@ Path parameters
                             <h1 class="fob-welcome-title" id="section-4">Execute Affordability Check Request</h1>
                             <p class="fob-welcome-line"></p>
                             <p class="fob-welcome-text">Endpoint: POST :
-                                /affordability-check/v1/affordability-check-requests/execute</br></p>
+                                /mp-affordability-check/v1/requests/execute</br></p>
                             <p class="fob-welcome-text"><a
-                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1141/api/1138#/AffordabilityCheckRequests_100/operation/%2Faffordability-check-requests%2Fexecute/post">Swagger
+                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3996/api/3993#/MPAffordabilityCheckRequests_100/operation/%2Frequests%2Fexecute/post">Swagger
                                     Link</a></p>
                             <p class="fob-welcome-text">This path is used to execute the affordability check request.</br></p>
 
@@ -617,16 +723,15 @@ Path parameters
                                         <p class="fob-welcome-line"></p>
                                         <pre class="example_97 api-guides-example-fob ">
                                 <code class="sample-code">
-Header request
+
+Request Body
 {
-"x-request-id": "a47112v"
-} 
-Body request
-    {
-    "RequestId": "154581853470993793600321149731",
-    "POINum": "1545818534",
-    "MainAccountId": "string"
-}                                                                                           
+    "Data": {
+        "RequestId": "19",
+        "POINumber": "1545818534",
+        "MainAccountId": "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e"
+    }
+}
                                 </code>
                               </pre>
                                     </div>
@@ -639,15 +744,16 @@ Body request
                                         </button>
 
                                         <pre id="generatedCurl">
-                                  <code id="execute-Affordability-Check-Request-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/affordability-check/v1/affordability-check-requests/execute' \
+                                  <code id="execute-Affordability-Check-Request-curl" style=" display: block;">curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-affordability-check/v1/requests/execute' \
 --header 'Content-Type: application/json' \
---header 'Authorization: ••••••' \
+--header 'Authorization: ' \
 --data '{
-    "RequestId": "19",
-    "POINum": "1545818534",
-    "MainAccountId": "39225ad7-7a63-4c92-b1da-b2cf3b5eba5e"
-}'                                    
-                                  </code>
+"Data": {
+    "RequestId": "66",
+    "POINumber": "1545818534",
+    "MainAccountId": "100004000000000000000002"
+}
+}'                                  </code>
                                 </pre>
                                     </div>
                                 </div>
@@ -661,7 +767,9 @@ Body request
 
                                             <div class="response-box-div">
                                                 <a type="button" class="response-box-error"
-                                                    onclick="responseText('execute-Affordability-Check-Request')">200</a>
+                                                    onclick="responseText('execute-Affordability-Check-Request')">204</a>
+                                                <a type="button" class="response-box-error"
+                                                    onclick="responseText('execute-Affordability-Check-Request2')">400</a>
                                                 <a type="button" class="response-box-error"
                                                     onclick="responseText('execute-Affordability-Check-Request3')">401</a>
                                                 <a type="button" class="response-box-error"
@@ -680,99 +788,110 @@ Body request
                                             <pre class="response-box">
 
                         <code id="execute-Affordability-Check-Request" style=" display: block; " class="text">
-200	Execute affordability check request
+204	Execute affordability check request
                          </code>
-      
+                         <code id="execute-Affordability-Check-Request2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "RequestId is invalid.",
+        "Path": "request.body.RequestId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+                        </code>
                         <code id="execute-Affordability-Check-Request3" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.401.001",
-        "message": "Unauthorized to call the target operation.",
-        "path": "authorization",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }
-                        
-                        </code>	
-                        
+}
+
+                        </code>
+
                         <code id="execute-Affordability-Check-Request4" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.403.001",
-        "message": "Can't find any valid subscription.",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }   
+}
                         </code>
-                        
-                        
+
+
                         <code id="execute-Affordability-Check-Request5" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.404.001",
-        "message": "No resources match requested URI.",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.404.001",
+        "Message": "No resources match requested URI.",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }     
+}
                         </code>
-                        
-                        
+
+
                         <code id="execute-Affordability-Check-Request6" style=" display: none; "class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.405.001",
-        "message": "The method is not allowed for the requested URL.",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }
-                             
+}
+
                         </code>
-                         
-                        
+
+
                         <code id="execute-Affordability-Check-Request7" style=" display: none; "class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.406.001",
-        "message": "An appropriate representation of the requested resource could not be found",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.406.001",
+        "Message": "An appropriate representation of the requested resource could not be found",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }       
+}
                         </code>
-                         
-                        
+
+
                         <code id="execute-Affordability-Check-Request8" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.429.001",
-        "message": "Assembly Rate Limit exceeded",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }     
+}
                         </code>
-                        
-                        
+
+
                         <code id="execute-Affordability-Check-Request9" style=" display: none; " class="text">
-    {
-    "errors": [
+{
+    "Errors": [
         {
-        "code": "ERROR.500.001",
-        "message": "Internal Error",
-        "url": "https://{baseURL}/developer-portal/terms"
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
     ]
-    }    
+}
                         </code>
                               </pre>
 
@@ -785,4 +904,4 @@ Body request
                 </div>
             </div>
         </div>
-    </div>
+</div>

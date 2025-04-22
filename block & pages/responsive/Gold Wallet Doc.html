@@ -78,10 +78,6 @@
                                 <p class="fob-welcome-line"></p>
                                 <pre class="example_97 api-guides-example-fob ">
                     <code class="sample-code">
-Header request
-{
-"Accept-Language": "en"
-}
 Request Body
 {
     "Data": {
@@ -178,111 +174,111 @@ Request Body
     }
                     </code>
                   <code id="response-Create-Customer-Paper-Gold-Wallet2" style=" display: none; " class="text">
-  {
-    "Errors": [
     {
-       "Code": "ERROR.400.090",
-       "Message": "The Data.ARBCIC field is required",
-       "Path": "request.Data.ARBCIC",
-       "Url": "https://{baseURL}/developer-portal/terms""
+        "Errors": [
+            {
+            "Code": "ERROR.400.090",
+            "Message": "The Data.ARBCIC field is required",
+            "Path": "request.Data.ARBCIC",
+            "Url": "https://{baseURL}/developer-portal/terms""
+            }
+        ]
     }
-    ]
-  }
                     </code>
                   <code id="response-Create-Customer-Paper-Gold-Wallet3" style=" display: none; " class="text">
-  {
-    "Errors": [
-      {
-        "Code": "ERROR.401.001",
-        "Message": "Unauthorized to call the target operation.",
-        "Path": "authorization",
-        "Url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                     </code>
 
                     <code id="response-Create-Customer-Paper-Gold-Wallet4" style=" display: none; " class="text">
-  {
-    "Errors": [
-      {
-        "Code": "ERROR.403.001",
-        "Message": "Can't find any valid subscription.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                     </code>
 
                     <code id="response-Create-Customer-Paper-Gold-Wallet5" style=" display: none; " class="text">
-  {
-    "Errors": [
-      {
-        "Code": "ERROR.404.001",
-        "Message": "No resources match requested URI.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                     </code>
 
                     <code id="response-Create-Customer-Paper-Gold-Wallet6" style=" display: none; "class="text">
-  {
-    "Errors": [
-      {
-        "Code": "ERROR.405.001",
-        "Message": "The method is not allowed for the requested URL.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
 
                     </code>
 
                     <code id="response-Create-Customer-Paper-Gold-Wallet7" style=" display: none; "class="text">
-  {
-    "Errors": [
-      {
-        "Code": "ERROR.406.001",
-        "Message": "An appropriate representation of the requested resource could not be found",
-        "Url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                     </code>
 
                     <code id="response-Create-Customer-Paper-Gold-Wallet8" style=" display: none; " class="text">
-  {
-    "Errors": [
-      {
-        "Code": "ERROR.429.001",
-        "Message": "Assembly Rate Limit exceeded",
-        "Url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                     </code>
 
                     <code id="response-Create-Customer-Paper-Gold-Wallet9" style=" display: none; " class="text">
-  {
-    "Errors": [
-      {
-        "Code": "ERROR.500.001",
-        "Message": "Internal Error",
-        "Url": "https://{baseURL}/developer-portal/terms"
-      }
-    ]
-  }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                     </code>
                     <code id="response-Create-Customer-Paper-Gold-Wallet10" style=" display: none; " class="text">
     {
-      "Errors": [
-        {
-           "Code": "ERROR.503.001",
-           "Message": "Service Unavailable.",
-           "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-        }
-      ]
+        "Errors": [
+            {
+            "Code": "ERROR.503.001",
+            "Message": "Service Unavailable.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                     </code>
                   </pre>
@@ -297,7 +293,7 @@ Request Body
                             /mp-gold-wallet/v1/rates/indicative-inquiry</br></p>
                         <p class="fob-welcome-text">This path is used to inquire about indicative rate.</br></p>
                         <p class="fob-welcome-text"><a id="downloadLink"
-                                href="hhttps://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3607/api/1642#/MPGoldWallet_100/operation/%2Frates%2Findicative-inquiry/post">Swagger
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3607/api/1642#/MPGoldWallet_100/operation/%2Frates%2Findicative-inquiry/post">Swagger
                                 Link</a></p>
 
                         <div class="bx--snippet-container body" data-testid="expandable-example-display">
@@ -308,29 +304,26 @@ Request Body
                                     <p class="fob-welcome-line"></p>
                                     <pre class="example_97 api-guides-example-fob ">
                       <code class="sample-code">
-Header request
-{
-"Accept-Language": "en"
-}
+
 Request Body
 {
     "Data": {
-      "ARBCIC": "0000000125176934",
-      "TransactionKey": "a0fd1d96-757b-49e4-adfd-18ce50e7e2cf",
-      "Requester": "XAU-Indicative",
-      "BuyCurrency": "SAR",
-      "SellCurrency": "SAR",
-      "DealtCurrency": "SAR",
-      "DealtQuantity": "25",
-      "ValueDate": "2022-10-12",
-      "BuyValueDate": "2022-10-12",
-      "SellValueDate": "2022-10-12",
-      "RateType": "Buy",
-      "Supplier": "AlRajhi",
-      "Weight": "225.2",
-      "MeasureUnit": "Kg",
-      "AttributeOne": "Indicative_Rate",
-      "AttributeTwo": "Indicative_Rate"
+        "ARBCIC": "0000000125176934",
+        "TransactionKey": "a0fd1d96-757b-49e4-adfd-18ce50e7e2cf",
+        "Requester": "XAU-Indicative",
+        "BuyCurrency": "SAR",
+        "SellCurrency": "SAR",
+        "DealtCurrency": "SAR",
+        "DealtQuantity": "25",
+        "ValueDate": "2022-10-12",
+        "BuyValueDate": "2022-10-12",
+        "SellValueDate": "2022-10-12",
+        "RateType": "Buy",
+        "Supplier": "AlRajhi",
+        "Weight": "225.2",
+        "MeasureUnit": "Kg",
+        "AttributeOne": "Indicative_Rate",
+        "AttributeTwo": "Indicative_Rate"
     }
   }
                       </code>
@@ -351,22 +344,22 @@ Request Body
 --header 'Authorization: ••••••' \
 --data '{
 "Data": {
-"ARBCIC": "0000000125176934",
-"TransactionKey": "a0fd1d96-757b-49e4-adfd-18ce50e7e2cf",
-"Requester": "XAU-Indicative",
-"BuyCurrency": "SAR",
-"SellCurrency": "SAR",
-"DealtCurrency": "SAR",
-"DealtQuantity": "25",
-"ValueDate": "2022-10-12",
-"BuyValueDate": "2022-10-12",
-"SellValueDate": "2022-10-12",
-"RateType": "Buy",
-"Supplier": "AlRajhi",
-"Weight": "225.2",
-"MeasureUnit": "Kg",
-"AttributeOne": "Indicative_Rate",
-"AttributeTwo": "Indicative_Rate"
+    "ARBCIC": "0000000125176934",
+    "TransactionKey": "a0fd1d96-757b-49e4-adfd-18ce50e7e2cf",
+    "Requester": "XAU-Indicative",
+    "BuyCurrency": "SAR",
+    "SellCurrency": "SAR",
+    "DealtCurrency": "SAR",
+    "DealtQuantity": "25",
+    "ValueDate": "2022-10-12",
+    "BuyValueDate": "2022-10-12",
+    "SellValueDate": "2022-10-12",
+    "RateType": "Buy",
+    "Supplier": "AlRajhi",
+    "Weight": "225.2",
+    "MeasureUnit": "Kg",
+    "AttributeOne": "Indicative_Rate",
+    "AttributeTwo": "Indicative_Rate"
 }
 }'
                         </code>
@@ -402,147 +395,149 @@ Request Body
                                                 onclick="responseText('response-Indicative-Rate-Inquiry9')">500</a>
                                             <a type="button" class="response-box-error"
                                                 onclick="responseText('response-Indicative-Rate-Inquiry10')">503</a>
+
                                         </div>
                                         <pre class="response-box">
 
               <code id="response-Indicative-Rate-Inquiry" style=" display: block; " class="text">
-{
-"Data": {
-    "TransactionKey": "a0fd1d96-757b-49e4-adfd-18ce50e7e2cf",
-    "Requester": "XAU-Indicative",
-    "CustomerId": "0000000125176934",
-    "BuyCurrency": "SAR",
-    "SellCurrency": "XA0",
-    "DealtCurrency": "XA0",
-    "DealtQuantity": "100",
-    "DealtAmount": "100",
-    "ContraAmount": "32958.99",
-    "ValueDate": "2025-01-15",
-    "BuyValueDate": "2025-01-15",
-    "SellValueDate": "2025-01-15",
-    "ValueDateChanged": "false",
-    "CoverRate": "318.76",
-    "Margin": "1.97785040544000000",
-    "ClientRate": "329.59",
-    "TimeToLive": "180",
-    "GIDId": "1",
-    "Comment": "GOLD"
-}
-}
+    {
+        "Data": {
+            "TransactionKey": "a0fd1d96-757b-49e4-adfd-18ce50e7e2cf",
+            "Requester": "XAU-Indicative",
+            "CustomerId": "0000000125176934",
+            "BuyCurrency": "SAR",
+            "SellCurrency": "XA0",
+            "DealtCurrency": "XA0",
+            "DealtQuantity": "100",
+            "DealtAmount": "100",
+            "ContraAmount": "32958.99",
+            "ValueDate": "2025-01-15",
+            "BuyValueDate": "2025-01-15",
+            "SellValueDate": "2025-01-15",
+            "ValueDateChanged": "false",
+            "CoverRate": "318.76",
+            "Margin": "1.97785040544000000",
+            "ClientRate": "329.59",
+            "TimeToLive": "180",
+            "GIDId": "1",
+            "Comment": "GOLD"
+        }
+    }
                </code>
               <code id="response-Indicative-Rate-Inquiry2" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
+        "Errors": [
+            {
             "Code": "ERROR.400.001",
             "Message": "The Data.ARBCIC field is required.",
             "Path": "request.Data.ARBCIC",
             "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+            }
+        ]
     }
 
               </code>
               <code id="response-Indicative-Rate-Inquiry3" style=" display: none; " class="text">
-  {
-  "Errors": [
     {
-      "Code": "ERROR.401.001",
-      "Message": "Unauthorized to call the target operation.",
-      "Path": "authorization",
-      "Url": "https://{baseURL}/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
-  ]
-  }
 
               </code>
 
               <code id="response-Indicative-Rate-Inquiry4" style=" display: none; " class="text">
-  {
-  "Errors": [
     {
-      "Code": "ERROR.403.001",
-      "Message": "Can't find any valid subscription.",
-      "Url": "https://{baseURL}/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
-  ]
-  }
               </code>
 
 
               <code id="response-Indicative-Rate-Inquiry5" style=" display: none; " class="text">
-  {
-  "Errors": [
     {
-      "Code": "ERROR.404.001",
-      "Message": "No resources match requested URI.",
-      "Url": "https://{baseURL}/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
-  ]
-  }
               </code>
 
 
               <code id="response-Indicative-Rate-Inquiry6" style=" display: none; "class="text">
-  {
-  "Errors": [
     {
-      "Code": "ERROR.405.001",
-      "Message": "The method is not allowed for the requested URL.",
-      "Url": "https://{baseURL}/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
-  ]
-  }
 
               </code>
 
 
               <code id="response-Indicative-Rate-Inquiry7" style=" display: none; "class="text">
-  {
-  "Errors": [
     {
-      "Code": "ERROR.406.001",
-      "Message": "An appropriate representation of the requested resource could not be found",
-      "Url": "https://{baseURL}/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
-  ]
-  }
               </code>
 
 
               <code id="response-Indicative-Rate-Inquiry8" style=" display: none; " class="text">
-  {
-  "Errors": [
     {
-      "Code": "ERROR.429.001",
-      "Message": "Assembly Rate Limit exceeded",
-      "Url": "https://{baseURL}/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
-  ]
-  }
               </code>
 
 
               <code id="response-Indicative-Rate-Inquiry9" style=" display: none; " class="text">
-  {
-  "Errors": [
     {
-      "Code": "ERROR.500.001",
-      "Message": "Internal Error",
-      "Url": "https://{baseURL}/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
-  ]
-  }
+              </code>
               <code id="response-Indicative-Rate-Inquiry10" style=" display: none; " class="text">
-  {
-  "Errors": [
     {
-        "Code": "ERROR.503.001",
-        "Message": "Service Unavailable.",
-        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.503.001",
+            "Message": "Service Unavailable.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
     }
-  ]
-  }
               </code>
                     </pre>
 
@@ -565,15 +560,9 @@ Request Body
                                     <p class="fob-welcome-line"></p>
                                     <pre class="example_97 api-guides-example-fob ">
                         <code class="sample-code">
-Header request
-{
-"Accept-Language": "en"
-}
+Query Params:
+    "arbCIC": "0000000125234958"
 
-Query Parameters
-{
-    "arbCIC": "0000000125234958",
-}
                         </code>
                       </pre>
                                 </div>
@@ -624,76 +613,77 @@ Query Parameters
                                         <pre class="response-box">
 
                   <code id="response-List-Customer-Paper-Gold-Wallet" style=" display: block; " class="text">
-{
-"Data": {
-    "CustomerPaperGoldWalletsList": [
-        {
-            "WalletNumber": "GL000000996464",
-            "Status": "1"
+    {
+        "Data": {
+            "CustomerPaperGoldWalletsList": [
+                {
+                    "WalletNumber": "GL000000996464",
+                    "Status": "1"
+                }
+            ]
         }
-    ]
-}
-}
+    }
                   </code>
                  <code id="response-List-Customer-Paper-Gold-Wallet2" style=" display: none; " class="text">
     {
-    "Errors": [
-    {
-        "Code": "ERROR.400.001",
-        "Message": "The arbCIC must be at least 16 characters.",
-        "Path": "request.arbCIC",
-        "Url": "https://{baseURL}/developer-portal/terms"
+        "Errors": [
+            {
+            "Code": "ERROR.400.001",
+            "Message": "The arbCIC must be at least 16 characters.",
+            "Path": "request.arbCIC",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
-    ]
-    }
+                </code>
                  <code id="response-List-Customer-Paper-Gold-Wallet3" style=" display: none; " class="text">
     {
-    "Errors": [
-    {
-      "Code": "ERROR.401.001",
-      "Message": "Unauthorized to call the target operation.",
-      "Path": "authorization",
-      "Url": "https://{baseURL}/developer-portal/terms"
-    }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                   </code>
 
                   <code id="response-List-Customer-Paper-Gold-Wallet4" style=" display: none; " class="text">
     {
-    "Errors": [
-    {
-      "Code": "ERROR.403.001",
-      "Message": "Can't find any valid subscription.",
-      "Url": "https://{baseURL}/developer-portal/terms"
-    }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                   </code>
 
 
                   <code id="response-List-Customer-Paper-Gold-Wallet5" style=" display: none; " class="text">
     {
-    "Errors": [
-    {
-      "Code": "ERROR.404.001",
-      "Message": "No resources match requested URI.",
-      "Url": "https://{baseURL}/developer-portal/terms"
-    }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                   </code>
 
 
                   <code id="response-List-Customer-Paper-Gold-Wallet6" style=" display: none; "class="text">
     {
-    "Errors": [
-    {
-      "Code": "ERROR.405.001",
-      "Message": "The method is not allowed for the requested URL.",
-      "Url": "https://{baseURL}/developer-portal/terms"
-    }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                   </code>
@@ -701,39 +691,39 @@ Query Parameters
 
                   <code id="response-List-Customer-Paper-Gold-Wallet7" style=" display: none; "class="text">
     {
-    "Errors": [
-    {
-      "Code": "ERROR.406.001",
-      "Message": "An appropriate representation of the requested resource could not be found",
-      "Url": "https://{baseURL}/developer-portal/terms"
-    }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                   </code>
 
 
                   <code id="response-List-Customer-Paper-Gold-Wallet8" style=" display: none; " class="text">
     {
-    "Errors": [
-    {
-      "Code": "ERROR.429.001",
-      "Message": "Assembly Rate Limit exceeded",
-      "Url": "https://{baseURL}/developer-portal/terms"
-    }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                   </code>
 
 
                   <code id="response-List-Customer-Paper-Gold-Wallet9" style=" display: none; " class="text">
     {
-    "Errors": [
-    {
-      "Code": "ERROR.500.001",
-      "Message": "Internal Error",
-      "Url": "https://{baseURL}/developer-portal/terms"
-    }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                   </code>
                   <code id="response-List-Customer-Paper-Gold-Wallet10" style=" display: none; " class="text">
@@ -742,7 +732,7 @@ Query Parameters
             {
             "Code": "ERROR.503.001",
             "Message": "Service Unavailable.",
-            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            "Url": "Url": "https://{baseURL}/developer-portal/terms"
             }
         ]
     }
@@ -767,21 +757,16 @@ Query Parameters
                                         <p class="fob-welcome-line"></p>
                                         <pre class="example_97 api-guides-example-fob ">
                                     <code class="sample-code">
-Headers
-{
-"Accept-Language": "en"
-}
-Query Params
-{
-"arbCIC":"0000000125195763",
-"statusID":"4",
-"pageSize":"1000",
-"page":"1"
-}
-Path Params
-{
-"WalletNumber":"GL000000996444",
-}
+
+Query Params:
+    "arbCIC":"0000000125195763"
+    "statusID":"4"
+    "pageSize":"1000"
+    "page":"1
+
+Path Variables:
+    "WalletNumber":"GL000000996444"
+
                                     </code>
                                   </pre>
                                     </div>
@@ -834,95 +819,95 @@ Path Params
                                             <pre class="response-box">
 
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details" style=" display: block; " class="text">
-{
-"Data": {
-    "WalletNumber": "GL000000996444",
-    "WalletStatus": "1",
-    "CommodityType": "1",
-    "DefaultAccount": {
-        "Number": "352000010000100982722",
-        "IBAN": "SA2380300011001100982722"
-    },
-    "FeesAccount": {
-        "Number": "352000010000100982722",
-        "IBAN": "SA2380300011001100982722"
-    },
-    "TotalAmount": "0",
-    "TotalWeight": "0",
-    "WeightType": "Empty",
-    "TotalFreeWeight": "0",
-    "TotalFixedWeight": "0"
-},
-"Links": {
-    "Self": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-gold-wallet/v1/wallets/GL000000996444?arbCIC=0000000125195763&statusId=4&pageSize=1000&page=1"
-},
-"Meta": {
-    "TotalPages": 0
-}
-}
+        {
+            "Data": {
+                "WalletNumber": "GL000000996444",
+                "WalletStatus": "1",
+                "CommodityType": "1",
+                "DefaultAccount": {
+                    "Number": "352000010000100982722",
+                    "IBAN": "SA2380300011001100982722"
+                },
+                "FeesAccount": {
+                    "Number": "352000010000100982722",
+                    "IBAN": "SA2380300011001100982722"
+                },
+                "TotalAmount": "0",
+                "TotalWeight": "0",
+                "WeightType": "Empty",
+                "TotalFreeWeight": "0",
+                "TotalFixedWeight": "0"
+            },
+            "Links": {
+                "Self": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-gold-wallet/v1/wallets/GL000000996444?arbCIC=0000000125195763&statusId=4&pageSize=1000&page=1"
+            },
+            "Meta": {
+                "TotalPages": 0
+            }
+        }
                              </code>
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details2" style=" display: none; " class="text">
         {
-        "Errors": [
-            {
-            "Code": "ERROR.400.001",
-            "Message": "The arbCIC must be at least 16 characters.",
-            "Path": "request.arbCIC",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.400.001",
+                "Message": "The arbCIC must be at least 16 characters.",
+                "Path": "request.arbCIC",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
 
                             </code>
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details3" style=" display: none; " class="text">
         {
-        "Errors": [
-            {
-            "Code": "ERROR.401.001",
-            "Message": "Unauthorized to call the target operation.",
-            "Path": "authorization",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
 
                             </code>
 
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details4" style=" display: none; " class="text">
         {
-        "Errors": [
-            {
-            "Code": "ERROR.403.001",
-            "Message": "Can't find any valid subscription.",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
                             </code>
 
 
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details5" style=" display: none; " class="text">
         {
-        "Errors": [
-            {
-            "Code": "ERROR.404.001",
-            "Message": "No resources match requested URI.",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
                             </code>
 
 
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details6" style=" display: none; "class="text">
         {
-        "Errors": [
-            {
-            "Code": "ERROR.405.001",
-            "Message": "The method is not allowed for the requested URL.",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
 
                             </code>
@@ -930,50 +915,50 @@ Path Params
 
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details7" style=" display: none; "class="text">
         {
-        "Errors": [
-            {
-            "Code": "ERROR.406.001",
-            "Message": "An appropriate representation of the requested resource could not be found",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
                             </code>
 
 
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details8" style=" display: none; " class="text">
         {
-        "Errors": [
-            {
-            "Code": "ERROR.429.001",
-            "Message": "Assembly Rate Limit exceeded",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
                             </code>
 
 
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details9" style=" display: none; " class="text">
         {
-        "Errors": [
-            {
-            "Code": "ERROR.500.001",
-            "Message": "Internal Error",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
                             </code>
                             <code id="response-Get-Customer-Paper-Gold-Wallet-Details10" style=" display: none; " class="text">
         {
-        "Errors": [
-            {
-              "Code": "ERROR.503.001",
-              "Message": "Service Unavailable.",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-            }
-        ]
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Service Unavailable.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
         }
                             </code>
                                   </pre>
@@ -1003,18 +988,12 @@ Path Params
                                             <p class="fob-welcome-line"></p>
                                             <pre class="example_97 api-guides-example-fob ">
                                         <code class="sample-code">
-Headers
-{
-"Accept-Language": "en"
-}
-Query parameters
-{
-"branchId":"12345"
-}
-Path Params
-{
-"CommodityType":"1"
-}
+
+Query Params:
+    "branchId":"12345"
+
+Path Variables:
+    "CommodityType":"1"
                                       </code>
                                       </pre>
                                         </div>
@@ -1067,140 +1046,140 @@ Path Params
                                                 <pre class="response-box">
 
                                 <code id="response-List-Available-Bullions" style=" display: block; " class="text">
-{
-"Data": {
-    "BullionsList": [
-        {
-            "CommodityType": "Gold",
-            "AvailableFreeWeight": "1251117",
-            "FixedBullionsList": [
+    {
+        "Data": {
+            "BullionsList": [
                 {
-                    "Weight": "1000",
-                    "Currency": "XA7"
-                },
-                {
-                    "Weight": "50",
-                    "Currency": "XA4"
+                    "CommodityType": "Gold",
+                    "AvailableFreeWeight": "1251117",
+                    "FixedBullionsList": [
+                        {
+                            "Weight": "1000",
+                            "Currency": "XA7"
+                        },
+                        {
+                            "Weight": "50",
+                            "Currency": "XA4"
+                        }
+                    ]
                 }
             ]
         }
-    ]
-}
-}
+    }
                                  </code>
                                 <code id="response-List-Available-Bullions2" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.400.001",
-        "Message": "Bad Request",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.400.001",
+            "Message": "Bad Request",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                 </code>
                                 <code id="response-List-Available-Bullions3" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.401.001",
-        "Message": "Unauthorized to call the target operation.",
-        "Path": "authorization",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                 </code>
 
                                 <code id="response-List-Available-Bullions4" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.403.001",
-        "Message": "Can't find any valid subscription.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                 </code>
 
 
                                 <code id="response-List-Available-Bullions5" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.404.001",
-        "Message": "No resources match requested URI.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                 </code>
 
 
                                 <code id="response-List-Available-Bullions6" style=" display: none; "class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.405.001",
-        "Message": "The method is not allowed for the requested URL.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                 </code>
 
 
                                 <code id="response-List-Available-Bullions7" style=" display: none; "class="text">
+    {
+        "Errors": [
             {
-            "Errors": [
-                {
-                "Code": "ERROR.406.001",
-                "Message": "An appropriate representation of the requested resource could not be found",
-                "Url": "https://{baseURL}/developer-portal/terms"
-                }
-            ]
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
             }
+        ]
+    }
                                 </code>
 
 
                                 <code id="response-List-Available-Bullions8" style=" display: none; " class="text">
+    {
+        "Errors": [
             {
-            "Errors": [
-                {
-                "Code": "ERROR.429.001",
-                "Message": "Assembly Rate Limit exceeded",
-                "Url": "https://{baseURL}/developer-portal/terms"
-                }
-            ]
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
             }
+        ]
+    }
                                 </code>
 
 
                                 <code id="response-List-Available-Bullions9" style=" display: none; " class="text">
+    {
+        "Errors": [
             {
-            "Errors": [
-                {
-                "Code": "ERROR.500.001",
-                "Message": "Internal Error",
-                "Url": "https://{baseURL}/developer-portal/terms"
-                }
-            ]
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
             }
+        ]
+    }
                                 </code>
                                 <code id="response-List-Available-Bullions10" style=" display: none; " class="text">
+    {
+        "Errors": [
             {
-            "Errors": [
-                {
-                "Code": "ERROR.503.001",
-                "Message": "Service Unavailable.",
-                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                }
-            ]
+            "Code": "ERROR.503.001",
+            "Message": "Service Unavailable.",
+            "Url": "https://{baseURL}/developer-portal/terms"
             }
+        ]
+    }
                                 </code>
                                       </pre>
 
@@ -1224,10 +1203,7 @@ Path Params
                                                 <p class="fob-welcome-line"></p>
                                                 <pre class="example_97 api-guides-example-fob ">
                                             <code class="sample-code">
-Headers
-{
-Accept-Language:”en”
-}
+
 Request Body
 {
     "Data": {
@@ -1356,150 +1332,150 @@ Request Body
                                                     <pre class="response-box">
 
                                     <code id="response-Inquire-Gold-Rates" style=" display: block; " class="text">
-{
-"Data": {
-    "TransactionKey": "6b505ab9-90c4-4aa5-b767-903f48692337",
-    "TransactionId": "6067789",
-    "RequestId": "587bccc8-090a-4d3d-9676-0d5cebf78648",
-    "SourceReferenceNumber": "012345678901234567890",
-    "Rate": "286.52",
-    "SupplierName": "MKS",
-    "TimeToLive": "60",
-    "ContraAmount": "1432.6",
-    "MeasureUnit": "gm",
-    "Remarks": "CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000003048480,TerminalID=,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=5",
-    "Weight": "5",
-    "Quantity": 1,
-    "Purity": "999.9",
-    "GoldSource": "Switzerland"
-}
-}
+    {
+        "Data": {
+            "TransactionKey": "6b505ab9-90c4-4aa5-b767-903f48692337",
+            "TransactionId": "6067789",
+            "RequestId": "587bccc8-090a-4d3d-9676-0d5cebf78648",
+            "SourceReferenceNumber": "012345678901234567890",
+            "Rate": "286.52",
+            "SupplierName": "MKS",
+            "TimeToLive": "60",
+            "ContraAmount": "1432.6",
+            "MeasureUnit": "gm",
+            "Remarks": "CustomerSegment=Staff,TransactionType=,Entity=KSA,Requester=MubasherMobile-Mass,CustomerID=0000000003048480,TerminalID=,SourceSystemID=,Channel=ARB_FINTECH,TellerID=,ExecutingBranch=,Supplier=MKS,Currency=XA0,QTY=5",
+            "Weight": "5",
+            "Quantity": 1,
+            "Purity": "999.9",
+            "GoldSource": "Switzerland"
+        }
+    }
                                      </code>
                                    <code id="response-Inquire-Gold-Rates2" style=" display: none; " class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.400.001",
-                    "Message": "The Data.ARBCIC field is required.",
-                    "Path": "request.Data.ARBCIC",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.400.001",
+            "Message": "The Data.ARBCIC field is required.",
+            "Path": "request.Data.ARBCIC",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
 
                                     </code>
                                    <code id="response-Inquire-Gold-Rates3" style=" display: none; " class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.401.001",
-                    "Message": "Unauthorized to call the target operation.",
-                    "Path": "authorization",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
 
                                     </code>
 
                                     <code id="response-Inquire-Gold-Rates4" style=" display: none; " class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.403.001",
-                    "Message": "Can't find any valid subscription.",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                                     </code>
 
 
                                     <code id="response-Inquire-Gold-Rates5" style=" display: none; " class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.404.001",
-                    "Message": "No resources match requested URI.",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                                     </code>
 
 
                                     <code id="response-Inquire-Gold-Rates6" style=" display: none; "class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.405.001",
-                    "Message": "The method is not allowed for the requested URL.",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
 
                                     </code>
 
 
                                     <code id="response-Inquire-Gold-Rates7" style=" display: none; "class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.406.001",
-                    "Message": "An appropriate representation of the requested resource could not be found",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                                     </code>
 
 
                                     <code id="response-Inquire-Gold-Rates8" style=" display: none; " class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.429.001",
-                    "Message": "Assembly Rate Limit exceeded",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                                     </code>
 
 
                                     <code id="response-Inquire-Gold-Rates9" style=" display: none; " class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.500.001",
-                    "Message": "Internal Error",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                                     </code>
                                     <code id="response-Inquire-Gold-Rates9" style=" display: none; " class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.500.001",
-                    "Message": "Internal Error",
-                    "Url": "https://{baseURL}/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                                     </code>
                                     <code id="response-Inquire-Gold-Rates10" style=" display: none; " class="text">
-                {
-                "Errors": [
-                    {
-                    "Code": "ERROR.503.001",
-                    "Message": "Service Unavailable.",
-                    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                    }
-                ]
-                }
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.503.001",
+            "Message": "Service Unavailable.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
                                     </code>
                                           </pre>
 
@@ -1528,10 +1504,7 @@ Request Body
                                                     <p class="fob-welcome-line"></p>
                                                     <pre class="example_97 api-guides-example-fob ">
                                                 <code class="sample-code">
-Headers
-{
-Accept-Language:”en”
-}
+
 Request Body
 {
     "Data": {
@@ -1632,66 +1605,66 @@ Request Body
                                          </code>
                                        <code id="response-Confirm-Rate2" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.400.001",
-        "Message": "The Data.ETID field is required.",
-        "Path": "request.Data.ETID"
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.400.001",
+            "Message": "The Data.ETID field is required.",
+            "Path": "request.Data.ETID"
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                         </code>
                                        <code id="response-Confirm-Rate3" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.401.001",
-        "Message": "Unauthorized to call the target operation.",
-        "Path": "authorization",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                         </code>
 
                                         <code id="response-Confirm-Rate4" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.403.001",
-        "Message": "Can't find any valid subscription.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
 
 
                                         <code id="response-Confirm-Rate5" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.404.001",
-        "Message": "No resources match requested URI.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
 
 
                                         <code id="response-Confirm-Rate6" style=" display: none; "class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.405.001",
-        "Message": "The method is not allowed for the requested URL.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                         </code>
@@ -1699,50 +1672,50 @@ Request Body
 
                                         <code id="response-Confirm-Rate7" style=" display: none; "class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.406.001",
-        "Message": "An appropriate representation of the requested resource could not be found",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
 
 
                                         <code id="response-Confirm-Rate8" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.429.001",
-        "Message": "Assembly Rate Limit exceeded",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
 
 
                                         <code id="response-Confirm-Rate9" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.500.001",
-        "Message": "Internal Error",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
                                         <code id="response-Confirm-Rate10" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.503.001",
-        "Message": "Service Unavailable.",
-        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.503.001",
+            "Message": "Service Unavailable.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
                                               </pre>
@@ -1773,16 +1746,11 @@ Request Body
                                                         <p class="fob-welcome-line"></p>
                                                         <pre class="example_97 api-guides-example-fob ">
                                                 <code class="sample-code">
-Headers
-{
-"Accept-Language":"en"
-}
-Query parameters
-{
-"fromDate":"2024-01-01",
-"toDate":"2024-10-01",
-"aggregationType":"W"
-}
+
+Query Params:
+    "fromDate":"2024-01-01"
+    "toDate":"2024-10-01"
+    "aggregationType":"W"
                                                 </code>
                                               </pre>
                                                     </div>
@@ -1835,187 +1803,79 @@ Query parameters
                                                             <pre class="response-box">
 
                                         <code id="response-Get-Gold-Rate-History" style=" display: block; " class="text">
-{
-"Data": {
-    "GoldRateHistoryList": [
-        {
-            "Rate": "248.944519230",
-            "RateTimeStamp": "2024-01-01T00:00:00"
-        },
-        {
-            "Rate": "245.879431820",
-            "RateTimeStamp": "2024-01-20T00:00:00"
-        },
-        {
-            "Rate": "245.370208330",
-            "RateTimeStamp": "2024-01-20T00:00:00"
-        },
-        {
-            "Rate": "244.784636360",
-            "RateTimeStamp": "2024-01-20T00:00:00"
-        },
-        {
-            "Rate": "247.990884960",
-            "RateTimeStamp": "2024-01-20T00:00:00"
-        },
-        {
-            "Rate": "246.833484850",
-            "RateTimeStamp": "2024-02-20T00:00:00"
-        },
-        {
-            "Rate": "243.871929820",
-            "RateTimeStamp": "2024-02-20T00:00:00"
-        },
-        {
-            "Rate": "246.491157600",
-            "RateTimeStamp": "2024-02-20T00:00:00"
-        },
-        {
-            "Rate": "245.584423080",
-            "RateTimeStamp": "2024-02-20T00:00:00"
-        },
-        {
-            "Rate": "255.461894270",
-            "RateTimeStamp": "2024-03-20T00:00:00"
-        },
-        {
-            "Rate": "251.282461540",
-            "RateTimeStamp": "2024-04-20T00:00:00"
-        },
-        {
-            "Rate": "226.743425250",
-            "RateTimeStamp": "2024-04-20T00:00:00"
-        },
-        {
-            "Rate": "272.887360340",
-            "RateTimeStamp": "2024-04-20T00:00:00"
-        },
-        {
-            "Rate": "273.473541080",
-            "RateTimeStamp": "2024-04-20T00:00:00"
-        },
-        {
-            "Rate": "281.758718310",
-            "RateTimeStamp": "2024-05-20T00:00:00"
-        },
-        {
-            "Rate": "289.828741260",
-            "RateTimeStamp": "2024-05-20T00:00:00"
-        },
-        {
-            "Rate": "282.967658960",
-            "RateTimeStamp": "2024-05-20T00:00:00"
-        },
-        {
-            "Rate": "283.001594410",
-            "RateTimeStamp": "2024-05-20T00:00:00"
-        },
-        {
-            "Rate": "230.598209790",
-            "RateTimeStamp": "2024-06-20T00:00:00"
-        },
-        {
-            "Rate": "275.571828740",
-            "RateTimeStamp": "2024-06-20T00:00:00"
-        },
-        {
-            "Rate": "223.442215990",
-            "RateTimeStamp": "2024-06-20T00:00:00"
-        },
-        {
-            "Rate": "248.895733330",
-            "RateTimeStamp": "2024-06-20T00:00:00"
-        },
-        {
-            "Rate": "289.997234040",
-            "RateTimeStamp": "2024-07-20T00:00:00"
-        },
-        {
-            "Rate": "267.939272730",
-            "RateTimeStamp": "2024-07-20T00:00:00"
-        },
-        {
-            "Rate": "291.560909090",
-            "RateTimeStamp": "2024-07-20T00:00:00"
-        },
-        {
-            "Rate": "287.707818180",
-            "RateTimeStamp": "2024-07-20T00:00:00"
-        },
-        {
-            "Rate": "227.384528300",
-            "RateTimeStamp": "2024-07-20T00:00:00"
-        },
-        {
-            "Rate": "267.523333330",
-            "RateTimeStamp": "2024-08-20T00:00:00"
+    {
+        "Data": {
+            "GoldRateHistoryList": [
+                {
+                    "Rate": "248.944519230",
+                    "RateTimeStamp": "2024-01-01T00:00:00"
+                }
+            ]
         }
-    ]
-}
-}
+    }
                                          </code>
                                         <code id="response-Get-Gold-Rate-History2" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.400.001",
-        "Message": "The selected aggregationType is invalid.",
-        "Path": "request.aggregationType",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.400.001",
+            "Message": "The selected aggregationType is invalid.",
+            "Path": "request.aggregationType",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                         </code>
                                         <code id="response-Get-Gold-Rate-History3" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.401.001",
-        "Message": "Unauthorized to call the target operation.",
-        "Path": "authorization",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                         </code>
 
                                         <code id="response-Get-Gold-Rate-History4" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.403.001",
-        "Message": "Can't find any valid subscription.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
 
 
                                         <code id="response-Get-Gold-Rate-History5" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.404.001",
-        "Message": "No resources match requested URI.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
 
 
                                         <code id="response-Get-Gold-Rate-History6" style=" display: none; "class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.405.001",
-        "Message": "The method is not allowed for the requested URL.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
 
                                         </code>
@@ -2023,50 +1883,50 @@ Query parameters
 
                                         <code id="response-Get-Gold-Rate-History7" style=" display: none; "class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.406.001",
-        "Message": "An appropriate representation of the requested resource could not be found",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
 
 
                                         <code id="response-Get-Gold-Rate-History8" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.429.001",
-        "Message": "Assembly Rate Limit exceeded",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
 
 
                                         <code id="response-Get-Gold-Rate-History9" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.500.001",
-        "Message": "Internal Error",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
                                         <code id="response-Get-Gold-Rate-History10" style=" display: none; " class="text">
     {
-    "Errors": [
-        {
-        "Code": "ERROR.503.001",
-        "Message": "Service Unavailable.",
-        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"al/terms"
-        }
-    ]
+        "Errors": [
+            {
+            "Code": "ERROR.503.001",
+            "Message": "Service Unavailable.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
     }
                                         </code>
                                               </pre>
@@ -2081,4 +1941,4 @@ Query parameters
                             </div>
                         </div>
                     </div>
-</div>
+                </div>
