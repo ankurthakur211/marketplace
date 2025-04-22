@@ -2317,30 +2317,6 @@ a li:last-child {
     margin-left: 19%;
 }
 
-.single-product-grid-container-img-bank {
-    content: url("images/bank.png");
-    margin-top: 6%;
-    margin-left: 9%;
-}
-
-.single-product-grid-container-img-credit-card {
-    content: url("images/credit-card.png");
-    margin-top: 6%;
-    margin-left: 0%;
-}
-
-.Motor-product-grid-container-img-credit-card {
-    content: url("images/credit-card.png");
-    margin-top: 6%;
-    margin-left: 18%;
-}
-
-.single-product-grid-container-img-avatar {
-    content: url("images/avatar.png");
-    margin-top: 6%;
-    margin-left: 9%;
-}
-
 .single-product-grid-container-img-safebox {
     content: url("images/safebox.png");
     margin-top: 6%;
@@ -3828,7 +3804,7 @@ pre#generatedCurl {
 
 .response-box {
     width: 442px;
-    height: 450px;
+    height: 350px;
     background: #fff;
     color: #1b1712;
     font-size: 12px;
@@ -13576,7 +13552,7 @@ margin-left: 38%; */
     background-size: cover;
     content: none;
     position: unset;
-    padding: 100px 20px;
+    padding: 70px 20px;
     height: 370px;
     display: flex;
     align-items: center;
@@ -13633,13 +13609,6 @@ margin-left: 38%; */
     text-align: left;
 }
 
-.single-product-grid-container-img-bank,
-.single-product-grid-container-img-credit-card,
-.single-product-grid-container-img-avatar {
-    margin-top: unset;
-    margin-left: unset;
-}
-
 .single-product-grid-container-text {
     margin-left: unset;
 }
@@ -13691,14 +13660,6 @@ margin-left: 38%; */
     .single-product-header {
         width: 100%;
         margin-bottom: 20px;
-    }
-
-    .single-product-grid-container-img-bank,
-    .single-product-grid-container-img-credit-card,
-    .single-product-grid-container-img-avatar {
-        margin-top: unset;
-        margin-left: unset;
-        margin: 0 auto;
     }
 
     .single-product-About-product-img {
@@ -18741,11 +18702,11 @@ body.context--BusinessDomains .apicMainContent {
     left: -50px;
     position: relative;
     background-size: contain;
-    padding-bottom: 168px;
+    padding-bottom: 120px;
 }
 
 .product-details-document .api-doc-background .api-doc-background-text {
-    font-size: 64px;
+    font-size: 50px;
     font-weight: bold;
     line-height: 84px;
     margin-left: 90px;
@@ -18754,7 +18715,7 @@ body.context--BusinessDomains .apicMainContent {
 }
 
 .product-details-document .moterinsurance-sec {
-    padding: 65px 60px;
+    padding: 0px 60px;
     background: #eef2fe;
     width: calc(100% + 60px);
     left: -30px;
@@ -18773,31 +18734,41 @@ body.context--BusinessDomains .apicMainContent {
 
 .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-text {
     color: #000;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 26px;
 }
 
 .product-details-document .moterinsurance-sec .rightside-sec {
     width: 50%;
+    display: flex;
+    justify-content: end;
 }
 
 .product-details-document .moterinsurance-sec .rightside-sec .API-image {
     content: url("images/API-image.png");
+    width: 75%;
 }
 
 .product-details-document .moterinsurance-sec .btn-box {
-    margin-top: 30px;
+    margin-top: 0px;
     gap: 44px;
 }
 
 .product-details-document .moterinsurance-sec .btn-box a {
-    font-size: 20px;
-    padding: 18px 42px;
+    background-color: #5464f2;
+    color: white;
+    border: 2px solid #5464f2;
+    padding: 13px;
+    text-align: center;
+    text-decoration: none;
     display: inline-block;
-    background: #5464f2;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 32px;
+    width: 275px;
+    margin-left: 0px;
+    font-weight: lighter;
 }
 
 .product-details-document .moter-insusec {
@@ -18831,7 +18802,7 @@ body.context--BusinessDomains .apicMainContent {
 }
 
 .product-details-document .miw-section .fob-welcome-title {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     color: #3f4773;
     margin: 0;
@@ -18841,23 +18812,25 @@ body.context--BusinessDomains .apicMainContent {
 
 .product-details-document .miw-section .motoinsu-image {
     content: url("images/moter-insu-workimg.png");
-    margin-bottom: 55px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    width: 45%;
 }
 
 .product-details-document .miw-section a {
-    background: #5464f2;
-    border: 2px solid #5464f2;
-    font-size: 20px;
-    font-weight: 700;
-    color: #ffffff;
-    padding: 5px 55px;
-    border-radius: 50px;
     margin: 0 auto;
     display: block;
-    width: fit-content;
-    line-height: 53px;
+    background-color: #5464f2;
+    color: white;
+    border: 2px solid #5464f2;
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 32px;
+    width: 170px;
 }
 
 .product-details-document .APIs-section {
@@ -18865,9 +18838,9 @@ body.context--BusinessDomains .apicMainContent {
 }
 
 .product-details-document .APIs-section .main-heading {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 35px;
+    font-size: 40px;
     color: #3f4773;
     font-weight: 700;
     line-height: unset;
@@ -18879,7 +18852,7 @@ body.context--BusinessDomains .apicMainContent {
 .product-details-document .APIs-section .main-heading::before {
     content: "";
     width: calc(50% - 140px);
-    height: 16px;
+    height: 10px;
     background: #0d1e78;
     border-radius: 10px;
     position: absolute;
@@ -18890,7 +18863,7 @@ body.context--BusinessDomains .apicMainContent {
 .product-details-document .APIs-section .main-heading::after {
     content: "";
     width: calc(50% - 140px);
-    height: 16px;
+    height: 10px;
     background: #0d1e78;
     border-radius: 10px;
     position: absolute;
@@ -18899,9 +18872,9 @@ body.context--BusinessDomains .apicMainContent {
 }
 
 .api-infosec {
-    padding-bottom: 60px;
+    padding-bottom: 25px;
     border-bottom: 5px solid #5464f2;
-    margin-bottom: 60px;
+    margin-bottom: 25px;
 }
 
 .api-infosec:last-child {
@@ -18915,17 +18888,17 @@ body.context--BusinessDomains .apicMainContent {
 }
 
 .api-infosec .fob-welcome-title {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
     color: #5b4ca9;
-    margin-bottom: 34px;
+    margin-bottom: 15px;
 }
 
 .api-infosec .fob-welcome-text {
-    font-size: 25px;
+    font-size: 16px;
     color: #000000;
-    margin-bottom: 10px;
-    line-height: 44px;
+    margin-bottom: 5px;
+    line-height: 23px;
 }
 
 .api-infosec .fob-welcome-text a {
@@ -18937,8 +18910,8 @@ body.context--BusinessDomains .apicMainContent {
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
-    margin-top: 70px;
-    margin-bottom: 55px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .api-infosec .requestURL-box .request-box {
@@ -18947,9 +18920,9 @@ body.context--BusinessDomains .apicMainContent {
 
 .api-infosec .requestURL-box .request-box .fob-welcome-title {
     font-size: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #5464f2;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-top: 0;
 }
 
@@ -18960,8 +18933,8 @@ body.context--BusinessDomains .apicMainContent {
 .api-infosec .requestURL-box .request-box .api-guides-example-fob {
     background: #eef2fe;
     padding: 20px 45px;
-    min-height: 497px;
-    max-height: 497px;
+    min-height: 350px;
+    max-height: 350px;
 }
 
 .api-infosec .requestURL-box .request-box .api-guides-example-fob .sample-code {
@@ -18984,9 +18957,9 @@ body.context--BusinessDomains .apicMainContent {
     font-size: 25px;
     font-weight: 700;
     color: #5b4ca9;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #5464f2;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: left;
     line-height: 53px;
 }
@@ -18996,8 +18969,8 @@ body.context--BusinessDomains .apicMainContent {
     border: none;
     padding: 0 45px;
     border-radius: 20px;
-    min-height: 497px;
-    max-height: 497px;
+    min-height: 350px;
+    max-height: 350px;
 }
 
 .api-infosec .requestURL-box .url-box pre code {
@@ -19014,8 +18987,8 @@ body.context--BusinessDomains .apicMainContent {
     font-weight: 700;
     text-align: center;
     position: relative;
-    padding-bottom: 25px;
-    margin-bottom: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .api-infosec .response-outterbox .innerbox .code-box .api-doc-small-gray-box-api-document::before {
@@ -19037,13 +19010,14 @@ body.context--BusinessDomains .apicMainContent {
 
 .api-infosec .response-outterbox .innerbox .code-box .response-box-div a {
     margin: 0;
-    padding: 16px 37px;
+    padding: 12px 40px;
     background: transparent;
     border-radius: 20px;
     color: #ffffff;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     display: inline-block;
+    cursor: pointer;
 }
 
 .api-infosec .response-outterbox .innerbox .code-box .response-box-div a.active {
@@ -19061,7 +19035,7 @@ body.context--BusinessDomains .apicMainContent {
     color: #000000;
     font-weight: 300;
     line-height: 33.4px;
-    padding: 40px 80px;
+    padding: 10px 80px;
 }
 
 .product-details-document .api-doc-background {
@@ -19089,6 +19063,142 @@ body.context--BusinessDomains .apicMainContent {
 .product-details-document.categorize-page .APIs-section {
     padding-top: 0;
 }
+
+
+
+
+/*21 april*/
+
+.product-details-document .moterinsurance-sec {
+    padding-bottom: 30px;
+  }
+  .product-details-document .moterinsurance-sec .btn-box {
+    align-items: center;
+    margin-top: 30px;
+  }
+  .product-details-document .moterinsurance-sec .btn-box a {
+    width: auto;
+  }
+  .product-details-document .miw-section {
+    background: #f7f9ff !important;
+    padding: 30px 60px;
+  }
+  .product-details-document .miw-section a {
+    padding: 13px;
+    width: fit-content;
+    line-height: unset;
+    margin-top: 20px;
+  }
+  .product-details-document .miw-section:nth-child(even) {
+    background: #eef2fe !important;
+  }
+  .product-details-document .APIs-section {
+    padding: 60px 40px !important;
+  }
+  @media (max-width: 991px) {
+    .product-details-document .api-doc-background {
+      background-size: cover !important;
+      left: -70px;
+    }
+    .product-details-document .api-doc-background .api-doc-background-text {
+      text-align: left;
+      margin-top: 40px;
+    }
+    .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-title,
+    .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-text {
+      text-align: left;
+    }
+    .product-details-document .moterinsurance-sec .rightside-sec .API-image {
+      width: 100%;
+    }
+    .product-details-document .moterinsurance-sec .btn-box {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .product-details-document .moterinsurance-sec .btn-box a {
+      width: auto;
+      margin: 0;
+    }
+    .product-details-document .api-infosec .requestURL-box {
+      gap: 40px;
+    }
+    .product-details-document .api-infosec .requestURL-box .url-box {
+      width: calc(40% - 0px);
+    }
+  }
+  @media (max-width: 767px) {
+    .product-details-document .moterinsurance-sec .d-flex {
+      flex-direction: column-reverse;
+    }
+    .product-details-document .moterinsurance-sec .leftside-sec {
+      width: 100%;
+    }
+    .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-title,
+    .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-text {
+      text-align: center;
+    }
+    .product-details-document .moterinsurance-sec .rightside-sec {
+      width: 100%;
+      justify-content: center;
+    }
+    .product-details-document .moterinsurance-sec .rightside-sec .API-image {
+      width: 90%;
+    }
+    .product-details-document .miw-section .motoinsu-image {
+      width: 90%;
+    }
+    .product-details-document .api-infosec .requestURL-box {
+      gap: 40px;
+    }
+    .product-details-document .api-infosec .requestURL-box .request-box,
+    .product-details-document .api-infosec .requestURL-box .url-box {
+      width: 100%;
+    }
+    .product-details-document .api-infosec .response-outterbox .response-box {
+      height: 520px;
+    }
+    .product-details-document .api-infosec .response-outterbox .response-box code {
+      top: 110px !important;
+    }
+  }
+  @media (max-width: 576px) {
+    .product-details-document .moterinsurance-sec,
+    .product-details-document .miw-section,
+    .product-details-document .APIs-section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .product-details-document .api-doc-background {
+      margin-top: 80px;
+    }
+    .product-details-document .api-doc-background .api-doc-background-text {
+      font-size: 40px;
+      line-height: 64px;
+    }
+    .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-title {
+      font-size: 35px;
+    }
+    .product-details-document .moterinsurance-sec .btn-box a {
+      line-height: 30px !important;
+      border-radius: 50px;
+    }
+    .product-details-document .miw-section .motoinsu-image {
+      width: 100%;
+    }
+    .product-details-document .miw-section .fob-welcome-title {
+      font-size: 35px;
+    }
+    .product-details-document .api-infosec .requestURL-box .request-box .api-guides-example-fob {
+      min-height: 250px;
+      max-height: 250px;
+    }
+    .product-details-document .api-infosec .response-outterbox .response-box {
+      height: 700px;
+    }
+    .product-details-document .api-infosec .response-outterbox .response-box code {
+      top: 180px !important;
+    }
+  }
 
 
 /*# sourceMappingURL=demo.css.map */
@@ -20786,7 +20896,7 @@ form#user-login-form input {
     margin: auto;
     width: fit-content;
     margin-bottom: 40px;
-    font-size: 70px;
+    font-size: 60px;
     line-height: 75px;
 }
 
@@ -20830,7 +20940,7 @@ form#user-login-form input {
 }
 
 .product-doc-content .single-product-About-product-title {
-    font-size: 60px;
+    font-size: 50px;
     color: #2a2a2a;
     font-weight: bold;
     margin-top: 5%;
@@ -20840,7 +20950,7 @@ form#user-login-form input {
     font-size: 18px;
     font-weight: 600;
     color: #5464F2;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .product-doc-content .single-product-Key-product-img {
@@ -20861,7 +20971,7 @@ form#user-login-form input {
 }
 
 .product-doc-content .single-product-Expose-API-title {
-    font-size: 60px;
+    font-size: 50px;
     color: #2a2a2a;
     font-weight: bold;
     line-height: 65px;
@@ -20869,7 +20979,7 @@ form#user-login-form input {
 }
 
 .product-doc-content .single-product-Expose-API-self-title {
-    font-size: 60px;
+    font-size: 50px;
     color: #2a2a2a;
     font-weight: 900;
     line-height: 65px;
@@ -20879,15 +20989,15 @@ form#user-login-form input {
 .product-doc-content .single-product-Expose-API-image {
     content: url("images/expose-img.png");
     width: 40%;
-    position: absolute;
-    right: 10%;
+    position: relative;
+    top: -50px;
 }
 
 .product-doc-content .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 10px;
-    margin-top: 80px;
+    margin-top: 10px;
     grid-auto-rows: 1fr;
     gap: 55px;
 }
@@ -20918,11 +21028,12 @@ form#user-login-form input {
 }
 
 .product-doc-content .single-product-img {
+    content: url("images/API.png");
     margin: auto;
 }
 
 .product-doc-content .single-product-Expose-API-self-title {
-    font-size: 60px;
+    font-size: 50px;
     color: #2a2a2a;
     font-weight: 900;
     line-height: 60px;
@@ -20950,7 +21061,7 @@ form#user-login-form input {
     margin: 4px 5px;
     cursor: pointer;
     border-radius: 32px;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 270px;
 }
 
@@ -20966,17 +21077,17 @@ form#user-login-form input {
     margin: 4px 5px;
     cursor: pointer;
     border-radius: 32px;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 270px;
 }
 
 .product-doc-content .Customer-product-doc-product-img {
     content: url("images/product-documentation.png");
     position: relative;
-    width: 50%;
+    width: 40%;
     margin: auto;
-    margin-top: 25px;
-    padding-bottom: 40px;
+    margin-top: 0px;
+    padding-bottom: 20px;
 }
 
 .product-doc-content .product-documentation {
@@ -20998,10 +21109,16 @@ form#user-login-form input {
 }
 
 .product-doc-content .single-product-header-image {
-    width: 100%;
     height: 12%;
     border-radius: 10px;
     margin-top: 2%;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    justify-content: center;
 }
 
 @media screen and (max-width: 995px) {
@@ -21009,6 +21126,7 @@ form#user-login-form input {
         content: url("images/expose-img.png");
         width: 40%;
         position: relative;
+        top: -50px;
         margin: auto;
         margin-top: 20px;
     }
@@ -21016,7 +21134,8 @@ form#user-login-form input {
 
 @media screen and (max-width: 1100px) {
     .product-doc-content .single-product-header-image {
-        width: 100%;
+        width: 100vw !important;
+        max-width: 100vw !important;
         border-radius: 10px;
         margin-top: 4%;
     }
@@ -21024,7 +21143,8 @@ form#user-login-form input {
 
 @media screen and (max-width: 640px) {
     .product-doc-content .single-product-header-image {
-        width: 100%;
+        width: 100vw !important;
+        max-width: 100vw !important;
         border-radius: 10px;
         margin-top: 12%;
     }
@@ -21047,6 +21167,33 @@ form#user-login-form input {
         margin: auto;
         margin-top: unset;
     }
+}
+
+@media screen and (max-width: 995px) {
+    .product-doc-content .grid-container {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       padding: 10px;
+       margin-top: 10px;
+       grid-auto-rows: 1fr;
+       gap: 55px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .product-doc-content .grid-container {
+       display: grid;
+       grid-template-columns: repeat(1, 1fr);
+       padding: 10px;
+       margin-top: 10px;
+       grid-auto-rows: 1fr;
+       gap: 55px;
+    }  
+}
+
+.product-doc-content .expose-apis .col-md-7 {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* Janet Product Documentation Page Design */
