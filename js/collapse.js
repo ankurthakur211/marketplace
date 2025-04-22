@@ -439,11 +439,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // ✅ Apply margin and padding to h1.page-header
-        const h1Header = document.querySelector("h1.page-header");
-        if (h1Header) {
-            h1Header.style.margin = "0 2rem";
-            h1Header.style.padding = "1rem 0rem";
-        }
+        // const h1Header = document.querySelector("h1.page-header");
+        // if (h1Header) {
+        //     h1Header.style.margin = "0 2rem";
+        //     h1Header.style.padding = "1rem 0rem";
+        // }
     }
 });
 
