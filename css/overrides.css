@@ -6007,12 +6007,10 @@ body {
 /* For tablets and larger devices */
 
 @media (max-width: 992px) {
-
     .container,
     .navbar {
         padding: 0 15px;
     }
-
     .about-us-header,
     .about-us-content,
     .accelarate-your-business-search-header,
@@ -6021,7 +6019,6 @@ body {
         font-size: 20px;
         /* Slightly smaller font size */
     }
-
     .about-us-text,
     .accelarate-your-business-search-text,
     .accelarate-your-business-api-text,
@@ -6029,13 +6026,11 @@ body {
         font-size: 14px;
         /* Smaller text for readability */
     }
-
     .col-md-6 {
         flex: 0 0 100%;
         /* Make all columns full width */
         max-width: 100%;
     }
-
     .about-us-image,
     .about-us-tech-image,
     .about-us-inspiring-image {
@@ -6044,7 +6039,6 @@ body {
         height: auto;
         /* Maintain aspect ratio */
     }
-
     .lets-get-started-button,
     .lets-get-started-Expert-button {
         width: 100%;
@@ -6052,7 +6046,6 @@ body {
         margin-bottom: 10px;
         /* Space between buttons */
     }
-
     .about-us-inspiring-image {
         position: relative;
         left: 0;
@@ -6067,12 +6060,10 @@ body {
         flex-direction: column;
         /* Stack navbar items vertically */
     }
-
     .about-us-inspiring-image {
         position: relative;
         left: 0;
     }
-
     .navbar a {
         display: block;
         /* Full width links */
@@ -6081,23 +6072,19 @@ body {
         padding: 10px;
         /* Larger padding for easier tapping */
     }
-
     .navbar-right {
         flex-direction: column;
         width: 100%;
     }
-
     .about-us-header,
     .about-us-content {
         text-align: center;
         /* Center text for better presentation on small screens */
     }
-
     .about-us-get-started-background {
         padding: 20px;
         /* More padding for smaller screens */
     }
-
     .about-us-lets-get-started-header,
     .about-us-lets-get-started-text {
         text-align: center;
@@ -7765,7 +7752,6 @@ height: fit-content;
     .api-guides-vertical-menu {
         padding-top: 84px;
     }
-
     .api-guides-vertical-menu a {
         font-size: 18px;
     }
@@ -11020,11 +11006,9 @@ section#block-marketplace-new-searchicon {
     .justify-content-md-center {
         justify-content: center !important;
     }
-
     .justify-content-md-start {
         justify-content: left !important;
     }
-
     .justify-content-md-end {
         justify-content: right !important;
     }
@@ -11034,11 +11018,9 @@ section#block-marketplace-new-searchicon {
     .justify-content-lg-center {
         justify-content: center !important;
     }
-
     .justify-content-lg-start {
         justify-content: left !important;
     }
-
     .justify-content-lg-end {
         justify-content: right !important;
     }
@@ -11048,11 +11030,9 @@ section#block-marketplace-new-searchicon {
     .justify-content-xl-center {
         justify-content: center !important;
     }
-
     .justify-content-xl-start {
         justify-content: left !important;
     }
-
     .justify-content-xl-end {
         justify-content: right !important;
     }
@@ -11184,16 +11164,13 @@ width: 35%;
     .banner-sec .flex {
         flex-direction: column;
     }
-
     .row.flex {
         flex-direction: column !important;
     }
-
     .how-itworks-sec .How_to_get_started_discover {
         width: 100%;
         margin-bottom: 20px;
     }
-
     .api-position {
         padding-left: unset;
     }
@@ -11278,7 +11255,6 @@ div#apic-view-filter {
     .bx--global-light-ui .views-exposed-form .form-item {
         width: 41%;
     }
-
     .bx--global-light-ui .form-actions {
         justify-content: start;
         width: 41%;
@@ -11289,35 +11265,28 @@ div#apic-view-filter {
     div#apic-view-filter {
         gap: 20px;
     }
-
     .bx--global-light-ui .views-exposed-form .form-item input,
     .bx--global-light-ui .views-exposed-form .form-item input {
         max-width: 100%;
         width: 100%;
     }
-
     .bx--global-light-ui .views-exposed-form .form-item {
         width: 100%;
     }
-
     .bx--global-light-ui .views-exposed-form .form-item .input-group {
         width: 100%;
     }
-
     .bx--global-light-ui .form-actions {
         display: flex;
         justify-content: center;
         width: 100%;
     }
-
     .form-inline .select-wrapper {
         width: 100%;
     }
-
     input#edit-search-api-fulltext {
         z-index: 1;
     }
-
     .bx--global-light-ui .views-exposed-form .input-group-addon {
         background-color: unset;
         border: 0;
@@ -11326,7 +11295,6 @@ div#apic-view-filter {
         top: 4px;
         z-index: 2;
     }
-
     select[multiple],
     select[size] {
         height: 4.5em;
@@ -11334,11 +11302,9 @@ div#apic-view-filter {
         border: none;
         border-bottom: 1px solid #8d8d8d;
     }
-
     #apic-view-filter button {
         width: 100%;
     }
-
     .bx--global-light-ui .views-exposed-form {
         padding: 50px;
     }
@@ -11616,7 +11582,6 @@ font-size: 20px;
     .home-accelarting-left-button {
         width: 31%;
     }
-
     .lets-get-started-button-text {
         width: 50%;
     }
@@ -11626,145 +11591,114 @@ font-size: 20px;
     .what-newsec .How_to_get_started_discover {
         margin-bottom: 30px;
     }
-
     .what-newsec {
         padding: 40px 0;
     }
-
     .row.flex.no-column {
         flex-direction: row !important;
     }
-
     .how-itworks-sec .How_to_get_started_develop {
         margin-bottom: 20px;
     }
-
     .welcome-text,
     .welcome-header,
     .welcome-content {
         padding-left: unset;
         text-align: center;
     }
-
     .updated-home-expose .expose-image {
         margin-bottom: 30px;
     }
-
     .expose-header {
         text-align: center;
     }
-
     .updated-home-expose .expose-content {
         text-align: center;
         margin-top: 0;
     }
-
     .updated-home-expose .expose-text {
         text-align: center;
         width: 100%;
     }
-
     .how-itworks-sec {
         padding: 50px 0;
     }
-
     .updated-verified-API {
         padding: 50px 0;
     }
-
     .updated-verified-API .verified-documentation-header {
         text-align: center;
     }
-
     .updated-verified-API .verified-documentation-content {
         margin-top: 0;
         text-align: center;
     }
-
     .updated-verified-API .verified-documentation-text {
         text-align: center;
     }
-
     .verified-documentation {
         text-align: center;
         width: 100%;
         margin-bottom: 30px;
     }
-
     .updated-home-expose2 .cross-selling-image {
         margin-bottom: 30px;
     }
-
     .updated-home-expose2 .cross-selling-header {
         text-align: center;
     }
-
     .updated-home-expose2 .expose-content {
         margin-top: 0px;
         text-align: center;
     }
-
     .updated-home-expose2 .expose-text {
         padding-left: unset;
         width: 100%;
         text-align: center;
     }
-
     .updated-home-expose2 .cross-selling-button {
         display: block;
         margin: 0 auto;
         margin-top: 20px;
     }
-
     .updated-home-expose .expose-button {
         margin: 0 auto !important;
         margin-top: 20px !important;
         display: block;
     }
-
     .updated-sec.home-accelarate-your-business {
         padding-top: 0;
     }
-
     .updated-sec.home-accelarate-your-business .img-box {
         width: 170px;
     }
-
     .updated-home-expose2 {
         padding-bottom: 30px;
     }
-
     .accelarate-imgbox {
         margin-bottom: 20px;
     }
-
     .accelarate-dev-sec .home-accelarting-header,
     .accelarate-dev-sec .home-accelarting-title {
         text-align: center;
     }
-
     .accelarate-dev-sec .home-accelarting-title {
         line-height: 51px;
         margin-bottom: 20px;
     }
-
     .accelarate-dev-sec .home-accelarting-contact {
         text-align: center;
         padding-top: 20px;
     }
-
     .home-accelarting-li {
         width: 100%;
     }
-
     .home-accelarting-li-text {
         text-align: center;
     }
-
     .home-lets-get-started-background.updated-sec {
         padding: 80px 0;
     }
-
     .lets-get-started-button-text {
         width: 50%;
     }
@@ -11775,22 +11709,18 @@ font-size: 20px;
         font-size: 44px;
         margin-bottom: 30px;
     }
-
     .white-spaceget-start {
         display: none;
     }
-
     .lets-get-started-button,
     .lets-get-started-Expert-button,
     .home-accelarting-left-button {
         height: 50px;
         padding: 10px;
     }
-
     .home-accelarting-left-button {
         width: 42%;
     }
-
     .accelarate-dev-sec #text1 {
         padding: 20px;
         width: 100%;
@@ -11798,7 +11728,6 @@ font-size: 20px;
         text-align: center;
         align-items: center;
     }
-
     .accelarate-dev-sec .home-accelarting-image {
         margin-bottom: 0;
     }
@@ -11808,125 +11737,96 @@ font-size: 20px;
     .accelarate-dev-sec #text1 .home-accelarting-blue-box-text {
         font-size: 18px;
     }
-
     .accelarate-dev-sec #text1 a {
         color: #fff;
         font-size: 16px;
     }
-
     .home-accelarting-li-text {
         font-size: 20px;
     }
-
     .home-accelarting-contact {
         font-size: 18px;
     }
-
     .home-accelarting-left-button {
         width: 51%;
     }
-
     .home-whats-new {
         font-size: 40px;
     }
-
     .home-whats-new-header {
         font-size: 18px;
     }
-
     .home-whats-new-card {
         height: 100%;
     }
-
     .How_to_get_started_develop,
     .How_to_get_started_discover {
         height: 289px;
     }
-
     .what-newsec {
         padding: 20px 0;
     }
-
     .welcome-text {
         font-size: 44px;
         line-height: 67px;
     }
-
     .welcome-content {
         font-size: 18px;
     }
-
     .why-us-head {
         font-size: 40px;
     }
-
     .Api-reason {
         font-size: 18px;
     }
-
     .how-itworks-sec .How_to_get_started_Discover_victor,
     .How_to_get_started_Develop_victor,
     .How_to_get_started_Deploy_victor {
         width: 60px;
     }
-
     .expose-content {
         line-height: 47px;
     }
-
     .expose-text {
         line-height: 35px;
     }
-
     .updated-home-expose .expose-button {
         width: 31% !important;
     }
-
     .verified-documentation-text {
         line-height: 33px;
     }
-
     .updated-home-expose2 .cross-selling-button {
         width: 36%;
     }
-
     .updated-sec.home-accelarate-your-business .img-box {
         width: 135px;
     }
-
     .updated-sec .accelarate-your-business-ARB-tower-header {
         margin-bottom: 20px;
     }
-
     .accelarate-your-business-ARB-tower-text {
         line-height: 34px;
     }
-
     .updated-sec .accelarate-your-business-ARB-tower-background {
         padding: 39px 50px;
     }
-
     .accelarate-dev-sec {
         padding: 27px 0;
     }
-
     .How_to_get_started_discover,
     .How_to_get_started_develop {
         height: 244px;
     }
-
     .home-lets-get-started-background.updated-sec {
         padding: 40px 0;
     }
-
     .home-lets-get-started-header {
         font-size: 39px;
     }
-
     .home-lets-get-started-text {
         margin-bottom: 20px;
     }
-
     .lets-get-started-button-text {
         width: 70%;
     }
@@ -12025,45 +11925,35 @@ footer::before {
         display: block;
         margin: 0 auto;
     }
-
     .home-footer.home-footersec .full-width {
         align-items: center;
     }
-
     .home-footer-contactus-header {
         justify-content: center;
     }
-
     .home-footer-contactus-text {
         text-align: center;
     }
-
     .home-footer-contactus-header-findus {
         justify-content: center;
     }
-
     .contactBox-content-black {
         width: 100%;
     }
-
     .home-footer-col {
         width: 100%;
         left: unset;
     }
-
     .contactBox-head-black {
         justify-content: center;
     }
-
     .contactBox-content-black {
         width: 100%;
         text-align: center;
     }
-
     .home-footer.home-footersec .home-footer-copy {
         text-align: center;
     }
-
     .what-newsec .How_to_get_started_develop,
     .what-newsec .How_to_get_started_discover {
         margin-bottom: 30px;
@@ -12303,49 +12193,40 @@ justify-content: space-between; */
 }
 
 @media (max-width: 991px) {
-
     .Customer-Fast-image-one,
     .api-guides-example-fob,
     .Customer-Fast-image-two,
     .Customer-Fast-image-three {
         margin-bottom: 30px !important;
     }
-
     .api-guides-vertical-menu {
         width: 100%;
         text-align: center;
     }
-
     .api-doc-background-text {
         margin-left: 0;
         width: 100%;
         text-align: center;
     }
-
     .api-doc-field-Search {
         margin-left: unset !important;
         margin-top: 40px;
     }
-
     #searchbar {
         margin-left: unset;
     }
-
     .fob-welcome-title,
     .fob-welcome-text {
         text-align: center;
     }
-
     .fob-welcome-line {
         margin: 0 auto;
     }
-
     .fob-product-title-click {
         margin: 0 auto;
         display: block;
         text-align: center;
     }
-
     .api-guides-noList {
         margin-left: 151px;
     }
@@ -12512,38 +12393,31 @@ justify-content: space-between; */
     .row.flex.md-column {
         flex-direction: row !important;
     }
-
     .Products-business-menu {
         margin-top: 20px;
     }
-
     .Products-business-question-text {
         width: 100%;
         height: auto;
         text-align: center;
     }
-
     .Products-business-question-header {
         width: 100%;
         height: 23px;
         text-align: center;
     }
-
     .Products-business-button {
         padding: 8px 30px !important;
         width: fit-content !important;
         margin: 0 auto !important;
         display: block !important;
     }
-
     .Products-business-api-image {
         margin-top: 30px;
     }
-
     .Products-business-api-header {
         text-align: center;
     }
-
     .Products-business-api-text {
         text-align: center;
     }
@@ -12554,26 +12428,21 @@ justify-content: space-between; */
         flex-direction: column !important;
         align-items: unset !important;
     }
-
     .Products-business-title {
         text-align: center;
     }
-
     .Products-business-card-header {
         text-align: center;
         width: 100%;
     }
-
     .Products-business-desc {
         margin-top: 20px;
         text-align: center;
     }
-
     .Products-business-card-link {
         margin: 0 auto;
         display: block;
     }
-
     .Products-business-all-card {
         grid-row-gap: 21px;
     }
@@ -12665,50 +12534,40 @@ justify-content: space-between; */
     .accelarate-your-business-card {
         padding-left: unset;
     }
-
     .accelarate-your-business-search-header,
     .accelarate-your-business-api-header,
     .accelarate-your-business-diagram-header {
         margin-left: 0;
     }
-
     .accelarate-your-business-search-text,
     .accelarate-your-business-api-text,
     .accelarate-your-business-diagram-text {
         margin-left: 0;
     }
-
     .about-us-tech-image {
         display: none;
     }
-
     .lets-get-started-button,
     .lets-get-started-Expert-button {
         width: fit-content;
         line-height: normal;
     }
-
     .about-us-get-started-button-text {
         width: 100%;
     }
-
     .about-us-lets-get-started-header {
         font-size: 50px;
     }
-
     .about-us-lets-get-started-background {
         padding: 30px 0;
     }
-
     .about-us-lets-get-started-header {
         margin-top: 0;
     }
-
     .about-us-header {
         margin-top: 20px;
         text-align: center;
     }
-
     .about-us-header,
     .about-us-content,
     .accelarate-your-business-search-header,
@@ -12717,27 +12576,22 @@ justify-content: space-between; */
         font-size: 20px;
         text-align: center;
     }
-
     .accelarate-your-business-card {
         width: 100%;
     }
-
     .about-us-text {
         text-align: center;
     }
-
     .about-us-get-started-button-text {
         flex-wrap: wrap;
         gap: 10px;
     }
-
     .lets-get-started-button,
     .lets-get-started-Expert-button,
     .home-accelarting-left-button {
         height: unset;
         margin: 0;
     }
-
     .about-us-get-started-button-text {
         margin-top: 20px;
     }
@@ -12747,7 +12601,6 @@ justify-content: space-between; */
     .about-us-inspiring-image {
         margin-top: 50px;
     }
-
     .about-block-3 {
         padding-top: 0;
     }
@@ -12814,7 +12667,6 @@ article.contextual-region {
 }
 
 @media (max-width: 1399px) {
-
     #page-node-title,
     h2#node-50-title,
     h2#node-26-title {
@@ -12847,16 +12699,13 @@ article.contextual-region {
     .row.flex.xl {
         flex-direction: column !important;
     }
-
     .get-started-field,
     .get-started-field-button {
         width: 70%;
     }
-
     .get-started-field-button {
         width: 70%;
     }
-
     .get-started-div {
         padding-bottom: 2%;
     }
@@ -12905,24 +12754,20 @@ h1.js-quickedit-page-title.page-header {
         flex-direction: column;
         gap: 30px;
     }
-
     form#contact-message-feedback-form input#edit-mail,
     form#contact-message-feedback-form input#edit-name,
     form#contact-message-feedback-form input#edit-subject-0-value,
     form#contact-message-feedback-form input#edit-captcha-response {
         width: 100%;
     }
-
     textarea#edit-message-0-value {
         width: 100%;
     }
-
     form#contact-message-feedback-form {
         margin-right: unset;
         width: 100%;
         max-width: 828px;
     }
-
     #contact-feedback-form::before {
         max-width: 100%;
         overflow: hidden;
@@ -13058,7 +12903,6 @@ margin-bottom: 2%; */
         margin-left: 0 !important;
         padding-top: 0 !important;
     }
-
     .get-started-img {
         content: url("images/get started.png");
         margin-left: 8.5%;
@@ -13071,7 +12915,6 @@ margin-bottom: 2%; */
         width: 56%;
         margin-top: 5%;
     }
-
     .get-started-header {
         font-size: 32px;
         font-weight: 700;
@@ -13090,7 +12933,6 @@ margin-bottom: 2%; */
         line-height: 71%;
         color: #2a2a2a;
     }
-
     .get-started-div {
         display: flex;
         flex-direction: column;
@@ -13099,7 +12941,6 @@ margin-bottom: 2%; */
         text-align: center;
         padding-bottom: 9%;
     }
-
     .submitting-button {
         display: flex;
         flex-direction: column;
@@ -13108,7 +12949,6 @@ margin-bottom: 2%; */
         text-align: center;
         padding-bottom: 2%;
     }
-
     .get-started-field-button {
         background-color: #556ff8;
         color: white;
@@ -13126,7 +12966,6 @@ margin-bottom: 2%; */
         padding-left: 3%;
         border-radius: 20px;
     }
-
     .sign-up-starting {
         padding-top: 67px;
         /* padding-bottom: 2%; */
@@ -13174,7 +13013,6 @@ margin-bottom: 2%; */
         margin-left: 0 !important;
         padding-top: 0 !important;
     }
-
     .get-started-img {
         content: url("images/get started.png");
         margin-left: 8.5%;
@@ -13187,7 +13025,6 @@ margin-bottom: 2%; */
         width: 56%;
         margin-top: 5%;
     }
-
     .get-started-header {
         font-size: 32px;
         font-weight: 700;
@@ -13206,7 +13043,6 @@ margin-bottom: 2%; */
         line-height: 71%;
         color: #2a2a2a;
     }
-
     .get-started-div {
         display: flex;
         flex-direction: column;
@@ -13215,7 +13051,6 @@ margin-bottom: 2%; */
         text-align: center;
         padding-bottom: 9%;
     }
-
     .submitting-button {
         display: flex;
         flex-direction: column;
@@ -13224,7 +13059,6 @@ margin-bottom: 2%; */
         text-align: center;
         padding-bottom: 2%;
     }
-
     .get-started-field-button {
         background-color: #556ff8;
         color: white;
@@ -13242,7 +13076,6 @@ margin-bottom: 2%; */
         padding-left: 3%;
         border-radius: 20px;
     }
-
     .sign-up-starting {
         padding-top: 67px;
         /* padding-bottom: 2%; */
@@ -13309,7 +13142,6 @@ width: auto;
 }
 
 @media (max-width: 991px) {
-
     .Voucher-Redemption-flow-img,
     .Voucher-Redemption-img {
         margin-bottom: 30px !important;
@@ -13389,7 +13221,6 @@ width: auto;
         margin-top: -2%;
         padding-bottom: 2%;
     }
-
     .api-guides-vertical-menu a,
     .api-guides-dropdown-btn:active {
         padding: 8px 8px 8px 16px;
@@ -13527,7 +13358,6 @@ margin-left: 38%; */
 /*for api documentation*/
 
 @media (max-width: 991px) and (min-width: 614px) {
-
     .api-guides-vertical-menu a,
     .api-guides-dropdown-btn:active {
         padding: 6px 8px 8px 16px;
@@ -13647,22 +13477,18 @@ margin-left: 38%; */
     .single-product-menu-div {
         margin-top: 5%;
     }
-
     .single-product-header-image {
         height: auto;
         margin-top: 6%;
         padding: 90px 20px;
     }
-
     .single-product-header-image .align-items-center {
         align-items: start;
     }
-
     .single-product-header {
         width: 100%;
         margin-bottom: 20px;
     }
-
     .single-product-About-product-img {
         margin: 0 auto;
         display: block;
@@ -13812,15 +13638,12 @@ margin-left: 38%; */
     .loyalty-product-Expose-API-Authorize-Redemption-img {
         margin-bottom: 30px !important;
     }
-
     .loyalty-product-Expose-API-Execute-Redemption-img {
         margin-bottom: 30px !important;
     }
-
     .loyalty-product-Expose-API-List-Redemption-Transactions-img {
         margin-bottom: 30px !important;
     }
-
     .loyalty-product-Expose-API-List-Reverse-Redemption-Transaction-img {
         margin-bottom: 30px !important;
     }
@@ -13891,11 +13714,9 @@ margin-left: 38%; */
     .single-product-Motor-Rate-Diagram-Workflow-img {
         margin-bottom: 30px !important;
     }
-
     .single-product-Motor-Quote-Diagram-Workflow-img {
         margin-bottom: 30px !important;
     }
-
     .single-product-Motor-Policy-Diagram-Workflow-img {
         margin-bottom: 30px !important;
     }
@@ -14050,7 +13871,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .Generate-Proposal-Quotation-img,
     .create-policy-protection-saving-img,
     .Get-All-Policy-for-the-User-img,
@@ -14134,7 +13954,6 @@ margin-left: 38%; */
     .single-product-MF-Inquiery-Diagram-Workflow-img {
         margin-bottom: 30px !important;
     }
-
     .single-product-MF-Inquiery-Diagram-Workflow-img {
         margin-bottom: 30px !important;
     }
@@ -14184,7 +14003,6 @@ margin-left: 38%; */
     .ARB-Personal-Finance-flow-img {
         margin-bottom: 30px !important;
     }
-
     .ARB-Personal-Finance-architecture-img {
         margin-bottom: 30px !important;
     }
@@ -14231,7 +14049,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .IBANVerificationAlias-flow-img,
     .IBANVerificationAliasArchitecture-img {
         margin-bottom: 30px !important;
@@ -14279,7 +14096,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .ConsumerDigitalWalletInquiryforTop-up-flow-img,
     .ConsumerDigitalWalletInquiryforTop-upArchitecture-flow-img {
         margin-bottom: 30px !important;
@@ -14327,7 +14143,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .Emkan-Personal-Finance-flow-img,
     .Emkan-Personal-Finance-architecture-img {
         margin-bottom: 30px !important;
@@ -14375,7 +14190,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .IPS-Bank-Transfer-workflow-img,
     .IPS-Bank-Transfer-architecture-img {
         margin-bottom: 30px !important;
@@ -14423,7 +14237,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .AccountFinder-flow-img,
     .AccountFinderArchitecture-flow-img {
         margin-bottom: 30px !important;
@@ -14637,7 +14450,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .ApplyforARBChargeCard-flow-img,
     .ApplyforARBChargeCardArchitecture-flow-img {
         margin-bottom: 30px !important;
@@ -14743,7 +14555,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .AffordabilityCheck-flow-img,
     .AffordabilityCheckArchitecture-flow-img {
         margin-bottom: 30px !important;
@@ -14791,7 +14602,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .GoldWallet-flow-img,
     .GoldWalletArchitecture-flow-img {
         margin-bottom: 30px !important;
@@ -14839,7 +14649,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .HomeInsurance-flow-img,
     .HomeInsuranceArchitecture-flow-img {
         margin-bottom: 30px !important;
@@ -14916,7 +14725,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .E-Statement-flow-img,
     .E-Statement-architecture-img {
         margin-bottom: 30px !important;
@@ -14993,7 +14801,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .Categorization-flow-img,
     .Categorization-architecture-img {
         margin-bottom: 30px !important;
@@ -15058,7 +14865,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .send-event-Notification-Engine-workflow-flow-img,
     .generate-otp-Notification-Engine-workflow-flow-img,
     .Notification-Engine-SMS-GW-architecture-img {
@@ -15136,7 +14942,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .CorporateHistoricalTransactionsThroughput-flow-img,
     .CorporateHistoricalTransactionsThroughput-architecture-img {
         margin-bottom: 30px !important;
@@ -15188,7 +14993,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .MotorInsurance-flow-img,
     .MotorInsurance-architecture-img {
         margin-bottom: 30px !important;
@@ -15236,7 +15040,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .NotificationEngineIVR-flow-img,
     .NotificationEngineIVR-architecture-img {
         margin-bottom: 30px !important;
@@ -15284,7 +15087,6 @@ margin-left: 38%; */
 }
 
 @media (max-width: 991px) {
-
     .ApplyForAutoLease-flow-img,
     .ApplyForAutoLease-architecture-img {
         margin-bottom: 30px !important;
@@ -15454,9 +15256,7 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     padding-left: 30px !important;
     margin: 0;
     margin-bottom: 10px;
-
 }
-
 
 .custom-exposeAPI .updated-home-expose .expose-text {
     font-style: normal;
@@ -15468,7 +15268,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     text-align: left;
     padding-left: 30px !important;
     margin-bottom: 20px;
-
 }
 
 .custom-exposeAPI .updated-home-expose .expose-button {
@@ -15476,7 +15275,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     border: 2px solid #647dff;
     font-weight: 600;
 }
-
 
 .home-verified-documentation.updated-verified-API {
     padding: 50px 0;
@@ -15543,19 +15341,15 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     0% {
         transform: translateX(0);
     }
-
     25% {
         transform: translateX(10px);
     }
-
     50% {
         transform: translateX(-10px);
     }
-
     75% {
         transform: translateX(10px);
     }
-
     100% {
         transform: translateX(-10px);
     }
@@ -15565,7 +15359,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     margin-bottom: 0px;
     padding-left: 30px;
 }
-
 
 .updated-home-expose2 .expose-content {
     margin: 0;
@@ -15591,8 +15384,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     border: 2px solid #647dff;
     font-weight: 600;
 }
-
-
 
 .custom-acceleratesec {
     background-color: #eef2fe;
@@ -15672,7 +15463,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     color: #0d1e78;
 }
 
-
 .custom-acceleratesec .home-accelarting-ul .home-accelarting-li span.svg-icon svg {
     width: 40px;
 }
@@ -15709,6 +15499,7 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     border: 2px solid;
     padding: 10px 20px;
 }
+
 
 /* -------------------------- */
 
@@ -15768,8 +15559,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     width: 40%;
 }
 
-
-
 .custom-footer .footer-outter .home-footer-col {
     width: calc(60% / 3);
 }
@@ -15787,7 +15576,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     font-size: 16px;
     line-height: 1.8;
     color: #b0b0b0;
-
 }
 
 .custom-footer .footer-outter .home-footer-col .contactBox-content-black .footer-content-link {
@@ -15821,6 +15609,7 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 
 
 /* ------------------------ About us  -------------------------- */
+
 .updated-aboutus .api-doc-background {
     padding: 80px 50px;
     padding-bottom: 50px;
@@ -15836,8 +15625,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 }
 
 
-
 /* ---------------------------- New Design Figma -------------------------- */
+
 .section-header #navbar {
     box-shadow: none;
     background: transparent;
@@ -15883,11 +15672,8 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 }
 
 
-
-
-
-
 /* -------------------------- API Styling ----------------------- */
+
 
 /* --------------------- API Product ---------------- */
 
@@ -15910,7 +15696,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     line-height: normal;
     padding: 0;
 }
-
 
 .custom-APIproduct .bg-images .circle-1 {
     width: 322px;
@@ -15956,7 +15741,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     line-height: 32.4px;
     margin-bottom: 60px;
 }
-
 
 .custom-APIproduct .views-exposed-form.bef-exposed-form {
     background: transparent;
@@ -16030,7 +15814,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     cursor: pointer;
     height: 49px;
     background-color: #fff;
-
 }
 
 .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-term-node-tid-depth::-ms-expand,
@@ -16047,6 +15830,7 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 .custom-APIproduct .views-exposed-form .form-item {
     padding: 0;
 }
+
 
 /* .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-sort-by {
     min-width: 150px;
@@ -16078,12 +15862,9 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     border: none;
 }
 
-
-
 .custom-APIproduct .custom-productcards .grid .bx--card .apicProductCardMain .bx--about__title--name {
     width: 100%;
 }
-
 
 .custom-APIproduct .views-exposed-form .form-item {
     /* width: 25%; */
@@ -16104,7 +15885,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 .custom-APIproduct .views-exposed-form .form-item:nth-child(5) {
     width: calc(80% / 8 - 5px);
 }
-
 
 .custom-APIproduct .custom-productcards .grid .bx--card .apicProductCard {
     padding: 0;
@@ -16214,7 +15994,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     margin-right: -50px;
 }
 
-
 .bx--global-light-ui .views-exposed-form form#views-exposed-form-search-api-page-1 {
     width: 100%;
     padding: 0 20px;
@@ -16265,7 +16044,6 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     order: 1;
 }
 
-
 .apicProductCardMain {
     order: 2;
 }
@@ -16290,45 +16068,34 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     .custom-APIproduct .views-exposed-form .form-item {
         width: 25%;
     }
-
     .custom-APIproduct .views-exposed-form .form-item:nth-child(2) {
         width: calc(84% / 5 - 5px);
     }
-
     .custom-APIproduct .views-exposed-form .form-item:nth-child(3) {
         width: calc(59% / 5 - 5px);
     }
-
     .custom-APIproduct .views-exposed-form .form-item:nth-child(4) {
         width: calc(75% / 8 - 5px);
     }
-
     .custom-APIproduct .views-exposed-form .form-item:nth-child(5) {
         width: calc(80% / 8 - 5px);
     }
-
     .custom-APIproduct .views-exposed-form.bef-exposed-form #edit-actions button {
         padding: 10px 28px;
     }
-
     .custom-APIproduct .custom-productcards .grid .bx--card .apicProductCard {
-
         padding: 30px;
         min-height: 290px;
     }
-
-
     .custom-APIproduct {
         padding: 20px;
     }
-
     section#block-marketplace-latest-exposedformsearch-apipage-1 {
         margin-top: 30px;
         margin-bottom: 60px;
-
     }
-
 }
+
 
 /* ----------------------- */
 
@@ -16344,7 +16111,6 @@ div#edit-actions {
     padding: 0;
     margin-top: 60px;
 }
-
 
 div#edit-actions button {
     border-radius: 50px !important;
@@ -16386,8 +16152,8 @@ div#edit-actions button {
 }
 
 
-
 /* ----------------------------------- */
+
 
 /* --------------------------------------------------------- */
 
@@ -16427,14 +16193,12 @@ div#edit-actions button {
     border-radius: 230px;
 }
 
-
 .custom-herosec.updated-herosec .computer-image {
     content: url("images/computer_new.png");
     right: -40px;
     position: absolute;
     top: 50px;
 }
-
 
 .updated-whatsnew {
     background: #EEF2FE;
@@ -16482,7 +16246,6 @@ div#edit-actions button {
 .updated-itworks {
     background: #EEF2FE;
 }
-
 
 .primary-btn {
     padding: 18px 42px;
@@ -16545,9 +16308,7 @@ div#edit-actions button {
 
 .updated-itworks .howitworks-card .image-box .card-img::before {
     content: url("images/Discover_new.png");
-
 }
-
 
 .updated-itworks .howitworks-card .info-box {
     padding: 28px 36px;
@@ -16600,7 +16361,6 @@ div#edit-actions button {
 
 .home-lets-get-started-background.updated-sec .lets-get-started-button-text {
     justify-content: start;
-
 }
 
 .home-lets-get-started-background.updated-sec .lets-get-started-button-text .lets-get-started-button {
@@ -16617,7 +16377,6 @@ div#edit-actions button {
     bottom: -20px;
 }
 
-
 .updated-exposeAPI {
     padding: 70px 0;
 }
@@ -16628,7 +16387,6 @@ div#edit-actions button {
     margin: 0;
     margin-bottom: 28px;
     margin-top: 28px;
-
 }
 
 .updated-exposeAPI .updated-home-expose .row {
@@ -16674,18 +16432,15 @@ div#edit-actions button {
     content: url("images/Deploy_new.png");
 }
 
-
 .updated-whatsnew .home-whats-new-card-blue-content.second::before {
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-
 .updated-whatsnew .home-whats-new-card-blue-content.third::before {
     background-repeat: no-repeat;
     background-size: contain;
 }
-
 
 .home-lets-get-started-background.updated-sec .customget-started-img::before {
     background: none;
@@ -16710,145 +16465,111 @@ div#edit-actions button {
     .custom-herosec.updated-herosec .welcome-background .welcome-computer {
         display: none;
     }
-
     .custom-herosec.updated-herosec .welcome-background .welcome-text {
         font-size: 44px;
     }
-
     .custom-herosec.updated-herosec .welcome-background .welcome-text br,
     .custom-herosec .welcome-content br {
         display: none;
     }
-
     .custom-herosec .welcome-button,
     .custom-herosec .Speak-button {
         margin-bottom: 0px;
     }
-
     .custom-herosec.updated-herosec .computer-image {
         position: unset;
         width: 40%;
         content: url("images/computer_new2.png");
         margin-top: 40px;
-
-
     }
-
     .custom-herosec.updated-herosec .welcome-background {
         padding-top: 120px;
     }
-
     .updated-exposeAPI .updated-home-expose .expose-content {
         font-size: 44px;
     }
-
     .updated-exposeAPI .updated-home-expose .expose-text {
         padding: 0 !important;
         text-align: center;
     }
-
     .custom-exposeAPI .updated-home-expose .expose-button {
         margin-left: auto !important;
     }
-
     .updated-exposeAPI .updated-home-expose .row {
         justify-content: center;
         gap: 20px;
     }
-
     .updated-exposeAPI .updated-home-expose .expose-home-newimg {
         display: none;
     }
-
     .updated-itworks .innertext-box {
         max-width: 100%;
         margin-bottom: 50px;
     }
-
     .updated-itworks .innertext-box .why-us-head {
         font-size: 44px;
         text-align: center;
     }
-
     .updated-itworks .innertext-box .Api-reason {
         text-align: center;
     }
-
     .primary-btn {
         display: block;
         margin: 0 auto;
         width: fit-content;
     }
-
     .how-itworks-sec .api-position {
         padding-right: 0;
     }
-
     .home-lets-get-started-background.updated-sec .customget-started-img::before {
         right: 200px;
     }
-
     .home-lets-get-started-background.updated-sec .home-lets-get-started-text br {
         display: none;
     }
-
     .home-lets-get-started-background.updated-sec .home-lets-get-started-header {
         line-height: 56px;
     }
-
     .custom-footer .copyright-box {
         padding: 10px 60px;
     }
-
     .home-footer.home-footersec .home-footer-logo {
         width: 22%;
         margin-bottom: 30px;
     }
-
     .custom-footer .footer-outter .home-footer-contactus-header,
     .custom-footer .footer-outter .contactBox-head-black {
         text-align: center;
         line-height: 30px;
     }
-
     .custom-footer .footer-outter .home-footer-col .contactBox-content-black .footer-content-link {
         line-height: 20px;
     }
-
     .custom-footer .footer-outter {
         flex-direction: column;
         align-items: center;
         gap: 40px;
     }
-
     .custom-footer .footer-outter .home-footer-col {
         width: 100%;
     }
-
     .updated-itworks .howitworks-card {
         margin-bottom: 30px;
     }
-
-
 }
 
 @media (max-width: 767px) {
-
-
     .apicStickyHeader .navbar .navbar-header {
         width: 100%;
     }
-
     .apicStickyHeader .navbar .navbar-right {
         width: 100%;
         align-items: end;
         justify-content: end;
     }
-
     .apicStickyHeader .navbar .navbar-right nav.block-login ul.nav>li.last {
         margin-right: 0px;
     }
-
     .apicStickyHeader nav#block-marketplace-latest-main-menu {
         position: absolute;
         top: 50px;
@@ -16856,132 +16577,99 @@ div#edit-actions button {
         width: 100%;
         z-index: 2;
     }
-
     .apicStickyHeader.section-header #navbar {
         align-items: center;
     }
-
     .apicStickyHeader .navbar-default .navbar-toggle {
         background-color: transparent;
     }
-
     .apicStickyHeader .navbar-default .navbar-toggle .icon-bar {
         background-color: #11183b;
     }
-
     .navbar .region-navigation {
         justify-content: space-between;
     }
-
     .custom-exposeAPI .updated-home-expose {
         padding-bottom: 0;
     }
-
     .how-itworks-sec {
         padding: 40px 20px;
     }
-
     .home-lets-get-started-background.updated-sec .customget-started-img::before {
         content: none;
     }
-
-
     .home-lets-get-started-background.updated-sec .home-lets-get-started-header {
         text-align: center;
     }
-
     .home-lets-get-started-background.updated-sec .home-lets-get-started-text {
         text-align: center;
     }
-
     .home-lets-get-started-background.updated-sec .lets-get-started-button-text {
         justify-content: center;
     }
-
     .home-lets-get-started-background.updated-sec .inner-box {
         padding: 30px 90px;
     }
-
     .home-footer.home-footersec.custom-footer {
         padding: 30px 0;
         padding-bottom: 100px;
     }
-
     .custom-footer .copyright-box {
         flex-direction: column;
         gap: 10px;
         padding: 15px 0;
         margin-top: 0;
     }
-
-
-
 }
 
 @media (max-width: 640px) {
     .apicStickyHeader {
         top: 0;
     }
-
     .custom-herosec.updated-herosec .welcome-background {
         padding-top: 100px;
     }
 }
 
 @media (max-width: 576px) {
-
-
     .apicStickyHeader .navbar.container {
         padding: 15px 10px !important;
     }
-
     .custom-herosec.updated-herosec .welcome-background {
         padding-top: 150px;
     }
-
     .custom-herosec.updated-herosec .computer-image {
         width: 50%;
         margin-top: 50px;
     }
-
     .customwhat-newsec .How_to_get_started_discover,
     .customwhat-newsec .How_to_get_started_develop {
         height: auto;
     }
-
     .updated-exposeAPI .updated-home-expose .expose-content {
         font-size: 44px;
         padding-left: 0 !important;
     }
-
     .updated-exposeAPI .updated-home-expose .expose-text {
         width: 100%;
     }
-
     .updated-exposeAPI .updated-home-expose .row {
         gap: 30px;
     }
-
     .home-lets-get-started-background.updated-sec .inner-box {
         padding: 30px;
         border-radius: 20px;
     }
-
     .home-lets-get-started-background.updated-sec {
         padding: 30px 0;
     }
-
     .home-lets-get-started-background.updated-sec .home-lets-get-started-header {
         font-size: 34px;
     }
-
 }
 
 
-
-
 /*signup new*/
-
 
 .custom-signup {
     margin-left: 60px !important;
@@ -17365,7 +17053,6 @@ div#edit-actions button {
 .custom-signinsec .apic-login-wrapper .apic-user-form-footer .apic-user-form-text a {
     font-size: 22px;
 }
-
 
 .custom-APIproduct.custom-ARBproduct {
     padding-top: 60px;
@@ -18218,7 +17905,6 @@ body.context--BusinessDomains .apicMainContent {
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.customer-infosec .productcard-box .image-box .product-img.img-4 {
     /* content: url("images/customerinfo-img-4.png"); */
     content: url("images/customerinfo-img-1.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.investmentsec .productcard-box .image-box .product-img {
@@ -18264,85 +17950,71 @@ body.context--BusinessDomains .apicMainContent {
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.financingsec .productcard-box .image-box .product-img {
     /* content: url("images/financingsec-img-1.png"); */
     content: url("images/customerinfo-img-1.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.financingsec .productcard-box .image-box .product-img.img-2 {
     /* content: url("images/financingsec-img-2.png"); */
     content: url("images/customerinfo-img-2.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.financingsec .productcard-box .image-box .product-img.img-3 {
     /* content: url("images/financingsec-img-3.png"); */
     content: url("images/customerinfo-img-3.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.financingsec .productcard-box .image-box .product-img.img-4 {
     /* content: url("images/financingsec-img-4.png"); */
     content: url("images/customerinfo-img-4.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.financingsec .productcard-box .image-box .product-img.img-5 {
     /* content: url("images/financingsec-img-5.png"); */
     content: url("images/customerinfo-img-1.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.financingsec .productcard-box .image-box .product-img.img-6 {
     /* content: url("images/financingsec-img-6.png"); */
     content: url("images/customerinfo-img-2.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.loyaltysec .productcard-box .image-box .product-img {
     /* content: url("images/loyaltysec-img-1.png"); */
     content: url("images/investmentsec-img-1.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.customer-walletsec .productcard-box .image-box .product-img {
     /* content: url("images/customer-walletsec-img-1.png"); */
     content: url("images/insurancesec-img-1.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.customer-walletsec .productcard-box .image-box.img-2 {
     /* content: url("images/customer-walletsec-img-2.png"); */
     content: url("images/insurancesec-img-2.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.card-managementsec .productcard-box .image-box .product-img {
     /* content: url("images/card-managementsec-img-1.png"); */
     content: url("images/insurancesec-img-3.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.card-managementsec .productcard-box .image-box.img-2 {
     /* content: url("images/card-managementsec-img-2.png"); */
     content: url("images/insurancesec-img-4.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.card-managementsec .productcard-box .image-box.img-3 {
     /* content: url("images/card-managementsec-img-3.png"); */
     content: url("images/insurancesec-img-5.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.personal-financesec .productcard-box .image-box .product-img {
     /* content: url("images/personal-financesec-img-1.png"); */
     content: url("images/insurancesec-img-1.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.utilities-sec .productcard-box .image-box .product-img {
     /* content: url("images/utilities-sec-img-1.png"); */
     content: url("images/customerinfo-img-1.png");
-
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter.utilities-sec .productcard-box .image-box.img-2 {
@@ -18680,6 +18352,7 @@ body.context--BusinessDomains .apicMainContent {
     align-items: center;
     justify-content: center;
 }
+
 
 /* ----------------- Product detailed Documentations --------------- */
 
@@ -19066,140 +18739,147 @@ body.context--BusinessDomains .apicMainContent {
 }
 
 
-
-
 /*21 april*/
 
 .product-details-document .moterinsurance-sec {
     padding-bottom: 30px;
-  }
-  .product-details-document .moterinsurance-sec .btn-box {
+}
+
+.product-details-document .moterinsurance-sec .btn-box {
     align-items: center;
     margin-top: 30px;
-  }
-  .product-details-document .moterinsurance-sec .btn-box a {
+}
+
+.product-details-document .moterinsurance-sec .btn-box a {
     width: auto;
-  }
-  .product-details-document .miw-section {
+}
+
+.product-details-document .miw-section {
     background: #f7f9ff !important;
     padding: 30px 60px;
-  }
-  .product-details-document .miw-section a {
+}
+
+.product-details-document .miw-section a {
     padding: 13px;
     width: fit-content;
     line-height: unset;
     margin-top: 20px;
-  }
-  .product-details-document .miw-section:nth-child(even) {
+}
+
+.product-details-document .miw-section:nth-child(even) {
     background: #eef2fe !important;
-  }
-  .product-details-document .APIs-section {
+}
+
+.product-details-document .APIs-section {
     padding: 60px 40px !important;
-  }
-  @media (max-width: 991px) {
+}
+
+@media (max-width: 991px) {
     .product-details-document .api-doc-background {
-      background-size: cover !important;
-      left: -70px;
+        background-size: cover !important;
+        left: -70px;
     }
     .product-details-document .api-doc-background .api-doc-background-text {
-      text-align: left;
-      margin-top: 40px;
+        text-align: left;
+        margin-top: 40px;
     }
     .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-title,
     .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-text {
-      text-align: left;
+        text-align: left;
     }
     .product-details-document .moterinsurance-sec .rightside-sec .API-image {
-      width: 100%;
+        width: 100%;
     }
     .product-details-document .moterinsurance-sec .btn-box {
-      flex-wrap: wrap;
-      gap: 30px;
+        flex-wrap: wrap;
+        gap: 30px;
     }
     .product-details-document .moterinsurance-sec .btn-box a {
-      width: auto;
-      margin: 0;
+        width: auto;
+        margin: 0;
     }
     .product-details-document .api-infosec .requestURL-box {
-      gap: 40px;
+        gap: 40px;
     }
     .product-details-document .api-infosec .requestURL-box .url-box {
-      width: calc(40% - 0px);
+        width: calc(40% - 0px);
     }
-  }
-  @media (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
     .product-details-document .moterinsurance-sec .d-flex {
-      flex-direction: column-reverse;
+        flex-direction: column-reverse;
     }
     .product-details-document .moterinsurance-sec .leftside-sec {
-      width: 100%;
+        width: 100%;
     }
     .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-title,
     .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-text {
-      text-align: center;
+        text-align: center;
     }
     .product-details-document .moterinsurance-sec .rightside-sec {
-      width: 100%;
-      justify-content: center;
+        width: 100%;
+        justify-content: center;
     }
     .product-details-document .moterinsurance-sec .rightside-sec .API-image {
-      width: 90%;
+        width: 90%;
     }
     .product-details-document .miw-section .motoinsu-image {
-      width: 90%;
+        width: 90%;
     }
     .product-details-document .api-infosec .requestURL-box {
-      gap: 40px;
+        gap: 40px;
     }
     .product-details-document .api-infosec .requestURL-box .request-box,
     .product-details-document .api-infosec .requestURL-box .url-box {
-      width: 100%;
+        width: 100%;
     }
     .product-details-document .api-infosec .response-outterbox .response-box {
-      height: 520px;
+        height: 520px;
     }
     .product-details-document .api-infosec .response-outterbox .response-box code {
-      top: 110px !important;
+        top: 110px !important;
     }
-  }
-  @media (max-width: 576px) {
+}
+
+@media (max-width: 576px) {
     .product-details-document .moterinsurance-sec,
     .product-details-document .miw-section,
     .product-details-document .APIs-section {
-      padding-left: 20px;
-      padding-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .product-details-document .api-doc-background {
-      margin-top: 80px;
+        margin-top: 80px;
     }
     .product-details-document .api-doc-background .api-doc-background-text {
-      font-size: 40px;
-      line-height: 64px;
+        font-size: 40px;
+        line-height: 64px;
     }
     .product-details-document .moterinsurance-sec .leftside-sec .fob-welcome-title {
-      font-size: 35px;
+        font-size: 35px;
     }
     .product-details-document .moterinsurance-sec .btn-box a {
-      line-height: 30px !important;
-      border-radius: 50px;
+        line-height: 30px !important;
+        border-radius: 50px;
     }
     .product-details-document .miw-section .motoinsu-image {
-      width: 100%;
+        width: 100%;
     }
     .product-details-document .miw-section .fob-welcome-title {
-      font-size: 35px;
+        font-size: 35px;
     }
     .product-details-document .api-infosec .requestURL-box .request-box .api-guides-example-fob {
-      min-height: 250px;
-      max-height: 250px;
+        min-height: 250px;
+        max-height: 250px;
     }
     .product-details-document .api-infosec .response-outterbox .response-box {
-      height: 700px;
+        height: 700px;
     }
     .product-details-document .api-infosec .response-outterbox .response-box code {
-      top: 180px !important;
+        top: 180px !important;
     }
-  }
+}
 
 
 /*# sourceMappingURL=demo.css.map */
@@ -19400,7 +19080,6 @@ body.context--BusinessDomains .apicMainContent {
         box-shadow: 0 3px 19px rgba(0, 0, 0, .05);
         overflow: hidden;
     }
-
     .faq-question-text {
         padding: 0;
         height: 65px;
@@ -19416,7 +19095,6 @@ body.context--BusinessDomains .apicMainContent {
         border: 0 !important;
         height: 65px;
     }
-
     .faq-item .faq-question {
         padding: 0;
         font-style: normal;
@@ -19431,7 +19109,6 @@ body.context--BusinessDomains .apicMainContent {
         justify-content: center;
         align-items: center;
     }
-
     .faq-item {
         border-radius: 10px;
         margin-bottom: 15px;
@@ -19441,7 +19118,6 @@ body.context--BusinessDomains .apicMainContent {
         box-shadow: 0 3px 19px rgba(0, 0, 0, .05);
         overflow: hidden;
     }
-
     .faq-content {
         width: 60%;
         line-height: 0;
@@ -19453,7 +19129,6 @@ body.context--BusinessDomains .apicMainContent {
         font-weight: 600;
         margin: 1rem;
     }
-
     .faq-container {
         background: #fff;
         border-radius: 10px;
@@ -19466,7 +19141,6 @@ body.context--BusinessDomains .apicMainContent {
         max-width: 100%;
         width: 90%;
     }
-
     .faq-image-box {
         flex: 1;
         text-align: center;
@@ -19484,12 +19158,10 @@ body.context--BusinessDomains .apicMainContent {
     .faq-image-box {
         margin-left: unset;
     }
-
     .faq-container {
         flex-direction: column;
         align-items: center;
     }
-
     .faq-image-box {
         margin-right: 0;
         margin-bottom: 20px;
@@ -19500,34 +19172,27 @@ body.context--BusinessDomains .apicMainContent {
     .faq-title h1 {
         font-size: 21px;
     }
-
     .faq-container {
         max-width: 100%;
     }
-
     .faq-image-box {
         max-width: 85%;
     }
-
     .faq-answer {
         margin-left: unset;
         font-size: 30px;
     }
-
     .faq-content {
         width: 100%;
     }
-
     .faq-item {
         box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
         border: 10px;
         padding: 10px;
     }
-
     .faq-image-new h3 {
         font-size: 21px;
     }
-
     .faq-question-text {
         padding: 0;
         font-style: normal;
@@ -19544,7 +19209,6 @@ body.context--BusinessDomains .apicMainContent {
         width: auto;
         padding-bottom: unset;
     }
-
     .faq-item .faq-question {
         padding: 0;
         font-style: normal;
@@ -19560,14 +19224,12 @@ body.context--BusinessDomains .apicMainContent {
         gap: 0.1rem;
         width: auto;
     }
-
     .faq-question svg {
         margin-right: 0.3rem;
         width: 25px;
         min-width: 25px;
         height: 25px;
     }
-
     .faq-answer p {
         font-size: 0.8rem;
     }
@@ -19577,19 +19239,15 @@ body.context--BusinessDomains .apicMainContent {
     .faq-image-box h3 {
         font-size: 22px;
     }
-
     .faq-item {
         padding: 10px;
     }
-
     .faq-question-text {
         font-size: 13px;
     }
-
     .faq-answer p {
         line-height: 1rem;
     }
-
     .faq-question svg {
         margin-right: 0.1rem;
         width: 15px;
@@ -19725,18 +19383,15 @@ body.context--BusinessDomains .apicMainContent {
     .updated-faqsec .faq-image-box {
         padding: 20px;
     }
-
     .updated-faqsec .faq-title .faq-bg {
         display: none;
     }
-
     .updated-faqsec .faq-title .content {
         position: unset;
         left: unset;
         top: unset;
         transform: unset;
     }
-
     .updated-faqsec .faq-title {
         margin-bottom: 50px;
     }
@@ -19748,7 +19403,6 @@ body.context--BusinessDomains .apicMainContent {
         flex-direction: column;
         gap: 40px;
     }
-
     .updated-faqsec .faq-content {
         max-width: 100%;
         width: 100%;
@@ -19762,12 +19416,10 @@ body.context--BusinessDomains .apicMainContent {
         font-size: 24px;
         line-height: 32.4px;
     }
-
     .updated-faqsec .faq-title h1 {
         font-size: 44px;
         height: auto;
     }
-
     .updated-faqsec.faq-section {
         padding: 40px 0;
     }
@@ -19778,25 +19430,20 @@ body.context--BusinessDomains .apicMainContent {
         width: 60px;
         height: 60px;
     }
-
     .updated-faqsec .faq-question-text {
         font-size: 18px;
         line-height: 26px;
         padding-top: 14px;
     }
-
     .updated-faqsec .faq-content {
         padding: 0;
     }
-
     .updated-faqsec .faq-container {
         overflow: unset;
     }
-
     .faq-image-new {
         height: 220px;
     }
-
     .updated-faqsec .faq-image-box {
         display: flex;
         flex-direction: column;
@@ -19977,43 +19624,35 @@ form#contact-message-feedback-form {
         align-items: center;
         justify-content: space-between;
     }
-
     #contact-feedback-form {
         gap: unset;
     }
-
     #contact-feedback-heading {
         padding-left: unset;
         padding-top: 1rem;
         padding: 1rem 2rem;
     }
-
     #contact-feedback-form::after {
         transform: none;
     }
-
     form#contact-message-feedback-form {
         padding-bottom: 5rem;
         padding-left: unset;
         padding-top: unset;
     }
-
     #contact-feedback-form::after {
         width: 100%;
         min-height: 390px;
     }
-
     #contact-feedback-heading {
         position: relative !important;
         order: 3;
         padding-top: 8rem;
     }
-
     #contact-feedback-form::after {
         position: relative;
         order: 2;
     }
-
     form#contact-message-feedback-form {
         order: 0;
     }
@@ -20026,7 +19665,6 @@ form#contact-message-feedback-form {
         padding: 1rem 2rem;
         padding-top: 8rem;
     }
-
     #contact-feedback-form::after {
         min-height: 300px;
     }
@@ -20249,14 +19887,12 @@ form#user-login-form input {
         margin-left: unset !important;
         padding-left: unset;
     }
-
     .apic-login-wrapper {
         display: flex;
         flex-direction: COLUMN;
         ALIGN-ITEMS: CENTER;
         WIDTH: 100%;
     }
-
     .apic-user-form.apic-user-form-login {
         margin-left: UNSET;
         margin-right: unset;
@@ -20265,7 +19901,6 @@ form#user-login-form input {
         ALIGN-ITEMS: CENTER;
         max-width: unset;
     }
-
     .apic-login-wrapper:after {
         min-height: 270px;
         top: unset;
@@ -20277,7 +19912,6 @@ form#user-login-form input {
         WIDTH: 100%;
         order: 0;
     }
-
     .user-login-form {
         order: 3;
         position: relative;
@@ -20285,17 +19919,14 @@ form#user-login-form input {
         border-radius: 8px;
         align-items: center;
     }
-
     .user-login-form .apic-user-form-inner-wrapper {
         align-items: center;
     }
-
     @media (max-width: 576px) {
         .apic-login-wrapper .apic-user-form-header {
             font-size: 40px;
             top: unset;
         }
-
         .apic-login-wrapper:after {
             min-height: 229px;
             top: unset;
@@ -20429,13 +20060,11 @@ form#user-login-form input {
         display: flex;
         flex-direction: column-reverse;
     }
-
     .termsconditions-bg,
     .rotated-bg-wrapper-tsandcond,
     .rotated-bg-tsandcond {
         display: none;
     }
-
     #page-node-title {
         padding-left: unset;
         display: flex;
@@ -20443,7 +20072,6 @@ form#user-login-form input {
         text-align: center;
         width: 100%;
     }
-
     .custom-termsconditions {
         display: flex;
         align-items: center;
@@ -20452,7 +20080,6 @@ form#user-login-form input {
         text-align: center;
         margin: 0;
     }
-
     .custom-termsconditions-par {
         width: 100%;
         text-align: center;
@@ -20467,7 +20094,6 @@ form#user-login-form input {
         padding-left: unset;
         padding-bottom: 4rem;
     }
-
     .termsconditions-image {
         content: url("images/terms_and_conditions.png");
         align-items: center;
@@ -20478,9 +20104,9 @@ form#user-login-form input {
         margin-bottom: 3rem;
         margin-top: unset;
     }
-
     h1.page-header.custom-termsconditions {
         margin: unset;
+        padding-top: 5rem;
     }
 }
 
@@ -20543,7 +20169,6 @@ form#user-login-form input {
         display: flex;
         flex-direction: column-reverse;
     }
-
     .privacy-image {
         content: url("images/privacypolicy-img.png");
         align-items: center;
@@ -20554,7 +20179,6 @@ form#user-login-form input {
         margin-bottom: 3rem;
         margin-top: unset;
     }
-
     .custom-privacy-par {
         width: 100%;
         text-align: center;
@@ -20878,6 +20502,7 @@ form#user-login-form input {
 
 /*Janet about us new*/
 
+
 /*Product Documentation Page Design Janet*/
 
 .product-doc-content {
@@ -21172,29 +20797,30 @@ form#user-login-form input {
 
 @media screen and (max-width: 995px) {
     .product-doc-content .grid-container {
-       display: grid;
-       grid-template-columns: repeat(2, 1fr);
-       padding: 10px;
-       margin-top: 10px;
-       grid-auto-rows: 1fr;
-       gap: 55px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+        margin-top: 10px;
+        grid-auto-rows: 1fr;
+        gap: 55px;
     }
 }
 
 @media screen and (max-width: 640px) {
     .product-doc-content .grid-container {
-       display: grid;
-       grid-template-columns: repeat(1, 1fr);
-       padding: 10px;
-       margin-top: 10px;
-       grid-auto-rows: 1fr;
-       gap: 55px;
-    }  
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 10px;
+        margin-top: 10px;
+        grid-auto-rows: 1fr;
+        gap: 55px;
+    }
 }
 
 .product-doc-content .expose-apis .col-md-7 {
     display: flex;
     justify-content: flex-end;
 }
+
 
 /* Janet Product Documentation Page Design */
