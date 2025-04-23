@@ -20602,6 +20602,8 @@ form#user-login-form input {
     font-weight: bold;
     line-height: 65px;
     margin-top: 0px;
+    position: relative;  
+    z-index: 1; 
 }
 
 .product-doc-content .single-product-Expose-API-self-title {
@@ -20617,6 +20619,7 @@ form#user-login-form input {
     width: 40%;
     position: relative;
     top: -50px;
+    z-index: 0;
 }
 
 .product-doc-content .grid-container {
@@ -20656,6 +20659,7 @@ form#user-login-form input {
 .product-doc-content .single-product-img {
     content: url("images/API.png");
     margin: auto;
+    width: 85px;
 }
 
 .product-doc-content .single-product-Expose-API-self-title {
@@ -20755,6 +20759,7 @@ form#user-login-form input {
         top: -50px;
         margin: auto;
         margin-top: 20px;
+        z-index: 0;
     }
 }
 
