@@ -20921,6 +20921,12 @@ form#apic-change-pwd-form input {
     flex: 1;
 }
 
+.apic-change-form-wrapper #ibm-apim-password-policy-status.alert.alert-info .icon:before,
+.apic-change-form-wrapper #ibm-apim-password-policy-status.alert.alert-danger .icon:before,
+.apic-change-form-wrapper #ibm-apim-password-policy-status.alert.alert-success .icon:before {
+    content: "";
+}
+
 @media screen and (max-width: 640px) {
     .route-change-pwd-pagechange-password-form:not(.pass-reset) .page-header {
         align-items: center;
