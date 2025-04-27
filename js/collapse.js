@@ -368,6 +368,21 @@ document.addEventListener("DOMContentLoaded", function() {
     addBackgroundImages(".apic-login-wrapper");
 
 });
+//modifications for change of password
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("h1.page-header");
+
+    if (header && header.textContent.trim() === "Change Password") {
+        header.insertAdjacentHTML('beforeend', `
+            <div class="bg-images">
+                <p class="pattern"></p>
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+            </div>
+        `);
+    }
+});
+
 //modifications to apply figma on terms and conditions 
 document.addEventListener("DOMContentLoaded", function() {
     if (window.location.href.includes("/tsandcs")) {
