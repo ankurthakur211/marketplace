@@ -316,6 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(document.body, { childList: true, subtree: true });
 
     /*role base product visibility*/
+    const isPartner = document.body.classList.contains('role-partner');
     const businessDomains = document.querySelector('.business-domains');
     const partnerDomain = document.querySelector('.partner-domain');
 
@@ -354,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function() {
           </nav>
           <section id="block-marketplace-latest-searchicon" class="block block-simple-block block-search-icon block-simple-blocksearch-icon clearfix" aria-label="search icon">
             <div class="imageContainer">
-              <a class="opensearch" title="Search this site" href="#">
+              <a class="opensearch2" title="Search this site" href="#">
                 <svg role="img" aria-labelledby="ibmapimSearchTitle" width="24" height="24" viewBox="0 0 32 32" fill-rule="evenodd">
                   <title id="ibmapimSearchTitle">Search this site</title>
                   <path d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z" transform="translate(0 0)"></path>
@@ -750,6 +751,32 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Search container not found");
         }
     });
+
+    var openSearchButton = document.querySelector(".opensearch2");
+
+    openSearchButton.addEventListener("click", function() {
+        var searchContainer = document.querySelector(
+            "section#block-marketplace-latest-exposedformsearch-apipage-1"
+        );
+
+        console.log(searchContainer); // Log searchContainer to debug
+
+        if (searchContainer) {
+            if (
+                searchContainer.style.display === "none" ||
+                searchContainer.style.display === ""
+            ) {
+                searchContainer.style.display = "flex";
+            } else {
+                searchContainer.style.display = "none";
+            }
+        } else {
+            console.log("Search container not found");
+        }
+    });
+
+
+
 });
 
 function show(expand) {

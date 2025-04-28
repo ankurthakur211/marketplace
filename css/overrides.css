@@ -18882,6 +18882,43 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     }
   }
   
+  .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu {
+    top: 84px;
+    width: calc(100% + 60px);
+    left: -30px;
+  }
+  @media (max-width: 576px) {
+    .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu {
+      width: calc(100% + 19px);
+      left: -9px;
+    }
+  }
+  .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu .navbar-collapse {
+    padding: 20px;
+  }
+  .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu .navbar-collapse .region-navigation-right {
+    display: none !important;
+  }
+  @media (max-width: 767px) {
+    .custom-headersec .navbar-header {
+      width: 100%;
+    }
+    .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu {
+      background: #e8f1ff;
+    }
+    .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu .navbar-collapse .region-navigation-right {
+      display: flex !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .custom-headersec .navbar-right {
+      display: none;
+    }
+  }
+  
+  .product-details-document .api-doc-background {
+    margin-top: 40px;
+  }
   
   /*# sourceMappingURL=demo.css.map */
 
