@@ -315,6 +315,76 @@ document.addEventListener("DOMContentLoaded", function() {
     // Start observing the document body for changes
     observer.observe(document.body, { childList: true, subtree: true });
 
+    /*role base product visibility*/
+    const businessDomains = document.querySelector('.business-domains');
+    const partnerDomain = document.querySelector('.partner-domain');
+
+    if (isPartner) {
+      // If body has 'role-partner', hide 'business-domains' and show 'partner-domain'
+      if (businessDomains) businessDomains.style.display = 'none';
+      if (partnerDomain) partnerDomain.style.display = '';
+    } else {
+      // Otherwise, show 'business-domains' and hide 'partner-domain'
+      if (businessDomains) businessDomains.style.display = '';
+      if (partnerDomain) partnerDomain.style.display = 'none';
+    }
+
+      /*role base product visibility*/
+
+    /* for nav bar menu responsive design*/
+
+    const apicStickyHeader = document.querySelector(".apicStickyHeader");
+    apicStickyHeader.classList.add("custom-headersec");
+
+    const navCollapse = document.querySelector('.navbar-collapse .menu.nav');
+
+    if (navCollapse) {
+      const newHTML = `
+        <div class="region region-navigation-right" aria-label="navigation_right">
+          <nav role="navigation" aria-labelledby="block-marketplace-latest-login-menu" id="block-marketplace-latest-login" class="block-login">
+            <h2 class="visually-hidden" id="block-marketplace-latest-login-menu">Log in</h2>
+            <ul class="menu menu--login nav">
+              <li class="first">
+                <a href="/sandbox/user/register" title="Create a new account" data-drupal-link-system-path="user/register">Create account</a>
+              </li>
+              <li class="last">
+                <a href="/sandbox/user/login" title="Sign in to your account" data-drupal-link-system-path="user/login">Sign in</a>
+              </li>
+            </ul>
+          </nav>
+          <section id="block-marketplace-latest-searchicon" class="block block-simple-block block-search-icon block-simple-blocksearch-icon clearfix" aria-label="search icon">
+            <div class="imageContainer">
+              <a class="opensearch" title="Search this site" href="#">
+                <svg role="img" aria-labelledby="ibmapimSearchTitle" width="24" height="24" viewBox="0 0 32 32" fill-rule="evenodd">
+                  <title id="ibmapimSearchTitle">Search this site</title>
+                  <path d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z" transform="translate(0 0)"></path>
+                </svg>
+              </a>
+            </div>
+          </section>
+        </div>
+      `;
+
+      // Parse the newHTML string into a DOM element (the outer div)
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(newHTML, 'text/html');
+      const regionDiv = doc.body.firstElementChild;
+
+      // Insert the <div class="region region-navigation-right"> after the UL
+      navCollapse.parentNode.insertBefore(regionDiv, navCollapse.nextSibling);
+    }
+
+
+
+
+    
+
+
+
+     /* for nav bar menu responsive design*/
+
+
+
 
     if (window.location.pathname.includes('/FAQ')) {
         // Select the div with class 'layout--onecol'
@@ -324,6 +394,8 @@ document.addEventListener("DOMContentLoaded", function() {
             faqSection.classList.add('custom-faqsec');
         }
     }
+
+ 
 
 
 
