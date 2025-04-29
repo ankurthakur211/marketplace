@@ -9359,7 +9359,7 @@ form#consumerorg-create-form textarea {
 }
 
 form#user-form input#edit-avatars-user-picture-0-upload {
-    height: 2.5rem;
+    /* height: 2.5rem; */
     width: 33rem;
 }
 
@@ -21076,7 +21076,6 @@ form#user-form input {
     align-items: center;
     padding: 20px 12px;
     gap: 10px;
-    width: unset;
     height: 59px;
     background: #FFFFFF;
     border: 1px solid #A7A7A9;
@@ -21146,6 +21145,66 @@ form#user-form button#edit-submit {
 #user-form .panel-heading {
     box-sizing: border-box;
     border-collapse: collapse;
+}
+
+form#user-form input#edit-avatars-user-picture-0-upload {
+    width: unset;
+}
+
+#user-form .avatar_preview_radio.avatar_preview_radio__letter_generator .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 90px;
+}
+
+@media screen and (max-width: 750px) {
+    form#user-form a#edit-cancel {
+        font-family: "SF Pro Display";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        box-sizing: border-box;
+        width: max-content;
+        padding: 15px 6px;
+        height: 48px;
+        background: #393939;
+        border: 1px solid #393939;
+        border-radius: 59px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+    form#user-form button#edit-submit {
+        align-items: center;
+        padding: 15px 10px;
+        height: 48px;
+        background: #5464f2;
+        margin: 1rem 1rem 1rem 0;
+    }
+    form#user-form a#edit-delete {
+        font-family: "SF Pro Display";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 12px;
+        gap: 10px;
+        width: max-content;
+        height: 49px;
+        background: #da1e28;
+        border: 1px solid #da1e28;
+        border-radius: 68px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
 }
 
 
