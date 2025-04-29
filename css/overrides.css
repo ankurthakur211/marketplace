@@ -4015,7 +4015,7 @@ margin-top: -4.7%; */
 
 
 /* .Products-business-cards-row-one {
-left: -3%; 
+left: -3%;
 margin: 33px;
 float: left;
 width: 26%;
@@ -5514,7 +5514,7 @@ border: 1.5px solid #5C5C5C;
 }
 
 
-/* 
+/*
 .faq-title {
 width: 591px;
 height: 22px;
@@ -7903,7 +7903,7 @@ border-right: 12px solid blue; */
 border-radius: 50%;
 width: 200px;
 text-align: center;
-margin: 100px; 
+margin: 100px;
 
 height: 200px;
 border-radius: 50%;
@@ -7930,7 +7930,7 @@ border-right: 12px solid red;
 height: 200px;
 border-radius: 50%;
 width: 200px;
-text-align: center; 
+text-align: center;
 
 height: 200px;
 border-radius: 50%;
@@ -7962,7 +7962,7 @@ border-right: 12px solid green; */
 border-radius: 50%;
 width: 200px;
 text-align: center;
-margin: 100px; 
+margin: 100px;
 
 border-radius: 50%;
 width: 200px;
@@ -8657,7 +8657,7 @@ a.button.apicNewUser.orgInvite {
 }
 
 .apic-reset-wrapper:after {
-    /* position: unset; 
+    /* position: unset;
 background-image:url("images/access-granted 1.png");*/
     position: absolute;
     background-image: url("images/access-granted 1.png");
@@ -11125,7 +11125,7 @@ section#block-marketplace-new-searchicon {
 }
 
 
-/* 
+/*
 .updated-sec .img-box {
 width: 35%;
 } */
@@ -15836,13 +15836,13 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 /* .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-sort-by {
     min-width: 150px;
   }
-  
-  
+
+
   .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-sort-order {
     min-width: 113px;
   }
-  
-  
+
+
   .custom-APIproduct .views-exposed-form.bef-exposed-form select#edit-items-per-page {
     min-width: 130px;
   } */
@@ -18882,6 +18882,49 @@ body.context--BusinessDomains .apicMainContent {
     }
 }
 
+.custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu {
+    top: 84px;
+    width: calc(100% + 60px);
+    left: -30px;
+}
+
+@media (max-width: 576px) {
+    .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu {
+        width: calc(100% + 19px);
+        left: -9px;
+    }
+}
+
+.custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu .navbar-collapse {
+    padding: 20px;
+}
+
+.custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu .navbar-collapse .region-navigation-right {
+    display: none !important;
+}
+
+@media (max-width: 767px) {
+    .custom-headersec .navbar-header {
+        width: 100%;
+    }
+    .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu {
+        background: #e8f1ff;
+    }
+    .custom-headersec .navbar-header .region-navigation #block-marketplace-latest-main-menu .navbar-collapse .region-navigation-right {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .custom-headersec .navbar-right {
+        display: none;
+    }
+}
+
+.product-details-document .api-doc-background {
+    margin-top: 40px;
+}
+
 
 /*# sourceMappingURL=demo.css.map */
 
@@ -21003,3 +21046,475 @@ form#apic-change-pwd-form input {
 
 
 /*Merna change password and edit user Design*/
+
+form#user-form a#edit-delete {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+    gap: 10px;
+    width: 173px;
+    height: 49px;
+    background: #DA1E28;
+    border: 1px solid #DA1E28;
+    border-radius: 68px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+form#user-form a#edit-cancel {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 48px;
+    background: #393939;
+    border: 1px solid #393939;
+    border-radius: 59px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+form#user-form button#edit-submit {
+    padding-left: 5%;
+    align-items: center;
+    padding: 12px 30px;
+    height: 48px;
+    background: #5464F2;
+    border-radius: 32px;
+    margin: 1rem 1rem 1rem 0;
+}
+
+
+/*Bassant APP Page Design*/
+
+.custom-application {
+    padding: 0px 20px;
+    padding-top: 140px;
+    position: relative;
+}
+
+.custom-application .page-header {
+    margin: 0 !important;
+    font-size: 74px;
+    color: #11183B;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    font-family: "main-font", sans-serif !important;
+    margin-bottom: 22px !important;
+    line-height: normal;
+    padding: 0;
+}
+
+.custom-application .bg-images .circle-1 {
+    width: 322px;
+    height: 322px;
+    background: #91DDFF;
+    filter: blur(300px);
+    position: absolute;
+    top: -100px;
+    border-radius: 230px;
+    left: -100px;
+}
+
+.custom-application .bg-images .circle-2 {
+    width: 280px;
+    height: 364px;
+    background: #5464F2;
+    filter: blur(300px);
+    position: absolute;
+    top: 0;
+    right: 100px;
+    border-radius: 230px;
+}
+
+.custom-application .views-element-container {
+    z-index: 1;
+    position: relative;
+}
+
+.custom-application .bg-images .pattern {
+    position: absolute;
+    top: -80px;
+    right: 0;
+    z-index: 1;
+}
+
+.custom-application .bg-images .pattern {
+    content: url("images/API-pattern.png");
+}
+
+.custom-application .main-pera {
+    font-size: 20px;
+    max-width: 585px;
+    line-height: 32.4px;
+    margin-bottom: 60px;
+}
+
+.custom-application .views-exposed-form.bef-exposed-form {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.custom-application div#apic-view-filter {
+    width: 100%;
+    justify-content: start;
+}
+
+.custom-application div#apic-view-filter .children {
+    font-size: 16px;
+    line-height: 20px;
+    color: #5C5C5C;
+    font-family: "main-font", sans-serif !important;
+}
+
+.custom-application div#apic-view-filter .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-application div#apic-view-filter .input-group input,
+.custom-application .views-exposed-form.bef-exposed-form select {
+    border: 1px solid #D5D5D5;
+    border-radius: 6px !important;
+    padding: 10px 20px;
+    height: 49px !important;
+    max-width: 100%;
+    width: 100% !important;
+    box-shadow: unset;
+    font-size: 16px;
+    color: #5C5C5C;
+}
+
+.custom-application div#apic-view-filter .input-group input::placeholder,
+.custom-application .views-exposed-form.bef-exposed-form select::placeholder {
+    color: #5C5C5C;
+    font-weight: 600;
+}
+
+.custom-application div#apic-view-filter .input-group .input-group-addon .glyphicon {
+    display: none;
+}
+
+.custom-application div#apic-view-filter .input-group .input-group-addon {
+    padding: 0;
+    display: inline-block;
+}
+
+.custom-application div#apic-view-filter .input-group .input-group-addon svg {
+    position: unset;
+}
+
+.custom-application .views-exposed-form.bef-exposed-form select#edit-term-node-tid-depth,
+.custom-application .views-exposed-form.bef-exposed-form select#edit-sort-by,
+.custom-application .views-exposed-form.bef-exposed-form select#edit-sort-order,
+.custom-application .views-exposed-form.bef-exposed-form select#edit-items-per-page {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.229222 0.236534C0.534852 -0.0788445 1.03037 -0.0788445 1.336 0.236534L6.00001 5.05008L10.664 0.236534C10.9696 -0.0788445 11.4652 -0.0788445 11.7708 0.236534C12.0764 0.551966 12.0764 1.0634 11.7708 1.37883L6.55342 6.76347C6.24778 7.07885 5.75223 7.07885 5.4466 6.76347L0.229222 1.37883C-0.0764075 1.0634 -0.0764075 0.551966 0.229222 0.236534Z" fill="%235C5C5C"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    cursor: pointer;
+    height: 49px;
+    background-color: #fff;
+}
+
+.custom-application .views-exposed-form.bef-exposed-form select#edit-term-node-tid-depth::-ms-expand,
+.custom-application .views-exposed-form.bef-exposed-form select#edit-sort-by::-ms-expand,
+.custom-application .views-exposed-form.bef-exposed-form select#edit-sort-order::-ms-expand,
+.custom-application .views-exposed-form.bef-exposed-form select#edit-items-per-page::-ms-expand {
+    display: none;
+}
+
+.custom-application .views-exposed-form.bef-exposed-form .select-wrapper::after {
+    content: none;
+}
+
+.custom-application .views-exposed-form .form-item {
+    padding: 0;
+}
+
+.bx--global-light-ui .view-filters.form-group .form-actions {
+    margin: 0;
+    padding: 0;
+}
+
+.custom-application .views-exposed-form.bef-exposed-form #edit-actions button {
+    padding: 10px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    height: 49px !important;
+    border-radius: 50px !important;
+    width: auto !important;
+    background: #5464F2 !important;
+    border: none;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCardMain .bx--about__title--name {
+    width: 100%;
+}
+
+.custom-application .views-exposed-form .form-item:nth-child(2) {
+    width: calc(84% / 5 - 5px);
+}
+
+.custom-application .views-exposed-form .form-item:nth-child(3) {
+    width: calc(59% / 5 - 5px);
+}
+
+.custom-application .views-exposed-form .form-item:nth-child(4) {
+    width: calc(75% / 8 - 5px);
+}
+
+.custom-application .views-exposed-form .form-item:nth-child(5) {
+    width: calc(80% / 8 - 5px);
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCard {
+    padding: 0;
+    display: block;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCardMain .apicAppName {
+    width: 100%;
+    white-space: unset;
+    margin-top: 0;
+    font-family: "main-font", sans-serif !important;
+    display: block;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+.custom-application .custom-applicationcards .grid {
+    border: none;
+    background: transparent;
+    box-shadow: unset;
+    border-radius: unset;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCardMain .bx--about__title--name a {
+    border: 1px solid #ECECEC;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 19px 0px #0000000D;
+    border-radius: 16px;
+    font-size: 20px !important;
+    flex-direction: column;
+    padding: 30px;
+    min-height: 290px;
+}
+
+.custom-application .custom-applicationcards .grid .node--type-product.bx--card {
+    border-radius: unset;
+    box-shadow: unset;
+    justify-content: unset;
+    background-color: transparent;
+    background-position: unset;
+    background-size: unset;
+    background-image: unset;
+    background-repeat: unset;
+    height: unset;
+}
+
+.custom-application .custom-applicationcards .grid span.apicard-innertext {
+    display: block;
+    word-break: break-word;
+    width: 100%;
+    white-space: normal;
+    font-size: 16px;
+    color: #5E5E5E;
+    line-height: 29px;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCardVersion {
+    position: unset;
+    right: unset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCardVersion .field.field--name-apic-version.field--type-string.field--label-hidden.field--item {
+    position: unset;
+    top: unset;
+    width: fit-content;
+    padding: 5px 15px;
+    background: #EBEDFF;
+    height: auto;
+    border-radius: 50px;
+    color: #5464F2;
+}
+
+.custom-application .custom-applicationcards .grid .apicAppCardVersion:before {
+    position: unset;
+    content: "View Details";
+    background-image: url('data:image/svg+xml;utf8,<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.5" width="25" height="25" rx="12.5" fill="%235464F2"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9.23653 18.7708C8.92116 18.4651 8.92116 17.9696 9.23653 17.664L14.0501 13L9.23653 8.33601C8.92115 8.03037 8.92115 7.53482 9.23653 7.22919C9.55197 6.9236 10.0634 6.9236 10.3788 7.22919L15.7635 12.4466C16.0788 12.7522 16.0788 13.2478 15.7635 13.5534L10.3788 18.7708C10.0634 19.0764 9.55197 19.0764 9.23653 18.7708Z" fill="white"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #5464F2;
+    font-size: 16px;
+    padding-right: 35px;
+    background-position: right;
+    font-weight: bold;
+}
+
+section#block-marketplace-latest-exposedformsearch-apipage-1 {
+    margin-top: -90px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+    margin-left: -50px;
+    margin-right: -50px;
+}
+
+.bx--global-light-ui .views-exposed-form form#views-exposed-form-search-api-page-1 {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.bx--global-light-ui .views-exposed-form form#views-exposed-form-search-api-page-1 div#apic-view-filter {
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* ------ */
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCard {
+    border: 1px solid #ececec;
+    background: #fff;
+    box-shadow: 0 3px 19px 0 #0000000D;
+    border-radius: 16px;
+    padding: 30px;
+    min-height: 290px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCardMain .bx--about__title--name a {
+    border: unset;
+    background: unset;
+    box-shadow: unset;
+    border-radius: unset;
+    padding: unset;
+    min-height: unset;
+    pointer-events: none;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCard .customFields .field--item p {
+    display: block;
+    word-break: break-word;
+    width: 100%;
+    white-space: normal;
+    font-size: 16px;
+    color: #5E5E5E;
+    line-height: 29px;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCard .customFields {
+    order: 1;
+}
+
+.apicAppCardMain {
+    order: 2;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCardMain .apicAppName {
+    position: absolute;
+    top: 40px;
+    width: 90%;
+    pointer-events: all;
+    left: 32px;
+}
+
+.custom-application .custom-applicationcards .grid .bx--card .apicAppCard .customFields .field--item p {
+    padding-top: 60px;
+}
+
+@media(max-width: 1399px) {
+    .custom-application .views-exposed-form .form-item {
+        width: 25%;
+    }
+    .custom-application .views-exposed-form .form-item:nth-child(2) {
+        width: calc(84% / 5 - 5px);
+    }
+    .custom-application .views-exposed-form .form-item:nth-child(3) {
+        width: calc(59% / 5 - 5px);
+    }
+    .custom-application .views-exposed-form .form-item:nth-child(4) {
+        width: calc(75% / 8 - 5px);
+    }
+    .custom-application .views-exposed-form .form-item:nth-child(5) {
+        width: calc(80% / 8 - 5px);
+    }
+    .custom-application .views-exposed-form.bef-exposed-form #edit-actions button {
+        padding: 10px 28px;
+    }
+    .custom-application .custom-applicationcards .grid .bx--card .apicAppCard {
+        padding: 30px;
+        min-height: 290px;
+    }
+    .custom-application {
+        padding: 20px;
+    }
+    section#block-marketplace-latest-exposedformsearch-apipage-1 {
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+}
+
+.custom-application .apicAppStatus .apicStatusText {
+    top: unset;
+    width: fit-content;
+    padding: 5px 15px;
+    background: #ebedff;
+    height: auto;
+    border-radius: 50px;
+    color: #5464f2;
+    margin-left: -25px;
+    margin-bottom: 4rem;
+}
+
+.custom-application .bx--card-footer {
+    background: white;
+}
+
+.custom-application .apicAppStatus::before {
+    position: unset;
+    content: "View Details";
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #5464F2;
+    font-size: 16px;
+    padding-right: 35px;
+    background-position: right;
+    display: inline;
+    white-space: normal;
+    width: 97%;
+    margin-bottom: 4rem;
+}
+
+
+/*Bassant APP Page Design*/

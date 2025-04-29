@@ -316,20 +316,21 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(document.body, { childList: true, subtree: true });
 
     /*role base product visibility*/
+    const isPartner = document.body.classList.contains('role-partner');
     const businessDomains = document.querySelector('.business-domains');
     const partnerDomain = document.querySelector('.partner-domain');
 
     if (isPartner) {
-      // If body has 'role-partner', hide 'business-domains' and show 'partner-domain'
-      if (businessDomains) businessDomains.style.display = 'none';
-      if (partnerDomain) partnerDomain.style.display = '';
+        // If body has 'role-partner', hide 'business-domains' and show 'partner-domain'
+        if (businessDomains) businessDomains.style.display = 'none';
+        if (partnerDomain) partnerDomain.style.display = '';
     } else {
-      // Otherwise, show 'business-domains' and hide 'partner-domain'
-      if (businessDomains) businessDomains.style.display = '';
-      if (partnerDomain) partnerDomain.style.display = 'none';
+        // Otherwise, show 'business-domains' and hide 'partner-domain'
+        if (businessDomains) businessDomains.style.display = '';
+        if (partnerDomain) partnerDomain.style.display = 'none';
     }
 
-      /*role base product visibility*/
+    /*role base product visibility*/
 
     /* for nav bar menu responsive design*/
 
@@ -339,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const navCollapse = document.querySelector('.navbar-collapse .menu.nav');
 
     if (navCollapse) {
-      const newHTML = `
+        const newHTML = `
         <div class="region region-navigation-right" aria-label="navigation_right">
           <nav role="navigation" aria-labelledby="block-marketplace-latest-login-menu" id="block-marketplace-latest-login" class="block-login">
             <h2 class="visually-hidden" id="block-marketplace-latest-login-menu">Log in</h2>
@@ -354,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function() {
           </nav>
           <section id="block-marketplace-latest-searchicon" class="block block-simple-block block-search-icon block-simple-blocksearch-icon clearfix" aria-label="search icon">
             <div class="imageContainer">
-              <a class="opensearch" title="Search this site" href="#">
+              <a class="opensearch2" title="Search this site" href="#">
                 <svg role="img" aria-labelledby="ibmapimSearchTitle" width="24" height="24" viewBox="0 0 32 32" fill-rule="evenodd">
                   <title id="ibmapimSearchTitle">Search this site</title>
                   <path d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z" transform="translate(0 0)"></path>
@@ -365,23 +366,23 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
       `;
 
-      // Parse the newHTML string into a DOM element (the outer div)
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(newHTML, 'text/html');
-      const regionDiv = doc.body.firstElementChild;
+        // Parse the newHTML string into a DOM element (the outer div)
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(newHTML, 'text/html');
+        const regionDiv = doc.body.firstElementChild;
 
-      // Insert the <div class="region region-navigation-right"> after the UL
-      navCollapse.parentNode.insertBefore(regionDiv, navCollapse.nextSibling);
+        // Insert the <div class="region region-navigation-right"> after the UL
+        navCollapse.parentNode.insertBefore(regionDiv, navCollapse.nextSibling);
     }
 
 
 
 
-    
 
 
 
-     /* for nav bar menu responsive design*/
+
+    /* for nav bar menu responsive design*/
 
 
 
@@ -395,7 +396,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
- 
+
 
 
 
@@ -454,8 +455,22 @@ document.addEventListener("DOMContentLoaded", () => {
         `);
     }
 });
+//modifications for edit user
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.href.includes("/user/") && window.location.href.includes("/edit")) {
+        const header = document.querySelector("h1.page-header");
 
-//modifications to apply figma on terms and conditions 
+        if (header) {
+            header.insertAdjacentHTML('beforeend', `
+            <div class="bg-images">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+            </div>
+        `);
+        }
+    }
+});
+//modifications to apply figma on terms and conditions
 document.addEventListener("DOMContentLoaded", function() {
     if (window.location.href.includes("/tsandcs")) {
         const pageNodeTitle = document.querySelector("#page-node-title");
@@ -537,7 +552,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-//modifications to apply figma on privacy and policy 
+//modifications to apply figma on privacy and policy
 document.addEventListener("DOMContentLoaded", function() {
     if (window.location.href.includes("/privacy")) {
         const pageNodeTitle = document.querySelector("#page-node-title");
@@ -673,6 +688,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     }
+
+    if (window.location.pathname.includes("/application")) {
+        let element = document.querySelector(".region-content");
+        if (element) {
+            element.classList.add("custom-application");
+            element.insertAdjacentHTML("afterbegin", `
+                    <div class="bg-images">
+                        <p class="pattern"></p>
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                    </div>
+                `);;
+        }
+
+        let header = document.querySelector(".page-header");
+        if (header) {
+            header.insertAdjacentHTML("afterend", `
+                <p class="main-pera">
+                 Here are your applications, ready to go...
+                </p>
+            `);
+        }
+
+        let blazy = document.querySelector(".blazy.blazy--view.blazy--view--applications");
+        if (blazy) {
+            blazy.classList.add("custom-applicationcards");
+        }
+
+    }
 });
 
 // document.addEventListener("DOMContentLoaded", function() {
@@ -750,6 +794,32 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Search container not found");
         }
     });
+
+    var openSearchButton = document.querySelector(".opensearch2");
+
+    openSearchButton.addEventListener("click", function() {
+        var searchContainer = document.querySelector(
+            "section#block-marketplace-latest-exposedformsearch-apipage-1"
+        );
+
+        console.log(searchContainer); // Log searchContainer to debug
+
+        if (searchContainer) {
+            if (
+                searchContainer.style.display === "none" ||
+                searchContainer.style.display === ""
+            ) {
+                searchContainer.style.display = "flex";
+            } else {
+                searchContainer.style.display = "none";
+            }
+        } else {
+            console.log("Search container not found");
+        }
+    });
+
+
+
 });
 
 function show(expand) {
@@ -1106,7 +1176,7 @@ function responseText(errorId) {
   var code7 = document.getElementById("response-rate7");
   var code8 = document.getElementById("response-rate8");
   var code9 = document.getElementById("response-rate9");
-  
+
   if (divId === "response-rate") {
     code1.style.display = "block";
     code2.style.display = "none";
