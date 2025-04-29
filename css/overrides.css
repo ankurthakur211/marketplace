@@ -20990,7 +20990,8 @@ form#apic-change-pwd-form input {
     content: "";
 }
 
-.path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs ul.tabs--primary {
+.path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs ul.tabs--primary,
+.path-user.route-entityuseredit-form .region-content nav.tabs ul.tabs--primary {
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
@@ -21047,6 +21048,45 @@ form#apic-change-pwd-form input {
 
 /*Merna change password and edit user Design*/
 
+
+/*Merna edit user Design*/
+
+form#user-form .children {
+    font-family: "SF Pro Display" !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 36px;
+    color: #4D4D4D;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+form#user-form input {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 12px;
+    gap: 10px;
+    width: unset;
+    height: 59px;
+    background: #FFFFFF;
+    border: 1px solid #A7A7A9;
+    position: relative;
+    border-radius: 15px !important;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
 form#user-form a#edit-delete {
     font-family: "SF Pro Display";
     font-style: normal;
@@ -21096,6 +21136,20 @@ form#user-form button#edit-submit {
     border-radius: 32px;
     margin: 1rem 1rem 1rem 0;
 }
+
+#user-form .select-wrapper {
+    display: inline-block;
+    position: relative;
+    width: unset;
+}
+
+#user-form .panel-heading {
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+
+/*Merna  edit user Design*/
 
 
 /*Bassant APP Page Design*/
@@ -21323,7 +21377,7 @@ form#user-form button#edit-submit {
     min-height: 290px;
 }
 
-.custom-application .custom-applicationcards .grid .node--type-product.bx--card {
+.custom-application .custom-applicationcards .grid .node--type-app.bx--card {
     border-radius: unset;
     box-shadow: unset;
     justify-content: unset;
@@ -21343,39 +21397,6 @@ form#user-form button#edit-submit {
     font-size: 16px;
     color: #5E5E5E;
     line-height: 29px;
-}
-
-.custom-application .custom-applicationcards .grid .bx--card .apicAppCardVersion {
-    position: unset;
-    right: unset;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-}
-
-.custom-application .custom-applicationcards .grid .bx--card .apicAppCardVersion .field.field--name-apic-version.field--type-string.field--label-hidden.field--item {
-    position: unset;
-    top: unset;
-    width: fit-content;
-    padding: 5px 15px;
-    background: #EBEDFF;
-    height: auto;
-    border-radius: 50px;
-    color: #5464F2;
-}
-
-.custom-application .custom-applicationcards .grid .apicAppCardVersion:before {
-    position: unset;
-    content: "View Details";
-    background-image: url('data:image/svg+xml;utf8,<svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.5" width="25" height="25" rx="12.5" fill="%235464F2"/><path fill-rule="evenodd" clip-rule="evenodd" d="M9.23653 18.7708C8.92116 18.4651 8.92116 17.9696 9.23653 17.664L14.0501 13L9.23653 8.33601C8.92115 8.03037 8.92115 7.53482 9.23653 7.22919C9.55197 6.9236 10.0634 6.9236 10.3788 7.22919L15.7635 12.4466C16.0788 12.7522 16.0788 13.2478 15.7635 13.5534L10.3788 18.7708C10.0634 19.0764 9.55197 19.0764 9.23653 18.7708Z" fill="white"/></svg>');
-    background-repeat: no-repeat;
-    background-size: contain;
-    color: #5464F2;
-    font-size: 16px;
-    padding-right: 35px;
-    background-position: right;
-    font-weight: bold;
 }
 
 section#block-marketplace-latest-exposedformsearch-apipage-1 {
@@ -21406,7 +21427,7 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     box-shadow: 0 3px 19px 0 #0000000D;
     border-radius: 16px;
     padding: 30px;
-    min-height: 290px;
+    min-height: 233px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -21474,7 +21495,7 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     }
     .custom-application .custom-applicationcards .grid .bx--card .apicAppCard {
         padding: 30px;
-        min-height: 290px;
+        min-height: 240px;
     }
     .custom-application {
         padding: 20px;
@@ -21494,7 +21515,7 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     border-radius: 50px;
     color: #5464f2;
     margin-left: -25px;
-    margin-bottom: 4rem;
+    margin-bottom: 7rem;
 }
 
 .custom-application .bx--card-footer {
@@ -21513,7 +21534,10 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     display: inline;
     white-space: normal;
     width: 97%;
-    margin-bottom: 4rem;
+    margin-bottom: 8rem;
+    z-index: 1;
+    font-weight: bold;
+    margin-left: 1rem;
 }
 
 
