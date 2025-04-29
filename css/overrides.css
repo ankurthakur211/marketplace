@@ -20869,10 +20869,12 @@ form#user-login-form input {
 /* Janet Product Documentation Page Design */
 
 
-/*Merna change password Design*/
+/*Merna change password and edit user Design*/
 
 .path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) ul.tabs--primary.nav.nav-tabs>li.active>a,
-.path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) ul.tabs--primary.nav.nav-tabs>li>a {
+.path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) ul.tabs--primary.nav.nav-tabs>li>a,
+.path-user.route-entityuseredit-form ul.tabs--primary.nav.nav-tabs>li.active>a,
+.path-user.route-entityuseredit-form ul.tabs--primary.nav.nav-tabs>li>a {
     /* Change Password */
     font-family: 'Inter';
     font-style: normal;
@@ -20887,15 +20889,18 @@ form#user-login-form input {
     z-index: 0;
 }
 
-.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs {
+.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs,
+.route-entityuseredit-form .region-content nav.tabs {
     padding: 1rem 2rem 0 2rem;
 }
 
-path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs ul.tabs--primary {
+.path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs ul.tabs--primary,
+.path-user.route-entityuseredit-form .region-content nav.tabs ul.tabs--primary {
     padding-top: 0.4rem;
 }
 
-.path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) ul.tabs--primary.nav.nav-tabs>li.active>a {
+.path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) ul.tabs--primary.nav.nav-tabs>li.active>a,
+.path-user.route-entityuseredit-form ul.tabs--primary.nav.nav-tabs>li.active>a {
     background-color: #ffffff;
 }
 
@@ -20992,20 +20997,24 @@ form#apic-change-pwd-form input {
 }
 
 @media screen and (max-width: 640px) {
-    .route-change-pwd-pagechange-password-form:not(.pass-reset) .page-header {
+    .route-change-pwd-pagechange-password-form:not(.pass-reset) .page-header,
+    .route-entityuseredit-form .page-header {
         align-items: center;
         text-align: center;
     }
-    .route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content {
+    .route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content,
+    .route-entityuseredit-form .region-content {
         display: flex;
         grid-gap: 2rem 2rem;
         font-family: "SF Pro Display";
         align-items: center;
     }
-    .path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs ul.tabs--primary li {
+    .path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs ul.tabs--primary li,
+    .path-user.route-entityuseredit-form .region-content nav.tabs ul.tabs--primary li {
         justify-content: center;
     }
-    .path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs ul.tabs--primary {
+    .path-user.route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs ul.tabs--primary,
+    .path-user.route-entityuseredit-form .region-content nav.tabs ul.tabs--primary {
         justify-content: center;
         width: 100%;
         max-width: 25rem;
@@ -21018,14 +21027,16 @@ form#apic-change-pwd-form input {
         border-radius: 10px;
         height: 52%;
     }
-    .route-change-pwd-pagechange-password-form:not(.pass-reset) .page-header {
+    .route-change-pwd-pagechange-password-form:not(.pass-reset) .page-header,
+    .route-entityuseredit-form .page-header {
         margin: 0;
         margin-top: 10rem !important;
     }
-    .route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs {
+    .route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs,
+    .route-entityuseredit-form .region-content nav.tabs {
         margin: 0;
     }
 }
 
 
-/*Merna change password Design*/
+/*Merna change password and edit user Design*/
