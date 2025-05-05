@@ -18925,110 +18925,133 @@ body.context--BusinessDomains .apicMainContent {
     margin-top: 40px;
 }
 
-
 .custom-editsec ul {
     border-radius: 0 !important;
-  }
-  .custom-editsec ul.nav-tabs li {
+}
+
+.custom-editsec ul.nav-tabs li {
     width: 100% !important;
-  }
-  .custom-editsec ul.nav-tabs li a {
+}
+
+.custom-editsec ul.nav-tabs li a {
     width: 100% !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     font-family: "SF Pro Display" !important;
-  }
-  .custom-editsec .select-wrapper {
+}
+
+.custom-editsec .select-wrapper {
     width: 100% !important;
-  }
-  .custom-editsec .select-wrapper select {
+}
+
+.custom-editsec .select-wrapper select {
     max-width: 29rem;
     height: 59px;
     background: #fff !important;
     border: 1px solid #a7a7a9 !important;
     border-radius: 25px !important;
-  }
-  .custom-editsec .select-wrapper::after {
+}
+
+.custom-editsec .select-wrapper::after {
     content: none;
-  }
-  .custom-editsec #edit-avatars-avatar-generator--wrapper .avatar_preview_radio span img {
+}
+
+.custom-editsec #edit-avatars-avatar-generator--wrapper .avatar_preview_radio span img {
     border-radius: 100%;
     margin-bottom: 20px;
-  }
-  .custom-editsec #edit-avatars-avatar-generator-letter-generator-label,
-  .custom-editsec #edit-avatars-avatar-generator-none-label {
+}
+
+.custom-editsec #edit-avatars-avatar-generator-letter-generator-label,
+.custom-editsec #edit-avatars-avatar-generator-none-label {
     width: fit-content;
-  }
-  .custom-editsec #edit-avatars-avatar-generator-letter-generator-label input,
-  .custom-editsec #edit-avatars-avatar-generator-none-label input {
+}
+
+.custom-editsec #edit-avatars-avatar-generator-letter-generator-label input,
+.custom-editsec #edit-avatars-avatar-generator-none-label input {
     height: auto;
     opacity: 0;
-  }
-  .custom-editsec form#user-form input#edit-avatars-user-picture-0-upload {
-    height: auto;
-  }
+}
 
-  .custom-changepass ul {
+.custom-editsec form#user-form input#edit-avatars-user-picture-0-upload {
+    height: auto;
+}
+
+.custom-changepass ul {
     border-radius: 0 !important;
-  }
-  .custom-changepass ul.nav-tabs li {
+}
+
+.custom-changepass ul.nav-tabs li {
     width: 100% !important;
-  }
-  .custom-changepass ul.nav-tabs li a {
+}
+
+.custom-changepass ul.nav-tabs li a {
     width: 100% !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     font-family: "SF Pro Display" !important;
-  }
-  .custom-changepass #edit-pass {
+}
+
+.custom-changepass #edit-pass {
     margin-bottom: 10px;
-  }
-  .custom-changepass #edit-pass .password-strength {
+}
+
+.custom-changepass #edit-pass .password-strength {
     gap: 10px;
-  }
-  .custom-changepass #edit-pass .password-strength .password-strength__title {
+}
+
+.custom-changepass #edit-pass .password-strength .password-strength__title {
     width: fit-content;
     flex: unset;
-  }
-  .custom-changepass #ibm-apim-password-policy-status {
+}
+
+.custom-changepass #ibm-apim-password-policy-status {
     padding: 20px;
-  }
-  .custom-changepass #ibm-apim-password-policy-status .icon.glyphicon {
+}
+
+.custom-changepass #ibm-apim-password-policy-status .icon.glyphicon {
     display: none;
-  }
-  .custom-changepass #edit-actions {
+}
+
+.custom-changepass #edit-actions {
     margin: 40px 0;
-  }
-  .custom-changepass #edit-actions button {
+}
+
+.custom-changepass #edit-actions button {
     box-shadow: none;
     padding: 15px 45px;
-  }
-  
-  .custom-viewprofile {
+}
+
+.custom-viewprofile {
     margin-bottom: 60px;
-  }
-  .custom-viewprofile ul {
+}
+
+.custom-viewprofile ul {
     border-radius: 0 !important;
     padding: 0 !important;
-  }
-  .custom-viewprofile ul.nav-tabs li {
+}
+
+.custom-viewprofile ul.nav-tabs li {
     width: 100% !important;
-  }
-  .custom-viewprofile ul.nav-tabs li a {
+}
+
+.custom-viewprofile ul.nav-tabs li a {
     width: 100% !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     font-family: "SF Pro Display" !important;
     color: #5464f2 !important;
-  }
-  .custom-viewprofile ul.nav-tabs li.active a {
+}
+
+.custom-viewprofile ul.nav-tabs li.active a {
     background: #fff !important;
-  }
-  .custom-viewprofile .bg-images {
+}
+
+.custom-viewprofile .bg-images {
     position: absolute;
     width: 100%;
-  }
-  .custom-viewprofile article {
+}
+
+.custom-viewprofile article {
     max-width: 320px;
     border: 2px solid #e4e4e4 !important;
     background: #ffffff !important;
@@ -19038,48 +19061,58 @@ body.context--BusinessDomains .apicMainContent {
     padding: 28px 36px !important;
     display: flex;
     flex-direction: column;
-  }
-  .custom-viewprofile article .field--name-first-name {
+}
+
+.custom-viewprofile article .field--name-first-name {
     order: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-  }
-  .custom-viewprofile article .field--name-first-name .field--label {
+}
+
+.custom-viewprofile article .field--name-first-name .field--label {
     font-weight: 400 !important;
-  }
-  .custom-viewprofile article .field--name-first-name .field--item {
+}
+
+.custom-viewprofile article .field--name-first-name .field--item {
     font-weight: 700 !important;
-  }
-  .custom-viewprofile article .field--name-last-name {
+}
+
+.custom-viewprofile article .field--name-last-name {
     order: 3;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
     padding-bottom: 0;
-  }
-  .custom-viewprofile article .field--name-last-name .field--label {
+}
+
+.custom-viewprofile article .field--name-last-name .field--label {
     font-weight: 400 !important;
-  }
-  .custom-viewprofile article .field--name-last-name .field--item {
+}
+
+.custom-viewprofile article .field--name-last-name .field--item {
     font-weight: 700 !important;
-  }
-  .custom-viewprofile article .field--name-user-picture {
+}
+
+.custom-viewprofile article .field--name-user-picture {
     order: 1;
-  }
-  .custom-viewprofile article .field--name-user-picture .field--label,
-  .custom-viewprofile article .field--name-user-picture .field--item {
+}
+
+.custom-viewprofile article .field--name-user-picture .field--label,
+.custom-viewprofile article .field--name-user-picture .field--item {
     text-align: center;
-  }
-  .custom-viewprofile article .field--name-user-picture .field--label img,
-  .custom-viewprofile article .field--name-user-picture .field--item img {
+}
+
+.custom-viewprofile article .field--name-user-picture .field--label img,
+.custom-viewprofile article .field--name-user-picture .field--item img {
     margin: 0 auto;
     margin-top: 20px;
     border-radius: 100px;
-  }
-  .custom-viewprofile article .js-form-type-item {
+}
+
+.custom-viewprofile article .js-form-type-item {
     order: 4;
     display: flex;
     align-items: center;
@@ -19088,14 +19121,12 @@ body.context--BusinessDomains .apicMainContent {
     font-weight: 700 !important;
     padding-bottom: 0;
     margin-bottom: 0;
-  }
-  .custom-viewprofile article .js-form-type-item h4 {
+}
+
+.custom-viewprofile article .js-form-type-item h4 {
     font-weight: 400 !important;
     font-size: 14px !important;
-  }
-  
-  
-
+}
 
 
 /*updating home page feb ankiee*/
@@ -21050,16 +21081,16 @@ form#user-login-form input {
     position: absolute;
     left: 0px;
     font-size: 50px;
-    z-index:1;
+    z-index: 1;
 }
- 
- .apic-user-form.apic-user-form-reset-pwd.ur-count-1 .apic-user-form-wrapper .apic-user-form-inner-wrapper {
+
+.apic-user-form.apic-user-form-reset-pwd.ur-count-1 .apic-user-form-wrapper .apic-user-form-inner-wrapper {
     margin-left: 0;
     margin-right: 0;
     margin-top: 110px;
-     z-index:1;
+    z-index: 1;
 }
- 
+
 .apic-user-form-reset-pwd div#edit-actions button {
     border-radius: 50px !important;
     height: auto;
@@ -21068,22 +21099,22 @@ form#user-login-form input {
     width: 200px;
     margin: auto;
 }
- 
+
 .apic-user-form-reset-pwd .apic-user-form-text {
     padding-left: 1rem !important;
 }
- 
+
 .apic-user-form-reset-pwd .apic-user-form-footer .apic-user-form-text {
     text-align: center;
     padding: 1.5rem 1rem 1.5rem 1rem;
     width: 50%;
 }
- 
+
 .apic-user-form-reset-pwd .captcha {
     position: relative;
     margin-top: 45px;
 }
- 
+
 .apic-user-form-reset-pwd .img-responsive {
     display: block;
     max-width: 100%;
@@ -21091,7 +21122,7 @@ form#user-login-form input {
     margin: auto;
     margin-bottom: 20px;
 }
- 
+
 .apic-user-form-reset-pwd .bx--global-light-ui .apic-user-form-wrapper .form-group {
     margin-bottom: 0;
     margin-top: 25px;
@@ -21111,38 +21142,34 @@ form#user-login-form input {
 }
 
 @media (max-width: 1060px) {
-.apic-user-form-reset-pwd form#user-pass::before {
-    content: "";
-    display: inline-block;
-    width: 550px;
-    height: 450px;
-    background-image: url("images/forgot_password.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: unset;
-    margin-top: 90px;
-    transform: translateX(-40%);
-    max-width:100%;
-}
-    
-.apic-user-form-reset-pwd .apic-user-form-footer .apic-user-form-text {
-    text-align: center;
-    padding: 1.5rem 1rem 1.5rem 1rem;
-    width: 100%;
-}
-    
-.apic-user-form.apic-user-form-reset-pwd.ur-count-1 .apic-user-form-wrapper .apic-user-form-inner-wrapper {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0px;
-    z-index: 1;
-}
+    .apic-user-form-reset-pwd form#user-pass::before {
+        content: "";
+        display: inline-block;
+        width: 550px;
+        height: 450px;
+        background-image: url("images/forgot_password.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: unset;
+        margin-top: 90px;
+        transform: translateX(-40%);
+        max-width: 100%;
+    }
+    .apic-user-form-reset-pwd .apic-user-form-footer .apic-user-form-text {
+        text-align: center;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        width: 100%;
+    }
+    .apic-user-form.apic-user-form-reset-pwd.ur-count-1 .apic-user-form-wrapper .apic-user-form-inner-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0px;
+        z-index: 1;
+    }
 }
 
 
 /* Janet Product Documentation Page Design */
-
-
 
 
 /*Merna change password and edit user Design*/
@@ -21475,6 +21502,17 @@ form#user-form input#edit-avatars-user-picture-0-upload {
         order: 0;
         flex-grow: 0;
     }
+}
+
+.custom-editsec #edit-avatars-avatar-generator-letter-generator-label input,
+.custom-editsec #edit-avatars-avatar-generator-none-label input {
+    height: auto;
+    opacity: 0;
+    display: none;
+}
+
+#user-form .bx--global-light-ui .form-item .description {
+    margin-top: 1rem;
 }
 
 
