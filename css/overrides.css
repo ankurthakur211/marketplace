@@ -21339,6 +21339,7 @@ form#apic-change-pwd-form input {
     .route-change-pwd-pagechange-password-form:not(.pass-reset) .region-content nav.tabs,
     .route-entityuseredit-form .region-content nav.tabs {
         margin: 0;
+        justify-content: center;
     }
 }
 
