@@ -458,9 +458,14 @@ document.addEventListener("DOMContentLoaded", () => {
 //modifications for edit user
 document.addEventListener("DOMContentLoaded", () => {
     if (window.location.href.includes("/user/") && window.location.href.includes("/edit")) {
-        const header = document.querySelector("h1.page-header");
+        let element = document.querySelector(".region-content");
+        if (element) {
+           element.classList.add("custom-editsec");
+   
+        }
 
-        if (header) {
+        const header = document.querySelector("h1.page-header");
+         if (header) {
             header.insertAdjacentHTML('beforeend', `
             <div class="bg-images">
                 <div class="circle-1"></div>
@@ -470,6 +475,45 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+//modifications for change password
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.href.includes("/user/") && window.location.href.includes("/change-password")) {
+        let element = document.querySelector(".region-content");
+        if (element) {
+           element.classList.add("custom-changepass");
+    
+        }
+    }
+});
+
+
+//modifications for View Profile
+document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.href;
+    const userUrlPattern = /\/user\/\d+/;
+    
+    if (userUrlPattern.test(currentUrl)) {
+      const el = document.querySelector('.region-content');
+      if (el) {
+        el.classList.add('custom-viewprofile');
+        el.insertAdjacentHTML("afterbegin", `
+        <div class="bg-images">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+        </div>
+    `);
+      }
+    }
+});
+
+
+
+
+
+
+
+
 //modifications to apply figma on terms and conditions
 document.addEventListener("DOMContentLoaded", function() {
     if (window.location.href.includes("/tsandcs")) {
