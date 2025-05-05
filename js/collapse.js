@@ -752,9 +752,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    var openSearchButton = document.querySelector(".opensearch2");
+    var openSearchButton2 = document.querySelector(".opensearch2");
 
-    openSearchButton.addEventListener("click", function() {
+    openSearchButton2.addEventListener("click", function() {
         var searchContainer = document.querySelector(
             "section#block-marketplace-latest-exposedformsearch-apipage-1"
         );
