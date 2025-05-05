@@ -490,19 +490,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //modifications for View Profile
 document.addEventListener("DOMContentLoaded", () => {
-    const currentUrl = window.location.href;
-    const userUrlPattern = /\/user\/\d+/;
+    const currentPath = window.location.pathname;
+    const userUrlPattern = /\/user\/\d+\/?$/;
     
-    if (userUrlPattern.test(currentUrl)) {
+    if (userUrlPattern.test(currentPath)) {
       const el = document.querySelector('.region-content');
       if (el) {
         el.classList.add('custom-viewprofile');
         el.insertAdjacentHTML("afterbegin", `
-        <div class="bg-images">
-            <div class="circle-1"></div>
-            <div class="circle-2"></div>
-        </div>
-    `);
+          <div class="bg-images">
+              <div class="circle-1"></div>
+              <div class="circle-2"></div>
+          </div>
+        `);
       }
     }
 });
