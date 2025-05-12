@@ -317,17 +317,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /*role base product visibility*/
     const isPartner = document.body.classList.contains('role-partner');
+    const redemption = document.body.classList.contains('role-redemption');
+    const earning = document.body.classList.contains('role-earning');
+    const earningRedemption = document.body.classList.contains('role-earning-redemption');
+
+    
+    
     const businessDomains = document.querySelector('.business-domains');
     const partnerDomain = document.querySelector('.partner-domain');
+    const earningAccess = document.querySelector('.earning-access');
+    const redemptionAccess = document.querySelector('.redemption-access');
+    
 
-    if (isPartner) {
+    if (isPartner || redemption || earning || earningRedemption) {
         // If body has 'role-partner', hide 'business-domains' and show 'partner-domain'
         if (businessDomains) businessDomains.style.display = 'none';
         if (partnerDomain) partnerDomain.style.display = '';
-    } else {
+    } 
+    else {
         // Otherwise, show 'business-domains' and hide 'partner-domain'
         if (businessDomains) businessDomains.style.display = '';
         if (partnerDomain) partnerDomain.style.display = 'none';
+    }
+
+  if(earning && redemption)
+  {
+    if (earningAccess) earningAccess.style.display = '';
+    if (redemptionAccess) redemptionAccess.style.display = '';
+  }
+   else if(earning)
+    {
+        if (redemptionAccess) redemptionAccess.style.display = 'none';
+    }
+
+    else if(redemption)
+    {
+        if (earningAccess) earningAccess.style.display = 'none';
     }
 
     /*role base product visibility*/
