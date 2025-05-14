@@ -317,18 +317,98 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /*role base product visibility*/
     const isPartner = document.body.classList.contains('role-partner');
+    const redemption = document.body.classList.contains('role-redemption');
+    const earning = document.body.classList.contains('role-earning');
+    const earningRedemption = document.body.classList.contains('role-earning-redemption');
+    const noUser = document.body.classList.contains('role-nouser');
+
+    
+    
     const businessDomains = document.querySelector('.business-domains');
     const partnerDomain = document.querySelector('.partner-domain');
+    const earningAccess = document.querySelector('.earning-access');
+    const redemptionAccess = document.querySelector('.redemption-access');
+    const apps = document.querySelector('.apps');
+    const apiProducts = document.querySelector('.api-products');
+    const search = document.querySelector('.opensearch');
 
-    if (isPartner) {
-        // If body has 'role-partner', hide 'business-domains' and show 'partner-domain'
+    
+    
+
+    if (isPartner || redemption || earning || earningRedemption) {
+        // If body has 'role-partners', hide 'business-domains and search' and show 'partner-domain'
         if (businessDomains) businessDomains.style.display = 'none';
+        if (apps) apps.style.display = 'none'; 
+        if (apiProducts) apiProducts.style.display = 'none'; 
+        if (search) search.style.display = 'none'; 
         if (partnerDomain) partnerDomain.style.display = '';
-    } else {
+    } 
+    else {
         // Otherwise, show 'business-domains' and hide 'partner-domain'
         if (businessDomains) businessDomains.style.display = '';
         if (partnerDomain) partnerDomain.style.display = 'none';
     }
+
+  if(earning && redemption)
+  {
+    if (earningAccess) earningAccess.style.display = '';
+    if (redemptionAccess) redemptionAccess.style.display = '';
+  }
+   else if(earning)
+    {
+        if (redemptionAccess) redemptionAccess.style.display = 'none';
+    }
+
+    else if(redemption)
+    {
+        if (earningAccess) earningAccess.style.display = 'none';
+    }
+
+    else if(noUser)
+    {
+        if (businessDomains) businessDomains.style.display = 'none';
+        if (partnerDomain) partnerDomain.style.display = 'none'; 
+        if (apps) apps.style.display = 'none'; 
+        if (apiProducts) apiProducts.style.display = 'none'; 
+        
+    }
+
+    const urlSubscription = window.location.pathname;
+
+const nodeMatch = urlSubscription.match(/\/node\/\d+/);
+
+// Check if it includes subscriptions
+const isSubscriptions = urlSubscription.includes('/subscriptions');
+const isActivity = urlSubscription.includes('/activity');
+const contentRegion = document.querySelector('.region-content');
+
+if (nodeMatch && !isSubscriptions && !isActivity) {
+    contentRegion.classList.add('custom-deshboardsec');
+    contentRegion.insertAdjacentHTML("afterbegin", `
+    <div class="bg-images">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+    </div>
+  `);
+} else if (nodeMatch && isSubscriptions) {
+    contentRegion.classList.add('custom-subscription');
+    contentRegion.insertAdjacentHTML("afterbegin", `
+    <div class="bg-images">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+    </div>
+  `);
+    
+} else if (nodeMatch && isActivity) {
+    contentRegion.classList.add('custom-notificationsec');
+        contentRegion.insertAdjacentHTML("afterbegin", `
+    <div class="bg-images">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+    </div>
+  `);
+} 
+
 
     /*role base product visibility*/
 
