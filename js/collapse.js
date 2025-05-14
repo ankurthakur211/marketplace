@@ -322,8 +322,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const earningRedemption = document.body.classList.contains('role-earning-redemption');
     const noUser = document.body.classList.contains('role-nouser');
 
-    
-    
+
+
     const businessDomains = document.querySelector('.business-domains');
     const partnerDomain = document.querySelector('.partner-domain');
     const earningAccess = document.querySelector('.earning-access');
@@ -332,127 +332,188 @@ document.addEventListener("DOMContentLoaded", function() {
     const apiProducts = document.querySelector('.api-products');
     const search = document.querySelector('.opensearch');
 
-    
-    
+
+
 
     if (isPartner || redemption || earning || earningRedemption) {
         // If body has 'role-partners', hide 'business-domains and search' and show 'partner-domain'
         if (businessDomains) businessDomains.style.display = 'none';
-        if (apps) apps.style.display = 'none'; 
-        if (apiProducts) apiProducts.style.display = 'none'; 
-        if (search) search.style.display = 'none'; 
+        if (apps) apps.style.display = 'none';
+        if (apiProducts) apiProducts.style.display = 'none';
+        if (search) search.style.display = 'none';
         if (partnerDomain) partnerDomain.style.display = '';
-    } 
-    else {
+    } else {
         // Otherwise, show 'business-domains' and hide 'partner-domain'
         if (businessDomains) businessDomains.style.display = '';
         if (partnerDomain) partnerDomain.style.display = 'none';
     }
 
-  if(earning && redemption)
-  {
-    if (earningAccess) earningAccess.style.display = '';
-    if (redemptionAccess) redemptionAccess.style.display = '';
-  }
-   else if(earning)
-    {
+    if (earning && redemption) {
+        if (earningAccess) earningAccess.style.display = '';
+        if (redemptionAccess) redemptionAccess.style.display = '';
+    } else if (earning) {
         if (redemptionAccess) redemptionAccess.style.display = 'none';
-    }
-
-    else if(redemption)
-    {
+    } else if (redemption) {
         if (earningAccess) earningAccess.style.display = 'none';
-    }
-
-    else if(noUser)
-    {
+    } else if (noUser) {
         if (businessDomains) businessDomains.style.display = 'none';
-        if (partnerDomain) partnerDomain.style.display = 'none'; 
-        if (apps) apps.style.display = 'none'; 
-        if (apiProducts) apiProducts.style.display = 'none'; 
-        
+        if (partnerDomain) partnerDomain.style.display = 'none';
+        if (apps) apps.style.display = 'none';
+        if (apiProducts) apiProducts.style.display = 'none';
+
     }
 
     const urlSubscription = window.location.pathname;
 
-const nodeMatch = urlSubscription.match(/\/node\/\d+/);
+    const nodeMatch = urlSubscription.match(/\/node\/\d+/);
 
-// Check if it includes subscriptions
-const isSubscriptions = urlSubscription.includes('/subscriptions');
-const isActivity = urlSubscription.includes('/activity');
-const contentRegion = document.querySelector('.region-content');
+    // Check if it includes subscriptions
+    const isSubscriptions = urlSubscription.includes('/subscriptions');
+    const isActivity = urlSubscription.includes('/activity');
+    const contentRegion = document.querySelector('.region-content');
 
-if (nodeMatch && !isSubscriptions && !isActivity) {
-    contentRegion.classList.add('custom-deshboardsec');
-    contentRegion.insertAdjacentHTML("afterbegin", `
-    <div class="bg-images">
-        <div class="circle-1"></div>
-        <div class="circle-2"></div>
-    </div>
-  `);
-} else if (nodeMatch && isSubscriptions) {
-    contentRegion.classList.add('custom-subscription');
-    contentRegion.insertAdjacentHTML("afterbegin", `
-    <div class="bg-images">
-        <div class="circle-1"></div>
-        <div class="circle-2"></div>
-    </div>
-  `);
-    
-} else if (nodeMatch && isActivity) {
-    contentRegion.classList.add('custom-notificationsec');
+    if (nodeMatch && !isSubscriptions && !isActivity) {
+        contentRegion.classList.add('custom-deshboardsec');
         contentRegion.insertAdjacentHTML("afterbegin", `
     <div class="bg-images">
         <div class="circle-1"></div>
         <div class="circle-2"></div>
     </div>
   `);
-} 
+    } else if (nodeMatch && isSubscriptions) {
+        contentRegion.classList.add('custom-subscription');
+        contentRegion.insertAdjacentHTML("afterbegin", `
+    <div class="bg-images">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+    </div>
+  `);
+
+    } else if (nodeMatch && isActivity) {
+        contentRegion.classList.add('custom-notificationsec');
+        contentRegion.insertAdjacentHTML("afterbegin", `
+    <div class="bg-images">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+    </div>
+  `);
+    }
 
 
     /*role base product visibility*/
 
     /* for nav bar menu responsive design*/
 
-    const apicStickyHeader = document.querySelector(".apicStickyHeader");
-    apicStickyHeader.classList.add("custom-headersec");
+    // const apicStickyHeader = document.querySelector(".apicStickyHeader");
+    // apicStickyHeader.classList.add("custom-headersec");
 
-    const navCollapse = document.querySelector('.navbar-collapse .menu.nav');
+    // const navCollapse = document.querySelector('.navbar-collapse .menu.nav');
 
-    if (navCollapse) {
-        const newHTML = `
-        <div class="region region-navigation-right" aria-label="navigation_right">
-          <nav role="navigation" aria-labelledby="block-marketplace-latest-login-menu" id="block-marketplace-latest-login" class="block-login">
-            <h2 class="visually-hidden" id="block-marketplace-latest-login-menu">Log in</h2>
-            <ul class="menu menu--login nav">
-              <li class="first">
-                <a href="/sandbox/user/register" title="Create a new account" data-drupal-link-system-path="user/register">Create account</a>
-              </li>
-              <li class="last">
-                <a href="/sandbox/user/login" title="Sign in to your account" data-drupal-link-system-path="user/login">Sign in</a>
-              </li>
-            </ul>
-          </nav>
-          <section id="block-marketplace-latest-searchicon" class="block block-simple-block block-search-icon block-simple-blocksearch-icon clearfix" aria-label="search icon">
-            <div class="imageContainer">
-              <a class="opensearch2" title="Search this site" href="#">
-                <svg role="img" aria-labelledby="ibmapimSearchTitle" width="24" height="24" viewBox="0 0 32 32" fill-rule="evenodd">
-                  <title id="ibmapimSearchTitle">Search this site</title>
-                  <path d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z" transform="translate(0 0)"></path>
-                </svg>
-              </a>
-            </div>
-          </section>
-        </div>
-      `;
+    // if (navCollapse) {
+    //     const newHTML = `
+    //     <div class="region region-navigation-right" aria-label="navigation_right">
+    //       <nav role="navigation" aria-labelledby="block-marketplace-latest-login-menu" id="block-marketplace-latest-login" class="block-login">
+    //         <h2 class="visually-hidden" id="block-marketplace-latest-login-menu">Log in</h2>
+    //         <ul class="menu menu--login nav">
+    //           <li class="first">
+    //             <a href="/sandbox/user/register" title="Create a new account" data-drupal-link-system-path="user/register">Create account</a>
+    //           </li>
+    //           <li class="last">
+    //             <a href="/sandbox/user/login" title="Sign in to your account" data-drupal-link-system-path="user/login">Sign in</a>
+    //           </li>
+    //         </ul>
+    //       </nav>
+    //       <section id="block-marketplace-latest-searchicon" class="block block-simple-block block-search-icon block-simple-blocksearch-icon clearfix" aria-label="search icon">
+    //         <div class="imageContainer">
+    //           <a class="opensearch2" title="Search this site" href="#">
+    //             <svg role="img" aria-labelledby="ibmapimSearchTitle" width="24" height="24" viewBox="0 0 32 32" fill-rule="evenodd">
+    //               <title id="ibmapimSearchTitle">Search this site</title>
+    //               <path d="M30,28.59,22.45,21A11,11,0,1,0,21,22.45L28.59,30ZM5,14a9,9,0,1,1,9,9A9,9,0,0,1,5,14Z" transform="translate(0 0)"></path>
+    //             </svg>
+    //           </a>
+    //         </div>
+    //       </section>
+    //     </div>
+    //   `;
 
-        // Parse the newHTML string into a DOM element (the outer div)
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(newHTML, 'text/html');
-        const regionDiv = doc.body.firstElementChild;
+    //     // Parse the newHTML string into a DOM element (the outer div)
+    //     const parser = new DOMParser();
+    //     const doc = parser.parseFromString(newHTML, 'text/html');
+    //     const regionDiv = doc.body.firstElementChild;
 
-        // Insert the <div class="region region-navigation-right"> after the UL
-        navCollapse.parentNode.insertBefore(regionDiv, navCollapse.nextSibling);
+    //     // Insert the <div class="region region-navigation-right"> after the UL
+    //     navCollapse.parentNode.insertBefore(regionDiv, navCollapse.nextSibling);
+
+
+
+
+
+
+    // }
+
+
+
+
+    // Select the target UL in .navbar-collapse
+    const navCollapseList = document.querySelector('.navbar-collapse .menu.nav');
+
+    // Move login menu items
+    const loginMenu = document.querySelector('.region.region-navigation-right .menu.menu--login.nav');
+    if (loginMenu && navCollapseList) {
+        loginMenu.querySelectorAll('li').forEach(li => {
+            navCollapseList.appendChild(li.cloneNode(true));
+        });
+    }
+    // Move organization menu items
+    const orgMenu = document.querySelector('#block-marketplace-latest-consumerorganizationselection .dropitmenu-submenu');
+    if (orgMenu && navCollapseList) {
+        orgMenu.querySelectorAll('li').forEach(li => {
+            // Skip disabled or currently selected items
+            const isDisabled = li.hasAttribute('disabled');
+            const isSelected = li.hasAttribute('selected');
+            if (isDisabled || isSelected) {
+                return;
+            }
+
+            navCollapseList.appendChild(li.cloneNode(true));
+        });
+    }
+
+    // Move account menu items
+    const accountMenu = document.querySelector('.region.region-navigation-right .account-menu .dropit-submenu');
+    if (accountMenu && navCollapseList) {
+        accountMenu.querySelectorAll('li').forEach(li => {
+            const link = li.querySelector('a[href]');
+            if (link && link.getAttribute('href') === '/sandbox/user/change-password') {
+                return; // Skip "Change password"
+            }
+
+            const trigger = li.querySelector('a.trigger');
+            if (trigger && trigger.textContent.trim() === '') {
+                const nextElem = trigger.nextElementSibling;
+                if (nextElem && nextElem.tagName === 'A') {
+                    trigger.remove(); // Remove only the empty .trigger link
+                }
+            }
+
+            navCollapseList.appendChild(li.cloneNode(true));
+        });
+    }
+
+    // Target the section
+    const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
+
+    // Proceed only if both elements exist
+    if (searchIconSection && navCollapseList) {
+        // Clone the section
+        const searchItem = document.createElement('li');
+        searchItem.classList.add('searching-responsive');
+
+        // Move the section inside the new <li>
+        searchItem.appendChild(searchIconSection.cloneNode(true));
+
+        // Insert as the first item in the nav list
+        navCollapseList.insertBefore(searchItem, navCollapseList.firstChild);
     }
 
 
@@ -460,6 +521,30 @@ if (nodeMatch && !isSubscriptions && !isActivity) {
 
 
 
+
+    //not tested yet when search block is expanded check if collapsed or no if not collapse make it collapse
+
+    const targetNode = document.body;
+
+    const observerr = new MutationObserver((mutationsList) => {
+        const searchBlock = document.querySelector(
+            'section.views-exposed-form[data-drupal-selector="views-exposed-form-search-api-page-1"]'
+        );
+
+        if (searchBlock && window.getComputedStyle(searchBlock).display === 'flex') {
+            const toggleButton = document.querySelector('button.navbar-toggle');
+
+            if (toggleButton && !toggleButton.classList.contains('collapsed')) {
+                toggleButton.classList.add('collapsed');
+                toggleButton.setAttribute('aria-expanded', 'false');
+            }
+        }
+    });
+
+    observerr.observe(targetNode, {
+        childList: true,
+        subtree: true,
+    });
 
 
     /* for nav bar menu responsive design*/
@@ -540,12 +625,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.location.href.includes("/user/") && window.location.href.includes("/edit")) {
         let element = document.querySelector(".region-content");
         if (element) {
-           element.classList.add("custom-editsec");
-   
+            element.classList.add("custom-editsec");
+
         }
 
         const header = document.querySelector("h1.page-header");
-         if (header) {
+        if (header) {
             header.insertAdjacentHTML('beforeend', `
             <div class="bg-images">
                 <div class="circle-1"></div>
@@ -561,8 +646,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.location.href.includes("/user/") && window.location.href.includes("/change-password")) {
         let element = document.querySelector(".region-content");
         if (element) {
-           element.classList.add("custom-changepass");
-    
+            element.classList.add("custom-changepass");
+
         }
     }
 });
@@ -572,18 +657,18 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const currentPath = window.location.pathname;
     const userUrlPattern = /\/user\/\d+\/?$/;
-    
+
     if (userUrlPattern.test(currentPath)) {
-      const el = document.querySelector('.region-content');
-      if (el) {
-        el.classList.add('custom-viewprofile');
-        el.insertAdjacentHTML("afterbegin", `
+        const el = document.querySelector('.region-content');
+        if (el) {
+            el.classList.add('custom-viewprofile');
+            el.insertAdjacentHTML("afterbegin", `
           <div class="bg-images">
               <div class="circle-1"></div>
               <div class="circle-2"></div>
           </div>
         `);
-      }
+        }
     }
 });
 
