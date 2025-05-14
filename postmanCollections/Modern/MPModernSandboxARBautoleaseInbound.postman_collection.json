@@ -1,0 +1,3276 @@
+{
+	"info": {
+		"_postman_id": "a0a7e410-c8a0-4874-af03-03ddb4c2fafd",
+		"name": "MP Modern Sandbox ARB autolease Inbound",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30710659"
+	},
+	"item": [
+		{
+			"name": "ARB Microsite Token",
+			"item": [
+				{
+					"name": "OAuth Provider Authorize",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var locationHeader = pm.response.headers.get('Location');\r",
+									"var locationHeader2 = pm.response.headers.get('Location');\r",
+									"pm.collectionVariables.set(\"originalUrl\",decodeURIComponent(locationHeader.split(\"original-url=\")[1]));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false,
+						"disableUrlEncoding": true,
+						"disabledSystemHeaders": {},
+						"strictSSL": false
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}"
+							}
+						],
+						"url": {
+							"raw": "{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=autolease_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}"
+								},
+								{
+									"key": "scope",
+									"value": "autolease_apis"
+								},
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "code_challenge",
+									"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: payroll_lending_apis",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/authorize?client_id={{client-id}}&scope=payroll_lending_apis&response_type=code&code_challenge=GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0&code_challenge_method=S256",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"authorize"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}"
+										},
+										{
+											"key": "scope",
+											"value": "payroll_lending_apis"
+										},
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "code_challenge",
+											"value": "GlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256"
+										}
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-request-id",
+									"value": "210c3aab-3a85-42b1-b1ac-37f052166158"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "dbbb05fd-dafa-462e-8ca9-f32a92a11eb5"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1b7000bf9610"
+								},
+								{
+									"key": "Location",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/auth/initiate-redirect?original-url=https%3A%2F%2Fapimarketplace-ext-test-gw-svc-gw-gateway-traffic-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud%2Fapimarketplace-sit%2Fsandbox-inbound%2Fsandbox-arb-microsite-oauth-provider%2Foauth2%2Fauthorize%3Fclient_id%3D009407e30165d8f05d554e336acb0b26%26scope%3Dpayroll_lending_apis%26response_type%3Dcode%26code_challenge%3DGlVNOeSDWMm22vkeqE_rBoDoHMWFkudng45Fk-LKUK0%26code_challenge_method%3DS256%26state_nonce%3D0Njr94lOCL7qFT1oLyCGUomeQEH55eQgc2BLmUzGWnc%253D"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:54:24 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Generate Initiate Redirection Input",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = responseBody;\r",
+									"pm.collectionVariables.set(\"initiate-redirect-identity\", data);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "issuer",
+								"value": "{{client-id}}",
+								"type": "text"
+							},
+							{
+								"key": "audience",
+								"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/generate-jwt/sign-request",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"generate-jwt",
+								"sign-request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "poiNumber = 1845490013",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1845490013\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "77b355d4-13d3-4b34-a6e9-36db392c1453"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.73.89"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7d6b4019e7fe2"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c10821be-e756-457a-91d3-54e3cb0dcd81"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:08:04 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIwMDc5ZDNlNS1jNGFiLTRhOTYtYmFlNS1hZGVjNWU2Yzk0YTUiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyNzY4NCwiaWF0IjoxNzIzMzI0MDg0LCJuYmYiOjE3MjMzMjQwODQsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiN2M0MmNkODQtMzllMS00MzIyLWI2YTctMGQ5MjM4NjA1ODRlIiwicG9pTnVtYmVyIjoiMTg0NTQ5MDAxMyJ9fQ.Nz-ihPlG_8DSFHdinRFr79FwIQHkA5JSkhn2sGmhWL0fDLj7Ltl5j9I1VjPFDDgl469mUcl08FRbqgNpd9CK3St9m0a6h3_YqheeIdiyECFoleTuWWWf_cj3GVUI4JbyLAtTut_vKZrpFD1DXyVz2o5OuDKXSi7N07KHh08IdRHqp0KxK26PKplX9fronGJ-FoamKj-gHY77AV3InwwP4z2uT6bPPkZqyORa1SMtv9DBeg2XgKLbs6A6XSbaEtOZ__Tql8FB78GpkuO2tjUztz6QpKv20k9ccRP6AYvX525hmbFbKe4FA_8UoMMhOnUH6ZQomp--xM7tOkel6k-yJw"
+						},
+						{
+							"name": "poiNumber = 1646701570",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1646701570\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "69263396-02fb-4e72-ad96-e145081fa842"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7db4e00630a90"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "4a48d741-c2be-4003-9589-f89916419f9c"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:27:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJiZTgyZDM4NS1iOWRiLTQ0YjUtOWM2Yi1hZGVjNWU2Y2ViZDMiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODg2MiwiaWF0IjoxNzIzMzI1MjYyLCJuYmYiOjE3MjMzMjUyNjIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiODQxMjkzZWYtNDU0NC00OWZhLWE3ZWYtMjA3OGE2NmJlZDUwIiwicG9pTnVtYmVyIjoiMTY0NjcwMTU3MCJ9fQ.qrLok5CnoeV5Qkf15l5iVQnsQydtco0oZrIjvH5ixcL-rH27-GNXtb3fbuzoZms1eOc5OkJTtPKIadbKEnEP9ba320gxdV6wGbJiHYPXIlSRM7wdq5efcnRbXUxri8MHV5bRT_KbMOltX3dijF2MoJYxyKj_qsedoFt4XnYcxfqFvPTPmmmqf8ZLe3G94oCqHPo8SzYIkM5SzSe0SGvlChGXxnGKl6vEneT1XSu0rTq6x_KkS_OszfdgOiD9An4zA1c0EAp8PbHRTTU_gts0qXvbn7Aaor_oAo3qO7wy0LI9Niv1frh7_UACavN-jfmasp_qZ3wxMehVpIHvf4dyKw"
+						},
+						{
+							"name": "poiNumber = 1452525363",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1452525363\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "d14ad09e-c7f4-4b25-aaf5-6a34f12d5f73"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7db7500630ac0"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "86467d55-94a5-4745-8117-e030e0a0ff93"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:28:21 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiJlZGUzZWFjNy1iZjVlLTRlOGMtOTIxOC1hZGVjNWU2YzRmNzAiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyODkwMSwiaWF0IjoxNzIzMzI1MzAxLCJuYmYiOjE3MjMzMjUzMDEsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiYjI2ZmFkMzMtYjQzNS00YWEyLWE2Y2ItZTY0MDgyOWE1NmI0IiwicG9pTnVtYmVyIjoiMTQ1MjUyNTM2MyJ9fQ.dbxu73j_fwPJv1v6Ej6UmYnOvUETR9AaWjt2xE8zixPBicQYzVGtZX9nhpTo3UA4HJ9I4XSzqkT3Nk_4iiXE0Ez5oGjy111ao6cuCsUCGtSW1zI-NIUY_8TvFkpBwnKVafyqHlDIDxsr1KLV-aQqpANVfbsRXMEF06o10jFk7MVeGTF2WzteSkeeuhWD_a3ZJLKmPCIzN-GBBUE4iQE6sH--WacFxbnuLDPy6k3Gic3aPhdsjrYIdAJfEGo3_4gbhbmqiPK0riWu-eukSKVmA2_Z5gQEAbZBR7X9-mCUo4CZ4PMfmw6xO2nY_uK-BpcUQRXUqpI8_Ezhshsb_IFNlA"
+						},
+						{
+							"name": "poiNumber = 1634378157",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "issuer",
+										"value": "009407e30165d8f05d554e336acb0b26",
+										"type": "text"
+									},
+									{
+										"key": "audience",
+										"value": "https://test.public.api-marketplace.alrajhibank.com.sa",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestId\": \"{{$guid}}\",\r\n    \"poiNumber\": \"1634378157\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/generate-jwt/sign-request",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"generate-jwt",
+										"sign-request"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "issuer",
+									"value": "009407e30165d8f05d554e336acb0b26"
+								},
+								{
+									"key": "audience",
+									"value": "https://test.public.api-marketplace.alrajhibank.com.sa"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.40.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "ce8de52d-89b3-4415-b4e9-65f79fcd76be"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "6c5eecad66b7dbda00630b10"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8b759779-9d94-4da7-bd40-12bba3514388"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Aug 2024 21:30:02 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJQUzI1NiJ9.eyJqdGkiOiIxOGI4YmY0ZC0xZjc4LTQ4OWYtYTYzYS1hZGVjNWU2YzA3OWQiLCJpc3MiOiIwMDk0MDdlMzAxNjVkOGYwNWQ1NTRlMzM2YWNiMGIyNiIsImF1ZCI6Imh0dHBzOi8vdGVzdC5wdWJsaWMuYXBpLW1hcmtldHBsYWNlLmFscmFqaGliYW5rLmNvbS5zYSIsImV4cCI6MTcyMzMyOTAwMiwiaWF0IjoxNzIzMzI1NDAyLCJuYmYiOjE3MjMzMjU0MDIsIm1lc3NhZ2UiOnsicmVxdWVzdElkIjoiMWQwYWQ3YjgtNmFmYy00NzlkLWI0MDktZjljNjNmYjBiNjg2IiwicG9pTnVtYmVyIjoiMTYzNDM3ODE1NyJ9fQ.aiArQSR9wrzq48xq0Q3WFa03gY1AhP9bOWMleWQwIn561CikvY9xD_054gvJ6ZroQKHoUs3gmH1_lFkKppcdbhf6iULhj_Ws_PYOHeQtBosYZbV8cM3ddqnPUesBtEwJtPrEoGHwbTgH6-RKrhYh8jAulx5-tVo_cj_rxudLrZAy3DTJ_bEGwJ6OvDcN5vFnkBZFPCdB9lcT8e0jVSnotLWHfdBoxmp29PxSRIraxdav6aalMLdFE7rjdTpLKhELpN3xgqzGW6asbc-e5Kh8rRVZl5KVMjFDS0dj78xMkl8IE3xYGDtt94ZR6l0oNiC-I8bdIadbUqAypCNOmFXE0w"
+						}
+					]
+				},
+				{
+					"name": "Initiate Redirection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.code == 303){\r",
+									"    var locationHeader = pm.response.headers.get('Location');\r",
+									"    pm.collectionVariables.set(\"confirmationCode\", locationHeader.split(\"identity=\")[1]);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{inbound-gw}}/auth/initiate-redirect?client_id=d2bcf0e72d79c1de1d202141cdefb581&identity={{initiate-redirect-identity}}",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"auth",
+								"initiate-redirect"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "d2bcf0e72d79c1de1d202141cdefb581"
+								},
+								{
+									"key": "identity",
+									"value": "{{initiate-redirect-identity}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Authorize Confirmation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if(pm.response.status != 400){\r",
+									"    var locationHeader = pm.response.headers.get('Location');\r",
+									"    var code = locationHeader.split(\"code=\")[1];\r",
+									"    pm.collectionVariables.set(\"authorizationCode\",code);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": false,
+						"disableUrlEncoding": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}",
+							"host": [
+								"{{originalUrl}}&username=superapp&confirmation={{confirmationCode}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAuth Provider Access Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"if(pm.response.code == 200){\r",
+									"    pm.collectionVariables.set('security-token', 'Bearer ' + response.access_token);\r",
+									"    pm.collectionVariables.set('customer_access_token', response.access_token);\r",
+									"    pm.collectionVariables.set('customer_refresh_token',response.refresh_token);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "autolease_apis",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "{{authorizationCode}}",
+									"type": "text"
+								},
+								{
+									"key": "code_verifier",
+									"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+									"type": "text"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256",
+									"type": "text"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "plain",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: payroll_lending_apis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "payroll_lending_apis",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "authorization_code",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "{{authorizationCode}}",
+											"type": "text"
+										},
+										{
+											"key": "code_verifier",
+											"value": "OaDIllZ7i2OSHioxu4Y4sTDsdHlqW1NVmkchIn8VbOI",
+											"type": "text"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256",
+											"type": "text"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "plain",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "677bbbe2-00b3-46dc-9e76-3496b2cebd42"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1b9900bf9680"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c30d1b94-7313-4b20-b26a-5b7b86212ef0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:55:05 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjYYwka87xSbRYma77OTiI2F-Bn90QjgrY8cfarOAEAZDSZiQgCSFExF1ICpgck1YULyxckW-fctu9-VfspAc8CHz4uIQP4atThIGGouIE4wRW740RBthuJqYuEowgkh8PzBaPaAzzwlFkYHZqo_IomkDaCIhcn6O4p4l5xo1ohiTWTYWtn4WdkG4RfAqQ2oRaD6F4tRN7Tem2D6z-MmzOi880Av5L9dMzLdFKRTX3wCi0GiWMvgIbPZF_i7p4Owwho\",\n    \"scope\": \"payroll_lending_apis\",\n    \"expires_in\": 1800,\n    \"consented_on\": 1724586905,\n    \"refresh_token\": \"AAJwbKYEV4HYDYD5Gy5Nau_zOzxhY1hNqNkW2n7_AjyS_mF1qR-MOTRn_AvWdyRNW7wxFaNJ4uUhvUiqV0V5a5uOG4T8YV0zl4noMPw8LAdY5jrCbHGKq5q9gJwBTJ59QUFD_en0M3S0dEgV9_Ez2jtl7PZfN4Gruf3Se2Vf_8mvqOYKgfMebKig5pPsscKAuseTEPXvgetL0mdDrHfHWM0eIJT1oWD3dga2bGy55VJCry-hfZ-QynX5SeNz1XtDuX5KW9PdmWiyyLY7UtT5sb8O\",\n    \"refresh_token_expires_in\": 36000\n}"
+						}
+					]
+				},
+				{
+					"name": "OAuth Provider Refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"pm.environment.set('security_token', 'Bearer ' + response.access_token);\r",
+									"    pm.collectionVariables.set('customer_access_token', response.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "autolease_apis",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{customer_refresh_token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scope: payroll_lending_apis",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{client-id}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "payroll_lending_apis",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "{{customer_refresh_token}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/token",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"sandbox-arb-microsite-oauth-provider",
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "User-Agent",
+									"value": "PostmanRuntime/7.41.0"
+								},
+								{
+									"key": "Accept",
+									"value": "*/*"
+								},
+								{
+									"key": "Postman-Token",
+									"value": "b8cbfba7-e0bc-4741-b3e6-a5e018f951a3"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "gzip, deflate, br"
+								},
+								{
+									"key": "X-Client-IP",
+									"value": "172.30.116.160"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a666cb1ba600bf9690"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c3b4c621-e014-436c-8a87-72e936356cff"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Aug 2024 11:55:18 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZuAgtEk8kE4721AhnmlqIqT1wP3N1DX7H2Ii0bLbPeFAZsY4bzjtrc1Qtk21IXpjG3jzaEKbGXwVmCEuLEhC_Ck1Q-IaIp39TkcGMQEFzdxmt-uvCL7NI2HncEjT5na1dk-tko8Vc_oN9V4x9-TJc6b835hZ_AcRVwmzbGAj3qlS_c1G07T0eMjdgM7YB9ByGCZKKNKDYPWkohvWw64kZ9PAPsAqOZimfZlVfkK3hL3TvcUs--Cd05GbMcYH7VFHM\",\n    \"scope\": \"payroll_lending_apis\",\n    \"expires_in\": 1800,\n    \"consented_on\": 1724586905,\n    \"refresh_token\": \"AAJqM1qxjf8uu78_NbxV60cvZQa-181WkKOiQ6RgcH7vx4AkHGAsaVy9ZFtkQ5fXo_hjSvqFGa0Ft0S96vBNzBHUMq9MH0EAkJFKr_cDRJB8TLVztn12WXHWRqWraLkhWi2IUk_WUyhAjJLZR_QXKwG4KvMM9fTizCDl5QBl5YwLRSdYzALDbfWTS1YCPrTi94-GpIawk9YoDe6YjYkixdCc2g_GHvYA9iU2pPFVTUPHGKkGswXpCY8-Ix08IC8uorpzFHGvjECOL_UCrH5EOp8k\",\n    \"refresh_token_expires_in\": 36000\n}"
+						}
+					]
+				},
+				{
+					"name": "OAuth Introspect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "text"
+								},
+								{
+									"key": "token_type_hint",
+									"value": "access_token",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/sandbox-arb-microsite-oauth-provider/oauth2/introspect",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"sandbox-arb-microsite-oauth-provider",
+								"oauth2",
+								"introspect"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Business-APIs",
+			"item": [
+				{
+					"name": "MP Get Customer Finance Eligibility Get Customer App Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "channel-Id",
+								"value": "ARB_FINTECH",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/customer-app-information?rollOutFlag=Y",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"customer-app-information"
+							],
+							"query": [
+								{
+									"key": "rollOutFlag",
+									"value": "Y"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl --location --globoff '{{baseUrl}}/product-eligibility/autoleas?customerSegment=001&salaryCurrency=SAR&militaryRankID=22&businessPositionID=002&employmentDate=1441-03-13&frequencyTypeID=1&propertyType=55&requestedTenure=100&xSellFinancialProductID=1&linkedDossierID=582655&onlyProfitOption=Y&rolloutFlag=Y&employerId=1&departmentId=1&salaryAmount=2000&requestedDownPayment=600&totalPropertyCost=12000&financialProductsList=[SFN%2C3PF%2CWRE]&productId=22345&saveData=Y' \\\r\n--header 'Accept-Language: ar' \\\r\n--header 'Accept: application/json' \\\r\n--header 'Authorization: Bearer {{access-token}}'"
+					},
+					"response": [
+						{
+							"name": "Get Customer App Info 1646701570",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "accept-language",
+										"value": "en"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "channel-Id",
+										"value": "ARB_FINTECH",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/customer-app-information?rollOutFlag=Y",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"customer-app-information"
+									],
+									"query": [
+										{
+											"key": "rollOutFlag",
+											"value": "Y"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1665bb31-9324-4d4c-b412-d8e680a4f94d"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1d3f093285c2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:48:00 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"CustomerStatus\": \"Y\",\n        \"CustomerSegment\": \"001\",\n        \"CustomerObsolete\": \"N\",\n        \"DisplayMessageList\": [\n            {\n                \"DisplayMessage\": [\n                    {\n                        \"$\": \"OMS-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"FFX-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"R/E-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"EFM-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"RPP-Customer With pending request\"\n                    },\n                    {\n                        \"$\": \"PPC-Customer With pending request\"\n                    },\n                    {\n                        \"$\": \"MR2-Unfortunately, you’re not eligible for this product. We are happy to serve you with other products.\"\n                    },\n                    {\n                        \"$\": \"ERA-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"PPR-Unfortunately, you’re not eligible for this product. We are happy to serve you with other products.\"\n                    },\n                    {\n                        \"$\": \"FSM-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"FFM-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"Our records show you’re not eligible for this product yet\"\n                    },\n                    {\n                        \"$\": \"3WA-We would love to serve you, but this product is available only for the existing ongoing Mortgage finance customers. We can gladly serve you with our other different financing products\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get Customer App Info 1845490013",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "accept-language",
+										"value": "en"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "channel-Id",
+										"value": "ARB_FINTECH",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/customer-app-information?rollOutFlag=Y",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"customer-app-information"
+									],
+									"query": [
+										{
+											"key": "rollOutFlag",
+											"value": "Y"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "9d0efbb3-2070-4070-8073-b25bf00464f1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe20f006cc15f0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:03:45 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"CustomerStatus\": \"Y\",\n        \"CustomerSegment\": \"001\",\n        \"CustomerObsolete\": \"N\",\n        \"DisplayMessageList\": [\n            {\n                \"DisplayMessage\": [\n                    {\n                        \"$\": \"SFN-No Eligiblity Found\"\n                    },\n                    {\n                        \"$\": \"OMS-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"FFX-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"R/E-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"EFM-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"RPP-Customer With pending request\"\n                    },\n                    {\n                        \"$\": \"PPC-Customer With pending request\"\n                    },\n                    {\n                        \"$\": \"MR2-Unfortunately, you’re not eligible for this product. We are happy to serve you with other products.\"\n                    },\n                    {\n                        \"$\": \"ERA-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"PPR-Unfortunately, you’re not eligible for this product. We are happy to serve you with other products.\"\n                    },\n                    {\n                        \"$\": \"FSM-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"FFM-We apologies, you already have an existing request 860679, 869473, 869476, 869477, 869478, 869479, 869480, 869481, 873160, 873161, 873725, 892993, 892994, 893030\"\n                    },\n                    {\n                        \"$\": \"Our records show you’re not eligible for this product yet\"\n                    },\n                    {\n                        \"$\": \"3WA-We would love to serve you, but this product is available only for the existing ongoing Mortgage finance customers. We can gladly serve you with our other different financing products\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Open New Dossier - Open New Car Leasing Finance Dossier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "${{$guid}}",
+								"description": "request Id"
+							},
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"IdNumber\": \"1845490013\",\r\n        \"AccountBranch\": \"21900\",\r\n        \"AccountType\": \"001\",\r\n        \"AccountNumber\": \"0006080087465\",\r\n        \"UserId\": \"u3060143x\",\r\n        \"ProductId\": \"CAL\",\r\n        \"CustomerSegment\": \"002\",\r\n        \"EmployerId\": 90,\r\n        \"DepartmentId\": 237,\r\n        \"MilitaryRankId\": \"123\",\r\n        \"BusinessPositionId\": \"001\",\r\n        \"EmploymentDate\": \"2014-10-10\",\r\n        \"SalaryAmount\": \"100.55\",\r\n        \"SalaryAmountCurrency\": \"SAR\",\r\n        \"CustomerMobile\": \"001\",\r\n        \"CustomerEmail\": \"a@gmail.com\",\r\n        \"FrequencyTypeId\": \"1\",\r\n        \"RequestedFinancingAmount\": \"100.00\",\r\n        \"RequestedFinancingAmountCurrency\": \"SAR\",\r\n        \"RequestedDownPayment\": \"100.00\",\r\n        \"RequestedEndPayment\": \"100.00\",\r\n        \"Duration\": 60,\r\n        \"RequestedDownPaymentAmount\": \"100.00\",\r\n        \"RequestedDownPaymentAmountCurrency\": \"SAR\",\r\n        \"ARBStaff\": \"Y\",\r\n        \"ForceARBStaffError\": \"Y\",\r\n        \"Supplier\": \"100000010\",\r\n        \"ProductName\": \"00100112\",\r\n        \"Store\": \"L999\",\r\n        \"UnitPrice\": \"100.00\",\r\n        \"ChassisNumber\": \"12345678\",\r\n        \"OtherSpecification\": \"Karim Car-Red-White\",\r\n        \"RolloutFlag\": \"Y\",\r\n        \"DeliveryPreference\": \"D\",\r\n        \"HomeAddress\": \"El Riad\",\r\n        \"HomeCoordinates\": \"El Riad\",\r\n        \"SKU\": \"122\",\r\n        \"CampaignId\": 12,\r\n        \"CampaignDescription\": \"Nissan\",\r\n        \"DigitalCampaignName\": \"Nissan\",\r\n        \"DigitalCampaignDescription\": \"Nissan\",\r\n        \"BirthDate\": \"02-02-1408\",\r\n        \"ReferralType\": \"SocialMedia\",\r\n        \"ReferralValue\": \"01\",\r\n        \"FullName\": \"01\",\r\n        \"LastStipulatedDossierId\": \"842442\",\r\n        \"EhlalRefernceNumber\": \"01\",\r\n        \"ReferralCode\": \"01\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/car-leasing-dossier",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"car-leasing-dossier"
+							]
+						},
+						"description": "This path is used to get the list of mandatory documents."
+					},
+					"response": [
+						{
+							"name": "MP Open New Dossier - Open New Car Leasing Finance Dossier 1646701570",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "${{$guid}}",
+										"description": "request Id"
+									},
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"IdNumber\": \"1646701570\",\r\n        \"AccountBranch\": \"21900\",\r\n        \"AccountType\": \"001\",\r\n        \"AccountNumber\": \"0006080087465\",\r\n        \"UserId\": \"u3060143x\",\r\n        \"ProductId\": \"CAL\",\r\n        \"CustomerSegment\": \"002\",\r\n        \"EmployerId\": 90,\r\n        \"DepartmentId\": 237,\r\n        \"MilitaryRankId\": \"123\",\r\n        \"BusinessPositionId\": \"001\",\r\n        \"EmploymentDate\": \"2014-10-10\",\r\n        \"SalaryAmount\": \"100.55\",\r\n        \"SalaryAmountCurrency\": \"SAR\",\r\n        \"CustomerMobile\": \"001\",\r\n        \"CustomerEmail\": \"a@gmail.com\",\r\n        \"FrequencyTypeId\": \"1\",\r\n        \"RequestedFinancingAmount\": \"100.00\",\r\n        \"RequestedFinancingAmountCurrency\": \"SAR\",\r\n        \"RequestedDownPayment\": \"100.00\",\r\n        \"RequestedEndPayment\": \"100.00\",\r\n        \"Duration\": 60,\r\n        \"RequestedDownPaymentAmount\": \"100.00\",\r\n        \"RequestedDownPaymentAmountCurrency\": \"SAR\",\r\n        \"ARBStaff\": \"Y\",\r\n        \"ForceARBStaffError\": \"Y\",\r\n        \"Supplier\": \"100000010\",\r\n        \"ProductName\": \"00100112\",\r\n        \"Store\": \"L999\",\r\n        \"UnitPrice\": \"100.00\",\r\n        \"ChassisNumber\": \"12345678\",\r\n        \"OtherSpecification\": \"Karim Car-Red-White\",\r\n        \"RolloutFlag\": \"Y\",\r\n        \"DeliveryPreference\": \"D\",\r\n        \"HomeAddress\": \"El Riad\",\r\n        \"HomeCoordinates\": \"El Riad\",\r\n        \"SKU\": \"122\",\r\n        \"CampaignId\": 12,\r\n        \"CampaignDescription\": \"Nissan\",\r\n        \"DigitalCampaignName\": \"Nissan\",\r\n        \"DigitalCampaignDescription\": \"Nissan\",\r\n        \"BirthDate\": \"02-02-1408\",\r\n        \"ReferralType\": \"SocialMedia\",\r\n        \"ReferralValue\": \"01\",\r\n        \"FullName\": \"01\",\r\n        \"LastStipulatedDossierId\": \"842442\",\r\n        \"EhlalRefernceNumber\": \"01\",\r\n        \"ReferralCode\": \"01\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/car-leasing-dossier",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"car-leasing-dossier"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "$3e8ea6d4-f37b-4464-9367-c46e19ba8a69"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1d9009329332"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:49:21 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"DossierId\": \"770000066362\",\n        \"AcceptableRequest\": \"A\"\n    }\n}"
+						},
+						{
+							"name": "MP Open New Dossier - Open New Car Leasing Finance Dossier 1845490013",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "${{$guid}}",
+										"description": "request Id"
+									},
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"IdNumber\": \"1845490013\",\r\n        \"AccountBranch\": \"21900\",\r\n        \"AccountType\": \"001\",\r\n        \"AccountNumber\": \"0006080087465\",\r\n        \"UserId\": \"u3060143x\",\r\n        \"ProductId\": \"CAL\",\r\n        \"CustomerSegment\": \"002\",\r\n        \"EmployerId\": 90,\r\n        \"DepartmentId\": 237,\r\n        \"MilitaryRankId\": \"123\",\r\n        \"BusinessPositionId\": \"001\",\r\n        \"EmploymentDate\": \"2014-10-10\",\r\n        \"SalaryAmount\": \"100.55\",\r\n        \"SalaryAmountCurrency\": \"SAR\",\r\n        \"CustomerMobile\": \"001\",\r\n        \"CustomerEmail\": \"a@gmail.com\",\r\n        \"FrequencyTypeId\": \"1\",\r\n        \"RequestedFinancingAmount\": \"100.00\",\r\n        \"RequestedFinancingAmountCurrency\": \"SAR\",\r\n        \"RequestedDownPayment\": \"100.00\",\r\n        \"RequestedEndPayment\": \"100.00\",\r\n        \"Duration\": 60,\r\n        \"RequestedDownPaymentAmount\": \"100.00\",\r\n        \"RequestedDownPaymentAmountCurrency\": \"SAR\",\r\n        \"ARBStaff\": \"Y\",\r\n        \"ForceARBStaffError\": \"Y\",\r\n        \"Supplier\": \"100000010\",\r\n        \"ProductName\": \"00100112\",\r\n        \"Store\": \"L999\",\r\n        \"UnitPrice\": \"100.00\",\r\n        \"ChassisNumber\": \"12345678\",\r\n        \"OtherSpecification\": \"Karim Car-Red-White\",\r\n        \"RolloutFlag\": \"Y\",\r\n        \"DeliveryPreference\": \"D\",\r\n        \"HomeAddress\": \"El Riad\",\r\n        \"HomeCoordinates\": \"El Riad\",\r\n        \"SKU\": \"122\",\r\n        \"CampaignId\": 12,\r\n        \"CampaignDescription\": \"Nissan\",\r\n        \"DigitalCampaignName\": \"Nissan\",\r\n        \"DigitalCampaignDescription\": \"Nissan\",\r\n        \"BirthDate\": \"02-02-1408\",\r\n        \"ReferralType\": \"SocialMedia\",\r\n        \"ReferralValue\": \"01\",\r\n        \"FullName\": \"01\",\r\n        \"LastStipulatedDossierId\": \"842442\",\r\n        \"EhlalRefernceNumber\": \"01\",\r\n        \"ReferralCode\": \"01\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/car-leasing-dossier",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"car-leasing-dossier"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "$64c9a7c7-239f-4fca-8ec9-6774afa70b45"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe211b04778db1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:04:27 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"DossierId\": \"770000066602\",\n        \"AcceptableRequest\": \"A\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Inquire Mandatory Documents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							},
+							{
+								"key": "channelID",
+								"value": "ARB",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"ProductId\": \"CLQ\",\r\n        \"CustomerSegment\": \"001\",\r\n        \"RolloutFlag\": \"Y\",\r\n        \"LastStipulatedDossierId\": \"855268\",\r\n        \"DocumentsLOVList\": [\r\n            {\r\n                \"DocumentKey\": \"ADDITIONAL_DRIVER_FLAG\",\r\n                \"DocumentFlag\": \"Y\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/mandatory-documents/inquire",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"mandatory-documents",
+								"inquire"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inquire Mandatory Documents 1646701570",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									},
+									{
+										"key": "channelID",
+										"value": "ARB",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"ProductId\": \"PFB\",\r\n        \"CustomerSegment\": \"015\",\r\n        \"RolloutFlag\": \"Y\",\r\n        \"LastStipulatedDossierId\": \"855268\",\r\n        \"DocumentsLOVList\": [\r\n            {\r\n                \"DocumentKey\": \"ADDITIONAL_DRIVER_FLAG\",\r\n                \"DocumentFlag\": \"Y\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/mandatory-documents/inquire",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"mandatory-documents",
+										"inquire"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3a6e47ce-8077-4dc9-b772-2ca33fb09ed2"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1dc209329362"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:50:10 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MandatoryDocumentsList\": [\n            {\n                \"DocumentCode\": \"37\",\n                \"DocumentDescription\": \"Salary Certificate\",\n                \"Mandatory\": \"Y\"\n            },\n            {\n                \"DocumentCode\": \"BNK_STAT\",\n                \"DocumentDescription\": \"Bank statement\",\n                \"Mandatory\": \"Y\"\n            },\n            {\n                \"DocumentCode\": \"GOSI_CERT\",\n                \"DocumentDescription\": \"GOSI Certificate\",\n                \"Mandatory\": \"Y\"\n            },\n            {\n                \"DocumentCode\": \"OTHERS\",\n                \"DocumentDescription\": \"Others\",\n                \"Mandatory\": \"N\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Inquire Mandatory Documents 1845490013",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									},
+									{
+										"key": "channelID",
+										"value": "ARB",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"ProductId\": \"CLQ\",\r\n        \"CustomerSegment\": \"001\",\r\n        \"RolloutFlag\": \"Y\",\r\n        \"LastStipulatedDossierId\": \"855268\",\r\n        \"DocumentsLOVList\": [\r\n            {\r\n                \"DocumentKey\": \"ADDITIONAL_DRIVER_FLAG\",\r\n                \"DocumentFlag\": \"Y\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/mandatory-documents/inquire",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"mandatory-documents",
+										"inquire"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "50a61033-04b0-451a-ab7a-c7ae23e76584"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe213d0932e452"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:05:02 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MandatoryDocumentsList\": [\n            {\n                \"DocumentCode\": \"37\",\n                \"DocumentDescription\": \"Salary Certificate\",\n                \"Mandatory\": \"Y\"\n            },\n            {\n                \"DocumentCode\": \"BNK_STAT\",\n                \"DocumentDescription\": \"Bank statement\",\n                \"Mandatory\": \"N\"\n            },\n            {\n                \"DocumentCode\": \"GOSI_CERT\",\n                \"DocumentDescription\": \"GOSI Certificate\",\n                \"Mandatory\": \"N\"\n            },\n            {\n                \"DocumentCode\": \"NA\",\n                \"DocumentDescription\": \"National Address\",\n                \"Mandatory\": \"N\"\n            },\n            {\n                \"DocumentCode\": \"NIDA\",\n                \"DocumentDescription\": \"National ID with expiry date retrieved from Absher\",\n                \"Mandatory\": \"Y\"\n            },\n            {\n                \"DocumentCode\": \"OTHERS\",\n                \"DocumentDescription\": \"Others\",\n                \"Mandatory\": \"N\"\n            },\n            {\n                \"DocumentCode\": \"PRICE_QUOTATION\",\n                \"DocumentDescription\": \"Price Quotation\",\n                \"Mandatory\": \"Y\"\n            },\n            {\n                \"DocumentCode\": \"SALTRAN\",\n                \"DocumentDescription\": \"Salary Transfer Form (for companies with no contracts with ARB)\",\n                \"Mandatory\": \"N\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Responsible Lending",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "${{$guid}}",
+								"description": "request Id"
+							},
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/responsible-lending",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"responsible-lending"
+							],
+							"query": [
+								{
+									"key": "dossierId",
+									"value": "24687780",
+									"disabled": true
+								},
+								{
+									"key": "gosiFlag",
+									"value": "Y",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This path is used to get the list of mandatory documents."
+					},
+					"response": [
+						{
+							"name": "MP Get Responsible Lending 1646701570",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "${{$guid}}",
+										"description": "request Id"
+									},
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/responsible-lending",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"responsible-lending"
+									],
+									"query": [
+										{
+											"key": "dossierId",
+											"value": "24687780",
+											"disabled": true
+										},
+										{
+											"key": "gosiFlag",
+											"value": "Y",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "$22a677e5-ecae-47d1-8563-bbc59aac53a3"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1df304775321"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:51:00 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MartialStatus\": \"2\",\n        \"FamilyMembers\": 1,\n        \"OwnHouse\": \"01\",\n        \"EducationFees\": 1,\n        \"Insurance\": \"Y\",\n        \"CityId\": \"00000002\",\n        \"WorkingStatus\": \"S\",\n        \"HousingAllowanceAmount\": \"0.000\",\n        \"HousingAllowanceCurrency\": \"SAR\",\n        \"FixedAllowanceAmount\": \"0.000\",\n        \"FixedAllowanceCurrency\": \"SAR\",\n        \"TransportationAllowanceAmount\": \"0.000\",\n        \"TransportationAllowanceCurrency\": \"SAR\",\n        \"TotalNetSalaryAmount\": \"22750.000\",\n        \"TotalNetSalaryCurrency\": \"SAR\",\n        \"TotalMonthlyIncomeAmount\": \"22750.000\",\n        \"TotalMonthlyIncomeCurrency\": \"SAR\",\n        \"TotalObligationsAmount\": \"0.000\",\n        \"TotalObligationsCurrency\": \"SAR\",\n        \"CustomerExpensesList\": [\n            {\n                \"ExpenseId\": \"001\",\n                \"Description\": \"Food And Beverages\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"840.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"003\",\n                \"Description\": \"Housing\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"007\",\n                \"Description\": \"Transport\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"525.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"008\",\n                \"Description\": \"Communications\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"210.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"010\",\n                \"Description\": \"Education Fees\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"011\",\n                \"Description\": \"Home Servants\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"012\",\n                \"Description\": \"Fees on expats\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"900\",\n                \"Description\": \"Other Income-Government support*\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"013\",\n                \"Description\": \"Other future expenses\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"005\",\n                \"Description\": \"Insurance\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"105.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"004\",\n                \"Description\": \"Utilities\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"315.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"006\",\n                \"Description\": \"Health Care Services\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            }\n        ],\n        \"ResidentialType\": \"001\",\n        \"HouseHoldHelp\": 0,\n        \"PublicSchoolDependants\": 0,\n        \"PrivateSchoolDependants\": 0,\n        \"BreadWinnerFlag\": \"N\",\n        \"BasicSalaryAmount\": \"25000.000\",\n        \"BasicSalaryCurrency\": \"SAR\"\n    }\n}"
+						},
+						{
+							"name": "MP Get Responsible Lending 1845490013",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "${{$guid}}",
+										"description": "request Id"
+									},
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/responsible-lending",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"responsible-lending"
+									],
+									"query": [
+										{
+											"key": "dossierId",
+											"value": "24687780",
+											"disabled": true
+										},
+										{
+											"key": "gosiFlag",
+											"value": "Y",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "$e54bfb60-7873-4a20-8fc9-83ac7db51929"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe21560932e552"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:05:28 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"MartialStatus\": \"2\",\n        \"FamilyMembers\": 3,\n        \"OwnHouse\": \"02\",\n        \"EducationFees\": 0,\n        \"Insurance\": \"N\",\n        \"CityId\": \"00000002\",\n        \"WorkingStatus\": \"S\",\n        \"HousingAllowanceAmount\": \"0.000\",\n        \"HousingAllowanceCurrency\": \"SAR\",\n        \"FixedAllowanceAmount\": \"0.000\",\n        \"FixedAllowanceCurrency\": \"SAR\",\n        \"TransportationAllowanceAmount\": \"0.000\",\n        \"TransportationAllowanceCurrency\": \"SAR\",\n        \"TotalNetSalaryAmount\": \"63700.000\",\n        \"TotalNetSalaryCurrency\": \"SAR\",\n        \"TotalMonthlyIncomeAmount\": \"63700.000\",\n        \"TotalMonthlyIncomeCurrency\": \"SAR\",\n        \"TotalObligationsAmount\": \"0.000\",\n        \"TotalObligationsCurrency\": \"SAR\",\n        \"CustomerExpensesList\": [\n            {\n                \"ExpenseId\": \"001\",\n                \"Description\": \"Food And Beverages\",\n                \"BaseAmount\": \"880.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"880.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"003\",\n                \"Description\": \"Housing\",\n                \"BaseAmount\": \"2750.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"2750.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"007\",\n                \"Description\": \"Transport\",\n                \"BaseAmount\": \"550.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"550.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"008\",\n                \"Description\": \"Communications\",\n                \"BaseAmount\": \"220.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"220.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"010\",\n                \"Description\": \"Education Fees\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"011\",\n                \"Description\": \"Home Servants\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"012\",\n                \"Description\": \"Fees on expats\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"900\",\n                \"Description\": \"Other Income-Government support*\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"013\",\n                \"Description\": \"Other future expenses\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"005\",\n                \"Description\": \"Insurance\",\n                \"BaseAmount\": \"110.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"110.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"004\",\n                \"Description\": \"Utilities\",\n                \"BaseAmount\": \"330.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"330.000\",\n                \"ValueCurrency\": \"SAR\"\n            },\n            {\n                \"ExpenseId\": \"006\",\n                \"Description\": \"Health Care Services\",\n                \"BaseAmount\": \"0.000\",\n                \"BaseCurrency\": \"SAR\",\n                \"ValueAmount\": \"0.000\",\n                \"ValueCurrency\": \"SAR\"\n            }\n        ],\n        \"ResidentialType\": \"001\",\n        \"HouseHoldHelp\": 0,\n        \"PublicSchoolDependants\": 0,\n        \"PrivateSchoolDependants\": 0,\n        \"BreadWinnerFlag\": \"N\",\n        \"BasicSalaryAmount\": \"70000.000\",\n        \"BasicSalaryCurrency\": \"SAR\",\n        \"GOSIDeductionAmount\": \"6300.000\",\n        \"GOSIDeductionCurrency\": \"SAR\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Get Stipulated Customer Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "${{$guid}}",
+								"description": "request Id"
+							},
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/stipulated-customer-data",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"stipulated-customer-data"
+							]
+						},
+						"description": "This path is used to get the list of mandatory documents."
+					},
+					"response": [
+						{
+							"name": "MP Get Stipulated Customer Data 1646701570",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "${{$guid}}",
+										"description": "request Id"
+									},
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/stipulated-customer-data",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"stipulated-customer-data"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "$d7468a32-33a2-4fd7-be37-dcf3b702a2f6"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1e05093296b2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:51:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"EmployerId\": 17,\n        \"DepartmentId\": 9,\n        \"SectorId\": \"JJJ\",\n        \"SalaryAmount\": \"30000.000\",\n        \"SalaryCurrency\": \"SAR\",\n        \"MilitaryRankId\": \"001\",\n        \"EmploymentDate\": \"2016-04-17\",\n        \"Mobile\": \"056212546\",\n        \"Email\": \"ux1032@gmail.com\",\n        \"ObsoleteData\": \"N\",\n        \"AvailableData\": \"Y\",\n        \"CurrentAccountBranch\": \"20400\",\n        \"CurrentAccountNumber\": \"6085236795\",\n        \"CurrentAccountType\": \"001\"\n    }\n}"
+						},
+						{
+							"name": "MP Get Stipulated Customer Data 1845490013",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "${{$guid}}",
+										"description": "request Id"
+									},
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/stipulated-customer-data",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"stipulated-customer-data"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "$3aee1537-8115-46d4-8477-8d91f60e584c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe217406cc1f20"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:05:56 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"EmployerId\": 14,\n        \"DepartmentId\": 12,\n        \"SectorId\": \"GGG\",\n        \"SalaryAmount\": \"25000.000\",\n        \"SalaryCurrency\": \"SAR\",\n        \"MilitaryRankId\": \"001\",\n        \"EmploymentDate\": \"2018-01-01\",\n        \"Mobile\": \"0563089053\",\n        \"Email\": \"kmqjkl@gmail.com\",\n        \"ObsoleteData\": \"N\",\n        \"AvailableData\": \"Y\",\n        \"CurrentAccountBranch\": \"20400\",\n        \"CurrentAccountNumber\": \"6085245347\",\n        \"CurrentAccountType\": \"001\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Set Responsible Lending",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"Data\": {\r\n\t\t\"MartialStatus\": \"2\",\r\n\t\t\"FamilyMembers\": 1,\r\n\t\t\"OwnHouse\": \"01\",\r\n\t\t\"EducationFees\": 1,\r\n\t\t\"Insurance\": \"Y\",\r\n\t\t\"CityId\": \"00000002\",\r\n\t\t\"WorkingStatus\": \"S\",\r\n\t\t\"BasicSalaryAmount\": \"25000\",\r\n\t\t\"BasicSalaryCurrency\": \"SAR\",\r\n\t\t\"HousingAllowanceAmount\": \"0.000\",\r\n\t\t\"HousingAllowanceCurrency\": \"SAR\",\r\n\t\t\"FixedAllowanceAmount\": \"0.000\",\r\n\t\t\"FixedAllowanceCurrency\": \"SAR\",\r\n\t\t\"TransportationAllowanceAmount\": \"0.000\",\r\n\t\t\"TransportationAllowanceCurrency\": \"SAR\",\r\n\t\t\"CustomerExpensesList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"001\",\r\n\t\t\t\t\"ValueAmount\": \"840\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Food And Beverages\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"003\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Housing\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"007\",\r\n\t\t\t\t\"ValueAmount\": \"525\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Transport\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"008\",\r\n\t\t\t\t\"ValueAmount\": \"210\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Communications\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"010\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Education Fees\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"011\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Home Servants\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"012\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Fees on expats\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"900\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other Income-Government support*\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"013\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other future expenses\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"005\",\r\n\t\t\t\t\"ValueAmount\": \"105\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Insurance\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"004\",\r\n\t\t\t\t\"ValueAmount\": \"315\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Utilities\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"006\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Health Care Services\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"ResidentialType\": \"001\",\r\n\t\t\"HouseHoldHelp\": 0,\r\n\t\t\"PublicSchoolDependants\": 0,\r\n\t\t\"PrivateSchoolDependants\": 0,\r\n\t\t\"BreadWinnerFlag\": \"N\",\r\n        \"EmployerId\": 12,\r\n        \"DepartmentId\": 12\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/responsible-lending",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"responsible-lending"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MP Set Responsible Lending 1646701570",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Data\": {\r\n\t\t\"MartialStatus\": \"2\",\r\n\t\t\"FamilyMembers\": 1,\r\n\t\t\"OwnHouse\": \"01\",\r\n\t\t\"EducationFees\": 1,\r\n\t\t\"Insurance\": \"Y\",\r\n\t\t\"CityId\": \"00000002\",\r\n\t\t\"WorkingStatus\": \"S\",\r\n\t\t\"BasicSalaryAmount\": \"25000\",\r\n\t\t\"BasicSalaryCurrency\": \"SAR\",\r\n\t\t\"HousingAllowanceAmount\": \"0.000\",\r\n\t\t\"HousingAllowanceCurrency\": \"SAR\",\r\n\t\t\"FixedAllowanceAmount\": \"0.000\",\r\n\t\t\"FixedAllowanceCurrency\": \"SAR\",\r\n\t\t\"TransportationAllowanceAmount\": \"0.000\",\r\n\t\t\"TransportationAllowanceCurrency\": \"SAR\",\r\n\t\t\"CustomerExpensesList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"001\",\r\n\t\t\t\t\"ValueAmount\": \"840\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Food And Beverages\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"003\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Housing\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"007\",\r\n\t\t\t\t\"ValueAmount\": \"525\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Transport\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"008\",\r\n\t\t\t\t\"ValueAmount\": \"210\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Communications\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"010\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Education Fees\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"011\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Home Servants\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"012\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Fees on expats\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"900\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other Income-Government support*\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"013\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other future expenses\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"005\",\r\n\t\t\t\t\"ValueAmount\": \"105\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Insurance\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"004\",\r\n\t\t\t\t\"ValueAmount\": \"315\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Utilities\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"006\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Health Care Services\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"ResidentialType\": \"001\",\r\n\t\t\"HouseHoldHelp\": 0,\r\n\t\t\"PublicSchoolDependants\": 0,\r\n\t\t\"PrivateSchoolDependants\": 0,\r\n\t\t\"BreadWinnerFlag\": \"N\",\r\n        \"EmployerId\": 12,\r\n        \"DepartmentId\": 12\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/responsible-lending",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"responsible-lending"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "31c9f028-a0de-4878-89ab-b85b9d518302"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1e1809329752"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:51:36 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"GOSIFlag\": \"O\"\n    }\n}"
+						},
+						{
+							"name": "MP Set Responsible Lending 1845490013",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"Data\": {\r\n\t\t\"MartialStatus\": \"2\",\r\n\t\t\"FamilyMembers\": 1,\r\n\t\t\"OwnHouse\": \"01\",\r\n\t\t\"EducationFees\": 1,\r\n\t\t\"Insurance\": \"Y\",\r\n\t\t\"CityId\": \"00000002\",\r\n\t\t\"WorkingStatus\": \"S\",\r\n\t\t\"BasicSalaryAmount\": \"25000\",\r\n\t\t\"BasicSalaryCurrency\": \"SAR\",\r\n\t\t\"HousingAllowanceAmount\": \"0.000\",\r\n\t\t\"HousingAllowanceCurrency\": \"SAR\",\r\n\t\t\"FixedAllowanceAmount\": \"0.000\",\r\n\t\t\"FixedAllowanceCurrency\": \"SAR\",\r\n\t\t\"TransportationAllowanceAmount\": \"0.000\",\r\n\t\t\"TransportationAllowanceCurrency\": \"SAR\",\r\n\t\t\"CustomerExpensesList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"001\",\r\n\t\t\t\t\"ValueAmount\": \"840\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Food And Beverages\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"003\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Housing\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"007\",\r\n\t\t\t\t\"ValueAmount\": \"525\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Transport\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"008\",\r\n\t\t\t\t\"ValueAmount\": \"210\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Communications\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"010\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Education Fees\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"011\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Home Servants\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"012\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Fees on expats\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"900\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other Income-Government support*\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"013\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Other future expenses\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"005\",\r\n\t\t\t\t\"ValueAmount\": \"105\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Insurance\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"004\",\r\n\t\t\t\t\"ValueAmount\": \"315\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Utilities\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ExpenseId\": \"006\",\r\n\t\t\t\t\"ValueAmount\": \"0.000\",\r\n\t\t\t\t\"ValueAmountCurrency\": \"SAR\",\r\n\t\t\t\t\"Description\": \"Health Care Services\",\r\n\t\t\t\t\"BaseAmount\": \"0.000\",\r\n\t\t\t\t\"BaseAmountCurrency\": \"SAR\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"ResidentialType\": \"001\",\r\n\t\t\"HouseHoldHelp\": 0,\r\n\t\t\"PublicSchoolDependants\": 0,\r\n\t\t\"PrivateSchoolDependants\": 0,\r\n\t\t\"BreadWinnerFlag\": \"N\",\r\n        \"EmployerId\": 12,\r\n        \"DepartmentId\": 12\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/responsible-lending",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"responsible-lending"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0d7d9b39-7f09-4755-8476-ed252260c6a1"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe21890932e842"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:06:17 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"GOSIFlag\": \"O\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Autolease Product Eligibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/product-eligibility?productId=CLQ&saveData=Y",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"product-eligibility"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "CLQ"
+								},
+								{
+									"key": "saveData",
+									"value": "Y"
+								},
+								{
+									"key": "customerSegment",
+									"value": "001",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Generated from cURL: curl --location --globoff '{{baseUrl}}/product-eligibility/autoleas?customerSegment=001&salaryCurrency=SAR&militaryRankID=22&businessPositionID=002&employmentDate=1441-03-13&frequencyTypeID=1&propertyType=55&requestedTenure=100&xSellFinancialProductID=1&linkedDossierID=582655&onlyProfitOption=Y&rolloutFlag=Y&employerId=1&departmentId=1&salaryAmount=2000&requestedDownPayment=600&totalPropertyCost=12000&financialProductsList=[SFN%2C3PF%2CWRE]&productId=22345&saveData=Y' \\\r\n--header 'Accept-Language: ar' \\\r\n--header 'Accept: application/json' \\\r\n--header 'Authorization: Bearer {{access-token}}'"
+					},
+					"response": [
+						{
+							"name": "MP Autolease Product Eligibility 1646701570",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "accept-language",
+										"value": "en"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/product-eligibility?productId=PFB&saveData=Y",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"product-eligibility"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "PFB"
+										},
+										{
+											"key": "saveData",
+											"value": "Y"
+										},
+										{
+											"key": "customerSegment",
+											"value": "001",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8dd264be-61e0-497f-94ff-f8d670187898"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1e5e06cbce00"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:52:46 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"FinancingAmount\": \"300.00\",\n        \"Tenure\": 5,\n        \"EligibleInstallmentAmount\": \"22150.00\",\n        \"ProfitRate\": \"15000.00\",\n        \"DownPaymenttToCharge\": \"0.000\",\n        \"EndPayment\": \"40.00\",\n        \"CustomerSegment\": \"001\",\n        \"MaximumCarPrice\": \"600000\",\n        \"MinmumDownPayment\": \"73000\",\n        \"MaximumEndPayment\": \"3100\",\n        \"MaximumFinanceRequest\": \"36215.00\",\n        \"InsuranceAmount\": \"300.00\",\n        \"MessageKeyList\": [\n            {\n                \"MessageId\": \"789\",\n                \"MessageDescription\": \"Success\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "MP Autolease Product Eligibility 1845490013",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "accept-language",
+										"value": "en"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/product-eligibility?productId=CLQ&saveData=Y",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"product-eligibility"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "CLQ"
+										},
+										{
+											"key": "saveData",
+											"value": "Y"
+										},
+										{
+											"key": "customerSegment",
+											"value": "001",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e26df86b-19f1-46ed-9b18-03e1654f474c"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe21ae0932e972"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:06:54 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"FinancingAmount\": \"200.00\",\n        \"Tenure\": 5,\n        \"EligibleInstallmentAmount\": \"19800.00\",\n        \"ProfitRate\": \"13000.00\",\n        \"DownPaymenttToCharge\": \"0.000\",\n        \"EndPayment\": \"35.00\",\n        \"CustomerSegment\": \"001\",\n        \"MaximumCarPrice\": \"500000\",\n        \"MinmumDownPayment\": \"70000\",\n        \"MaximumEndPayment\": \"2300\",\n        \"MaximumFinanceRequest\": \"12345.00\",\n        \"InsuranceAmount\": \"200.00\",\n        \"MessageKeyList\": [\n            {\n                \"MessageId\": \"789\",\n                \"MessageDescription\": \"Success\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "MP Update Finance Dossier Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "request Id"
+							},
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Data\": {\r\n    \"DossierId\": 770000053767,\r\n    \"ActivityCode\": \"UCD\",\r\n    \"HealthDataList\": [\r\n      {\r\n        \"HealthDataCode\": \"2332234\",\r\n        \"Question\": \"why?\",\r\n        \"Enabled\": \"Y\",\r\n        \"Reply\": \"Y\"\r\n      }\r\n    ],\r\n    \"CarData\": {\r\n      \"FLCarSelection\": \"Q\",\r\n      \"Supplier\": \"Ahmed Mohamed\",\r\n      \"ProductId\": \"23423123\",\r\n      \"Store\": \"Store 1\",\r\n      \"UnitPrice\": \"23.2333\",\r\n      \"ChassisNumber\": \"2342234\",\r\n      \"OtherSpecifications\": \"Red color\"\r\n    },\r\n    \"InsurancePreferences\": {\r\n      \"RepairMethod\": \"D\",\r\n      \"DeductibleAmount\": \"23.2333\",\r\n      \"AddDriverName\": \"Ahmed Mohamed\",\r\n      \"AddDriverId\": \"12345\",\r\n      \"AddDriverLicenseNumber\": \"12345\",\r\n      \"AddDriverRelationship\": \"001\"\r\n    },\r\n    \"CampaignId\": 12345,\r\n    \"CampaignDescription\": \"Campain\",\r\n    \"DigitalCampaignName\": \"Campain 1\",\r\n    \"DigitalCampaignDescription\": \"Campain 1\",\r\n    \"DeliveryModeFlag\": \"D\",\r\n    \"DeliveryAddressLatitude\": \"223.3443\",\r\n    \"DeliveryAddressLongitude\": \"223.3443\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/dossier-data",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"dossier-data"
+							]
+						},
+						"description": "This path is used to get the list of mandatory documents."
+					},
+					"response": [
+						{
+							"name": "MP Update Finance Dossier Data 1646701570",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "request Id"
+									},
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"DossierId\": 770000063579,\r\n    \"ActivityCode\": \"UCD\",\r\n    \"HealthDataList\": [\r\n      {\r\n        \"HealthDataCode\": \"2332234\",\r\n        \"Question\": \"why?\",\r\n        \"Enabled\": \"Y\",\r\n        \"Reply\": \"Y\"\r\n      }\r\n    ],\r\n    \"CarData\": {\r\n      \"FLCarSelection\": \"Q\",\r\n      \"Supplier\": \"Ahmed Mohamed\",\r\n      \"ProductId\": \"23423123\",\r\n      \"Store\": \"Store 1\",\r\n      \"UnitPrice\": \"23.2333\",\r\n      \"ChassisNumber\": \"2342234\",\r\n      \"OtherSpecifications\": \"Red color\"\r\n    },\r\n    \"InsurancePreferences\": {\r\n      \"RepairMethod\": \"D\",\r\n      \"DeductibleAmount\": \"23.2333\",\r\n      \"AddDriverName\": \"Ahmed Mohamed\",\r\n      \"AddDriverId\": \"12345\",\r\n      \"AddDriverLicenseNumber\": \"12345\",\r\n      \"AddDriverRelationship\": \"001\"\r\n    },\r\n    \"CampaignId\": 12345,\r\n    \"CampaignDescription\": \"Campain\",\r\n    \"DigitalCampaignName\": \"Campain 1\",\r\n    \"DigitalCampaignDescription\": \"Campain 1\",\r\n    \"DeliveryModeFlag\": \"D\",\r\n    \"DeliveryAddressLatitude\": \"223.3443\",\r\n    \"DeliveryAddressLongitude\": \"223.3443\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/dossier-data",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"dossier-data"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5f11d135-817e-451d-9658-bc8f76098376"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1e9c04776351"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:53:48 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "MP Update Finance Dossier Data 1845490013",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "request Id"
+									},
+									{
+										"key": "accept-language",
+										"value": "en",
+										"description": "Accept language\nDefault Value : en\nAllowed Values :\nen: English\nar: Arabic"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Data\": {\r\n    \"DossierId\": 770000053767,\r\n    \"ActivityCode\": \"UCD\",\r\n    \"HealthDataList\": [\r\n      {\r\n        \"HealthDataCode\": \"2332234\",\r\n        \"Question\": \"why?\",\r\n        \"Enabled\": \"Y\",\r\n        \"Reply\": \"Y\"\r\n      }\r\n    ],\r\n    \"CarData\": {\r\n      \"FLCarSelection\": \"Q\",\r\n      \"Supplier\": \"Ahmed Mohamed\",\r\n      \"ProductId\": \"23423123\",\r\n      \"Store\": \"Store 1\",\r\n      \"UnitPrice\": \"23.2333\",\r\n      \"ChassisNumber\": \"2342234\",\r\n      \"OtherSpecifications\": \"Red color\"\r\n    },\r\n    \"InsurancePreferences\": {\r\n      \"RepairMethod\": \"D\",\r\n      \"DeductibleAmount\": \"23.2333\",\r\n      \"AddDriverName\": \"Ahmed Mohamed\",\r\n      \"AddDriverId\": \"12345\",\r\n      \"AddDriverLicenseNumber\": \"12345\",\r\n      \"AddDriverRelationship\": \"001\"\r\n    },\r\n    \"CampaignId\": 12345,\r\n    \"CampaignDescription\": \"Campain\",\r\n    \"DigitalCampaignName\": \"Campain 1\",\r\n    \"DigitalCampaignDescription\": \"Campain 1\",\r\n    \"DeliveryModeFlag\": \"D\",\r\n    \"DeliveryAddressLatitude\": \"223.3443\",\r\n    \"DeliveryAddressLongitude\": \"223.3443\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/dossier-data",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"dossier-data"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "62d5bfb9-50b3-406c-a5c3-61b20c1222f4"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe21c906cc2950"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:07:22 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "MP Get Finance Default Expenses Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{inbound-gw}}/mp-autolease/v2/default-expenses-details?salaryAmount=2000&familySize=1&cityId=00000291&educationalFees=0&insurance=N&houseOwnerId=01",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-autolease",
+								"v2",
+								"default-expenses-details"
+							],
+							"query": [
+								{
+									"key": "salaryAmount",
+									"value": "2000"
+								},
+								{
+									"key": "familySize",
+									"value": "1"
+								},
+								{
+									"key": "cityId",
+									"value": "00000291"
+								},
+								{
+									"key": "educationalFees",
+									"value": "0"
+								},
+								{
+									"key": "insurance",
+									"value": "N"
+								},
+								{
+									"key": "houseOwnerId",
+									"value": "01"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MP Get Finance Default Expenses Details 1646701570",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/default-expenses-details?salaryAmount=2000&familySize=1&cityId=00000291&educationalFees=0&insurance=N&houseOwnerId=01",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"default-expenses-details"
+									],
+									"query": [
+										{
+											"key": "salaryAmount",
+											"value": "2000"
+										},
+										{
+											"key": "familySize",
+											"value": "1"
+										},
+										{
+											"key": "cityId",
+											"value": "00000291"
+										},
+										{
+											"key": "educationalFees",
+											"value": "0"
+										},
+										{
+											"key": "insurance",
+											"value": "N"
+										},
+										{
+											"key": "houseOwnerId",
+											"value": "01"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "67bd9aec-f50b-4127-8287-c9a8a6153707"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe1eee06cbdd70"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 08:55:11 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"CFSExpensesKeyList\": [\n            {\n                \"ExpenseId\": \"001\",\n                \"Description\": \"Food And Beverages\",\n                \"BaseAmount\": \"400.000\",\n                \"ValueAmount\": \"400.000\"\n            },\n            {\n                \"ExpenseId\": \"003\",\n                \"Description\": \"Housing\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"007\",\n                \"Description\": \"Transport\",\n                \"BaseAmount\": \"200.000\",\n                \"ValueAmount\": \"200.000\"\n            },\n            {\n                \"ExpenseId\": \"008\",\n                \"Description\": \"Communications\",\n                \"BaseAmount\": \"100.000\",\n                \"ValueAmount\": \"100.000\"\n            },\n            {\n                \"ExpenseId\": \"010\",\n                \"Description\": \"Education Fees\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"011\",\n                \"Description\": \"Home Servants\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"012\",\n                \"Description\": \"Fees on expats\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"900\",\n                \"Description\": \"Other Income-Government support*\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"013\",\n                \"Description\": \"Other future expenses\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"005\",\n                \"Description\": \"Insurance\",\n                \"BaseAmount\": \"50.000\",\n                \"ValueAmount\": \"50.000\"\n            },\n            {\n                \"ExpenseId\": \"004\",\n                \"Description\": \"Utilities\",\n                \"BaseAmount\": \"200.000\",\n                \"ValueAmount\": \"200.000\"\n            },\n            {\n                \"ExpenseId\": \"006\",\n                \"Description\": \"Health Care Services\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "MP Get Finance Default Expenses Details 1845490013",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept-language",
+										"value": "en",
+										"type": "text"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{inbound-gw}}/mp-autolease/v2/default-expenses-details?salaryAmount=2000&familySize=1&cityId=00000291&educationalFees=0&insurance=N&houseOwnerId=01",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-autolease",
+										"v2",
+										"default-expenses-details"
+									],
+									"query": [
+										{
+											"key": "salaryAmount",
+											"value": "2000"
+										},
+										{
+											"key": "familySize",
+											"value": "1"
+										},
+										{
+											"key": "cityId",
+											"value": "00000291"
+										},
+										{
+											"key": "educationalFees",
+											"value": "0"
+										},
+										{
+											"key": "insurance",
+											"value": "N"
+										},
+										{
+											"key": "houseOwnerId",
+											"value": "01"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8d3072ee-9cbc-4858-b629-1cfe43d4eb8f"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67fe21de0932ec32"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Apr 2025 09:07:42 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"CFSExpensesKeyList\": [\n            {\n                \"ExpenseId\": \"001\",\n                \"Description\": \"Food And Beverages\",\n                \"BaseAmount\": \"400.000\",\n                \"ValueAmount\": \"400.000\"\n            },\n            {\n                \"ExpenseId\": \"003\",\n                \"Description\": \"Housing\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"007\",\n                \"Description\": \"Transport\",\n                \"BaseAmount\": \"200.000\",\n                \"ValueAmount\": \"200.000\"\n            },\n            {\n                \"ExpenseId\": \"008\",\n                \"Description\": \"Communications\",\n                \"BaseAmount\": \"100.000\",\n                \"ValueAmount\": \"100.000\"\n            },\n            {\n                \"ExpenseId\": \"010\",\n                \"Description\": \"Education Fees\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"011\",\n                \"Description\": \"Home Servants\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"012\",\n                \"Description\": \"Fees on expats\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"900\",\n                \"Description\": \"Other Income-Government support*\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"013\",\n                \"Description\": \"Other future expenses\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            },\n            {\n                \"ExpenseId\": \"005\",\n                \"Description\": \"Insurance\",\n                \"BaseAmount\": \"50.000\",\n                \"ValueAmount\": \"50.000\"\n            },\n            {\n                \"ExpenseId\": \"004\",\n                \"Description\": \"Utilities\",\n                \"BaseAmount\": \"200.000\",\n                \"ValueAmount\": \"200.000\"\n            },\n            {\n                \"ExpenseId\": \"006\",\n                \"Description\": \"Health Care Services\",\n                \"BaseAmount\": \"0.000\",\n                \"ValueAmount\": \"0.000\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "apimarketplace-ext-test-gw-svc-gw-gateway-traffic-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/apimarketplace-sit/sandbox-inbound",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "inbound-gw",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"type": "string"
+		},
+		{
+			"key": "client-secret",
+			"value": "efc9584a7ff25456423a532040ebbd42",
+			"type": "string"
+		},
+		{
+			"key": "client-id",
+			"value": "009407e30165d8f05d554e336acb0b26",
+			"type": "string"
+		},
+		{
+			"key": "originalUrl",
+			"value": ""
+		},
+		{
+			"key": "initiate-redirect-identity",
+			"value": ""
+		},
+		{
+			"key": "confirmationCode",
+			"value": ""
+		},
+		{
+			"key": "authorizationCode",
+			"value": ""
+		},
+		{
+			"key": "security-token",
+			"value": ""
+		},
+		{
+			"key": "customer_access_token",
+			"value": ""
+		},
+		{
+			"key": "customer_refresh_token",
+			"value": ""
+		}
+	]
+}
