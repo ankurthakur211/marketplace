@@ -454,98 +454,154 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    // Select the target UL in .navbar-collapse
-    const navCollapseList = document.querySelector('.navbar-collapse .menu.nav');
+    // // Select the target UL in .navbar-collapse
+    // const navCollapseList = document.querySelector('.navbar-collapse .menu.nav');
 
-    // Move login menu items
-    const loginMenu = document.querySelector('.region.region-navigation-right .menu.menu--login.nav');
-    if (loginMenu && navCollapseList) {
-        loginMenu.querySelectorAll('li').forEach(li => {
-            navCollapseList.appendChild(li.cloneNode(true));
-        });
-    }
-    // Move organization menu items
-    const orgMenu = document.querySelector('#block-marketplace-latest-consumerorganizationselection .dropitmenu-submenu');
-    if (orgMenu && navCollapseList) {
-        orgMenu.querySelectorAll('li').forEach(li => {
-            // Skip disabled or currently selected items
-            const isDisabled = li.hasAttribute('disabled');
-            const isSelected = li.hasAttribute('selected');
-            if (isDisabled || isSelected) {
-                return;
-            }
+    // // Move login menu items
+    // const loginMenu = document.querySelector('.region.region-navigation-right .menu.menu--login.nav');
+    // if (loginMenu && navCollapseList) {
+    //     loginMenu.querySelectorAll('li').forEach(li => {
+    //         navCollapseList.appendChild(li.cloneNode(true));
+    //     });
+    // }
+    // // Move organization menu items
+    // const orgMenu = document.querySelector('#block-marketplace-latest-consumerorganizationselection .dropitmenu-submenu');
+    // if (orgMenu && navCollapseList) {
+    //     orgMenu.querySelectorAll('li').forEach(li => {
+    //         // Skip disabled or currently selected items
+    //         const isDisabled = li.hasAttribute('disabled');
+    //         const isSelected = li.hasAttribute('selected');
+    //         if (isDisabled || isSelected) {
+    //             return;
+    //         }
 
-            navCollapseList.appendChild(li.cloneNode(true));
-        });
-    }
+    //         navCollapseList.appendChild(li.cloneNode(true));
+    //     });
+    // }
 
-    // Move account menu items
-    const accountMenu = document.querySelector('.region.region-navigation-right .account-menu .dropit-submenu');
-    if (accountMenu && navCollapseList) {
-        accountMenu.querySelectorAll('li').forEach(li => {
-            const link = li.querySelector('a[href]');
-            if (link && link.getAttribute('href') === '/sandbox/user/change-password') {
-                return; // Skip "Change password"
-            }
+    // // Move account menu items
+    // const accountMenu = document.querySelector('.region.region-navigation-right .account-menu .dropit-submenu');
+    // if (accountMenu && navCollapseList) {
+    //     accountMenu.querySelectorAll('li').forEach(li => {
+    //         const link = li.querySelector('a[href]');
+    //         if (link && link.getAttribute('href') === '/sandbox/user/change-password') {
+    //             return; // Skip "Change password"
+    //         }
 
-            const trigger = li.querySelector('a.trigger');
-            if (trigger && trigger.textContent.trim() === '') {
-                const nextElem = trigger.nextElementSibling;
-                if (nextElem && nextElem.tagName === 'A') {
-                    trigger.remove(); // Remove only the empty .trigger link
+    //         const trigger = li.querySelector('a.trigger');
+    //         if (trigger && trigger.textContent.trim() === '') {
+    //             const nextElem = trigger.nextElementSibling;
+    //             if (nextElem && nextElem.tagName === 'A') {
+    //                 trigger.remove(); // Remove only the empty .trigger link
+    //             }
+    //         }
+
+    //         navCollapseList.appendChild(li.cloneNode(true));
+    //     });
+    // }
+
+    // // Target the section
+    // const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
+
+    // // Proceed only if both elements exist
+    // if (searchIconSection && navCollapseList) {
+    //     // Clone the section
+    //     const searchItem = document.createElement('li');
+    //     searchItem.classList.add('searching-responsive');
+
+    //     // Move the section inside the new <li>
+    //     searchItem.appendChild(searchIconSection.cloneNode(true));
+
+    //     // Insert as the first item in the nav list
+    //     navCollapseList.insertBefore(searchItem, navCollapseList.firstChild);
+    // }
+
+
+
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+
+    function moveNavItemsForMobile() {
+        // Clear previously added items to avoid duplicates
+        const existingItems = document.querySelectorAll('.navbar-collapse .menu.nav .searching-responsive, .navbar-collapse .menu.nav .moved-item');
+        existingItems.forEach(item => item.remove());
+
+        const navCollapseList = document.querySelector('.navbar-collapse .menu.nav');
+        if (!navCollapseList) return;
+
+        // Move login menu items
+        const loginMenu = document.querySelector('.region.region-navigation-right .menu.menu--login.nav');
+        if (loginMenu) {
+            loginMenu.querySelectorAll('li').forEach(li => {
+                const clone = li.cloneNode(true);
+                clone.classList.add('moved-item');
+                navCollapseList.appendChild(clone);
+            });
+        }
+
+        // Move organization menu items
+        const orgMenu = document.querySelector('#block-marketplace-latest-consumerorganizationselection .dropitmenu-submenu');
+        if (orgMenu) {
+            orgMenu.querySelectorAll('li').forEach(li => {
+                const isDisabled = li.hasAttribute('disabled');
+                const isSelected = li.hasAttribute('selected');
+                if (isDisabled || isSelected) return;
+
+                const clone = li.cloneNode(true);
+                clone.classList.add('moved-item');
+                navCollapseList.appendChild(clone);
+            });
+        }
+
+        // Move account menu items
+        const accountMenu = document.querySelector('.region.region-navigation-right .account-menu .dropit-submenu');
+        if (accountMenu) {
+            accountMenu.querySelectorAll('li').forEach(li => {
+                const link = li.querySelector('a[href]');
+                if (link && link.getAttribute('href') === '/sandbox/user/change-password') return;
+
+                const trigger = li.querySelector('a.trigger');
+                if (trigger && trigger.textContent.trim() === '') {
+                    const nextElem = trigger.nextElementSibling;
+                    if (nextElem && nextElem.tagName === 'A') {
+                        trigger.remove();
+                    }
                 }
-            }
 
-            navCollapseList.appendChild(li.cloneNode(true));
-        });
+                const clone = li.cloneNode(true);
+                clone.classList.add('moved-item');
+                navCollapseList.appendChild(clone);
+            });
+        }
+
+        // Insert search icon section
+        const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
+        if (searchIconSection) {
+            const searchItem = document.createElement('li');
+            searchItem.classList.add('searching-responsive', 'moved-item');
+            searchItem.appendChild(searchIconSection.cloneNode(true));
+            navCollapseList.insertBefore(searchItem, navCollapseList.firstChild);
+        }
     }
 
-    // Target the section
-    const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
-
-    // Proceed only if both elements exist
-    if (searchIconSection && navCollapseList) {
-        // Clone the section
-        const searchItem = document.createElement('li');
-        searchItem.classList.add('searching-responsive');
-
-        // Move the section inside the new <li>
-        searchItem.appendChild(searchIconSection.cloneNode(true));
-
-        // Insert as the first item in the nav list
-        navCollapseList.insertBefore(searchItem, navCollapseList.firstChild);
+    function restoreNavItemsToOriginal() {
+        // Remove only the items we added
+        const movedItems = document.querySelectorAll('.navbar-collapse .menu.nav .searching-responsive, .navbar-collapse .menu.nav .moved-item');
+        movedItems.forEach(item => item.remove());
     }
 
+    // Initial run
+    if (mediaQuery.matches) {
+        moveNavItemsForMobile();
+    }
 
-
-
-
-
-
-    //not tested yet when search block is expanded check if collapsed or no if not collapse make it collapse
-
-    const targetNode = document.body;
-
-    const observerr = new MutationObserver((mutationsList) => {
-        const searchBlock = document.querySelector(
-            'section.views-exposed-form[data-drupal-selector="views-exposed-form-search-api-page-1"]'
-        );
-
-        if (searchBlock && window.getComputedStyle(searchBlock).display === 'flex') {
-            const toggleButton = document.querySelector('button.navbar-toggle');
-
-            if (toggleButton && !toggleButton.classList.contains('collapsed')) {
-                toggleButton.classList.add('collapsed');
-                toggleButton.setAttribute('aria-expanded', 'false');
-            }
+    // Listen to media query changes
+    mediaQuery.addEventListener('change', (e) => {
+        if (e.matches) {
+            moveNavItemsForMobile();
+        } else {
+            restoreNavItemsToOriginal();
         }
     });
-
-    observerr.observe(targetNode, {
-        childList: true,
-        subtree: true,
-    });
-
 
     /* for nav bar menu responsive design*/
 
