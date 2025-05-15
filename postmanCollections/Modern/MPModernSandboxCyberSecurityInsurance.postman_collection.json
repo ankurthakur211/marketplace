@@ -1,0 +1,1316 @@
+{
+	"info": {
+		"_postman_id": "84d3be29-5aa8-4a45-ade6-b04cad6b963c",
+		"name": "MP Modern Sandbox Cyber Security Insurance - Neoleap App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30710659"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json()\r",
+									"if(pm.response.code == 200){\r",
+									"    pm.collectionVariables.set('access-token', response.access_token);   \r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Cookie",
+								"value": "cookiesession1=678A8C3997F36E43064F1EBED59975E1"
+							},
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base-url}}/oauth2security/oauth2/token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cyber Insurance",
+			"item": [
+				{
+					"name": "Select Quote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"POINumber\": \"2481998819\",\r\n        \"MobileNumber\": \"966556692447\",\r\n        \"BirthDate\": \"05-1993\",\r\n        \"Email\": \"eslam.fecu@gmail.com\",\r\n        \"GroupType\": \"Individual\",\r\n        \"PolicyStartDate\": \"2024-10-04\",\r\n        \"ClaimInLastThree\": \"90\",\r\n        \"LossAmount\": 12200,\r\n        \"Questions\": [\r\n            {\r\n                \"Id\": 1001,\r\n                \"Value\": \"Owner\"\r\n            },\r\n            {\r\n                \"Id\": 1002,\r\n                \"Value\": \"No\"\r\n            },\r\n            {\r\n                \"Id\": 1003,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1004,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1005,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4001,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4002,\r\n                \"Value\": \"3\"\r\n            },\r\n            {\r\n                \"Id\": 1006,\r\n                \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\r\n            },\r\n            {\r\n                \"Id\": 4003,\r\n                \"Value\": \"2323\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-cyber-insurance/v1/quote",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-cyber-insurance",
+								"v1",
+								"quote"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"POINumber\": \"1000113769\",\r\n        \"MobileNumber\": \"966555848626\",\r\n        \"BirthDate\": \"03-1983\",\r\n        \"Email\": \"eslam.fecu@gmail.com\",\r\n        \"GroupType\": \"Individual\",\r\n        \"PolicyStartDate\": \"2024-10-04\",\r\n        \"ClaimInLastThree\": \"90\",\r\n        \"LossAmount\": 12200,\r\n        \"Questions\": [\r\n            {\r\n                \"Id\": 1001,\r\n                \"Value\": \"Owner\"\r\n            },\r\n            {\r\n                \"Id\": 1002,\r\n                \"Value\": \"No\"\r\n            },\r\n            {\r\n                \"Id\": 1003,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1004,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1005,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4001,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4002,\r\n                \"Value\": \"3\"\r\n            },\r\n            {\r\n                \"Id\": 1006,\r\n                \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\r\n            },\r\n            {\r\n                \"Id\": 4003,\r\n                \"Value\": \"2323\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/quote",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"quote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "1e58b742-7a2d-4ad2-b023-ad8fbf4af27a"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf0b8b027cf500"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 12:39:39 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"UserInfo\": {\n            \"FirstNameEn\": \"NOOF\",\n            \"LastNameEn\": \"ALRUBEAAN\",\n            \"SecondNameEn\": \"MOHAMMED\",\n            \"ThirdNameEn\": \"A\",\n            \"FirstNameAr\": \"نوف\",\n            \"Gender\": \"F\",\n            \"LogId\": 0,\n            \"MaritalStatus\": \"married\",\n            \"ClaimInLastThree\": \"90\",\n            \"LossAmount\": \"12200\",\n            \"POINumber\": \"1000113769\",\n            \"MobileNumber\": \"555848626\",\n            \"GregBirthDate\": \"03-1983\",\n            \"Email\": \"eslam.fecu@gmail.com\",\n            \"GroupType\": \"Individual\",\n            \"PolicyStartDate\": \"2024-10-04\",\n            \"Questions\": [\n                {\n                    \"Id\": 1001,\n                    \"Value\": \"Owner\"\n                },\n                {\n                    \"Id\": 1002,\n                    \"Value\": \"No\"\n                },\n                {\n                    \"Id\": 1003,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 1004,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 1005,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 4001,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 4002,\n                    \"Value\": \"3\"\n                },\n                {\n                    \"Id\": 1006,\n                    \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\n                },\n                {\n                    \"Id\": 4003,\n                    \"Value\": \"2323\"\n                }\n            ],\n            \"PolicyEndDate\": \"2025-10-03T00:00:00.000Z\",\n            \"Addresses\": [\n                {\n                    \"BuildingNumber\": \"6966\",\n                    \"Street\": \"Al Abrah\",\n                    \"District\": \"An Nawras Dist.\",\n                    \"City\": \"DAMMAM\",\n                    \"PostCode\": \"32214\",\n                    \"AdditionalNumber\": \"4830\",\n                    \"CityAr\": \"الدمام\",\n                    \"StreetAr\": \"الابرح\",\n                    \"DistrictAr\": \"حي النورس\",\n                    \"LatLng\": \"50.18997689 26.41144243\",\n                    \"ShortAddress\": \"EDAA6966\",\n                    \"IsPrimaryAddress\": \"true\",\n                    \"PKAddressId\": \"3221469664830\",\n                    \"CityId\": \"13\",\n                    \"RegionId\": \"5\",\n                    \"Address1\": \"6966 Al Abrah - An Nawras Dist.\",\n                    \"Address2\": \"DAMMAM 32214 - 4830\",\n                    \"RegionName\": \"Eastern region\",\n                    \"RegionNameAr\": \"المنطقه الشرقيه\",\n                    \"Latitude\": \"26.41144243\",\n                    \"Longitude\": \"50.18997689\"\n                },\n                {\n                    \"BuildingNumber\": \"7689\",\n                    \"Street\": \"Abi Zakriya Ibn Al Awwam\",\n                    \"District\": \"Al Rawdah Dist.\",\n                    \"City\": \"RIYADH\",\n                    \"PostCode\": \"13213\",\n                    \"AdditionalNumber\": \"4171\",\n                    \"CityAr\": \"الرياض\",\n                    \"StreetAr\": \"أبي زكريا بن العوام\",\n                    \"DistrictAr\": \"حي الروضة\",\n                    \"LatLng\": \"46.77030574 24.74219665\",\n                    \"ShortAddress\": \"RFRA7689\",\n                    \"IsPrimaryAddress\": \"false\",\n                    \"PKAddressId\": \"1321376894171\",\n                    \"CityId\": \"3\",\n                    \"RegionId\": \"1\",\n                    \"Address1\": \"7689 Abi Zakriya Ibn Al Awwam - Al Rawdah Dist.\",\n                    \"Address2\": \"RIYADH 13213 - 4171\",\n                    \"RegionName\": \"Al Riyadh\",\n                    \"RegionNameAr\": \"الرياض\",\n                    \"Latitude\": \"24.74219665\",\n                    \"Longitude\": \"46.77030574\"\n                }\n            ],\n            \"DateOfBirthG\": \"19-03-1983\",\n            \"FamilyName\": \"الربيعان\",\n            \"FatherName\": \"محمد\",\n            \"GrandFatherName\": \"على\",\n            \"IdIssuePlace\": \"أحوال الخبر -2- نساء\",\n            \"SocialStatusDesc\": \"Married / متزوج-ة\",\n            \"MaritalStatusDescAr\": \"متزوجه\",\n            \"SubtribeName\": \"\"\n        },\n        \"ReferenceNumber\": 158782,\n        \"Rates\": [\n            {\n                \"Id\": \"a7f0c975-4a43-4c8c-8fa0-d5d886a8d5ee\",\n                \"BasePremium\": 103,\n                \"CommissionAmount\": 0,\n                \"CommissionRate\": 0,\n                \"FinalDiscount\": 0,\n                \"GrandTotalPremium\": 118.45,\n                \"NetPremium\": 103,\n                \"PlanId\": 611445,\n                \"PlanType\": \"Standard\",\n                \"ProductId\": 610660,\n                \"TotalPremium\": 103,\n                \"Type\": \"Individual\",\n                \"VATAmount\": 15.45,\n                \"VATRate\": 0.15,\n                \"NetChange\": 0,\n                \"PreadjustedTermPremium\": 0,\n                \"OverridePremium\": 0,\n                \"MinimumPremium\": 0,\n                \"OverrideNetChange\": 0,\n                \"TransactionPremium\": 0,\n                \"PriorPremium\": 0,\n                \"PriorTermPremium\": 0,\n                \"PreadjustedNetChange\": 0,\n                \"Premium\": 0,\n                \"TermPremium\": 0,\n                \"ProratedMinimumPremium\": 0,\n                \"AnnualPremium\": 0,\n                \"RatedManualPremium\": 0,\n                \"DiscountAmount\": 0\n            },\n            {\n                \"Id\": \"2f953127-6f21-44d3-8024-be37d946110c\",\n                \"BasePremium\": 172,\n                \"CommissionAmount\": 0,\n                \"CommissionRate\": 0,\n                \"FinalDiscount\": 0,\n                \"GrandTotalPremium\": 197.8,\n                \"NetPremium\": 172,\n                \"PlanId\": 611444,\n                \"PlanType\": \"Advanced\",\n                \"ProductId\": 610660,\n                \"TotalPremium\": 172,\n                \"Type\": \"Individual\",\n                \"VATAmount\": 25.8,\n                \"VATRate\": 0.15,\n                \"NetChange\": 0,\n                \"PreadjustedTermPremium\": 0,\n                \"OverridePremium\": 0,\n                \"MinimumPremium\": 0,\n                \"OverrideNetChange\": 0,\n                \"TransactionPremium\": 0,\n                \"PriorPremium\": 0,\n                \"PriorTermPremium\": 0,\n                \"PreadjustedNetChange\": 0,\n                \"Premium\": 0,\n                \"TermPremium\": 0,\n                \"ProratedMinimumPremium\": 0,\n                \"AnnualPremium\": 0,\n                \"RatedManualPremium\": 0,\n                \"DiscountAmount\": 0\n            }\n        ],\n        \"ReferenceId\": \"U2FsdGVkX1+4RgJAjJI7zaEI/cIRu4PYIjP3qX+7wcM=\"\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"POINumber\": \"1040531392\",\r\n        \"MobileNumber\": \"966544477177\",\r\n        \"BirthDate\": \"03-1983\",\r\n        \"Email\": \"eslam.fecu@gmail.com\",\r\n        \"GroupType\": \"Individual\",\r\n        \"PolicyStartDate\": \"2024-10-04\",\r\n        \"ClaimInLastThree\": \"90\",\r\n        \"LossAmount\": 12200,\r\n        \"Questions\": [\r\n            {\r\n                \"Id\": 1001,\r\n                \"Value\": \"Owner\"\r\n            },\r\n            {\r\n                \"Id\": 1002,\r\n                \"Value\": \"No\"\r\n            },\r\n            {\r\n                \"Id\": 1003,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1004,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1005,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4001,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4002,\r\n                \"Value\": \"3\"\r\n            },\r\n            {\r\n                \"Id\": 1006,\r\n                \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\r\n            },\r\n            {\r\n                \"Id\": 4003,\r\n                \"Value\": \"2323\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/quote",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"quote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "fb096e46-8891-48dc-ae7f-bec2f188b586"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf0beb027cff30"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 12:41:16 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"UserInfo\": {\n            \"FirstNameEn\": \"SULAIMAN\",\n            \"LastNameEn\": \"ALRAKIDHI\",\n            \"SecondNameEn\": \"ABDULAZIZ\",\n            \"ThirdNameEn\": \"ABDULRAHMAN\",\n            \"FirstNameAr\": \"سليمان\",\n            \"Gender\": \"M\",\n            \"LogId\": 0,\n            \"MaritalStatus\": \"married\",\n            \"ClaimInLastThree\": \"90\",\n            \"LossAmount\": \"12200\",\n            \"POINumber\": \"1040531392\",\n            \"MobileNumber\": \"544477177\",\n            \"GregBirthDate\": \"03-1983\",\n            \"Email\": \"eslam.fecu@gmail.com\",\n            \"GroupType\": \"Individual\",\n            \"PolicyStartDate\": \"2024-10-04\",\n            \"Questions\": [\n                {\n                    \"Id\": 1001,\n                    \"Value\": \"Owner\"\n                },\n                {\n                    \"Id\": 1002,\n                    \"Value\": \"No\"\n                },\n                {\n                    \"Id\": 1003,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 1004,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 1005,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 4001,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 4002,\n                    \"Value\": \"3\"\n                },\n                {\n                    \"Id\": 1006,\n                    \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\n                },\n                {\n                    \"Id\": 4003,\n                    \"Value\": \"2323\"\n                }\n            ],\n            \"PolicyEndDate\": \"2025-10-03T00:00:00.000Z\",\n            \"Addresses\": [\n                {\n                    \"BuildingNumber\": \"7002\",\n                    \"District\": \"An Nakhil Dist.\",\n                    \"City\": \"BURAIDAH\",\n                    \"PostCode\": \"52375\",\n                    \"AdditionalNumber\": \"3685\",\n                    \"CityAr\": \"بريدة\",\n                    \"DistrictAr\": \"حي النخيل\",\n                    \"LatLng\": \"43.90068906 26.37251424\",\n                    \"ShortAddress\": \"QBUI7002\",\n                    \"IsPrimaryAddress\": \"true\",\n                    \"PKAddressId\": \"5237570023685\",\n                    \"CityId\": \"11\",\n                    \"RegionId\": \"4\",\n                    \"Address1\": \"7002- An Nakhil Dist.\",\n                    \"Address2\": \"BURAIDAH 52375 - 3685\",\n                    \"RegionName\": \"Al Qassim\",\n                    \"RegionNameAr\": \"القصيم\",\n                    \"Latitude\": \"26.37251424\",\n                    \"Longitude\": \"43.90068906\"\n                },\n                {\n                    \"BuildingNumber\": \"2574\",\n                    \"District\": \"Al Khalij Dist.\",\n                    \"City\": \"BURAIDAH\",\n                    \"PostCode\": \"52339\",\n                    \"AdditionalNumber\": \"7503\",\n                    \"CityAr\": \"بريدة\",\n                    \"DistrictAr\": \"حي الخليج\",\n                    \"LatLng\": \"43.97482899 26.30477144\",\n                    \"ShortAddress\": \"QBGC2574\",\n                    \"IsPrimaryAddress\": \"false\",\n                    \"PKAddressId\": \"5233925747503\",\n                    \"CityId\": \"11\",\n                    \"RegionId\": \"4\",\n                    \"Address1\": \"2574- Al Khalij Dist.\",\n                    \"Address2\": \"BURAIDAH 52339 - 7503\",\n                    \"RegionName\": \"Al Qassim\",\n                    \"RegionNameAr\": \"القصيم\",\n                    \"Latitude\": \"26.30477144\",\n                    \"Longitude\": \"43.97482899\"\n                }\n            ],\n            \"DateOfBirthG\": \"20-03-1983\",\n            \"FamilyName\": \"الراكضي\",\n            \"FatherName\": \"بن عبدالعزيز\",\n            \"GrandFatherName\": \"بن عبدالرحمن\",\n            \"IdIssuePlace\": \"احوال بريده\",\n            \"SocialStatusDesc\": \"متزوج\",\n            \"MaritalStatusDescAr\": \"زوجة واحدة\",\n            \"SubtribeName\": \"\"\n        },\n        \"ReferenceNumber\": 123006,\n        \"Rates\": [\n            {\n                \"Id\": \"5ae9718d-bf06-4546-8fbb-fc21d0629a5e\",\n                \"BasePremium\": 103,\n                \"CommissionAmount\": 0,\n                \"CommissionRate\": 0,\n                \"FinalDiscount\": 0,\n                \"GrandTotalPremium\": 118.45,\n                \"NetPremium\": 103,\n                \"PlanId\": 611445,\n                \"PlanType\": \"Standard\",\n                \"ProductId\": 610660,\n                \"TotalPremium\": 103,\n                \"Type\": \"Individual\",\n                \"VATAmount\": 15.45,\n                \"VATRate\": 0.15,\n                \"NetChange\": 0,\n                \"PreadjustedTermPremium\": 0,\n                \"OverridePremium\": 0,\n                \"MinimumPremium\": 0,\n                \"OverrideNetChange\": 0,\n                \"TransactionPremium\": 0,\n                \"PriorPremium\": 0,\n                \"PriorTermPremium\": 0,\n                \"PreadjustedNetChange\": 0,\n                \"Premium\": 0,\n                \"TermPremium\": 0,\n                \"ProratedMinimumPremium\": 0,\n                \"AnnualPremium\": 0,\n                \"RatedManualPremium\": 0,\n                \"DiscountAmount\": 0\n            },\n            {\n                \"Id\": \"132f362f-a0a5-4d47-bf63-1cd785bade5c\",\n                \"BasePremium\": 172,\n                \"CommissionAmount\": 0,\n                \"CommissionRate\": 0,\n                \"FinalDiscount\": 0,\n                \"GrandTotalPremium\": 197.8,\n                \"NetPremium\": 172,\n                \"PlanId\": 611444,\n                \"PlanType\": \"Advanced\",\n                \"ProductId\": 610660,\n                \"TotalPremium\": 172,\n                \"Type\": \"Individual\",\n                \"VATAmount\": 25.8,\n                \"VATRate\": 0.15,\n                \"NetChange\": 0,\n                \"PreadjustedTermPremium\": 0,\n                \"OverridePremium\": 0,\n                \"MinimumPremium\": 0,\n                \"OverrideNetChange\": 0,\n                \"TransactionPremium\": 0,\n                \"PriorPremium\": 0,\n                \"PriorTermPremium\": 0,\n                \"PreadjustedNetChange\": 0,\n                \"Premium\": 0,\n                \"TermPremium\": 0,\n                \"ProratedMinimumPremium\": 0,\n                \"AnnualPremium\": 0,\n                \"RatedManualPremium\": 0,\n                \"DiscountAmount\": 0\n            }\n        ],\n        \"ReferenceId\": \"U2FsdGVkX18IspzaNxYeL6vFNrvIAaans+lUT4mlljY=\"\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"POINumber\": \"1054110125\",\r\n        \"MobileNumber\": \"966552920838\",\r\n        \"BirthDate\": \"11-1981\",\r\n        \"Email\": \"eslam.fecu@gmail.com\",\r\n        \"GroupType\": \"Individual\",\r\n        \"PolicyStartDate\": \"2024-10-04\",\r\n        \"ClaimInLastThree\": \"90\",\r\n        \"LossAmount\": 12200,\r\n        \"Questions\": [\r\n            {\r\n                \"Id\": 1001,\r\n                \"Value\": \"Owner\"\r\n            },\r\n            {\r\n                \"Id\": 1002,\r\n                \"Value\": \"No\"\r\n            },\r\n            {\r\n                \"Id\": 1003,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1004,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1005,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4001,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4002,\r\n                \"Value\": \"3\"\r\n            },\r\n            {\r\n                \"Id\": 1006,\r\n                \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\r\n            },\r\n            {\r\n                \"Id\": 4003,\r\n                \"Value\": \"2323\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/quote",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"quote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "00fe1093-e6fd-4293-b943-1e98e20e9ae2"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf0c09035d2852"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 12:41:45 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"UserInfo\": {\n            \"FirstNameEn\": \"TURKI\",\n            \"LastNameEn\": \"ALMUTAIRI\",\n            \"SecondNameEn\": \"OWAYED\",\n            \"ThirdNameEn\": \"N\",\n            \"FirstNameAr\": \"تركي\",\n            \"Gender\": \"M\",\n            \"LogId\": 0,\n            \"MaritalStatus\": \"married\",\n            \"ClaimInLastThree\": 90,\n            \"LossAmount\": 12200,\n            \"POINumber\": \"1054110125\",\n            \"GregBirthDate\": \"11-1981\",\n            \"MobileNumber\": \"552920838\",\n            \"Email\": \"eslam.fecu@gmail.com\",\n            \"GroupType\": \"Individual\",\n            \"PolicyStartDate\": \"2024-10-01\",\n            \"Questions\": [\n                {\n                    \"Id\": 1001,\n                    \"Value\": \"Owner\"\n                },\n                {\n                    \"Id\": 1002,\n                    \"Value\": \"No\"\n                },\n                {\n                    \"Id\": 1003,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 1004,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 1005,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 4001,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 4002,\n                    \"Value\": \"3\"\n                },\n                {\n                    \"Id\": 1006,\n                    \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\n                },\n                {\n                    \"Id\": 4003,\n                    \"Value\": \"2323\"\n                }\n            ],\n            \"PolicyEndDate\": \"2025-09-30T00:00:00.000Z\",\n            \"Addresses\": [\n                {\n                    \"BuildingNumber\": \"3259\",\n                    \"Street\": \"Al Ramim \",\n                    \"District\": \"Al Maizalah Dist.\",\n                    \"City\": \"RIYADH\",\n                    \"PostCode\": \"13234\",\n                    \"AdditionalNumber\": \"7681\",\n                    \"CityAr\": \"الرياض\",\n                    \"StreetAr\": \"الرميم\",\n                    \"DistrictAr\": \"حي المعيزلة\",\n                    \"LatLng\": \"46.85355983 24.80256431\",\n                    \"ShortAddress\": \"RFMA3259\",\n                    \"IsPrimaryAddress\": \"true\",\n                    \"PKAddressId\": \"1323432597681\",\n                    \"CityId\": \"3\",\n                    \"RegionId\": \"1\",\n                    \"Address1\": \"3259 Al Ramim  - Al Maizalah Dist.\",\n                    \"Address2\": \"RIYADH 13234 - 7681\",\n                    \"RegionName\": \"Al Riyadh\",\n                    \"RegionNameAr\": \"الرياض\",\n                    \"Latitude\": \"24.80256431\",\n                    \"Longitude\": \"46.85355983\"\n                }\n            ],\n            \"DateOfBirthG\": \"17-11-1981\",\n            \"FamilyName\": \"المطيري\",\n            \"FatherName\": \"عويض\",\n            \"GrandFatherName\": \"بن نوار\",\n            \"IdIssuePlace\": \"أحوال الرياض  6\",\n            \"SocialStatusDesc\": \"متزوج\",\n            \"MaritalStatusDescAr\": \"زوجة واحدة\",\n            \"SubtribeName\": \"\"\n        },\n        \"ReferenceNumber\": 179645,\n        \"Rates\": [\n            {\n                \"Id\": \"25554c7f-7eed-4dc7-a922-8d25bcf3ee0e\",\n                \"BasePremium\": 103,\n                \"CommissionAmount\": 0,\n                \"CommissionRate\": 0,\n                \"FinalDiscount\": 0,\n                \"GrandTotalPremium\": 118.45,\n                \"NetPremium\": 103,\n                \"PlanId\": 611445,\n                \"PlanType\": \"Standard\",\n                \"ProductId\": 610660,\n                \"TotalPremium\": 103,\n                \"Type\": \"Individual\",\n                \"VATAmount\": 15.45,\n                \"VATRate\": 0.15,\n                \"NetChange\": 0,\n                \"PreadjustedTermPremium\": 0,\n                \"OverridePremium\": 0,\n                \"MinimumPremium\": 0,\n                \"OverrideNetChange\": 0,\n                \"TransactionPremium\": 0,\n                \"PriorPremium\": 0,\n                \"PriorTermPremium\": 0,\n                \"PreadjustedNetChange\": 0,\n                \"Premium\": 0,\n                \"TermPremium\": 0,\n                \"ProratedMinimumPremium\": 0,\n                \"AnnualPremium\": 0,\n                \"RatedManualPremium\": 0,\n                \"DiscountAmount\": 0\n            },\n            {\n                \"Id\": \"08968d5a-cfad-4fd0-ba3a-5b49f23c731b\",\n                \"BasePremium\": 172,\n                \"CommissionAmount\": 0,\n                \"CommissionRate\": 0,\n                \"FinalDiscount\": 0,\n                \"GrandTotalPremium\": 197.8,\n                \"NetPremium\": 172,\n                \"PlanId\": 611444,\n                \"PlanType\": \"Advanced\",\n                \"ProductId\": 610660,\n                \"TotalPremium\": 172,\n                \"Type\": \"Individual\",\n                \"VATAmount\": 25.8,\n                \"VATRate\": 0.15,\n                \"NetChange\": 0,\n                \"PreadjustedTermPremium\": 0,\n                \"OverridePremium\": 0,\n                \"MinimumPremium\": 0,\n                \"OverrideNetChange\": 0,\n                \"TransactionPremium\": 0,\n                \"PriorPremium\": 0,\n                \"PriorTermPremium\": 0,\n                \"PreadjustedNetChange\": 0,\n                \"Premium\": 0,\n                \"TermPremium\": 0,\n                \"ProratedMinimumPremium\": 0,\n                \"AnnualPremium\": 0,\n                \"RatedManualPremium\": 0,\n                \"DiscountAmount\": 0\n            }\n        ],\n        \"ReferenceId\": \"U2FsdGVkX1+dkntspBMFJorWi6jaD9eD6nzsQP67YdA=\"\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"POINumber\": \"2481998819\",\r\n        \"MobileNumber\": \"966556692447\",\r\n        \"BirthDate\": \"05-1993\",\r\n        \"Email\": \"eslam.fecu@gmail.com\",\r\n        \"GroupType\": \"Individual\",\r\n        \"PolicyStartDate\": \"2024-10-04\",\r\n        \"ClaimInLastThree\": \"90\",\r\n        \"LossAmount\": 12200,\r\n        \"Questions\": [\r\n            {\r\n                \"Id\": 1001,\r\n                \"Value\": \"Owner\"\r\n            },\r\n            {\r\n                \"Id\": 1002,\r\n                \"Value\": \"No\"\r\n            },\r\n            {\r\n                \"Id\": 1003,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1004,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 1005,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4001,\r\n                \"Value\": \"Yes\"\r\n            },\r\n            {\r\n                \"Id\": 4002,\r\n                \"Value\": \"3\"\r\n            },\r\n            {\r\n                \"Id\": 1006,\r\n                \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\r\n            },\r\n            {\r\n                \"Id\": 4003,\r\n                \"Value\": \"2323\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/quote",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"quote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "3628d614-7439-431c-a7df-108effda1523"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf0c21035d2932"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 12:42:10 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"UserInfo\": {\n            \"HijriBirthDate\": \"15-11-1413\",\n            \"FirstNameEn\": \"NORMAN\",\n            \"LastNameEn\": \"MANAMPEN\",\n            \"SecondNameEn\": \"ALIMUDIN\",\n            \"ThirdNameEn\": \"\",\n            \"FirstNameAr\": \"نورمان\",\n            \"Gender\": \"M\",\n            \"GregIqamaExpiryDate\": \"21-01-2025\",\n            \"HijriIqamaExpiryDate\": \"21-07-1446\",\n            \"IqamaIssuePlace\": \"موقع بوابة الوزارة الألكترونية\",\n            \"LastNameAr\": \"مانامفين\",\n            \"LogId\": 0,\n            \"NationalityCode\": 315,\n            \"OccupationCode\": 9141055,\n            \"SecondNameAr\": \"عالم الدين\",\n            \"SocialStatusCode\": 1,\n            \"SponsorMOINumber\": 1015926049,\n            \"SponsorName\": \"\",\n            \"ThirdNameAr\": \"\",\n            \"MaritalStatus\": \"unmarried\",\n            \"ClaimInLastThree\": 90,\n            \"LossAmount\": 12200,\n            \"POINumber\": \"2481998819\",\n            \"MobileNumber\": \"556692447\",\n            \"GregBirthDate\": \"05-1993\",\n            \"Email\": \"eslam.fecu@gmail.com\",\n            \"GroupType\": \"Individual\",\n            \"PolicyStartDate\": \"2023-05-23\",\n            \"Questions\": [\n                {\n                    \"Id\": 1001,\n                    \"Value\": \"Owner\"\n                },\n                {\n                    \"Id\": 1002,\n                    \"Value\": \"No\"\n                },\n                {\n                    \"Id\": 1003,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 1004,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 1005,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 4001,\n                    \"Value\": \"Yes\"\n                },\n                {\n                    \"Id\": 4002,\n                    \"Value\": \"3\"\n                },\n                {\n                    \"Id\": 1006,\n                    \"Value\": \"Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent\"\n                },\n                {\n                    \"Id\": 4003,\n                    \"Value\": \"2323\"\n                }\n            ],\n            \"PolicyEndDate\": \"2024-05-22T00:00:00.000Z\",\n            \"Addresses\": [\n                {\n                    \"BuildingNumber\": \"3319\",\n                    \"Street\": \"Balbak\",\n                    \"District\": \"King Abdullah Dist.\",\n                    \"City\": \"RIYADH\",\n                    \"PostCode\": \"12426\",\n                    \"AdditionalNumber\": \"8819\",\n                    \"CityAr\": \"الرياض\",\n                    \"StreetAr\": \"بعلبك\",\n                    \"DistrictAr\": \"حي الملك عبدالله\",\n                    \"LatLng\": \"46.74540657 24.73033429\",\n                    \"ShortAddress\": \"RHKA3319\",\n                    \"IsPrimaryAddress\": \"true\",\n                    \"PKAddressId\": \"1242633198819\",\n                    \"CityId\": \"3\",\n                    \"RegionId\": \"1\",\n                    \"Address1\": \"3319 Balbak - King Abdullah Dist.\",\n                    \"Address2\": \"RIYADH 12426 - 8819\",\n                    \"RegionName\": \"Al Riyadh\",\n                    \"RegionNameAr\": \"الرياض\",\n                    \"Latitude\": \"24.73033429\",\n                    \"Longitude\": \"46.74540657\"\n                }\n            ]\n        },\n        \"ReferenceNumber\": 130245,\n        \"Rates\": [\n            {\n                \"Id\": \"dcd2cebf-c02f-4b77-bc10-5054a99707d8\",\n                \"BasePremium\": 103,\n                \"CommissionAmount\": 0,\n                \"CommissionRate\": 0,\n                \"FinalDiscount\": 0,\n                \"GrandTotalPremium\": 118.45,\n                \"NetPremium\": 103,\n                \"PlanId\": 611445,\n                \"PlanType\": \"Standard\",\n                \"ProductId\": 610660,\n                \"TotalPremium\": 103,\n                \"Type\": \"Individual\",\n                \"VATAmount\": 15.45,\n                \"VATRate\": 0.15,\n                \"NetChange\": 0,\n                \"PreadjustedTermPremium\": 0,\n                \"OverridePremium\": 0,\n                \"MinimumPremium\": 0,\n                \"OverrideNetChange\": 0,\n                \"TransactionPremium\": 0,\n                \"PriorPremium\": 0,\n                \"PriorTermPremium\": 0,\n                \"PreadjustedNetChange\": 0,\n                \"Premium\": 0,\n                \"TermPremium\": 0,\n                \"ProratedMinimumPremium\": 0,\n                \"AnnualPremium\": 0,\n                \"RatedManualPremium\": 0,\n                \"DiscountAmount\": 0\n            },\n            {\n                \"Id\": \"fbc4f6e3-f6fd-441f-a243-612e98b386cf\",\n                \"BasePremium\": 172,\n                \"CommissionAmount\": 0,\n                \"CommissionRate\": 0,\n                \"FinalDiscount\": 0,\n                \"GrandTotalPremium\": 197.8,\n                \"NetPremium\": 172,\n                \"PlanId\": 611444,\n                \"PlanType\": \"Advanced\",\n                \"ProductId\": 610660,\n                \"TotalPremium\": 172,\n                \"Type\": \"Individual\",\n                \"VATAmount\": 25.8,\n                \"VATRate\": 0.15,\n                \"NetChange\": 0,\n                \"PreadjustedTermPremium\": 0,\n                \"OverridePremium\": 0,\n                \"MinimumPremium\": 0,\n                \"OverrideNetChange\": 0,\n                \"TransactionPremium\": 0,\n                \"PriorPremium\": 0,\n                \"PriorTermPremium\": 0,\n                \"PreadjustedNetChange\": 0,\n                \"Premium\": 0,\n                \"TermPremium\": 0,\n                \"ProratedMinimumPremium\": 0,\n                \"AnnualPremium\": 0,\n                \"RatedManualPremium\": 0,\n                \"DiscountAmount\": 0\n            }\n        ],\n        \"ReferenceId\": \"U2FsdGVkX185eMRY3UUkjgxcTWu5Mea6OYV0CTxzbPk=\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Select Plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Data\": {\n        \"ReferenceId\": \"U2FsdGVkX185eMRY3UUkjgxcTWu5Mea6OYV0CTxzbPk=\",\n        \"PlanId\": \"fbc4f6e3-f6fd-441f-a243-612e98b386cf\"\n    }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-cyber-insurance/v1/plans",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-cyber-insurance",
+								"v1",
+								"plans"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Data\": {\n        \"ReferenceId\": \"U2FsdGVkX1+4RgJAjJI7zaEI/cIRu4PYIjP3qX+7wcM=\",\n        \"PlanId\": \"2f953127-6f21-44d3-8024-be37d946110c\"\n    }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/plans",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"plans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "758bf5b8-6dd1-4867-b8fc-080d2f77bfb0"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf141e027df3b0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,99;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 13:16:15 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"PolicyHolderDetails\": {\n            \"FullName\": \"NOOF MOHAMMED ALRUBEAAN\",\n            \"MobileNumber\": \"+966555848626\",\n            \"Email\": \"eslam.fecu@gmail.com\",\n            \"Address\": \"6966 Al Abrah - An Nawras Dist., DAMMAM 32214 - 4830 (EDAA6966)\"\n        },\n        \"PolicyDetails\": {\n            \"ProductAndCoverage\": \"Advanced\",\n            \"PolicyStartDate\": \"2024-10-04\",\n            \"PolicyEndDate\": \"2025-10-03\",\n            \"ProductType\": \"Individual\",\n            \"QuotationId\": 9102108\n        },\n        \"PaymentSummary\": {\n            \"BasePremium\": 172,\n            \"VAT\": 25.8,\n            \"Discount\": 0,\n            \"TotalPremium\": 172\n        }\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Data\": {\n        \"ReferenceId\": \"U2FsdGVkX18TZ/rj4nXc+nNnT4CnQ4zl4GaFuEd91cY=\",\n        \"PlanId\": \"f1165b0a-4314-4084-a263-f17e20a42279\"\n    }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/plans",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"plans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "c759d1cd-029f-4e16-a91a-385823da7098"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf1444035dc612"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 13:16:52 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"PolicyHolderDetails\": {\n            \"FullName\": \"SULAIMAN ABDULAZIZ ALRAKIDHI\",\n            \"MobileNumber\": \"+966544477177\",\n            \"Email\": \"eslam.fecu@gmail.com\",\n            \"Address\": \"7002 undefined - An Nakhil Dist., BURAIDAH 52375 - 3685 (QBUI7002)\"\n        },\n        \"PolicyDetails\": {\n            \"ProductAndCoverage\": \"Standard\",\n            \"PolicyStartDate\": \"2024-10-04\",\n            \"PolicyEndDate\": \"2025-10-03\",\n            \"ProductType\": \"Individual\",\n            \"QuotationId\": 9102060\n        },\n        \"PaymentSummary\": {\n            \"BasePremium\": 103,\n            \"VAT\": 15.45,\n            \"Discount\": 0,\n            \"TotalPremium\": 103\n        }\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Data\": {\n        \"ReferenceId\": \"U2FsdGVkX1+dkntspBMFJorWi6jaD9eD6nzsQP67YdA=\",\n        \"PlanId\": \"25554c7f-7eed-4dc7-a922-8d25bcf3ee0e\"\n    }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/plans",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"plans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8badf1ad-43f3-4517-a6cd-f87dd1128889"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf1465035dc842"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,97;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 13:17:26 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"PolicyHolderDetails\": {\n            \"FullName\": \"TURKI OWAYED ALMUTAIRI\",\n            \"MobileNumber\": \"+966552920838\",\n            \"Email\": \"eslam.fecu@gmail.com\",\n            \"Address\": \"3259 Al Ramim  - Al Maizalah Dist., RIYADH 13234 - 7681 (RFMA3259)\"\n        },\n        \"PolicyDetails\": {\n            \"ProductAndCoverage\": \"Standard\",\n            \"PolicyStartDate\": \"2024-10-01\",\n            \"PolicyEndDate\": \"2025-09-30\",\n            \"ProductType\": \"Individual\",\n            \"QuotationId\": 9102029\n        },\n        \"PaymentSummary\": {\n            \"BasePremium\": 103,\n            \"VAT\": 15.45,\n            \"Discount\": 0,\n            \"TotalPremium\": 103\n        }\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Data\": {\n        \"ReferenceId\": \"U2FsdGVkX185eMRY3UUkjgxcTWu5Mea6OYV0CTxzbPk=\",\n        \"PlanId\": \"fbc4f6e3-f6fd-441f-a243-612e98b386cf\"\n    }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/plans",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"plans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d8a0f1aa-3548-4a09-94f8-d179dce14c84"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf147c035dc9d2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 13:17:48 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"PolicyHolderDetails\": {\n            \"FullName\": \"NORMAN ALIMUDIN MANAMPEN\",\n            \"MobileNumber\": \"+966556692447\",\n            \"Email\": \"eslam.fecu@gmail.com\",\n            \"Address\": \"3319 Balbak - King Abdullah Dist., RIYADH 12426 - 8819 (EDAA6966)\"\n        },\n        \"PolicyDetails\": {\n            \"ProductAndCoverage\": \"Advanced\",\n            \"PolicyStartDate\": \"2023-05-23\",\n            \"PolicyEndDate\": \"2024-10-03\",\n            \"ProductType\": \"Individual\",\n            \"QuotationId\": 9102275\n        },\n        \"PaymentSummary\": {\n            \"BasePremium\": 172,\n            \"VAT\": 25.8,\n            \"Discount\": 0,\n            \"TotalPremium\": 172\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Policy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"ReferenceId\": \"U2FsdGVkX185eMRY3UUkjgxcTWu5Mea6OYV0CTxzbPk=\",\r\n        \"QuotationId\": \"9102275\",\r\n        \"PaymentMethod\": \"credit card\",\r\n        \"PaymentReferenceNumber\": \"123456789\",\r\n        \"PaymentAmount\": \"172\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/mp-cyber-insurance/v1/policy",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-cyber-insurance",
+								"v1",
+								"policy"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"ReferenceId\": \"U2FsdGVkX1+4RgJAjJI7zaEI/cIRu4PYIjP3qX+7wcM=\",\r\n        \"QuotationId\": \"9102108\",\r\n        \"PaymentMethod\": \"credit card\",\r\n        \"PaymentReferenceNumber\": \"123456789\",\r\n        \"PaymentAmount\": \"172\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/policy",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"policy"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5e338a9d-200c-4fea-9741-f70466551bd9"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf14d8027e0950"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 13:19:20 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"PolicyId\": 9102109,\n        \"PolicyNumber\": 9102109,\n        \"Message\": \"Policy has been created with the provided referenceId\"\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"ReferenceId\": \"U2FsdGVkX18TZ/rj4nXc+nNnT4CnQ4zl4GaFuEd91cY=\",\r\n        \"QuotationId\": \"9102060\",\r\n        \"PaymentMethod\": \"credit card\",\r\n        \"PaymentReferenceNumber\": \"123456789\",\r\n        \"PaymentAmount\": \"172\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/policy",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"policy"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2b586570-1bf4-49da-913b-4e9071a6a7e8"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf14f4035dcf52"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 13:19:49 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"PolicyId\": 9102061,\n        \"PolicyNumber\": 9102061,\n        \"Message\": \"Policy has been created with the provided referenceId\"\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"ReferenceId\": \"U2FsdGVkX1+dkntspBMFJorWi6jaD9eD6nzsQP67YdA=\",\r\n        \"QuotationId\": \"9102029\",\r\n        \"PaymentMethod\": \"credit card\",\r\n        \"PaymentReferenceNumber\": \"123456789\",\r\n        \"PaymentAmount\": \"172\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/policy",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"policy"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "dc0db0dc-0c67-4948-86dd-cfc597c11d50"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf1506035dd0f2"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,93;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 13:20:06 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"PolicyId\": 9102030,\n        \"PolicyNumber\": 9102030,\n        \"Message\": \"Policy has been created with the provided referenceId\"\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"ReferenceId\": \"U2FsdGVkX185eMRY3UUkjgxcTWu5Mea6OYV0CTxzbPk=\",\r\n        \"QuotationId\": \"9102275\",\r\n        \"PaymentMethod\": \"credit card\",\r\n        \"PaymentReferenceNumber\": \"123456789\",\r\n        \"PaymentAmount\": \"172\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mp-cyber-insurance/v1/policy",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-cyber-insurance",
+										"v1",
+										"policy"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "aba7c125-e475-4f54-b0f2-04c8b5b33aa3"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "757dc76c67bf1518035dd162"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,92;"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 13:20:24 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": {\n        \"PolicyId\": 9102275,\n        \"PolicyNumber\": 9102275,\n        \"Message\": \"Policy has been created with the provided referenceId\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox"
+		},
+		{
+			"key": "client-id",
+			"value": "b83969837c95f97c439c8ec100506fea"
+		},
+		{
+			"key": "client-secret",
+			"value": "21a21fd1a61dba253469ed88b6e70e65"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		}
+	]
+}

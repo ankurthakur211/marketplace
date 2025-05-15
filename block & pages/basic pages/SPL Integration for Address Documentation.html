@@ -7,281 +7,302 @@
     </p>
 </div>
 <div class="basic-page">
-    <div class="api-doc-background">
-        <p class="api-doc-background-text ">SPL Integration for Address
-            Documentation</p>
-    </div>
+    <div class="product-details-document">
+        <div class="api-doc-background">
+          <p class="api-doc-background-text">
+            SPL Integration for Address Documentation
+          </p>
+        </div>
 
-    <div class="container ">
-      <div class="row">
-          <div class="col-md-3">
-              <div class="container">
-                  <div>
-                      <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
-                          onkeyup="search_menu()" type="text" />
+        <div class="moterinsurance-sec">
+          <div class="container">
+            <div class="d-flex">
+              <div class="leftside-sec">
+                <p class="fob-welcome-title" id="section-1">
+                  SPL Integration for Addresss
+                </p>
 
+                <p class="fob-welcome-line">&nbsp;</p>
+
+                <p class="fob-welcome-text">
+                  The API Marketplace allows users to access Neotek's SPL Integration
+                  for Address service, which helps manage SPL Integration for Retrieve
+                  national address. The primary objective of this project is to
+                  provide national address information to their customers through
+                  their respective digital channels.
+                </p>
+              </div>
+
+              <div class="rightside-sec">
+                <p class="API-image">&nbsp;</p>
+              </div>
+            </div>
+
+            <div class="d-flex btn-box">
+              <a
+                class="primary-btn"
+                download=""
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPSandboxSPLNationalAddressModernApi.postman_collection.json"
+                id="downloadLink"
+                >Download Postman Collection</a
+              >
+              <a
+                class="primary-btn"
+                download=""
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/NeotekSPLNationalAddressDataFields.xlsx"
+                >Download Sample Data</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="miw-section">
+          <div class="container">
+            <h1 class="fob-welcome-title">SPL Integration for Address Workflow</h1>
+
+            <p class="motoinsu-image">&nbsp;</p>
+            <a
+              class="fob-product-title-click"
+              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/SPLIntegartionforAddressWorkflow.pdf"
+              rel="noopener"
+              target="_blank"
+              >Click here
+            </a>
+          </div>
+        </div>
+
+        <div class="APIs-section">
+          <div class="container">
+            <p class="main-heading">APIs</p>
+
+            <div
+              class="bx--snippet-container body"
+              data-testid="expandable-example-display"
+            >
+              <!-- API 1 -->
+              <div class="api-infosec">
+                <h1 class="fob-welcome-title" id="section-2">
+                  Retrieve national address
+                </h1>
+
+                <p class="fob-welcome-text">
+                  Endpoint: GET : /mp-saudi-post/v1/national-address/{POINumber}
+                </p>
+
+                <p class="fob-welcome-text">
+                  <a
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3661/api/3658#/MPSPLNationalAddress_100/operation/%2Fnational-address%2F{POINumber}/get"
+                    >Swagger Link
+                  </a>
+                </p>
+
+                <p class="fob-welcome-text">
+                  This path is used to retrieve national address for establishments by
+                  CRNumber, and for individuals by NationalID or IqamaID.
+                </p>
+
+                <div class="requestURL-box">
+                  <div class="request-box">
+                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <pre class="example_97 api-guides-example-fob">
+                             <code class="sample-code">
+                              Query Params:
+                              "poiType":"NationalID"
+
+                          Path Variables:
+                              "POINumber":"1105485096"
+                            </code>
+                          </pre>
                   </div>
-                  <br>
-                  <div class="api-guides-vertical-menu ">
 
+                  <div class="url-box">
+                      <button class="curlbtn fob-create-person-profile-top" type="submit">
+                          <p class="curlText">cURL</p>
+                      </button>
 
-                      <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
-                          onclick="show('expand2')">SPL Integration for Addresss</a>
+                    <pre id="generatedCurl">
+                            <code id="citizen-curl">
+                              curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-saudi-post/v1/national-address/1105485096?poiType=NationalID' \
+                              --header 'x-request-id: 5181dce0-19dc-4f13-8e4a-038c1488f31a' \
+                              --header 'Accept: application/json' \
+                              --header 'Authorization: ••••••'
+                            </code>
+                          </pre>
+                  </div>
+                </div>
 
-                      <div class="api-guides-dropdown-container" id="expand2">
-                          <a class="api-guides-noList apn-doc-menu" href="#section-2">Corporate B2B Merchant Onboarding</a>
+                <div class="response-outterbox">
+                  <div class="innerbox">
+                    <div class="code-box">
+                      <p
+                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                      >
+                        &nbsp;&nbsp;&nbsp;&nbsp;Response
+                      </p>
+
+                      <div class="response-box-div">
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address')" type="button">200</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address2')" type="button">400</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address3')" type="button">401</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address4')" type="button">403</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address5')" type="button">404</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address6')" type="button">405</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address7')" type="button">406</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address8')" type="button">429</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address9')" type="button">500</a>
+                        <a class="response-box-error" onclick="responseText('response-Integration-for-Address10')" type="button">503</a>
                       </div>
 
-
-                  </div>
-                  <br>
-              </div>
-          </div>
-
-          <div class="col-md-9">
-              <div class="container api-guides-text">
-                  <div class="container api-guides-text p-0">
-                      <p class="fob-welcome-title" id="section-1">SPL Integration for Addresss</p>
-                      <p class="fob-welcome-line"></p>
-                      <p class="fob-welcome-text">The API Marketplace allows users to access Neotek's SPL Integration for Address
-                          service, which helps manage SPL Integration for Retrieve national address.
-                          The primary objective of this project is to provide national address information to their customers through their respective digital channels.
-                          </br></p>
-                      <p class="fob-welcome-text"></br></p>
-
-                      <p class="fob-welcome-text"><a id="downloadLink"
-                              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPSandboxSPLNationalAddressModernApi.postman_collection.json"
-                              download="">Download Postman Collection</a></p>
-                      <p class="fob-welcome-text"><a
-                              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/NeotekSPLNationalAddressDataFields.xlsx"
-                              download="">Download Sample Data</a></p>
-
-                      <h1 class="fob-welcome-title">SPL Integration for Address Workflow</h1>
-                      <p class="fob-welcome-line"></p>
-                      <p class="fob-welcome-text"><a
-                          href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/SPLIntegartionforAddressWorkflow.pdf",
-                          download="">Download Workflow</a></p>
-
-                      <h1 class="fob-welcome-title" id="section-2">Retrieve national address</h1>
-                      <p class="fob-welcome-line"></p>
-                      <p class="fob-welcome-text">Endpoint: GET :
-                        /mp-saudi-post/v1/national-address/{POINumber}</br></p>
-                      <p class="fob-welcome-text">This path is used to retrieve national address for establishments by CRNumber, and for individuals by NationalID or IqamaID.</br></p>
-                      <p class="fob-welcome-text"><a id="downloadLink"
-                              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3661/api/3658#/MPSPLNationalAddress_100/operation/%2Fnational-address%2F{POINumber}/get">Swagger
-                              Link</a></p>
-                      <div class="bx--snippet-container body" data-testid="expandable-example-display">
-
-                          <div class="row flex mt-25">
-                              <div class="col-lg-8">
-                                  <h1 class="fob-welcome-title mt-0">Request Example</h1>
-                                  <p class="fob-welcome-line"></p>
-                                  <pre class="example_97 api-guides-example-fob ">
-                      <code class="sample-code">
-    Query Params:
-        "poiType":"NationalID"
-
-    Path Variables:
-        "POINumber":"1105485096"
-
-                      </code>
-                    </pre>
-                              </div>
-                              <div class="col-lg-4 mt-25">
-                                  <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                      onclick="show('Integration-for-Address-curl')">
-                                      <p class="curlText">cURL</p>
-                                  </button>
-
-                                  <pre id="generatedCurl">
-                      <code id="Integration-for-Address-curl" style=" display: block;">curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-saudi-post/v1/national-address/1105485096?poiType=NationalID' \
---header 'x-request-id: 5181dce0-19dc-4f13-8e4a-038c1488f31a' \
---header 'Accept: application/json' \
---header 'Authorization: ••••••'
-                    </code>
-                    </pre>
-                              </div>
-                          </div>
-
-                          <div class="row flex mt-25">
-                              <div class="col-lg-8">
-                                  <div class="code-box">
-                                      <p
-                                          class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
-                                          &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+                      <pre class="response-box">
 
 
-                                      <div class="response-box-div">
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address')">200</a>
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address2')">400</a>
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address3')">401</a>
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address4')">403</a>
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address5')">404</a>
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address6')">405</a>
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address7')">406</a>
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address8')">429</a>
-                                          <a type="button" class="response-box-error"
-                                              onclick="responseText('response-Integration-for-Address9')">500</a>
-                                      </div>
-
-                                      <pre class="response-box">
-
-
-                      <code id="response-Integration-for-Address" style=" display: block; " class="text">
-    {
-        "Data": {
-            "AddressesList": [
+                          <code class="text" style=" display: block; " id="response-Integration-for-Address">
+          {
+            "Data": {
+                "AddressesList": [
+                    {
+                        "BuildingNumber": "4429",
+                        "StreetName": "Abdulqawi Ibn Abdulhakim",
+                        "CityName": "RIYADH",
+                        "PostCode": "12787",
+                        "AdditionalNumber": "7283",
+                        "CityNameAr": "الرياض",
+                        "StreetNameAr": "عبدالقوي بن عبدالحاكم",
+                        "Coordinates": "46.66766613 24.59283828",
+                        "ShortAddress1": "4429 Abdulqawi Ibn Abdulhakim - Al Suwaidi Dist.",
+                        "ShortAddress2": "RIYADH 12787 - 7283",
+                        "IsPrimaryAddress": "true",
+                        "Latitude": "24.59283828",
+                        "Longitude": "46.66766613",
+                        "AddressId": "1278744297283",
+                        "RegionName": "Al Riyadh",
+                        "RegionNameAr": "الرياض",
+                        "CityId": "3",
+                        "RegionId": "1"
+                    }
+                ]
+            }
+          }
+                          </code>
+                        <code class="text" style=" display: none; " id="response-Integration-for-Address2">
+          {
+            "Errors": [
                 {
-                    "BuildingNumber": "4429",
-                    "StreetName": "Abdulqawi Ibn Abdulhakim",
-                    "CityName": "RIYADH",
-                    "PostCode": "12787",
-                    "AdditionalNumber": "7283",
-                    "CityNameAr": "الرياض",
-                    "StreetNameAr": "عبدالقوي بن عبدالحاكم",
-                    "Coordinates": "46.66766613 24.59283828",
-                    "ShortAddress1": "4429 Abdulqawi Ibn Abdulhakim - Al Suwaidi Dist.",
-                    "ShortAddress2": "RIYADH 12787 - 7283",
-                    "IsPrimaryAddress": "true",
-                    "Latitude": "24.59283828",
-                    "Longitude": "46.66766613",
-                    "AddressId": "1278744297283",
-                    "RegionName": "Al Riyadh",
-                    "RegionNameAr": "الرياض",
-                    "CityId": "3",
-                    "RegionId": "1"
+                "Code": "ERROR.400.001",
+                "Message": "Bad request.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+          ]
+          }
+                          </code>
+                          <code class="text" style=" display: none; " id="response-Integration-for-Address3">
+          {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://{baseURL}/developer-portal/terms"
                 }
             ]
-        }
-    }
-                      </code>
-                    <code id="response-Integration-for-Address2" style=" display: none; " class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.400.001",
-            "Message": "Bad request.",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-    ]
-    }
-                      </code>
-                      <code id="response-Integration-for-Address3" style=" display: none; " class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.401.001",
-            "Message": "Unauthorized to call the target operation.",
-            "Path": "authorization",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
-                      </code>
+          }
+                          </code>
 
-                      <code id="response-Integration-for-Address4" style=" display: none; " class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.403.001",
-            "Message": "Invalid token.",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
-                      </code>
+                          <code class="text" style=" display: none; " id="response-Integration-for-Address4">
+          {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Invalid token.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+          }
+                          </code>
 
-                      <code id="response-Integration-for-Address5" style=" display: none; " class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.404.001",
-            "Message": "No resources match requested URI.",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
-                      </code>
+                          <code class="text" style=" display: none; " id="response-Integration-for-Address5">
+          {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+          }
+                          </code>
 
-                      <code id="response-Integration-for-Address6" style=" display: none; "class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.405.001",
-            "Message": "The method is not allowed for the requested URL.",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
+                          <code class="text" style=" display: none; " id="response-Integration-for-Address6">
+          {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+          }
 
-                      </code>
+                          </code>
 
-                      <code id="response-Integration-for-Address7" style=" display: none; "class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.406.001",
-            "Message": "An appropriate representation of the requested resource could not be found",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
-                      </code>
+                          <code class="text" style=" display: none; " id="response-Integration-for-Address7">
+          {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+          }
+                          </code>
 
-                      <code id="response-Integration-for-Address8" style=" display: none; " class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.429.001",
-            "Message": "Assembly Rate Limit exceeded",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
-                      </code>
+                          <code class="text" style=" display: none; " id="response-Integration-for-Address8">
+          {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+          }
+                          </code>
 
-                      <code id="response-Integration-for-Address9" style=" display: none; " class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.500.001",
-            "Message": "Internal Error",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
-                      </code>
+                          <code class="text" style=" display: none; " id="response-Integration-for-Address9">
+          {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+          }
+                          </code>
 
-                      <code id="response-Integration-for-Address10" style=" display: none; " class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.503.001",
-            "Message": "Service Unavailable",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
-                        </code>
-                    </pre>
-                                  </div>
-                              </div>
-                          </div>
-
-
-                          </div>
-                      </div>
+                          <code class="text" style=" display: none; " id="response-Integration-for-Address10">
+          {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Service Unavailable",
+                "Url": "https://{baseURL}/developer-portal/terms"
+                }
+            ]
+          }
+                            </code>
+                        </pre>
+                    </div>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
+
 </div>

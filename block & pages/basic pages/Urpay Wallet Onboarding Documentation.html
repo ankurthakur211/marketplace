@@ -2,506 +2,482 @@
     <p>Urpay Wallet Onboarding</p>
 
     <p>
-        Urpay Wallet Onboarding is a product provided by Neoleap (ARG Subsidiary referred as provider) this product to create account on Urpay.
+        Urpay Wallet Onboarding is a digital service provided by Neoleap that allows ARG subsidiaries to onboard customers to the Urpay wallet platform. The onboarding process includes verifying whether the individual is an existing Urpay customer or a previously registered prospect, and if not, creating a new prospect profile through the API Marketplace. Eligibility checks such as customer identity, mobile number, and age (based on Hijri or Gregorian birthdate) are performed as part of the process.
     </p>
 </div>
 <div class="basic-page">
-<div class="api-doc-background">
-    <p class="api-doc-background-text ">Urpay Wallet Onboarding APIs
-        Documentation</p>
-</div>
-
-<div class="container ">
-    <div class="row">
-        <div class="col-md-3">
+    <div class="product-details-document">
+        <div class="api-doc-background">
+            <p class="api-doc-background-text ">Urpay Wallet Onboarding API Documentation</p>
+        </div>
+        <div class="moterinsurance-sec">
             <div class="container">
-                <div>
-                    <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
-                        onkeyup="search_menu()" type="text" />
-
-                </div>
-                <br>
-                <div class="api-guides-vertical-menu ">
-
-
-                    <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
-                        onclick="show('expand2')">Urpay Wallet Onboarding APIs</a>
-
-                    <div class="api-guides-dropdown-container" id="expand2">
-                        <a class="api-guides-noList apn-doc-menu" href="#section-2">Create Prospect</a>
-                        <a class="api-guides-noList apn-doc-menu" href="#section-3">Get Prospect Status</a>
+                <div class="d-flex">
+                    <div class="leftside-sec">
+                        <p class="fob-welcome-title" id="section-1">Urpay Wallet Onboarding APIs</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Urpay Wallet Onboarding is a digital service provided by Neoleap that allows ARG subsidiaries to onboard customers to the Urpay wallet platform. The onboarding process includes verifying whether the individual is an existing Urpay customer or a previously registered prospect, and if not, creating a new prospect profile through the API Marketplace. Eligibility checks such as customer identity, mobile number, and age (based on Hijri or Gregorian birthdate) are performed as part of the process.
+                        </p>
+    
+    
                     </div>
-
-
+                    <div class="rightside-sec">
+                        <p class="API-image"></p>
+                    </div>
                 </div>
-                <br>
+                <div class="d-flex btn-box">
+                    <a class="primary-btn" id="downloadLink"
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxOpeningUrpayWalletForARTInboundAPIs.postman_collection.json"
+                        download="">Download Postman Collection</a>
+                    <a class="primary-btn"
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/MPOpeningUrpayWalletForARTSampleRequestData.xlsx"
+                        download="">Download Sample Data</a>
+                </div>
+    
             </div>
         </div>
-
-        <div class="col-md-9">
-            <div class="container api-guides-text">
-                <div class="container api-guides-text p-0">
-                    <p class="fob-welcome-title" id="section-1">Urpay Wallet Onboarding APIs</p>
-                    <p class="fob-welcome-line"></p>
-                    <p class="fob-welcome-text">Urpay Wallet Onboarding is a product provided by Neoleap (ARG Subsidiary referred as provider) this product to create account on Urpay.
-                        </br></p>
-                    <p class="fob-welcome-text"></br></p>
-
-                    <p class="fob-welcome-text"><a id="downloadLink"
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxOpeningUrpayWalletForARTInboundAPIs.postman_collection.json"
-                            download="">Download Postman Collection</a></p>
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/MPOpeningUrpayWalletForARTSampleRequestData.xlsx"
-                            download="">Download Sample Data</a></p>
-
-                    <h1 class="fob-welcome-title">Urpay Wallet Onboarding Workflow</h1>
-                    <p class="fob-welcome-line"></p>
-                    <p class="fob-welcome-text"><a
-                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ARGOpeningUrpayWalletFlowDiagramv0.1.pdf",
-                        download="">Download Workflow</a></p>
-
-                    <h1 class="fob-welcome-title" id="section-2">Create Prospect</h1>
-                    <p class="fob-welcome-line"></p>
-                    <p class="fob-welcome-text">Endpoint: /mp-prospect-registration/v1/prospects</br></p>
-                    <p class="fob-welcome-text">This API is used to create a new prospect only if the given POI is not urpay customer and no related prospect is found in prospects table.</br></p>
-                    <p class="fob-welcome-text"><a id="downloadLink"
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3415/api/3412#/MPCreateProspectApiDocumentation_100/operation/%2Fprospects/post">Swagger
-                            Link</a></p>
-                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
-
-                        <div class="row flex mt-25">
-                            <div class="col-lg-8">
+    
+        <div class="miw-section">
+            <div class="container">
+                <h1 class="fob-welcome-title">Urpay Wallet Onboarding Workflow</h1>
+                <p class="motoinsu-image"></p>
+                <a class="fob-product-title-click" target="_blank"
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ARGOpeningUrpayWalletFlowDiagramv0.1.pdf"
+                    rel="noopener">
+                    Click here
+                </a>
+            </div>
+        </div>
+    
+        <div class="APIs-section">
+            <div class="container">
+                <p class="main-heading">
+                    APIs
+                </p>
+    
+                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                    <!-- API 1 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-2">Create Prospect</h1>
+                        <p class="fob-welcome-text">Endpoint: /mp-prospect-registration/v1/prospects</p>
+                        <p class="fob-welcome-text">
+                            <a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3415/api/3412#/MPCreateProspectApiDocumentation_100/operation/%2Fprospects/post">
+                                Swagger
+                                Link
+                            </a>
+                        </p>
+                        <p class="fob-welcome-text">This API is used to create a new prospect only if the given POI is
+                            not urpay customer and no related prospect is found in prospects
+                            table.
+                        </p>
+                        <div class="requestURL-box">
+                            <div class="request-box">
                                 <h1 class="fob-welcome-title mt-0">Request Example</h1>
                                 <p class="fob-welcome-line"></p>
                                 <pre class="example_97 api-guides-example-fob ">
-                    <code class="sample-code">
-Request Body
-{
-    "Data": {
-        "BirthGregorianDate": "2000-10-31",
-        "BirthHijriDate": "1421-08-04",
-        "KYCDetails": {
-            "AdditionalIncomeSource": "string",
-            "BasicIncomeSource": "string",
-            "Email": "Email@domain.com",
-            "Employer": "AlRajhi Bank",
-            "EmploymentStatus": "string",
-            "IncomeRange": "string",
-            "IsPoliticallyRelated": true,
-            "JobCategory": "string"
-        },
-        "MobileNumber": "+966568472298",
-        "POINumber": "1451505728",
-        "POIType": "NAT"
-    }
-}
-                    </code>
+                       <code class="sample-code">
+                        Request Body
+                        {
+                            "Data": {
+                                "BirthGregorianDate": "2000-10-31",
+                                "BirthHijriDate": "1421-08-04",
+                                "KYCDetails": {
+                                    "AdditionalIncomeSource": "string",
+                                    "BasicIncomeSource": "string",
+                                    "Email": "Email@domain.com",
+                                    "Employer": "AlRajhi Bank",
+                                    "EmploymentStatus": "string",
+                                    "IncomeRange": "string",
+                                    "IsPoliticallyRelated": true,
+                                    "JobCategory": "string"
+                                },
+                                "MobileNumber": "+966568472298",
+                                "POINumber": "1451505728",
+                                "POIType": "NAT"
+                            }
+                        }
+                      </code>
                     </pre>
                             </div>
-                            <div class="col-lg-4 mt-25">
+                            <div class="url-box">
                                 <button class="curlbtn fob-create-person-profile-top" type="submit"
                                     onclick="show('Create-Prospect-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
-
+    
                                 <pre id="generatedCurl">
-                    <code id="Create-Prospect-curl" style=" display: block;">
-curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-prospect-registration/v1/prospects' \
---header 'x-request-id: d34935be-660f-4829-9cf7-515cce289db0' \
---header 'accept-language: EN' \
---header 'x-host-ip: 34.246.12' \
---header 'x-longitude: 24.7136' \
---header 'x-latitude: 46.6753' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZntuQKiEEg2geLoCZjSx7b0727D0R4AHkjjm9vskhnHo9O0_kseW-_oqKbrBtWIjzm-Mw8aHhpGOMa0gaTCxbIg3J8AVXTpT_Cr5sySBREqRszXAQrScGjREAkj1gpsWmLjBLdU4pWbiy0s6y-nnER' \
---data-raw '{
-    "Data": {
-        "BirthGregorianDate": "2000-10-31",
-        "BirthHijriDate": "1421-08-04",
-        "KYCDetails": {
-            "AdditionalIncomeSource": "string",
-            "BasicIncomeSource": "string",
-            "Email": "Email@domain.com",
-            "Employer": "AlRajhi Bank",
-            "EmploymentStatus": "string",
-            "IncomeRange": "string",
-            "IsPoliticallyRelated": true,
-            "JobCategory": "string"
-        },
-        "MobileNumber": "+966568472298",
-        "POINumber": "1451505728",
-        "POIType": "NAT"
-    }
-}'
-                    </code>
+                      <code id="Create-Prospect-curl" style=" display: block;">
+                        curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-prospect-registration/v1/prospects' \
+        --header 'x-request-id: d34935be-660f-4829-9cf7-515cce289db0' \
+        --header 'accept-language: EN' \
+        --header 'x-host-ip: 34.246.12' \
+        --header 'x-longitude: 24.7136' \
+        --header 'x-latitude: 46.6753' \
+        --header 'Content-Type: application/json' \
+        --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZntuQKiEEg2geLoCZjSx7b0727D0R4AHkjjm9vskhnHo9O0_kseW-_oqKbrBtWIjzm-Mw8aHhpGOMa0gaTCxbIg3J8AVXTpT_Cr5sySBREqRszXAQrScGjREAkj1gpsWmLjBLdU4pWbiy0s6y-nnER' \
+        --data-raw '{
+            "Data": {
+                "BirthGregorianDate": "2000-10-31",
+                "BirthHijriDate": "1421-08-04",
+                "KYCDetails": {
+                    "AdditionalIncomeSource": "string",
+                    "BasicIncomeSource": "string",
+                    "Email": "Email@domain.com",
+                    "Employer": "AlRajhi Bank",
+                    "EmploymentStatus": "string",
+                    "IncomeRange": "string",
+                    "IsPoliticallyRelated": true,
+                    "JobCategory": "string"
+                },
+                "MobileNumber": "+966568472298",
+                "POINumber": "1451505728",
+                "POIType": "NAT"
+            }
+        }''
+                      </code>
                     </pre>
                             </div>
                         </div>
-
-                        <div class="row flex mt-25">
-                            <div class="col-lg-8">
+                        <div class="response-outterbox">
+                            <div class="innerbox">
                                 <div class="code-box">
-                                    <p
-                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
-
-
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response
+                                    </p>
+    
                                     <div class="response-box-div">
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect')">204</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect2')">400</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect3')">401</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect4')">403</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect5')">404</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect6')">405</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect7')">406</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect8')">429</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect9')">500</a>
-                                            <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Create-Prospect10')">503</a>
-                                    </div>
-
-                                    <pre class="response-box">
-
-                    <code id="response-Create-Prospect" style=" display: block; " class="text">
-    204 No Content
-                    </code>
-                    <code id="response-Create-Prospect2" style=" display: none; " class="text">
-    {
-        "Errors": [
-            {
-            "Code": "ERROR.400.001",
-            "Message": "Bad request.",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-    }
-                    </code>
-                    <code id="response-Create-Prospect3" style=" display: none; " class="text">
-    {
-        "Errors": [
-        {
-        "Code": "ERROR.401.001",
-        "Message": "Unauthorized to call the target operation.",
-        "Path": "authorization",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-        ]
-    }
-                    </code>
-
-                    <code id="response-Create-Prospect4" style=" display: none; " class="text">
-    {
-    "Errors": [
-        {
-        "Code": "ERROR.403.001",
-        "Message": "Invalid token.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-    }
-                    </code>
-
-                    <code id="response-Create-Prospect5" style=" display: none; " class="text">
-    {
-    "Errors": [
-        {
-        "Code": "ERROR.404.001",
-        "Message": "No resources match requested URI.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-    }
-                    </code>
-
-                    <code id="response-Create-Prospect6" style=" display: none; "class="text">
-    {
-    "Errors": [
-        {
-        "Code": "ERROR.405.001",
-        "Message": "The method is not allowed for the requested URL.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-    }
-
-                    </code>
-
-                    <code id="response-Create-Prospect7" style=" display: none; "class="text">
-    {
-    "Errors": [
-        {
-        "Code": "ERROR.406.001",
-        "Message": "An appropriate representation of the requested resource could not be found",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-    }
-                    </code>
-
-                    <code id="response-Create-Prospect8" style=" display: none; " class="text">
-    {
-    "Errors": [
-        {
-        "Code": "ERROR.429.001",
-        "Message": "Assembly Rate Limit exceeded",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-    }
-                    </code>
-
-                    <code id="response-Create-Prospect9" style=" display: none; " class="text">
-    {
-    "Errors": [
-        {
-        "Code": "ERROR.500.001",
-        "Message": "Internal Error",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-    }
-                    </code>
-
-                    <code id="response-Create-Prospect10" style=" display: none; " class="text">
-    {
-    "Errors": [
-        {
-        "Code": "ERROR.503.001",
-        "Message": "Service Unavailable",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-    }
-                        </code>
-                    </pre>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect')">204</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect5')">404</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect6')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect7')">406</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect8')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect9')">500</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Prospect10')">503</a>
+                                      </div>
+    
+                                      <pre class="response-box">
+    
+                                            <code class="text" style=" display: block; " id="response-Create-Prospect">
+                            204 No Content
+                                            </code>
+                                          <code class="text" style=" display: none; " id="response-Create-Prospect2">
+                            {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.400.001",
+                                  "Message": "Bad request.",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                            }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="response-Create-Prospect3">
+                            {
+                              "Errors": [
+                                {
+                                "Code": "ERROR.401.001",
+                                "Message": "Unauthorized to call the target operation.",
+                                "Path": "authorization",
+                                "Url": "https://{baseURL}/developer-portal/terms"
+                                }
+                              ]
+                            }
+                                            </code>
+    
+                                            <code class="text" style=" display: none; " id="response-Create-Prospect4">
+                          {
+                            "Errors": [
+                              {
+                                "Code": "ERROR.403.001",
+                                "Message": "Invalid token.",
+                                "Url": "https://{baseURL}/developer-portal/terms"
+                              }
+                            ]
+                          }
+                                            </code>
+    
+                                            <code class="text" style=" display: none; " id="response-Create-Prospect5">
+                          {
+                            "Errors": [
+                                {
+                                "Code": "ERROR.404.001",
+                                "Message": "No resources match requested URI.",
+                                "Url": "https://{baseURL}/developer-portal/terms"
+                                }
+                            ]
+                          }
+                                            </code>
+    
+                                            <code class="text" style=" display: none; " id="response-Create-Prospect6">
+                          {
+                            "Errors": [
+                              {
+                                "Code": "ERROR.405.001",
+                                "Message": "The method is not allowed for the requested URL.",
+                                "Url": "https://{baseURL}/developer-portal/terms"
+                              }
+                            ]
+                          }
+    
+                                            </code>
+    
+                                            <code class="text" style=" display: none; " id="response-Create-Prospect7">
+                          {
+                            "Errors": [
+                              {
+                                "Code": "ERROR.406.001",
+                                "Message": "An appropriate representation of the requested resource could not be found",
+                                "Url": "https://{baseURL}/developer-portal/terms"
+                              }
+                            ]
+                          }
+                                            </code>
+    
+                                            <code class="text" style=" display: none; " id="response-Create-Prospect8">
+                          {
+                            "Errors": [
+                                {
+                                "Code": "ERROR.429.001",
+                                "Message": "Assembly Rate Limit exceeded",
+                                "Url": "https://{baseURL}/developer-portal/terms"
+                                }
+                            ]
+                          }
+                                            </code>
+    
+                                            <code class="text" style=" display: none; " id="response-Create-Prospect9">
+                          {
+                            "Errors": [
+                                {
+                                "Code": "ERROR.500.001",
+                                "Message": "Internal Error",
+                                "Url": "https://{baseURL}/developer-portal/terms"
+                                }
+                            ]
+                          }
+                                            </code>
+    
+                                            <code class="text" style=" display: none; " id="response-Create-Prospect10">
+                          {
+                            "Errors": [
+                                {
+                                "Code": "ERROR.503.001",
+                                "Message": "Service Unavailable",
+                                "Url": "https://{baseURL}/developer-portal/terms"
+                                }
+                            ]
+                          }
+                                              </code>
+                                          </pre>
                                 </div>
                             </div>
                         </div>
-
-
-
-
+                    </div>
+    
+                    <!-- API 2 -->
+                    <div class="api-infosec">
                         <h1 class="fob-welcome-title" id="section-3">Get Prospect Status</h1>
-                    <p class="fob-welcome-line"></p>
-                    <p class="fob-welcome-text">Endpoint: /mp-prospect-registration/v1/prospects/{POINumber}/status?</br></p>
-                    <p class="fob-welcome-text">This API is used to get prospect status.</br></p>
-                    <p class="fob-welcome-text"><a id="downloadLink"
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3409/api/3406#/MPGetProspectStatusApiDocumentation_100/operation/%2Fprospects%2F{POINumber}%2Fstatus/get">Swagger
-                            Link</a></p>
-                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
-
-                        <div class="row flex mt-25">
-                            <div class="col-lg-8">
-                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint:
+                            /mp-prospect-registration/v1/prospects/{POINumber}/status</p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3409/api/3406#/MPGetProspectStatusApiDocumentation_100/operation/%2Fprospects%2F{POINumber}%2Fstatus/get">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">This API is used to get prospect status.</p>
+    
+    
+    
+    
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title">Request Example</h1>
                                 <p class="fob-welcome-line"></p>
                                 <pre class="example_97 api-guides-example-fob ">
-                    <code class="sample-code">
-Path Variables:
+                        <code class="sample-code">
+    Path Variables:
     POINumber:123
-Query Params:
+    Query Params:
     poiType:NAT
     birthHijriDate:1421-08-04
     birthGregorianDate:2000-10-31
-                    </code>
-                    </pre>
+                        </code>
+                      </pre>
                             </div>
-                            <div class="col-lg-4 mt-25">
-                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                            <div class="url-box">
+    
+                                <button class="curlbtn fob-activate-fetching-top" type="submit"
                                     onclick="show('Get-Prospect-Status-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
-
-                                <pre id="generatedCurl">
-                    <code id="Get-Prospect-Status-curl" style=" display: block;">
-curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-prospect-registration/v1/prospects/123/status?poiType=NAT&birthHijriDate=1421-08-04&birthGregorianDate=2000-10-31' \
---header 'x-request-id: 84257628-cb41-4040-81a9-4f8590eeb24a' \
---header 'accept-language: EN' \
---header 'x-host-ip: ss' \
---header 'x-latitude: 24.7136' \
---header 'x-longitude: 46.6753' \
---header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZntuQKiEEg2geLoCZjSx7b0727D0R4AHkjjm9vskhnHo9O0_kseW-_oqKbrBtWIjzm-Mw8aHhpGOMa0gaTCxbIg3J8AVXTpT_Cr5sySBREqRszXAQrScGjREAkj1gpsWmLjBLdU4pWbiy0s6y-nnER'
-                    </code>
-                    </pre>
+    
+                                <pre id="generatedCurl">                          <code id="Get-Prospect-Status-curl" style=" display: block;">
+                                    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-prospect-registration/v1/prospects/123/status?poiType=NAT&amp;birthHijriDate=1421-08-04&amp;birthGregorianDate=2000-10-31' \
+                                    --header 'x-request-id: 84257628-cb41-4040-81a9-4f8590eeb24a' \
+                                    --header 'accept-language: EN' \
+                                    --header 'x-host-ip: ss' \
+                                    --header 'x-latitude: 24.7136' \
+                                    --header 'x-longitude: 46.6753' \
+                                    --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZntuQKiEEg2geLoCZjSx7b0727D0R4AHkjjm9vskhnHo9O0_kseW-_oqKbrBtWIjzm-Mw8aHhpGOMa0gaTCxbIg3J8AVXTpT_Cr5sySBREqRszXAQrScGjREAkj1gpsWmLjBLdU4pWbiy0s6y-nnER'
+                          </code>
+                        </pre>
                             </div>
                         </div>
-
-                        <div class="row flex mt-25">
-                            <div class="col-lg-8">
+    
+                        <div class="response-outterbox">
+                            <div class="innerbox">
                                 <div class="code-box">
-                                    <p
-                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                         &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
-
-
-                                    <div class="response-box-div">
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status')">200</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status2')">400</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status3')">401</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status4')">403</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status5')">404</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status6')">405</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status7')">406</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status8')">429</a>
-                                        <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status9')">500</a>
-                                            <a type="button" class="response-box-error"
-                                            onclick="responseText('response-Get-Prospect-Status10')">503</a>
-                                    </div>
-
-                                    <pre class="response-box">
-
-                    <code id="response-Get-Prospect-Status" style=" display: block; " class="text">
-{
-    "Data": {
-        "IsUrpayCustomer": false,
-        "IsProspect": true
-    }
-}
-                    </code>
-                    <code id="response-Get-Prospect-Status2" style=" display: none; " class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.400.001",
-        "Message": "Bad request.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-                    </code>
-                    <code id="response-Get-Prospect-Status3" style=" display: none; " class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.401.001",
-        "Message": "Unauthorized to call the target operation.",
-        "Path": "authorization",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-                    </code>
-
-                    <code id="response-Get-Prospect-Status4" style=" display: none; " class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.403.001",
-        "Message": "Invalid token.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-                    </code>
-
-                    <code id="response-Get-Prospect-Status5" style=" display: none; " class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.404.001",
-        "Message": "No resources match requested URI.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-                    </code>
-
-                    <code id="response-Get-Prospect-Status6" style=" display: none; "class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.405.001",
-        "Message": "The method is not allowed for the requested URL.",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-
-                    </code>
-
-                    <code id="response-Get-Prospect-Status7" style=" display: none; "class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.406.001",
-        "Message": "An appropriate representation of the requested resource could not be found",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-                    </code>
-
-                    <code id="response-Get-Prospect-Status8" style=" display: none; " class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.429.001",
-        "Message": "Assembly Rate Limit exceeded",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-                    </code>
-
-                    <code id="response-Get-Prospect-Status9" style=" display: none; " class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.500.001",
-        "Message": "Internal Error",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-                    </code>
-
-                    <code id="response-Get-Prospect-Status10" style=" display: none; " class="text">
-{
-    "Errors": [
-        {
-        "Code": "ERROR.503.001",
-        "Message": "Service Unavailable",
-        "Url": "https://{baseURL}/developer-portal/terms"
-        }
-    ]
-}
-                        </code>
-                    </pre>
+    
+    
+                                        <div class="response-box-div">
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status')">200</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status2')">400</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status3')">401</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status4')">403</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status5')">404</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status6')">405</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status7')">406</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status8')">429</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status9')">500</a>
+                                            <a class="response-box-error" type="button" onclick="responseText('response-Get-Prospect-Status10')">503</a>
+                                          </div>
+    
+                                          <pre class="response-box">
+    
+                                              <code class="text" style=" display: block; " id="response-Get-Prospect-Status">
+                          {
+                              "Data": {
+                                  "IsUrpayCustomer": false,
+                                  "IsProspect": true
+                              }
+                          }
+                                              </code>
+                                            <code class="text" style=" display: none; " id="response-Get-Prospect-Status2">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.400.001",
+                                  "Message": "Bad request.",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+                                              </code>
+                                              <code class="text" style=" display: none; " id="response-Get-Prospect-Status3">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.401.001",
+                                  "Message": "Unauthorized to call the target operation.",
+                                  "Path": "authorization",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+                                              </code>
+    
+                                              <code class="text" style=" display: none; " id="response-Get-Prospect-Status4">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.403.001",
+                                  "Message": "Invalid token.",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+                                              </code>
+    
+                                              <code class="text" style=" display: none; " id="response-Get-Prospect-Status5">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.404.001",
+                                  "Message": "No resources match requested URI.",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+                                              </code>
+    
+                                              <code class="text" style=" display: none; " id="response-Get-Prospect-Status6">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.405.001",
+                                  "Message": "The method is not allowed for the requested URL.",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+    
+                                              </code>
+    
+                                              <code class="text" style=" display: none; " id="response-Get-Prospect-Status7">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.406.001",
+                                  "Message": "An appropriate representation of the requested resource could not be found",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+                                              </code>
+    
+                                              <code class="text" style=" display: none; " id="response-Get-Prospect-Status8">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.429.001",
+                                  "Message": "Assembly Rate Limit exceeded",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+                                              </code>
+    
+                                              <code class="text" style=" display: none; " id="response-Get-Prospect-Status9">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.500.001",
+                                  "Message": "Internal Error",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+                                              </code>
+    
+                                              <code class="text" style=" display: none; " id="response-Get-Prospect-Status10">
+                          {
+                              "Errors": [
+                                  {
+                                  "Code": "ERROR.503.001",
+                                  "Message": "Service Unavailable",
+                                  "Url": "https://{baseURL}/developer-portal/terms"
+                                  }
+                              ]
+                          }
+                                                </code>
+                                            </pre>
+    
                                 </div>
                             </div>
                         </div>
-
-
+    
+                    </div>
+    
+                            </div>
                         </div>
                     </div>
                 </div>
-            
-            
-            
-            
-            
-            
-            
-            
             </div>
         </div>
     </div>
-</div>
 </div>

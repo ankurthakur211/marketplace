@@ -3,33 +3,6 @@
     <p class="api-doc-background-text ">IBAN Verification API Documentation</p>
   </div>
 
-  <!-- <div class="side-section">
-    <div class="col-md-3">
-      <div class="container">
-        <div>
-          <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
-            onkeyup="search_menu()" type="text" />
-
-        </div>
-        <br>
-        <div class="api-guides-vertical-menu ">
-
-
-          <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">IBAN
-            Verification</a>
-
-          <div class="api-guides-dropdown-container" id="expand2">
-            <a class="api-guides-noList apn-doc-menu" href="#section-2">IBAN Verification</a>
-            <a class="api-guides-noList apn-doc-menu" href="#section-3">IBAN Verification Callback</a>
-          </div>
-
-
-        </div>
-        <br>
-      </div>
-    </div>
-  </div> -->
-
   <div class="moterinsurance-sec">
     <div class="container">
       <div class="d-flex">
@@ -43,10 +16,6 @@
             account number with the Point of Identification (POI) number, typically the national ID.It streamlines and
             automates the validation process, ensuring that the provided bank account is not only active but also
             valid.
-            By leveraging the Saudi Payment Network, this system confirms crucial information, enhancing security
-            measures and facilitating a seamless verification experience for users.The IBAN Verification Callback
-            feature is a designed to retrieve IBAN Verification Data from essential sources associated with a specific
-            request. This data is validated against Saudi Payment Network, and subsequently pushed to the user.
           </p>
 
 
@@ -72,7 +41,7 @@
       <h1 class="fob-welcome-title">Iban Verification Sequence Diagram</h1>
       <p class="motoinsu-image"></p>
       <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/IbanVerificationSequenceDiagram.pdf"
-        download="">Download Iban Sequence Diagram</a>
+        download="">Click here</a>
     </div>
   </div>
 
@@ -133,7 +102,8 @@ Request Body:
               </button>
 
               <pre id="generatedCurl">
-                    <code id="IBAN-Verification-Requests" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/iban-verification/v1/verification-requests' \
+                    <code id="IBAN-Verification-Requests" style=" display: block;">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox-inbound/mp-iban-verification/v1/verification-requests' \
 --header 'x-request-id: 899d8365-e2dd-4fab-9938-1c325aebf67d' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: ••••••' \
@@ -312,17 +282,18 @@ Request Body:
           <h1 class="fob-welcome-title" id="section-3">IBAN Verification Callback</h1>
           <p class="fob-welcome-line"></p>
           <p class="fob-welcome-text">This is used to return IBAN Verification Data from all required sources for
-            a specific Request.<a
-              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/callbackswaggers/ibancallback.json"
-              download="">Download Iban Callback Swagger</a></p></br></br>
+            a specific Request.</p>
+              <p class="fob-welcome-text"><a
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/callbackswaggers/ibancallback.json"
+                download="">Download Iban Callback Swagger</a></p></br></br>
           <div class="requestURL-box">
             <div class="request-box">
               <h1 class="fob-welcome-title mt-0">Request Example</h1>
               <p class="fob-welcome-line"></p>
               <pre class="example_97 api-guides-example-fob ">
                         <code class="sample-code">
-  Request Body:
-  {
+Request Body:
+{
   "Data": {
     "RequestId": "1234567891",
     "RequestStatus": "Valid",
@@ -340,7 +311,7 @@ Request Body:
       }
     ]
   }
-  }
+}
                         </code>
                       </pre>
             </div>
@@ -363,16 +334,16 @@ Request Body:
                 <pre class="response-box">
 
                         <code id="response-IBAN-Verification-Callback-Requests" style=" display: block; " class="text">
-  {
+{
   "Data": {
       "RequestId": "f428deb3-2842-408d-878e-7904f61be27b"
   }
-  }
+}
   
                         </code>
   
                         <code id="response-IBAN-Verification-Callback-Requests1" style=" display: none; " class="text">
-  {
+{
   "Errors": [
     {
       "Code": "ERROR.500.001",
@@ -380,7 +351,7 @@ Request Body:
       "Url": "https://{baseURL}/developer-portal/terms"
     }
   ]
-  }
+}
                         </code>
                       </pre>
               </div>
@@ -390,6 +361,7 @@ Request Body:
         </div>
       </div>
     </div>
+  </div>
 
 
   </div>
