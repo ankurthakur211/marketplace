@@ -578,7 +578,18 @@ document.addEventListener("DOMContentLoaded", function() {
         if (searchIconSection) {
             const searchItem = document.createElement('li');
             searchItem.classList.add('searching-responsive', 'moved-item');
-            searchItem.appendChild(searchIconSection.cloneNode(true));
+
+            // Clone the node deeply
+            const clonedSection = searchIconSection.cloneNode(true);
+
+            // Find the <a> tag with class 'opensearch' inside the clone and replace its class
+            const openSearchLink = clonedSection.querySelector('a.opensearch');
+            if (openSearchLink) {
+                openSearchLink.classList.remove('opensearch');
+                openSearchLink.classList.add('opensearch2');
+            }
+
+            searchItem.appendChild(clonedSection);
             navCollapseList.insertBefore(searchItem, navCollapseList.firstChild);
         }
     }
