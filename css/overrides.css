@@ -17938,12 +17938,25 @@ body.context--BusinessDomains .apicMainContent {
     content: url("images/NotificationEngine-SMSGW.jpg");
 }
 
-.products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img.img-29 {
+.products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img.img-30 {
     content: url("images/CorporateCICInquiry.png");
 }
 
-.products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img.img-30 {
+.products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img.img-31 {
     content: url("images/ConsumerDigitalWalletInquiryforTop-up.jpg");
+}
+
+.products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img.img-32 {
+    content: url("images/insurancesec-img-1.png");
+}
+.products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img.img-33 {
+    content: url("images/Travel.png");
+}
+.products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img.img-34 {
+    content: url("images/ApplyforAuto-Lease.jpg");
+}
+.products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box .product-img.img-35 {
+    content: url("images/ARGLoyalty.jpg");
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .content-box {
@@ -20984,6 +20997,473 @@ form#user-login-form input {
 
 
 /*Janet about us new*/
+
+
+/* Subscription Process Pages Design Janet */
+
+.route-apic-appcreate .custom-application:after {
+    width: 50% !important;
+    top: 0px !important;
+    right: 5px !important;
+  }
+  
+  .path-subscription .wizard-trail,
+  .path-subscription-noplan .wizard-trail {
+    background: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .path-subscription .bx--progress,
+  .path-subscription-noplan .bx--progress {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: wizard;
+  }
+  
+  .path-subscription .bx--progress-step,
+  .path-subscription-noplan .bx--progress-step {
+    position: relative;
+    flex: 1;
+    background: #e5e7eb;
+    padding: 4px 16px 12px 20px;
+    color: #4b5563;
+    text-align: center;
+    font-weight: 500;
+    clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%, 5% 50%);
+    margin-right: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    min-width: 7rem;
+    overflow: visible;
+    height: 75px;
+    align-items: center;
+  }
+  
+  .path-subscription .bx--progress-step:last-child,
+  .path-subscription-noplan .bx--progress-step:last-child {
+    margin-right: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 5% 50%);
+  }
+  
+  /* Current Step */
+  .path-subscription .bx--progress-step--current,
+  .path-subscription-noplan .bx--progress-step--current {
+    background: #2563eb;
+    color: white;
+  }
+  
+  .path-subscription .bx--progress-step--current .bx--progress-label,
+  .path-subscription-noplan .bx--progress-step--current .bx--progress-label {
+    color: white !important;
+  }
+  
+  /* Incomplete Step */
+  .path-subscription .bx--progress-step--incomplete,
+  .path-subscription-noplan .bx--progress-step--incomplete {
+    background: #d1d5db;
+    color: #6b7280;
+  }
+  
+  /* Progress Label */
+  .path-subscription .bx--progress-label,
+  .path-subscription-noplan .bx--progress-label {
+    font-size: 14px;
+    margin: 4px 0 0;
+    font-weight: 600;
+  }
+  
+  .path-subscription .bx--progress-step svg,
+  .path-subscription-noplan .bx--progress-step svg {
+    display: none;
+  }
+  
+  .path-subscription .bx--progress-line,
+  .path-subscription-noplan .bx--progress-line {
+    display: none;
+  }
+  
+  .path-subscription .bx--progress-label,
+  .path-subscription-noplan .bx--progress-label {
+    font-size: larger !important;
+    font-weight: 600 !important;
+  }
+  
+  .path-subscription .bx--progress,
+  .path-subscription-noplan .bx--progress {
+    width: 80% !important;
+  }
+  
+  .path-subscription .subscriptionWizardTitle,
+  .path-subscription-noplan .subscriptionWizardTitle {
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+    background-color: transparent !important;
+  }
+  
+  .path-subscription .subscriptionWizardTitle h3,
+  .path-subscription-noplan .subscriptionWizardTitle h3 {
+    font-weight: bold !important;
+  }
+  
+  .path-subscription .apicFormHeader .success,
+  .path-subscription-noplan .apicFormHeader .success {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .path-subscription .bx--data-table,
+  .path-subscription-noplan .bx--data-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .path-subscription .bx--data-table thead th,
+  .path-subscription-noplan .bx--data-table thead th {
+    background-color: #edf4ff;
+    font-weight: bold;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+  }
+  
+  .path-subscription .bx--data-table thead th:first-child,
+  .path-subscription-noplan .bx--data-table thead th:first-child {
+    border-top-left-radius: 20px;
+  }
+  
+  .path-subscription .bx--data-table thead th:last-child,
+  .path-subscription-noplan .bx--data-table thead th:last-child {
+    border-top-right-radius: 20px;
+  }
+  
+  .path-subscription .bx--data-table tbody td,
+  .path-subscription-noplan .bx--data-table tbody td {
+    padding: 12px;
+    vertical-align: middle;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .path-subscription .bx--data-table td.product,
+  .path-subscription-noplan .bx--data-table td.product {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .path-subscription .bx--data-table td.product img,
+  .path-subscription-noplan .bx--data-table td.product img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .path-subscription .bx--data-table a,
+  .path-subscription-noplan .bx--data-table a {
+    color: #0f62fe;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .path-subscription .bx--data-table a:hover,
+  .path-subscription-noplan .bx--data-table a:hover {
+    text-decoration: underline;
+  }
+  
+  .path-subscription .apicFormContent,
+  .path-subscription-noplan .apicFormContent {
+    margin-top: 2rem;
+    margin-bottom: 6rem !important;
+  }
+  
+  .path-subscription .apicFormContent thead tr th,
+  .path-subscription-noplan .apicFormContent thead tr th {
+    font-family: "SF Pro Display" !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    line-height: 20px !important;
+    color: #474b52 !important;
+  }
+  
+  .path-subscription .apicFormFooter a.button,
+  .path-subscription-noplan .apicFormFooter a.button {
+    width: 15%;
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    border-radius: 32px;
+  }
+  
+  .path-subscription .apicFormFooter,
+  .path-subscription-noplan .apicFormFooter {
+    border-top: 0px solid #e0e0e0 !important;
+  }
+  
+  .path-subscription .apicFormContent .product,
+  .path-subscription-noplan .apicFormContent .product {
+    display: table-cell;
+    align-items: center;
+  }
+  
+  .path-subscription .apicFormHeader,
+  .path-subscription-noplan .apicFormHeader {
+    font-weight: bold;
+  }
+  
+  .path-subscription .apic-wizard-navigation .button,
+  .path-subscription-noplan .apic-wizard-navigation .button {
+    margin-right: 0px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 32px !important;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 15% !important;
+  }
+  
+  .path-subscription button#edit-submit,
+  .path-subscription-noplan button#edit-submit {
+    border-radius: 32px !important;
+  }
+  
+  .path-subscription .apic-wizard-navigation .apicTertiary,
+  .path-subscription-noplan .apic-wizard-navigation .apicTertiary {
+    background-color: transparent;
+    color: #6c757d;
+    border: 1px solid #6c757d !important;
+    margin-bottom: 30px;
+  }
+  
+  .path-subscription .apic-wizard-navigation .button--primary:hover,
+  .path-subscription-noplan .apic-wizard-navigation .button--primary:hover {
+    background-color: #0056b3 !important;
+  }
+  
+  .path-subscription .apic-wizard-navigation,
+  .path-subscription-noplan .apic-wizard-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  
+  .path-subscription .apic-wizard-navigation .button,
+  .path-subscription-noplan .apic-wizard-navigation .button {
+    flex: 1 1 auto;
+    min-width: 15%;
+    max-width: 15%;
+    text-align: center;
+  }
+  
+  @media (max-width: 600px) {
+    .path-subscription .apic-wizard-navigation,
+    .path-subscription-noplan .apic-wizard-navigation {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .path-subscription .apic-wizard-navigation .button,
+    .path-subscription-noplan .apic-wizard-navigation .button {
+      flex: 1 1 auto;
+      min-width: 40%;
+      max-width: 40%;
+      text-align: center;
+    }
+  }
+  
+  .path-subscription .subscription-wizard-confirm-subscribe,
+  .path-subscription-noplan .subscription-wizard-confirm-subscribe {
+    width: 100%;
+  }
+  
+  .path-subscription .subscription-wizard-choose-plan a,
+  .path-subscription-noplan .subscription-wizard-choose-plan a {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    line-height: 19px;
+    flex: 1 1 auto;
+    min-width: 15%;
+    max-width: 15%;
+    text-align: center;
+    margin-right: 0px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 32px !important;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 15% !important;
+    border: 1px solid #0f62fe;
+    color: #0f62fe;
+    background-color: transparent;
+  }
+  
+  .path-subscription .subscription-wizard-choose-plan .apicTertiary,
+  .path-subscription-noplan .subscription-wizard-choose-plan .apicTertiary {
+    border: 1px solid #393939 !important;
+    color: #fff !important;
+    background-color: #393939 !important;
+  }
+  
+  .path-subscription .subscription-wizard-choose-plan .apicTertiary:hover,
+  .path-subscription-noplan .subscription-wizard-choose-plan .apicTertiary:hover {
+    color: #fff !important;
+    background-color: #4c4c4c !important;
+  }
+  
+  .path-subscription .planCard .btn-primary,
+  .path-subscription-noplan .planCard .btn-primary {
+    padding: calc(0.675rem - 3px) 60px calc(0.675rem - 3px) 12px !important;
+    width: fit-content !important;
+    background-color: #0f62fe;
+    color: #fff;
+    border: 2px solid transparent;
+  }
+  
+  .path-subscription .field--name-apic-tags .field--label,
+  .path-subscription-noplan .field--name-apic-tags .field--label {
+    font-weight: bold !important;
+    color: #11183b !important;
+    font-size: 30px !important;
+    margin-bottom: 35px !important;
+  }
+  
+  .path-subscription .plans .label,
+  .path-subscription-noplan .plans .label {
+    font-weight: bold !important;
+    color: #11183b !important;
+    font-size: 30px !important;
+    margin-bottom: 35px !important;
+    margin-top: 20px !important;
+  }
+  
+  .path-subscription .apicProductTags,
+  .path-subscription-noplan .apicProductTags {
+    background-color: #e1e9fc;
+    padding: 15px;
+    border-radius: 20px;
+  }
+  
+  .path-subscription .field--name-apic-tags a,
+  .path-subscription-noplan .field--name-apic-tags a {
+    font-style: normal;
+    line-height: 19px;
+    flex: 1 1 auto;
+    min-width: 15%;
+    max-width: 15%;
+    text-align: center;
+    margin-right: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 32px !important;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 15% !important;
+    color: black;
+    background-color: #6591f0;
+    padding: 18px;
+    border: none;
+  }
+  
+  .path-subscription .apicSubscribeInfotext,
+  .path-subscription-noplan .apicSubscribeInfotext {
+    margin-bottom: 30px;
+  }
+  
+  .path-subscription-noplan
+    .subscription-wizard-choose-application
+    .apicTertiary {
+    border: 1px solid #393939 !important;
+    color: #fff !important;
+    background-color: #393939 !important;
+    margin-top: 30px;
+  }
+  
+  .path-subscription-noplan
+    .subscription-wizard-choose-application
+    .apicTertiary:hover {
+    color: #fff !important;
+    background-color: #4c4c4c !important;
+  }
+  
+  .path-subscription
+    .node--type-application.bx--card
+    .apicAppCardMain
+    .bx--about__title--name,
+  .path-subscription-noplan
+    .node--type-application.bx--card
+    .apicAppCardMain
+    .bx--about__title--name {
+    text-align: center;
+  }
+  
+  .path-subscription .bx--card .apicFade.apicAppDesc,
+  .path-subscription-noplan .bx--card .apicFade.apicAppDesc {
+    max-height: 4.5rem;
+  }
+  
+  .path-subscription
+    .node--type-application.bx--card
+    .apicAppCardMain
+    .apicAppDesc,
+  .path-subscription-noplan
+    .node--type-application.bx--card
+    .apicAppCardMain
+    .apicAppDesc {
+    padding: 10px;
+  }
+  
+  .path-subscription .apicWizardMain .apicNewAppButton .tile-button,
+  .path-subscription-noplan .apicWizardMain .apicNewAppButton .tile-button {
+    min-height: unset;
+    height: 14rem;
+    background-color: #0f62fe;
+    color: #fff;
+    width: 20rem;
+    box-shadow: 0 4px 61px rgb(77 71 195 / 40%);
+    border-radius: 10px;
+    line-height: 29px;
+    justify-content: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    border-color: #0f62fe;
+  }
+  
+  .path-subscription .apicNewAppButton .add-app,
+  .path-subscription-noplan .apicNewAppButton .add-app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5em;
+  }
+  
+  .path-subscription .apicNewAppButton .add-app::before,
+  .path-subscription-noplan .apicNewAppButton .add-app::before {
+    content: "+" !important;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+  }
+  
+  /* Subscription Process Pages Design Janet */
+  
 
 
 /*Product Documentation Page Design Janet*/
