@@ -19380,6 +19380,67 @@ body.context--BusinessDomains .apicMainContent {
     row-gap: 20px;
 }
 
+.panel.panel-default {
+    border: 1px solid rgba(219, 224, 254, 1) !important;
+    box-shadow: 0px 0px 24px 0px rgba(153, 163, 255, 0.19) !important;
+    backdrop-filter: blur(54px) !important;
+    padding: 51px 43px !important;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+.panel.panel-default.account-finder-outer .panel-body {
+    padding: 0;
+}
+
+.panel.panel-default {
+    border: 1px solid rgba(219, 224, 254, 1) !important;
+    box-shadow: 0px 0px 24px 0px rgba(153, 163, 255, 0.19) !important;
+    backdrop-filter: blur(54px) !important;
+    padding: 51px 43px !important;
+    border-radius: 50px;
+}
+
+.panel.panel-default h2 span {
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    color: rgba(84, 100, 242, 1) !important;
+    padding: 0 !important;
+    line-height: auto !important;
+}
+
+.panel.panel-default #search-term-result {
+    margin-bottom: 20px;
+}
+
+.panel.panel-default .field a {
+    background-color: rgba(235, 237, 255, 1) !important;
+    gap: 10px;
+    border-radius: 50px !important;
+    padding-top: 8px !important;
+    padding-right: 15px !important;
+    padding-bottom: 8px !important;
+    padding-left: 15px !important;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(84, 100, 242, 1)
+}
+
+#search-term-result a {
+    background: none !important;
+    padding: 0 !important;
+}
+
+.panel.panel-default .tag-header {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+    .tag-header .field--items .field--item {
+        margin-bottom: 17px;
+    }
+}
+
 
 /*# sourceMappingURL=demo.css.map */
 
@@ -22833,6 +22894,110 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 
 
 /* Create New Application Page Design Janet */
+
+
+/* APIs Page Design Janet */
+
+.path-subscription .apicMainContent .apicSubscribeAppsList .apicSubAppCard,
+.path-subscription-noplan .apicMainContent .apicSubscribeAppsList .apicSubAppCard {
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
+.path-product .productApiWrapper .titleInnerWrapper .rightTitle .subscribeButton {
+    z-index: 1;
+    position: sticky;
+}
+
+.path-product .productApiWrapper .apiconnect-explorer .overview-section .overviewBody .Tags .field--name-apic-tags .field--item a {
+    background-color: #e1e9fc;
+    padding: 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.path-product .productApiWrapper .apiconnect-explorer .overview-section .overviewBody .field--label {
+    margin-bottom: 20px;
+}
+
+.path-product .apiconnect-explorer .keyValueDisplay .key {
+    font-weight: bold;
+}
+
+.path-product .apiconnect-explorer .overview-section .infoSection,
+.path-product .apiconnect-explorer .definitions-section .infoSection {
+    padding: 20px 0;
+    width: 100%;
+}
+
+@media (max-width: 1300px) {
+    .path-product .productApiWrapper .titleInnerWrapper .leftTitle {
+        width: 100%;
+    }
+    .path-product .productApiWrapper .titleInnerWrapper .rightTitle {
+        padding-top: 1.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .path-product .productApiWrapper .titleInnerWrapper .leftTitle .productName {
+        overflow: visible !important;
+        text-overflow: unset !important;
+    }
+    .path-product .apiconnect-explorer .operationInformation .labelText,
+    .path-product .apiconnect-explorer .operationDisplay .testToolSection .labelText,
+    .path-product .apiconnect-explorer .apiconnect-explorer.graphql-display .testToolSection .labelText {
+        -ms-grid-column: 1;
+        padding-right: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    .path-product .apiconnect-explorer .operationInformation,
+    .path-product .apiconnect-explorer .operationDisplay .testToolSection {
+        display: block !important;
+    }
+    .path-product .apiconnect-explorer .keyValueDisplay {
+        display: block !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .path-product .apiconnect-explorer .keyValueDisplay {
+        display: block !important;
+        padding: 5px 0;
+    }
+    .path-product .apiconnect-explorer .keyValueDisplay .key {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .path-product .apiconnect-explorer .operationInformation .apiEndpoint,
+    .path-product .apiconnect-explorer .endpointDisplay .apiEndpoint {
+        display: block !important;
+    }
+    .path-product .apiconnect-explorer .operationInformation .apiEndpointType,
+    .path-product .apiconnect-explorer .endpointDisplay .apiEndpointType {
+        padding-right: 1rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .path-product .apiconnect-explorer .parameterTable.bx--data-table tbody th.parameterNameContainer,
+    .path-product .apiconnect-explorer .serverVariableNameContainer,
+    .path-product .apiconnect-explorer .responseHeaderNameContainer {
+        padding-top: 1rem;
+        vertical-align: unset;
+        width: fit-content;
+        color: #161616;
+    }
+    .path-product .apiconnect-explorer .bx--tag {
+        word-break: keep-all;
+        padding: 25px;
+    }
+}
+
+
+/* APIs Page Design Janet */
 
 
 /* search bar Bassnt */
