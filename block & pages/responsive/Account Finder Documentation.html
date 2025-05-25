@@ -11,11 +11,11 @@
                 <div class="leftside-sec">
                     <p class="fob-welcome-title" id="section-1">Account Finder APIS </p>
                     <p class="fob-welcome-line"></p>
-                    <p class="fob-welcome-text">The Account Finder API is an application that provides a
-                        streamlined
-                        and efficient process for onboarding new users onto Marketplace to be able to use all of its
-                        capabilities. The main goal for this project is to enable ARB to
-                        avail Account Finder process through API Marketplace.
+                    <p class="fob-welcome-text">Account Finder is a service offered by ARB (an ARG Subsidiary referred to as the provider). 
+                        This product allows users to view all their bank accounts across various participating banks. By displaying a comprehensive 
+                        list of banks, it verifies the status of each account, identifying whether it is active or inactive. Once verified, 
+                        the service searches for the user's accounts across these banks and presents a consolidated view, ensuring seamless 
+                        account discovery and management.
                     </p>
 
 
@@ -35,28 +35,22 @@
         </div>
     </div>
 
-    <div class="miw-section custom-sec">
+
+
+    <div class="miw-section">
         <div class="container">
             <h1 class="fob-welcome-title">Account Finder Workflow</h1>
-            <p class="AccountFinder-flow-img"><br></p>
-            <a class="fob-product-title-click" target="_blank" href="./AccountFinderWorkflowImg">Click
-                here</a>
-
-            <a id="downloadLink"
+            <p class="motoinsu-image"></p>
+            <a class="fob-product-title-click" target="_blank"
                 href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/AccountFinderFlowDiagramv0.1.pdf"
-                download="">Download Account Finder Workflow</a>
+                rel="noopener">
+                Click here
+            </a>
         </div>
     </div>
 
-    <div class="miw-section ">
-        <div class="container">
-            <h1 class="fob-welcome-title">Account Finder Architecture</h1>
-            <p class="AccountFinderArchitecture-flow-img">&nbsp;</p>
-            <a class="fob-product-title-click" href="./AccountFinderArchitectureWorkflowImg" target="_blank">Click
-                here</a>
 
-        </div>
-    </div>
+
 
     <div class="APIs-section">
         <div class="container">
@@ -71,7 +65,7 @@
                     <p class="fob-welcome-line"></p>
                     <p class="fob-welcome-text">Endpoint: /mp-account-finder/v1/activate</br></p>
                     <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/739/api/736#/ActivateAccountFinder_100/operation/%2Factivate/put">Swagger
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2863/api/2860#/MPActivateAccountFinder_100/operation/%2Factivate/put">Swagger
                             Link</a></p>
                     <p class="fob-welcome-text">This API is used to activate account finder.</br></p>
                     <div class="requestURL-box">
@@ -117,7 +111,7 @@ curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/ap
 
                                 <div class="response-box-div">
                                     <a type="button" class="response-box-error"
-                                        onclick="responseText('response-Activate-Account-Finder-Details')">200</a>
+                                        onclick="responseText('response-Activate-Account-Finder-Details')">204</a>
                                     <a type="button" class="response-box-error"
                                         onclick="responseText('response-Activate-Account-Finder-Details2')">400</a>
                                     <a type="button" class="response-box-error"
@@ -267,7 +261,7 @@ curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/ap
                     <p class="fob-welcome-line"></p>
                     <p class="fob-welcome-text">Endpoint: /mp-account-finder/v1/participant-banks</br></p>
                     <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/814/api/754#/ListInstantPaymentParticipantBanksAccountFinder_100/operation/%2Faccount-finder/get">Swagger
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2881/api/2878#/MPListInstantPaymentParticipantBanksAccountFinder_100/operation/%2Fparticipant-banks/get">Swagger
                             Link</a></p>
                     <p class="fob-welcome-text">This API is used to initiate outwards transfer account
                         verification.</br></p>
@@ -552,10 +546,7 @@ curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-s
     "Errors": [
         {
         "Code": "ERROR.400.001",
-        "Message": "Ba
-        
-        
-        [d Request",
+        "Message": "Bad Request",
         "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
         }
     ]
@@ -679,7 +670,7 @@ curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-s
                     <p class="fob-welcome-line"></p>
                     <p class="fob-welcome-text">Endpoint: /mp-account-finder/v1/outwards-verification</br></p>
                     <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/751/api/748#/InitiateOutwardsAccountFinder_100/operation/%2Faccount-finder/post">Swagger
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2875/api/2872#/MPInitiateOutwardsAccountFinder_100/operation/%2Foutwards-verification/post">Swagger
                             Link</a></p>
                     <p class="fob-welcome-text">This API is used to initiate outwards transfer account
                         verification.</br></p>
@@ -744,7 +735,7 @@ curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-s
 
                                 <div class="response-box-div">
                                     <a type="button" class="response-box-error"
-                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details')">200</a>
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details')">204</a>
                                     <a type="button" class="response-box-error"
                                         onclick="responseText('response-Initiate-Outwards-Account-Finder-Details2')">400</a>
                                     <a type="button" class="response-box-error"
@@ -891,7 +882,7 @@ curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-s
                     <p class="fob-welcome-line"></p>
                     <p class="fob-welcome-text">Endpoint: /mp-account-finder/v1/list</br></p>
                     <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/808/api/796#/GetAccountFinderList_100/operation/%2F/get">Swagger
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2869/api/2866#/MPGetAccountFinderList_100/operation/%2Flist/get">Swagger
                             Link</a></p>
                     <p class="fob-welcome-text">This API is used to get account finder list.</br></p>
 

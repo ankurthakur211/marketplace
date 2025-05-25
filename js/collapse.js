@@ -250,6 +250,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
+/* janet js changes for subscription*/
+    if (feedback.includes("/subscription")) {
+
+        let element = document.querySelector(".apicMainContent");
+        if (element) {
+            element.classList.add("custom-APIproduct");
+            element.insertAdjacentHTML("afterbegin", `
+                    <div class="bg-images">
+                        <p class="pattern"></p>
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                    </div>
+                `);;
+        }
+    }
+    
+    if (window.location.pathname.includes("/subscription_noplan")) {
+        let element = document.querySelector(".apicMainContent");
+        if (element) {
+            element.classList.add("custom-APIproduct");
+            element.insertAdjacentHTML("afterbegin", `
+                    <div class="bg-images">
+                        <p class="pattern"></p>
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                    </div>
+                `);;
+        }
+    }
+    
+/* janet js changes for subscription*/
 
 
     if (feedback.endsWith("/product")) {
