@@ -433,6 +433,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /*role base product visibility*/
 
+    /*for search api modifications*/
+
+    if (window.location.href.includes("search-api?search_api_fulltext")) {
+        // Select all elements with class 'field--label'
+        const contentRegions = document.querySelector('.region-content');
+        contentRegions.insertAdjacentHTML("afterbegin", `
+        <div class="bg-images">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+        </div>
+      `);
+
+        const labels = document.querySelectorAll('.field--label');
+      
+        // Add 'tag-header' class to each matched element
+        labels.forEach(label => {
+          label.classList.add('tag-header');
+        });
+      }
+
+   /*for search api modifications*/
+
+
     /* for nav bar menu responsive design*/
 
     // const apicStickyHeader = document.querySelector(".apicStickyHeader");
