@@ -15770,7 +15770,7 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 .custom-APIproduct div#apic-view-filter .input-group input,
 .custom-APIproduct .views-exposed-form.bef-exposed-form select {
     border: 1px solid #D5D5D5;
-    border-radius: 6px !important;
+    border-radius: 54px !important;
     padding: 10px 20px;
     height: 49px !important;
     /* max-width: 306px; */
@@ -22999,11 +22999,109 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 
 /* APIs Page Design Janet */
 
+/* Solving Issues of Responsiveness Janet */
+
+.path-product .apiconnect-explorer .labelText {
+    width: 100% !important;
+  }
+  
+  .custom-APIproduct .apicProductTitleText h1.productName.apicTruncate {
+    white-space: normal;
+    width: 100%;
+    margin-bottom: 22px;
+    font-size: 40px !important;
+    font-weight: bold !important;
+    line-height: 50px !important;
+    z-index: 1;
+  }
+  
+  .custom-APIproduct
+    .apicProduct
+    .SplitPane.vertical
+    .apicProductBody
+    .field.plans
+    .planComparisonTable
+    .apicPlans
+    .planCard {
+    width: 18.75rem;
+  }
+  
+  @media (min-width: 767px) and (max-width: 880px) {
+    .context--BusinessDomains
+      .products-businessbox.custom-business-domainpage
+      .maincontent-sec
+      .rightbox-sec
+      .Products-business-api-image
+      .Products-business-api-header {
+      font-size: 40px;
+    }
+  
+    .context--BusinessDomains
+      .products-businessbox.custom-business-domainpage
+      .maincontent-sec
+      .leftside-menu
+      .Products-business-menu
+      .sidemenu-navitems
+      .api-list {
+      padding: 25px 0px !important;
+      padding-left: 25px !important;
+    }
+  }
+  
+  .path-subscription .subscriptionWizardTitle h3,
+  .path-subscription-noplan .subscriptionWizardTitle h3 {
+    font-weight: bold !important;
+    z-index: 1;
+    position: relative;
+  }
+  
+  @media (max-width: 735px) {
+    .route-ibm-apimsubscription-wizardnoplan
+      .apicMainContent
+      .apicSubscribeAppForm,
+    .route-ibm-apimsubscription-wizardnoplanstep
+      .apicMainContent
+      .apicSubscribeAppForm,
+    .route-ibm-apimsubscription-wizardstep
+      .apicMainContent
+      .apicSubscribeAppForm {
+      display: block;
+    }
+  
+    .path-subscription-noplan
+      .apicSubscribeChooseApp
+      .apicSubscribeAppForm
+      .apicSubscribeNewAppWrapper,
+    .path-subscription
+      .apicSubscribeChooseApp
+      .apicSubscribeAppForm
+      .apicSubscribeNewAppWrapper {
+      margin-bottom: 30px;
+    }
+  }
+  
+  .path-subscription .field--name-apic-tags .field--item,
+  .path-subscription-noplan .field--name-apic-tags .field--item {
+    margin-bottom: 35px;
+  }
+  
+  .path-product
+    .productApiWrapper
+    .titleInnerWrapper
+    .leftTitle
+    .apicProductTitle
+    .apicProductTitleText {
+    z-index: 1;
+  }
+  
+  /* Solving Issues of Responsiveness Janet */
+  
+
 
 /* search bar Bassnt */
 
 div#apic-view-filter .children {
-    color: #221AFB;
+    color: #221AFB !important;
 }
 
 div#apic-view-filter .input-group input {
