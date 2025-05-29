@@ -19441,6 +19441,284 @@ body.context--BusinessDomains .apicMainContent {
     }
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body.context--partner-product {
+    background: transparent !important;
+  }
+  
+  .custom-partner-domain .Products-business-field-background {
+    background: transparent !important;
+    width: 100% !important;
+    left: 0 !important;
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 0px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .custom-partner-domain .Products-business-field-background .hero-contentbox {
+    width: 50%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .custom-partner-domain .Products-business-field-background .hero-contentbox .Products-business-text {
+    font-size: 28px !important;
+    color: #11183b !important;
+    font-weight: 300 !important;
+    text-align: start;
+    margin-bottom: 10px !important;
+  }
+  .custom-partner-domain .Products-business-field-background .hero-contentbox .product-subtext {
+    font-size: 60px !important;
+    color: #5464f2 !important;
+    line-height: unset;
+    text-align: start !important;
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+  .custom-partner-domain .Products-business-field-background .hero-contentbox .herosec-disc {
+    font-size: 22px;
+    color: #11183b;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 44px;
+  }
+  .custom-partner-domain .Products-business-field-background .hero-contentbox .heroscroll-btn {
+    background-color: #5464f2;
+    color: #fff;
+    padding: 10px 10px 10px 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    width: fit-content;
+    gap: 20px;
+    font-weight: 500;
+  }
+  .custom-partner-domain .Products-business-field-background .heroimg-sec {
+    width: 50%;
+  }
+  .custom-partner-domain .Products-business-field-background .heroimg-sec .heroimg {
+    width: 80%;
+    margin: auto;
+    content: url("images/partner-heroimg.png");
+  }
+  .custom-partner-domain .maincontent-sec {
+    padding-top: 60px;
+    margin-top: 0 !important;
+  }
+  .custom-partner-domain .maincontent-sec * {
+    font-family: "main-font", sans-serif !important;
+  }
+  .custom-partner-domain .maincontent-sec .rightbox-sec {
+    background-color: transparent !important;
+    padding: 0 40px 50px !important;
+    border: none !important;
+    overflow: unset !important;
+    box-shadow: unset !important;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-api-image {
+    position: relative;
+    background: transparent !important;
+    box-shadow: 0px 0px 10.04px 0px rgba(0, 0, 0, 0.1490196078);
+    overflow: hidden;
+    border-radius: 15px !important;
+    flex-direction: row !important;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 60px;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-api-image::after {
+    content: "";
+    width: 322px;
+    height: 322px;
+    background: #91ddff;
+    filter: blur(300px);
+    position: absolute;
+    top: -100px;
+    border-radius: 230px;
+    left: -100px;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-api-image::before {
+    content: "";
+    width: 364px;
+    height: 364px;
+    background: #5464f2;
+    filter: blur(300px);
+    position: absolute;
+    top: 0;
+    right: 100px;
+    border-radius: 230px;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec {
+    width: 45%;
+    position: relative;
+    z-index: 2;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
+    width: 80%;
+    margin: auto;
+    content: url("images/loalitybox-img.png");
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box {
+    width: 55%;
+    padding: 30px;
+    padding-right: 60px;
+    position: relative;
+    z-index: 2;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
+    margin-bottom: 30px;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
+  .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
+    color: #11183b;
+    line-height: unset;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-all-card {
+    margin: 0;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one.redemption-access {
+    margin-top: 60px !important;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .Products-business-title {
+    font-weight: 600;
+    color: #11183b !important;
+    margin-bottom: 44px;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter {
+    gap: 50px !important;
+  }
+  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter .productcard-box {
+    width: calc(33.3333333333% - 34px) !important;
+  }
+  
+  @media (max-width: 991px) {
+    .custom-partner-domain .Products-business-field-background .hero-contentbox {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+    .custom-partner-domain .Products-business-field-background .heroimg-sec {
+      width: 100%;
+    }
+    .custom-partner-domain .Products-business-field-background .heroimg-sec .heroimg {
+      width: 70%;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec {
+      width: 45%;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
+      width: 80%;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
+      text-align: start !important;
+      font-size: 40px !important;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
+      text-align: start !important;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter {
+      gap: 50px !important;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter .productcard-box {
+      width: calc(50% - 34px) !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .custom-partner-domain .Products-business-field-background .hero-contentbox .Products-business-text {
+      text-align: center;
+    }
+    .custom-partner-domain .Products-business-field-background .hero-contentbox .product-subtext {
+      text-align: center !important;
+    }
+    .custom-partner-domain .Products-business-field-background .hero-contentbox .herosec-disc {
+      text-align: center;
+    }
+    .custom-partner-domain .Products-business-field-background .hero-contentbox .heroscroll-btn {
+      margin: 0 auto;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image {
+      flex-direction: column !important;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec {
+      width: 100%;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
+      width: 60%;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box {
+      width: 100%;
+      padding-right: 30px;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
+      text-align: center !important;
+      font-size: 40px !important;
+      line-height: unset !important;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
+      text-align: center !important;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter {
+      gap: 50px !important;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter .productcard-box {
+      width: 100% !important;
+    }
+  }
+  @media (max-width: 576px) {
+    .custom-partner-domain .Products-business-field-background {
+      flex-direction: column-reverse;
+    }
+    .custom-partner-domain .Products-business-field-background .hero-contentbox {
+      margin-bottom: 0;
+      margin-top: 40px;
+    }
+    .custom-partner-domain .Products-business-field-background .hero-contentbox .Products-business-text {
+      font-size: 22px !important;
+    }
+    .custom-partner-domain .Products-business-field-background .hero-contentbox .product-subtext {
+      font-size: 40px !important;
+    }
+    .custom-partner-domain .Products-business-field-background .hero-contentbox .herosec-disc {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 34px;
+    }
+    .custom-partner-domain .Products-business-field-background .hero-contentbox .heroscroll-btn {
+      font-size: 18px;
+    }
+    .custom-partner-domain .Products-business-field-background .heroimg-sec .heroimg {
+      width: 90%;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
+      width: 80%;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box {
+      width: 100%;
+      padding-right: 30px;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
+      font-size: 30px !important;
+      margin-bottom: 10px;
+    }
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
+    .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
+      text-align: center !important;
+    }
+  }
+  
+  /*# sourceMappingURL=demo.css.map */
+
 
 /*# sourceMappingURL=demo.css.map */
 
@@ -23093,6 +23371,58 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     .apicProductTitleText {
     z-index: 1;
   }
+
+  .custom-APIproduct
+  .apicProduct
+  .SplitPane.vertical
+  .apicProductBody
+  .field.plans
+  .planComparisonTable
+  .apicPlans
+  .planCard {
+  width: 18.75rem !important;
+}
+
+.custom-APIproduct .apicProductTitleText h1.productName.apicTruncate {
+  white-space: normal;
+  width: 100% !important;
+  margin-bottom: 22px;
+}
+
+.context--about-us .updated-aboutus .about-block-0 svg {
+  position: absolute;
+  top: -120px;
+  width: 100% !important;
+}
+
+.context--about-us .updated-aboutus .api-doc-background-text {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+  line-height: unset;
+  padding-left: 100px !important;
+  margin-left: 0px !important;
+  text-align: left;
+}
+
+@media (max-width: 370px) {
+  .context--about-us .updated-aboutus .api-doc-background-text {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    line-height: unset;
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+    text-align: left;
+  }
+}
+
+.context--about-us .updated-aboutus .about-block-0 .row .col-md-12 {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+
   
   /* Solving Issues of Responsiveness Janet */
   
