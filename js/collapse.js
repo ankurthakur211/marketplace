@@ -391,6 +391,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (partnerDomain) partnerDomain.style.display = 'none';
         if (apps) apps.style.display = 'none';
         if (apiProducts) apiProducts.style.display = 'none';
+        if (search) search.style.display = 'none';
 
     }
 
