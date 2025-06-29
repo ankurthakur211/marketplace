@@ -23757,3 +23757,17 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 
 
 /*merna general edits*/
+
+
+/*merna remove categories from api products*/
+
+.custom-APIproduct .views-exposed-form .form-item:nth-child(2) {
+    display: none;
+}
+
+li.page-managerpage-view-partner-partner-layout-builder-0.partner-domain {
+    display: none;
+}
+
+
+/*merna remove categories from api products*/
