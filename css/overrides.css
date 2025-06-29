@@ -14827,7 +14827,7 @@ margin-left: 38%; */
     padding-top: 94px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: cent er;
     width: 100%;
 }
 
@@ -21365,6 +21365,70 @@ form#user-login-form input {
 }
 
 
+/* About Us Responsiveness Janet */
+
+@media (max-width: 640px) {
+    .context--about-us .about-us-sec.updated-aboutus {
+        padding-top: 70px !important;
+    }
+    .context--about-us .accelarate-your-business-search-header,
+    .context--about-us .accelarate-your-business-api-header,
+    .context--about-us .accelarate-your-business-diagram-header {
+        position: unset;
+        margin-left: unset;
+        margin-top: unset;
+        font-size: 20px;
+        color: #1b2c90;
+        line-height: 32px;
+    }
+    .context--about-us .accelarate-your-business-card {
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .context--about-us .our-values {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
+    }
+}
+
+@media (max-width: 530px) {
+    .context--about-us .updated-aboutus .row .col-md-6 {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+    .context--about-us .about-us-background {
+        margin: 0px 0px 0 25px !important;
+    }
+    .context--about-us .about-block-2 .about-us-content {
+        font-size: 45px !important;
+    }
+}
+
+@media (max-width: 365px) {
+    .context--about-us .about-block-2 .about-us-content {
+        font-size: 35px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .context--about-us .about-block-2 {
+        position: relative;
+        z-index: 2;
+        background-color: #1a2c90;
+        padding: 55px 10px 55px 10px;
+    }
+    .context--about-us .about-us-content {
+        font-size: 35px !important;
+    }
+}
+
+
+/* About Us Responsiveness Janet */
+
+
 /*Janet about us new*/
 
 
@@ -23408,6 +23472,221 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 
 
 /* Solving Issues of Responsiveness Janet */
+
+
+/* Login, Get Started, Home, apps and products Pages Style Fixes and Responsiveness Janet */
+
+.context--user-login .user-login-form .apic-user-form-registries .registry-button {
+    padding: 15px !important;
+    background: #5464f2;
+    box-shadow: none;
+    border-radius: 82px !important;
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    width: inherit !important;
+    justify-content: center;
+    margin: auto;
+}
+
+.context--user-login .apic-user-form-inner-wrapper.apic-user-form-registries {
+    padding-top: 0px !important;
+}
+
+.context--user-login .user-login-form .apic-user-form-wrapper .apic-user-form-or-container {
+    margin-bottom: 0 !important;
+    align-items: center !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+}
+
+.context--GetStarted .getstarted-sec .get-started-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 9%;
+    gap: 20px !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    .context--GetStarted .getstarted-sec .get-started-field,
+    .context--GetStarted .getstarted-sec .get-started-field-button {
+        width: 100%;
+    }
+    .context--GetStarted .getstarted-sec .container-fluid .col-md-12 {
+        width: 60% !important;
+    }
+    .context--GetStarted .get-started-field-button {
+        margin-bottom: 35px !important;
+    }
+}
+
+.context--GetStarted .getstarted-sec .get-started-field {
+    border-color: #556ff8 !important;
+}
+
+.context--GetStarted .api-doc-background {
+    background: #1a1f4f;
+    width: 100vw !important;
+    padding: 15px 0 48px;
+    height: max-content;
+    margin-left: calc(-50vw + 50%) !important;
+}
+
+.context--GetStarted .getstarted-sec {
+    padding: 30px 0 !important;
+}
+
+@media (max-width: 640px) {
+    .context--GetStarted .getstarted-sec {
+        padding: 60px 0 !important;
+    }
+}
+
+.context--HomePage .how-itworks-sec .primary-btn {
+    margin-left: 30px !important;
+    border: 2px solid #647dff;
+    font-weight: 600;
+    width: fit-content !important;
+    padding: 15px 30px;
+    background-color: #5464f2;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 5px;
+    cursor: pointer;
+    border-radius: 32px;
+    margin-top: 2%;
+}
+
+.context--HomePage .how-itworks-sec .primary-btn:hover {
+    background-color: #8b9eff;
+    color: white;
+    width: fit-content !important;
+    padding: 15px 30px;
+    border: 2px solid #647dff;
+}
+
+.context--HomePage .home-lets-get-started-background.updated-sec .lets-get-started-button-text .lets-get-started-button {
+    padding: 15px 30px !important;
+    color: #5464f2;
+    border: 2px solid #5464f2;
+}
+
+.context--HomePage .home-lets-get-started-background.updated-sec .lets-get-started-button-text .lets-get-started-button:hover {
+    color: #fff;
+    border: 2px solid #647dff;
+    background: #647dff;
+}
+
+.context--HomePage .what-newsec .api-position {
+    padding-left: unset;
+    display: flex;
+    flex-direction: column;
+}
+
+.context--HomePage .customwhat-newsec .How_to_get_started_discover,
+.context--HomePage .customwhat-newsec .How_to_get_started_develop {
+    box-shadow: 0 0 40px #05093a17;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.context--HomePage .home-whats-new-card {
+    padding-top: 5% !important;
+}
+
+.context--product .custom-APIproduct {
+    padding-top: 60px !important;
+}
+
+.context--application .custom-application div#apic-view-filter {
+    align-items: end !important;
+}
+
+.context--application .custom-application {
+    padding-top: 60px !important;
+}
+
+.context--application .custom-applicationcards {
+    clear: both;
+    display: block;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.custom-application .custom-applicationcards .grid {
+    border: 0;
+    background: transparent;
+    box-shadow: unset;
+    border-radius: unset;
+    margin-right: 70px;
+}
+
+.custom-application .views-exposed-form.bef-exposed-form {
+    align-items: end !important;
+    margin-bottom: 80px !important;
+}
+
+.custom-application a.button.apicNewApp {
+    box-shadow: 0 4px 61px rgb(77 71 195 / 40%);
+    height: 60px;
+    font-style: normal;
+    line-height: 29px;
+    margin: 0 0.5rem 0 0;
+    border: 2px solid #647dff;
+    font-weight: 600;
+    width: fit-content !important;
+    padding: 15px 30px;
+    background-color: #5464f2;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 32px;
+}
+
+.custom-application a.button.apicNewApp:hover {
+    background-color: #8b9eff;
+    color: white;
+    width: fit-content !important;
+    padding: 15px 30px;
+    border: 2px solid #647dff;
+}
+
+.path-product .node--type-api.node--view-mode-embedded.bx--card {
+    border-radius: 20px !important;
+}
+
+.path-product .apicProductApiList .views-bootstrap-list-group .list-group-item {
+    box-shadow: 0 4px 20px rgb(77 71 195 / 40%) !important;
+}
+
+.path-product .bx--card .apicCardFooter {
+    border-radius: 20px !important;
+    margin-bottom: -6% !important;
+    margin-left: -16px !important;
+    width: 100% !important;
+}
+
+
+/* Login, Get Started, Home, apps and products Pages Style Fixes and Responsiveness Janet */
 
 
 /* search bar Bassnt */
