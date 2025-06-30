@@ -23780,5 +23780,17 @@ li.page-managerpage-view-partner-partner-layout-builder-0.partner-domain {
     display: none;
 }
 
+span.registry-name {
+    padding-left: .5rem;
+    max-width: 14.5rem;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 19px;
+}
+
+li.elipsis-names.createorg {
+    display: none;
+}
+
 
 /*merna remove categories from api products*/
