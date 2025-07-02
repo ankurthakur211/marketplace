@@ -246,7 +246,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (feedback.includes('user/login')) {
         var apicSigninForm = document.querySelector('.apic-user-form');
+        var forgotPassword = document.querySelector('.apic-user-forgot-password');
+        var signupLink = document.querySelector('.apic-user-form-text');
+
         apicSigninForm.classList.add('custom-signinsec');
+        signupLink.style.display = 'none';
+        forgotPassword.style.display = 'none';
 
     }
 
@@ -690,6 +695,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 document.addEventListener('DOMContentLoaded', function() {
+
+    document.querySelectorAll('form.user-login-form.pwd-see a.registry-button.generic-button.button').forEach(function(link) {
+        try {
+          const originalHref = link.getAttribute('href');
+          const redirectMatch = originalHref.match(/([?&]redirect_uri=)([^&]+)/);
+       
+          if (redirectMatch && redirectMatch[2].includes('test.developer.api-marketplace.alrajhibank.com.sa')) {
+            const oldUri = decodeURIComponent(redirectMatch[2]);
+            const newUri = oldUri.replace(
+              'https://test.developer.api-marketplace.alrajhibank.com.sa',
+              'https://apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud'
+            );
+            const newHref = originalHref.replace(redirectMatch[0], `${redirectMatch[1]}${newUri}`);
+            link.setAttribute('href', newHref);
+          
+          }
+        } catch (e) {
+          
+        }
+      })    ;
+
+
+
     document.querySelectorAll(".faq-question").forEach(question => {
         question.addEventListener("click", function() {
             const answer = this.nextElementSibling;

@@ -19718,6 +19718,11 @@ html {
       text-align: center !important;
     }
   }
+
+  section#block-marketplace-latest-exposedformsearch-apipage-1 {
+    position: relative !important;
+    z-index: 38 !important;
+}
   
   /*# sourceMappingURL=demo.css.map */
 
@@ -23786,3 +23791,14 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 
 
 /**************/
+
+.section-header #navbar nav.block-login ul.nav>li.first a,
+.section-header #navbar nav.block-login ul.nav>li.first a:visited,
+.section-header #navbar nav.block-login ul.nav>li.first a:hover {
+  color: #ffffff !important;
+}
+ 
+.section-header #navbar nav.block-login ul.nav>li.last a:hover {
+  color: #ffffff !important;
+  padding: 10px 20px !important;
+}
