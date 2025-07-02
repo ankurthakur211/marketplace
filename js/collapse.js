@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
-/* janet js changes for subscription*/
+    /* janet js changes for subscription*/
     if (feedback.includes("/subscription")) {
 
         let element = document.querySelector(".apicMainContent");
@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 `);;
         }
     }
-    
+
     if (window.location.pathname.includes("/subscription_noplan")) {
         let element = document.querySelector(".apicMainContent");
         if (element) {
@@ -284,8 +284,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 `);;
         }
     }
-    
-/* janet js changes for subscription*/
+
+    /* janet js changes for subscription*/
 
 
     if (feedback.endsWith("/product")) {
@@ -452,14 +452,14 @@ document.addEventListener("DOMContentLoaded", function() {
       `);
 
         const labels = document.querySelectorAll('.field--label');
-      
+
         // Add 'tag-header' class to each matched element
         labels.forEach(label => {
-          label.classList.add('tag-header');
+            label.classList.add('tag-header');
         });
-      }
+    }
 
-   /*for search api modifications*/
+    /*for search api modifications*/
 
 
     /* for nav bar menu responsive design*/
@@ -698,23 +698,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('form.user-login-form.pwd-see a.registry-button.generic-button.button').forEach(function(link) {
         try {
-          const originalHref = link.getAttribute('href');
-          const redirectMatch = originalHref.match(/([?&]redirect_uri=)([^&]+)/);
-       
-          if (redirectMatch && redirectMatch[2].includes('test.developer.api-marketplace.alrajhibank.com.sa')) {
-            const oldUri = decodeURIComponent(redirectMatch[2]);
-            const newUri = oldUri.replace(
-              'https://test.developer.api-marketplace.alrajhibank.com.sa',
-              'https://apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud'
-            );
-            const newHref = originalHref.replace(redirectMatch[0], `${redirectMatch[1]}${newUri}`);
-            link.setAttribute('href', newHref);
-          
-          }
+            const originalHref = link.getAttribute('href');
+            const redirectMatch = originalHref.match(/([?&]redirect_uri=)([^&]+)/);
+
+            // Update redirect_uri if it matches the original public domain
+            if (redirectMatch && redirectMatch[2].includes('test.developer.api-marketplace.alrajhibank.com.sa')) {
+                const oldUri = decodeURIComponent(redirectMatch[2]);
+                const newUri = oldUri.replace(
+                    'https://test.developer.api-marketplace.alrajhibank.com.sa',
+                    'https://apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud'
+                );
+                const newHref = originalHref.replace(redirectMatch[0], `${redirectMatch[1]}${encodeURIComponent(newUri)}`);
+                link.setAttribute('href', newHref);
+            }
+
+            // Change the display text in the span
+            const span = link.querySelector('span.registry-name');
+            if (span) {
+                span.textContent = 'Sign in with MFA';
+            }
+
         } catch (e) {
-          
+            console.error('Update failed:', e);
         }
-      })    ;
+    });
 
 
 

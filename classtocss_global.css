@@ -1,0 +1,8 @@
+/**
+ * classToCSS插件自动生成的全局样式，任何手动修改都会被覆盖
+ * 需要手动引入到全局生效的位置，如index.html
+ */
+.block { display: block; }
+.mid-between { justify-content: space-between; }
+.mid-around { justify-content: space-around; }
+.mid-evenly { justify-content: space-evenly; }

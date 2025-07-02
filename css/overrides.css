@@ -14827,8 +14827,7 @@ margin-left: 38%; */
     padding-top: 94px;
     display: flex;
     justify-content: center;
-    align-items: cent
-    er;
+    align-items: cent er;
     width: 100%;
 }
 
@@ -14858,7 +14857,6 @@ margin-left: 38%; */
 }
 
 .Notification-Engine-SMS-GW-architecture-img-page {
-    
     content: url("images/arb-architecture.png");
     padding-top: 94px;
     display: flex;
@@ -19445,13 +19443,13 @@ body.context--BusinessDomains .apicMainContent {
 
 html {
     scroll-behavior: smooth;
-  }
-  
-  body.context--partner-product {
+}
+
+body.context--partner-product {
     background: transparent !important;
-  }
-  
-  .custom-partner-domain .Products-business-field-background {
+}
+
+.custom-partner-domain .Products-business-field-background {
     background: transparent !important;
     width: 100% !important;
     left: 0 !important;
@@ -19461,35 +19459,40 @@ html {
     padding-bottom: 0px !important;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .custom-partner-domain .Products-business-field-background .hero-contentbox {
+}
+
+.custom-partner-domain .Products-business-field-background .hero-contentbox {
     width: 50%;
     padding-left: 40px;
     padding-right: 40px;
-  }
-  .custom-partner-domain .Products-business-field-background .hero-contentbox .Products-business-text {
+}
+
+.custom-partner-domain .Products-business-field-background .hero-contentbox .Products-business-text {
     font-size: 28px !important;
     color: #11183b !important;
     font-weight: 300 !important;
     text-align: start;
     margin-bottom: 10px !important;
-  }
-  .custom-partner-domain .Products-business-field-background .hero-contentbox .product-subtext {
+}
+
+.custom-partner-domain .Products-business-field-background .hero-contentbox .product-subtext {
     font-size: 60px !important;
     color: #5464f2 !important;
     line-height: unset;
     text-align: start !important;
     font-style: italic;
     margin-bottom: 15px;
-  }
-  .custom-partner-domain .Products-business-field-background .hero-contentbox .herosec-disc {
+}
+
+.custom-partner-domain .Products-business-field-background .hero-contentbox .herosec-disc {
     font-size: 22px;
     color: #11183b;
     font-weight: 300;
     line-height: 35px;
     margin-bottom: 44px;
-  }
-  .custom-partner-domain .Products-business-field-background .hero-contentbox .heroscroll-btn {
+}
+
+.custom-partner-domain .Products-business-field-background .hero-contentbox .heroscroll-btn {
     background-color: #5464f2;
     color: #fff;
     padding: 10px 10px 10px 40px;
@@ -19500,30 +19503,36 @@ html {
     width: fit-content;
     gap: 20px;
     font-weight: 500;
-  }
-  .custom-partner-domain .Products-business-field-background .heroimg-sec {
+}
+
+.custom-partner-domain .Products-business-field-background .heroimg-sec {
     width: 50%;
-  }
-  .custom-partner-domain .Products-business-field-background .heroimg-sec .heroimg {
+}
+
+.custom-partner-domain .Products-business-field-background .heroimg-sec .heroimg {
     width: 80%;
     margin: auto;
     content: url("images/partner-heroimg.png");
-  }
-  .custom-partner-domain .maincontent-sec {
+}
+
+.custom-partner-domain .maincontent-sec {
     padding-top: 60px;
     margin-top: 0 !important;
-  }
-  .custom-partner-domain .maincontent-sec * {
+}
+
+.custom-partner-domain .maincontent-sec * {
     font-family: "main-font", sans-serif !important;
-  }
-  .custom-partner-domain .maincontent-sec .rightbox-sec {
+}
+
+.custom-partner-domain .maincontent-sec .rightbox-sec {
     background-color: transparent !important;
     padding: 0 40px 50px !important;
     border: none !important;
     overflow: unset !important;
     box-shadow: unset !important;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-api-image {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-api-image {
     position: relative;
     background: transparent !important;
     box-shadow: 0px 0px 10.04px 0px rgba(0, 0, 0, 0.1490196078);
@@ -19533,8 +19542,9 @@ html {
     align-items: center;
     padding: 20px;
     margin-bottom: 60px;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-api-image::after {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-api-image::after {
     content: "";
     width: 322px;
     height: 322px;
@@ -19544,8 +19554,9 @@ html {
     top: -100px;
     border-radius: 230px;
     left: -100px;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-api-image::before {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-api-image::before {
     content: "";
     width: 364px;
     height: 364px;
@@ -19555,167 +19566,180 @@ html {
     top: 0;
     right: 100px;
     border-radius: 230px;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec {
     width: 45%;
     position: relative;
     z-index: 2;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
     width: 80%;
     margin: auto;
     content: url("images/loalitybox-img.png");
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-api-image .content-box {
     width: 55%;
     padding: 30px;
     padding-right: 60px;
     position: relative;
     z-index: 2;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
     margin-bottom: 30px;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
-  .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
+.custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
     color: #11183b;
     line-height: unset;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-all-card {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-all-card {
     margin: 0;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one {
     margin-top: 0 !important;
     padding-top: 0 !important;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one.redemption-access {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one.redemption-access {
     margin-top: 60px !important;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .Products-business-title {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .Products-business-title {
     font-weight: 600;
     color: #11183b !important;
     margin-bottom: 44px;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter {
     gap: 50px !important;
-  }
-  .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter .productcard-box {
+}
+
+.custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter .productcard-box {
     width: calc(33.3333333333% - 34px) !important;
-  }
-  
-  @media (max-width: 991px) {
+}
+
+@media (max-width: 991px) {
     .custom-partner-domain .Products-business-field-background .hero-contentbox {
-      width: 100%;
-      margin-bottom: 60px;
+        width: 100%;
+        margin-bottom: 60px;
     }
     .custom-partner-domain .Products-business-field-background .heroimg-sec {
-      width: 100%;
+        width: 100%;
     }
     .custom-partner-domain .Products-business-field-background .heroimg-sec .heroimg {
-      width: 70%;
+        width: 70%;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec {
-      width: 45%;
+        width: 45%;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
-      width: 80%;
+        width: 80%;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
-      text-align: start !important;
-      font-size: 40px !important;
+        text-align: start !important;
+        font-size: 40px !important;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
-      text-align: start !important;
+        text-align: start !important;
     }
     .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter {
-      gap: 50px !important;
+        gap: 50px !important;
     }
     .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter .productcard-box {
-      width: calc(50% - 34px) !important;
+        width: calc(50% - 34px) !important;
     }
-  }
-  @media (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
     .custom-partner-domain .Products-business-field-background .hero-contentbox .Products-business-text {
-      text-align: center;
+        text-align: center;
     }
     .custom-partner-domain .Products-business-field-background .hero-contentbox .product-subtext {
-      text-align: center !important;
+        text-align: center !important;
     }
     .custom-partner-domain .Products-business-field-background .hero-contentbox .herosec-disc {
-      text-align: center;
+        text-align: center;
     }
     .custom-partner-domain .Products-business-field-background .hero-contentbox .heroscroll-btn {
-      margin: 0 auto;
+        margin: 0 auto;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image {
-      flex-direction: column !important;
+        flex-direction: column !important;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec {
-      width: 100%;
+        width: 100%;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
-      width: 60%;
+        width: 60%;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box {
-      width: 100%;
-      padding-right: 30px;
+        width: 100%;
+        padding-right: 30px;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
-      text-align: center !important;
-      font-size: 40px !important;
-      line-height: unset !important;
+        text-align: center !important;
+        font-size: 40px !important;
+        line-height: unset !important;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
-      text-align: center !important;
+        text-align: center !important;
     }
     .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter {
-      gap: 50px !important;
+        gap: 50px !important;
     }
     .custom-partner-domain .maincontent-sec .Products-business-all-card .Products-business-cards-row-one .product-cardoutter .productcard-box {
-      width: 100% !important;
+        width: 100% !important;
     }
-  }
-  @media (max-width: 576px) {
+}
+
+@media (max-width: 576px) {
     .custom-partner-domain .Products-business-field-background {
-      flex-direction: column-reverse;
+        flex-direction: column-reverse;
     }
     .custom-partner-domain .Products-business-field-background .hero-contentbox {
-      margin-bottom: 0;
-      margin-top: 40px;
+        margin-bottom: 0;
+        margin-top: 40px;
     }
     .custom-partner-domain .Products-business-field-background .hero-contentbox .Products-business-text {
-      font-size: 22px !important;
+        font-size: 22px !important;
     }
     .custom-partner-domain .Products-business-field-background .hero-contentbox .product-subtext {
-      font-size: 40px !important;
+        font-size: 40px !important;
     }
     .custom-partner-domain .Products-business-field-background .hero-contentbox .herosec-disc {
-      font-size: 18px;
-      line-height: 30px;
-      margin-bottom: 34px;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 34px;
     }
     .custom-partner-domain .Products-business-field-background .hero-contentbox .heroscroll-btn {
-      font-size: 18px;
+        font-size: 18px;
     }
     .custom-partner-domain .Products-business-field-background .heroimg-sec .heroimg {
-      width: 90%;
+        width: 90%;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .image-sec .loalityimage {
-      width: 80%;
+        width: 80%;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box {
-      width: 100%;
-      padding-right: 30px;
+        width: 100%;
+        padding-right: 30px;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header {
-      font-size: 30px !important;
-      margin-bottom: 10px;
+        font-size: 30px !important;
+        margin-bottom: 10px;
     }
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-header,
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
-      text-align: center !important;
+        text-align: center !important;
     }
   }
 
@@ -21344,74 +21368,69 @@ form#user-login-form input {
     border-top: 0px solid #e0e0e0 !important;
 }
 
+
 /* About Us Responsiveness Janet */
 
 @media (max-width: 640px) {
     .context--about-us .about-us-sec.updated-aboutus {
-      padding-top: 70px !important;
+        padding-top: 70px !important;
     }
-  
     .context--about-us .accelarate-your-business-search-header,
     .context--about-us .accelarate-your-business-api-header,
     .context--about-us .accelarate-your-business-diagram-header {
-      position: unset;
-      margin-left: unset;
-      margin-top: unset;
-      font-size: 20px;
-      color: #1b2c90;
-      line-height: 32px;
+        position: unset;
+        margin-left: unset;
+        margin-top: unset;
+        font-size: 20px;
+        color: #1b2c90;
+        line-height: 32px;
     }
-  
     .context--about-us .accelarate-your-business-card {
-      width: 100%;
-      margin-bottom: 30px;
-      display: flex !important;
-      flex-direction: column !important;
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex !important;
+        flex-direction: column !important;
     }
-  
     .context--about-us .our-values {
-      display: flex;
-      justify-content: space-between;
-      flex-flow: column;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
     }
-  }
-  
-  @media (max-width: 530px) {
+}
+
+@media (max-width: 530px) {
     .context--about-us .updated-aboutus .row .col-md-6 {
-      padding-right: 0px !important;
-      padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
     }
-  
     .context--about-us .about-us-background {
-      margin: 0px 0px 0 25px !important;
+        margin: 0px 0px 0 25px !important;
     }
-  
     .context--about-us .about-block-2 .about-us-content {
-      font-size: 45px !important;
+        font-size: 45px !important;
     }
-  }
-  
-  @media (max-width: 365px) {
+}
+
+@media (max-width: 365px) {
     .context--about-us .about-block-2 .about-us-content {
-      font-size: 35px !important;
+        font-size: 35px !important;
     }
-  }
-  
-  @media (max-width: 320px) {
+}
+
+@media (max-width: 320px) {
     .context--about-us .about-block-2 {
-      position: relative;
-      z-index: 2;
-      background-color: #1a2c90;
-      padding: 55px 10px 55px 10px;
+        position: relative;
+        z-index: 2;
+        background-color: #1a2c90;
+        padding: 55px 10px 55px 10px;
     }
-  
     .context--about-us .about-us-content {
-      font-size: 35px !important;
+        font-size: 35px !important;
     }
-  }
-  
-  /* About Us Responsiveness Janet */
-  
+}
+
+
+/* About Us Responsiveness Janet */
 
 
 /*Janet about us new*/
@@ -23353,13 +23372,14 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 
 /* APIs Page Design Janet */
 
+
 /* Solving Issues of Responsiveness Janet */
 
 .path-product .apiconnect-explorer .labelText {
     width: 100% !important;
-  }
-  
-  .custom-APIproduct .apicProductTitleText h1.productName.apicTruncate {
+}
+
+.custom-APIproduct .apicProductTitleText h1.productName.apicTruncate {
     white-space: normal;
     width: 100%;
     margin-bottom: 22px;
@@ -23367,370 +23387,310 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     font-weight: bold !important;
     line-height: 50px !important;
     z-index: 1;
-  }
-  
-  .custom-APIproduct
-    .apicProduct
-    .SplitPane.vertical
-    .apicProductBody
-    .field.plans
-    .planComparisonTable
-    .apicPlans
-    .planCard {
+}
+
+.custom-APIproduct .apicProduct .SplitPane.vertical .apicProductBody .field.plans .planComparisonTable .apicPlans .planCard {
     width: 18.75rem;
-  }
-  
-  @media (min-width: 767px) and (max-width: 880px) {
-    .context--BusinessDomains
-      .products-businessbox.custom-business-domainpage
-      .maincontent-sec
-      .rightbox-sec
-      .Products-business-api-image
-      .Products-business-api-header {
-      font-size: 40px;
+}
+
+@media (min-width: 767px) and (max-width: 880px) {
+    .context--BusinessDomains .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-api-image .Products-business-api-header {
+        font-size: 40px;
     }
-  
-    .context--BusinessDomains
-      .products-businessbox.custom-business-domainpage
-      .maincontent-sec
-      .leftside-menu
-      .Products-business-menu
-      .sidemenu-navitems
-      .api-list {
-      padding: 25px 0px !important;
-      padding-left: 25px !important;
+    .context--BusinessDomains .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu .sidemenu-navitems .api-list {
+        padding: 25px 0px !important;
+        padding-left: 25px !important;
     }
-  }
-  
-  .path-subscription .subscriptionWizardTitle h3,
-  .path-subscription-noplan .subscriptionWizardTitle h3 {
+}
+
+.path-subscription .subscriptionWizardTitle h3,
+.path-subscription-noplan .subscriptionWizardTitle h3 {
     font-weight: bold !important;
     z-index: 1;
     position: relative;
-  }
-  
-  @media (max-width: 735px) {
-    .route-ibm-apimsubscription-wizardnoplan
-      .apicMainContent
-      .apicSubscribeAppForm,
-    .route-ibm-apimsubscription-wizardnoplanstep
-      .apicMainContent
-      .apicSubscribeAppForm,
-    .route-ibm-apimsubscription-wizardstep
-      .apicMainContent
-      .apicSubscribeAppForm {
-      display: block;
-    }
-  
-    .path-subscription-noplan
-      .apicSubscribeChooseApp
-      .apicSubscribeAppForm
-      .apicSubscribeNewAppWrapper,
-    .path-subscription
-      .apicSubscribeChooseApp
-      .apicSubscribeAppForm
-      .apicSubscribeNewAppWrapper {
-      margin-bottom: 30px;
-    }
-  }
-  
-  .path-subscription .field--name-apic-tags .field--item,
-  .path-subscription-noplan .field--name-apic-tags .field--item {
-    margin-bottom: 35px;
-  }
-  
-  .path-product
-    .productApiWrapper
-    .titleInnerWrapper
-    .leftTitle
-    .apicProductTitle
-    .apicProductTitleText {
-    z-index: 1;
-  }
+}
 
-  .custom-APIproduct
-  .apicProduct
-  .SplitPane.vertical
-  .apicProductBody
-  .field.plans
-  .planComparisonTable
-  .apicPlans
-  .planCard {
-  width: 18.75rem !important;
+@media (max-width: 735px) {
+    .route-ibm-apimsubscription-wizardnoplan .apicMainContent .apicSubscribeAppForm,
+    .route-ibm-apimsubscription-wizardnoplanstep .apicMainContent .apicSubscribeAppForm,
+    .route-ibm-apimsubscription-wizardstep .apicMainContent .apicSubscribeAppForm {
+        display: block;
+    }
+    .path-subscription-noplan .apicSubscribeChooseApp .apicSubscribeAppForm .apicSubscribeNewAppWrapper,
+    .path-subscription .apicSubscribeChooseApp .apicSubscribeAppForm .apicSubscribeNewAppWrapper {
+        margin-bottom: 30px;
+    }
+}
+
+.path-subscription .field--name-apic-tags .field--item,
+.path-subscription-noplan .field--name-apic-tags .field--item {
+    margin-bottom: 35px;
+}
+
+.path-product .productApiWrapper .titleInnerWrapper .leftTitle .apicProductTitle .apicProductTitleText {
+    z-index: 1;
+}
+
+.custom-APIproduct .apicProduct .SplitPane.vertical .apicProductBody .field.plans .planComparisonTable .apicPlans .planCard {
+    width: 18.75rem !important;
 }
 
 .custom-APIproduct .apicProductTitleText h1.productName.apicTruncate {
-  white-space: normal;
-  width: 100% !important;
-  margin-bottom: 22px;
+    white-space: normal;
+    width: 100% !important;
+    margin-bottom: 22px;
 }
 
 .context--about-us .updated-aboutus .about-block-0 svg {
-  position: absolute;
-  top: -120px;
-  width: 100% !important;
+    position: absolute;
+    top: -120px;
+    width: 100% !important;
 }
 
 .context--about-us .updated-aboutus .api-doc-background-text {
-  font-size: 40px;
-  font-weight: 700;
-  margin: 0;
-  line-height: unset;
-  padding-left: 100px !important;
-  margin-left: 0px !important;
-  text-align: left;
-}
-
-@media (max-width: 370px) {
-  .context--about-us .updated-aboutus .api-doc-background-text {
     font-size: 40px;
     font-weight: 700;
     margin: 0;
     line-height: unset;
-    padding-left: 0px !important;
+    padding-left: 100px !important;
     margin-left: 0px !important;
     text-align: left;
-  }
+}
+
+@media (max-width: 370px) {
+    .context--about-us .updated-aboutus .api-doc-background-text {
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0;
+        line-height: unset;
+        padding-left: 0px !important;
+        margin-left: 0px !important;
+        text-align: left;
+    }
 }
 
 .context--about-us .updated-aboutus .about-block-0 .row .col-md-12 {
-  padding-right: 0px !important;
-  padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 
 
-  
-  /* Solving Issues of Responsiveness Janet */
+/* Solving Issues of Responsiveness Janet */
 
 
-  /* Login, Get Started, Home, apps and products Pages Style Fixes and Responsiveness Janet */
+/* Login, Get Started, Home, apps and products Pages Style Fixes and Responsiveness Janet */
 
-.context--user-login
-.user-login-form
-.apic-user-form-registries
-.registry-button {
-padding: 15px !important;
-background: #5464f2;
-box-shadow: none;
-border-radius: 82px !important;
-font-family: "SF Pro Display";
-font-style: normal;
-font-weight: 600;
-font-size: 15px;
-line-height: 19px;
-width: inherit !important;
-justify-content: center;
-margin: auto;
+.context--user-login .user-login-form .apic-user-form-registries .registry-button {
+    padding: 15px !important;
+    background: #5464f2;
+    box-shadow: none;
+    border-radius: 82px !important;
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    width: inherit !important;
+    justify-content: center;
+    margin: auto;
 }
 
 .context--user-login .apic-user-form-inner-wrapper.apic-user-form-registries {
-padding-top: 0px !important;
+    padding-top: 0px !important;
 }
 
-.context--user-login
-.user-login-form
-.apic-user-form-wrapper
-.apic-user-form-or-container {
-margin-bottom: 0 !important;
-align-items: center !important;
-font-size: 20px !important;
-font-weight: 500 !important;
+.context--user-login .user-login-form .apic-user-form-wrapper .apic-user-form-or-container {
+    margin-bottom: 0 !important;
+    align-items: center !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
 }
 
 .context--GetStarted .getstarted-sec .get-started-div {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding-bottom: 9%;
-gap: 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 9%;
+    gap: 20px !important;
 }
 
 @media only screen and (max-width: 1200px) {
-.context--GetStarted .getstarted-sec .get-started-field,
-.context--GetStarted .getstarted-sec .get-started-field-button {
-  width: 100%;
-}
-
-.context--GetStarted .getstarted-sec .container-fluid .col-md-12 {
-  width: 60% !important;
-}
-
-.context--GetStarted .get-started-field-button {
-  margin-bottom: 35px !important;
-}
+    .context--GetStarted .getstarted-sec .get-started-field,
+    .context--GetStarted .getstarted-sec .get-started-field-button {
+        width: 100%;
+    }
+    .context--GetStarted .getstarted-sec .container-fluid .col-md-12 {
+        width: 60% !important;
+    }
+    .context--GetStarted .get-started-field-button {
+        margin-bottom: 35px !important;
+    }
 }
 
 .context--GetStarted .getstarted-sec .get-started-field {
-border-color: #556ff8 !important;
+    border-color: #556ff8 !important;
 }
 
 .context--GetStarted .api-doc-background {
-background: #1a1f4f;
-width: 100vw !important;
-padding: 15px 0 48px;
-height: max-content;
-margin-left: calc(-50vw + 50%) !important;
+    background: #1a1f4f;
+    width: 100vw !important;
+    padding: 15px 0 48px;
+    height: max-content;
+    margin-left: calc(-50vw + 50%) !important;
 }
 
 .context--GetStarted .getstarted-sec {
-padding: 30px 0 !important;
+    padding: 30px 0 !important;
 }
 
 @media (max-width: 640px) {
-.context--GetStarted .getstarted-sec {
-  padding: 60px 0 !important;
-}
+    .context--GetStarted .getstarted-sec {
+        padding: 60px 0 !important;
+    }
 }
 
 .context--HomePage .how-itworks-sec .primary-btn {
-margin-left: 30px !important;
-border: 2px solid #647dff;
-font-weight: 600;
-width: fit-content !important;
-padding: 15px 30px;
-background-color: #5464f2;
-color: white;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 4px 5px;
-cursor: pointer;
-border-radius: 32px;
-margin-top: 2%;
+    margin-left: 30px !important;
+    border: 2px solid #647dff;
+    font-weight: 600;
+    width: fit-content !important;
+    padding: 15px 30px;
+    background-color: #5464f2;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 5px;
+    cursor: pointer;
+    border-radius: 32px;
+    margin-top: 2%;
 }
 
 .context--HomePage .how-itworks-sec .primary-btn:hover {
-background-color: #8b9eff;
-color: white;
-width: fit-content !important;
-padding: 15px 30px;
-border: 2px solid #647dff;
+    background-color: #8b9eff;
+    color: white;
+    width: fit-content !important;
+    padding: 15px 30px;
+    border: 2px solid #647dff;
 }
 
-.context--HomePage
-.home-lets-get-started-background.updated-sec
-.lets-get-started-button-text
-.lets-get-started-button {
-padding: 15px 30px !important;
-color: #5464f2;
-border: 2px solid #5464f2;
+.context--HomePage .home-lets-get-started-background.updated-sec .lets-get-started-button-text .lets-get-started-button {
+    padding: 15px 30px !important;
+    color: #5464f2;
+    border: 2px solid #5464f2;
 }
 
-.context--HomePage
-.home-lets-get-started-background.updated-sec
-.lets-get-started-button-text
-.lets-get-started-button:hover {
-color: #fff;
-border: 2px solid #647dff;
-background: #647dff;
+.context--HomePage .home-lets-get-started-background.updated-sec .lets-get-started-button-text .lets-get-started-button:hover {
+    color: #fff;
+    border: 2px solid #647dff;
+    background: #647dff;
 }
 
 .context--HomePage .what-newsec .api-position {
-padding-left: unset;
-display: flex;
-flex-direction: column;
+    padding-left: unset;
+    display: flex;
+    flex-direction: column;
 }
 
 .context--HomePage .customwhat-newsec .How_to_get_started_discover,
 .context--HomePage .customwhat-newsec .How_to_get_started_develop {
-box-shadow: 0 0 40px #05093a17;
-flex-grow: 1;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-height: 100%;
+    box-shadow: 0 0 40px #05093a17;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .context--HomePage .home-whats-new-card {
-padding-top: 5% !important;
+    padding-top: 5% !important;
 }
 
 .context--product .custom-APIproduct {
-padding-top: 60px !important;
+    padding-top: 60px !important;
 }
 
 .context--application .custom-application div#apic-view-filter {
-align-items: end !important;
+    align-items: end !important;
 }
 
 .context--application .custom-application {
-padding-top: 60px !important;
+    padding-top: 60px !important;
 }
 
 .context--application .custom-applicationcards {
-clear: both;
-display: block;
-list-style: none;
-margin: 0 auto;
-padding: 0;
-width: 100%;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
+    clear: both;
+    display: block;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .custom-application .custom-applicationcards .grid {
-border: 0;
-background: transparent;
-box-shadow: unset;
-border-radius: unset;
-margin-right: 70px;
+    border: 0;
+    background: transparent;
+    box-shadow: unset;
+    border-radius: unset;
+    margin-right: 70px;
 }
 
 .custom-application .views-exposed-form.bef-exposed-form {
-align-items: end !important;
-margin-bottom: 80px !important;
+    align-items: end !important;
+    margin-bottom: 80px !important;
 }
 
 .custom-application a.button.apicNewApp {
-box-shadow: 0 4px 61px rgb(77 71 195 / 40%);
-height: 60px;
-font-style: normal;
-line-height: 29px;
-margin: 0 0.5rem 0 0;
-border: 2px solid #647dff;
-font-weight: 600;
-width: fit-content !important;
-padding: 15px 30px;
-background-color: #5464f2;
-color: white;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-cursor: pointer;
-border-radius: 32px;
+    box-shadow: 0 4px 61px rgb(77 71 195 / 40%);
+    height: 60px;
+    font-style: normal;
+    line-height: 29px;
+    margin: 0 0.5rem 0 0;
+    border: 2px solid #647dff;
+    font-weight: 600;
+    width: fit-content !important;
+    padding: 15px 30px;
+    background-color: #5464f2;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 32px;
 }
 
 .custom-application a.button.apicNewApp:hover {
-background-color: #8b9eff;
-color: white;
-width: fit-content !important;
-padding: 15px 30px;
-border: 2px solid #647dff;
+    background-color: #8b9eff;
+    color: white;
+    width: fit-content !important;
+    padding: 15px 30px;
+    border: 2px solid #647dff;
 }
 
 .path-product .node--type-api.node--view-mode-embedded.bx--card {
-border-radius: 20px !important;
+    border-radius: 20px !important;
 }
 
 .path-product .apicProductApiList .views-bootstrap-list-group .list-group-item {
-box-shadow: 0 4px 20px rgb(77 71 195 / 40%) !important;
+    box-shadow: 0 4px 20px rgb(77 71 195 / 40%) !important;
 }
 
 .path-product .bx--card .apicCardFooter {
-border-radius: 20px !important;
-margin-bottom: -6% !important;
-margin-left: -16px !important;
-width: 100% !important;
+    border-radius: 20px !important;
+    margin-bottom: -6% !important;
+    margin-left: -16px !important;
+    width: 100% !important;
 }
 
-/* Login, Get Started, Home, apps and products Pages Style Fixes and Responsiveness Janet */
 
-  
+/* Login, Get Started, Home, apps and products Pages Style Fixes and Responsiveness Janet */
 
 
 /* search bar Bassnt */
@@ -23795,10 +23755,46 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
 .section-header #navbar nav.block-login ul.nav>li.first a,
 .section-header #navbar nav.block-login ul.nav>li.first a:visited,
 .section-header #navbar nav.block-login ul.nav>li.first a:hover {
-  color: #ffffff !important;
+    color: #ffffff !important;
 }
- 
+
 .section-header #navbar nav.block-login ul.nav>li.last a:hover {
-  color: #ffffff !important;
-  padding: 10px 20px !important;
+    color: #ffffff !important;
+    padding: 10px 20px !important;
 }
+
+
+/*merna general edits*/
+
+.alert-dismissible {
+    margin-top: 50px;
+}
+
+
+/*merna general edits*/
+
+
+/*merna remove categories from api products*/
+
+.custom-APIproduct .views-exposed-form .form-item:nth-child(2) {
+    display: none;
+}
+
+li.page-managerpage-view-partner-partner-layout-builder-0.partner-domain {
+    display: none;
+}
+
+span.registry-name {
+    padding-left: .5rem;
+    max-width: 14.5rem;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 19px;
+}
+
+li.elipsis-names.createorg {
+    display: none;
+}
+
+
+/*merna remove categories from api products*/
