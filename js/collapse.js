@@ -743,6 +743,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 document.addEventListener("DOMContentLoaded", function() {
+
+
+  const coreTab = document.querySelector('.core-banking-tab');
+  const subTabs = document.getElementById('coreBankingSubtabs');
+
+  subTabs.style.display = "none";
+
+  if (coreTab && subTabs) {
+    coreTab.addEventListener('click', function () {
+      subTabs.style.display = (subTabs.style.display === 'none' || subTabs.style.display === '') 
+        ? 'block' 
+        : 'none';
+    });
+  }
+
+
+  if (window.location.href.includes('/search-api')) {
+    const title = document.querySelector('#page-node-title');
+    if (title) {
+      title.style.paddingLeft = 'unset';
+    }
+ 
+    const header = document.querySelector('h1.js-quickedit-page-title.page-header');
+    if (header) {
+      header.style.backgroundColor = 'transparent';
+      header.style.paddingBottom = '3rem';
+      header.style.fontSize = '40px';
+    }
+  }
+
+    
     function addBackgroundImages(selector) {
         const targetElement = document.querySelector(selector);
 
