@@ -645,7 +645,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Find the <a> tag with class 'opensearch' inside the clone and replace its class
             const openSearchLink = clonedSection.querySelector('a.opensearch');
             if (openSearchLink) {
-                openSearchLink.classList.remove('opensearch');
+                openSearchLink.classList.remove('opensearch'); 
                 openSearchLink.classList.add('opensearch2');
             }
 
