@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "a633c1e2-5bde-4a79-839c-b06171aff50f",
+		"name": "Modern Sandbox Drahim Portfolios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15708225"
+	},
+	"item": [
+		{
+			"name": "MP Drahim Portfolios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{public_url}}/mp-portfolio/v1/arb/investment-accounts?poiNumber=1112345543",
+					"host": [
+						"{{public_url}}"
+					],
+					"path": [
+						"mp-portfolio",
+						"v1",
+						"arb",
+						"investment-accounts"
+					],
+					"query": [
+						{
+							"key": "poiNumber",
+							"value": "1112345543"
+						}
+					]
+				},
+				"description": "This path is used to get rate confirmation"
+			},
+			"response": [
+				{
+					"name": "MP Drahim Portfolios",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{public_url}}/mp-portfolio/v1/arb/investment-accounts?poiNumber=1112345543",
+							"host": [
+								"{{public_url}}"
+							],
+							"path": [
+								"mp-portfolio",
+								"v1",
+								"arb",
+								"investment-accounts"
+							],
+							"query": [
+								{
+									"key": "poiNumber",
+									"value": "1112345543"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "695140f7-6da6-4fe3-8f11-b3d75dbfd75a"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c6834154700305012"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,99;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 May 2025 07:16:23 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"Accounts\": [\n            {\n                \"Id\": \"01JTR0BHTP5G5BFV86B19BT8EX\",\n                \"Iban\": \"SA8980991577770991559014\",\n                \"Bban\": \"915770990007701559014\",\n                \"Name\": \"محفظتي النشطة\",\n                \"Balance\": 10000\n            },\n            {\n                \"Id\": \"01JTR0BY9H80Z8EW1AZW02GZC0\",\n                \"Iban\": \"SA7380909759220991559012\",\n                \"Bban\": \"097590990002201559012\",\n                \"Name\": \"محفظتي الادخارية\",\n                \"Balance\": 95203\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "MP Drahim Portfolios",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{public_url}}/mp-portfolio/v1/arb/investment-accounts?poiNumber=1112345544",
+							"host": [
+								"{{public_url}}"
+							],
+							"path": [
+								"mp-portfolio",
+								"v1",
+								"arb",
+								"investment-accounts"
+							],
+							"query": [
+								{
+									"key": "poiNumber",
+									"value": "1112345544"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2a59114b-80fb-4aa2-9475-ef3a4f76ebf0"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68663fdd06b60800"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,97;"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 08:31:25 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"Accounts\": [\n            {\n                \"Id\": \"041JTR0BHTP5G5BFV86B19BT8WR\",\n                \"Iban\": \"SA8980991577770991559015\",\n                \"Bban\": \"915770990007701559015\",\n                \"Name\": \"محفظتي النشطة\",\n                \"Balance\": 2400\n            },\n            {\n                \"Id\": \"04JTR0BY9H80Z8EW1AZW02GZC0\",\n                \"Iban\": \"SA7380909759220991559038\",\n                \"Bban\": \"097590990002201559014\",\n                \"Name\": \"محفظتي الادخارية\",\n                \"Balance\": 10000\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "MP Drahim Portfolios",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{public_url}}/mp-portfolio/v1/arb/investment-accounts?poiNumber=1112345545",
+							"host": [
+								"{{public_url}}"
+							],
+							"path": [
+								"mp-portfolio",
+								"v1",
+								"arb",
+								"investment-accounts"
+							],
+							"query": [
+								{
+									"key": "poiNumber",
+									"value": "1112345545"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "c2cde4e5-ac3e-462b-bf19-7666600a72e1"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68664003027def23"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,96;"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 08:32:03 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"Accounts\": [\n            {\n                \"Id\": \"11JTR0BHTP5G5BFV86B19BT8EX\",\n                \"Iban\": \"SA8983391577770991559014\",\n                \"Bban\": \"915870990007701559014\",\n                \"Name\": \"محفظتي النشطة\",\n                \"Balance\": 75000\n            },\n            {\n                \"Id\": \"11JTR0BY9H80Z8EW1AZW02GZC0\",\n                \"Iban\": \"SA7380909759220991559044\",\n                \"Bban\": \"097590990002201559017\",\n                \"Name\": \"محفظتي الادخارية\",\n                \"Balance\": 25000\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "generate token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access-token\", data.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "marketplace_apis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{public_url}}/oauth2security/oauth2/token",
+					"host": [
+						"{{public_url}}"
+					],
+					"path": [
+						"oauth2security",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api-gateway.apic1005.ejada.com/apimarketplace-dev/api-marketplace-dev/oauth2security/oauth2/token' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'grant_type=client_credentials' \\\n--data-urlencode 'scope=marketplace_apis' \\\n--data-urlencode 'client_id=d02c19954bda615b8f2cd12583183b52' \\\n--data-urlencode 'client_secret=2783abcb79d95178ad42dfad1ae4432e'"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "marketplace_apis",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/oauth2security/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "public_url",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "client-timestamp",
+			"value": ""
+		}
+	]
+}

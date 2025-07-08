@@ -1,0 +1,247 @@
+<div class="product-details-document">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">The Enhance Drahim Portfolios API Documentation</p>
+    </div>
+
+    <div class="moterinsurance-sec">
+        <div class="container">
+            <div class="d-flex">
+                <div class="leftside-sec">
+                    <p class="fob-welcome-title" id="section-1">The Enhance Drahim Portfolios APIS</p>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">The primary objective of this project is to allow ARG entities to integrate portfolio visibility into their digital experiences and financial applications.</p>
+                </div>
+
+                <div class="rightside-sec">
+                    <p class="API-image">&nbsp;</p>
+                </div>
+            </div>
+
+            <div class="d-flex btn-box"><a target="_blank" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/ModernSandboxDrahimPortfolios.postman_collection.json"
+                    id="downloadLink">Download Postman Collection</a> <a target="_blank" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/EnhanceDrahimPortfoliosSampleRequestData.xlsx"
+                    id="downloadLink">Download
+                    Sample Data</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="miw-section">
+        <div class="container">
+            <h1 class="fob-welcome-title">The Enhance Drahim Portfolios Workflow</h1>
+
+            <p class="motoinsu-image">&nbsp;</p>
+            <a class="fob-product-title-click" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ARGEnhanceDrahimPortfoliosFlowDiagramv0.1.pdf"
+                rel="noopener" target="_blank">Click here </a>
+        </div>
+    </div>
+
+    <div class="APIs-section">
+        <div class="container">
+            <p class="main-heading">APIs</p>
+
+            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                <!-- API 1 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-2">Get Drahim Portfolios</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /arb/investment-accounts</p>
+
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/5019/api/5016#/MPGetDrahimPortfolios_100/operation/%2Farb%2Finvestment-accounts/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This path is used to allow ARG subsidiaries to retrieve investment account (portfolio) information associated with a specific user, identified by their national ID or Iqama number.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                <code class="sample-code">
+    Query Params:
+      poiNumber=1112345543
+                </code>
+              </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('TheEnhanceDrahimPortfolios-curl')">
+                                <p class="curlText">cURL</p>
+                            </button>
+
+                            <pre id="generatedCurl">
+                <code id="TheEnhanceDrahimPortfolios-curl">
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-portfolio/v1/arb/investment-accounts?poiNumber=1112345543' \
+    --header 'Accept: application/json' \
+    --header 'x-request-id: 1a8a7ba1-1e51-4192-8b16-a2513488abc2' \
+    --header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODEfrVhpKCc3o61mtHX96LOAuw_ev7-WbJtXuARUNoBf4zcNglkVkj9xY6lVN2umwvsF8m7hrgJasEA47MXxAwiAerTNfNKeF7EZm0-KSicdGUdkvLp08ws6roFVfuvU-FgcrTQfuG7CfnFmW5dx7MzI' \
+    --header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=473293834.24438.0000'            
+                </code>
+              </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios4')">403</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios5')">404</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios6')">405</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios7')">406</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios8')">429</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios9')">500</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('TheEnhanceDrahimPortfolios10')">503</a>
+                                </div>
+
+                                <pre class="response-box">
+
+                  <code class="text" id="TheEnhanceDrahimPortfolios" style=" display: block; ">
+    {
+      "Data": {
+          "Accounts": [
+              {
+                  "Id": "01JTR0BHTP5G5BFV86B19BT8EX",
+                  "Iban": "SA8980991577770991559014",
+                  "Bban": "915770990007701559014",
+                  "Name": "محفظتي النشطة",
+                  "Balance": 10000
+              },
+              {
+                  "Id": "01JTR0BY9H80Z8EW1AZW02GZC0",
+                  "Iban": "SA7380909759220991559012",
+                  "Bban": "097590990002201559012",
+                  "Name": "محفظتي الادخارية",
+                  "Balance": 95203
+              }
+          ]
+      }
+  }
+                  </code>
+                  <code class="text" id="TheEnhanceDrahimPortfolios2" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.400.001",
+          "Message": "Bad Request",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                  <code class="text" id="TheEnhanceDrahimPortfolios3" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.401.001",
+          "Message": "Unauthorized to call the target operation.",
+          "Path": "authorization",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>	
+                
+                  <code class="text" id="TheEnhanceDrahimPortfolios4" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.403.001",
+          "Message": "Can't find any valid subscription.",
+          "Path": "authorization",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                
+                  <code class="text" id="TheEnhanceDrahimPortfolios5" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.404.001",
+          "Message": "No resources match requested URI.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                
+                  <code class="text" id="TheEnhanceDrahimPortfolios6" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.405.001",
+          "Message": "The method is not allowed for the requested URL.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                        
+                  </code>
+                
+                  <code class="text" id="TheEnhanceDrahimPortfolios7" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.406.001",
+          "Message": "An appropriate representation of the requested resource could not be found",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                
+                  <code class="text" id="TheEnhanceDrahimPortfolios8" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.429.001",
+          "Message": "Assembly Rate Limit exceeded.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                
+                  <code class="text" id="TheEnhanceDrahimPortfolios9" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.500.001",
+          "Message": "Internal Error.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                  <code class="text" id="TheEnhanceDrahimPortfolios10" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.503.001",
+          "Message": "Service Unavailable.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
