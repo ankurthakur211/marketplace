@@ -748,7 +748,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const coreTab = document.querySelector('.core-banking-tab');
   const subTabs = document.getElementById('coreBankingSubtabs');
 
-  subTabs.style.display = "none";
+  if(subTabs)
+  {
+    subTabs.style.display = "none";
+  }
+ 
 
   if (coreTab && subTabs) {
     coreTab.addEventListener('click', function () {
