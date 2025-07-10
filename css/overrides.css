@@ -19748,10 +19748,24 @@ body.context--partner-product {
     z-index: 38 !important;
 }
   
-  /*# sourceMappingURL=demo.css.map */
+body.context--BusinessDomains .apicMainContent {
+    margin-top: 0;
+}
+ 
+.products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu {
+   overflow: auto;
+   max-height: 670px;
+}
+ .custom-herosec.updated-herosec .computer-image {
+   right: -320px !important;
+}
+ 
+@media(max-width: 1399px){
+.custom-herosec.updated-herosec .computer-image {
+   right: -40px;
+}
+}
 
-
-/*# sourceMappingURL=demo.css.map */
 
 
 /*updating home page feb ankiee*/
