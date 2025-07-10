@@ -8,9 +8,10 @@
 .mid-evenly { justify-content: space-evenly; }
 .mt-0 { margin-top:  0px;  }
 .row { display: flex; flex-direction: row; }
-.content-box { box-sizing: content-box; }
 .text-center { text-align: center; }
 .w-100 { width:  100px;  }
+.block { display: block; }
+.content-box { box-sizing: content-box; }
 /* apply result */
 .app-reset { padding:  0px;  margin:  0px;  box-sizing: content-box;  }
 .mid { display: flex; align-items: center;  }

@@ -695,6 +695,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 document.addEventListener('DOMContentLoaded', function() {
+    const parent = document.querySelector('.apicSubscribeAppForm');
+
+    if (parent) {
+        const createAppLink = parent.querySelector('a[href="/sandbox/application/new/modal"]');
+        if (createAppLink) {
+            createAppLink.href = '/sandbox/application/new';
+        }
+    }
 
     document.querySelectorAll('form.user-login-form.pwd-see a.registry-button.generic-button.button').forEach(function(link) {
         try {
