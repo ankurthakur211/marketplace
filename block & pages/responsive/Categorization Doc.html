@@ -1,0 +1,257 @@
+<div class="product-details-document categorize-page">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Categorization API Documentation</p>
+    </div>
+
+    <div class="moterinsurance-sec">
+        <div class="container">
+            <div class="d-flex">
+                <div class="leftside-sec">
+                    <p class="fob-welcome-title" id="section-1">Categorization APIS</p>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">The primary objective of this project is to enable Drahim to avail
+                        Categorization through API Marketplace.</p>
+                </div>
+
+                <div class="rightside-sec">
+                    <p class="API-image">&nbsp;</p>
+                </div>
+            </div>
+
+            <div class="d-flex btn-box"><a download=""
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxDrahimCategorizationAPIs.postman_collection.json"
+                    id="downloadLink">Download Postman Collection</a> <a download=""
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/DrahimCategorizationSampleRequestData.xlsx">Download
+                    Sample Data</a></div>
+        </div>
+    </div>
+
+    <div class="miw-section custom-sec">
+        <div class="container">
+            <h1 class="fob-welcome-title">Categorization Workflow</h1>
+
+            <p class="motoinsu-image">&nbsp;</p>
+            <a download=""
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/Drahim'sCategorizationFlowDiagramv0.1.pdf"
+                id="downloadLink">Click here</a>
+        </div>
+    </div>
+
+    <div class="APIs-section">
+        <div class="container">
+            <p class="main-heading">APIs</p>
+
+            <div class="bx--snippet-container body" data-testid="expandable-example-display"><!-- API 1 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-2">Categorize Vote</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint:/mp-categorization/v1/merchants/category-vote</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/3121#/MPDrahimCategorization_100/operation/%2Fmerchants%2Fcategory-vote/post">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This path to help Drahim AI Engine to categorize better by passing the
+                        user change of merchant category, this change will be handled as a vote on the category. Drahim
+                        Engine analyzes the votes and enhances its self to give better results.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+Request Body
+{
+    "Data": {
+      "MerchantId": "01J46X0AAECE5RV653B6ACJN8A",
+      "UserId": "string",
+      "CategoryId": "14"
+    }
+}
+                    </code>
+                  </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top"
+                                type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-create-person-profile-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                    <code id="Categorize-VoteFor-ARB-curl">
+
+curl --location 'https://sit.    api-marketplace.alrajhibank.com.sa/    apimarketplace-sit/mp-sandbox/    mp-categorization/v1/merchants/    category-vote' \--header 'x-request-id:     27e3609e-c7eb-4195-8881-96308d109415' \--header 'Content-Type: application/json' \--header 'Accept: application/json' \--header 'Authorization: ••••••' \--data '{  "Data": {    "MerchantId":         "01J46X0AAECE5RV653B6ACJN8A",    "UserId": "string",    "CategoryId": "14"  }}'
+                    </code>
+                  </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a class="response-box-error" onclick="responseText('Categorize-VoteFor-ARB')" type="button">200</a> 
+                                    <a class="response-box-error" onclick="responseText('Categorize-VoteFor-ARB3')" type="button">422</a>
+                                </div>
+
+                                <pre class="response-box">
+
+                      <code style=" display: none; " class="text" id="Categorize-VoteFor-ARB">
+{
+    "Data": {
+        "VotingMessage": "thanks for sharing the vote, system will be better because of you"
+    }
+}                       
+                      </code>
+                      <code style=" display: none; " class="text" id="Categorize-VoteFor-ARB3">
+{
+    "Errors": [
+        {
+        "Code": "NTSP.ERROR.422.001",
+        "Message": "Instructed identification is missing",
+        "Path": "Data.Initiation.InstructionIdentification",
+        "Url": "https://{baseURL}/developer-portal/term"
+        }
+    ]
+}
+                      </code>	
+                    
+                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 2 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-3">Categorize Merchant For ARB</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-categorization/v1/merchants/categorize</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/3121#/MPDrahimCategorization_100/operation/%2Fmerchants%2Fcategorize/post">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This path is used to utilize Drahim AI Engine to categorize the passed
+                        merchant.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+Request Body
+{
+    "Data": {
+        "MerchantName": "stc pay",
+        "MerchantId": "string",
+        "MerchantMccCode": "string",
+        "MerchantPaymentType": "string"
+    }
+}                                                 
+                        </code>
+                      </pre>
+                        </div>
+
+                        <div class="url-box"><!-- <div class="code-box"> --><button
+                                class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                          <code id="Categorize-Merchant-For-ARB-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-categorization/v1/merchants/categorize' \
+--header 'x-request-id: f0774dc2-6d0c-4d50-ad3a-65fd0c1d958d' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"Data": {
+"MerchantName": "stc pay",
+"MerchantId": "string",
+"MerchantMccCode": "string",
+"MerchantPaymentType": "string"
+}
+}'
+                          </code>
+                        </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a class="response-box-error" onclick="responseText('Categorize-Merchant-For-ARB')" type="button">200</a> 
+                                    <a class="response-box-error" onclick="responseText('Categorize-Merchant-For-ARB3')" type="button">422</a>
+                                    <a class="response-box-error" onclick="responseText('Categorize-Merchant-For-ARB4')" type="button">403</a>
+                                </div>
+
+                                <pre class="response-box">
+
+                <code style=" display: none; " class="text" id="Categorize-Merchant-For-ARB">
+{
+    "Data": {
+        "Id": "01J5101BG3WW1K03YEQPFT3XT1",
+        "MerchantName": "stc pay",
+        "CategoryId": "2",
+        "CategoryName": "INTERNET"
+    }
+}
+                 </code>
+
+                <code style=" display: none; " class="text" id="Categorize-Merchant-For-ARB3">
+{
+    "Errors": [
+        {
+            "Code": "NTSP.ERROR.422.001",
+            "Message": "Instructed identification is missing",
+            "Path": "Data.Initiation.InstructionIdentification",
+            "Url": "https://{baseURL}/developer-portal/term"
+        }
+    ]
+}
+                
+                </code>	
+                
+                <code style=" display: none; " class="text" id="Categorize-Merchant-For-ARB4">
+{
+    "Errors": [
+        {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}   
+                </code>
+                
+                      </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

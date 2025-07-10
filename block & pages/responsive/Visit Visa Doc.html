@@ -1,0 +1,589 @@
+<div class="product-details-document">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Visit Visa Extension API Documentation</p>
+    </div>
+
+    <div class="moterinsurance-sec">
+        <div class="container">
+            <div class="d-flex">
+                <div class="leftside-sec">
+                    <p class="fob-welcome-title" id="section-1">Visit Visa Extension APIs</p>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Visit Visa Extension service facilitates the validation of customer visa
+                        details, retrieval of visit visa duration, fetching medical declaration questions, obtaining
+                        policy price, and creating a Visit Visa Extension policy. The main goal for this project is to
+                        enable ART to avail applying for visitor visa extension through API Marketplace. The visitor
+                        visa extension works on those who are in the Kingdom only and wish to extend their visit 7 days
+                        or less before its end, provided that the visitor is eligible to travel and that there are no
+                        traffic rules for him.</p>
+                </div>
+
+                <div class="rightside-sec">
+                    <p class="API-image">&nbsp;</p>
+                </div>
+            </div>
+
+            <div class="d-flex btn-box"><a class="primary-btn" download=""
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Visit_Visa_Extension.postman_collection.json"
+                    id="downloadLink">Download Postman Collection</a> <a class="primary-btn" download=""
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/VisitVisaExtensionSampleRequestData.xlsx">Download
+                    Sample Data</a></div>
+        </div>
+    </div>
+
+    <div class="miw-section">
+        <div class="container">
+            <h1 class="fob-welcome-title">Visit Visa Extension Workflow</h1>
+
+            <p class="motoinsu-image">&nbsp;</p>
+            <a class="fob-product-title-click"
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/VisitVisaDoc" rel="noopener"
+                target="_blank">Click here </a>
+        </div>
+    </div>
+
+    <div class="APIs-section">
+        <div class="container">
+            <p class="main-heading">APIs</p>
+
+            <div class="bx--snippet-container body" data-testid="expandable-example-display"><!-- API 1 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-2">Validate Customer Visa Details</h1>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-visit-visa-extension/v1/visa-info</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/2884#/MPVisitVisaExtensionAPIs_100/operation/%2Fvisa-info/post">Swagger
+                            Link </a></p>
+
+                    <p class="fob-welcome-text">It is used for validating customer visa details and return reference ID.
+                    </p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                       <code class="sample-code">
+                        Request Body{
+                            "Data":{
+                            "visaNumber": "6091954453",
+                            "visaExpiryDate": "16-08-2023",
+                            "visaPeriod": "90",
+                            "mobileNumber": "567890099",
+                            "email": "example@company.com"
+                            }
+                        }
+                      </code>
+                    </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('citizen-curl')">
+                            <p class="curlText">cURL</p>
+                        </button>
+
+                            <pre id="generatedCurl">
+                      <code id="citizen-curl">
+                        curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/visit-visa-extension/visa-info' \
+                        --header 'Content-Type: application/json' \
+                        --header 'Accept: application/json' \
+                        --header 'SourceSystem: Ejada' \
+                        --header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODEznf7WBXODRzbPc8Tv5InqsFe74Vq60KN1i6tEobyEqA2CxysRoSj6dW3RENyi4gbrXblRT-wfq6jCxjMnzPmYgOFNkzRQbD9phb-VIntfqyzw6HiZJ-UZxbBH1Hi4Q-zUtaxk-e0gYEjRdQBXJ6eD' \
+                        --data-raw '{
+                            "visaNumber": "6089904658",
+                            "visaExpiryDate": "16-08-2023",
+                            "visaPeriod": "90",
+                            "mobileNumber": "567890099",
+                            "email": "harish.singh@alrajhitakaful.com"
+                        }'
+                      </code>
+                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('response-visainfo')">200</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-visainfo2')">400</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-visainfo3')">401</a></div>
+
+                                <pre class="response-box">
+
+                                        <code class="text" id="response-visainfo" style=" display: block; ">
+    {
+        "meta": {
+            "status": 1,
+            "statusCode": 200
+        },
+        "data": {
+            "referenceId": "U2FsdGVkX19HILTf9XDN67pY8lDuMfVSfn0m5iPAhJc%3D"
+        }
+        }
+                                        </code>
+    
+    
+                                        <code class="text" id="response-visainfo2" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                                                </code>
+                                        <code class="text" id="response-visainfo3" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                        </code>
+                                 </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 2 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-3">Get Visit Visa Duration</h1>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-visit-visa-extension/v1/policy-durations</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/2884#/MPVisitVisaExtensionAPIs_100/operation/%2Fpolicy-durations/get">Swagger
+                            Link </a></p>
+
+                    <p class="fob-welcome-text">It is used to get visit visa duration in days.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                       <code class="sample-code">
+                        Query Params:
+                        policyType :vve
+                        language :en
+                      </code>
+                    </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('citizen-curl')">
+                            <p class="curlText">cURL</p>
+                        </button>
+
+                            <pre id="generatedCurl">
+                      <code id="citizen-curl">
+                        curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/content/getpolicydurations?policyType=vve&amp;language=en' \
+                        --header 'Accept: application/json' \
+                        --header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODEznf7WBXODRzbPc8Tv5InqsFe74Vq60KN1i6tEobyEqA2CxysRoSj6dW3RENyi4gbrXblRT-wfq6jCxjMnzPmYgOFNkzRQbD9phb-VIntfqyzw6HiZJ-UZxbBH1Hi4Q-zUtaxk-e0gYEjRdQBXJ6eD'
+                      </code>
+                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('response-getpolicydurations')">200</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-getpolicydurations2')">400</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-getpolicydurations3')">401</a></div>
+
+                                <pre class="response-box">
+
+                                <code class="text" id="response-getpolicydurations" style=" display: block; ">
+    {
+        "result": {
+            "quotaionNumber": "Q230903-MTI-5235437049738",
+            "referenceId": "452250455212",
+            "sourceSystem": "ARB Mubasher"
+        }
+    }
+                                 </code>
+                                <code class="text" id="response-getpolicydurations2" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                </code>
+                                <code class="text" id="response-getpolicydurations3" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                </code>
+    
+                                      </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 3 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-4">Get Medical Declaration Questions</h1>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-visit-visa-extension/v1/medical-questions</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/2884#/MPVisitVisaExtensionAPIs_100/operation/%2Fmedical-questions/get">Swagger
+                            Link </a></p>
+
+                    <p class="fob-welcome-text">It is used to fetch medical declaration questions required for visit
+                        visa extension policy.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                       <code class="sample-code">
+    
+                      </code>
+                    </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('citizen-curl')">
+                            <p class="curlText">cURL</p>
+                        </button>
+
+                            <pre id="generatedCurl">
+                      <code id="citizen-curl">
+                        curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/visit-visa-extension/questions' \
+                        --header 'Accept: application/json' \
+                        --header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODEznf7WBXODRzbPc8Tv5InqsFe74Vq60KN1i6tEobyEqA2CxysRoSj6dW3RENyi4gbrXblRT-wfq6jCxjMnzPmYgOFNkzRQbD9phb-VIntfqyzw6HiZJ-UZxbBH1Hi4Q-zUtaxk-e0gYEjRdQBXJ6eD'
+                      </code>
+                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('response-questions')">200</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-questions3')">401</a></div>
+
+                                <pre class="response-box">
+
+                                  <code class="text" id="response-questions" style=" display: block; ">
+    {
+        "QuestionsType": "Medical declaration",
+        "QuestionDeatils": [
+            {
+            "Id": "1001",
+            "Question_en": "Is there a hypnotic case currently in the hospital or received emergency treatment?",
+            ...
+            },
+            ...
+        ]
+        }
+                                  </code>
+                                  <code class="text" id="response-questions3" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                  </code>
+                                        </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 4 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-5">Get VVE Policy Price</h1>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-visit-visa-extension/v1/policy-price</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/2884#/MPVisitVisaExtensionAPIs_100/operation/%2Fpolicy-price/post">Swagger
+                            Link </a></p>
+
+                    <p class="fob-welcome-text">It is used to get policy price based on customer's medical declaration
+                        form.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                       <code class="sample-code">
+                        Request Body{
+                            "referenceId": "U2FsdGVkX1%2BA0SH0SsyfkCP2kTY78ORYbhtRvt6pBro%3D",
+                            "medicalQuestions": [
+                                {
+                                "questionId": "1001",
+                                "selectedValue": "false"
+                                },
+                                ...
+                            ]
+                            }
+                      </code>
+                    </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('citizen-curl')">
+                            <p class="curlText">cURL</p>
+                        </button>
+
+                            <pre id="generatedCurl">
+                      <code id="citizen-curl">
+                        curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/visit-visa-extension/policy-price' \
+                        --header 'Content-Type: application/json' \
+                        --header 'Accept: application/json' \
+                        --header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODEznf7WBXODRzbPc8Tv5InqsFe74Vq60KN1i6tEobyEqA2CxysRoSj6dW3RENyi4gbrXblRT-wfq6jCxjMnzPmYgOFNkzRQbD9phb-VIntfqyzw6HiZJ-UZxbBH1Hi4Q-zUtaxk-e0gYEjRdQBXJ6eD' \
+                        --data '{
+                            "referenceId": "U2FsdGVkX18ClJTVGn6vSj1YgX7V8WxRF6oW6g9XH5E%3D",
+                            "medicalQuestions": [
+                                {
+                                    "questionId": "1001",
+                                    "selectedValue": "false"
+                                },
+                                {
+                                    "questionId": "1002",
+                                    "selectedValue": "false"
+                                },
+                                {
+                                    "questionId": "1003",
+                                    "selectedValue": "false"
+                                },
+                                {
+                                    "questionId": "1004",
+                                    "selectedValue": "false"
+                                },
+                                {
+                                    "questionId": "1005",
+                                    "selectedValue": "false"
+                                },
+                                {
+                                    "questionId": "1006",
+                                    "selectedValue": "1"
+                                }
+                            ]
+                        }'
+                      </code>
+                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('response-policyprice')">200</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-policyprice2')">400</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-policyprice3')">401</a></div>
+
+                                <pre class="response-box">
+
+                                    <code class="text" id="response-policyprice" style=" display: block; ">
+    {
+        "meta": {
+            "status": 1,
+            "statusCode": 200
+        },
+        "data": {
+            "rateResponse": {
+            "customerName": "WALAA KHALIFA",
+            ...
+            }
+        }
+        }
+                                    </code>
+                                    <code class="text" id="response-policyprice2" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                    <code class="text" id="response-policyprice3" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                          </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 5 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-6">Create Visit Visa Extension Policy</h1>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-visit-visa-extension/v1/policy</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/2884#/MPVisitVisaExtensionAPIs_100/operation/%2Fpolicy/post">Swagger
+                            Link </a></p>
+
+                    <p class="fob-welcome-text">It is used to create a Visit Visa Extension policy for the customer.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                       <code class="sample-code">
+                        Request {
+                            "referenceId": "U2FsdGVkX18ClJTVGn6vSj1YgX7V8WxRF6oW6g9XH5E%3D",
+                            "quotationNo": "5442463489",
+                            "paymentMethod": "VISA",
+                            "paymentReferenceNo": "1234a9870bc458jk",
+                            "paymentAmount": "9124.56"
+                            }
+                      </code>
+                    </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('citizen-curl')">
+                            <p class="curlText">cURL</p>
+                        </button>
+
+                            <pre id="generatedCurl">
+                      <code id="citizen-curl">
+                        curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit//v1/art/visit-visa-extension/create-policy' \
+                        --header 'Content-Type: application/json' \
+                        --header 'Accept: application/json' \
+                        --header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODEznf7WBXODRzbPc8Tv5InqsFe74Vq60KN1i6tEobyEqA2CxysRoSj6dW3RENyi4gbrXblRT-wfq6jCxjMnzPmYgOFNkzRQbD9phb-VIntfqyzw6HiZJ-UZxbBH1Hi4Q-zUtaxk-e0gYEjRdQBXJ6eD' \
+                        --data '{
+                            "referenceId": "U2FsdGVkX18ClJTVGn6vSj1YgX7V8WxRF6oW6g9XH5E%3D",
+                            "quotationNo": "5442463489",
+                            "paymentMethod": "VISA",
+                            "paymentReferenceNo": "1234a9870bc458jk",
+                            "paymentAmount": "9124.56"
+                        }'
+                      </code>
+                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('response-createpolicy')">200</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-createpolicy2')">400</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-createpolicy3')">401</a></div>
+
+                                <pre class="response-box">
+
+                                      <code class="text" id="response-createpolicy" style=" display: block; ">
+    {
+        "meta": {
+            "status": 1,
+            "statusCode": 200
+        },
+        "data": {
+            "createPolicyResponse": {
+            "passportNumber": "P10139615",
+            ...
+            }
+        }
+        }
+                                      </code>
+                                      <code class="text" id="response-createpolicy2" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                      </code>
+                                      <code class="text" id="response-createpolicy3" style=" display: none; ">
+    {
+        "Errors": [
+            {
+            "Code": "string",
+            "Message": "string",
+            "Path": "request.body.VisaNumber",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+        }
+                                      </code>
+                                            </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

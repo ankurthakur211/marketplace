@@ -1,0 +1,367 @@
+<div class="product-details-document">
+  <div class="api-doc-background">
+    <p class="api-doc-background-text ">IBAN Verification API Documentation</p>
+  </div>
+
+  <div class="moterinsurance-sec">
+    <div class="container">
+      <div class="d-flex">
+        <div class="leftside-sec">
+          <p class="fob-welcome-title" id="section-1">IBAN Verification</p>
+          <p class="fob-welcome-line"></p>
+          <p class="fob-welcome-text">
+            The IBAN Verification serves as a robust tool empowering
+            businesses and organizations to effortlessly obtain IBAN Verification Details by cross-referencing the
+            bank
+            account number with the Point of Identification (POI) number, typically the national ID.It streamlines and
+            automates the validation process, ensuring that the provided bank account is not only active but also
+            valid.
+          </p>
+
+
+        </div>
+        <div class="rightside-sec">
+          <p class="API-image"></p>
+        </div>
+      </div>
+      <div class="d-flex btn-box">
+        <a id="downloadLink"
+          href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxIBANVerificationInboundAPIs.postman_collection.json"
+          download="">Download Postman Collection</a>
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/IBANVerificationSampleDataRequest.xlsx"
+          download="">Download Sample Data</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="miw-section">
+    <div class="container">
+      <h1 class="fob-welcome-title">Iban Verification Sequence Diagram</h1>
+      <p class="motoinsu-image"></p>
+      <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/IbanVerificationSequenceDiagram.pdf"
+        download="">Click here</a>
+    </div>
+  </div>
+
+  <div class="APIs-section">
+    <div class="container">
+      <p class="main-heading">
+        APIs
+      </p>
+
+      <div class="bx--snippet-container body" data-testid="expandable-example-display">
+        <!-- API 1 -->
+        <div class="api-infosec">
+          <h1 class="fob-welcome-title" id="section-2">IBAN Verification</h1>
+          <p class="fob-welcome-line"></p>
+          <p class="fob-welcome-text">Endpoint: /mp-iban-verification/v1/verification-requests</br></p>
+          <p class="fob-welcome-text"><a
+              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3175/api/3169#/MPIBANVerification_100/operation/%2Fverification-requests/post">Swagger
+              Link</a></p>
+          <p class="fob-welcome-text">This path is used to create IBAN verification inquiry request using preferred
+            source.
+            </br></p>
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title mt-0">Request Example</h1>
+              <p class="fob-welcome-line"></p>
+              <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+Request Body:
+{
+  "Data": {
+      "Source": "ARB",
+      "IBAN": "SA5880000504608010062371",
+      "POIType": "IQA",
+      "POINumber": "2548589759",
+      "Meta": {
+          "FinancialInstitutionId": "RJHISARI",
+          "PSUId": "2548589759",
+          "UserLoginId": "example",
+          "Purpose": [
+              "Account Aggregation"
+          ],
+          "EchoList": [
+              {
+                  "Name": "channelRedirectionUrl",
+                  "Value": "https://www.example.com"
+              }
+          ]
+      }
+  }
+}
+                    </code>
+                  </pre>
+            </div>
+            <div class="url-box">
+              <button class="curlbtn fob-create-person-profile-top" type="submit"
+                onclick="show('IBAN-Verification-Requests')">
+                <p class="curlText">cURL</p>
+              </button>
+
+              <pre id="generatedCurl">
+                    <code id="IBAN-Verification-Requests" style=" display: block;">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox-inbound/mp-iban-verification/v1/verification-requests' \
+--header 'x-request-id: 899d8365-e2dd-4fab-9938-1c325aebf67d' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"Data": {
+  "Source": "ARB",
+  "IBAN": "SA8180000204608015226008",
+  "POIType": "NAT",
+  "POINumber": "1200328910",
+  "Meta": {
+    "FinancialInstitutionId": "RJHISARI",
+    "PSUId": "1200328910",
+    "UserLoginId": "example",
+    "Purpose": [
+      "Account Aggregation"
+    ],
+    "EchoList": [
+      {
+        "Name": "channelRedirectionUrl",
+        "Value": "https://www.example.com"
+      }
+    ]
+  }
+}
+}'
+                    </code>
+                  </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                <div class="response-box-div">
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests')">201</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests2')">400</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests3')">401</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests4')">403</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests5')">404</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests6')">405</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests7')">406</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests8')">429</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Requests9')">500</a>
+                </div>
+
+                <pre class="response-box">
+
+                    <code id="response-IBAN-Verification-Requests" style=" display: block; " class="text">
+{
+  "Data": {
+      "RequestId": "f428deb3-2842-408d-878e-7904f61be27b"
+  }
+}
+
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests2" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.400.001",
+      "Message": "Customer POINumber is invalid.",
+      "Path": "request.body.POINumber",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests3" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.401.001",
+      "Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests4" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.403.001",
+      "Message": "Can't find any valid subscription.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests5" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.404.001",
+      "Message": "No resources match requested URI.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests6" style=" display: none; "class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.405.001",
+      "Message": "The method is not allowed for the requested URL.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests7" style=" display: none; "class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.406.001",
+      "Message": "An appropriate representation of the requested resource could not be found",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests8" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.429.001",
+      "Message": "Assembly Rate Limit exceeded",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+
+                    <code id="response-IBAN-Verification-Requests9" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.500.001",
+      "Message": "Internal Error",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                    </code>
+                  </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- API 2 -->
+        <div class="api-infosec">
+          <h1 class="fob-welcome-title" id="section-3">IBAN Verification Callback</h1>
+          <p class="fob-welcome-line"></p>
+          <p class="fob-welcome-text">This is used to return IBAN Verification Data from all required sources for
+            a specific Request.</p>
+              <p class="fob-welcome-text"><a
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/callbackswaggers/ibancallback.json"
+                download="">Download Iban Callback Swagger</a></p></br></br>
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title mt-0">Request Example</h1>
+              <p class="fob-welcome-line"></p>
+              <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+Request Body:
+{
+  "Data": {
+    "RequestId": "1234567891",
+    "RequestStatus": "Valid",
+    "FailureCode": "ACO6",
+    "AccountStatus": "Blocked",
+    "Name": "Mohamed Ahamed",
+    "Source": "ARB",
+    "IBAN": "SA2230400108071086000028",
+    "POIType": "NAT",
+    "POINumber": "2369874521",
+    "EchoList": [
+      {
+        "Name": "channelRedirectionUrl",
+        "Value": "https://www.example.com"
+      }
+    ]
+  }
+}
+                        </code>
+                      </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                <div class="response-box-div">
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Callback-Requests')">202</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-IBAN-Verification-Callback-Requests1')">500</a>
+                </div>
+
+                <pre class="response-box">
+
+                        <code id="response-IBAN-Verification-Callback-Requests" style=" display: block; " class="text">
+{
+  "Data": {
+      "RequestId": "f428deb3-2842-408d-878e-7904f61be27b"
+  }
+}
+  
+                        </code>
+  
+                        <code id="response-IBAN-Verification-Callback-Requests1" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.500.001",
+      "Message": "Internal Error",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                        </code>
+                      </pre>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>

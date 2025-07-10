@@ -1,0 +1,2945 @@
+<div id="search-term-result">
+    <p>Domestic Helper Insurance APIs</p>
+
+    <p>
+        The primary objective of this project is to enable ART to avail applying for Domestic Helper Insurance policies through API Marketplace.
+        This product allow ARB customers  to apply for domestic helper Insurance through ARB Mobile app.
+    </p>
+</div>
+<div class="basic-page">
+<div class="product-details-document">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Domestic Helper Insurance API Documentation</p>
+    </div>
+    <div class="moterinsurance-sec">
+        <div class="container">
+            <div class="d-flex">
+                <div class="leftside-sec">
+                    <p class="fob-welcome-title" id="section-1">Domestic Helper Insurance APIs</p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">The primary objective of this project is to enable ART to avail applying
+                        for Domestic Helper Insurance policies through API Marketplace.
+                        This product allow ARB customers to apply for domestic helper Insurance through ARB Mobile app.
+                    </p>
+
+
+                </div>
+                <div class="rightside-sec">
+                    <p class="API-image"></p>
+                </div>
+            </div>
+            <div class="d-flex btn-box">
+                <a class="primary-btn" id="downloadLink"
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxDomesticHelperInsuranceInboundAPIs.postman_collection.json"
+                    download="">Download Postman Collection</a>
+                <a class="primary-btn"
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/MPDomesticHelperSampleRequestData.xlsx"
+                    download="">Download Sample Data</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="miw-section">
+        <div class="container">
+            <h1 class="fob-welcome-title">Domestic Helper Insurance Workflow</h1>
+            <p class="motoinsu-image"></p>
+            <a class="fob-product-title-click" target="_blank"
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/DomesticHelperInsuranceFlowDiagram.pdf"
+                rel="noopener">
+                Click here
+            </a>
+        </div>
+    </div>
+
+    <div class="APIs-section">
+        <div class="container">
+            <p class="main-heading">
+                APIs
+            </p>
+
+            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                <!-- API 1 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-2">Create Customer</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: POST : /mp-domestic-helper/v1/customers</br></p>
+                    <p class="fob-welcome-text">This operation is used to create customer in Domestic Helper
+                        Insurance.</br></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fcustomers/post">Swagger
+                            Link</a>
+                    </p>
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                            <p class="fob-welcome-line"></p>
+                            <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+
+Request Body
+{
+    "Data": {
+        "POINumber": "1049279878",
+        "BirthDate": "01-08-1985",
+        "MobileNumber": "556130301",
+        "Email": "shivakumar122.m@alrajhitakaful.com",
+        "PolicyStartDate": "28-12-2023"
+    }
+}
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="url-box">
+                            <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                onclick="show('Create-Customer-curl')">
+                                <p class="curlText">cURL</p>
+                            </button>
+
+                            <pre id="generatedCurl">
+                <code id="Create-Customer-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/customers' \
+--header 'x-request-id: $cbddb672-57d3-4e53-a869-3f9200ac65ed' \
+--header 'accept-language: EN' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
+--data-raw '{
+"Data": {
+"POINumber": "1049279878",
+"BirthDate": "01-08-1985",
+"MobileNumber": "556130301",
+"Email": "shivakumar122.m@alrajhitakaful.com",
+"PolicyStartDate": "28-12-2023"
+}
+}'
+                </code>
+                </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p
+                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                <div class="response-box-div">
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Create-Customer')">200</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Create-Customer2')">400</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Create-Customer3')">401</a>
+                                </div>
+
+                                <pre class="response-box">
+
+                <code id="response-Create-Customer" style=" display: block; " class="text">
+{
+    "Data": {
+        "ReferenceId": "U2FsdGVkX1+QoOFZwIbadQ0QNBdEcHqUkD0W272ybHo="
+    }
+}
+                </code>
+                <code id="response-Create-Customer2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "The Data.POINumber field is required.",
+        "Path": "request.Data.POINumber"
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+                </code>
+                <code id="response-Create-Customer3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+                </code>
+
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API 2 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-3">Add Member</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: POST:
+                        /mp-domestic-helper/v1/members/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to create quotation if not created and add member.</br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}/post">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+Request Body
+{
+    "Data": {
+        "POINumber": "2517580615",
+        "BirthDate": "01-08-1985",
+        "MobileNumber": "556130301"
+    }
+}
+                        </code>
+                    </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Add-Member-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                        <code id="Add-Member-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members/U2FsdGVkX19hLusB2Zqjsmf8phxsRWtOmrQn%2BuHyqIM%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $dad711a8-327d-48a0-bcbb-d53a04082d21' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
+--data '{
+"Data": {
+    "POINumber": "2517580615",
+    "BirthDate": "01-08-1985",
+    "MobileNumber": "556130301"
+}
+}'
+                        </code>
+                        </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Add-Member')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Add-Member2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Add-Member3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                <code id="response-Add-Member" style=" display: block; " class="text">
+{
+    "Data": {
+        "PolicyHolderName": "ABDULAZIZ MOHAMMED S HELAYEL",
+        "MobileNumber": "505429026",
+        "PolicyStartDate": "30-05-2024",
+        "PolicyExpiryDate": "29-05-2025",
+        "TotalPremium": 519.8,
+        "BasePremium": 452,
+        "Vat": 67.8,
+        "GrossPremium": 452,
+        "DiscountAmount": 0,
+        "TotalMembers": 1,
+        "Status": "20",
+        "IsSpecialDiscount": true,
+        "IsEligible": true,
+        "Members": [
+            {
+                "MemberId": 4306,
+                "Name": "HERUDIN SABDAL KUDARAT",
+                "POINumber": "2361449503",
+                "BirthDate": "27-02-1982",
+                "TotalPremium": "452",
+                "AllPremiums": [
+                    {
+                        "Id": 1,
+                        "Name": "Class C",
+                        "Premium": {
+                            "GrossPremium": 452,
+                            "NetPremium": 452
+                        }
+                    },
+                    {
+                        "Id": 2,
+                        "Name": "Class CA",
+                        "Premium": {
+                            "GrossPremium": 773,
+                            "NetPremium": 773
+                        }
+                    }
+                ],
+                "Profession": {
+                    "OccupationCode": "9141055",
+                    "NameAr": "سائق خاص",
+                    "NameEn": "",
+                    "IsDomesticHelperEnabled": true
+                },
+                "MDF": [
+                    {
+                        "QuestionId": 0,
+                        "Response": "string"
+                    }
+                ],
+                "Class": {
+                    "ClassId": 1,
+                    "ClassName": "Class C"
+                }
+            }
+        ]
+    }
+}
+                </code>
+                <code id="response-Add-Member2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "The Data.POINumber field is required.",
+        "Path": "request.Data.POINumber"
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                </code>
+                <code id="response-Add-Member3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                </code>
+
+                    </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 3 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-4">Insert Bulk Member</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: POST : /mp-domestic-helper/v1/members-bulk/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to insert the members in bulk.</br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers-bulk%2F{ReferenceId}/post">Swagger
+                            Link</a></p>
+                    
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+
+Query Params:
+    "transactionId": "dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId": "U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+Request Body
+{
+    "Data": {
+        "MemberDetails": [
+            {
+                "POINumber": null,
+                "BirthDate": "06-05-1971",
+                "MobileNumber": "555555555",
+                "ClassName": "Basic M",
+                "MDF": [
+                    {
+                        "QuestionId": 1000,
+                        "Response": "No"
+                    }
+                ]
+            }
+        ]
+    }
+}
+                        </code>
+                        </pre>
+                                </div>
+                                <div class="url-box">
+                                    <button class="curlbtn fob-validate-OTP-top" type="submit"
+                                        onclick="show('Insert-bulk-member-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+                                    <pre id="generatedCurl">
+                    <code id="Insert-bulk-member-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members-bulk/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $6d32f1b6-ffa9-4f54-83d6-57ae0d27620c' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
+--data '{
+"Data": {
+    "MemberDetails": [
+        {
+            "POINumber": null,
+            "BirthDate": "06-05-1971",
+            "MobileNumber": "555555555",
+            "ClassName": "Basic M",
+            "MDF": [
+                {
+                    "QuestionId": 1000,
+                    "Response": "No"
+                }
+            ]
+        }
+    ]
+}
+}'
+                    </code>
+                        </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Insert-Bulk-Member')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Insert-Bulk-Member2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Insert-Bulk-Member3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                <code id="response-Insert-Bulk-Member" style=" display: block; " class="text">
+{
+    "Data": {
+        "PolicyHolderName": "ABDULAZIZ MOHAMMED S HELAYEL",
+        "MobileNumber": "505429026",
+        "PolicyStartDate": "30-05-2024",
+        "PolicyExpiryDate": "29-05-2025",
+        "TotalPremium": 519.8,
+        "BasePremium": 452,
+        "Vat": 67.8,
+        "GrossPremium": 452,
+        "DiscountAmount": 0,
+        "TotalMembers": 1,
+        "Status": "60",
+        "IsSpecialDiscount": true,
+        "IsEligible": true,
+        "Members": [
+            {
+                "MemberId": 4306,
+                "Name": "HERUDIN SABDAL KUDARAT",
+                "POINumber": "2361449503",
+                "BirthDate": "27-02-1982",
+                "TotalPremium": "452",
+                "AllPremiums": [
+                    {
+                        "Id": 1,
+                        "Name": "Class C",
+                        "Premium": {
+                            "GrossPremium": 452,
+                            "NetPremium": 452
+                        }
+                    },
+                    {
+                        "Id": 2,
+                        "Name": "Class CA",
+                        "Premium": {
+                            "GrossPremium": 773,
+                            "NetPremium": 773
+                        }
+                    }
+                ],
+                "Profession": {
+                    "OccupationCode": "9141055",
+                    "NameAr": "سائق خاص",
+                    "NameEn": "",
+                    "IsDomesticHelperEnabled": true
+                },
+                "MDF": [
+                    {
+                        "QuestionId": 0,
+                        "Response": "string"
+                    }
+                ],
+                "Class": {
+                    "ClassId": 1,
+                    "ClassName": "Class C"
+                }
+            }
+        ]
+    }
+}
+                </code>
+                <code id="response-Insert-Bulk-Member2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "The Data.POINumber field is required.",
+        "Path": "request.Data.POINumber"
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+                <code id="response-Insert-Bulk-Member3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+                </code>
+                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+
+                <!-- API 4 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-5">Update Members In Bulk</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: PUT : /mp-domestic-helper/v1/members-bulk/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to update the members in bulk. </br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers-bulk%2F{ReferenceId}/put">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+Query Params
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+Request Body
+{
+    "Data": {
+        "MemberClasses": [
+            {
+                "MemberId": 4312,
+                "ClassId": "1"
+            }
+        ]
+    }
+}
+                                </code>
+                                </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Update-Members-In-Bulk-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                    <code id="Update-Members-In-Bulk-curl" style=" display: block;">
+curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members-bulk/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $25ff9198-d97b-49e5-ac45-cfa5a54890f0' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
+--data '{
+"Data": {
+"MemberClasses": [
+    {
+        "MemberId": 4312,
+        "ClassId": "1"
+    }
+]
+}
+}'
+                                    </code>
+                                </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Members-In-Bulk')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Members-In-Bulk2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Members-In-Bulk3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                        <code id="response-Update-Members-In-Bulk" style=" display: block; " class="text">
+{
+    "Data": {
+        "PolicyHolderName": "ABDULAZIZ MOHAMMED S HELAYEL",
+        "MobileNumber": "505429026",
+        "PolicyStartDate": "30-05-2024",
+        "PolicyExpiryDate": "29-05-2025",
+        "TotalPremium": 519.8,
+        "BasePremium": 452,
+        "Vat": 67.8,
+        "GrossPremium": 452,
+        "DiscountAmount": 0,
+        "TotalMembers": 1,
+        "Status": "70",
+        "IsSpecialDiscount": true,
+        "IsEligible": true,
+        "Members": [
+            {
+                "MemberId": 4306,
+                "Name": "HERUDIN SABDAL KUDARAT",
+                "POINumber": "2361449503",
+                "BirthDate": "27-02-1982",
+                "TotalPremium": "452",
+                "AllPremiums": [
+                    {
+                        "Id": 1,
+                        "Name": "Class C",
+                        "Premium": {
+                            "GrossPremium": 452,
+                            "NetPremium": 452
+                        }
+                    },
+                    {
+                        "Id": 2,
+                        "Name": "Class CA",
+                        "Premium": {
+                            "GrossPremium": 773,
+                            "NetPremium": 773
+                        }
+                    }
+                ],
+                "Profession": {
+                    "OccupationCode": "9141055",
+                    "NameAr": "سائق خاص",
+                    "NameEn": "",
+                    "IsDomesticHelperEnabled": true
+                },
+                "MDF": [
+                    {
+                        "QuestionId": 1000,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1001,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1002,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1003,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1004,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1005,
+                        "Response": "No"
+                    }
+                ],
+                "Class": {
+                    "ClassId": 1,
+                    "ClassName": "Class C"
+                }
+            }
+        ]
+    }
+}
+                            </code>
+                        <code id="response-Update-Members-In-Bulk2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "The Data.POINumber field is required.",
+        "Path": "request.Data.POINumber"
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                        </code>
+                        <code id="response-Update-Members-In-Bulk3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                        </code>
+
+                                </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 5 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-6">Update Member</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: PUT :
+                        /mp-domestic-helper/v1/members/{ReferenceId}/{MemberId}</br>
+                    </p>
+                    <p class="fob-welcome-text">This operation is used to update Member class.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}%2F{MemberId}/put">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D",
+    "MemberId":"4306"
+
+Request Body:
+{
+    "Data": {
+        "ClassId": 1
+    }
+}
+                                </code>
+                                </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Update-Member-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                <pre id="generatedCurl">
+                                    <code id="Update-Member-curl" style=" display: block;">
+curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $484ebad7-995f-412f-aa9b-b8ff60ea3f73' \
+--data '{
+"Data": {
+"ClassId": 1
+}
+}'
+                                    </code>
+                                </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Member')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Member2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Member3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                        <code id="response-Update-Member" style=" display: block; " class="text">
+{
+    "Data": {
+        "PolicyHolderName": "ABDULAZIZ MOHAMMED S HELAYEL",
+        "MobileNumber": "505429026",
+        "PolicyStartDate": "30-05-2024",
+        "PolicyExpiryDate": "29-05-2025",
+        "TotalPremium": 519.8,
+        "BasePremium": 452,
+        "Vat": 67.8,
+        "GrossPremium": 452,
+        "DiscountAmount": 0,
+        "TotalMembers": 1,
+        "Status": "70",
+        "IsSpecialDiscount": true,
+        "IsEligible": true,
+        "Members": [
+            {
+                "MemberId": 4306,
+                "Name": "HERUDIN SABDAL KUDARAT",
+                "POINumber": "2361449503",
+                "BirthDate": "27-02-1982",
+                "TotalPremium": "452",
+                "AllPremiums": [
+                    {
+                        "Id": 1,
+                        "Name": "Class C",
+                        "Premium": {
+                            "GrossPremium": 452,
+                            "NetPremium": 452
+                        }
+                    },
+                    {
+                        "Id": 2,
+                        "Name": "Class CA",
+                        "Premium": {
+                            "GrossPremium": 773,
+                            "NetPremium": 773
+                        }
+                    }
+                ],
+                "Profession": {
+                    "OccupationCode": "9141055",
+                    "NameAr": "سائق خاص",
+                    "NameEn": "",
+                    "IsDomesticHelperEnabled": true
+                },
+                "MDF": [
+                    {
+                        "QuestionId": 1000,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1001,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1002,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1003,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1004,
+                        "Response": "No"
+                    },
+                    {
+                        "QuestionId": 1005,
+                        "Response": "No"
+                    }
+                ],
+                "Class": {
+                    "ClassId": 1,
+                    "ClassName": "Class C"
+                }
+            }
+        ]
+    }
+}
+                            </code>
+                        <code id="response-Update-Member2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "The Data.ClassId field is required.",
+        "Path": "request.Data.ClassId"
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                        </code>
+                        <code id="response-Update-Member3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                        </code>
+                                </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 6 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-7">Delete Member</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: DELETE : /mp-domestic-helper/v1/members/{ReferenceId}/{MemberId}</br>
+                    <p class="fob-welcome-text">This operation is used to delete member from quote.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}%2F{MemberId}/delete">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D",
+    "MemberId":"4306"
+
+                                </code>
+                                </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Delete-Member-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                    <code id="Delete-Member-curl" style=" display: block;">
+curl --location --request DELETE 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $7042a5b3-cbcf-4d26-bf04-e53dcdbfa81b' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+}'
+                                    </code>
+                                </pre>
+                                </div>
+                            </div>
+
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Delete-Member')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Delete-Member2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Delete-Member3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                        <code id="response-Delete-Member" style=" display: block; " class="text">
+{
+    "Data": {
+        "PolicyHolderName": "ABDULAZIZ MOHAMMED S HELAYEL",
+        "MobileNumber": "505429026",
+        "PolicyStartDate": "30-05-2024",
+        "PolicyExpiryDate": "29-05-2025",
+        "TotalPremium": 519.8,
+        "BasePremium": 452,
+        "Vat": 67.8,
+        "GrossPremium": 452,
+        "DiscountAmount": 0,
+        "TotalMembers": 0,
+        "Status": "20",
+        "Members": []
+    }
+}
+                            </code>
+                        <code id="response-Delete-Member2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request.",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                        </code>
+                        <code id="response-Delete-Member3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                        </code>
+                                </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 7 -->
+                <div class="api-infosec">
+
+                    <h1 class="fob-welcome-title" id="section-8">MDF Questions</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: GET :
+                        /mp-domestic-helper/v1/mdf-questions</br>
+                    </p>
+                    <p class="fob-welcome-text">This operation is used to  get all MDF questions.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmdf-questions/get">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+                                </code>
+                                </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('MDF-Questions-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                    <code id="MDF-Questions-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/mdf-questions?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $a3442ab0-3b15-488a-a673-bec2d1e4b285' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+                                    </code>
+                                </pre>
+                                </div>
+                            </div>
+                            
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-MDF-Questions')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-MDF-Questions2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-MDF-Questions3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                        <code id="response-MDF-Questions" style=" display: block; " class="text">
+{
+    "Data": {
+        "MDFQuestions": [
+        {
+            "QuestionId": "1000",
+            "QuestionEn": "Any hospital admission during the last 12 months.\n*\"registering as an admitted patient at the hospital until the following morning\"",
+            "QuestionAr": "هل تم التنويم بالمستشفى خلال آخر 12 شهر؟\n*\"تسجيل الشخص المؤمن له كمريض ُمنوِم في المستشفى حتى صباح اليوم التالي\"",
+            "Type": "YesNo"
+        },
+        {
+            "QuestionId": "1001",
+            "QuestionEn": "Have you been diagnosed with any of the following chronic diseases limited to: Autism, listed Benign Tumor (Breast Tumors. Fibroid Uterus, Benign Prostatic Hyperplasia, Thyroid Goiter and Parathyroid Glands, Liver Tumors, Colon Tumors), Malignant tumors, listed Cardiac diseases (Coronary And Valve Heart Diseases, Heart Failure, Cardiac Fibrillation, myocardial infraction) Heart Clots , Chronic Hepatitis C, Gallstones, Sever Kidney Failure (Stage 5, Clearance of Less Than 15 ml/ minute*), Urinary Tract Stones Hernias, Ulcerative Colitis, Crohn Disease, Rheumatoid Arthritis, Osteoarthritis, Multiple Sclerosis, Autoimmune Diseases (Lupus, Rheumatoid Arthritis, Psoriasis, Crohn's Disease, Ulcerative Colitis, Multiple Sclerosis, Hay fever).",
+            "QuestionAr": "هل تم تشخيصك بأي من الأمراض المزمنة التالية فقط: التوحد، الأورام السرطانية، الأورام الحميدة التالية (أورام الثدي، أورام الرحم الليفي، تضخم البروستات الحميد، اورام أو تضخم الغدة الدرقية والجار الدرقية، أورام الكبد، أورام القولون)، أمراض القلب التالية (امراض شرايين القلب، فشل عضلة القلب، الرجفان القلبي، جلطات القلب)، الإلتهاب الكبدي الفيروسي المزمن ج (C)، حصوات المرارة، الفشل الكلوي الشديد (المرحلة الخامسة من أمراض الكلى، الترشيح الكلوي أقل من 15مل / دقيقه *)، حصوات المسالك البولية، الفتق، أمراض المناعة الذاتية (الذئبة  الحمراء، التهاب المفاصل الروماتيزمية، الصدفية، مرض كرونز، التهاب القولون التقرحي، التصلب اللويحي، حساسية القمح)",
+            "Type": "YesNo"
+        },
+        {
+            "QuestionId": "1002",
+            "QuestionEn": "Have you been diagnosed with any of the following congenital disorder or hereditary diseases limited to: Cerebral Palsy, Sickle Cell Disorder, Thalassemia, Hemophilia, Metabolic Diseases, Hydrocephalus, Spinal muscle atrophy, Genital malformations, Chromosomal Abnormalities, Gaucher’s disease,G6PD Deficiency, Cystic fibrosis, Hemochromatosis, Wilson disease, Polycystic Kidney Disease.",
+            "QuestionAr": "هل تم تشخيصك بأي من الأمراض الوراثية أو التشوهات الخلقية التالية فقط: الشلل الدماغي، اضطراب الخلايا المنجلية، الثلاسيميا، الهيموفيليا، أمراض التمثيل الغذائي، استسقاء الرأس، ضمور العضالت الشوكي، تشوهات الأعضاء التناسلية، أمراض الكروموسومات , مرض غوشر، مرض التكسر الفولي (G6PD)، التليف الكيسى للرئة، مرض تكدس الحديد (هيموكروماتوسيس), مرض ويلسون , تكيس الكليتين الخلقى الوراثي",
+            "Type": "YesNo"
+        },
+        {
+            "QuestionId": "1003",
+            "QuestionEn": "Have you been diagnosed with any of the following eye diseases limited to: Cataract, Glaucoma, and Retinal disease",
+            "QuestionAr": "هل تم تشخيصك بأي من أمراض العين التالية فقط: مياه بيضاء، مياه زرقاء، أمراض الشبكية.",
+            "Type": "YesNo"
+        },
+        {
+            "QuestionId": "1004",
+            "QuestionEn": "Have you been diagnosed with any of the following bone diseases limited to: Vertebral disc prolapse (moderate or severe), Scoliosis (moderate or severe)**, or Ligament tears, osteoarthritis (moderate or severe)",
+            "QuestionAr": "هل تم تشخيصك بأي من أمراض العظام التالية فقط: الإنزلاق الغضروفي المتوسط أوالمتقدم (الديسك)، انحراف العمود الفقري المتوسط أوالمتقدم **(سكوليوسس)، احتكاك المفاصل المتوسط أو المتقدم أو تمزق الأربطة.",
+            "Type": "YesNo"
+        },
+        {
+            "QuestionId": "1005",
+            "QuestionEn": "Current single pregnancy.",
+            "QuestionAr": "الحمل الفردي الحالي.",
+            "Type": "YesNo"
+        },
+        {
+            "QuestionId": "1006",
+            "QuestionEn": "Current single pregnancy with previous CS delivery.",
+            "QuestionAr": "حمل فردي حالي مع ولادة قيصرية سابقة.",
+            "Type": "YesNo"
+        },
+        {
+            "QuestionId": "1007",
+            "QuestionEn": "Current multiple pregnancy.",
+            "QuestionAr": "حمل حالي متعدد الأجنة.",
+            "Type": "YesNo"
+        }
+        ]
+    }
+}
+                            </code>
+                        <code id="response-MDF-Questions2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+            "Code": "ERROR.400.001",
+            "Message": "Bad Request",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                        </code>
+                        <code id="response-MDF-Questions3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                        </code>
+                                </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 8 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-9">Save MDF Questions</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: PUT :
+                        /mp-domestic-helper/v1/mdf-response/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to get gold rate
+                        history.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmdf-response%2F{ReferenceId}/put">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+Request Body:
+{
+    "Data": {
+        "MDFResponses": [
+        {
+            "MemberId": 4306,
+            "MDF": [
+            {
+                "QuestionId": 1000,
+                "Response": "No"
+            }
+            ]
+        }
+        ]
+    }
+}
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Save-MDF-Questions-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Save-MDF-Questions-curl" style=" display: block;">
+curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/mdf-response/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $c833a0c0-d03d-4c30-969f-51f642ec6ea1' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
+--data '{
+"Data": {
+"MDFResponses": [
+{
+"MemberId": 4306,
+"MDF": [
+{
+"QuestionId": 1000,
+"Response": "No"
+}
+]
+}
+]
+}
+}'
+                                </code>
+                            </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Save-MDF-Questions')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Save-MDF-Questions2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Save-MDF-Questions3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Save-MDF-Questions" style=" display: block; " class="text">
+{
+    "Data": {
+        "PolicyHolderName": "ABDULAZIZ MOHAMMED S HELAYEL",
+        "MobileNumber": "505429026",
+        "PolicyStartDate": "30-05-2024",
+        "PolicyExpiryDate": "29-05-2025",
+        "TotalPremium": 519.8,
+        "BasePremium": 452,
+        "Vat": 67.8,
+        "GrossPremium": 452,
+        "DiscountAmount": 0,
+        "TotalMembers": 1,
+        "Status": "60",
+        "IsSpecialDiscount": true,
+        "IsEligible": true,
+        "Members": [
+        {
+            "MemberId": 4306,
+            "Name": "HERUDIN SABDAL KUDARAT",
+            "POINumber": "2361449503",
+            "BirthDate": "27-02-1982",
+            "TotalPremium": "452",
+            "AllPremiums": [
+            {
+                "Id": 1,
+                "Name": "Class C",
+                "Premium": {
+                "GrossPremium": 452,
+                "NetPremium": 452
+                }
+            },
+            {
+                "Id": 2,
+                "Name": "Class CA",
+                "Premium": {
+                "GrossPremium": 773,
+                "NetPremium": 773
+                }
+            }
+            ],
+            "Profession": {
+            "OccupationCode": "9141055",
+            "NameAr": "سائق خاص",
+            "NameEn": "",
+            "IsDomesticHelperEnabled": true
+            },
+            "MDF": [
+            {
+                "QuestionId": 1000,
+                "Response": "No"
+            },
+            {
+                "QuestionId": 1001,
+                "Response": "No"
+            },
+            {
+                "QuestionId": 1002,
+                "Response": "No"
+            },
+            {
+                "QuestionId": 1003,
+                "Response": "No"
+            },
+            {
+                "QuestionId": 1004,
+                "Response": "No"
+            },
+            {
+                "QuestionId": 1005,
+                "Response": "No"
+            }
+            ],
+            "Class": {
+            "ClassId": 1,
+            "ClassName": "Class C"
+            }
+        }
+        ]
+    }
+    }
+                        </code>
+                    <code id="response-Save-MDF-Questions2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "The Data.MemberId field is required.",
+        "Path": "request.Data.MemberId",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Save-MDF-Questions3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 9 -->
+                <div class="api-infosec">
+
+                    <h1 class="fob-welcome-title" id="section-10">Retrieve Quote</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: GET :
+                        /mp-domestic-helper/v1/quotes</br></p>
+                    <p class="fob-welcome-text">This operation is used to get quote details.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes/get">Swagger
+                            Link</a></p>
+                            
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "poiNumber":"1054110125"
+    "mobileNumber":"552920838"
+
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Retrieve-Quote-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Retrieve-Quote-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/quotes?poiNumber=1054110125&mobileNumber=552920838' \
+--header 'x-request-id: 9b248985-52c0-4ca3-8ea6-61c0d9460099' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+}'
+                                </code>
+                            </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Retrieve-Quote')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Retrieve-Quote2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Retrieve-Quote3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Retrieve-Quote" style=" display: block; " class="text">
+{
+    "Data": {
+        "OTPId": "14755",
+        "MobileNumber": "556130301",
+        "TransactionType": "dh_policies_retrieve_quote",
+        "PaymentStatus": "10"
+    }
+}
+                        </code>
+                    <code id="response-Retrieve-Quote2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "The Data.poiNumber field is required.",
+        "Path": "request.Data.poiNumber",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Retrieve-Quote3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 10 -->
+                <div class="api-infosec">
+
+                    <h1 class="fob-welcome-title" id="section-11">Calculate Quote</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: GET :
+                        /mp-domestic-helper/v1/quotes/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to calculate quotation premiums.</br>
+                    </p>
+
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes%2F{ReferenceId}/get">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Calculate-Quote-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Calculate-Quote-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/quotes/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $f1226278-664c-47d4-994d-178d1adb5f02' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+                                </code>
+                            </pre>
+                                </div>
+                            </div>
+
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Calculate-Quote')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Calculate-Quote2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Calculate-Quote3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Calculate-Quote" style=" display: block; " class="text">
+{
+    "Data": {
+        "PolicyHolderName": "ABDULAZIZ MOHAMMED S HELAYEL",
+        "MobileNumber": "505429026",
+        "PolicyStartDate": "30-05-2024",
+        "PolicyExpiryDate": "29-05-2025",
+        "TotalPremium": 519.8,
+        "BasePremium": 452,
+        "Vat": 67.8,
+        "GrossPremium": 452,
+        "DiscountAmount": 0,
+        "TotalMembers": 1,
+        "Status": "20",
+        "IsSpecialDiscount": true,
+        "IsEligible": true,
+        "Members": [
+        {
+            "MemberId": 4306,
+            "Name": "HERUDIN SABDAL KUDARAT",
+            "POINumber": "2361449503",
+            "BirthDate": "27-02-1982",
+            "TotalPremium": "452",
+            "AllPremiums": [
+            {
+                "Id": 1,
+                "Name": "Class C",
+                "Premium": {
+                "GrossPremium": 452,
+                "NetPremium": 452
+                }
+            },
+            {
+                "Id": 2,
+                "Name": "Class CA",
+                "Premium": {
+                "GrossPremium": 773,
+                "NetPremium": 773
+                }
+            }
+            ],
+            "Profession": {
+            "OccupationCode": "9141055",
+            "NameAr": "سائق خاص",
+            "NameEn": "",
+            "IsDomesticHelperEnabled": true
+            },
+            "MDF": [
+            {
+                "QuestionId": 0,
+                "Response": "string"
+            }
+            ],
+            "Class": {
+            "ClassId": 1,
+            "ClassName": "Class C"
+            }
+        }
+        ]
+    }
+    }
+                        </code>
+                    <code id="response-Calculate-Quote2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Calculate-Quote3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 11 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-12">Quote Details</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: GET :
+                        /mp-domestic-helper/v1/quotes-details/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to to get quote details.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes-details%2F{ReferenceId}/get">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Quote-Details-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Quote-Details-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/quotes-details/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $76baabc6-cf35-4fa3-a8c5-ba6c74c2187f' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+                                </code>
+                            </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Quote-Details')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Quote-Details2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Quote-Details3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Quote-Details" style=" display: block; " class="text">
+{
+    "Data": {
+        "PolicyHolderName": "ABDULAZIZ MOHAMMED S HELAYEL",
+        "MobileNumber": "505429026",
+        "PolicyStartDate": "30-05-2024",
+        "PolicyExpiryDate": "29-05-2025",
+        "TotalPremium": 519.8,
+        "BasePremium": 452,
+        "Vat": 67.8,
+        "GrossPremium": 452,
+        "DiscountAmount": 0,
+        "TotalMembers": 1,
+        "Status": "20",
+        "IsSpecialDiscount": true,
+        "IsEligible": true,
+        "Members": [
+        {
+            "MemberId": 4306,
+            "Name": "HERUDIN SABDAL KUDARAT",
+            "POINumber": "2361449503",
+            "BirthDate": "27-02-1982",
+            "TotalPremium": "452",
+            "AllPremiums": [
+            {
+                "Id": 1,
+                "Name": "Class C",
+                "Premium": {
+                "GrossPremium": 452,
+                "NetPremium": 452
+                }
+            },
+            {
+                "Id": 2,
+                "Name": "Class CA",
+                "Premium": {
+                "GrossPremium": 773,
+                "NetPremium": 773
+                }
+            }
+            ],
+            "Profession": {
+            "OccupationCode": "9141055",
+            "NameAr": "سائق خاص",
+            "NameEn": "",
+            "IsDomesticHelperEnabled": true
+            },
+            "MDF": [
+            {
+                "QuestionId": 0,
+                "Response": "string"
+            }
+            ],
+            "Class": {
+            "ClassId": 1,
+            "ClassName": "Class C"
+            }
+        }
+        ]
+    }
+    }
+                        </code>
+                    <code id="response-Quote-Details2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Quote-Details3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 12 -->
+                <div class="api-infosec">
+
+                    <h1 class="fob-welcome-title" id="section-13">Upload Document</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: POST :
+                        /mp-domestic-helper/v1/documents/{ReferenceId}/{MemberId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to upload document for a member whose response is Yes for MDF question.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}%2F{MemberId}/post">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "transactionId":"123"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+    "MemberId":"4306"
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Upload-Document-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Upload-Document-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=123' \
+--header 'x-request-id: 28723456-d835-4c84-a52a-0a7a2789485b' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
+--form 'QuestionId="1001"' \
+--form 'File="ICAgImRhdGEiOnsNCiAgICAgICJwb2xpY3lIb2xkZXJOYW1lIjoiQUJEVUxBWklaIE1PSEFNTUVEIFMgSEVMQVlFTCIsDQogICAgICAibW9iaWxlTnVtYmVyIjoiNTA1NDI5MDI2IiwNCiAgICAgICJlbWFpbCI6Im1wQG1wZWphZGEuY29tIiwNCiAgICAgICJhZGRyZXNzIjoiNjE0MSBLaW5nIEZhaGFkIEJyYW5jaCAtIEFsIFdvcm91ZCBEaXN0LiBSSVlBREggMTIyMTUgLSAyODg2IiwNCiAgICAgICJwb2xpY3lTdGFydERhdGUiOiIzMC0wNS0yMDI0IiwNCiAgICAgICJwb2xpY3lFeHBpcnlEYXRlIjoiMjktMDUtMjAyNSIsDQogICAgICAidG90YWxQcmVtaXVtIjo1MTkuOCwNCiAgICAgICJiYXNlUHJlbWl1bSI6NDUyLA0KICAgICAgInZhdCI6NjcuOCwNCiAgICAgICJncm9zc1ByZW1pdW0iOjQ1MiwNCiAgICAgICJkaXNjb3VudEFtb3VudCI6MCwNCiAgICAgICJzdGF0dXMiOiI2MCINCiAgIH0="'
+}'
+                                </code>
+                            </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Upload-Document')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Upload-Document2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Upload-Document3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Upload-Document" style=" display: block; " class="text">
+{
+    "Data": {
+        "DocumentId": 1,
+        "MemberId": 4306,
+        "DocumentUrl": "http://dms.example.com/Sample/test1.pdf",
+        "QuestionId": 1001
+    }
+}
+                        </code>
+                    <code id="response-Upload-Document2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Upload-Document3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                
+
+                <!-- API 13 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-14">Delete Document</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: DELETE :
+                        /mp-domestic-helper/v1/documents/{ReferenceId}/{MemberId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to delete the document.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}%2F{MemberId}/delete">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+    "MemberId":"4306"
+
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Delete-Document-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Delete-Document-curl" style=" display: block;">
+curl --location --request DELETE 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $8e697c9a-996d-40e0-8979-4a122b61ce9e' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+                                </code>
+                            </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Delete-Document')">204</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Delete-Document2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Delete-Document3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Delete-Document" style=" display: block; " class="text">
+204 No Content
+                        </code>
+                    <code id="response-Delete-Document2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Delete-Document3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 14 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-15">Get All Documents</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: GET :
+                        /mp-domestic-helper/v1/documents/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to get all the documents uploaded for the given reference Id.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}/get">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Get-All-Documents-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Get-All-Documents-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $685d80a7-f4ed-43f3-9e82-e24bce9ff7e4' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+                                </code>
+                            </pre>
+                                </div>
+                            </div>
+
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-All-Documents')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-All-Documents2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-All-Documents3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Get-All-Documents" style=" display: block; " class="text">
+{
+    "Data": {
+        "MemberDocuments": [
+            {
+            "DocumentId": 1,
+            "MemberId": 4306,
+            "DocumentUrl": "http://dms.example.com/Sample/test1.pdf",
+            "QuestionId": 1001,
+            "CreatedAt": "2023-09-19T10:54:01.513Z"
+            }
+        ]
+    }
+}
+                        </code>
+                    <code id="response-Get-All-Documents2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Get-All-Documents3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 15 -->
+                <div class="api-infosec">
+
+                    <h1 class="fob-welcome-title" id="section-16">Service Providers List</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: GET :
+                        /mp-domestic-helper/v1/service-providers/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to get all service providers.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fservice-providers%2F{ReferenceId}/get">Swagger
+                            Link</a></p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+                            <p class="fob-welcome-line"></p>
+                            <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Service-Providers-List-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Service-Providers-List-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/service-providers/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $038db371-bb5b-400e-99b1-f607fa27cc3d' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+                                </code>
+                            </pre>
+                                </div>
+                    </div>
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p
+                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                <div class="response-box-div">
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Service-Providers-List')">200</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Service-Providers-List2')">400</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Service-Providers-List3')">401</a>
+                                </div>
+                                <pre class="response-box">
+
+                    <code id="response-Service-Providers-List" style=" display: block; " class="text">
+{
+    "Data": {
+        "ServiceProviders": [
+        {
+            "Area": "Central",
+            "City": "Riyadh",
+            "LocationType": "Centers",
+            "MainAddress": "Naseem, RiyadhP.O.Box: 45887   Zip Code: 11322",
+            "MobileNumber": 0,
+            "ProviderId": 796595,
+            "ProviderName": "H.O.W. Al Hadith Al Alami Clinic Group - Al Rodah",
+            "StartDate": "0001-01-01T00:00:00",
+            "Copayment": {
+            "Nil": "true"
+            },
+            "Deductible": {
+            "Nil": "true"
+            },
+            "DeletionDate": {
+            "Nil": "true"
+            },
+            "EndDate": {
+            "Nil": "true"
+            },
+            "Latitude": {
+            "Nil": "true"
+            },
+            "Longitude": {
+            "Nil": "true"
+            },
+            "Network": {
+            "Nil": "true"
+            },
+            "ProviderType": {
+            "Nil": "true"
+            },
+            "Status": {
+            "Nil": "true"
+            },
+            "ClassName": {
+            "Nil": "true"
+            }
+        },
+        {
+            "Area": "Central",
+            "City": "Riyadh",
+            "LocationType": "Centers",
+            "MainAddress": "Al Nuzha Area Othman Bin Affan Road   P.O.Box: 977   Zip Code: 11322",
+            "MobileNumber": 0,
+            "ProviderId": 796596,
+            "ProviderName": "Al Nuzha Medical Center",
+            "StartDate": "0001-01-01T00:00:00",
+            "Copayment": {
+            "Nil": "true"
+            },
+            "Deductible": {
+            "Nil": "true"
+            },
+            "DeletionDate": {
+            "Nil": "true"
+            },
+            "EndDate": {
+            "Nil": "true"
+            },
+            "Latitude": {
+            "Nil": "true"
+            },
+            "Longitude": {
+            "Nil": "true"
+            },
+            "Network": {
+            "Nil": "true"
+            },
+            "ProviderType": {
+            "Nil": "true"
+            },
+            "Status": {
+            "Nil": "true"
+            },
+            "ClassName": {
+            "Nil": "true"
+            }
+        }
+        ],
+        "Cities": [
+        "Riyadh",
+        "Medina",
+        "Mecca",
+        "Jeddah",
+        "Abha",
+        "Khamis Mushayt",
+        "Al Kharj",
+        "Jizan",
+        "Al Bukayriyah",
+        "Unayzah",
+        "Dahran Al Janoub",
+        "Ha'il",
+        "Baqa'a",
+        "Al Mothanab",
+        "AL-QATIF",
+        "Raniah",
+        "Al Ras",
+        "Al Bahah",
+        "AL-ZULFI",
+        "Dammam",
+        "Buraydah",
+        "ALKhobar",
+        "Sakaka",
+        "Tabuk",
+        "Umluj",
+        "Taif",
+        "Al Jubail",
+        "Al-Hassa",
+        "Ahad Rufaidah",
+        "Saihat",
+        "Shaqra",
+        "NAJRAN",
+        "Hafr Al-Batin",
+        "Duba",
+        "Sabia",
+        "AL JAWF",
+        "Sarat Abida",
+        "Khafji",
+        "Bisha",
+        "Yanbu",
+        "Yanbu Industrial",
+        "WADI AL-DAWASER",
+        "Turaif",
+        "Al Quwaiiyah",
+        "Tathlith",
+        "Jubail Industrial",
+        "Arar",
+        "Al Aflaj",
+        "Baljurashi",
+        "Rabegh",
+        "Remah",
+        "Ras Tanura",
+        "Hayer",
+        "Hofuf",
+        "Al-Muzahmiya",
+        "Al Qunfudhah",
+        "Sharoora",
+        "Tarout",
+        "Abu Areesh",
+        "Bqaiq",
+        "Muhayil",
+        "Mnamah",
+        "Dubai",
+        "Safwa",
+        "Tabarjal",
+        "Qurayat",
+        "Rahima",
+        "Haql",
+        "Al Majma'ah",
+        "Qassim",
+        "Ad Diriyah",
+        "Khaliss",
+        "Regal Almaa",
+        "Samtah",
+        "Aqiq",
+        "ALMASQA",
+        "THUWAL",
+        "Al Henakiyah",
+        "Al Duwadimi",
+        "AL-LAITH",
+        "Artaweya",
+        "Al Jumum",
+        "Baha",
+        "Nairyah",
+        "Mekhwa",
+        "RAFHA",
+        "Al Saleel",
+        "Ar Rafiah",
+        "AL WAJH",
+        "Al Bada'a",
+        "Al Majardah",
+        "Tanomah",
+        "Al Dhahran",
+        "Badr",
+        "Al Ahsa"
+        ]
+    }
+}
+                    </code>
+                    <code id="response-Service-Providers-List2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Service-Providers-List3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                            </div>
+                        </div>
+                    </div>                           
+                </div>
+
+                <!-- API 16 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-17">Update Last Visited Page</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: PUT :
+                        /mp-domestic-helper/v1/last-visited-page/{ReferenceId}</br></p>
+                    <p class="fob-welcome-text">This operation is used to update the last visited page of the user.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Flast-visited-page%2F{ReferenceId}/put">Swagger
+                            Link</a></p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title">Request Example</h1>
+                                    <p class="fob-welcome-line"></p>
+                                    <pre class="example_97 api-guides-example-fob ">
+                            <code class="sample-code">
+Query Params:
+    "transactionId":"dh_policies_purchase"
+
+Path Variables:
+    "ReferenceId":"U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D"
+
+Request Body
+{
+    "Data": {
+        "Status": "70"
+    }
+}
+                            </code>
+                            </pre>
+                                </div>
+                                <div class="url-box">
+
+                                    <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                        onclick="show('Update-Last-Visited-Page-curl')">
+                                        <p class="curlText">cURL</p>
+                                    </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Update-Last-Visited-Page-curl" style=" display: block;">
+curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/last-visited-page/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+--header 'x-request-id: $cff52dcc-544c-4a9d-8e47-5e9c48ce9869' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
+--data '{
+"Data": {
+"Status": "70"
+}
+}'
+                                </code>
+                            </pre>
+                                </div>
+                            </div>
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Last-Visited-Page')">204</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Last-Visited-Page2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Update-Last-Visited-Page3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Update-Last-Visited-Page" style=" display: block; " class="text">
+204 No Content
+                        </code>
+                    <code id="response-Update-Last-Visited-Page2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Update-Last-Visited-Page3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+                <!-- API 17 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-19">Get Plans</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: GET :
+                        /mp-domestic-helper/v1/plans</br></p>
+                    <p class="fob-welcome-text">This operation is used to to get plans.</br>
+                    </p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fplans/get">Swagger
+                    Link</a></p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <div class="url-box">
+                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                onclick="show('Get-Plans-curl')">
+                                <p class="curlText">cURL</p>
+                            </button>
+
+                                    <pre id="generatedCurl">
+                                <code id="Get-Plans-curl" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/plans' \
+--header 'x-request-id: $df1cabdd-f6cd-4c0a-9059-65dcd083e0c5' \
+--header 'accept-language: EN' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
+                                </code>
+                            </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                        <p
+                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                        <div class="response-box-div">
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-Plans')">200</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-Plans2')">400</a>
+                                            <a type="button" class="response-box-error"
+                                                onclick="responseText('response-Get-Plans3')">401</a>
+                                        </div>
+                                        <pre class="response-box">
+
+                    <code id="response-Get-Plans" style=" display: block; " class="text">
+{
+    "Data": {
+        "Plans": [
+        {
+            "PlanId": "BasicM",
+            "PlanName": "Basic",
+            "Title": "Benefits list",
+            "Benifits": [
+            {
+                "Name": "Providers Network",
+                "Value": "DH-M"
+            },
+            {
+                "Name": "Annual Limit",
+                "Value": "100,000 SAR"
+            },
+            {
+                "Name": "In-Patient & Emergency Treatments",
+                "Value": "Covered, NIL Deductible"
+            },
+            {
+                "Name": "Ambulance Transportation",
+                "Value": "Covered for Emergency"
+            },
+            {
+                "Name": "Ambulance Transportation",
+                "Value": "1,000 SAR"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "For emergency cases: the number of visits is not specified"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Non-emergency cases: Covered for 4 visits (with deductible)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Primary care centers 0-5% (Up to 25 SAR)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Specialized centers"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "0 - 10% (Up to 75 SAR referral from a primary care center)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "0 - 10% (Up to 500 SAR without referral from a primary care center)"
+            },
+            {
+                "Name": "Vaccinations and examinations",
+                "Value": "Covered"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "GP/Specialist  100-150 SAR"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "Specialist/Consultant 200-300 SAR"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "Rare specialties 400 SAR"
+            },
+            {
+                "Name": "Dental Benefit",
+                "Value": "Not Covered"
+            },
+            {
+                "Name": "Opticals Cover",
+                "Value": "Not Covered"
+            },
+            {
+                "Name": "Lab tests and radiology",
+                "Value": "Lab tests: 15% Up to 200 SAR"
+            },
+            {
+                "Name": "Lab tests and radiology",
+                "Value": "Radiology and other services: 30% with No Max Cap"
+            },
+            {
+                "Name": "Medication / Pharmacy Coverage",
+                "Value": "According to CHI Drug Formulary"
+            },
+            {
+                "Name": "Repatriation of bodily remains to Home Country",
+                "Value": "10,000 SAR"
+            },
+            {
+                "Name": "Repatriation of bodily remains to Home Country",
+                "Value": "*Responsibility for paying costs in the event of duplication of the two insurance policies “Contract for Domestic Workers” and “Domestic Worker Health Insurance” to be done in coordination between the SCB and CHI."
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Medical Declaration Form"
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Insurance for all workers"
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Insurance company’s approval"
+            }
+            ],
+            "SubText": "",
+            "Insurance": []
+        },
+        {
+            "PlanId": "BasicS",
+            "PlanName": "Silver",
+            "Title": "Benefits list",
+            "Benifits": [
+            {
+                "Name": "Providers Network",
+                "Value": "DH-S"
+            },
+            {
+                "Name": "Annual Limit",
+                "Value": "100,000 SAR"
+            },
+            {
+                "Name": "In-Patient & Emergency Treatments",
+                "Value": "Covered, NIL Deductible"
+            },
+            {
+                "Name": "Ambulance Transportation",
+                "Value": "Covered for Emergency"
+            },
+            {
+                "Name": "Ambulance Transportation",
+                "Value": "1,000 SAR"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "For emergency cases: the number of visits is not specified"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Non-emergency cases: Covered for 4 visits (with deductible)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Primary care centers 0-5% (Up to 25 SAR)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Specialized centers"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "0 - 10% (Up to 75 SAR referral from a primary care center)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "0 - 10% (Up to 500 SAR without referral from a primary care center)"
+            },
+            {
+                "Name": "Vaccinations and examinations",
+                "Value": "Covered"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "GP/Specialist  100-150 SAR"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "Specialist/Consultant 200-300 SAR"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "Rare specialties 400 SAR"
+            },
+            {
+                "Name": "Dental Benefit",
+                "Value": "Not Covered"
+            },
+            {
+                "Name": "Opticals Cover",
+                "Value": "Not Covered"
+            },
+            {
+                "Name": "Lab tests and radiology",
+                "Value": "Lab tests: 15% Up to 200 SAR"
+            },
+            {
+                "Name": "Lab tests and radiology",
+                "Value": "Radiology and other services: 30% with No Max Cap"
+            },
+            {
+                "Name": "Medication / Pharmacy Coverage",
+                "Value": "According to CHI Drug Formulary"
+            },
+            {
+                "Name": "Repatriation of bodily remains to Home Country",
+                "Value": "10,000 SAR"
+            },
+            {
+                "Name": "Repatriation of bodily remains to Home Country",
+                "Value": "*Responsibility for paying costs in the event of duplication of the two insurance policies “Contract for Domestic Workers” and “Domestic Worker Health Insurance” to be done in coordination between the SCB and CHI."
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Medical Declaration Form"
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Insurance for all workers"
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Insurance company’s approval"
+            }
+            ],
+            "SubText": "",
+            "Insurance": []
+        },
+        {
+            "PlanId": "Gold",
+            "PlanName": "Gold",
+            "Title": "Benefits list",
+            "Benifits": [
+            {
+                "Name": "Providers Network",
+                "Value": "DH-3"
+            },
+            {
+                "Name": "Annual Limit",
+                "Value": "100,000 SAR"
+            },
+            {
+                "Name": "In-Patient & Emergency Treatments",
+                "Value": "Covered, NIL Deductible"
+            },
+            {
+                "Name": "Ambulance Transportation",
+                "Value": "Covered for Emergency"
+            },
+            {
+                "Name": "Ambulance Transportation",
+                "Value": "1,000 SAR"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "For emergency cases: the number of visits is not specified"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Non-emergency cases: Covered for 4 visits (with deductible)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Primary care centers 0-5% (Up to 25 SAR)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "Specialized centers"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "0 - 10% (Up to 75 SAR referral from a primary care center)"
+            },
+            {
+                "Name": "Outpatient Treatments",
+                "Value": "0 - 10% (Up to 500 SAR without referral from a primary care center)"
+            },
+            {
+                "Name": "Vaccinations and examinations",
+                "Value": "Covered"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "GP/Specialist  100-150 SAR"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "Specialist/Consultant 200-300 SAR"
+            },
+            {
+                "Name": "Consultation",
+                "Value": "Rare specialties 400 SAR"
+            },
+            {
+                "Name": "Dental Benefit",
+                "Value": "Not Covered"
+            },
+            {
+                "Name": "Opticals Cover",
+                "Value": "Not Covered"
+            },
+            {
+                "Name": "Lab tests and radiology",
+                "Value": "Lab tests: 15% Up to 200 SAR"
+            },
+            {
+                "Name": "Lab tests and radiology",
+                "Value": "Radiology and other services: 30% with No Max Cap"
+            },
+            {
+                "Name": "Medication / Pharmacy Coverage",
+                "Value": "According to CHI Drug Formulary"
+            },
+            {
+                "Name": "Repatriation of bodily remains to Home Country",
+                "Value": "10,000 SAR"
+            },
+            {
+                "Name": "Repatriation of bodily remains to Home Country",
+                "Value": "*Responsibility for paying costs in the event of duplication of the two insurance policies “Contract for Domestic Workers” and “Domestic Worker Health Insurance” to be done in coordination between the SCB and CHI."
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Medical Declaration Form"
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Insurance for all workers"
+            },
+            {
+                "Name": "General requirements",
+                "Value": "Insurance company’s approval"
+            }
+            ],
+            "SubText": "",
+            "Insurance": []
+        }
+        ]
+    }
+}
+                        </code>
+                    <code id="response-Get-Plans2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url":  "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                    <code id="response-Get-Plans3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+}
+
+                    </code>
+                            </pre>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

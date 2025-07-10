@@ -1,0 +1,4078 @@
+<div class="product-details-document">
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Motor Insurance API Documentation</p>
+    </div>
+
+    <div class="moterinsurance-sec">
+        <div class="container">
+            <div class="d-flex">
+                <div class="leftside-sec">
+                    <p class="fob-welcome-title" id="section-1">Motor Insurance APIs</p>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Motor insurance is a critical safeguard for vehicle owners,
+                        providing protection, legal compliance, and financial support during unforeseen situations.</p>
+                </div>
+
+                <div class="rightside-sec">
+                    <p class="API-image">&nbsp;</p>
+                </div>
+            </div>
+
+            <div class="d-flex btn-box">
+                <a class="primary-btn" download=""
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/ModernSandboxARTMotorInsuranceV2InboundAPIs.postman_collection.json"
+                    id="downloadLink">Download Postman Collection</a> 
+                <a class="primary-btn"
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/MotorInsuranceV2SampleRequestData.xlsx"
+                    download="">Download Sample Data</a>
+                </div>
+        </div>
+    </div>
+    <div class="miw-section">
+        <div class="container">
+            <h1 class="fob-welcome-title">Motor Insurance Workflow</h1>
+
+            <p class="motoinsu-image">&nbsp;</p>
+            <a class="fob-product-title-click"
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ARG-525MotorInsurancev0.1.pdf"
+                rel="noopener" target="_blank">Click here </a>
+        </div>
+    </div>
+
+    <div class="APIs-section">
+        <div class="container">
+            <p class="main-heading">APIs</p>
+
+            <div class="bx--snippet-container body" data-testid="expandable-example-display"><!-- API 1 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-2">Get citizen info</h1>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-yakeen/art/v2/citizen</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1885/api/1882#/ARTYakeenPersonInformation_110/operation/%2Fgetcitizeninfo/get">Swagger
+                            Link </a></p>
+
+                    <p class="fob-welcome-text">This path is used to get citizen info based on nationalid and date of
+                        birth.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                       <code class="sample-code">
+                            Query parameters
+                            poiNumber:1078774203
+                            gregBirthDate:03-1992
+                      </code>
+                    </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top"
+                                type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-create-person-profile-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                      <code id="citizen-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-yakeen/art/v2/alien?poiNumber=2555809033&amp;hijriExpiryDate=1446' \
+--header 'x-request-id: aed06343-7809-4140-aa7d-85113679bfbf' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'                                     
+                      </code>
+                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a onclick="responseText('citizen')" class="response-box-error active" type="button">200</a>
+                                    <a onclick="responseText('citizen2')" class="response-box-error" type="button">400</a> 
+                                    <a onclick="responseText('citizen3')" class="response-box-error" type="button">401</a> 
+                                    <a onclick="responseText('citizen4')" class="response-box-error" type="button">403</a> 
+                                    <a onclick="responseText('citizen5')" class="response-box-error" type="button">404</a> 
+                                    <a onclick="responseText('citizen6')" class="response-box-error" type="button">405</a> 
+                                    <a onclick="responseText('citizen7')" class="response-box-error" type="button">406</a> 
+                                    <a onclick="responseText('citizen8')" class="response-box-error" type="button">429</a> 
+                                    <a onclick="responseText('citizen9')" class="response-box-error" type="button">500</a>
+                                </div>
+
+                                <pre class="response-box">
+                        <code style=" display: block; "  class="text" id="citizen">
+{
+    "Data": {
+        "PersonInfo": {
+            "FirstNameAr": "محمد",
+            "FirstNameEn": "Mohamed",
+            "LastNameAr": "احمد",
+            "LastNameEn": "Ahmed",
+            "SecondNameAr": "على",
+            "SecondNameEn": "ALI",
+            "ThirdNameAr": "عبدالله",
+            "ThirdNameEn": "Abdullah",
+            "HijriBirthDate": "19-11-1446",
+            "GregBirthDate": "21-04-2024",
+            "MaritalStatusAr": "متزوج",
+            "MaritalStatusEn": "Married",
+            "IssuePlace": "Riyadh",
+            "Gender": "M"
+        }
+    }
+}                       
+                        </code>
+          
+                        <code class="text" style=" display: none; " id="citizen2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerpoiNumber does not match NIC records.",
+            "Path": "request.parameters.ownerpoiNumber",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                        </code>	
+                      
+                        <code class="text" style=" display: none; " id="citizen3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                        </code>	
+                      
+                        <code class="text" style=" display: none; " id="citizen4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                        </code>
+                        <code class="text" style=" display: none; " id="citizen5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}    
+                        </code>
+      
+                        <code class="text" style=" display: none; " id="citizen6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                              
+                        </code>
+                      
+                        <code class="text" style=" display: none; " id="citizen7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}    
+                        </code>
+                      
+                        <code class="text" style=" display: none; " id="citizen8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                        </code>
+                      
+                        <code class="text" style=" display: none; " id="citizen9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}   
+                        </code>
+                      </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 2 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-3">Get Alien Info By Iqama</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-yakeen/art/v2/alien</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1885/api/1882#/ARTYakeenPersonInformation_110/operation/%2Fgetalieninfobyiqama/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This method to get customer info from Yakeen using Iqama Number and Id
+                        Expiry Date.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                        <code class="sample-code">
+Query Parameters
+    poiNumber:2555809033
+    hijriExpiryDate:1446                       
+                        </code>
+                      </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                              <code id="Get-Alien-Info-By-Iqama-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-yakeen/art/v2/citizen?poiNumber=1078774203&amp;gregBirthDate=03-1992' \
+--header 'x-request-id: 7a19fa23-f802-46a2-8101-4dc55a2062fb' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'                                                          
+                          </code>
+                        </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Get-Alien-Info-By-Iqama')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Iqama2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Get-Alien-Info-By-Iqama3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Get-Alien-Info-By-Iqama4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Iqama5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Get-Alien-Info-By-Iqama6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Get-Alien-Info-By-Iqama7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Iqama8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Get-Alien-Info-By-Iqama9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                <code class="text" style=" display: block; "  id="Get-Alien-Info-By-Iqama">
+{
+    "Data": {
+        "PersonInfo": {
+            "IdentificationInfo": {
+                "POINumber": "1234567890",
+                "POIType": "1",
+                "IssuePlace": "Riyadh",
+                "HijriExpiryDate": "19-11-1446",
+                "GregExpiryDate": "25-05-1989"
+            },
+            "FirstNameAr": "محمد",
+            "FirstNameEn": "Mohamed",
+            "LastNameAr": "احمد",
+            "LastNameEn": "Ahmed",
+            "SecondNameAr": "على",
+            "SecondNameEn": "ALI",
+            "ThirdNameAr": "عبدالله",
+            "ThirdNameEn": "Abdullah",
+            "HijriBirthDate": "19-11-1446",
+            "GregBirthDate": "21-04-2024",
+            "MaritalStatusCode": 2,
+            "MaritalStatusAr": "متزوج",
+            "MaritalStatusEn": "Married",
+            "Gender": "M",
+            "NationalityCode": 321,
+            "OccupationCode": 243110,
+            "SponsorMobileNumber": 7026765615,
+            "SponsorName": "شركة جاى المحدودة",
+            "GregIqamaExpiryDate": "string"
+        }
+    }
+}                             
+                 </code>
+                 <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerpoiNumber does not match NIC records.",
+            "Path": "request.parameters.ownerpoiNumber",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            
+                  </code>	
+        
+                <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                
+                </code>	
+                
+                <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+} 
+                </code>
+                
+                
+                <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+} 
+                </code>
+                
+                
+                <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}  
+                     
+                </code>
+                 
+                
+                <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+} 
+                </code>
+                 
+                
+                <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                </code>
+                
+                
+                <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                </code>
+                      </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 3 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-4">Get Alien Info By Iqama and DOB</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-yakeen/art/v2/alien/birthDate</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1885/api/1882#/ARTYakeenPersonInformation_110/operation/%2Fgetalieninfobyiqamaanddob/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This method to get customer info from Yakeen using Iqama Number and Date
+                        Of Birth.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                              <code class="sample-code">
+Query parameters
+    poiNumber:2555809033
+    gregBirthDate:12-1989                                                  
+                          </code>
+                        </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-validate-OTP-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-validate-OTP-top" type="submit">cURL</button>
+                            </p>
+
+                            <pre id="generatedCurl">
+                                                  <code id="Get-Alien-Info-By-Iqama-dob-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-yakeen/art/v2/alien/birthDate?poiNumber=2555809033&amp;gregBirthDate=12-1989' \
+--header 'x-request-id: b1d1af12-4880-454d-b964-ab7fb1f59fb0' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'
+                     </code>
+                          </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Get-Alien-Info-By-Iqama-dob')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Iqama-dob2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Get-Alien-Info-By-Iqama-dob3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Get-Alien-Info-By-Iqama-dob4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Iqama-dob5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Get-Alien-Info-By-Iqama-dob6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Get-Alien-Info-By-Iqama-dob7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Iqama-dob8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Get-Alien-Info-By-Iqama-dob9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                    <code class="text" style=" display: block; "  id="Get-Alien-Info-By-Iqama-dob">
+{
+    "Data": {
+        "PersonInfo": {
+            "IdentificationInfo": {
+                "POINumber": "1234567890",
+                "POIType": "1",
+                "IssuePlace": "Riyadh",
+                "HijriExpiryDate": "19-11-1446",
+                "GregExpiryDate": "25-05-1989"
+            },
+            "FirstNameAr": "محمد",
+            "FirstNameEn": "Mohamed",
+            "LastNameAr": "احمد",
+            "LastNameEn": "Ahmed",
+            "SecondNameAr": "على",
+            "SecondNameEn": "ALI",
+            "ThirdNameAr": "عبدالله",
+            "ThirdNameEn": "Abdullah",
+            "HijriBirthDate": "19-11-1446",
+            "GregBirthDate": "21-04-2024",
+            "MaritalStatusCode": 2,
+            "MaritalStatusAr": "متزوج",
+            "MaritalStatusEn": "Married",
+            "Gender": "M",
+            "NationalityCode": 321,
+            "OccupationCode": 243110,
+            "SponsorMobileNumber": 7026765615,
+            "SponsorName": "شركة جاى المحدودة",
+            "GregIqamaExpiryDate": "string"
+        }
+    }
+}                           
+                    </code>
+                    <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama-dob2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerpoiNumber does not match NIC records.",
+            "Path": "request.parameters.ownerpoiNumber",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                        
+                     </code>
+        
+                    <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama-dob3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                    
+                    </code>	
+                    
+                    <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama-dob4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+} 
+                    </code>
+                    
+                    
+                    <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama-dob5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                    </code>
+                    
+                    
+                    <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama-dob6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}   
+                       
+                    </code>
+                    
+                    
+                    <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama-dob7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                    </code>
+                    
+                    
+                    <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama-dob8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}  
+                    </code>
+                    
+                    
+                    <code class="text" style=" display: none; " id="Get-Alien-Info-By-Iqama-dob9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                    </code>
+                          </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- API 4 -->
+
+                <!-- <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-5">Get Alien Info By Border Number</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-yakeen/art/v2/alien/borderNumber</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1885/api/1882#/ARTYakeenPersonInformation_110/operation/%2Fgetalieninfobybordernumber/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This method to get customer info from Yakeen using Border Number and
+                        Sponsor Number.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                          <code class="sample-code">
+Query parameters
+    borderNumber:4106535541
+    sponsorId:7038529447
+                                    </code>
+                                  </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                            <code id="Get-Alien-Info-By-border-number-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-yakeen/art/v2/alien/borderNumber?borderNumber=4106535541&amp;sponsorId=7038529447' \
+--header 'x-request-id: f6262b5a-1295-4533-a4ee-ff3d784e7f71' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'                        
+                                      </code>
+                                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div">
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number')" class="response-box-error" type="button">200</a> 
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number2')" class="response-box-error" type="button">400</a> 
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number3')" class="response-box-error" type="button">401</a> 
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number4')" class="response-box-error" type="button">403</a> 
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number5')" class="response-box-error" type="button">404</a> 
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number6')" class="response-box-error" type="button">405</a> 
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number7')" class="response-box-error" type="button">406</a> 
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number8')" class="response-box-error" type="button">429</a> 
+                                    <a onclick="responseText('Get-Alien-Info-By-border-number9')" class="response-box-error" type="button">500</a>
+                                </div>
+
+                                <pre class="response-box">
+                            <code class="text" style=" display: block; "  id="Get-Alien-Info-By-border-number">             
+{
+    "Data": {
+        "PersonInfo": {
+            "FirstNameAr": "محمد",
+            "FirstNameEn": "Mohamed",
+            "LastNameAr": "احمد",
+            "LastNameEn": "Ahmed",
+            "SecondNameAr": "على",
+            "SecondNameEn": "ALI",
+            "ThirdNameAr": "عبدالله",
+            "ThirdNameEn": "Abdullah",
+            "HijriBirthDate": "19-11-1446",
+            "GregBirthDate": "21-04-2024",
+            "Gender": "M",
+            "NationalityCode": 321,
+            "OccupationCode": 243110,
+            "SponsorName": "شركة جاى المحدودة"
+        }
+    }
+}                                
+                             </code>
+                             <code class="text" style=" display: none; " id="Get-Alien-Info-By-border-number2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerpoiNumber does not match NIC records.",
+            "Path": "request.parameters.ownerpoiNumber",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                                            
+                            </code>	
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-border-number3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            
+                            </code>	
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-border-number4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            </code>
+                            
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-border-number5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            </code>
+                            
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-border-number6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                 
+                            </code>
+                             
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-border-number7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}     
+                            </code>
+                             
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-border-number8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}  
+                            </code>
+                            
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-border-number9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            </code>
+                                  </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                
+                
+                <!-- API 5 -->
+
+                <!-- <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-6">Get Alien Info By Visa</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-yakeen/art/v2/alien/visa</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1885/api/1882#/ARTYakeenPersonInformation_110/operation/%2Fgetalieninfobyvisa/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This method to get customer info from Yakeen using Visa Number and Visa
+                        Expiry Date.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                              <code class="sample-code">
+Query parameters
+    visaNumber:6065727873
+    visaExpiryDate:1998-11                                           
+                                    </code>
+                                  </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                <code id="Get-Alien-Info-By-Visa-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-yakeen/art/v2/alien/visa?visaNumber=6065727873&amp;visaExpiryDate=1998-11' \
+--header 'x-request-id: 30a419c2-b557-4bb5-9f13-38078bb75f30' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'                                                                                  
+                                      </code>
+                                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Get-Alien-Info-By-Visa')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Visa2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Get-Alien-Info-By-Visa3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Get-Alien-Info-By-Visa4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Visa5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Get-Alien-Info-By-Visa6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Get-Alien-Info-By-Visa7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Get-Alien-Info-By-Visa8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Get-Alien-Info-By-Visa9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                            <code class="text" style=" display: block; " id="Get-Alien-Info-By-Visa">
+{
+    "Data": {
+        "PersonInfo": {
+            "IdentificationInfo": {
+                "PassportNumber": "P08043244",
+                "GregEntryDate": "21-04-2024",
+                "BorderNumber": 4681042141,
+                "GregVisaExpiryDate": "21-04-2024",
+                "VisaDuration": "90"
+            },
+            "FirstNameAr": "محمد",
+            "FirstNameEn": "Mohamed",
+            "LastNameAr": "احمد",
+            "LastNameEn": "Ahmed",
+            "SecondNameAr": "على",
+            "SecondNameEn": "ALI",
+            "ThirdNameAr": "عبدالله",
+            "ThirdNameEn": "Abdullah",
+            "HijriBirthDate": "19-11-1446",
+            "GregBirthDate": "21-04-2024",
+            "NationalityCode": 321,
+            "OccupationCode": 243110
+        }
+    }
+}
+                             </code>
+                             <code class="text" style=" display: none; " id="Get-Alien-Info-By-Visa2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerpoiNumber does not match NIC records.",
+            "Path": "request.parameters.ownerpoiNumber",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                                                
+                            </code>	
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-Visa3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            
+                            </code>	
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-Visa4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            </code>
+                            
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-Visa5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            </code>
+                            
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-Visa6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}                
+                            </code>
+                             
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-Visa7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            </code>
+                             
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-Visa8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            </code>
+                            
+                            
+                            <code class="text" style=" display: none; " id="Get-Alien-Info-By-Visa9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                            </code>
+                                  </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                
+                <!-- API 6 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-7">Get Car Info By Sequence</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-vehicle/art/v2/sequence</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1891/api/1888#/ARTYakeenVehicleInformation_110/operation/%2Fgetcarinfobysequence/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This API is used to get car info based on sequence number which is a
+                        standard, system-generated registration number assigned automatically in chronological or
+                        numerical order.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                      <code class="sample-code">
+Query Parameters
+    poiNumber:1078774203
+
+Path Variables
+    SequenceNumber:614833710
+                                          </code>
+                                        </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                        <code id="Get-Car-Info-By-Sequence-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-vehicle/art/v2/sequence/614833710?poiNumber=1078774203' \
+--header 'x-request-id: <string>' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'         
+                                            </string></code>
+                                          </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Get-Car-Info-By-Sequence')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Get-Car-Info-By-Sequence2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Get-Car-Info-By-Sequence3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Get-Car-Info-By-Sequence4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Get-Car-Info-By-Sequence5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Get-Car-Info-By-Sequence6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Get-Car-Info-By-Sequence7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Get-Car-Info-By-Sequence8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Get-Car-Info-By-Sequence9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                  <code class="text" style=" display: block; " id="Get-Car-Info-By-Sequence">
+{
+    "Data": {
+        "VehicleInfo": {
+        "OwnerName": "محمد على عبدالله احمد",
+        "Model": "ماليبو",
+        "ModelCode": 5,
+        "ModelYear": 2020,
+        "Maker": "شيفورلية",
+        "MakerCode": 20,
+        "BodyDescription": "9 ركاب فأقل",
+        "BodyCode": 5,
+        "Class": 2,
+        "MajorColor": "اسود",
+        "MinorColor": "ابيض",
+        "ChassisNumber": "ماليبو",
+        "Load": 2,
+        "Weight": 1640,
+        "Cylinders": 6,
+        "PlateNumber": 5790,
+        "PlateText1": "أ",
+        "PlateText2": "أ",
+        "PlateText3": "أ",
+        "PlateTypeCode": 2,
+        "RegistrationPlace": "الدمام",
+        "SequenceNumber": 972732810,
+        "Region": "string",
+        "VehicleClass": 0
+        }
+    }
+}
+                                   </code>
+                                   <code class="text" style=" display: none; " id="Get-Car-Info-By-Sequence2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+            "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}                                 
+                                  </code>	
+                                  <code class="text" style=" display: none; " id="Get-Car-Info-By-Sequence3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                  
+                                  </code>	
+                                  
+                                  <code class="text" style=" display: none; " id="Get-Car-Info-By-Sequence4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                  </code>
+                                  
+                                  
+                                  <code class="text" style=" display: none; " id="Get-Car-Info-By-Sequence5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                  </code>
+                                  
+                                  
+                                  <code class="text" style=" display: none; " id="Get-Car-Info-By-Sequence6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}                
+                                  </code>
+                                   
+                                  
+                                  <code class="text" style=" display: none; " id="Get-Car-Info-By-Sequence7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                  </code>
+                                   
+                                  
+                                  <code class="text" style=" display: none; " id="Get-Car-Info-By-Sequence8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                  </code>
+                                  
+                                  
+                                  <code class="text" style=" display: none; " id="Get-Car-Info-By-Sequence9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                  </code>
+                                        </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 7 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-8">Get Car Info By Custom</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-vehicle/art/v2/customNumber</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1891/api/1888#/ARTYakeenVehicleInformation_110/operation/%2Fgetcarinfobycustom/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This API is used to get car info based on custom number which is chosen
+                        and personalized by the vehicle owner, often for prestige or personal significance, and comes at
+                        an additional cost.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                          <code class="sample-code">
+Query parameters
+    modelYear:2024
+
+Path Variables
+    CustomNumber:3024070770
+                                            </code>
+                                          </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                            <code id="Get-Car-Info-By-Custom-curl"> 
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-vehicle/art/v2/customNumber/3024070770?modelYear=2024' \
+--header 'x-request-id: 831e3529-69e2-4b29-ae38-2e0dc9c94a8f' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'
+                                              </code>
+                                            </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Get-Car-Info-By-Custom')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Get-Car-Info-By-Custom2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Get-Car-Info-By-Custom3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Get-Car-Info-By-Custom4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Get-Car-Info-By-Custom5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Get-Car-Info-By-Custom6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Get-Car-Info-By-Custom7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Get-Car-Info-By-Custom8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Get-Car-Info-By-Custom9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                    <code class="text" style=" display: block; " id="Get-Car-Info-By-Custom">
+{
+    "Data": {
+        "VehicleInfo": {
+            "OwnerName": "محمد على عبدالله احمد",
+            "Model": "ماليبو",
+            "ModelCode": 5,
+            "ModelYear": 2020,
+            "Maker": "شيفورلية",
+            "MakerCode": 20,
+            "BodyDescription": "9 ركاب فأقل",
+            "BodyCode": 5,
+            "Class": 2,
+            "MajorColor": "اسود",
+            "MinorColor": "ابيض",
+            "ChassisNumber": "ماليبو",
+            "Load": 2,
+            "Weight": 1640,
+            "Cylinders": 6,
+            "PlateNumber": 5790,
+            "PlateText1": "أ",
+            "PlateText2": "أ",
+            "PlateText3": "أ",
+            "PlateTypeCode": 2,
+            "RegistrationPlace": "الدمام",
+            "SequenceNumber": 972732810,
+            "Region": "string",
+            "VehicleClass": 0
+        }
+    }
+}
+                                     </code>
+                                     <code class="text" style=" display: none; " id="Get-Car-Info-By-Custom2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+            "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}                                          
+                                    </code>	
+                                    <code class="text" style=" display: none; " id="Get-Car-Info-By-Custom3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                    
+                                    </code>	
+                                    
+                                    <code class="text" style=" display: none; " id="Get-Car-Info-By-Custom4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                    </code>
+                                    
+                                    
+                                    <code class="text" style=" display: none; " id="Get-Car-Info-By-Custom5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                    </code>
+                                    
+                                    
+                                    <code class="text" style=" display: none; " id="Get-Car-Info-By-Custom6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}                
+                                    </code>
+                                     
+                                    
+                                    <code class="text" style=" display: none; " id="Get-Car-Info-By-Custom7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                    </code>
+                                     
+                                    
+                                    <code class="text" style=" display: none; " id="Get-Car-Info-By-Custom8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                    </code>
+                                    
+                                    
+                                    <code class="text" style=" display: none; " id="Get-Car-Info-By-Custom9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                    </code>
+                                          </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- API 8 -->
+
+                <!-- <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-9">Get Address by CR</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-address/art/v2/company</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1879/api/1876#/ARTAddressInformation_110/operation/%2Faddressbycr/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This operation path is used to fetch address details based on cr number.
+                    </p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                              <code class="sample-code">
+Query parameters
+    crNumber:7001430706
+                                              </code>
+                                            </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                                <code id="Get-Address-by-CR-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-address/art/v2/company?crNumber=7001430706' \
+--header 'x-request-id: 359902bb-4256-4b88-98fa-caf5c396b578' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'            
+                                                </code>
+                                              </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Get-Address-by-CR')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Get-Address-by-CR2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Get-Address-by-CR3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Get-Address-by-CR4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Get-Address-by-CR5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Get-Address-by-CR6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Get-Address-by-CR7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Get-Address-by-CR8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Get-Address-by-CR9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                      <code class="text" style=" display: block; " id="Get-Address-by-CR">
+{
+    "Data": {
+        "AddressList": [
+            {
+                "TitleEn": "Ibrahim Mohammed Hamad Al Hindi Factory for Industry",
+                "TitleAr": "مصنع ابراهيم محمد حمد الهندي للصناعة",
+                "DistrictCode": "23",
+                "DistrictNameEn": "Al Malaz Dist.",
+                "DistrictNameAr": "الملز",
+                "StreetNameEn": "Halimah Al Saadiyah",
+                "StreetNameAr": "حليمه الساعدية",
+                "BuildingNumber": "7054",
+                "UnitNumber": "124",
+                "PostalCode": "12345",
+                "AdditionalNumber": 1234,
+                "CityCode": 3,
+                "CityNameEn": "Riyadh",
+                "CityNameAr": "الرياض",
+                "RegionCode": 3,
+                "RegionNameEn": "Al Qassim",
+                "RegionNameAr": "القصيم",
+                "GovernorateCode": 0,
+                "GovernorateNameEn": "string",
+                "GovernorateNameAr": "string",
+                "Address1": "98 Halimah Al Saadiyah - Al Malaz Dist.",
+                "Address2": "RIYADH 12656 - 3575",
+                "ShortAddress": "RFHA7981",
+                "Coordinates": "46.74152904 24.81508776",
+                "Latitude": "46.74152904",
+                "Longitude": "24.81508776",
+                "Restriction": "string",
+                "PolygonString": "string",
+                "IsPrimaryAddress": true
+            }
+        ]
+    }
+}                                                                                                      
+                                       </code>
+                                       <code class="text" style=" display: none; " id="Get-Address-by-CR2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+            "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}                                                         
+                                      </code>	
+                                      <code class="text" style=" display: none; " id="Get-Address-by-CR3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                      
+                                      </code>	
+                                      
+                                      <code class="text" style=" display: none; " id="Get-Address-by-CR4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                      </code>
+                                      
+                                      
+                                      <code class="text" style=" display: none; " id="Get-Address-by-CR5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                      </code>
+                                      
+                                      
+                                      <code class="text" style=" display: none; " id="Get-Address-by-CR6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}                 
+                                      </code>
+                                       
+                                      
+                                      <code class="text" style=" display: none; " id="Get-Address-by-CR7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                      </code>
+                                       
+                                      
+                                      <code class="text" style=" display: none; " id="Get-Address-by-CR8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                      </code>
+                                      
+                                      
+                                      <code class="text" style=" display: none; " id="Get-Address-by-CR9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                      </code>
+                                            </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                
+                <!-- API 9 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-10">Get Address Details</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-address/art/v2/person</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1879/api/1876#/ARTAddressInformation_110/operation/%2F/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This operation path is used to fetch address details based on user's
+                        national or Iqama number.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                                  <code class="sample-code">
+Query parameters
+    //birthDate:18-7-2000
+    poiNumber:2406132841
+                                                </code>
+                                              </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                                    <code id="Get-Address-Details-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-address/art/v2/person?poiNumber=2406132841' \
+--header 'x-request-id: 3f53c58f-501a-4293-83a6-4d354caeae0a' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'                                                                                                      
+                                                  </code>
+                                                </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Get-Address-Details')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Get-Address-Details2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Get-Address-Details3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Get-Address-Details4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Get-Address-Details5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Get-Address-Details6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Get-Address-Details7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Get-Address-Details8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Get-Address-Details9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                        <code class="text" style=" display: block; " id="Get-Address-Details">
+{
+    "Data": {
+        "AddressList": [
+            {
+                "TitleEn": "Ibrahim Mohammed Hamad Al Hindi Factory for Industry",
+                "TitleAr": "مصنع ابراهيم محمد حمد الهندي للصناعة",
+                "DistrictCode": "23",
+                "DistrictNameEn": "Al Malaz Dist.",
+                "DistrictNameAr": "الملز",
+                "StreetNameEn": "Halimah Al Saadiyah",
+                "StreetNameAr": "حليمه الساعدية",
+                "BuildingNumber": "7054",
+                "UnitNumber": "124",
+                "PostalCode": "12345",
+                "AdditionalNumber": 1234,
+                "CityCode": 3,
+                "CityNameEn": "Riyadh",
+                "CityNameAr": "الرياض",
+                "RegionCode": 3,
+                "RegionNameEn": "Al Qassim",
+                "RegionNameAr": "القصيم",
+                "GovernorateCode": 0,
+                "GovernorateNameEn": "string",
+                "GovernorateNameAr": "string",
+                "Address1": "98 Halimah Al Saadiyah - Al Malaz Dist.",
+                "Address2": "RIYADH 12656 - 3575",
+                "ShortAddress": "RFHA7981",
+                "Coordinates": "46.74152904 24.81508776",
+                "Latitude": "46.74152904",
+                "Longitude": "24.81508776",
+                "Restriction": "string",
+                "PolygonString": "string",
+                "IsPrimaryAddress": true
+            }
+        ]
+    }
+}                                              
+                                         </code>
+                                         <code class="text" style=" display: none; " id="Get-Address-Details2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+            "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}                                               
+                                        </code>	
+                                        <code class="text" style=" display: none; " id="Get-Address-Details3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                        
+                                        </code>	
+                                        
+                                        <code class="text" style=" display: none; " id="Get-Address-Details4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                        </code>
+                                        
+                                        
+                                        <code class="text" style=" display: none; " id="Get-Address-Details5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                        </code>
+                                        
+                                        
+                                        <code class="text" style=" display: none; " id="Get-Address-Details6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}                
+                                        </code>
+                                         
+                                        
+                                        <code class="text" style=" display: none; " id="Get-Address-Details7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                        </code>
+                                         
+                                        
+                                        <code class="text" style=" display: none; " id="Get-Address-Details8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                        </code>
+                                        
+                                        
+                                        <code class="text" style=" display: none; " id="Get-Address-Details9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                        </code>
+                                              </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 10 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-11">Create Quotation</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-motor-insurance/v2/quotation</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2584/api/1894#/MotorInsurance_100/operation/%2Fneutrinos-aggregator%2Fcreate-quote/post">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">A service that allows users or systems to generate insurance premium
+                        quotes for vehicles by providing necessary inputs like vehicle details, owner information, and
+                        policy preferences.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                                      <code class="sample-code">
+Request Body:
+{
+    "Data": {
+        "RequestReferenceNumber": "RCM11429438844",
+        "InsuranceCompanyCode": 24,
+        "InsuranceTypeId": 1,
+        "Details": {
+        "QuotationSourceId": 1,
+        "PolicyHolderIdTypeCode": 1,
+        "PolicyHolderId": 1078774203,
+        "PolicyHolderIdExpiryDate": "05-1446",
+        "GregBirthDate": "10-05-1984",
+        "HijriBirthDate": "20-09-1412",
+        "PolicyHolderNationalityId": 0,
+        "FullName": "ندى البشير",
+        "FirstNameAr": "ندى",
+        "SecondNameAr": "",
+        "LastNameAr": "البشير",
+        "FirstNameEn": "NADA",
+        "SecondNameEn": "FAHAD",
+        "LastNameEn": "ALBASHER",
+        "PolicyHolderGender": 2,
+        "Occupation": "",
+        "Education": "",
+        "MaritalStatus": 1,
+        "ChildrenBelow16": 0,
+        "WorkCompanyName": null,
+        "WorkCityId": null,
+        "VehicleUseIdPurpose": 283,
+        "VehicleInfo": {
+            "VehicleUniqueTypeId": 1,
+            "VehicleSequenceNumber": 430493710,
+            "VehicleCustomId": null,
+            "VehicleDriveRegionId": 1,
+            "VehicleDriveCityId": 3,
+            "VehiclePlateTypeId": 1,
+            "VehiclePlateNumber": 7378,
+            "VehicleMakeCodeNajm": 0,
+            "VehicleMakeCodeNIC": 27,
+            "VehicleMakeTextNIC": "مرسيدس",
+            "VehicleMakeCodeTameeni": 0,
+            "VehicleModelCodeNajm": 0,
+            "VehicleModelCodeNIC": 38,
+            "VehicleModelTextNIC": "حافله",
+            "VehicleModelCodeTameeni": 992,
+            "ManufactureYear": 2020,
+            "VehicleColorCode": 1,
+            "VehicleWeight": 1460,
+            "VehicleBodyCode": 5,
+            "VehicleRegistrationCityCode": 11,
+            "VehicleVIN": "JM7KFAWL3L0346617",
+            "VehicleRegistrationExpiryDate": "18-05-1445",
+            "VehicleCapacity": 5,
+            "VehicleMileage": 5,
+            "VehicleExpectedMileageYear": 40000,
+            "VehicleEngineSizeCC": 8,
+            "VehicleTransmission": 2,
+            "VehicleNightParking": 1,
+            "VehicleAntitheftAlarm": 1,
+            "VehicleABS": 1,
+            "VehicleAutoBraking": 2,
+            "VehicleCruiseControl": 1,
+            "VehicleAdaptiveCruiseControl": 2,
+            "VehicleRearSensors": 1,
+            "VehicleFrontSensors": 2,
+            "VehicleRearCamera": 2,
+            "VehicleFrontCamera": 2,
+            "Vehicle360Camera": 2,
+            "VehicleFireExtinguisher": null,
+            "VehicleModifications": "",
+            "VehicleAxleWeight": null
+        },
+        "FirstPlateLetterId": 13,
+        "SecondPlateLetterId": 7,
+        "ThirdPlateLetterId": 3,
+        "Cylinders": null,
+        "CoverAgeLimitId": 1,
+        "PolicyEffectiveDate": "2024-07-07",
+        "DriverDetails": [
+            {
+            "DriverId": 2555809033,
+            "DriverName": "وسيم مرتضى غلام مرتضى",
+            "DriverGregBirthDate": "10-12-1989",
+            "DriverGender": 1,
+            "IsPolicyHolder": true,
+            "VehicleUsagePercentage": 100,
+            "DriverOccupation": "أخرى",
+            "DriverEducation": "دبلومة",
+            "DriverMaritalStatus": 1,
+            "DriverChildrenBelow16": 0,
+            "DriverWorkCompanyName": "",
+            "DriverWorkCityId": null,
+            "DriverHomeAddressCity": "مكة المكرمة",
+            "DriverHomeAddress": "6316  حي الخنساء 24238 3465",
+            "DriverLicenseType": 8,
+            "DriverLicenseOwnYears": 1,
+            "DriverNCDCode": "12",
+            "DriverNCDReference": "ByTameeni",
+            "DriverAccidentsNumber": 0,
+            "NajmCaseDetails": [
+                {
+                "CaseNumber": 12
+                }
+            ],
+            "DriverClaimsNumber": null,
+            "DriverTrafficViolationsCode": null,
+            "DriverHealthConditionsCode": null,
+            "DriverRelation": null,
+            "CountriesValidDrivingLicense": [
+                {
+                "DrivingLicenseCountryId": 104,
+                "DriverLicenseYears": 5
+                }
+            ],
+            "IsUser": false,
+            "DriverNationalityId": 304
+            }
+        ],
+        "MobileNumber": "544994110",
+        "BuildingNumber": 6316,
+        "Street": "Riyadh",
+        "District": "Riyadh",
+        "City": "Riyadh",
+        "ZipCode": 13512,
+        "AdditionalNumber": 3465,
+        "PolicyHolderNCDCode": null,
+        "PolicyHolderNCDReference": null,
+        "IsRenewal": false,
+        "IsScheme": false,
+        "SchemeDetails": null,
+        "CustomizedParameter": [
+            {
+            "Key": "PhIdIssuePlace",
+            "Value1": "one",
+            "Value2": "",
+            "Value3": "",
+            "Value4": ""
+            },
+            {
+            "Key": "DriverIdIssuePlace",
+            "Value1": "الرياض",
+            "Value2": "one",
+            "Value3": "",
+            "Value4": ""
+            }
+        ],
+        "VehicleColorText": "ابيض",
+        "HasTrailer": false,
+        "TrailerSumInsured": false,
+        "PolicyTitleId": false,
+        "VehicleSumInsured": false,
+        "RepairMethod": false
+        }
+    }
+}
+      
+      
+                                                  </code>
+                                                </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                                        <code id="Create-Quote-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-motor-insurance/v2/quotation' \
+--header 'x-request-id: 573c6372-fef2-4f5c-9a8e-78c6970f70a9' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"Data": {
+"RequestReferenceNumber": "RCM11429438844",
+
+"InsuranceCompanyCode": 24,
+"InsuranceTypeId": 1,
+"Details": {
+"QuotationSourceId": 1,
+"PolicyHolderIdTypeCode": 1,
+"PolicyHolderId": 1078774203,
+"PolicyHolderIdExpiryDate": "05-1446",
+"GregBirthDate": "10-05-1984",
+"HijriBirthDate": "20-09-1412",
+"PolicyHolderNationalityId": 0,
+"FullName": "ندى البشير",
+"FirstNameAr": "ندى",
+"SecondNameAr": "",
+"LastNameAr": "البشير",
+"FirstNameEn": "NADA",
+"SecondNameEn": "FAHAD",
+"LastNameEn": "ALBASHER",
+"PolicyHolderGender": 2,
+"Occupation": "",
+"Education": "",
+"MaritalStatus": 1,
+"ChildrenBelow16": 0,
+"WorkCompanyName": null,
+"WorkCityId": null,
+"VehicleUseIdPurpose": 283,
+"VehicleInfo": {
+"VehicleUniqueTypeId": 1,
+"VehicleSequenceNumber": 430493710,
+"VehicleCustomId": null,
+"VehicleDriveRegionId": 1,
+"VehicleDriveCityId": 3,
+"VehiclePlateTypeId": 1,
+"VehiclePlateNumber": 7378,
+"VehicleMakeCodeNajm": 0,
+"VehicleMakeCodeNIC": 27,
+"VehicleMakeTextNIC": "مرسيدس",
+"VehicleMakeCodeTameeni": 0,
+"VehicleModelCodeNajm": 0,
+"VehicleModelCodeNIC": 38,
+"VehicleModelTextNIC": "حافله",
+"VehicleModelCodeTameeni": 992,
+"ManufactureYear": 2020,
+"VehicleColorCode": 1,
+"VehicleWeight": 1460,
+"VehicleBodyCode": 5,
+"VehicleRegistrationCityCode": 11,
+"VehicleVIN": "JM7KFAWL3L0346617",
+"VehicleRegistrationExpiryDate": "18-05-1445",
+"VehicleCapacity": 5,
+"VehicleMileage": 5,
+"VehicleExpectedMileageYear": 40000,
+"VehicleEngineSizeCC": 8,
+"VehicleTransmission": 2,
+"VehicleNightParking": 1,
+"VehicleAntitheftAlarm": 1,
+"VehicleABS": 1,
+"VehicleAutoBraking": 2,
+"VehicleCruiseControl": 1,
+"VehicleAdaptiveCruiseControl": 2,
+"VehicleRearSensors": 1,
+"VehicleFrontSensors": 2,
+"VehicleRearCamera": 2,
+"VehicleFrontCamera": 2,
+"Vehicle360Camera": 2,
+"VehicleFireExtinguisher": null,
+"VehicleModifications": "",
+"VehicleAxleWeight": null
+},
+"FirstPlateLetterId": 13,
+"SecondPlateLetterId": 7,
+"ThirdPlateLetterId": 3,
+"Cylinders": null,
+"CoverAgeLimitId": 1,
+"PolicyEffectiveDate": "2024-07-07",
+"DriverDetails": [
+{
+"DriverId": 2555809033,
+"DriverName": "وسيم مرتضى غلام مرتضى",
+"DriverGregBirthDate": "10-12-1989",
+"DriverGender": 1,
+"IsPolicyHolder": true,
+"VehicleUsagePercentage": 100,
+"DriverOccupation": "أخرى",
+"DriverEducation": "دبلومة",
+"DriverMaritalStatus": 1,
+"DriverChildrenBelow16": 0,
+"DriverWorkCompanyName": "",
+"DriverWorkCityId": null,
+"DriverHomeAddressCity": "مكة المكرمة",
+"DriverHomeAddress": "6316  حي الخنساء 24238 3465",
+"DriverLicenseType": 8,
+"DriverLicenseOwnYears": 1,
+"DriverNCDCode": "12",
+"DriverNCDReference": "ByTameeni",
+"DriverAccidentsNumber": 0,
+"NajmCaseDetails": [
+{
+"CaseNumber" : 12
+}
+],
+"DriverClaimsNumber": null,
+"DriverTrafficViolationsCode": null,
+"DriverHealthConditionsCode": null,
+"DriverRelation": null,
+"CountriesValidDrivingLicense": [
+{
+"DrivingLicenseCountryId": 104,
+"DriverLicenseYears": 5
+}
+],
+"IsUser": false,
+"DriverNationalityId": 304
+}
+],
+"MobileNumber": "544994110",
+"BuildingNumber": 6316,
+"Street": "Riyadh",
+"District": "Riyadh",
+"City": "Riyadh",
+"ZipCode": 13512,
+"AdditionalNumber": 3465,
+"PolicyHolderNCDCode": null,
+"PolicyHolderNCDReference": null,
+"IsRenewal": false,
+"IsScheme": false,
+"SchemeDetails": null,
+"CustomizedParameter": [
+{
+"Key": "PhIdIssuePlace",
+"Value1": "one",
+"Value2": "",
+"Value3": "",
+"Value4": ""
+},
+{
+"Key": "DriverIdIssuePlace",
+"Value1": "الرياض",
+"Value2": "one",
+"Value3": "",
+"Value4": ""
+}
+],
+"VehicleColorText": "ابيض",
+"HasTrailer": false,
+"TrailerSumInsured": false,
+"PolicyTitleId": false,
+"VehicleSumInsured": false,
+"RepairMethod": false
+}
+}
+}'                                        
+                                                    </code>
+                                                  </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Create-Quote')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Create-Quote2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Create-Quote3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Create-Quote4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Create-Quote5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Create-Quote6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Create-Quote7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Create-Quote8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Create-Quote9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                          <code class="text" style=" display: block; " id="Create-Quote">
+{
+    "Data": {
+        "RequestReferenceNumber": "3000255",
+        "InsuranceCompanyCode": 123,
+        "Details": {
+        "QuotationReferenceNumber": "number",
+        "QuotationSourceId": 1,
+        "PolicyHolderIdTypeCode": 1,
+        "PolicyHolderId": 1022852311,
+        "GregBirthDate": "1984-05-10",
+        "HijriBirthDate": null,
+        "PolicyHolderNationalityId": 0,
+        "FullName": "ندى البشير",
+        "FirstNameAr": "ندى",
+        "SecondNameAr": null,
+        "LastNameAr": "البشير",
+        "FirstNameEn": "NADA",
+        "SecondNameEn": "FAHAD",
+        "LastNameEn": "ALBASHER",
+        "PolicyHolderGender": 2,
+        "Occupation": "",
+        "CoverAgeLimitId": 1,
+        "VehicleInfo": {
+            "VehicleUseIdPurpose": 283,
+            "VehicleUniqueTypeId": 1,
+            "VehicleSequenceNumber": 430493710,
+            "VehicleCustomId": "xxxx2343254",
+            "VehicleDriveCityId": 3,
+            "VehiclePlateTypeId": 1,
+            "VehiclePlateNumber": 7378,
+            "VehicleMakeCodeNajm": 0,
+            "VehicleMakeCodeNIC": 27,
+            "VehicleMakeTextNIC": "مرسيدس",
+            "VehicleModelCodeNajm": 0,
+            "VehicleModelCodeNIC": 38,
+            "VehicleModelTextNIC": "حافله",
+            "VehicleColorCode": 1,
+            "VehicleWeight": 1460,
+            "VehicleBodyCode": 5,
+            "VehicleRegistrationCityCode": 2,
+            "VehicleVIN": "JM7KFAWL3L0346617",
+            "VehicleRegistrationExpiryDate": "1445-05-18",
+            "VehicleCapacity": 5
+        },
+        "FirstPlateLetterId": 13,
+        "SecondPlateLetterId": 7,
+        "ThirdPlateLetterId": 3,
+        "ManufactureYear": 2020,
+        "Cylinders": 4,
+        "DriverDetails": [
+            {
+            "DriverId": "1XXX943082",
+            "DriverName": "خالد أحمد",
+            "DriverGregBirthDate": "07-11-1997",
+            "DriverHijriBirthDate": null,
+            "DriverGender": 1,
+            "IsPolicyHolder": false,
+            "VehicleUsagePercentage": 50,
+            "DriverOccupation": "أخرى",
+            "DriverEducation": "دبلومة",
+            "DriverMaritalStatus": 1,
+            "DriverChildrenBelow16": 0,
+            "DriverWorkCompanyName": "",
+            "DriverWorkCityId": 1,
+            "DriverHomeAddressCity": "مكة المكرمة",
+            "DriverHomeAddress": "6316  حي الخنساء 24238 3465",
+            "DriverLicenseType": 8,
+            "DriverLicenseOwnYears": 1,
+            "DriverNCDCode": "12",
+            "DriverNCDReference": "ByTameeni",
+            "DriverAccidentsNumber": 0,
+            "NajmCaseDetails": [
+                {
+                "CaseNumber": "XXXX1013174",
+                "AccidentDate": "2017-01-15T13:57:13",
+                "Liability": "100",
+                "DriverAge": "28",
+                "CarModel": "Toyota",
+                "CarType": "Camry",
+                "DriverId": "XXXX943082",
+                "SequenceNumber": "XXXX12345678",
+                "OwnerId": "XXXX943082",
+                "EstimatedAmount": "100",
+                "DamageParts": "Test",
+                "CauseOfAccident": "Test"
+                }
+            ],
+            "DriverClaimsNumber": null,
+            "DriverTrafficViolationsCode": null,
+            "DriverHealthConditionsCode": null,
+            "DriverGregBirthTimestamp": "646347600000",
+            "DriverRelation": null,
+            "CountriesValidDrivingLicense": [
+                {
+                "DrivingLicenseCountryId": 104,
+                "DriverLicenseYears": 5
+                }
+            ],
+            "IsUser": false,
+            "DriverNationalityId": 304,
+            "GregBirthTimeStamp": "629240400000",
+            "NCDEligibility": 1
+            }
+        ],
+        "MaxLiability": 10000000,
+        "PolicyNumber": "",
+        "MobileNumber": "544994110",
+        "BuildingNumber": 6316,
+        "Street": "Riyadh",
+        "District": "Riyadh",
+        "City": "Riyadh",
+        "ZipCode": 11653,
+        "AdditionalNumber": 6316,
+        "CustomizedParameter": [
+            {
+            "Key": "ModelSource MakeSource ManufactureYearSource PreviousPolicynumber",
+            "Value1": "1 1 1 25/4/2012 3/2022 الرياضالرياض",
+            "Value2": "Null",
+            "Value3": "Null",
+            "Value4": "20"
+            }
+        ],
+        "PolicyAmount": 4500,
+        "PolicyTaxableAmount": 4500,
+        "VehicleSumInsured": 999999,
+        "HasTrailer": false,
+        "TrailerSumInsured": 30000,
+        "InspectionTypeId": 3,
+        "PolicyTitleId": 1,
+        "TotalLossPercentage": 50,
+        "PolicyCoverages": [
+            [
+            2,
+            1296,
+            1337,
+            600465
+            ]
+        ],
+        "PolicyPremiumCoverages": [
+            {
+            "CoverageId": 7,
+            "CoverageTypeId": 3,
+            "CoverageAmount": "547",
+            "CoverageTaxableAmount": "547"
+            }
+        ],
+        "Deductibles": [
+            {
+            "DeductibleAmount": 500,
+            "PolicyPremium": 4500,
+            "TaxableAmount": 4500,
+            "DeductibleReferenceNumber": "string",
+            "PremiumBreakdown": [
+                {
+                "BreakdownTypeId": 1,
+                "BreakdownAmount": 10,
+                "BreakdownPercentage": 3
+                }
+            ],
+            "Discounts": [
+                {
+                "DiscountType": "LOYALTY_DISCOUNT",
+                "DiscountTypeId": 1,
+                "DiscountPercentage": 10,
+                "DiscountAmount": 400
+                }
+            ],
+            "DynamicPremiumCoverages": [
+                {
+                "CoverageId": 7,
+                "CoverageTypeId": 3,
+                "CoverageAmount": 4500,
+                "CoverageTaxableAmount": 4500
+                }
+            ]
+            }
+        ],
+        "PolicyIssueDate": "2017-08-05 15:30:33",
+        "PolicyEffectiveDate": "2017-08-07",
+        "PolicyExpiryDate": "2018-08-06",
+        "QuotationStatus": {
+            "QuotationStatus": true,
+            "QuotationResult": [
+            {}
+            ]
+        }
+        }
+    }
+}                                                                                                           
+                                           </code>
+                                           <code class="text" style=" display: none; " id="Create-Quote2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+      "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                                                                      
+                                          </code>
+                                          <code class="text" style=" display: none; " id="Create-Quote3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                          
+                                          </code>	
+                                          
+                                          <code class="text" style=" display: none; " id="Create-Quote4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                          </code>
+                                          
+                                          
+                                          <code class="text" style=" display: none; " id="Create-Quote5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                          </code>
+                                          
+                                          
+                                          <code class="text" style=" display: none; " id="Create-Quote6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}                
+                                          </code>
+                                           
+                                          
+                                          <code class="text" style=" display: none; " id="Create-Quote7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                          </code>
+                                           
+                                          
+                                          <code class="text" style=" display: none; " id="Create-Quote8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                          </code>
+                                          
+                                          
+                                          <code class="text" style=" display: none; " id="Create-Quote9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                          </code>
+                                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 11 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-12">Draft Policy</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-motor-insurance/v2/policy-draft</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2584/api/1894#/MotorInsurance_100/operation/%2Fneutrinos-aggregator%2Fdraft-policy/post">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">A service where preliminary version of an insurance policy document
+                        created before the final issuance. It serves as a reference or proposal that outlines the terms,
+                        conditions, coverage, and premiums associated with the insurance agreement. A draft policy
+                        allows for review, validation, and potential adjustments before it becomes a binding document.
+                    </p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                                          <code class="sample-code">
+Request Body:
+{
+    "Data": {
+      "PolicyRequestReferenceNumber": "RCM11429438844",
+      "InsuranceCompanyCode": 24,
+      "RequestReferenceNumber": "RCM11429438844",
+      "QuotationReferenceNumber": 10062413396575,
+      "Details": {
+        "DeductibleReferenceNumber": 1,
+        "DeductibleAmount": 500,
+        "PolicyPremium": 100,
+        "PolicyPremiumCoverages": [
+          {
+            "CoverageId": 1,
+            "CoverageTypeId": 1,
+            "CoverageAmount": 547,
+            "CoverageTaxableAmount": 547
+          }
+        ],
+        "CustomizedParameter": [
+          {
+            "Key": "",
+            "Value1": "",
+            "Value2": "",
+            "Value3": "",
+            "Value4": ""
+          }
+        ]
+      }
+    }
+}                                                                 
+                                                    </code>
+                                                  </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                                            <code id="Draft-Policy-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-motor-insurance/v2/policy-draft' \
+--header 'x-request-id: 498d3fb7-b8db-4144-9bf6-e57f671c140e' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"Data": {
+"PolicyRequestReferenceNumber": "RCM11429438844",
+"InsuranceCompanyCode": 24,
+"RequestReferenceNumber": "RCM11429438844",
+"QuotationReferenceNumber": 10062413396575,
+"Details": {
+"DeductibleReferenceNumber": 1,
+"DeductibleAmount":500,
+"PolicyPremium": 100,
+"PolicyPremiumCoverages": [
+{
+"CoverageId": 1,
+"CoverageTypeId": 1,
+"CoverageAmount": 547,
+"CoverageTaxableAmount": 547
+}
+],
+"CustomizedParameter": [
+{
+"Key": "",
+"Value1": "",
+"Value2": "",
+"Value3": "",
+"Value4": ""
+}
+]
+}
+}
+}'                                                                                                                 
+                                                      </code>
+                                                    </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Draft-Policy')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Draft-Policy2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Draft-Policy3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Draft-Policy4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Draft-Policy5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Draft-Policy6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Draft-Policy7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Draft-Policy8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Draft-Policy9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                            <code class="text" style=" display: block; " id="Draft-Policy">
+{
+    "Data": {
+        "PolicyRequestReferenceNumber": "1000255",
+        "InsuranceCompanyCode": 123,
+        "PolicyReferenceNumber": 1000255,
+        "RequestReferenceNumber": "323132",
+        "QuotationReferenceNumber": 2006409,
+        "InsuranceTypeId": 1,
+        "Details": {
+        "PolicyHolderIdTypeCode": 3,
+        "PolicyHolderId": "XXXX943082",
+        "QuotationSourceId": 1,
+        "FullName": "سالم سعود بدر",
+        "FirstNameAr": "سالم",
+        "SecondNameAr": "سعود",
+        "LastNameAr": "بدر",
+        "FirstNameEn": "Salem",
+        "SecondNameEn": "Saud",
+        "LastNameEn": "Bader",
+        "GregBirthDate": "07-11-1991",
+        "HijriBirthDate": "07-02-1400",
+        "Occupation": "طبيب",
+        "Cylinders": 6,
+        "PolicyHolderNationalityId": 104,
+        "PolicyHolderGender": 2,
+        "VehicleInfo": {
+            "VehicleUseIdPurpose": 2,
+            "VehicleCapacity": 5,
+            "VehicleUniqueTypeId": 1,
+            "VehicleSequenceNumber": "XXXX12345678",
+            "VehicleCustomId": "XXXX12345678",
+            "VehicleDriveCityId": 4,
+            "VehiclePlateTypeId": 1,
+            "VehiclePlateNumber": 9339,
+            "VehicleMakeCodeNajm": 22,
+            "VehicleMakeCodeNIC": 11,
+            "VehicleMakeTextNIC": "تويوتا",
+            "VehicleModelCodeNajm": 22,
+            "VehicleModelCodeNIC": 301,
+            "VehicleModelTextNIC": "كامري",
+            "VehicleModelCode": 110,
+            "VehicleWeight": 1696,
+            "VehicleBodyCode": 5,
+            "VehicleColorCode": 19,
+            "VehicleRegistrationCityCode": 333,
+            "VehicleVIN": "1FAHP2D86FG204916",
+            "VehicleRegistrationExpiryDate": "1445-05-18",
+            "VehicleSumInsured": 99999
+        },
+        "FirstPlateLetterId": 2,
+        "SecondPlateLetterId": 14,
+        "ThirdPlateLetterId": 10,
+        "ManufactureYear": 2010,
+        "PolicyEffectiveDate": "2024-07-07",
+        "PolicyIssueDate": "2024-07-07 15:30:33",
+        "PolicyExpiryDate": "2024-07-07",
+        "PolicyNumber": "13/60/XXX/2000-1128",
+        "MobileNumber": "5XXX45678",
+        "BuildingNumber": 1234,
+        "Street": "King Abdullaziz road",
+        "District": "Gadeer",
+        "City": "Riyadh",
+        "ZipCode": 12345,
+        "AdditionalNumber": 1234,
+        "CoverAgeLimitId": 1,
+        "RepairMethod": 1,
+        "DriverDetails": [
+            {
+            "DriverId": "1XXX943082",
+            "DriverName": "خالد أحمد",
+            "DriverGregBirthDate": "07-11-1997",
+            "DriverHijriBirthDate": null,
+            "DriverGender": 1,
+            "IsPolicyHolder": false,
+            "VehicleUsagePercentage": 50,
+            "DriverOccupation": "أخرى",
+            "DriverEducation": "دبلومة",
+            "DriverMaritalStatus": 1,
+            "DriverChildrenBelow16": 0,
+            "DriverWorkCompanyName": "",
+            "DriverWorkCityId": 1,
+            "DriverHomeAddressCity": "مكة المكرمة",
+            "DriverHomeAddress": "6316  حي الخنساء 24238 3465",
+            "DriverLicenseType": 8,
+            "DriverLicenseOwnYears": 1,
+            "DriverNCDCode": "12",
+            "DriverNCDReference": "ByTameeni",
+            "DriverAccidentsNumber": 0,
+            "NajmCaseDetails": [
+                {
+                "CaseNumber": "XXXX1013174",
+                "AccidentDate": "2017-01-15T13:57:13",
+                "Liability": "100",
+                "DriverAge": "28",
+                "CarModel": "Toyota",
+                "CarType": "Camry",
+                "DriverId": "XXXX943082",
+                "SequenceNumber": "XXXX12345678",
+                "OwnerId": "XXXX943082",
+                "EstimatedAmount": "100",
+                "DamageParts": "Test",
+                "CauseOfAccident": "Test"
+                }
+            ],
+            "DriverClaimsNumber": null,
+            "DriverTrafficViolationsCode": null,
+            "DriverHealthConditionsCode": null,
+            "DriverGregBirthTimestamp": "646347600000",
+            "DriverRelation": null,
+            "CountriesValidDrivingLicense": [
+                {
+                "DrivingLicenseCountryId": 104,
+                "DriverLicenseYears": 5
+                }
+            ],
+            "IsUser": false,
+            "DriverNationalityId": 304,
+            "GregBirthTimeStamp": "629240400000",
+            "NCDEligibility": 1
+            }
+        ],
+        "DeductibleAmount": 500,
+        "PolicyPremium": 4500,
+        "PremiumBreakdown": [
+            {
+            "BreakdownTypeId": 1,
+            "BreakdownAmount": 10,
+            "BreakdownPercentage": 3
+            }
+        ],
+        "PolicyPremiumCoverages": [
+            {
+            "CoverageId": 7,
+            "CoverageTypeId": 3,
+            "CoverageAmount": "547",
+            "CoverageTaxableAmount": "547"
+            }
+        ],
+        "Discounts": [
+            {
+            "DiscountType": "LOYALTY_DISCOUNT",
+            "DiscountTypeId": 1,
+            "DiscountPercentage": 10,
+            "DiscountAmount": 400
+            }
+        ],
+        "CustomizedParameter": [
+            {
+            "Key": "ModelSource MakeSource ManufactureYearSource PreviousPolicynumber",
+            "Value1": "1 1 1 25/4/2012 3/2022 الرياضالرياض",
+            "Value2": "Null",
+            "Value3": "Null",
+            "Value4": "20"
+            }
+        ],
+        "InspectionTypeId": 1,
+        "PolicyAmount": 4500,
+        "PolicyTaxableAmount": 4500,
+        "DraftPolicyStatus": {
+            "DraftPolicyStatus": true,
+            "DraftPolicyResult": [
+            {}
+            ]
+        }
+        }
+    }
+}                                                
+                                             </code>
+                                             <code class="text" style=" display: none; " id="Draft-Policy2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+      "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                                                                            
+                                            </code>	
+                                            <code class="text" style=" display: none; " id="Draft-Policy3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                            
+                                            </code>	
+                                            
+                                            <code class="text" style=" display: none; " id="Draft-Policy4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                            </code>
+                                            
+                                            
+                                            <code class="text" style=" display: none; " id="Draft-Policy5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                            </code>
+                                            
+                                            
+                                            <code class="text" style=" display: none; " id="Draft-Policy6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}                
+                                            </code>
+                                             
+                                            
+                                            <code class="text" style=" display: none; " id="Draft-Policy7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                            </code>
+                                             
+                                            
+                                            <code class="text" style=" display: none; " id="Draft-Policy8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                            </code>
+                                            
+                                            
+                                            <code class="text" style=" display: none; " id="Draft-Policy9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                            </code>
+                                                  </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 12 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-13">Purchase Notification</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-motor-insurance/v2/purchase-notifications</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2584/api/1894#/MotorInsurance_100/operation/%2Fneutrinos-aggregator%2Fpurchase-notifications/post">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">Consumer uses this method to Notify ART with a confirmation of policy
+                        purchase status (Success Payment or Cancel Policy).</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                                    <code class="sample-code">
+      Request Body
+      {
+      "Data": {
+      "RequestReferenceNumber": "RCM11429438844",
+      "PolicyRequestReferenceNumber": 24,
+      "RequestType": "",
+      "PolicyReferenceNumber": 10062413396575,
+      "PurchaseStatus": true,
+      "InsuranceCompanyCode": "24",
+      "InsuranceTypeId": 1,
+      "QuotationReferenceNumber": 10062413396575,
+      "IsPurchased": true,
+      "Email": "sumit.khambe@neutrinos.co",
+      "MobileNumber": "8286544342",
+      "BuildingNumber": "1234",
+      "Street": "King Abdullaziz road",
+      "District": "Gadeer",
+      "City": "Riyadh",
+      "ZipCode": 12345,
+      "AdditionalNumber": 1234,
+      "CreditNoteNumber": 200046,
+      "CreditAmount": 2057.94,
+      "IBANNumber": "SA038000000060801016XX19",
+      "BankCode": "BANKCODE",
+      "PolicyPremiumCoverages": [
+      {
+      "CoverageId": 1,
+      "CoverageTypeId": 1,
+      "CoverageAmount": 547,
+      "CoverageTaxableAmount": 547
+      }
+      ],
+      "CustomizedParameter": [
+      {
+      "Key": "",
+      "Value1": "",
+      "Value2": "",
+      "Value3": "",
+      "Value4": ""
+      }
+      ]
+      }
+      }
+                                                
+                                              </code>
+                                            </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                                      <code id="Purchase-Notification-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-motor-insurance/v2/purchase-notifications' \
+--header 'x-request-id: e31d9b6b-1263-4a11-89d8-10700095e7cb' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data-raw '{
+"Data": {
+"RequestReferenceNumber": "RCM11429438844",
+"PolicyRequestReferenceNumber": 24,
+"RequestType": "",
+"PolicyReferenceNumber": 10062413396575,
+"PurchaseStatus": true,
+"InsuranceCompanyCode": "24",
+"InsuranceTypeId": 1,
+"QuotationReferenceNumber": 10062413396575,
+"IsPurchased": true,
+"Email": "sumit.khambe@neutrinos.co",
+"MobileNumber": "8286544342",
+"BuildingNumber": "1234",
+"Street": "King Abdullaziz road",
+"District": "Gadeer",
+"City": "Riyadh",
+"ZipCode": 12345,
+"AdditionalNumber": 1234,
+"CreditNoteNumber": 200046,
+"CreditAmount": 2057.94,
+"IBANNumber": "SA038000000060801016XX19",
+"BankCode": "BANKCODE",
+"PolicyPremiumCoverages": [
+{
+"CoverageId": 1,
+"CoverageTypeId": 1,
+"CoverageAmount": 547,
+"CoverageTaxableAmount": 547
+}
+],
+"CustomizedParameter": [
+{
+"Key": "",
+"Value1": "",
+"Value2": "",
+"Value3": "",
+"Value4": ""
+}
+]
+}
+}'  
+                                                </code>
+                                              </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Purchase-Notification')" class="response-box-error" type="button">204</a> <a
+                                        onclick="responseText('Purchase-Notification2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Purchase-Notification3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Purchase-Notification4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Purchase-Notification5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Purchase-Notification6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Purchase-Notification7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Purchase-Notification8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Purchase-Notification9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                      <code class="text" style=" display: block; " id="Purchase-Notification">
+No Content                                                               
+                                       </code>
+                                       <code class="text" style=" display: none; " id="Purchase-Notification2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+      "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}                                                            
+                                       </code>
+                        
+                                      <code class="text" style=" display: none; " id="Purchase-Notification3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}   
+                                      </code>	
+                                      
+                                      <code class="text" style=" display: none; " id="Purchase-Notification4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}  
+                                      </code>
+                                      
+                                      
+                                      <code class="text" style=" display: none; " id="Purchase-Notification5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                      </code>
+                                      
+                                      
+                                      <code class="text" style=" display: none; " id="Purchase-Notification6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}       
+                                      </code>
+                                       
+                                      
+                                      <code class="text" style=" display: none; " id="Purchase-Notification7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+} 
+                                      </code>
+                                       
+                                      
+                                      <code class="text" style=" display: none; " id="Purchase-Notification8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                      </code>
+                                      
+                                      
+                                      <code class="text" style=" display: none; " id="Purchase-Notification9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+} 
+                                      </code>
+                                            </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 13 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-14">Vehicle Image Upload</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-motor-insurance/v2/vehicle-images-upload</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2584/api/1894#/MotorInsurance_100/operation/%2Fneutrinos-aggregator%2Fvehicle-images-upload/post">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This service allows users to upload images of their vehicle for various
+                        purposes: 1- To verify the vehicle's condition 2- To document damage for claims 3- mandatory
+                        document for underwriting.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                                      <code class="sample-code">
+      Request Body
+      {
+      "Data": {
+      "PolicyRequestReferenceNumber": "RCM11429438844",
+      "PolicyReferenceNumber": "10062413396575",
+      "VehicleImages": [
+      {
+      "ImageId": 1234,
+      "ImageTitle": 1,
+      "ImageMedia": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAA.......",
+      "ImageDateTime": "2017-08-05T15:30:33.000Z",
+      "ImageLongitude": "24.123456789",
+      "ImageLatitude": "32.123456789"
+      }
+      ],
+      "CustomizedParameter": [
+      {
+      "Key": "",
+      "Value1": "",
+      "Value2": "",
+      "Value3": "",
+      "Value4": ""
+      }
+      ]
+      }
+      }                           
+                                              </code>
+                                            </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-validate-OTP-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-validate-OTP-top" type="submit">cURL</button>
+                            </p>
+
+                            <pre id="generatedCurl">
+                                              <code id="Vehicle-Image-Upload-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-motor-insurance/v2/vehicle-images-upload' \
+--header 'x-request-id: 01d9e900-f532-41f1-b678-0b99475a3570' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"Data": {
+"PolicyRequestReferenceNumber": "RCM11429438844",
+"PolicyReferenceNumber": "10062413396575",
+"VehicleImages": [
+{
+"ImageId": 1234,
+"ImageTitle": 1,
+"ImageMedia": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAA.......",
+"ImageDateTime": "2017-08-05T15:30:33.000Z",
+"ImageLongitude": "24.123456789",
+"ImageLatitude": "32.123456789"
+}
+],
+"CustomizedParameter": [
+{
+"Key": "",
+"Value1": "",
+"Value2": "",
+"Value3": "",
+"Value4": ""
+}
+]
+}
+}'                                            
+                                         </code>
+                                              </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Vehicle-Image-Upload')" class="response-box-error" type="button">204</a> <a
+                                        onclick="responseText('Vehicle-Image-Upload2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Vehicle-Image-Upload3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Vehicle-Image-Upload4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Vehicle-Image-Upload5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Vehicle-Image-Upload6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Vehicle-Image-Upload7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Vehicle-Image-Upload8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Vehicle-Image-Upload9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                        <code class="text" style=" display: block; " id="Vehicle-Image-Upload">
+No Content            
+                                        </code>
+                                        <code class="text" style=" display: none; " id="Vehicle-Image-Upload2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+      "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}           
+                                        </code>
+                      
+                                        <code class="text" style=" display: none; " id="Vehicle-Image-Upload3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                        
+                                        </code>	
+                                        
+                                        <code class="text" style=" display: none; " id="Vehicle-Image-Upload4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}  
+                                        </code>
+                                        
+                                        
+                                        <code class="text" style=" display: none; " id="Vehicle-Image-Upload5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+} 
+                                        </code>
+                                        
+                                        
+                                        <code class="text" style=" display: none; " id="Vehicle-Image-Upload6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}   
+                                           
+                                        </code>
+                                        
+                                        
+                                        <code class="text" style=" display: none; " id="Vehicle-Image-Upload7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                        </code>
+                                        
+                                        
+                                        <code class="text" style=" display: none; " id="Vehicle-Image-Upload8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}  
+                                        </code>
+                                        
+                                        
+                                        <code class="text" style=" display: none; " id="Vehicle-Image-Upload9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                        </code>
+                                              </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 14 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-15">IC Document Download</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-motor-insurance/v2/ic-document-download</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2584/api/1894#/MotorInsurance_100/operation/%2Fneutrinos-aggregator%2Fic-document-download/post">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This service allows the user to download his Insurance Certificate
+                        Document after the policy is created.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                                                  <code class="sample-code">
+Request Body
+{
+    "Data": {
+        "DDReferenceNumber": "UAC63952",
+        "RequestReferenceNumber": "UAC63952",
+        "PolicyRequestReferenceNumber": "UAC63952",
+        "InsuranceTypeId": 2,
+        "PolicyNumber": "RCM11429438844",
+        "QuotationReferenceNumber": 10062413396575,
+        "InsuranceCompanyCode": 168,
+        "PolicyHolderId": 7038529447,
+        "PolicyHolderNationalityId": 1022852311,
+        "VehicleSequenceNumber": 430493710,
+        "VehicleCustomId": "",
+        "DocumentRequested": [
+            {
+            "FileType": 2,
+            "EndorsementReferenceNumber": ""
+            }
+        ],
+        "CustomizedParameter": [
+            {
+            "Key": "",
+            "Value1": "",
+            "Value2": "",
+            "Value3": "",
+            "Value4": ""
+            }
+        ]
+    }
+}
+      
+      
+                                                        </code>
+                                                      </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                                                    <code id="IC-Document-Download-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-motor-insurance/v2/ic-document-download' \
+--header 'x-request-id: bf78b931-674b-4d17-9e8d-3cbc052abc4b' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"Data": {
+"DDReferenceNumber": "UAC31687",
+"RequestReferenceNumber": "UAC31687",
+"PolicyRequestReferenceNumber": "UAC31687",
+"InsuranceTypeId": 2,
+"PolicyNumber": "P0724-MTI-ALTA-00109096", 
+"QuotationReferenceNumber": 10062413375132,
+"InsuranceCompanyCode": 168,
+"PolicyHolderId": 1022852311,
+"PolicyHolderNationalityId": 1022852311,
+"VehicleSequenceNumber": 430493710,
+"VehicleCustomId": "",
+"DocumentRequested": [
+{
+"FileType":2,
+"EndorsementReferenceNumber": ""
+}
+],
+"CustomizedParameter": [
+{
+"Key": "",
+"Value1": "",
+"Value2": "",
+"Value3": "",
+"Value4": ""
+}
+]
+}
+}'                                                                                                        
+                                                          </code>
+                                                        </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('IC-Document-Download')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('IC-Document-Download2')" class="response-box-error" type="button">400</a> <a onclick="responseText('IC-Document-Download3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('IC-Document-Download4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('IC-Document-Download5')" class="response-box-error" type="button">404</a> <a onclick="responseText('IC-Document-Download6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('IC-Document-Download7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('IC-Document-Download8')" class="response-box-error" type="button">429</a> <a onclick="responseText('IC-Document-Download9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                                <code class="text" style=" display: block; " id="IC-Document-Download">             
+{
+    "Data": {
+        "DDRequestReferenceNumber": "323213132",
+        "DDResponseReferenceNumber": "323213132",
+        "Document": [
+        {
+            "DocumentMedia": "1209742332",
+            "DocumentType": ".PDF",
+            "FileType": 1,
+            "EndorsementReferenceNumber": "TN123"
+        }
+        ]
+    }
+}                                                                        
+                                                </code>
+                                                <code class="text" style=" display: none; " id="IC-Document-Download2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+      "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                <code class="text" style=" display: none; " id="IC-Document-Download3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                <code class="text" style=" display: none; " id="IC-Document-Download4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                
+                                                
+                                                <code class="text" style=" display: none; " id="IC-Document-Download5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                
+                                                
+                                                <code class="text" style=" display: none; " id="IC-Document-Download6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                     
+                                                </code>
+                                                 
+                                                
+                                                <code class="text" style=" display: none; " id="IC-Document-Download7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}    
+                                                </code>
+                                                 
+                                                
+                                                <code class="text" style=" display: none; " id="IC-Document-Download8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+} 
+                                                </code>
+                                                
+                                                
+                                                <code class="text" style=" display: none; " id="IC-Document-Download9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                      </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 15 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-16">List Motor Products</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-motor-insurance/v2/products</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2584/api/1894#/MotorInsurance_100/operation/%2Fart%2Fproduct-lookup-motor/post">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This API is used to get the LOVs for the products availabel from ART
+                        with the basic coverage and the allowed coverages (Addons) for that product.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                                                      <code class="sample-code">
+Request Body
+{
+    "Data": {
+        "InsuranceTypeId": "3"
+    }
+}  
+                                                        </code>
+                                                      </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                                                        <code id="Product-lookup-Motor-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-motor-insurance/v2/products' \
+--header 'x-request-id: caebe180-82c3-4da2-ad25-e89c0f5dc466' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"Data": {
+"InsuranceTypeId": "3"
+}
+}'                                  
+                                                          </code>
+                                                        </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Product-lookup-Motor')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Product-lookup-Motor2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Product-lookup-Motor3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Product-lookup-Motor4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Product-lookup-Motor5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Product-lookup-Motor6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Product-lookup-Motor7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Product-lookup-Motor8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Product-lookup-Motor9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                                <code class="text" style=" display: block; " id="Product-lookup-Motor">
+{
+    "Data": {
+        "Products": [
+        {
+            "ProductId": 0,
+            "ShortName": "string",
+            "ShortNameAr": "string",
+            "LongName": "string",
+            "BasicCoverage": [
+            {
+                "CoverId": 0,
+                "CoverName": "string",
+                "CoverNameAr": "string"
+            }
+            ],
+            "ApplicableCoverages": [
+            {
+                "CoverId": 0,
+                "CoverName": "string",
+                "CoverNameAr": "string"
+            }
+            ],
+            "DirectNBCommission": 0,
+            "RenewalDirect": 0,
+            "BrokerRenewalNB": 0,
+            "TameeniCommission": 0,
+            "AltheqaCommission": 0,
+            "EltezamCommission": 0,
+            "DamanCommission": 0,
+            "BCareCommission": 0,
+            "DiamondCommission": 0
+        }
+        ]
+    }
+}
+                                                 </code>
+                                                 <code class="text" style=" display: none; " id="Product-lookup-Motor2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+      "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                                                                                            
+                                                </code>	
+                                                <code class="text" style=" display: none; " id="Product-lookup-Motor3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                
+                                                </code>	
+                                                
+                                                <code class="text" style=" display: none; " id="Product-lookup-Motor4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                
+                                                
+                                                <code class="text" style=" display: none; " id="Product-lookup-Motor5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                
+                                                
+                                                <code class="text" style=" display: none; " id="Product-lookup-Motor6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}              
+                                                </code>
+                                                 
+                                                
+                                                <code class="text" style=" display: none; " id="Product-lookup-Motor7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                 
+                                                
+                                                <code class="text" style=" display: none; " id="Product-lookup-Motor8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                
+                                                
+                                                <code class="text" style=" display: none; " id="Product-lookup-Motor9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                </code>
+                                                      </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- API 16 -->
+
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-17">Get NCD Eligibility</h1>
+
+                    <p class="fob-welcome-line">&nbsp;</p>
+
+                    <p class="fob-welcome-text">Endpoint: /mp-ncd-eligibility/v2/ncd</p>
+
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1903/api/1900#/NCDEligibility_110/operation/%2Fncd-eligibility%2Fop-ncdeligiblity/get">Swagger
+                            Link</a></p>
+
+                    <p class="fob-welcome-text">This API is integrated with Najm system to check No-Claim Discount (NCD)
+                        eligibility. NCD is an incentive given to customer if no claim has been made under policy for a
+                        year or more.</p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <pre class="example_97 api-guides-example-fob ">
+                                                                                              <code class="sample-code">
+Query parameters
+    vehicleIdentifier:1
+    vehicleId:3024070770
+    policyHolderId:1106706318
+                                                              </code>
+                                                            </pre>
+                        </div>
+
+                        <div class="url-box"><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
+
+                            <p class="curlText"><button class="curlbtn fob-activate-fetching-top"
+                                    type="submit">cURL</button></p>
+
+                            <pre id="generatedCurl">
+                                                                                                <code id="Get-NCD-Eligibility-curl">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-ncd-eligibility/v2/ncd?vehicleIdentifier=1&amp;vehicleId=3024070770&amp;policyHolderId=1106706318' \
+--header 'x-request-id: b608d89c-8a46-4a96-9906-7c8eed32d420' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'
+                                                                </code>
+                                                              </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                <div class="response-box-div"><a onclick="responseText('Get-NCD-Eligibility')" class="response-box-error" type="button">200</a> <a
+                                        onclick="responseText('Get-NCD-Eligibility2')" class="response-box-error" type="button">400</a> <a onclick="responseText('Get-NCD-Eligibility3')" class="response-box-error"
+                                        type="button">401</a> <a onclick="responseText('Get-NCD-Eligibility4')" class="response-box-error" type="button">403</a> <a
+                                        onclick="responseText('Get-NCD-Eligibility5')" class="response-box-error" type="button">404</a> <a onclick="responseText('Get-NCD-Eligibility6')" class="response-box-error"
+                                        type="button">405</a> <a onclick="responseText('Get-NCD-Eligibility7')" class="response-box-error" type="button">406</a> <a
+                                        onclick="responseText('Get-NCD-Eligibility8')" class="response-box-error" type="button">429</a> <a onclick="responseText('Get-NCD-Eligibility9')" class="response-box-error"
+                                        type="button">500</a></div>
+
+                                <pre class="response-box">
+                                                      <code class="text" style=" display: block; " id="Get-NCD-Eligibility">
+{
+    "Data": {
+        "PolicyHolderId": "1106706318",
+        "VehicleIdentifier": "1",
+        "VehicleId": "3024070770",
+        "NCDReference": "NCD280224241741",
+        "NCDFreeYears": "3"
+    }
+}
+                                                       </code>
+                                                       <code class="text" style=" display: none; " id="Get-NCD-Eligibility2">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.400.001",
+			"Message": "OwnerNationalId does not match NIC records.",
+      "Path": "request.parameters.ownerNationalId",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                                                                                                          
+                                                      </code>	
+                                                      <code class="text" style=" display: none; " id="Get-NCD-Eligibility3">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.401.001",
+			"Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                      
+                                                      </code>	
+                                                      
+                                                      <code class="text" style=" display: none; " id="Get-NCD-Eligibility4">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.403.001",
+			"Message": "Can't find any valid subscription.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                      </code>
+                                                      
+                                                      
+                                                      <code class="text" style=" display: none; " id="Get-NCD-Eligibility5">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.404.001",
+			"Message": "No resources match requested URI.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                      </code>
+                                                      
+                                                      
+                                                      <code class="text" style=" display: none; " id="Get-NCD-Eligibility6">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.405.001",
+			"Message": "The method is not allowed for the requested URL.",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}                
+                                                      </code>
+                                                       
+                                                      
+                                                      <code class="text" style=" display: none; " id="Get-NCD-Eligibility7">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.406.001",
+			"Message": "An appropriate representation of the requested resource could not be found",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                      </code>
+                                                       
+                                                      
+                                                      <code class="text" style=" display: none; " id="Get-NCD-Eligibility8">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.429.001",
+			"Message": "Assembly Rate Limit exceeded",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                      </code>
+                                                      
+                                                      
+                                                      <code class="text" style=" display: none; " id="Get-NCD-Eligibility9">
+{
+	"Errors": [
+		{
+			"Code": "ERROR.500.001",
+			"Message": "Internal Error",
+			"Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+		}
+	]
+}
+                                                      </code>
+                                                            </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

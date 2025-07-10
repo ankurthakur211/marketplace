@@ -1,0 +1,313 @@
+<div class="api-doc-background">
+    <p class="api-doc-background-text ">Notification Engine - IVR API
+        Documentation</p>
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="container">
+                <div>
+                    <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
+                        onkeyup="search_menu()" type="text" />
+
+                </div>
+                <br>
+                <div class="api-guides-vertical-menu ">
+
+
+                    <a class="api-list main-looking-menu apn-doc-menu" href="#section-1"
+                        onclick="show('expand2')">Notification Engine - IVR APIs</a>
+
+                    <div class="api-guides-dropdown-container" id="expand2">
+                        <a class="api-guides-noList apn-doc-menu" href="#section-2">Send Registered-Event IVR
+                            Notification Using Mobile Number</a>
+                    </div>
+
+
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="container api-guides-text">
+                <div class="container api-guides-text p-0">
+                    <p class="fob-welcome-title" id="section-1">Notification Engine - IVR APIs</p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">The API Marketplace empowers consumers to effortlessly apply for
+                        Notification Engine IVR.The primary objective of this project is to enable ARB to offer
+                        Notification Engine IVR application process through the API Marketplace.</br>
+                        </br></p>
+                    <p class="fob-welcome-text"><a id="downloadLink"
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Notification_Engine-IVR.postman_collection.json"
+                            download="">Download Postman Collection</a></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/NotificationEngine_IVRSampleRequestData.xlsx"
+                            download="">Download Sample Data</a></p>
+
+                    <h1 class="fob-welcome-title">Notification Engine - IVR Workflow</h1>
+                    <p class="fob-welcome-line"></p>
+                    <a class="fob-product-title-click" target="_blank" href="./NotificationEngineIVRWorkflowImg">Click
+                        here</a>
+                    <div class="row flex mt-25 mb-25">
+                        <div class="col-lg-8">
+                            <p class="NotificationEngineIVR-flow-img"><br></p>
+                        </div>
+                    </div>
+                    <h1 class="fob-welcome-title">Notification Engine - IVR Architecture</h1>
+                    <p class="fob-welcome-line"></p>
+                    <a class="fob-product-title-click" target="_blank"
+                        href="./NotificationEngineIVRArchitectureImg">Click
+                        here</a>
+                    <div class="row flex mt-25 mb-25">
+                        <div class="col-lg-8">
+                            <p class="NotificationEngineIVR-architecture-img"><br></p>
+                        </div>
+                    </div>
+
+                    <h1 class="fob-welcome-title" id="section-2">Send Registered-Event IVR Notification Using Mobile
+                        Number</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: post:
+                        /ivr-notifications/v1/customers/mobile-number/registered-events/send</br></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2062/api/2059#/SendIVRNotification_100/operation/%2Fcustomers%2Fmobile-number%2Fregistered-events%2Fsend/post">Swagger
+                            Link</a></p>
+                    <p class="fob-welcome-text">This path is used to send registered-event IVR notifications using his
+                        or her mobile number.</br></p>
+                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <h1 class="fob-welcome-title">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+Headers
+{
+“Accept-Language”:”en”,
+“x-signature”:” Fq3qUDnwPewHokZ91DJt3HvBfCPTnLdijNIjCZQljII4aboL...lGPErurUZGwb5og==”
+}
+Request Body
+{
+    "clientTimestamp": "2022-02-17T18:25:43.511+03:00",
+    "eventCode": "IVR0001",
+    "eventTransactionId": "string",
+    "recipientsList": [
+    {
+        "preferredLanguage": "EN",
+        "notificationsMethodsInformationList": [
+        {
+            "contact": "966500000111"
+        }
+        ],
+        "parametersList": [
+        {
+            "parameterCode": "TRN_AMNT",
+            "parameterValue": "1234"
+        }
+        ]
+    }
+    ]
+}                                        
+                                    </code>
+                                  </pre>
+                            </div>
+                            <div class="col-lg-4 mt-25">
+
+                                <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                    onclick="show('Send-Registered-Event-IVR-Notification-Using-Mobile-Number-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+                                <pre id="generatedCurl">
+                                      <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number-curl" style=" display: block;">curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/ivr-notifications/v1/customers/mobile-number/registered-events/send' \
+--header 'Accept-Language: en' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '
+{
+    "clientTimestamp": "2024-10-24T15:12:00.000+03:00",
+    "eventCode":"IVR0001",
+    "eventTransactionId": "503dedbe-4a89-4fff-b1cd-3659bf19a8eb",
+    "recipientsList":[
+    {
+        "preferredLanguage":"en",
+        "notificationsMethodsInformationList":[
+        {
+            "contact":"549138726"
+        }
+        ],
+        "parametersList":[
+        {
+            "parameterCode":"MSG_BDY",
+            "parameterValue":"مرحبا حسن.نأمل سرعة سداد قسط التمويل 524.70 ريال المستحق عليكم للاستفسار تواصل معنا : 8001240251"
+        }
+        ]
+    }
+    ]
+}'                                        
+                                      </code>
+                                    </pre>
+                            </div>
+                        </div>
+                        <div class="row flex mt-25">
+                            <div class="col-lg-8">
+                                <div class="code-box">
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number')">200</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number2')">Callback</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number3')">401</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number4')">403</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number5')">404</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number6')">405</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number7')">406</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number8')">429</a>
+                                        <a type="button" class="response-box-error"
+                                            onclick="responseText('Send-Registered-Event-IVR-Notification-Using-Mobile-Number9')">500</a>
+                                    </div>
+                                    <pre class="response-box">
+
+                            <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number" style=" display: block; " class="text">
+{
+    "header": {
+        "statusCode": "I000000",
+        "requestID": "06633ace-7f00-4d35-a68a-0fc50f711de5"
+    }
+}                                                                     
+                             </code>
+                             <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number2" style=" display: block; " class="text">
+{
+    "eventCode": "IVR0001",
+    "eventTransactionId": "503dedbe-4a89-4fff-b1cd-3659bf19a8eb",
+    "requestDateTime": "2022-02-17T18:25:43.511+03:00",
+    "customerResponse": "01",
+    "param1": "string",
+    "param2": "string",
+    "param3": "string",
+    "param4": "string",
+    "param5": "string",
+    "param6": "string",
+    "param7": "string",
+    "param8": "string",
+    "param9": "string",
+    "param10": "string"
+}                                             
+                                                             </code>
+                            
+                            <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number3" style=" display: none; " class="text">
+{
+    "errors": [
+        {
+        "code": "ERROR.401.001",
+        "message": "Unauthorized to call the target operation.",
+        "path": "authorization",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            
+                            </code>	
+                            
+                            <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number4" style=" display: none; " class="text">
+{
+    "errors": [
+        {
+        "code": "ERROR.403.001",
+        "message": "Can't find any valid subscription.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            
+                            
+                            <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number5" style=" display: none; " class="text">
+{
+    "errors": [
+        {
+        "code": "ERROR.404.001",
+        "message": "No resources match requested URI.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            
+                            
+                            <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number6" style=" display: none; "class="text">
+{
+    "errors": [
+        {
+        "code": "ERROR.405.001",
+        "message": "The method is not allowed for the requested URL.",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                 
+                            </code>
+                             
+                            
+                            <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number7" style=" display: none; "class="text">
+{
+    "errors": [
+        {
+        "code": "ERROR.406.001",
+        "message": "An appropriate representation of the requested resource could not be found",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                            </code>
+                             
+                            
+                            <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number8" style=" display: none; " class="text">
+{
+    "errors": [
+        {
+        "code": "ERROR.429.001",
+        "message": "Assembly Rate Limit exceeded",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }    
+                            </code>
+                            
+                            
+                            <code id="Send-Registered-Event-IVR-Notification-Using-Mobile-Number9" style=" display: none; " class="text">
+{
+    "errors": [
+        {
+        "code": "ERROR.500.001",
+        "message": "Internal Error",
+        "url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                                  </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

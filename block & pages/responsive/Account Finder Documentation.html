@@ -1,0 +1,1292 @@
+<div class="product-details-document">
+
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Account Finder</p>
+    </div>
+
+
+    <div class="moterinsurance-sec">
+        <div class="container">
+            <div class="d-flex">
+                <div class="leftside-sec">
+                    <p class="fob-welcome-title" id="section-1">Account Finder APIS </p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Account Finder is a service offered by ARB (an ARG Subsidiary referred to as the provider). 
+                        This product allows users to view all their bank accounts across various participating banks. By displaying a comprehensive 
+                        list of banks, it verifies the status of each account, identifying whether it is active or inactive. Once verified, 
+                        the service searches for the user's accounts across these banks and presents a consolidated view, ensuring seamless 
+                        account discovery and management.
+                    </p>
+
+
+                </div>
+                <div class="rightside-sec">
+                    <p class="API-image"></p>
+                </div>
+            </div>
+            <div class="d-flex btn-box">
+                <a id="downloadLink"
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxAccountFinderAPIs.postman_collection.json"
+                    download="">Download Postman Collection</a>
+                <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/AccountFinderSampleRequestData.xlsx"
+                    download="">Download Sample Data</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="miw-section">
+        <div class="container">
+            <h1 class="fob-welcome-title">Account Finder Workflow</h1>
+            <p class="motoinsu-image"></p>
+            <a class="fob-product-title-click" target="_blank"
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/AccountFinderFlowDiagramv0.1.pdf"
+                rel="noopener">
+                Click here
+            </a>
+        </div>
+    </div>
+
+
+
+
+    <div class="APIs-section">
+        <div class="container">
+            <p class="main-heading">
+                APIs
+            </p>
+            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                <!-- API 1 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-2">Activate Account Finder Details</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: /mp-account-finder/v1/activate</br></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2863/api/2860#/MPActivateAccountFinder_100/operation/%2Factivate/put">Swagger
+                            Link</a></p>
+                    <p class="fob-welcome-text">This API is used to activate account finder.</br></p>
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                            <p class="fob-welcome-line"></p>
+                            <pre class="example_97 api-guides-example-fob ">
+                <code class="sample-code">
+{
+"Data": {
+    "CIC": "0000000003170819"
+}
+}
+                </code>
+              </pre>
+                        </div>
+                        <div class="url-box">
+                            <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                onclick="show('Activate-Account-Finder-Details')">
+                                <p class="curlText">cURL</p>
+                            </button>
+
+                            <pre id="generatedCurl">
+                <code id="Activate-Account-Finder-Details" style=" display: block;">
+curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-account-finder/v1/activate' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjac6Um6d7PRHYnFSRI4QtJ_1qbYJAmLKdqY7pjRj2pVu8FZ8DZzk4HgkB_96zCJmHc6t6yfV41VAi35vEphIjaEUqfkoeX4q3nf0Vex96aCs4v1Y9ubT8MeOroyaWYFRsEMn48HNzohGGbTRpnxb5Bm' \
+--data '{
+"Data": {
+"CIC": "0000000003170819"
+}
+}'
+                </code>
+              </pre>
+                        </div>
+                    </div>
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                <div class="response-box-div">
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details')">204</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details2')">400</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details3')">401</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details4')">403</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details5')">404</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details6')">405</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details7')">406</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details8')">429</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details9')">500</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Activate-Account-Finder-Details10')">503</a>
+                                </div>
+
+                                <pre class="response-box">
+
+                  <code id="response-Activate-Account-Finder-Details" style=" display: block; " class="text">
+204 no response         
+
+                  </code>
+                  <code id="response-Activate-Account-Finder-Details2" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.400.001",
+    "Message": "Bad Request",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}  
+                  </code>	
+
+                  <code id="response-Activate-Account-Finder-Details3" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.401.001",
+    "Message": "Unauthorized to call the target operation.",
+    "Path": "authorization",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}   
+                   </code>
+                
+                  <code id="response-Activate-Account-Finder-Details4" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.403.001",
+    "Message": "Can't find any valid subscription.",
+    "Path": "authorization",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                  </code>
+                
+                  <code id="response-Activate-Account-Finder-Details5" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.404.001",
+    "Message": "No resources match requested URI.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                  </code>
+                
+                  <code id="response-Activate-Account-Finder-Details6" style=" display: none; "class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.405.001",
+    "Message": "The method is not allowed for the requested URL.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                        
+                  </code>
+                
+                  <code id="response-Activate-Account-Finder-Details7" style=" display: none; "class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.406.001",
+    "Message": "An appropriate representation of the requested resource could not be found",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+} 
+                  </code>
+                
+                  <code id="response-Activate-Account-Finder-Details8" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.429.001",
+    "Message": "Assembly Rate Limit exceeded.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}  
+                  </code>
+                
+                  <code id="response-Activate-Account-Finder-Details9" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.500.001",
+    "Message": "Internal Error.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                  </code>
+
+                  <code id="response-Activate-Account-Finder-Details10" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.503.001",
+    "Message": "Service Unavailable.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                     </code>
+                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API 2 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-3">List Instant Payment Participant Banks Account
+                        Finder Details</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: /mp-account-finder/v1/participant-banks</br></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2881/api/2878#/MPListInstantPaymentParticipantBanksAccountFinder_100/operation/%2Fparticipant-banks/get">Swagger
+                            Link</a></p>
+                    <p class="fob-welcome-text">This API is used to initiate outwards transfer account
+                        verification.</br></p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+                            <p class="fob-welcome-line"></p>
+                            <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+Query request
+participantID:080
+participantName:SAALBI
+participantStatus:01
+                                       
+                                </code>
+                              </pre>
+                        </div>
+                        <div class="url-box">
+                            <!-- <div class="code-box"> -->
+
+                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                onclick="show('Get-List-Instant-Payment-Participant-Banks-Account-Finder-Details')">
+                                <p class="curlText">cURL</p>
+                            </button>
+
+                            <pre id="generatedCurl">
+                                  <code id="Get-List-Instant-Payment-Participant-Banks-Account-Finder-Details" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-account-finder/v1/participant-banks' \
+--header 'Accept-Language: en' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••'
+                                  </code>
+                                </pre>
+                        </div>
+                    </div>
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                <div class="response-box-div">
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details')">200</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details2')">400</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details3')">401</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details4')">403</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details5')">404</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details6')">405</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details7')">406</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details8')">429</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details9')">500</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-List-Instant-Payment-Participant-Banks-Account-Finder-Details10')">503</a>
+                                </div>
+                                <pre class="response-box">
+
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details" style=" display: block; " class="text">
+{
+    "Data": {
+        "ParticipantBanksList": [
+            {
+                "ParticipantId": "015",
+                "ParticipantName": "SAALBI",
+                "ParticipantFullNameAr": "بنك البلاد",
+                "ParticipantFullNameEn": "AlBilad Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "005",
+                "ParticipantName": "SAINMA",
+                "ParticipantFullNameAr": "مصرف الانماء",
+                "ParticipantFullNameEn": "AlInma Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "080",
+                "ParticipantName": "SARJHI",
+                "ParticipantFullNameAr": "مصرف الراجحي",
+                "ParticipantFullNameEn": "AlRajhi Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "030",
+                "ParticipantName": "SAARNB",
+                "ParticipantFullNameAr": "البنك العربي الوطني",
+                "ParticipantFullNameEn": "Arab National Bank",
+                "ParticipantStatus": "02"
+            },
+            {
+                "ParticipantId": "085",
+                "ParticipantName": "SABNPA",
+                "ParticipantFullNameAr": "بنك باريباس ",
+                "ParticipantFullNameEn": "BNP PARIBAS BANK",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "060",
+                "ParticipantName": "SABJAZ",
+                "ParticipantFullNameAr": "البنك السعودي للاستثمار",
+                "ParticipantFullNameEn": "Bank AlJazira",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "076",
+                "ParticipantName": "SABMUS",
+                "ParticipantFullNameAr": "بنك مسقط",
+                "ParticipantFullNameEn": "Bank Muscat",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "055",
+                "ParticipantName": "SABSFR",
+                "ParticipantFullNameAr": "البنك السعودي الفرنسي",
+                "ParticipantFullNameEn": "Banque Saudi Fransi",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "036",
+                "ParticipantName": "SADBAK",
+                "ParticipantFullNameAr": "بنك دال ٣٦٠",
+                "ParticipantFullNameEn": "D360 bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "081",
+                "ParticipantName": "SADEUT",
+                "ParticipantFullNameAr": "البنك الألماني",
+                "ParticipantFullNameEn": "Deutsche Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "095",
+                "ParticipantName": "SAEBIL",
+                "ParticipantFullNameAr": "بنك الامارات",
+                "ParticipantFullNameEn": "Emirates Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "073",
+                "ParticipantName": "SAFABM",
+                "ParticipantFullNameAr": "بنك إم يو إف جي ",
+                "ParticipantFullNameEn": "First Abu Dhabi Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "090",
+                "ParticipantName": "SAGULF",
+                "ParticipantFullNameAr": "بنك الخليج الدولي",
+                "ParticipantFullNameEn": "Gulf International Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "087",
+                "ParticipantName": "SAICBK",
+                "ParticipantFullNameAr": "البنك الصناعي والتجاري الصيني",
+                "ParticipantFullNameEn": "Industrial \"&\" Commercial Bank of China (ICBC)",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "086",
+                "ParticipantName": "SACHAS",
+                "ParticipantFullNameAr": "ج. ب. مورجان تشيس",
+                "ParticipantFullNameEn": "JP Morgan Chase",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "088",
+                "ParticipantName": "SAMUFG",
+                "ParticipantFullNameAr": "بنك إم يو إف جي ",
+                "ParticipantFullNameEn": "MUFG BANK RIYADH",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "071",
+                "ParticipantName": "SANBOB",
+                "ParticipantFullNameAr": "بنك البحرين الوطني",
+                "ParticipantFullNameEn": "National Bank of Bahrain",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "079",
+                "ParticipantName": "SANBIQ",
+                "ParticipantFullNameAr": "بنك العراق الوطني",
+                "ParticipantFullNameEn": "National Bank of Iraq",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "075",
+                "ParticipantName": "SANBOK",
+                "ParticipantFullNameAr": "بنك الكويت الوطني",
+                "ParticipantFullNameEn": "National Bank of Kuwait",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "082",
+                "ParticipantName": "SANBOP",
+                "ParticipantFullNameAr": "البنك الوطني الباكستاني",
+                "ParticipantFullNameEn": "National Bank of Pakistan",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "072",
+                "ParticipantName": "SAQNBA",
+                "ParticipantFullNameAr": "بنك قطر الوطنى",
+                "ParticipantFullNameEn": "Qatar National Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "020",
+                "ParticipantName": "SARIBL",
+                "ParticipantFullNameAr": "بنك الرياض",
+                "ParticipantFullNameEn": "Riyad Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "001",
+                "ParticipantName": "SASAMA",
+                "ParticipantFullNameAr": "البنك المركزي السعودي  ",
+                "ParticipantFullNameEn": "SAMA",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "040",
+                "ParticipantName": "SASAMB",
+                "ParticipantFullNameAr": "سامبا للخدمات الماليه",
+                "ParticipantFullNameEn": "Samba Financial Services",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "045",
+                "ParticipantName": "SASABB",
+                "ParticipantFullNameAr": "الأول",
+                "ParticipantFullNameEn": "Saudi Awwal Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "065",
+                "ParticipantName": "SASIBC",
+                "ParticipantFullNameAr": "البنك السعودي للاستثمار",
+                "ParticipantFullNameEn": "Saudi Investment Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "010",
+                "ParticipantName": "SANCBK",
+                "ParticipantFullNameAr": "البنك الأهلي السعودي",
+                "ParticipantFullNameEn": "Saudi National Bank",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "084",
+                "ParticipantName": "SATCZT",
+                "ParticipantFullNameAr": "البنك الزراعي لجمهورية تركيا",
+                "ParticipantFullNameEn": "Turkiye Cumhuriyeti Ziraat Bankasi",
+                "ParticipantStatus": "01"
+            },
+            {
+                "ParticipantId": "093",
+                "ParticipantName": "SAVIIO",
+                "ParticipantFullNameAr": "بنك فيجن",
+                "ParticipantFullNameEn": "Vision bank",
+                "ParticipantStatus": "01"
+            }
+        ]
+    }
+}
+                         </code>
+      
+                         <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                                                
+                                                </code>	
+                         
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                        
+                        </code>	
+                        
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details4" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}  
+                        </code>
+                        
+                        
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details5" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.404.001",
+        "Message": "No resources match requested URI.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+} 
+                        </code>
+                        
+                        
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details6" style=" display: none; "class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+ }
+                             
+                        </code>
+                         
+                        
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details7" style=" display: none; "class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.406.001",
+        "Message": "An appropriate representation of the requested resource could not be found",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}      
+                        </code>
+                         
+                        
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details8" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}     
+                        </code>
+                        
+                        
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details9" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}    
+                        </code>
+                        <code id="response-List-Instant-Payment-Participant-Banks-Account-Finder-Details10" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.503.001",
+        "Message": "Service Unavailable.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}   
+                        </code>
+                              </pre>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API 3 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-4">Initiate Outwards Account Finder Details</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: /mp-account-finder/v1/outwards-verification</br></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2875/api/2872#/MPInitiateOutwardsAccountFinder_100/operation/%2Foutwards-verification/post">Swagger
+                            Link</a></p>
+                    <p class="fob-welcome-text">This API is used to initiate outwards transfer account
+                        verification.</br></p>
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+                            <p class="fob-welcome-line"></p>
+                            <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+Body request
+{
+    "Data": {
+      "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
+      "CIC": "0000000003170819",
+      "BeneficiaryBankId": "030",
+      "BeneficiaryAddress": "Riyadh",
+      "BeneficiaryProxyType": "NATID",
+      "BeneficiaryProxyValue": "1159408851"
+    }
+}
+                                       
+                                </code>
+                              </pre>
+                        </div>
+                        <div class="url-box">
+                            <!-- <div class="code-box"> -->
+
+                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                onclick="show('Initiate-Outwards-Account-Finder-Details')">
+                                <p class="curlText">cURL</p>
+                            </button>
+
+                            <pre id="generatedCurl">
+                                  <code id="Initiate-Outwards-Account-Finder-Details" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-account-finder/v1/outwards-verification' \
+--header 'Accept-Language: en' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+"Data": {
+"ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
+"CIC": "0000000003170819",
+"BeneficiaryBankId": "030",
+"BeneficiaryAddress": "Riyadh",
+"BeneficiaryProxyType": "NATID",
+"BeneficiaryProxyValue": "1159408851"
+}
+}'
+                                  </code>
+                                </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                <div class="response-box-div">
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details')">204</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details2')">400</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details3')">401</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details4')">403</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details5')">404</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details6')">405</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details7')">406</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details8')">429</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details9')">500</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Initiate-Outwards-Account-Finder-Details10')">503</a>
+                                </div>
+
+                                <pre class="response-box">
+
+       <code id="response-Initiate-Outwards-Account-Finder-Details" style=" display: block; " class="text">
+204 no response       
+
+   </code>
+   <code id="response-Initiate-Outwards-Account-Finder-Details2" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.400.001",
+    "Message": "Bad Request",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+} 
+                </code>	
+ <code id="response-Initiate-Outwards-Account-Finder-Details3" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.401.001",
+    "Message": "Unauthorized to call the target operation.",
+    "Path": "authorization",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}            </code>	
+
+                   <code id="response-Initiate-Outwards-Account-Finder-Details4" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}   
+             </code>
+
+                  <code id="response-Initiate-Outwards-Account-Finder-Details5" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.404.001",
+        "Message": "No resources match requested URI.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}     
+          </code>
+
+                    <code id="response-Initiate-Outwards-Account-Finder-Details6" style=" display: none; "class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+    
+              </code>
+
+                     <code id="response-Initiate-Outwards-Account-Finder-Details7" style=" display: none; "class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.406.001",
+        "Message": "An appropriate representation of the requested resource could not be found",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}       
+      </code>
+
+                <code id="response-Initiate-Outwards-Account-Finder-Details8" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}     
+                </code>
+
+                    <code id="response-Initiate-Outwards-Account-Finder-Details9" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}     
+                </code>
+                <code id="response-Initiate-Outwards-Account-Finder-Details10" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.503.001",
+        "Message": "Service Unavailable.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}   
+                 </code>
+                           </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- API 4 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-5">Get Account Finder List Details</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: /mp-account-finder/v1/list</br></p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2869/api/2866#/MPGetAccountFinderList_100/operation/%2Flist/get">Swagger
+                            Link</a></p>
+                    <p class="fob-welcome-text">This API is used to get account finder list.</br></p>
+
+
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title">Request Example</h1>
+                            <p class="fob-welcome-line"></p>
+                            <pre class="example_97 api-guides-example-fob ">
+                                <code class="sample-code">
+Query Params
+CIC:0000000003179820
+                                       
+                                </code>
+                              </pre>
+                        </div>
+                        <div class="url-box">
+                            <!-- <div class="code-box"> -->
+
+                            <button class="curlbtn fob-activate-fetching-top" type="submit"
+                                onclick="show('Get-Account-Finder-List-Details')">
+                                <p class="curlText">cURL</p>
+                            </button>
+
+                            <pre id="generatedCurl">
+                                  <code id="Get-Account-Finder-List-Details" style=" display: block;">
+curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-account-finder/v1/list?CIC=0000000003179820' \
+--header 'Authorization: ••••••'
+
+                                  </code>
+                                </pre>
+                        </div>
+                    </div>
+
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                <div class="response-box-div">
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details')">200</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details2')">400</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details3')">401</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details4')">403</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details5')">404</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details6')">405</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details7')">406</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details8')">429</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('response-Get-Account-Finder-List-Details9')">500</a>
+                                </div>
+                                <pre class="response-box">
+
+                <code id="response-Get-Account-Finder-List-Details" style=" display: block; " class="text">
+{
+    "Data": {
+        "IsEligible": "N",
+        "IsComplete": "N",
+        "FirstRequestCreationTimestamp": "2024-08-04 13:15:38",
+        "BeneficiariesList": [
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000856",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "093",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000855",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "084",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000854",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "010",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000853",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "065",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000852",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "045",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000851",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "040",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000850",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "020",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000849",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "072",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000848",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "082",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000847",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "075",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000846",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "079",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000845",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "071",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000844",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "088",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000843",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "086",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000842",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "087",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000841",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "090",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000840",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "073",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000839",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "095",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000838",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "081",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000837",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "036",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000836",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "055",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000835",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "076",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000834",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "060",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000833",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "085",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000832",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "005",
+                "CreationTimestamp": "2024-08-04T13:15:38",
+                "UpdateTimestamp": "2024-08-04T13:15:38",
+                "Status": "ACV_PENDING"
+            },
+            {
+                "BusinessMessageId": "20240804SARJHIRJHI7BPXY11315000831",
+                "BeneficiaryIBAN": "SA0000000000000000000000UC0003",
+                "BeneficiaryBankId": "015",
+                "CreationTimestamp": "2024-08-04T13:15:37",
+                "UpdateTimestamp": "2024-08-04T13:15:37",
+                "Status": "ACV_PENDING"
+            }
+        ]
+    },
+    "Links": {
+        "Self": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-account-finder/v1/list?CIC=0000000003179820"
+    },
+    "Meta": {
+        "TotalPages": 1
+    }
+}
+                         </code>
+              
+                <code id="response-Get-Account-Finder-List-Details2" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.400.001",
+        "Message": "Bad Request",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+} 
+                </code>	
+                    
+                  <code id="response-Get-Account-Finder-List-Details3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}  
+               </code>	
+    
+               <code id="response-Get-Account-Finder-List-Details4" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}    
+           </code>
+    
+               <code id="response-Get-Account-Finder-List-Details5" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.404.001",
+        "Message": "No resources match requested URI.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}    
+              </code>
+    
+               <code id="response-Get-Account-Finder-List-Details6" style=" display: none; "class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+        
+              </code>
+      
+                <code id="response-Get-Account-Finder-List-Details7" style=" display: none; "class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.406.001",
+        "Message": "An appropriate representation of the requested resource could not be found",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}      
+                </code>
+    
+                       <code id="response-Get-Account-Finder-List-Details8" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}    
+                      </code>
+    
+                        <code id="response-Get-Account-Finder-List-Details9" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+} 
+                     </code>
+                     <code id="response-Get-Account-Finder-List-Details9" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "ERROR.503.001",
+        "Message": "Service Unavailable.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+}
+                      </code>
+                  </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
