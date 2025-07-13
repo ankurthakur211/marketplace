@@ -1,0 +1,2432 @@
+{
+	"info": {
+		"_postman_id": "339a3ede-c4df-44dd-9cdc-12cb7e08b2b9",
+		"name": "MP Sandbox Motor Insurance SME APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31748034"
+	},
+	"item": [
+		{
+			"name": "Address Info",
+			"item": [
+				{
+					"name": "company",
+					"item": [
+						{
+							"name": "Get Address details based on company registration number",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{publicUrl}}/mp-address/art/v2/company?crNumber=7014620954",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"mp-address",
+										"art",
+										"v2",
+										"company"
+									],
+									"query": [
+										{
+											"key": "crNumber",
+											"value": "7014620954",
+											"description": "(Required) Company registration number"
+										}
+									]
+								},
+								"description": "This API is used to fetch Address details based on cr number"
+							},
+							"response": [
+								{
+									"name": "Get Address details based on company registration number",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-address/art/v2/company?crNumber=7014620954",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-address",
+												"art",
+												"v2",
+												"company"
+											],
+											"query": [
+												{
+													"key": "crNumber",
+													"value": "7014620954",
+													"description": "(Required) Company registration number"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "1fd9606b-86e5-4eb9-9a36-ff9d3fe461aa"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67d92c0d05c70c22"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,95;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Mar 2025 08:17:18 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"AddressList\": [\n            {\n                \"TitleAr\": \"مصنع ابراهيم محمد حمد الهندي للصناعة\",\n                \"Address1\": \"2440 Yazeed Al Khazraji - As Sinaiyah Dist.\",\n                \"Address2\": \"AR RASS 58872 - 6674\",\n                \"Coordinates\": \"43.46198189 25.84882268\",\n                \"BuildingNumber\": \"2440\",\n                \"StreetNameEn\": \"Yazeed Al Khazraji\",\n                \"DistrictNameEn\": \"As Sinaiyah Dist.\",\n                \"CityNameEn\": \"AR RASS\",\n                \"PostalCode\": \"58872\",\n                \"AdditionalNumber\": \"6674\",\n                \"RegionNameEn\": \"Al Qassim\",\n                \"IsPrimaryAddress\": \"true\",\n                \"UnitNumber\": \"149\",\n                \"Latitude\": \"25.84882268\",\n                \"Longitude\": \"43.46198189\",\n                \"CityCode\": \"2421\",\n                \"RegionCode\": \"4\",\n                \"Restriction\": \"\",\n                \"PKAddressCode\": \"5887224406674\",\n                \"DistrictCode\": \"\",\n                \"RegionNameAr\": \"القصيم\",\n                \"CityNameAr\": \"الرس\",\n                \"StreetNameAr\": \"يزيذ الخزرجي\",\n                \"DistrictNameAr\": \"حي الصناعية\",\n                \"GovernorateCode\": \"\",\n                \"GovernorateNameEn\": \"\",\n                \"GovernorateNameAr\": \"\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "person",
+					"item": [
+						{
+							"name": "Get Address details based on user's national or Iqama number",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/mp-address/art/v2/person?poiNumber=1095501753",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"mp-address",
+										"art",
+										"v2",
+										"person"
+									],
+									"query": [
+										{
+											"key": "birthDate",
+											"value": "18-7-2000",
+											"disabled": true
+										},
+										{
+											"key": "poiNumber",
+											"value": "1095501753"
+										}
+									]
+								},
+								"description": "This API is used to fetch Address details based on user's national or Iqama number"
+							},
+							"response": [
+								{
+									"name": "Get Address details based on user's national or Iqama number",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-address/art/v2/person?poiNumber=1095501753",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-address",
+												"art",
+												"v2",
+												"person"
+											],
+											"query": [
+												{
+													"key": "birthDate",
+													"value": "18-7-2000",
+													"disabled": true
+												},
+												{
+													"key": "poiNumber",
+													"value": "1095501753"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "64fda83d-28de-49e5-afb2-f63b4c78025b"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67d93ab905c8b5b2"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,99;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Mar 2025 09:19:53 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"AddressList\": [\n            {\n                \"BuildingNumber\": \"7981\",\n                \"StreetNameEn\": \"Al Battah\",\n                \"DistrictNameEn\": \"Al Hamra Dist.\",\n                \"CityNameEn\": \"RIYADH\",\n                \"PostalCode\": \"13217\",\n                \"AdditionalNumber\": \"2683\",\n                \"CityNameAr\": \"الرياض\",\n                \"StreetNameAr\": \"البطاح\",\n                \"DistrictNameAr\": \"حي الحمراء\",\n                \"Coordinates\": \"46.75533617 24.78561167\",\n                \"ShortAddress\": \"RFHA7981\",\n                \"IsPrimaryAddress\": \"true\",\n                \"PKAddressCode\": \"1321779812683\",\n                \"Address1\": \"7981 Al Battah - Al Hamra Dist.\",\n                \"Address2\": \"RIYADH 13217 - 2683\",\n                \"RegionNameEn\": \"Al Riyadh\",\n                \"RegionNameAr\": \"الرياض\",\n                \"Latitude\": \"24.78561167\",\n                \"Longitude\": \"46.75533617\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Yakeen Person Info",
+			"item": [
+				{
+					"name": "citizen",
+					"item": [
+						{
+							"name": "Get citizen info details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{publicUrl}}/mp-yakeen/art/v2/citizen?poiNumber=1096136294&gregBirthDate=09-1969",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"mp-yakeen",
+										"art",
+										"v2",
+										"citizen"
+									],
+									"query": [
+										{
+											"key": "poiNumber",
+											"value": "1096136294",
+											"description": "(Required) poiNumber"
+										},
+										{
+											"key": "gregBirthDate",
+											"value": "09-1969",
+											"description": "(Required) dateOfBirth"
+										}
+									]
+								},
+								"description": "This API is used to get citizen info based on poiNumber and date of birth."
+							},
+							"response": [
+								{
+									"name": "Get citizen info details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-yakeen/art/v2/citizen?poiNumber=1096136294&gregBirthDate=09-1969",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"art",
+												"v2",
+												"citizen"
+											],
+											"query": [
+												{
+													"key": "poiNumber",
+													"value": "1096136294",
+													"description": "(Required) poiNumber"
+												},
+												{
+													"key": "gregBirthDate",
+													"value": "09-1969",
+													"description": "(Required) dateOfBirth"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "34679bfb-f195-4ee3-a432-5b23bdf1539e"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67d92be905c70c12"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,99;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Mar 2025 08:16:41 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"GregBirthDate\": \"12-09-1969\",\n            \"FirstNameEn\": \"FADWA\",\n            \"LastNameEn\": \"BIN SAEED\",\n            \"SecondNameEn\": \"FAHAD\",\n            \"ThirdNameEn\": \"ABDULLAH\",\n            \"LastNameAr\": \"بن سعيد\",\n            \"SecondNameAr\": \"فهد\",\n            \"FirstNameAr\": \"فدوى\",\n            \"Gender\": \"F\",\n            \"ThirdNameAr\": \"عبدالله\",\n            \"IssuePlace\": \"أحوال الدرعية-نساء\",\n            \"LogId\": 0,\n            \"MaritalStatusAr\": \"مُطلّق\",\n            \"MaritalStatusAdditionalDescAr\": \"مطلقه\",\n            \"SubtribeName\": \"\",\n            \"MaritalStatusEn\": \"unmarried\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Get citizen info details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-yakeen/art/v2/citizen?poiNumber=1022852311&gregBirthDate=05-1984",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"art",
+												"v2",
+												"citizen"
+											],
+											"query": [
+												{
+													"key": "poiNumber",
+													"value": "1022852311",
+													"description": "(Required) poiNumber"
+												},
+												{
+													"key": "gregBirthDate",
+													"value": "05-1984",
+													"description": "(Required) dateOfBirth"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "02ae55d8-6136-41a1-8aa5-64e5ce631576"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c686b974604d6f601"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,97;"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 07 Jul 2025 09:45:43 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"GregBirthDate\": \"10-05-1984\",\n            \"FirstNameEn\": \"NADA\",\n            \"LastNameEn\": \"ALBASHER\",\n            \"SecondNameEn\": \"FAHAD\",\n            \"ThirdNameEn\": \"A\",\n            \"LastNameAr\": \"البشير\",\n            \"SecondNameAr\": \"فهد\",\n            \"FirstNameAr\": \"ندى\",\n            \"Gender\": \"F\",\n            \"ThirdNameAr\": \"عبدالله\",\n            \"IssuePlace\": \"أحوال الدرعية-نساء\",\n            \"LogId\": 0,\n            \"MaritalStatusAr\": \"غيرمتزوجة\",\n            \"MaritalStatusAdditionalDescAr\": \"غير متزوجة\",\n            \"SubtribeName\": \"\",\n            \"MaritalStatusEn\": \"unmarried\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "alien",
+					"item": [
+						{
+							"name": "birthDate",
+							"item": [
+								{
+									"name": "Get alien info details",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien/birthDate?poiNumber=2406132841&gregBirthDate=05-1989",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"art",
+												"v2",
+												"alien",
+												"birthDate"
+											],
+											"query": [
+												{
+													"key": "poiNumber",
+													"value": "2406132841",
+													"description": "(Required) iqamaNumber"
+												},
+												{
+													"key": "gregBirthDate",
+													"value": "05-1989",
+													"description": "(Required) Date Of Birth"
+												}
+											]
+										},
+										"description": "This API is used to get alien info based on iqama number and date of birth."
+									},
+									"response": [
+										{
+											"name": "Get alien info details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-request-id",
+														"value": "{{$guid}}",
+														"description": "An RFC4122 UID used as a correlation id."
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien/birthDate?poiNumber=2406132841&gregBirthDate=05-1989",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"mp-yakeen",
+														"art",
+														"v2",
+														"alien",
+														"birthDate"
+													],
+													"query": [
+														{
+															"key": "poiNumber",
+															"value": "2406132841",
+															"description": "(Required) iqamaNumber"
+														},
+														{
+															"key": "gregBirthDate",
+															"value": "05-1989",
+															"description": "(Required) Date Of Birth"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json"
+												},
+												{
+													"key": "x-request-id",
+													"value": "cac3f449-7fe2-43ed-ba2c-f5557331d356"
+												},
+												{
+													"key": "X-Global-Transaction-ID",
+													"value": "757dc76c67d9388301d43a63"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "name=default,100;"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "name=default,66;"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 18 Mar 2025 09:10:27 GMT"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "gzip"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"LastUpdatedDate\": \"2025-03-02T11:40:20.213+0000\",\n            \"HijriBirthDate\": \"20-10-1409\",\n            \"FirstNameEn\": \"SHAIK\",\n            \"ThirdNameEn\": \"ZUBEDI\",\n            \"LastNameEn\": \"IBRAHIM\",\n            \"SecondNameEn\": \"\",\n            \"FirstNameAr\": \"شيك\",\n            \"Gender\": \"M\",\n            \"IdentificationInfo\": {\n                \"GregExpiryDate\": \"17-05-2025\",\n                \"HijriExpiryDate\": \"19-11-1446\",\n                \"IssuePlace\": \"موقع بوابة الوزارة الألكترونية\",\n                \"POINumber\": \"2406132841\",\n                \"POIType\": \"1\"\n            },\n            \"ThirdNameAr\": \"سبيدي\",\n            \"LogId\": 0,\n            \"NationalityCode\": 321,\n            \"OccupationCode\": 243110,\n            \"LastNameAr\": \"ابراهيم\",\n            \"MaritalStatusCode\": 2,\n            \"SponsorMobileNumber\": 7001767040,\n            \"SponsorName\": \"\",\n            \"SecondNameAr\": \"\",\n            \"MaritalStatusEn\": \"married\"\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "borderNumber",
+							"item": [
+								{
+									"name": "Get alien info details",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien/borderNumber?borderNumber=4648350322&sponsorId=7001430706",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"art",
+												"v2",
+												"alien",
+												"borderNumber"
+											],
+											"query": [
+												{
+													"key": "borderNumber",
+													"value": "4648350322",
+													"description": "(Required) borderNumber"
+												},
+												{
+													"key": "sponsorId",
+													"value": "7001430706",
+													"description": "(Required) sponsorId"
+												}
+											]
+										},
+										"description": "This API is used to get alien info based on border number."
+									},
+									"response": [
+										{
+											"name": "Get alien info details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-request-id",
+														"value": "{{$guid}}",
+														"description": "An RFC4122 UID used as a correlation id."
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien/borderNumber?borderNumber=4648350322&sponsorId=7001430706",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"mp-yakeen",
+														"art",
+														"v2",
+														"alien",
+														"borderNumber"
+													],
+													"query": [
+														{
+															"key": "borderNumber",
+															"value": "4648350322",
+															"description": "(Required) borderNumber"
+														},
+														{
+															"key": "sponsorId",
+															"value": "7001430706",
+															"description": "(Required) sponsorId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json"
+												},
+												{
+													"key": "x-request-id",
+													"value": "28226ca9-ab46-4da8-a865-2366f8752f36"
+												},
+												{
+													"key": "X-Global-Transaction-ID",
+													"value": "757dc76c67d939ad05c88bc2"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "name=default,100;"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "name=default,63;"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 18 Mar 2025 09:15:25 GMT"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "gzip"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"GregBirthDate\": \"30-06-1997\",\n            \"LastNameEn\": \"WOODMAN\",\n            \"FirstNameEn\": \"PETER\",\n            \"Gender\": \"M\",\n            \"ThirdNameEn\": \"WOODMAN MATHEW\",\n            \"NationalityCode\": 321,\n            \"OccupationCode\": 0,\n            \"SecondNameEn\": \"SHARUN\",\n            \"SponsorName\": \"شركة البلاد العربيه المحدوده\",\n            \"LastNameAr\": \"WOODMAN\",\n            \"FirstNameAr\": \"PETER\",\n            \"ThirdNameAr\": \"WOODMAN MATHEW\",\n            \"LogId\": 0\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "visa",
+							"item": [
+								{
+									"name": "Get alien info details",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien/visa?visaNumber=6117731857&visaExpiryDate=2014-03",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"art",
+												"v2",
+												"alien",
+												"visa"
+											],
+											"query": [
+												{
+													"key": "visaNumber",
+													"value": "6117731857",
+													"description": "(Required) visaNumber"
+												},
+												{
+													"key": "visaExpiryDate",
+													"value": "2014-03",
+													"description": "(Required) visaExpiryDate"
+												}
+											]
+										},
+										"description": "This API is used to get alien info based on visa number."
+									},
+									"response": [
+										{
+											"name": "Get alien info details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-request-id",
+														"value": "{{$guid}}",
+														"description": "An RFC4122 UID used as a correlation id."
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien/visa?visaNumber=6117731857&visaExpiryDate=2014-03",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"mp-yakeen",
+														"art",
+														"v2",
+														"alien",
+														"visa"
+													],
+													"query": [
+														{
+															"key": "visaNumber",
+															"value": "6117731857",
+															"description": "(Required) visaNumber"
+														},
+														{
+															"key": "visaExpiryDate",
+															"value": "2014-03",
+															"description": "(Required) visaExpiryDate"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json"
+												},
+												{
+													"key": "x-request-id",
+													"value": "aac618ba-6460-46be-b2ce-24e4a200a945"
+												},
+												{
+													"key": "X-Global-Transaction-ID",
+													"value": "757dc76c67d937f1046009f0"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "name=default,100;"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "name=default,69;"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 18 Mar 2025 09:08:01 GMT"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "gzip"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"Data\": {\n        \"FirstName\": \"رغد\",\n        \"SecondName\": \"حسام الدين\",\n        \"ThirdName\": \"احمد\",\n        \"LastName\": \"على\",\n        \"GregBirthDate\": \"19-03-2014\",\n        \"PassportNumber\": \"P08043244\",\n        \"GregEntryDate\": \"30-04-2024\",\n        \"NationalityCode\": 204,\n        \"OccupationCode\": 0,\n        \"BorderNumber\": 4681042141,\n        \"LogId\": 0,\n        \"VisaExpiryDate\": \"27-04-2025\",\n        \"VisaDurationInDays\": 90\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get alien info details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien?poiNumber=2406132841&hijriExpiryDate=1446",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"mp-yakeen",
+										"art",
+										"v2",
+										"alien"
+									],
+									"query": [
+										{
+											"key": "poiNumber",
+											"value": "2406132841",
+											"description": "(Required) iqamaNumber"
+										},
+										{
+											"key": "hijriExpiryDate",
+											"value": "1446",
+											"description": "(Required) expiryDate"
+										}
+									]
+								},
+								"description": "This API is used to get alien info based on iqama number and expiry date."
+							},
+							"response": [
+								{
+									"name": "Get alien info details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien?poiNumber=2406132841&hijriExpiryDate=1446",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"art",
+												"v2",
+												"alien"
+											],
+											"query": [
+												{
+													"key": "poiNumber",
+													"value": "2406132841",
+													"description": "(Required) iqamaNumber"
+												},
+												{
+													"key": "hijriExpiryDate",
+													"value": "1446",
+													"description": "(Required) expiryDate"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "1b459862-3eb4-47ec-9f6b-0d5691681489"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67d941a104609e50"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,60;"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Mar 2025 09:49:21 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"GregBirthDate\": \"25-05-1989\",\n            \"FirstNameEn\": \"SHAIK\",\n            \"SecondNameEn\": \"IBRAHIM\",\n            \"ThirdNameEn\": \"\",\n            \"FirstNameAr\": \"شيك\",\n            \"Gender\": \"M\",\n            \"IdentificationInfo\": {\n                \"GregExpiryDate\": \"17-05-2025\",\n                \"HijriExpiryDate\": \"19-11-1446\",\n                \"IssuePlace\": \"موقع بوابة الوزارة الألكترونية\",\n                \"POINumber\": \"2406132841\",\n                \"POIType\": \"1\"\n            },\n            \"LastNameAr\": \"سبيدي\",\n            \"LogId\": 0,\n            \"NationalityCode\": 321,\n            \"OccupationCode\": 243110,\n            \"SecondNameAr\": \"ابراهيم\",\n            \"MaritalStatusCode\": 2,\n            \"SponsorMobileNumber\": 7026765615,\n            \"SponsorName\": \"\",\n            \"ThirdNameAr\": \"\",\n            \"MaritalStatusEn\": \"married\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Get alien info details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-yakeen/art/v2/alien?poiNumber=2555809033&hijriExpiryDate=1446",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-yakeen",
+												"art",
+												"v2",
+												"alien"
+											],
+											"query": [
+												{
+													"key": "poiNumber",
+													"value": "2555809033",
+													"description": "(Required) iqamaNumber"
+												},
+												{
+													"key": "hijriExpiryDate",
+													"value": "1446",
+													"description": "(Required) expiryDate"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "64de96d1-828a-40a1-a98d-ba6eede4e64d"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c686b979707c8ef80"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,95;"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 07 Jul 2025 09:47:03 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PersonInfo\": {\n            \"GregBirthDate\": \"10-12-1989\",\n            \"FirstNameEn\": \"WASEEM\",\n            \"SecondNameEn\": \"MURTAZA\",\n            \"ThirdNameEn\": \"GHULAM\",\n            \"FirstNameAr\": \"وسيم\",\n            \"Gender\": \"M\",\n            \"IdentificationInfo\": {\n                \"GregExpiryDate\": \"09-12-2024\",\n                \"HijriExpiryDate\": \"08-06-1446\",\n                \"IssuePlace\": \"موقع بوابة الوزارة الألكترونية\",\n                \"POINumber\": \"2555809033\",\n                \"POIType\": \"1\"\n            },\n            \"LastNameAr\": \"مرتضى\",\n            \"LogId\": 0,\n            \"NationalityCode\": 304,\n            \"OccupationCode\": 833201,\n            \"SecondNameAr\": \"مرتضى\",\n            \"MaritalStatusCode\": 1,\n            \"SponsorMobileNumber\": 7036805302,\n            \"SponsorName\": \"\",\n            \"ThirdNameAr\": \"غلام\",\n            \"MaritalStatusEn\": \"unmarried\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Yakeen Vehicle Info",
+			"item": [
+				{
+					"name": "sequence",
+					"item": [
+						{
+							"name": "{SequenceNumber}",
+							"item": [
+								{
+									"name": "Get car info details",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-vehicle/art/v2/sequence/:SequenceNumber?poiNumber=1010225231",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-vehicle",
+												"art",
+												"v2",
+												"sequence",
+												":SequenceNumber"
+											],
+											"query": [
+												{
+													"key": "poiNumber",
+													"value": "1010225231",
+													"description": "(Required) ownerId"
+												}
+											],
+											"variable": [
+												{
+													"key": "SequenceNumber",
+													"value": "248965710",
+													"description": "(Required) sequenceNumber"
+												}
+											]
+										},
+										"description": "This API is used to get car info based on sequence number."
+									},
+									"response": [
+										{
+											"name": "Get car info details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-request-id",
+														"value": "{{$guid}}",
+														"description": "An RFC4122 UID used as a correlation id."
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/mp-vehicle/art/v2/sequence/:SequenceNumber?poiNumber=1010225231",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"mp-vehicle",
+														"art",
+														"v2",
+														"sequence",
+														":SequenceNumber"
+													],
+													"query": [
+														{
+															"key": "poiNumber",
+															"value": "1010225231",
+															"description": "(Required) ownerId"
+														}
+													],
+													"variable": [
+														{
+															"key": "SequenceNumber",
+															"value": "248965710",
+															"description": "(Required) sequenceNumber"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json"
+												},
+												{
+													"key": "x-request-id",
+													"value": "e2d424af-f537-436c-861a-f73be6fbf6cc"
+												},
+												{
+													"key": "X-Global-Transaction-ID",
+													"value": "757dc76c67d934b805c7ec12"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "name=default,100;"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "name=default,98;"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 18 Mar 2025 08:54:16 GMT"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "gzip"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"Data\": {\n        \"VehicleInfo\": {\n            \"LastUpdatedDate\": \"2025-01-29T11:32:51.638+0000\",\n            \"ChassisNumber\": \"KL1ZA5CSXLB303768\",\n            \"Cylinders\": 4,\n            \"VehicleClass\": 2,\n            \"LogId\": 0,\n            \"MajorColor\": \"اسود\",\n            \"MinorColor\": \"\",\n            \"ModelYear\": 2020,\n            \"OwnerName\": \"YASMEEN ABDULRAHMAN M ALBEHEJAN\",\n            \"PlateNumber\": 6823,\n            \"PlateText1\": \"م\",\n            \"PlateText2\": \"ك\",\n            \"PlateText3\": \"د\",\n            \"PlateTypeCode\": 1,\n            \"BodyCode\": 5,\n            \"BodyDescription\": \"9 ركاب فأقل\",\n            \"Load\": 5,\n            \"Maker\": \"شيفورلية\",\n            \"MakerCode\": 20,\n            \"Model\": \"ماليبو\",\n            \"ModelCode\": 5,\n            \"Weight\": 1425\n        }\n    }\n}"
+										},
+										{
+											"name": "Get car info details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-request-id",
+														"value": "{{$guid}}",
+														"description": "An RFC4122 UID used as a correlation id."
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/mp-vehicle/art/v2/sequence/:SequenceNumber?poiNumber=1022852311",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"mp-vehicle",
+														"art",
+														"v2",
+														"sequence",
+														":SequenceNumber"
+													],
+													"query": [
+														{
+															"key": "poiNumber",
+															"value": "1022852311",
+															"description": "(Required) ownerId"
+														}
+													],
+													"variable": [
+														{
+															"key": "SequenceNumber",
+															"value": "430493710",
+															"description": "(Required) sequenceNumber"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json"
+												},
+												{
+													"key": "x-request-id",
+													"value": "c5ff21e0-3134-4120-9fa5-e35fafbbe3d6"
+												},
+												{
+													"key": "X-Global-Transaction-ID",
+													"value": "757dc76c686b97fe02ea5ef3"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "name=default,100;"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "name=default,99;"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 07 Jul 2025 09:48:46 GMT"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "gzip"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"Data\": {\n        \"VehicleInfo\": {\n            \"ChassisNumber\": \"JM7KFAWL3L0346617\",\n            \"Cylinders\": 4,\n            \"VehicleClass\": 2,\n            \"LogId\": 0,\n            \"MajorColor\": \"ازرق\",\n            \"MinorColor\": \"\",\n            \"ModelYear\": 2020,\n            \"OwnerName\": \"NADA FAHAD A ALBASHER\",\n            \"PlateNumber\": 7378,\n            \"PlateText1\": \"ل\",\n            \"PlateText2\": \"ق\",\n            \"PlateText3\": \"د\",\n            \"PlateTypeCode\": 1,\n            \"BodyCode\": 5,\n            \"BodyDescription\": \"9 ركاب فأقل\",\n            \"Load\": 5,\n            \"Maker\": \"مازدا\",\n            \"MakerCode\": 27,\n            \"Model\": \"سي اكس 5\",\n            \"ModelCode\": 38,\n            \"Weight\": 1460\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "customNumber",
+					"item": [
+						{
+							"name": "{CustomNumber}",
+							"item": [
+								{
+									"name": "Get car info details",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-vehicle/art/v2/customNumber/:CustomNumber?modelYear=2017",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-vehicle",
+												"art",
+												"v2",
+												"customNumber",
+												":CustomNumber"
+											],
+											"query": [
+												{
+													"key": "modelYear",
+													"value": "2017",
+													"description": "(Required) modelYear"
+												}
+											],
+											"variable": [
+												{
+													"key": "CustomNumber",
+													"value": "3120035777",
+													"description": "(Required) customNumber"
+												}
+											]
+										},
+										"description": "This API is used to get car info based on custom number."
+									},
+									"response": [
+										{
+											"name": "Get car info details",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-request-id",
+														"value": "{{$guid}}",
+														"description": "An RFC4122 UID used as a correlation id."
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{publicUrl}}/mp-vehicle/art/v2/customNumber/:CustomNumber?modelYear=2017",
+													"host": [
+														"{{publicUrl}}"
+													],
+													"path": [
+														"mp-vehicle",
+														"art",
+														"v2",
+														"customNumber",
+														":CustomNumber"
+													],
+													"query": [
+														{
+															"key": "modelYear",
+															"value": "2017",
+															"description": "(Required) modelYear"
+														}
+													],
+													"variable": [
+														{
+															"key": "CustomNumber",
+															"value": "3120035777",
+															"description": "(Required) customNumber"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Connection",
+													"value": "Keep-Alive"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "content-type",
+													"value": "application/json"
+												},
+												{
+													"key": "x-request-id",
+													"value": "1b9ab3ec-376c-4695-afa1-ed61a6575b16"
+												},
+												{
+													"key": "X-Global-Transaction-ID",
+													"value": "757dc76c67d934c105c7ec32"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "name=default,100;"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "name=default,97;"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 18 Mar 2025 08:54:25 GMT"
+												},
+												{
+													"key": "Content-Encoding",
+													"value": "gzip"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"Data\": {\n        \"VehicleInfo\": {\n            \"ChassisNumber\": \"JTHBK1GG8H2250516\",\n            \"Cylinders\": 6,\n            \"LogId\": 1845215133,\n            \"MajorColor\": \"ابيض\",\n            \"MinorColor\": \"NULL\",\n            \"ModelYear\": 2017,\n            \"OwnerName\": \"معاذ محمد مقبول  حكمي\",\n            \"PlateNumber\": 5790,\n            \"PlateText1\": \"أ\",\n            \"PlateText2\": \"م\",\n            \"PlateText3\": \"ح\",\n            \"SequenceNumber\": 972732810,\n            \"BodyCode\": 5,\n            \"BodyDescription\": \"9 ركاب فأقل\",\n            \"Maker\": \"لكزس\",\n            \"MakerCode\": 39,\n            \"Model\": \"ايه اس 053\",\n            \"ModelCode\": 30,\n            \"Weight\": 1640,\n            \"Region\": \"الدمام\"\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NAJM",
+			"item": [
+				{
+					"name": "op-ncd",
+					"item": [
+						{
+							"name": "OCE Get NCD",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{publicUrl}}/mp-ncd-eligibility/v2/ncd?vehicleIdentifier=1&vehicleId=3024070770&policyHolderId=1106706318",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"mp-ncd-eligibility",
+										"v2",
+										"ncd"
+									],
+									"query": [
+										{
+											"key": "vehicleIdentifier",
+											"value": "1"
+										},
+										{
+											"key": "vehicleId",
+											"value": "3024070770"
+										},
+										{
+											"key": "policyHolderId",
+											"value": "1106706318"
+										}
+									]
+								},
+								"description": "This API is integrated with Najm system to check No-Claim Discount (NCD) eligibility. NCD is an incentive given to customer if no claim has been made under policy for a year or more."
+							},
+							"response": [
+								{
+									"name": "OCE Get NCD",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-ncd-eligibility/v2/ncd?vehicleIdentifier=1&vehicleId=3024070770&policyHolderId=1106706318",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-ncd-eligibility",
+												"v2",
+												"ncd"
+											],
+											"query": [
+												{
+													"key": "vehicleIdentifier",
+													"value": "1"
+												},
+												{
+													"key": "vehicleId",
+													"value": "3024070770"
+												},
+												{
+													"key": "policyHolderId",
+													"value": "1106706318"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "5866d2cd-6b1a-490b-a9c4-90edf456059d"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c67d828d0044c0c50"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,99;"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 17 Mar 2025 13:51:14 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PolicyHolderId\": \"1106706318\",\n        \"VehicleIdentifier\": \"1\",\n        \"VehicleId\": \"3024070770\",\n        \"NCDReference\": \"NCD17032593703\",\n        \"NCDFreeYears\": \"4\"\n    }\n}"
+								},
+								{
+									"name": "OCE Get NCD",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{publicUrl}}/mp-ncd-eligibility/v2/ncd?vehicleIdentifier=1&vehicleId=430493710&policyHolderId=1022852311",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-ncd-eligibility",
+												"v2",
+												"ncd"
+											],
+											"query": [
+												{
+													"key": "vehicleIdentifier",
+													"value": "1"
+												},
+												{
+													"key": "vehicleId",
+													"value": "430493710"
+												},
+												{
+													"key": "policyHolderId",
+													"value": "1022852311"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "d05b85aa-60eb-4004-b489-6f6523c9c29c"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c686b984404d713a1"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,99;"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 07 Jul 2025 09:49:56 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"PolicyHolderId\": \"1022852311\",\n        \"VehicleIdentifier\": \"1\",\n        \"VehicleId\": \"430493710\",\n        \"NCDReference\": \"NCD021024146480\",\n        \"NCDFreeYears\": \"2\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Motor Insurance Sme",
+			"item": [
+				{
+					"name": "List Motor Products",
+					"item": [
+						{
+							"name": "List Motor Products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"CustomerTypeId\": 2\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/mp-motor-sme/v1/products",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"mp-motor-sme",
+										"v1",
+										"products"
+									]
+								},
+								"description": "Draft Policy"
+							},
+							"response": [
+								{
+									"name": "List Motor Products",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Data\": {\n    \"CustomerTypeId\": 2\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/mp-motor-sme/v1/products",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-motor-sme",
+												"v1",
+												"products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "bfca389e-5cd3-4e6a-a981-1b3dc7e3778b"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c6852a5a2033e0c60"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,85;"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 18 Jun 2025 11:40:18 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"Products\": [\n            {\n                \"ProductId\": 600461,\n                \"ShortNameEn\": \"Comprehensive\",\n                \"ShortNameAr\": \"وافي الشامل\",\n                \"LongName\": \"Comprehensive\",\n                \"BasicCoverage\": [\n                    {\n                        \"CoverId\": 2,\n                        \"CoverNameEn\": \"Third Party Liability\",\n                        \"CoverNameAr\": \"مسؤولية الطرف الثالث\",\n                        \"PolicyDocDescEn\": \"Up to SAR 10,000,000 per one occurrence\",\n                        \"PolicyDocDescAr\": \"بحد اقصى 10,000,000 ريال لكل حادث\"\n                    },\n                    {\n                        \"CoverId\": 1296,\n                        \"CoverNameEn\": \"Natural Perils\",\n                        \"CoverNameAr\": \"المخاطر الطبيعية\",\n                        \"PolicyDocDescEn\": \"Declared Sum Insured\",\n                        \"PolicyDocDescAr\": \"حسب القيمة التأمينية المعلنة\"\n                    },\n                    {\n                        \"CoverId\": 600465,\n                        \"CoverNameEn\": \"Windscreen + Fire + Theft\",\n                        \"CoverNameAr\": \"الزجاج الأمامي + حريق + سرقة\",\n                        \"PolicyDocDescEn\": \"Compensation is calculated based on the vehicle's market value as long as it does not exceed the insurance value.\",\n                        \"PolicyDocDescAr\": \"التعويض حسب قيمة المركبة السوقية , على ان لا تتعدى القيمة التأمينية\"\n                    },\n                    {\n                        \"CoverId\": 1337,\n                        \"CoverNameEn\": \"Own Damage\",\n                        \"CoverNameAr\": \"الضرر الخاص\",\n                        \"PolicyDocDescEn\": \"Coverage for total or partial loss of Vehicle. Total Loss threshold is 50%\",\n                        \"PolicyDocDescAr\": \"تغطية الخسارة الكلية أو الجزئية للمركبة. حد الخسارة الإجمالي هو 50٪.\"\n                    }\n                ],\n                \"ApplicableCoverages\": [\n                    {\n                        \"CoverId\": 601060,\n                        \"CoverNameEn\": \"Personal Accident coverage (Driver and Passenger)\",\n                        \"CoverNameAr\": \"تغطية الحوادث الشخصية (السائق والراكب)\",\n                        \"PolicyDocDescEn\": \"Up to SAR 100,000\",\n                        \"PolicyDocDescAr\": \"حتى 100,000 ريال\"\n                    },\n                    {\n                        \"CoverId\": 600100,\n                        \"CoverNameEn\": \"Roadside Assistance\",\n                        \"CoverNameAr\": \"المساعدة على الطريق\",\n                        \"PolicyDocDescEn\": \"Automatic access to our range of assist benefits, including vehicle towing with a 24/7 dedicated Claims Helpline.\",\n                        \"PolicyDocDescAr\": \"الحصول التلقائي على خدمة المساعدة على مدار اليوم طوال أيام الأسبوع شاملا النقل و سحب المركبة من خلال خط المساعدة المخصص لذلك\"\n                    },\n                    {\n                        \"CoverId\": 601061,\n                        \"CoverNameEn\": \"Replacement for Motor vehicle's rent\",\n                        \"CoverNameAr\": \"بدل إيجار السيارة\",\n                        \"PolicyDocDescEn\": \"100 SAR Per Day for 15 Days Max 1500\",\n                        \"PolicyDocDescAr\": \"100 ريال يوميا، بحد أقصى 15 يوماً – 1,500 ريال \"\n                    },\n                    {\n                        \"CoverId\": 600120,\n                        \"CoverNameEn\": \"Geographical Extension Coverage\",\n                        \"CoverNameAr\": \"تغطية التمديد الجغرافي\",\n                        \"PolicyDocDescEn\": \"GCC Coverage - Egypt – Jordan Coverage \",\n                        \"PolicyDocDescAr\": \"تغطية دول الخليج – مصر – الأردن \"\n                    }\n                ],\n                \"DirectNBCommission\": 7.5,\n                \"RenewalDirect\": 4,\n                \"BrokerRenewalNB\": 7.5\n            },\n            {\n                \"ProductId\": 600460,\n                \"ShortNameEn\": \"WAFI Basic\",\n                \"ShortNameAr\": \" وافي الاساسي\",\n                \"LongName\": \"Third Party Liability \",\n                \"BasicCoverage\": [\n                    {\n                        \"CoverId\": 2,\n                        \"CoverNameEn\": \"Third Party Liability\",\n                        \"CoverNameAr\": \"مسؤولية الطرف الثالث\",\n                        \"PolicyDocDescEn\": \"Up to SAR 10,000,000 per one occurrence\",\n                        \"PolicyDocDescAr\": \"بحد اقصى 10,000,000 ريال لكل حادث\"\n                    }\n                ],\n                \"ApplicableCoverages\": [\n                    {\n                        \"CoverId\": 600465,\n                        \"CoverNameEn\": \"Windscreen + Fire + Theft\",\n                        \"CoverNameAr\": \"الزجاج الأمامي + الحريق + السرقة\",\n                        \"PolicyDocDescEn\": \"Compensation is calculated based on the vehicle's market value as long as it does not exceed the insurance value.\",\n                        \"PolicyDocDescAr\": \"التعويض حسب قيمة المركبة السوقية , على ان لا تتعدى القيمة التأمينية\"\n                    },\n                    {\n                        \"CoverId\": 1296,\n                        \"CoverNameEn\": \"Natural Perils\",\n                        \"CoverNameAr\": \"المخاطر الطبيعية\",\n                        \"PolicyDocDescEn\": \"Declared Sum Insured\",\n                        \"PolicyDocDescAr\": \"حسب القيمة التأمينية المعلنة\"\n                    },\n                    {\n                        \"CoverId\": 601060,\n                        \"CoverNameEn\": \"Personal Accident coverage (Driver and Passenger)\",\n                        \"CoverNameAr\": \"تغطية الحوادث الشخصية (السائق والراكب)\",\n                        \"PolicyDocDescEn\": \"Up to SAR 100,000\",\n                        \"PolicyDocDescAr\": \"حتى 100,000 ريال\"\n                    },\n                    {\n                        \"CoverId\": 600100,\n                        \"CoverNameEn\": \"Roadside Assistance\",\n                        \"CoverNameAr\": \"المساعدة على الطريق\",\n                        \"PolicyDocDescEn\": \"Automatic access to our range of assist benefits, including vehicle towing with a 24/7 dedicated Claims Helpline.\",\n                        \"PolicyDocDescAr\": \"الحصول التلقائي على خدمة المساعدة على مدار اليوم طوال أيام الأسبوع شاملا النقل و سحب المركبة من خلال خط المساعدة المخصص لذلك\"\n                    }\n                ],\n                \"DirectNBCommission\": 1.5,\n                \"RenewalDirect\": 1,\n                \"BrokerRenewalNB\": 1.5\n            },\n            {\n                \"ProductId\": 600462,\n                \"ShortNameEn\": \"WAFI Smart\",\n                \"ShortNameAr\": \"وافي سمارت\",\n                \"LongName\": \"Smart\",\n                \"BasicCoverage\": [\n                    {\n                        \"CoverId\": 2,\n                        \"CoverNameEn\": \"Third Party Liability\",\n                        \"CoverNameAr\": \"مسؤولية الطرف الثالث\",\n                        \"PolicyDocDescEn\": \"Up to SAR 10,000,000 per one occurrence\",\n                        \"PolicyDocDescAr\": \"بحد اقصى 10,000,000 ريال لكل حادث\"\n                    },\n                    {\n                        \"CoverId\": 1337,\n                        \"CoverNameEn\": \"Own Damage\",\n                        \"CoverNameAr\": \"الضرر الخاص\",\n                        \"PolicyDocDescEn\": \"Coverage for total or partial loss of Vehicle. Total Loss threshold is 50%\",\n                        \"PolicyDocDescAr\": \"تغطية الخسارة الكلية أو الجزئية للمركبة. حد الخسارة الإجمالي هو 50٪.\"\n                    }\n                ],\n                \"ApplicableCoverages\": [\n                    {\n                        \"CoverId\": 600100,\n                        \"CoverNameEn\": \"Roadside Assistance\",\n                        \"CoverNameAr\": \"المساعدة على الطريق\",\n                        \"PolicyDocDescEn\": \"Automatic access to our range of assist benefits, including vehicle towing with a 24/7 dedicated Claims Helpline.\",\n                        \"PolicyDocDescAr\": \"الحصول التلقائي على خدمة المساعدة على مدار اليوم طوال أيام الأسبوع شاملا النقل و سحب المركبة من خلال خط المساعدة المخصص لذلك\"\n                    },\n                    {\n                        \"CoverId\": 600120,\n                        \"CoverNameEn\": \"Geographical Extension Coverage\",\n                        \"CoverNameAr\": \"تغطية التمديد الجغرافي\",\n                        \"PolicyDocDescEn\": \"GCC Coverage - Egypt – Jordan Coverage \",\n                        \"PolicyDocDescAr\": \"تغطية دول الخليج – مصر – الأردن \"\n                    },\n                    {\n                        \"CoverId\": 601060,\n                        \"CoverNameEn\": \"Personal Accident coverage (Driver and Passenger)\",\n                        \"CoverNameAr\": \"تغطية الحوادث الشخصية (السائق والراكب)\",\n                        \"PolicyDocDescEn\": \"Up to SAR 100,000\",\n                        \"PolicyDocDescAr\": \"حتى 100,000 ريال\"\n                    },\n                    {\n                        \"CoverId\": 1296,\n                        \"CoverNameEn\": \"Natural Perils\",\n                        \"CoverNameAr\": \"المخاطر الطبيعية\",\n                        \"PolicyDocDescEn\": \"Declared Sum Insured\",\n                        \"PolicyDocDescAr\": \"حسب القيمة التأمينية المعلنة\"\n                    }\n                ],\n                \"DirectNBCommission\": 6,\n                \"RenewalDirect\": 3,\n                \"BrokerRenewalNB\": 6\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "List Motor Products",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Data\": {\n    \"CustomerTypeId\": 3\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/mp-motor-sme/v1/products",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-motor-sme",
+												"v1",
+												"products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "7be47688-668d-4f66-a568-1aaf95400a1e"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c686b986f07c90a10"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,99;"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 07 Jul 2025 09:50:40 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"Products\": [\n            {\n                \"ProductId\": 600461,\n                \"ShortNameEn\": \"Comprehensive\",\n                \"ShortNameAr\": \"وافي الشامل\",\n                \"LongName\": \"Comprehensive\",\n                \"BasicCoverage\": [\n                    {\n                        \"CoverId\": 2,\n                        \"CoverNameEn\": \"Third Party Liability\",\n                        \"CoverNameAr\": \"مسؤولية الطرف الثالث\",\n                        \"PolicyDocDescEn\": \"Up to SAR 10,000,000 per one occurrence\",\n                        \"PolicyDocDescAr\": \"بحد اقصى 10,000,000 ريال لكل حادث\"\n                    },\n                    {\n                        \"CoverId\": 1296,\n                        \"CoverNameEn\": \"Natural Perils\",\n                        \"CoverNameAr\": \"المخاطر الطبيعية\",\n                        \"PolicyDocDescEn\": \"Declared Sum Insured\",\n                        \"PolicyDocDescAr\": \"حسب القيمة التأمينية المعلنة\"\n                    },\n                    {\n                        \"CoverId\": 600465,\n                        \"CoverNameEn\": \"Windscreen + Fire + Theft\",\n                        \"CoverNameAr\": \"الزجاج الأمامي + حريق + سرقة\",\n                        \"PolicyDocDescEn\": \"Compensation is calculated based on the vehicle's market value as long as it does not exceed the insurance value.\",\n                        \"PolicyDocDescAr\": \"التعويض حسب قيمة المركبة السوقية , على ان لا تتعدى القيمة التأمينية\"\n                    },\n                    {\n                        \"CoverId\": 1337,\n                        \"CoverNameEn\": \"Own Damage\",\n                        \"CoverNameAr\": \"الضرر الخاص\",\n                        \"PolicyDocDescEn\": \"Coverage for total or partial loss of Vehicle. Total Loss threshold is 50%\",\n                        \"PolicyDocDescAr\": \"تغطية الخسارة الكلية أو الجزئية للمركبة. حد الخسارة الإجمالي هو 50٪.\"\n                    }\n                ],\n                \"ApplicableCoverages\": [\n                    {\n                        \"CoverId\": 601060,\n                        \"CoverNameEn\": \"Personal Accident coverage (Driver and Passenger)\",\n                        \"CoverNameAr\": \"تغطية الحوادث الشخصية (السائق والراكب)\",\n                        \"PolicyDocDescEn\": \"Up to SAR 100,000\",\n                        \"PolicyDocDescAr\": \"حتى 100,000 ريال\"\n                    },\n                    {\n                        \"CoverId\": 600100,\n                        \"CoverNameEn\": \"Roadside Assistance\",\n                        \"CoverNameAr\": \"المساعدة على الطريق\",\n                        \"PolicyDocDescEn\": \"Automatic access to our range of assist benefits, including vehicle towing with a 24/7 dedicated Claims Helpline.\",\n                        \"PolicyDocDescAr\": \"الحصول التلقائي على خدمة المساعدة على مدار اليوم طوال أيام الأسبوع شاملا النقل و سحب المركبة من خلال خط المساعدة المخصص لذلك\"\n                    },\n                    {\n                        \"CoverId\": 601061,\n                        \"CoverNameEn\": \"Replacement for Motor vehicle's rent\",\n                        \"CoverNameAr\": \"بدل إيجار السيارة\",\n                        \"PolicyDocDescEn\": \"100 SAR Per Day for 15 Days Max 1500\",\n                        \"PolicyDocDescAr\": \"100 ريال يوميا، بحد أقصى 15 يوماً – 1,500 ريال \"\n                    },\n                    {\n                        \"CoverId\": 600120,\n                        \"CoverNameEn\": \"Geographical Extension Coverage\",\n                        \"CoverNameAr\": \"تغطية التمديد الجغرافي\",\n                        \"PolicyDocDescEn\": \"GCC Coverage - Egypt – Jordan Coverage \",\n                        \"PolicyDocDescAr\": \"تغطية دول الخليج – مصر – الأردن \"\n                    }\n                ],\n                \"DirectNBCommission\": 7.5,\n                \"RenewalDirect\": 4,\n                \"BrokerRenewalNB\": 7.5\n            },\n            {\n                \"ProductId\": 600460,\n                \"ShortNameEn\": \"WAFI Basic\",\n                \"ShortNameAr\": \" وافي الاساسي\",\n                \"LongName\": \"Third Party Liability \",\n                \"BasicCoverage\": [\n                    {\n                        \"CoverId\": 2,\n                        \"CoverNameEn\": \"Third Party Liability\",\n                        \"CoverNameAr\": \"مسؤولية الطرف الثالث\",\n                        \"PolicyDocDescEn\": \"Up to SAR 10,000,000 per one occurrence\",\n                        \"PolicyDocDescAr\": \"بحد اقصى 10,000,000 ريال لكل حادث\"\n                    }\n                ],\n                \"ApplicableCoverages\": [\n                    {\n                        \"CoverId\": 600465,\n                        \"CoverNameEn\": \"Windscreen + Fire + Theft\",\n                        \"CoverNameAr\": \"الزجاج الأمامي + الحريق + السرقة\",\n                        \"PolicyDocDescEn\": \"Compensation is calculated based on the vehicle's market value as long as it does not exceed the insurance value.\",\n                        \"PolicyDocDescAr\": \"التعويض حسب قيمة المركبة السوقية , على ان لا تتعدى القيمة التأمينية\"\n                    },\n                    {\n                        \"CoverId\": 1296,\n                        \"CoverNameEn\": \"Natural Perils\",\n                        \"CoverNameAr\": \"المخاطر الطبيعية\",\n                        \"PolicyDocDescEn\": \"Declared Sum Insured\",\n                        \"PolicyDocDescAr\": \"حسب القيمة التأمينية المعلنة\"\n                    },\n                    {\n                        \"CoverId\": 601060,\n                        \"CoverNameEn\": \"Personal Accident coverage (Driver and Passenger)\",\n                        \"CoverNameAr\": \"تغطية الحوادث الشخصية (السائق والراكب)\",\n                        \"PolicyDocDescEn\": \"Up to SAR 100,000\",\n                        \"PolicyDocDescAr\": \"حتى 100,000 ريال\"\n                    },\n                    {\n                        \"CoverId\": 600100,\n                        \"CoverNameEn\": \"Roadside Assistance\",\n                        \"CoverNameAr\": \"المساعدة على الطريق\",\n                        \"PolicyDocDescEn\": \"Automatic access to our range of assist benefits, including vehicle towing with a 24/7 dedicated Claims Helpline.\",\n                        \"PolicyDocDescAr\": \"الحصول التلقائي على خدمة المساعدة على مدار اليوم طوال أيام الأسبوع شاملا النقل و سحب المركبة من خلال خط المساعدة المخصص لذلك\"\n                    }\n                ],\n                \"DirectNBCommission\": 1.5,\n                \"RenewalDirect\": 1,\n                \"BrokerRenewalNB\": 1.5\n            },\n            {\n                \"ProductId\": 600462,\n                \"ShortNameEn\": \"WAFI Smart\",\n                \"ShortNameAr\": \"وافي سمارت\",\n                \"LongName\": \"Smart\",\n                \"BasicCoverage\": [\n                    {\n                        \"CoverId\": 2,\n                        \"CoverNameEn\": \"Third Party Liability\",\n                        \"CoverNameAr\": \"مسؤولية الطرف الثالث\",\n                        \"PolicyDocDescEn\": \"Up to SAR 10,000,000 per one occurrence\",\n                        \"PolicyDocDescAr\": \"بحد اقصى 10,000,000 ريال لكل حادث\"\n                    },\n                    {\n                        \"CoverId\": 1337,\n                        \"CoverNameEn\": \"Own Damage\",\n                        \"CoverNameAr\": \"الضرر الخاص\",\n                        \"PolicyDocDescEn\": \"Coverage for total or partial loss of Vehicle. Total Loss threshold is 50%\",\n                        \"PolicyDocDescAr\": \"تغطية الخسارة الكلية أو الجزئية للمركبة. حد الخسارة الإجمالي هو 50٪.\"\n                    }\n                ],\n                \"ApplicableCoverages\": [\n                    {\n                        \"CoverId\": 600100,\n                        \"CoverNameEn\": \"Roadside Assistance\",\n                        \"CoverNameAr\": \"المساعدة على الطريق\",\n                        \"PolicyDocDescEn\": \"Automatic access to our range of assist benefits, including vehicle towing with a 24/7 dedicated Claims Helpline.\",\n                        \"PolicyDocDescAr\": \"الحصول التلقائي على خدمة المساعدة على مدار اليوم طوال أيام الأسبوع شاملا النقل و سحب المركبة من خلال خط المساعدة المخصص لذلك\"\n                    },\n                    {\n                        \"CoverId\": 600120,\n                        \"CoverNameEn\": \"Geographical Extension Coverage\",\n                        \"CoverNameAr\": \"تغطية التمديد الجغرافي\",\n                        \"PolicyDocDescEn\": \"GCC Coverage - Egypt – Jordan Coverage \",\n                        \"PolicyDocDescAr\": \"تغطية دول الخليج – مصر – الأردن \"\n                    },\n                    {\n                        \"CoverId\": 601060,\n                        \"CoverNameEn\": \"Personal Accident coverage (Driver and Passenger)\",\n                        \"CoverNameAr\": \"تغطية الحوادث الشخصية (السائق والراكب)\",\n                        \"PolicyDocDescEn\": \"Up to SAR 100,000\",\n                        \"PolicyDocDescAr\": \"حتى 100,000 ريال\"\n                    },\n                    {\n                        \"CoverId\": 1296,\n                        \"CoverNameEn\": \"Natural Perils\",\n                        \"CoverNameAr\": \"المخاطر الطبيعية\",\n                        \"PolicyDocDescEn\": \"Declared Sum Insured\",\n                        \"PolicyDocDescAr\": \"حسب القيمة التأمينية المعلنة\"\n                    }\n                ],\n                \"DirectNBCommission\": 6,\n                \"RenewalDirect\": 3,\n                \"BrokerRenewalNB\": 6\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "policy-quotations",
+					"item": [
+						{
+							"name": "Add a new Create Quotation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"EntityInfo\": {\n      \"EntityCRActivityDescription\": \"ﺗﻼﻟ و ﺔﯾﻧﻘﺗ\",\n      \"EntityUnifiedNumber\": 7037284390,\n      \"EntityBusinessType\": 101,\n      \"EntityCRNumber\": 4031290648,\n      \"EntityCRCity\": \"4031290648\",\n      \"EntityCRExpiryDate\": \"1447-09-17\",\n      \"EntityCRIssueDate\": \"1444-08-14\",\n      \"EntityClassification\": 1,\n      \"EntityNameAr\": \"شركة دار التجاره والمقاولات 4031290648\",\n      \"EntityNameEn\": \"Majid bin Naif bin Ayed Al Qurashi Trading Establishment\",\n      \"EntityRevenue\": 4,\n      \"EntityNationalAddress\": {\n        \"AdditionalNumber\": 1234,\n        \"BuildingNumber\": 1234,\n        \"City\": \"Riyadh\",\n        \"District\": \"Gadeer\",\n        \"RegionId\": 1,\n        \"Street\": \"king abdulaziz road\",\n        \"ZipCode\": 12345\n      },\n      \"SponsorDateOfBirth\": \"1414-11-24T00:00:00.000Z\",\n      \"SponsorId\": 7037284390,\n      \"IsIcActivities\": [\n        {\n          \"IsIcCode\": 471910,\n          \"IsIcName\": \"تجارة التجزئة في السلع الشخصية في الأسواق الكبيرة والتي تعمل ضمن إدارة واحدة ، يشمل ( الملابس والأحذية والسلع الجلدية والعطور ومستحضرات التجميل والمجوهرات والاكسسوارات والأجهزة والأدوات المنزلية وألعا\"\n        }\n      ]\n    },\n    \"InsuranceCompanyCode\": 26,\n    \"IsRenewal\": false,\n    \"PolicyEffectiveDate\": \"2024-03-06\",\n    \"PolicyTitleId\": 15,\n    \"QuotationSourceId\": 1,\n    \"QuotationTransactionId\": \"9b145c14-b8c5-42e5-94e3-c638054fbb0d\",\n    \"RequestType\": 1,\n    \"VehicleInfo\": [\n      {\n        \"ComprehensiveDetails\": {\n                \"VehicleSumInsured\":1,\n                \"HasTrailer\":true,\n                \"TrailerSumInsured\":true\n                },\n        \"InsuranceTypeId\": 2,\n        \"ManufactureDetails\": {\n          \"ManufactureYear\": 2020,\n          \"VehcileManualEntry\": false,\n          \"VehicleBodyCode\": 5,\n          \"VehicleColorCode\": 1,\n          \"VehicleColorText\": \"ابيض\",\n          \"VehicleMakeCodeNIC\": 33,\n          \"VehicleMakeTextNIC\": \"هونداي\",\n          \"VehicleModelCodeNIC\": 2,\n          \"VehicleModelTextNIC\": \"اكسنت\",\n          \"VehicleTransmission\": 1,\n          \"VehicleVIN\": \"MALC741B5LM197869\"\n        },\n        \"PlateDetails\": {\n          \"FirstPlateLetterId\": 17,\n          \"SecondPlateLetterId\": 5,\n          \"ThirdPlateLetterId\": 3,\n          \"VehiclePlateNumber\": 4144,\n          \"VehiclePlateTypeId\": 1\n        },\n        \"VehicleCustomId\": null,\n        \"VehicleDriveCityId\": 6,\n        \"VehicleDriveRegionId\": 1,\n        \"VehicleRegistrationCityCode\": 55,\n        \"VehicleRegistrationExpiryDate\": \"25-06-1445\",\n        \"VehicleSequenceNumber\": 3000001,\n        \"VehicleUniqueTypeId\": 1\n      }\n    ],\n    \"CustomizedParameter\": [\n      {\n        \"Key\": \"ModelSource\",\n        \"Value1\": \"ضﺎﯾرﻟا\",\n        \"Value2\": null,\n        \"Value3\": null,\n        \"Value4\": \"20\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/mp-motor-sme/v1/create-quote-sme",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"mp-motor-sme",
+										"v1",
+										"create-quote-sme"
+									]
+								},
+								"description": "Add a new Create Quote"
+							},
+							"response": [
+								{
+									"name": "Add a new Create Quotation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Data\": {\n    \"EntityInfo\": {\n      \"EntityCRActivityDescription\": \"ﺗﻼﻟ و ﺔﯾﻧﻘﺗ\",\n      \"EntityUnifiedNumber\": 7037284390,\n      \"EntityBusinessType\": 101,\n      \"EntityCRNumber\": 4031290648,\n      \"EntityCRCity\": \"4031290648\",\n      \"EntityCRExpiryDate\": \"1447-09-17\",\n      \"EntityCRIssueDate\": \"1444-08-14\",\n      \"EntityClassification\": 1,\n      \"EntityNameAr\": \"شركة دار التجاره والمقاولات 4031290648\",\n      \"EntityNameEn\": \"Majid bin Naif bin Ayed Al Qurashi Trading Establishment\",\n      \"EntityRevenue\": 4,\n      \"EntityNationalAddress\": {\n        \"AdditionalNumber\": 1234,\n        \"BuildingNumber\": 1234,\n        \"City\": \"Riyadh\",\n        \"District\": \"Gadeer\",\n        \"RegionId\": 1,\n        \"Street\": \"king abdulaziz road\",\n        \"ZipCode\": 12345\n      },\n      \"SponsorDateOfBirth\": \"1414-11-24T00:00:00.000Z\",\n      \"SponsorId\": 7037284390,\n      \"IsIcActivities\": [\n        {\n          \"IsIcCode\": 471910,\n          \"IsIcName\": \"تجارة التجزئة في السلع الشخصية في الأسواق الكبيرة والتي تعمل ضمن إدارة واحدة ، يشمل ( الملابس والأحذية والسلع الجلدية والعطور ومستحضرات التجميل والمجوهرات والاكسسوارات والأجهزة والأدوات المنزلية وألعا\"\n        }\n      ]\n    },\n    \"InsuranceCompanyCode\": 26,\n    \"IsRenewal\": false,\n    \"PolicyEffectiveDate\": \"2024-03-06\",\n    \"PolicyTitleId\": 15,\n    \"QuotationSourceId\": 1,\n    \"QuotationTransactionId\": \"9b145c14-b8c5-42e5-94e3-c638054fbb0d\",\n    \"RequestType\": 1,\n    \"VehicleInfo\": [\n      {\n        \"ComprehensiveDetails\": {\n                \"VehicleSumInsured\":1,\n                \"HasTrailer\":true,\n                \"TrailerSumInsured\":true\n                },\n        \"InsuranceTypeId\": 2,\n        \"ManufactureDetails\": {\n          \"ManufactureYear\": 2020,\n          \"VehcileManualEntry\": false,\n          \"VehicleBodyCode\": 5,\n          \"VehicleColorCode\": 1,\n          \"VehicleColorText\": \"ابيض\",\n          \"VehicleMakeCodeNIC\": 33,\n          \"VehicleMakeTextNIC\": \"هونداي\",\n          \"VehicleModelCodeNIC\": 2,\n          \"VehicleModelTextNIC\": \"اكسنت\",\n          \"VehicleTransmission\": 1,\n          \"VehicleVIN\": \"MALC741B5LM197869\"\n        },\n        \"PlateDetails\": {\n          \"FirstPlateLetterId\": 17,\n          \"SecondPlateLetterId\": 5,\n          \"ThirdPlateLetterId\": 3,\n          \"VehiclePlateNumber\": 4144,\n          \"VehiclePlateTypeId\": 1\n        },\n        \"VehicleCustomId\": null,\n        \"VehicleDriveCityId\": 6,\n        \"VehicleDriveRegionId\": 1,\n        \"VehicleRegistrationCityCode\": 55,\n        \"VehicleRegistrationExpiryDate\": \"25-06-1445\",\n        \"VehicleSequenceNumber\": 3000001,\n        \"VehicleUniqueTypeId\": 1\n      }\n    ],\n    \"CustomizedParameter\": [\n      {\n        \"Key\": \"ModelSource\",\n        \"Value1\": \"ضﺎﯾرﻟا\",\n        \"Value2\": null,\n        \"Value3\": null,\n        \"Value4\": \"20\"\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/mp-motor-sme/v1/create-quote-sme",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-motor-sme",
+												"v1",
+												"create-quote-sme"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "ea9cea7c-f1b3-43a8-8c55-8d846656395a"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c686b7c2409ae1db2"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,53;"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 07 Jul 2025 07:49:56 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"QuotationTransactionId\": \"9b145c14-b8c5-42e5-94e3-c638054fbb0d\",\n        \"InsuranceCompanyCode\": 26,\n        \"RequestType\": 1,\n        \"PolicyTitleId\": 15,\n        \"EntityUnifiedNumber\": 7037284390,\n        \"EntityCRNumber\": 4031290648,\n        \"QuotationDetails\": [\n            {\n                \"QuotationReferenceNumber\": \"252805000257710\",\n                \"SubQuotationNumber\": 1,\n                \"InsuranceTypeId\": 1,\n                \"PolicyEffectiveDate\": \"2024-03-06\",\n                \"PolicyExpiryDate\": \"2025-03-05\",\n                \"Discounts\": [\n                    {\n                        \"DiscountType\": \"LOYALTY_DISCOUNT\",\n                        \"DiscountTypeId\": 1,\n                        \"DiscountPercentage\": 0,\n                        \"DiscountAmount\": 0\n                    },\n                    {\n                        \"DiscountType\": \"NCD_DISCOUNT\",\n                        \"DiscountTypeId\": 2,\n                        \"DiscountPercentage\": 0,\n                        \"DiscountAmount\": 0\n                    },\n                    {\n                        \"DiscountType\": \"SCHEME_DISCOUNT\",\n                        \"DiscountTypeId\": 159,\n                        \"DiscountPercentage\": 0,\n                        \"DiscountAmount\": 0\n                    },\n                    {\n                        \"DiscountType\": \"MULTI_VEHICLE_DISCOUNT\",\n                        \"DiscountTypeId\": 106,\n                        \"DiscountPercentage\": 0,\n                        \"DiscountAmount\": 0\n                    }\n                ],\n                \"PolicyTaxableAmount\": 3022.55,\n                \"PolicyAmount\": 3475.93,\n                \"IsUpgrade\": false,\n                \"IsDowngrade\": false,\n                \"VehicleInfo\": [\n                    {\n                        \"VehicleUniqueTypeId\": 1,\n                        \"VehicleSequenceNumber\": 3000001,\n                        \"VehicleVIN\": \"MALC741B5LM197869\",\n                        \"VehicleBodyCode\": 5,\n                        \"PolicyTaxableAmount\": 3022.55,\n                        \"MaxLiability\": 33544.12,\n                        \"MinLiability\": 18784.71,\n                        \"PolicyAmount\": 3475.93\n                    }\n                ],\n                \"PolicyPremiumCoverages\": [\n                    {\n                        \"CoverageId\": 2,\n                        \"CoverageTypeId\": 2,\n                        \"CoverageAmount\": \"0.0\",\n                        \"CoverageTaxableAmount\": \"0.0\"\n                    },\n                    {\n                        \"CoverageId\": 553,\n                        \"CoverageTypeId\": 1,\n                        \"CoverageAmount\": \"115.0\",\n                        \"CoverageTaxableAmount\": \"100.0\"\n                    },\n                    {\n                        \"CoverageId\": 555,\n                        \"CoverageTypeId\": 1,\n                        \"CoverageAmount\": \"34.5\",\n                        \"CoverageTaxableAmount\": \"30.0\"\n                    },\n                    {\n                        \"CoverageId\": 557,\n                        \"CoverageTypeId\": 1,\n                        \"CoverageAmount\": \"172.5\",\n                        \"CoverageTaxableAmount\": \"150.0\"\n                    },\n                    {\n                        \"CoverageId\": 558,\n                        \"CoverageTypeId\": 1,\n                        \"CoverageAmount\": \"57.5\",\n                        \"CoverageTaxableAmount\": \"50.0\"\n                    }\n                ],\n                \"PremiumBreakdown\": [\n                    {\n                        \"BreakdownTypeId\": 7,\n                        \"BreakdownAmount\": 3022.55\n                    },\n                    {\n                        \"BreakdownTypeId\": 8,\n                        \"BreakdownAmount\": 453.38,\n                        \"BreakdownPercentage\": 15\n                    }\n                ]\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "purchase-notifications",
+					"item": [
+						{
+							"name": "Purchase Notifications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}",
+										"description": "An RFC4122 UID used as a correlation id."
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Data\": {\n    \"BankCode\": 80,\n    \"CreditAmount\": 6809.92,\n    \"Email\": \"sumit.khambe@neutrinos.com\",\n    \"IBANNumber\": \"SA0380000000608010161219\",\n    \"InsuranceCompanyCode\": 26,\n    \"InsuranceTypeId\": 2,\n    \"MobileNumber\": \"512345678\",\n    \"PaymentTransactionId\": \"379a3c7a-b210-42d8-a90e-cbaf18f079a6\",\n    \"PolicyPremiumCoverages\": [\n      {\n        \"CoverageAmount\": \"34.5\",\n        \"CoverageId\": 600100,\n        \"CoverageTaxableAmount\": \"30.0\",\n        \"CoverageTypeId\": 1\n      }\n    ],\n    \"QuotationReferenceNumber\": \"252805000257743\",\n    \"QuotationTransactionId\": \"9b145c14-b8c5-42e5-94e3-c638054fbb0d\",\n    \"VATExceptionFlag\": false,\n    \"VATNumber\": \"30200712340003\",\n    \"VehicleInfo\": [\n      {\n        \"DeductibleAmount\": 1000,\n        \"DeductibleReferenceNumber\": \"1\",\n        \"DeductibleTaxablePremium\": 5921.67,\n        \"VehiclePremiumCoverages\": [\n          {\n            \"CoverageAmount\": \"34.5\",\n            \"CoverageId\": 600100,\n            \"CoverageTaxableAmount\": \"30.0\",\n            \"CoverageTypeId\": 1\n          }\n        ],\n        \"VehicleSequenceNumber\": 3000001,\n        \"VehicleUniqueTypeId\": 1\n      },\n      {\n        \"DeductibleAmount\": 1000,\n        \"DeductibleReferenceNumber\": \"1\",\n        \"DeductibleTaxablePremium\": 5921.67,\n        \"VehiclePremiumCoverages\": [\n          {\n            \"CoverageAmount\": \"34.5\",\n            \"CoverageId\": 600100,\n            \"CoverageTaxableAmount\": \"30.0\",\n            \"CoverageTypeId\": 1\n          }\n        ],\n        \"VehicleSequenceNumber\": 3000003,\n        \"VehicleUniqueTypeId\": 1\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{publicUrl}}/mp-motor-sme/v1/purchase-notification-sme",
+									"host": [
+										"{{publicUrl}}"
+									],
+									"path": [
+										"mp-motor-sme",
+										"v1",
+										"purchase-notification-sme"
+									]
+								},
+								"description": "Purchase Notifications"
+							},
+							"response": [
+								{
+									"name": "Purchase Notifications",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-request-id",
+												"value": "{{$guid}}",
+												"description": "An RFC4122 UID used as a correlation id."
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Data\": {\n    \"BankCode\": 80,\n    \"CreditAmount\": 6809.92,\n    \"Email\": \"sumit.khambe@neutrinos.com\",\n    \"IBANNumber\": \"SA0380000000608010161219\",\n    \"InsuranceCompanyCode\": 26,\n    \"InsuranceTypeId\": 2,\n    \"MobileNumber\": \"512345678\",\n    \"PaymentTransactionId\": \"379a3c7a-b210-42d8-a90e-cbaf18f079a6\",\n    \"PolicyPremiumCoverages\": [\n      {\n        \"CoverageAmount\": \"34.5\",\n        \"CoverageId\": 600100,\n        \"CoverageTaxableAmount\": \"30.0\",\n        \"CoverageTypeId\": 1\n      }\n    ],\n    \"QuotationReferenceNumber\": \"252805000257743\",\n    \"QuotationTransactionId\": \"9b145c14-b8c5-42e5-94e3-c638054fbb0d\",\n    \"VATExceptionFlag\": false,\n    \"VATNumber\": \"30200712340003\",\n    \"VehicleInfo\": [\n      {\n        \"DeductibleAmount\": 1000,\n        \"DeductibleReferenceNumber\": \"1\",\n        \"DeductibleTaxablePremium\": 5921.67,\n        \"VehiclePremiumCoverages\": [\n          {\n            \"CoverageAmount\": \"34.5\",\n            \"CoverageId\": 600100,\n            \"CoverageTaxableAmount\": \"30.0\",\n            \"CoverageTypeId\": 1\n          }\n        ],\n        \"VehicleSequenceNumber\": 3000001,\n        \"VehicleUniqueTypeId\": 1\n      },\n      {\n        \"DeductibleAmount\": 1000,\n        \"DeductibleReferenceNumber\": \"1\",\n        \"DeductibleTaxablePremium\": 5921.67,\n        \"VehiclePremiumCoverages\": [\n          {\n            \"CoverageAmount\": \"34.5\",\n            \"CoverageId\": 600100,\n            \"CoverageTaxableAmount\": \"30.0\",\n            \"CoverageTypeId\": 1\n          }\n        ],\n        \"VehicleSequenceNumber\": 3000003,\n        \"VehicleUniqueTypeId\": 1\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{publicUrl}}/mp-motor-sme/v1/purchase-notification-sme",
+											"host": [
+												"{{publicUrl}}"
+											],
+											"path": [
+												"mp-motor-sme",
+												"v1",
+												"purchase-notification-sme"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-request-id",
+											"value": "d4a9925b-5bdd-4940-ae9c-24066f0e014e"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "757dc76c686b774304d310c1"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,67;"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 07 Jul 2025 07:29:08 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Data\": {\n        \"Status\": true,\n        \"PolicyNumber\": \"252805000257743\",\n        \"PaymentTransactionId\": \"379a3c7a-b210-42d8-a90e-cbaf18f079a6\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Generate Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access_token\", data.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client-id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client-secret}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "marketplace_apis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{publicUrl}}/oauth2security/oauth2/token",
+					"host": [
+						"{{publicUrl}}"
+					],
+					"path": [
+						"oauth2security",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "publicUrl",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+			"type": "default"
+		}
+	]
+}

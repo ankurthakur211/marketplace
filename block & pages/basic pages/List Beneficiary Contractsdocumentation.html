@@ -1,0 +1,323 @@
+<div id="search-term-result">
+    <p>List Beneficiary Contracts APIS</p>
+
+    <p>The primary objective of this project is to allow ARB entities easily access and display a beneficiary’s list of contracts in their digital platforms.</p>
+</div>
+<div class="basic-page">
+    <div class="product-details-document">
+        <div class="api-doc-background">
+            <p class="api-doc-background-text ">List Beneficiary Contracts API Documentation</p>
+        </div>
+
+        <div class="moterinsurance-sec">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="leftside-sec">
+                        <p class="fob-welcome-title" id="section-1">List Beneficiary Contracts APIS</p>
+
+                        <p class="fob-welcome-line">&nbsp;</p>
+
+                        <p class="fob-welcome-text">The primary objective of this project is to allow ARB entities easily access and display a beneficiary’s list of contracts in their digital platforms.</p>
+                    </div>
+
+                    <div class="rightside-sec">
+                        <p class="API-image">&nbsp;</p>
+                    </div>
+                </div>
+
+                <div class="d-flex btn-box"><a target="_blank" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/List_Beneficiary_Contracts_Sandbox.postman_collection.json"
+                        id="downloadLink">Download Postman Collection</a> <a target="_blank" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/MpListBeneficiaryContractsSampleRequestData.xlsx"
+                        id="downloadLink">Download
+                    Sample Data</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="APIs-section">
+            <div class="container">
+                <p class="main-heading">APIs</p>
+
+                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                    <!-- API 1 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-2">List Beneficiary Contracts</h1>
+
+                        <p class="fob-welcome-line">&nbsp;</p>
+
+                        <p class="fob-welcome-text">Endpoint: /v1/contract-beneficiary/list-beneficiary-contracts</p>
+
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/6424/api/4413#/MPListBeneficiaryContracts_100/operation/%2Flist-beneficiary-contracts/post">Swagger
+                            Link</a></p>
+
+                        <p class="fob-welcome-text">This path is used to allow ARG subsidiaries to retrieve investment account (portfolio) information associated with a specific user, identified by their national ID or Iqama number.</p>
+
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                                <p class="fob-welcome-line">&nbsp;</p>
+
+                                <pre class="example_97 api-guides-example-fob ">
+                <code class="sample-code">
+Query Params:
+  beneficiaryId=2196289059
+  beneficiaryCIC=51
+Request Body:
+{
+  "Data": {
+    "filter": [
+      {
+        "Key": "CONTRACT_STATUS",
+        "Value": "Pending",
+        "Type": "IN"
+      }
+    ],
+    "order": [
+      {
+        "Type": "ASC",
+        "Attribute": "CONTRACT_ID"
+      }
+    ]
+  }
+}
+                </code>
+              </pre>
+                            </div>
+
+                            <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('ListBeneficiaryContracts-curl')">
+                                <p class="curlText">cURL</p>
+                            </button>
+
+                                <pre id="generatedCurl">
+                <code id="ListBeneficiaryContracts-curl">
+curl --location --globoff 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-contract-beneficiary/v1/list-beneficiary-contracts?beneficiaryId=2196289059&beneficiaryCIC=51' \
+--header 'accept-language: en' \
+--header 'x-request-id: cd64cb43-3a27-49d7-803c-87ff2f6124b4' \
+--data '{
+  "Data": {
+    "filter": [
+      {
+        "Key": "CONTRACT_STATUS",
+        "Value": "Pending",
+        "Type": "IN"
+      }
+    ],
+    "order": [
+      {
+        "Type": "ASC",
+        "Attribute": "CONTRACT_ID"
+      }
+    ]
+  }
+}'      
+                </code>
+              </pre>
+                            </div>
+                        </div>
+
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts')">200</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts5')">404</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts6')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts7')">406</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts8')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts9')">500</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('ListBeneficiaryContracts10')">503</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                  <code class="text" id="ListBeneficiaryContracts" style=" display: block; ">
+{
+    "Data": {
+        "ContractSummaryDetails": {
+            "BeneficiaryContractInformation": {
+                "BeneficiaryName": "Mohamed Ali",
+                "BeneficiaryId": "2196289059",
+                "MobileNumber": "+966-561330301",
+                "PageNumber": 1,
+                "Page": 18,
+                "TotalCount": 3,
+                "Contracts": [
+                    {
+                        "ContractId": 99,
+                        "ContractNumber": "ref",
+                        "ContractType": {
+                            "Id": 2,
+                            "Name": "SERVICE_AGREEMENT",
+                            "DescriptionEn": "ServiceAgreement description",
+                            "DescriptionAr": "&#1575;&#1578;&#1601;&#1575;&#1602;&#1610;&#1577; &#1575;&#1604;&#1582;&#1583;&#1605;&#1577;"
+                        },
+                        "ContractStatus": "Pending",
+                        "CreationDateTime": "2025-07-27T09:54:55.215945Z",
+                        "EffectiveDate": "2025-07-27",
+                        "ExpiryDate": "2025-12-14T00:00:00Z",
+                        "ContractUrl": "https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MTA4",
+                        "BeneficiaryAction": "Pending"
+                    },
+                    {
+                        "ContractId": 108,
+                        "ContractNumber": "test",
+                        "ContractType": {
+                            "Id": 8,
+                            "Name": "SERVICE_AGREEMENT",
+                            "DescriptionEn": "ServiceAgreement description",
+                            "DescriptionAr": "&#1575;&#1578;&#1601;&#1575;&#1602;&#1610;&#1577; &#1575;&#1604;&#1582;&#1583;&#1605;&#1577;"
+                        },
+                        "ContractStatus": "Pending",
+                        "CreationDateTime": "2025-04-28T11:08:19.014790Z",
+                        "EffectiveDate": "2025-04-28",
+                        "ExpiryDate": "2025-12-30T00:00:00Z",
+                        "ContractUrl": "https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MTE3",
+                        "BeneficiaryAction": "Pending"
+                    },
+                    {
+                        "ContractId": 193,
+                        "ContractNumber": "ref",
+                        "ContractType": {
+                            "Id": 60,
+                            "Name": "NDA",
+                            "DescriptionEn": "Initiative Contract ",
+                            "DescriptionAr": "&#1593;&#1602;&#1583; &#1605;&#1576;&#1583;&#1575;&#1574;&#1610;"
+                        },
+                        "ContractStatus": "Pending",
+                        "CreationDateTime": "2025-05-08T11:50:33.991360Z",
+                        "EffectiveDate": "2025-05-08",
+                        "ExpiryDate": "2025-06-28T00:00:00Z",
+                        "ContractUrl": "https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MjAy",
+                        "BeneficiaryAction": "Pending"
+                    }
+                ]
+            }
+        }
+    }
+}
+                  </code>
+                  <code class="text" id="ListBeneficiaryContracts2" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.400.001",
+          "Message": "Bad Request",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                  <code class="text" id="ListBeneficiaryContracts3" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.401.001",
+          "Message": "Unauthorized to call the target operation.",
+          "Path": "authorization",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>	
+                
+                  <code class="text" id="ListBeneficiaryContracts4" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.403.001",
+          "Message": "Can't find any valid subscription.",
+          "Path": "authorization",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                
+                  <code class="text" id="ListBeneficiaryContracts5" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.404.001",
+          "Message": "No resources match requested URI.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                
+                  <code class="text" id="ListBeneficiaryContracts6" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.405.001",
+          "Message": "The method is not allowed for the requested URL.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                        
+                  </code>
+                
+                  <code class="text" id="ListBeneficiaryContracts7" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.406.001",
+          "Message": "An appropriate representation of the requested resource could not be found",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                
+                  <code class="text" id="ListBeneficiaryContracts8" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.429.001",
+          "Message": "Assembly Rate Limit exceeded.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                
+                  <code class="text" id="ListBeneficiaryContracts9" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.500.001",
+          "Message": "Internal Error.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                  <code class="text" id="ListBeneficiaryContracts10" style=" display: none; ">
+  {
+      "Errors": [
+        {
+          "Code": "ERROR.503.001",
+          "Message": "Service Unavailable.",
+          "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+      ]
+    }
+                  </code>
+                </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

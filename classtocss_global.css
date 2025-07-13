@@ -2,6 +2,8 @@
  * classToCSS插件自动生成的全局样式，任何手动修改都会被覆盖
  * 需要手动引入到全局生效的位置，如index.html
  */
+.block { display: block; }
+.content-box { box-sizing: content-box; }
 .flex { display: flex; }
 .mid-between { justify-content: space-between; }
 .mid-around { justify-content: space-around; }
@@ -10,8 +12,6 @@
 .row { display: flex; flex-direction: row; }
 .text-center { text-align: center; }
 .w-100 { width:  100px;  }
-.block { display: block; }
-.content-box { box-sizing: content-box; }
 /* apply result */
 .app-reset { padding:  0px;  margin:  0px;  box-sizing: content-box;  }
 .mid { display: flex; align-items: center;  }
