@@ -19741,31 +19741,31 @@ body.context--partner-product {
     .custom-partner-domain .maincontent-sec .Products-business-api-image .content-box .Products-business-api-text {
         text-align: center !important;
     }
-  }
+}
 
-  section#block-marketplace-latest-exposedformsearch-apipage-1 {
+section#block-marketplace-latest-exposedformsearch-apipage-1 {
     position: relative !important;
     z-index: 38 !important;
 }
-  
+
 body.context--BusinessDomains .apicMainContent {
     margin-top: 0;
 }
- 
+
 .products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu {
-   overflow: auto;
-   max-height: 670px;
-}
- .custom-herosec.updated-herosec .computer-image {
-   right: -320px !important;
-}
- 
-@media(max-width: 1399px){
-.custom-herosec.updated-herosec .computer-image {
-   right: -40px;
-}
+    overflow: auto;
+    max-height: 670px;
 }
 
+.custom-herosec.updated-herosec .computer-image {
+    right: -320px !important;
+}
+
+@media(max-width: 1399px) {
+    .custom-herosec.updated-herosec .computer-image {
+        right: -40px;
+    }
+}
 
 
 /*updating home page feb ankiee*/
@@ -23812,3 +23812,15 @@ li.elipsis-names.createorg {
 
 
 /*merna remove categories from api products*/
+
+
+/*merna css updates*/
+
+@media (max-width: 576px) {
+    .products-businessbox.custom-business-domainpage .Products-business-field-background .product-subtext {
+        font-size: 42px;
+    }
+}
+
+
+/*merna css updates*/

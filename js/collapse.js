@@ -1,4 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const style = document.createElement('style');
+    style.textContent = `
+  .sidemenu-navitems.hidden-by-search {
+    display: none !important;
+  }
+`;
+    document.head.appendChild(style);
+    document.getElementById('searchbardomains').onkeyup = function() {
+        const val = this.value.toLowerCase();
+        let matchCount = 0;
+
+        document.querySelectorAll('.sidemenu-navitems').forEach(el => {
+            const text = el.innerText.toLowerCase();
+            const match = text.includes(val);
+            if (match) {
+                el.classList.remove('hidden-by-search');
+                matchCount++;
+            } else {
+                el.classList.add('hidden-by-search');
+            }
+        });
+
+        console.log(`🔍 Found ${matchCount} match(es) for: "${val}"`);
+    };
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     let searchTerm = urlParams.get("search_api_fulltext");
 
