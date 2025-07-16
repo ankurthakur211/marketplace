@@ -694,6 +694,43 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {    
+    const signinLink = document.querySelector('a[href="/sandbox/user/login"]');
+        if (signinLink) {
+          signinLink.addEventListener("click", function () {
+            localStorage.setItem("fromSigninButton", "true");
+          });
+        }
+     });
+
+     document.addEventListener("DOMContentLoaded", function () {
+        const redirectFlag = localStorage.getItem("fromSigninButton");
+        if (redirectFlag === "true") {
+          localStorage.removeItem("fromSigninButton");
+    
+           // Wait briefly, then trigger the Sign in with MFA button
+          setTimeout(() => {
+            const mfaButton = document.querySelector('a.registry-button.generic-button.button');
+            if (mfaButton) {
+              mfaButton.click();
+            } else {
+              // Fallback in case button not found
+              console.warn("MFA button not found.");
+              document.body.style.visibility = "visible";
+             
+            }
+          }, 300); // adjust delay if needed
+        } else {
+          // Normal page load
+          document.body.style.visibility = "visible";
+        }
+      });     
+    
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('form.user-login-form.pwd-see a.registry-button.generic-button.button').forEach(function(link) {
