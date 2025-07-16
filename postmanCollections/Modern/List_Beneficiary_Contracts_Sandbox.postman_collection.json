@@ -1,0 +1,490 @@
+{
+	"info": {
+		"_postman_id": "7629e7bd-ffe1-4e75-932e-9207c27779ae",
+		"name": "List Beneficiary Contracts Sandbox",
+		"description": "This API is used to send registered-event notifications to customers.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21664319"
+	},
+	"item": [
+		{
+			"name": "generate token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access-token\", data.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "marketplace_apis",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{public_url}}/oauth2security/oauth2/token",
+					"host": [
+						"{{public_url}}"
+					],
+					"path": [
+						"oauth2security",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api-gateway.apic1005.ejada.com/apimarketplace-dev/api-marketplace-dev/oauth2security/oauth2/token' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'grant_type=client_credentials' \\\n--data-urlencode 'scope=marketplace_apis' \\\n--data-urlencode 'client_id=d02c19954bda615b8f2cd12583183b52' \\\n--data-urlencode 'client_secret=2783abcb79d95178ad42dfad1ae4432e'"
+			},
+			"response": []
+		},
+		{
+			"name": "MP List Beneficiary Contracts",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept-language",
+						"value": "en",
+						"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+					},
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Data\": {\n    \"filter\": [\n      {\n        \"Key\": \"CONTRACT_STATUS\",\n        \"Value\": \"Pending\",\n        \"Type\": \"IN\"\n      }\n    ],\n    \"order\": [\n      {\n        \"Type\": \"ASC\",\n        \"Attribute\": \"CONTRACT_ID\"\n      }\n    ]\n  }\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{public_url}}/mp-contract-beneficiary/v1/list-beneficiary-contracts?beneficiaryId=2196289060&beneficiaryCIC=52",
+					"host": [
+						"{{public_url}}"
+					],
+					"path": [
+						"mp-contract-beneficiary",
+						"v1",
+						"list-beneficiary-contracts"
+					],
+					"query": [
+						{
+							"key": "beneficiaryId",
+							"value": "2196289060"
+						},
+						{
+							"key": "beneficiaryCIC",
+							"value": "52"
+						}
+					]
+				},
+				"description": "This path is used to send registered-event notifications to customers."
+			},
+			"response": [
+				{
+					"name": "MP List Beneficiary Contracts",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"filter\": [\n      {\n        \"Key\": \"CONTRACT_STATUS\",\n        \"Value\": \"Pending\",\n        \"Type\": \"IN\"\n      }\n    ],\n    \"order\": [\n      {\n        \"Type\": \"ASC\",\n        \"Attribute\": \"CONTRACT_ID\"\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{public_url}}/mp-contract-beneficiary/v1/list-beneficiary-contracts?beneficiaryId=2196289058&beneficiaryCIC=50",
+							"host": [
+								"{{public_url}}"
+							],
+							"path": [
+								"mp-contract-beneficiary",
+								"v1",
+								"list-beneficiary-contracts"
+							],
+							"query": [
+								{
+									"key": "beneficiaryId",
+									"value": "2196289058"
+								},
+								{
+									"key": "beneficiaryCIC",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "52672087-ce23-4684-9ff6-c6c862e8d85c"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68663e7206b59c30"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,99;"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 08:25:23 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"ContractSummaryDetails\": {\n            \"BeneficiaryContractInformation\": {\n                \"BeneficiaryName\": \"Ahmed Alaa\",\n                \"BeneficiaryId\": \"2196289058\",\n                \"MobileNumber\": \"+966-561330244\",\n                \"PageNumber\": 1,\n                \"Page\": 20,\n                \"TotalCount\": 3,\n                \"Contracts\": [\n                    {\n                        \"ContractId\": 99,\n                        \"ContractNumber\": \"ref\",\n                        \"ContractType\": {\n                            \"Id\": 8,\n                            \"Name\": \"SERVICE_AGREEMENT\",\n                            \"DescriptionEn\": \"ServiceAgreement description\",\n                            \"DescriptionAr\": \"&#1575;&#1578;&#1601;&#1575;&#1602;&#1610;&#1577; &#1575;&#1604;&#1582;&#1583;&#1605;&#1577;\"\n                        },\n                        \"ContractStatus\": \"Pending\",\n                        \"CreationDateTime\": \"2025-04-27T09:54:55.215945Z\",\n                        \"EffectiveDate\": \"2025-04-27\",\n                        \"ExpiryDate\": \"2025-05-14T00:00:00Z\",\n                        \"ContractUrl\": \"https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MTA4\",\n                        \"BeneficiaryAction\": \"Pending\"\n                    },\n                    {\n                        \"ContractId\": 108,\n                        \"ContractNumber\": \"test\",\n                        \"ContractType\": {\n                            \"Id\": 8,\n                            \"Name\": \"SERVICE_AGREEMENT\",\n                            \"DescriptionEn\": \"ServiceAgreement description\",\n                            \"DescriptionAr\": \"&#1575;&#1578;&#1601;&#1575;&#1602;&#1610;&#1577; &#1575;&#1604;&#1582;&#1583;&#1605;&#1577;\"\n                        },\n                        \"ContractStatus\": \"Pending\",\n                        \"CreationDateTime\": \"2025-04-28T11:08:19.014790Z\",\n                        \"EffectiveDate\": \"2025-04-28\",\n                        \"ExpiryDate\": \"2025-12-30T00:00:00Z\",\n                        \"ContractUrl\": \"https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MTE3\",\n                        \"BeneficiaryAction\": \"Pending\"\n                    },\n                    {\n                        \"ContractId\": 193,\n                        \"ContractNumber\": \"ref\",\n                        \"ContractType\": {\n                            \"Id\": 60,\n                            \"Name\": \"NDA\",\n                            \"DescriptionEn\": \"Initiative Contract \",\n                            \"DescriptionAr\": \"&#1593;&#1602;&#1583; &#1605;&#1576;&#1583;&#1575;&#1574;&#1610;\"\n                        },\n                        \"ContractStatus\": \"Pending\",\n                        \"CreationDateTime\": \"2025-05-08T11:50:33.991360Z\",\n                        \"EffectiveDate\": \"2025-05-08\",\n                        \"ExpiryDate\": \"2025-06-28T00:00:00Z\",\n                        \"ContractUrl\": \"https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MjAy\",\n                        \"BeneficiaryAction\": \"Pending\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+				},
+				{
+					"name": "MP List Beneficiary Contracts",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"filter\": [\n      {\n        \"Key\": \"CONTRACT_STATUS\",\n        \"Value\": \"Pending\",\n        \"Type\": \"IN\"\n      }\n    ],\n    \"order\": [\n      {\n        \"Type\": \"ASC\",\n        \"Attribute\": \"CONTRACT_ID\"\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{public_url}}/mp-contract-beneficiary/v1/list-beneficiary-contracts?beneficiaryId=2196289059&beneficiaryCIC=51",
+							"host": [
+								"{{public_url}}"
+							],
+							"path": [
+								"mp-contract-beneficiary",
+								"v1",
+								"list-beneficiary-contracts"
+							],
+							"query": [
+								{
+									"key": "beneficiaryId",
+									"value": "2196289059"
+								},
+								{
+									"key": "beneficiaryCIC",
+									"value": "51"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "6c672f2a-4446-4edd-aa26-807718f957b4"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68663e8f04261a41"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,98;"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 08:25:51 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"ContractSummaryDetails\": {\n            \"BeneficiaryContractInformation\": {\n                \"BeneficiaryName\": \"Mohamed Ali\",\n                \"BeneficiaryId\": \"2196289059\",\n                \"MobileNumber\": \"+966-561330301\",\n                \"PageNumber\": 1,\n                \"Page\": 18,\n                \"TotalCount\": 3,\n                \"Contracts\": [\n                    {\n                        \"ContractId\": 99,\n                        \"ContractNumber\": \"ref\",\n                        \"ContractType\": {\n                            \"Id\": 2,\n                            \"Name\": \"SERVICE_AGREEMENT\",\n                            \"DescriptionEn\": \"ServiceAgreement description\",\n                            \"DescriptionAr\": \"&#1575;&#1578;&#1601;&#1575;&#1602;&#1610;&#1577; &#1575;&#1604;&#1582;&#1583;&#1605;&#1577;\"\n                        },\n                        \"ContractStatus\": \"Pending\",\n                        \"CreationDateTime\": \"2025-07-27T09:54:55.215945Z\",\n                        \"EffectiveDate\": \"2025-07-27\",\n                        \"ExpiryDate\": \"2025-12-14T00:00:00Z\",\n                        \"ContractUrl\": \"https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MTA4\",\n                        \"BeneficiaryAction\": \"Pending\"\n                    },\n                    {\n                        \"ContractId\": 108,\n                        \"ContractNumber\": \"test\",\n                        \"ContractType\": {\n                            \"Id\": 8,\n                            \"Name\": \"SERVICE_AGREEMENT\",\n                            \"DescriptionEn\": \"ServiceAgreement description\",\n                            \"DescriptionAr\": \"&#1575;&#1578;&#1601;&#1575;&#1602;&#1610;&#1577; &#1575;&#1604;&#1582;&#1583;&#1605;&#1577;\"\n                        },\n                        \"ContractStatus\": \"Pending\",\n                        \"CreationDateTime\": \"2025-04-28T11:08:19.014790Z\",\n                        \"EffectiveDate\": \"2025-04-28\",\n                        \"ExpiryDate\": \"2025-12-30T00:00:00Z\",\n                        \"ContractUrl\": \"https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MTE3\",\n                        \"BeneficiaryAction\": \"Pending\"\n                    },\n                    {\n                        \"ContractId\": 193,\n                        \"ContractNumber\": \"ref\",\n                        \"ContractType\": {\n                            \"Id\": 60,\n                            \"Name\": \"NDA\",\n                            \"DescriptionEn\": \"Initiative Contract \",\n                            \"DescriptionAr\": \"&#1593;&#1602;&#1583; &#1605;&#1576;&#1583;&#1575;&#1574;&#1610;\"\n                        },\n                        \"ContractStatus\": \"Pending\",\n                        \"CreationDateTime\": \"2025-05-08T11:50:33.991360Z\",\n                        \"EffectiveDate\": \"2025-05-08\",\n                        \"ExpiryDate\": \"2025-06-28T00:00:00Z\",\n                        \"ContractUrl\": \"https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MjAy\",\n                        \"BeneficiaryAction\": \"Pending\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+				},
+				{
+					"name": "MP List Beneficiary Contracts",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept-language",
+								"value": "en",
+								"description": "Accept language\nDefault Value : en\nAllowed Values :\n en: English\n ar: Arabic"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"filter\": [\n      {\n        \"Key\": \"CONTRACT_STATUS\",\n        \"Value\": \"Pending\",\n        \"Type\": \"IN\"\n      }\n    ],\n    \"order\": [\n      {\n        \"Type\": \"ASC\",\n        \"Attribute\": \"CONTRACT_ID\"\n      }\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{public_url}}/mp-contract-beneficiary/v1/list-beneficiary-contracts?beneficiaryId=2196289060&beneficiaryCIC=52",
+							"host": [
+								"{{public_url}}"
+							],
+							"path": [
+								"mp-contract-beneficiary",
+								"v1",
+								"list-beneficiary-contracts"
+							],
+							"query": [
+								{
+									"key": "beneficiaryId",
+									"value": "2196289060"
+								},
+								{
+									"key": "beneficiaryCIC",
+									"value": "52"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "f442f9d4-4229-4216-8237-6b67d6e47d10"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68663ea6085f75a2"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,97;"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 08:26:15 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"ContractSummaryDetails\": {\n            \"BeneficiaryContractInformation\": {\n                \"BeneficiaryName\": \"Mostafa Ahmed \",\n                \"BeneficiaryId\": \"2196289060\",\n                \"MobileNumber\": \"+966-561597301\",\n                \"PageNumber\": 1,\n                \"Page\": 18,\n                \"TotalCount\": 2,\n                \"Contracts\": [\n                    {\n                        \"ContractId\": 111,\n                        \"ContractNumber\": \"test\",\n                        \"ContractType\": {\n                            \"Id\": 8,\n                            \"Name\": \"SERVICE_AGREEMENT\",\n                            \"DescriptionEn\": \"ServiceAgreement description\",\n                            \"DescriptionAr\": \"&#1575;&#1578;&#1601;&#1575;&#1602;&#1610;&#1577; &#1575;&#1604;&#1582;&#1583;&#1605;&#1577;\"\n                        },\n                        \"ContractStatus\": \"Pending\",\n                        \"CreationDateTime\": \"2025-04-28T11:08:19.014790Z\",\n                        \"EffectiveDate\": \"2025-04-28\",\n                        \"ExpiryDate\": \"2025-12-30T00:00:00Z\",\n                        \"ContractUrl\": \"https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MTE3\",\n                        \"BeneficiaryAction\": \"Pending\"\n                    },\n                    {\n                        \"ContractId\": 193,\n                        \"ContractNumber\": \"ref\",\n                        \"ContractType\": {\n                            \"Id\": 60,\n                            \"Name\": \"NDA\",\n                            \"DescriptionEn\": \"Initiative Contract \",\n                            \"DescriptionAr\": \"&#1593;&#1602;&#1583; &#1605;&#1576;&#1583;&#1575;&#1574;&#1610;\"\n                        },\n                        \"ContractStatus\": \"Pending\",\n                        \"CreationDateTime\": \"2025-05-08T11:50:33.991360Z\",\n                        \"EffectiveDate\": \"2025-05-08\",\n                        \"ExpiryDate\": \"2025-06-28T00:00:00Z\",\n                        \"ContractUrl\": \"https://twq-beneficiary-portal-route2-smart-contract-sit.apps.ocp.np4sitcl01.alrajhi.bank?beneficiaryId=MjAy\",\n                        \"BeneficiaryAction\": \"Pending\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "marketplace_apis",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/oauth2security/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "public_url",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "client-timestamp",
+			"value": ""
+		}
+	]
+}
