@@ -19767,6 +19767,24 @@ body.context--BusinessDomains .apicMainContent {
     }
 }
 
+.apic-user-form-login
+{
+    visibility: hidden;
+}
+
+#searchbardomains
+{
+    width: 90%;
+    padding: 10px 11px;
+    font-size: 14px;
+    border: 1px solid #d4d4d4;
+    outline: none;
+    margin-top: 16px;
+    margin-left: 20px;
+    transition: 0.3s ;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
 
 /*updating home page feb ankiee*/
 

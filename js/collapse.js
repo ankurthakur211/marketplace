@@ -747,13 +747,21 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
               // Fallback in case button not found
               console.warn("MFA button not found.");
-              document.body.style.visibility = "visible";
+             // document.body.style.visibility = "visible";
              
             }
           }, 100); // adjust delay if needed
         } else {
           // Normal page load
-          document.body.style.visibility = "visible";
+          
+          const loginForm = document.querySelector(".apic-user-form-login");
+          if (loginForm !== null) {
+            // Make the element visible if it was hidden using visibility
+            loginForm.style.visibility = "visible";
+        
+            // Optional: if it was hidden using display:none
+            // loginForm.style.display = "block"; // or "flex", "inline-block", etc.
+          }
         }
       });     
     
