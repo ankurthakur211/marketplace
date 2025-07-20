@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c95dc56f-e22c-4415-b335-60b16249e23a",
+		"_postman_id": "280a166e-3ede-4ce0-bbce-f5919b87b3ea",
 		"name": "MP  Modern Sandbox IPS Bank Transfer APIs",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "22086553",
-		"_collection_link": "https://speeding-water-900262.postman.co/workspace/Modern-Sandbox~54d8660f-9568-4428-bcb2-e6d7c82cb248/collection/22086553-c95dc56f-e22c-4415-b335-60b16249e23a?action=share&source=collection_link&creator=22086553"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32018122"
 	},
 	"item": [
 		{
@@ -56,7 +55,17 @@
 								}
 							]
 						},
-						"url": "{{base-url}}/oauth2security/oauth2/token"
+						"url": {
+							"raw": "{{base-url}}/oauth2security/oauth2/token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
 					},
 					"response": []
 				}
@@ -92,9 +101,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [
@@ -113,7 +126,18 @@
 								}
 							}
 						},
-						"url": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate"
+						"url": {
+							"raw": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-accounts",
+								"v1",
+								"transfer-verification",
+								"initiate"
+							]
+						}
 					},
 					"response": [
 						{
@@ -136,7 +160,18 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate"
+								"url": {
+									"raw": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-accounts",
+										"v1",
+										"transfer-verification",
+										"initiate"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -202,7 +237,18 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate"
+								"url": {
+									"raw": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-accounts",
+										"v1",
+										"transfer-verification",
+										"initiate"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -268,7 +314,18 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate"
+								"url": {
+									"raw": "{{base-url}}/mp-accounts/v1/transfer-verification/initiate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-accounts",
+										"v1",
+										"transfer-verification",
+										"initiate"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -321,9 +378,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [
@@ -727,6 +788,14 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -752,7 +821,7 @@
 	"variable": [
 		{
 			"key": "base-url",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
 			"type": "string"
 		},
 		{

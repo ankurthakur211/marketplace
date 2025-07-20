@@ -1,583 +1,547 @@
 {
-	"info": {
-		"_postman_id": "db37b7e6-3825-4b65-a2b2-bfe417f6058a",
-		"name": "MP Modern Sandbox Yakeen Dependent List Info Modern APIs",
-		"description": "This will API will return the Dependent information of the Customer",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "23110150"
-	},
-	"item": [
-		{
-			"name": "Token Management",
-			"item": [
-				{
-					"name": "Generate Access Token",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var response = pm.response.json()\r",
-									"if(pm.response.code == 200){\r",
-									"    pm.collectionVariables.set('access-token', response.access_token);\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							},
-							{
-								"key": "Cookie",
-								"value": "cookiesession1=678A8C3997F36E43064F1EBED59975E1"
-							},
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "grant_type",
-									"value": "client_credentials",
-									"type": "text"
-								},
-								{
-									"key": "client_id",
-									"value": "{{client-id}}",
-									"type": "text"
-								},
-								{
-									"key": "client_secret",
-									"value": "{{client-secret}}",
-									"type": "text"
-								},
-								{
-									"key": "scope",
-									"value": "marketplace_apis",
-									"type": "text"
-								}
-							]
-						},
-						"url": "{{base-url}}/oauth2security/oauth2/token"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Yakeen Dependent List Info",
-			"item": [
-				{
-					"name": "List Customer Dependent Info",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-request-id",
-								"value": "{{$guid}}",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept-Language",
-								"value": "ar",
-								"description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
-							}
-						],
-						"url": {
-							"raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=AlienDependentInfoByIqama&inquiryKey=2200326351",
-							"host": [
-								"{{base-url}}"
-							],
-							"path": [
-								"mp-yakeen-customers",
-								"v1",
-								"dependent-information",
-								":DependentId"
-							],
-							"query": [
-								{
-									"key": "inquiryType",
-									"value": "AlienDependentInfoByIqama",
-									"description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
-								},
-								{
-									"key": "inquiryKey",
-									"value": "2200326351",
-									"description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
-								}
-							],
-							"variable": [
-								{
-									"key": "DependentId",
-									"value": "2045395892"
-								}
-							]
-						},
-						"description": "This Path will return the Dependent information of the Customer"
-					},
-					"response": [
-						{
-							"name": "List Customer Dependent Info",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept-Language",
-										"value": "ar",
-										"description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=CitizenDependentInfo&inquiryKey=1200326344",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-yakeen-customers",
-										"v1",
-										"dependent-information",
-										":DependentId"
-									],
-									"query": [
-										{
-											"key": "inquiryType",
-											"value": "CitizenDependentInfo",
-											"description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
-										},
-										{
-											"key": "inquiryKey",
-											"value": "1200326344",
-											"description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
-										},
-										{
-											"key": "DependentId",
-											"value": "1045395888",
-											"description": "(Required) Dependent Number",
-											"disabled": true
-										}
-									],
-									"variable": [
-										{
-											"key": "DependentId",
-											"value": "1045395888"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "1b5b47d1-7727-4f29-a419-201ff986ae25"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a33cf1008c6c00"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,99;"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 05 Feb 2025 10:26:57 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"InquiryKey\": \"1200326344\",\n        \"CitizenDependentInfoList\": [\n            {\n                \"HijriBirthDate\": \"1415-05-18\",\n                \"GregBirthDate\": \"1994-10-23\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"1045395888\",\n                \"FirstNameEn\": \"SAMA\",\n                \"LastNameEn\": \"SINGH\",\n                \"SecondNameEn\": \"MAHI\",\n                \"ThirdNameEn\": \"NAHIT\",\n                \"LastNameAr\": \"سينغ\",\n                \"SecondNameAr\": \"ماهى\",\n                \"FirstNameAr\": \"سما\",\n                \"ThirdNameAr\": \"ناهيت\",\n                \"RelationshipDescription\": \"3\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-04-13\",\n                \"GregBirthDate\": \"2015-02-02\",\n                \"Gender\": \"1\",\n                \"DependentId\": \"1045395889\",\n                \"FirstNameEn\": \"RUPESH\",\n                \"LastNameEn\": \"SINGH\",\n                \"SecondNameEn\": \"MAHI\",\n                \"ThirdNameEn\": \"NAHIT\",\n                \"LastNameAr\": \"سينغ\",\n                \"SecondNameAr\": \"ماهى\",\n                \"FirstNameAr\": \"روبيش\",\n                \"ThirdNameAr\": \"ناهيت\",\n                \"RelationshipDescription\": \"1\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-12-19\",\n                \"GregBirthDate\": \"2015-10-02\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"1045395890\",\n                \"FirstNameEn\": \"TRUPTI\",\n                \"LastNameEn\": \"SINGH\",\n                \"SecondNameEn\": \"MAHI\",\n                \"ThirdNameEn\": \"NAHIT\",\n                \"LastNameAr\": \"سينغ\",\n                \"SecondNameAr\": \"ماهى\",\n                \"FirstNameAr\": \"تروبتى\",\n                \"ThirdNameAr\": \"ناهيت\",\n                \"RelationshipDescription\": \"2\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "List Customer Dependent Info",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept-Language",
-										"value": "ar",
-										"description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=CitizenDependentInfo&inquiryKey=1200326369",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-yakeen-customers",
-										"v1",
-										"dependent-information",
-										":DependentId"
-									],
-									"query": [
-										{
-											"key": "inquiryType",
-											"value": "CitizenDependentInfo",
-											"description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
-										},
-										{
-											"key": "inquiryKey",
-											"value": "1200326369",
-											"description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
-										}
-									],
-									"variable": [
-										{
-											"key": "DependentId",
-											"value": "1045395894"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "dae4cb82-ba19-4ead-b7c6-afeb772fde3f"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a33d0d00be6592"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,98;"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 05 Feb 2025 10:27:25 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"InquiryKey\": \"1200326369\",\n        \"CitizenDependentInfoList\": [\n            {\n                \"HijriBirthDate\": \"1415-02-02\",\n                \"GregBirthDate\": \"1994-07-10\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"1045395894\",\n                \"FirstNameEn\": \"FATIMA\",\n                \"LastNameEn\": \"KHAN\",\n                \"SecondNameEn\": \"SALMAN\",\n                \"ThirdNameEn\": \"RAMAN\",\n                \"LastNameAr\": \"حسن\",\n                \"SecondNameAr\": \"سمير\",\n                \"FirstNameAr\": \"فاطمة\",\n                \"ThirdNameAr\": \"محمود\",\n                \"RelationshipDescription\": \"3\"\n            },\n            {\n                \"HijriBirthDate\": \"1437-01-01\",\n                \"GregBirthDate\": \"2015-10-14\",\n                \"Gender\": \"1\",\n                \"DependentId\": \"1045395895\",\n                \"FirstNameEn\": \"SAYED\",\n                \"LastNameEn\": \"KHAN\",\n                \"SecondNameEn\": \"SALMAN\",\n                \"ThirdNameEn\": \"RAMAN\",\n                \"LastNameAr\": \"حسن\",\n                \"SecondNameAr\": \"سمير\",\n                \"FirstNameAr\": \"سيد\",\n                \"ThirdNameAr\": \"محمود\",\n                \"RelationshipDescription\": \"1\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-03-03\",\n                \"GregBirthDate\": \"2014-12-25\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"1045395896\",\n                \"FirstNameEn\": \"MERY\",\n                \"LastNameEn\": \"KHAN\",\n                \"SecondNameEn\": \"SALMAN\",\n                \"ThirdNameEn\": \"RAMAN\",\n                \"LastNameAr\": \"حسن\",\n                \"SecondNameAr\": \"سمير\",\n                \"FirstNameAr\": \"مارى\",\n                \"ThirdNameAr\": \"محمود\",\n                \"RelationshipDescription\": \"2\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "List Customer Dependent Info",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept-Language",
-										"value": "ar",
-										"description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=AlienDependentInfoByIqama&inquiryKey=2200326393",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-yakeen-customers",
-										"v1",
-										"dependent-information",
-										":DependentId"
-									],
-									"query": [
-										{
-											"key": "inquiryType",
-											"value": "AlienDependentInfoByIqama",
-											"description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
-										},
-										{
-											"key": "inquiryKey",
-											"value": "2200326393",
-											"description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
-										}
-									],
-									"variable": [
-										{
-											"key": "DependentId",
-											"value": "2045395899"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "c87a3f81-37cf-473b-a4cc-fa1982cdd18f"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a33d22005ba2a1"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,97;"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 05 Feb 2025 10:27:46 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"InquiryKey\": \"2200326393\",\n        \"CitizenDependentInfoList\": [\n            {\n                \"HijriBirthDate\": \"1413-02-02\",\n                \"GregBirthDate\": \"1992-07-31\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"2045395899\",\n                \"FirstNameEn\": \"AKSAM\",\n                \"LastNameEn\": \"KHAN\",\n                \"SecondNameEn\": \"HASAN\",\n                \"ThirdNameEn\": \"AYMAN\",\n                \"LastNameAr\": \"احمد\",\n                \"SecondNameAr\": \"ايمن\",\n                \"FirstNameAr\": \"ايهم\",\n                \"ThirdNameAr\": \"زهران\",\n                \"RelationshipDescription\": \"3\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "List Customer Dependent Info",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept-Language",
-										"value": "ar",
-										"description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=AlienDependentInfoByIqama&inquiryKey=2200326351",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-yakeen-customers",
-										"v1",
-										"dependent-information",
-										":DependentId"
-									],
-									"query": [
-										{
-											"key": "inquiryType",
-											"value": "AlienDependentInfoByIqama",
-											"description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
-										},
-										{
-											"key": "inquiryKey",
-											"value": "2200326351",
-											"description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
-										}
-									],
-									"variable": [
-										{
-											"key": "DependentId",
-											"value": "2045395892"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "e6de289f-c89f-4bb4-b642-c1a5ebaf3ca2"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a33d3700be6ca2"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,96;"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 05 Feb 2025 10:28:07 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"InquiryKey\": \"2200326351\",\n        \"CitizenDependentInfoList\": [\n            {\n                \"HijriBirthDate\": \"1416-06-21\",\n                \"GregBirthDate\": \"1995-11-14\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"2045395891\",\n                \"FirstNameEn\": \"SAMA\",\n                \"LastNameEn\": \"PATIL\",\n                \"SecondNameEn\": \"NIHIT\",\n                \"ThirdNameEn\": \"RAM\",\n                \"LastNameAr\": \"حسين\",\n                \"SecondNameAr\": \"احمد\",\n                \"FirstNameAr\": \"سما\",\n                \"ThirdNameAr\": \"سامى\",\n                \"RelationshipDescription\": \"3\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-03-10\",\n                \"GregBirthDate\": \"2015-01-01\",\n                \"Gender\": \"1\",\n                \"DependentId\": \"2045395892\",\n                \"FirstNameEn\": \"PESHA\",\n                \"LastNameEn\": \"PATIL\",\n                \"SecondNameEn\": \"NIHIT\",\n                \"ThirdNameEn\": \"RAM\",\n                \"LastNameAr\": \"حسين\",\n                \"SecondNameAr\": \"احمد\",\n                \"FirstNameAr\": \"بيشا\",\n                \"ThirdNameAr\": \"سامى\",\n                \"RelationshipDescription\": \"1\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-05-15\",\n                \"GregBirthDate\": \"2015-03-06\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"2045395893\",\n                \"FirstNameEn\": \"ASM\",\n                \"LastNameEn\": \"PATIL\",\n                \"SecondNameEn\": \"NIHIT\",\n                \"ThirdNameEn\": \"RAM\",\n                \"LastNameAr\": \"حسين\",\n                \"SecondNameAr\": \"احمد\",\n                \"FirstNameAr\": \"عاصم\",\n                \"ThirdNameAr\": \"سامى\",\n                \"RelationshipDescription\": \"2\"\n            }\n        ]\n    }\n}"
-						}
-					]
-				}
-			]
-		}
-	],
-	"auth": {
-		"type": "oauth2",
-		"oauth2": {
-			"scope": "marketplace_apis",
-			"accessTokenUrl": "https://api-marketplace.alrajhigroup.com.sa/oauth2security/oauth2/token",
-			"grant_type": "client_credentials"
-		}
-	},
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "base-url",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox"
-		},
-		{
-			"key": "client-id",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "client-secret",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "access-token",
-			"value": ""
-		}
-	]
+    "info": {
+        "_postman_id": "db37b7e6-3825-4b65-a2b2-bfe417f6058a",
+        "name": "MP Modern Sandbox Yakeen Dependent List Info Modern APIs",
+        "description": "This will API will return the Dependent information of the Customer",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+        "_exporter_id": "23110150"
+    },
+    "item": [{
+            "name": "Token Management",
+            "item": [{
+                "name": "Generate Access Token",
+                "event": [{
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "var response = pm.response.json()\r",
+                            "if(pm.response.code == 200){\r",
+                            "    pm.collectionVariables.set('access-token', response.access_token);\r",
+                            "}\r",
+                            ""
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }],
+                "request": {
+                    "method": "POST",
+                    "header": [{
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                        },
+                        {
+                            "key": "Cookie",
+                            "value": "cookiesession1=678A8C3997F36E43064F1EBED59975E1"
+                        },
+                        {
+                            "key": "",
+                            "value": "",
+                            "type": "text",
+                            "disabled": true
+                        }
+                    ],
+                    "body": {
+                        "mode": "urlencoded",
+                        "urlencoded": [{
+                                "key": "grant_type",
+                                "value": "client_credentials",
+                                "type": "text"
+                            },
+                            {
+                                "key": "client_id",
+                                "value": "{{client-id}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "client_secret",
+                                "value": "{{client-secret}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "scope",
+                                "value": "marketplace_apis",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    "url": "{{base-url}}/oauth2security/oauth2/token"
+                },
+                "response": []
+            }]
+        },
+        {
+            "name": "Yakeen Dependent List Info",
+            "item": [{
+                "name": "List Customer Dependent Info",
+                "request": {
+                    "auth": {
+                        "type": "bearer",
+                        "bearer": {
+                            "token": "{{access-token}}"
+                        }
+                    },
+                    "method": "GET",
+                    "header": [{
+                            "key": "x-request-id",
+                            "value": "{{$guid}}",
+                            "type": "text"
+                        },
+                        {
+                            "key": "Accept",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "Accept-Language",
+                            "value": "ar",
+                            "description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
+                        }
+                    ],
+                    "url": {
+                        "raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=AlienDependentInfoByIqama&inquiryKey=2200326351",
+                        "host": [
+                            "{{base-url}}"
+                        ],
+                        "path": [
+                            "mp-yakeen-customers",
+                            "v1",
+                            "dependent-information",
+                            ":DependentId"
+                        ],
+                        "query": [{
+                                "key": "inquiryType",
+                                "value": "AlienDependentInfoByIqama",
+                                "description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
+                            },
+                            {
+                                "key": "inquiryKey",
+                                "value": "2200326351",
+                                "description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
+                            }
+                        ],
+                        "variable": [{
+                            "key": "DependentId",
+                            "value": "2045395892"
+                        }]
+                    },
+                    "description": "This Path will return the Dependent information of the Customer"
+                },
+                "response": [{
+                        "name": "List Customer Dependent Info",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Accept-Language",
+                                    "value": "ar",
+                                    "description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=CitizenDependentInfo&inquiryKey=1200326344",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-yakeen-customers",
+                                    "v1",
+                                    "dependent-information",
+                                    ":DependentId"
+                                ],
+                                "query": [{
+                                        "key": "inquiryType",
+                                        "value": "CitizenDependentInfo",
+                                        "description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
+                                    },
+                                    {
+                                        "key": "inquiryKey",
+                                        "value": "1200326344",
+                                        "description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
+                                    },
+                                    {
+                                        "key": "DependentId",
+                                        "value": "1045395888",
+                                        "description": "(Required) Dependent Number",
+                                        "disabled": true
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "DependentId",
+                                    "value": "1045395888"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "1b5b47d1-7727-4f29-a419-201ff986ae25"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a33cf1008c6c00"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,99;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Wed, 05 Feb 2025 10:26:57 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"InquiryKey\": \"1200326344\",\n        \"CitizenDependentInfoList\": [\n            {\n                \"HijriBirthDate\": \"1415-05-18\",\n                \"GregBirthDate\": \"1994-10-23\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"1045395888\",\n                \"FirstNameEn\": \"SAMA\",\n                \"LastNameEn\": \"SINGH\",\n                \"SecondNameEn\": \"MAHI\",\n                \"ThirdNameEn\": \"NAHIT\",\n                \"LastNameAr\": \"سينغ\",\n                \"SecondNameAr\": \"ماهى\",\n                \"FirstNameAr\": \"سما\",\n                \"ThirdNameAr\": \"ناهيت\",\n                \"RelationshipDescription\": \"3\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-04-13\",\n                \"GregBirthDate\": \"2015-02-02\",\n                \"Gender\": \"1\",\n                \"DependentId\": \"1045395889\",\n                \"FirstNameEn\": \"RUPESH\",\n                \"LastNameEn\": \"SINGH\",\n                \"SecondNameEn\": \"MAHI\",\n                \"ThirdNameEn\": \"NAHIT\",\n                \"LastNameAr\": \"سينغ\",\n                \"SecondNameAr\": \"ماهى\",\n                \"FirstNameAr\": \"روبيش\",\n                \"ThirdNameAr\": \"ناهيت\",\n                \"RelationshipDescription\": \"1\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-12-19\",\n                \"GregBirthDate\": \"2015-10-02\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"1045395890\",\n                \"FirstNameEn\": \"TRUPTI\",\n                \"LastNameEn\": \"SINGH\",\n                \"SecondNameEn\": \"MAHI\",\n                \"ThirdNameEn\": \"NAHIT\",\n                \"LastNameAr\": \"سينغ\",\n                \"SecondNameAr\": \"ماهى\",\n                \"FirstNameAr\": \"تروبتى\",\n                \"ThirdNameAr\": \"ناهيت\",\n                \"RelationshipDescription\": \"2\"\n            }\n        ]\n    }\n}"
+                    },
+                    {
+                        "name": "List Customer Dependent Info",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Accept-Language",
+                                    "value": "ar",
+                                    "description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=CitizenDependentInfo&inquiryKey=1200326369",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-yakeen-customers",
+                                    "v1",
+                                    "dependent-information",
+                                    ":DependentId"
+                                ],
+                                "query": [{
+                                        "key": "inquiryType",
+                                        "value": "CitizenDependentInfo",
+                                        "description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
+                                    },
+                                    {
+                                        "key": "inquiryKey",
+                                        "value": "1200326369",
+                                        "description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "DependentId",
+                                    "value": "1045395894"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "dae4cb82-ba19-4ead-b7c6-afeb772fde3f"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a33d0d00be6592"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,98;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Wed, 05 Feb 2025 10:27:25 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"InquiryKey\": \"1200326369\",\n        \"CitizenDependentInfoList\": [\n            {\n                \"HijriBirthDate\": \"1415-02-02\",\n                \"GregBirthDate\": \"1994-07-10\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"1045395894\",\n                \"FirstNameEn\": \"FATIMA\",\n                \"LastNameEn\": \"KHAN\",\n                \"SecondNameEn\": \"SALMAN\",\n                \"ThirdNameEn\": \"RAMAN\",\n                \"LastNameAr\": \"حسن\",\n                \"SecondNameAr\": \"سمير\",\n                \"FirstNameAr\": \"فاطمة\",\n                \"ThirdNameAr\": \"محمود\",\n                \"RelationshipDescription\": \"3\"\n            },\n            {\n                \"HijriBirthDate\": \"1437-01-01\",\n                \"GregBirthDate\": \"2015-10-14\",\n                \"Gender\": \"1\",\n                \"DependentId\": \"1045395895\",\n                \"FirstNameEn\": \"SAYED\",\n                \"LastNameEn\": \"KHAN\",\n                \"SecondNameEn\": \"SALMAN\",\n                \"ThirdNameEn\": \"RAMAN\",\n                \"LastNameAr\": \"حسن\",\n                \"SecondNameAr\": \"سمير\",\n                \"FirstNameAr\": \"سيد\",\n                \"ThirdNameAr\": \"محمود\",\n                \"RelationshipDescription\": \"1\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-03-03\",\n                \"GregBirthDate\": \"2014-12-25\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"1045395896\",\n                \"FirstNameEn\": \"MERY\",\n                \"LastNameEn\": \"KHAN\",\n                \"SecondNameEn\": \"SALMAN\",\n                \"ThirdNameEn\": \"RAMAN\",\n                \"LastNameAr\": \"حسن\",\n                \"SecondNameAr\": \"سمير\",\n                \"FirstNameAr\": \"مارى\",\n                \"ThirdNameAr\": \"محمود\",\n                \"RelationshipDescription\": \"2\"\n            }\n        ]\n    }\n}"
+                    },
+                    {
+                        "name": "List Customer Dependent Info",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Accept-Language",
+                                    "value": "ar",
+                                    "description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=AlienDependentInfoByIqama&inquiryKey=2200326393",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-yakeen-customers",
+                                    "v1",
+                                    "dependent-information",
+                                    ":DependentId"
+                                ],
+                                "query": [{
+                                        "key": "inquiryType",
+                                        "value": "AlienDependentInfoByIqama",
+                                        "description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
+                                    },
+                                    {
+                                        "key": "inquiryKey",
+                                        "value": "2200326393",
+                                        "description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "DependentId",
+                                    "value": "2045395899"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "c87a3f81-37cf-473b-a4cc-fa1982cdd18f"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a33d22005ba2a1"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,97;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Wed, 05 Feb 2025 10:27:46 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"InquiryKey\": \"2200326393\",\n        \"CitizenDependentInfoList\": [\n            {\n                \"HijriBirthDate\": \"1413-02-02\",\n                \"GregBirthDate\": \"1992-07-31\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"2045395899\",\n                \"FirstNameEn\": \"AKSAM\",\n                \"LastNameEn\": \"KHAN\",\n                \"SecondNameEn\": \"HASAN\",\n                \"ThirdNameEn\": \"AYMAN\",\n                \"LastNameAr\": \"احمد\",\n                \"SecondNameAr\": \"ايمن\",\n                \"FirstNameAr\": \"ايهم\",\n                \"ThirdNameAr\": \"زهران\",\n                \"RelationshipDescription\": \"3\"\n            }\n        ]\n    }\n}"
+                    },
+                    {
+                        "name": "List Customer Dependent Info",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Accept-Language",
+                                    "value": "ar",
+                                    "description": "The user will select the language of the session\nEN: English\nAR: Arabic\nBN: Bangla\nHI: Hindi\nIN: Indonesian\nSI: Sinhala\nTL: Tagalog\nUR: Urdu"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-yakeen-customers/v1/dependent-information/:DependentId?inquiryType=AlienDependentInfoByIqama&inquiryKey=2200326351",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-yakeen-customers",
+                                    "v1",
+                                    "dependent-information",
+                                    ":DependentId"
+                                ],
+                                "query": [{
+                                        "key": "inquiryType",
+                                        "value": "AlienDependentInfoByIqama",
+                                        "description": "(Required) ResidentInfoByIqama or CitizenInfoByNIN"
+                                    },
+                                    {
+                                        "key": "inquiryKey",
+                                        "value": "2200326351",
+                                        "description": "(Required) ID Number in case of CitizenDependentInfo \nIqama number in case of AlienDependentInfoByIqama"
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "DependentId",
+                                    "value": "2045395892"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "e6de289f-c89f-4bb4-b642-c1a5ebaf3ca2"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a33d3700be6ca2"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,96;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Wed, 05 Feb 2025 10:28:07 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"InquiryKey\": \"2200326351\",\n        \"CitizenDependentInfoList\": [\n            {\n                \"HijriBirthDate\": \"1416-06-21\",\n                \"GregBirthDate\": \"1995-11-14\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"2045395891\",\n                \"FirstNameEn\": \"SAMA\",\n                \"LastNameEn\": \"PATIL\",\n                \"SecondNameEn\": \"NIHIT\",\n                \"ThirdNameEn\": \"RAM\",\n                \"LastNameAr\": \"حسين\",\n                \"SecondNameAr\": \"احمد\",\n                \"FirstNameAr\": \"سما\",\n                \"ThirdNameAr\": \"سامى\",\n                \"RelationshipDescription\": \"3\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-03-10\",\n                \"GregBirthDate\": \"2015-01-01\",\n                \"Gender\": \"1\",\n                \"DependentId\": \"2045395892\",\n                \"FirstNameEn\": \"PESHA\",\n                \"LastNameEn\": \"PATIL\",\n                \"SecondNameEn\": \"NIHIT\",\n                \"ThirdNameEn\": \"RAM\",\n                \"LastNameAr\": \"حسين\",\n                \"SecondNameAr\": \"احمد\",\n                \"FirstNameAr\": \"بيشا\",\n                \"ThirdNameAr\": \"سامى\",\n                \"RelationshipDescription\": \"1\"\n            },\n            {\n                \"HijriBirthDate\": \"1436-05-15\",\n                \"GregBirthDate\": \"2015-03-06\",\n                \"Gender\": \"2\",\n                \"DependentId\": \"2045395893\",\n                \"FirstNameEn\": \"ASM\",\n                \"LastNameEn\": \"PATIL\",\n                \"SecondNameEn\": \"NIHIT\",\n                \"ThirdNameEn\": \"RAM\",\n                \"LastNameAr\": \"حسين\",\n                \"SecondNameAr\": \"احمد\",\n                \"FirstNameAr\": \"عاصم\",\n                \"ThirdNameAr\": \"سامى\",\n                \"RelationshipDescription\": \"2\"\n            }\n        ]\n    }\n}"
+                    }
+                ]
+            }]
+        }
+    ],
+    "auth": {
+        "type": "oauth2",
+        "oauth2": {
+            "scope": "marketplace_apis",
+            "accessTokenUrl": "https://api-marketplace.alrajhigroup.com.sa/oauth2security/oauth2/token",
+            "grant_type": "client_credentials"
+        }
+    },
+    "event": [{
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [{
+            "key": "base-url",
+            "value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound"
+        },
+        {
+            "key": "client-id",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "client-secret",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "access-token",
+            "value": ""
+        }
+    ]
 }

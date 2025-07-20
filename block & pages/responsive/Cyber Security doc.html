@@ -8,10 +8,9 @@
                 <div class="leftside-sec">
                     <p class="fob-welcome-title" id="section-1">ART Cyber Security APIs</p>
                     <p class="fob-welcome-line"></p>
-                    <p class="fob-welcome-text">API Marketplace will be a huge plus and a great added value for
-                        Integration in al-Rajhi bank.<br />
-                        Cyber Security Insurance is a product provided by ART (ARG Subsidiary referred as provider) This product provides coverage to protect companies from financial losses and liabilities resulting from cyber-attacks and data breaches.
-                        The purpose of this project is to allow ARG subsidiaries (referred as consumers) to offer cyber security insurance service to their customers through subsidiary digital channels.
+                    <p class="fob-welcome-text">API Marketplace will be a huge plus and a great added value for Integration in al-Rajhi bank.<br /> Cyber Security Insurance is a product provided by ART (ARG Subsidiary referred as provider) This product provides coverage to protect
+                        companies from financial losses and liabilities resulting from cyber-attacks and data breaches. The purpose of this project is to allow ARG subsidiaries (referred as consumers) to offer cyber security insurance service to their
+                        customers through subsidiary digital channels.
                     </p>
 
 
@@ -21,11 +20,9 @@
                 </div>
             </div>
             <div class="d-flex btn-box">
-                <a class="primary-btn" id="downloadLink"
-                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxCyberSecurityInsurance.postman_collection.json"
+                <a class="primary-btn" id="downloadLink" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxCyberSecurityInsurance.postman_collection.json"
                     download="">Download Postman Collection</a>
-                <a class="primary-btn"
-                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/ModernCyberSecurityInsuranceSampleRequestData.xlsx"
+                <a class="primary-btn" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/ModernCyberSecurityInsuranceSampleRequestData.xlsx"
                     download="">Download Sample Data</a>
             </div>
 
@@ -37,8 +34,7 @@
         <div class="container">
             <h1 class="fob-welcome-title">ART Cyber Security Workflow</h1>
             <p class="motoinsu-image"></p>
-            <a class="fob-product-title-click" target="_blank"
-                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/CyberSecurityInsuranceFlowDiagramv0.1.pdf"
+            <a class="fob-product-title-click" target="_blank" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/CyberSecurityInsuranceFlowDiagramv0.1.pdf"
                 rel="noopener">
                 Click here
             </a>
@@ -57,8 +53,7 @@
                     <h1 class="fob-welcome-title" id="section-2">Create Quote</h1>
                     <p class="fob-welcome-text">Endpoint: /mp-cyber-insurance/v1/quote</p>
                     <p class="fob-welcome-text">
-                        <a
-                            href="//link">
+                        <a href="//link">
                             Swagger
                             Link
                         </a>
@@ -126,14 +121,13 @@
                 </pre>
                         </div>
                         <div class="url-box">
-                            <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Create-quote-curl')">
+                            <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Create-quote-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                   <code id="Create-quote-curl" style=" display: block;">
-curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-cyber-insurance/v1/quote' \
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-cyber-insurance/v1/quote' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'x-request-id: f4e14ead-66e1-49ab-ac3e-fd25cb69c86e' \
@@ -200,16 +194,16 @@ curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-s
                                 </p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote')" >200</a>
-                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote2')" >400</a>
-                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote3')" >401</a>
-                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote4')" >403</a>
-                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote5')" >405</a>
-                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote6')" >429</a>
-                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote7')" >500</a>
-                                  </div>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote4')">403</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote5')">405</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote6')">429</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote7')">500</a>
+                                </div>
 
-                                  <pre class="response-box">
+                                <pre class="response-box">
 
                                           <code class="text" style=" display: block; " id="response-Create-Quote">
 {
@@ -462,15 +456,14 @@ curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-s
                     <p class="fob-welcome-line"></p>
                     <p class="fob-welcome-text">Endpoint: /mp-cyber-insurance/v1/plans</p>
                     <p class="fob-welcome-text">
-                        <a
-                            href="//link">
+                        <a href="//link">
                             Swagger
                             Link
                         </a>
                     </p>
                     <p class="fob-welcome-text">Create Plan.</p>
                     <div class="requestURL-box">
-                     <div class="request-box">
+                        <div class="request-box">
                             <h1 class="fob-welcome-title">Request Example</h1>
                             <p class="fob-welcome-line"></p>
                             <pre class="example_97 api-guides-example-fob ">
@@ -487,13 +480,12 @@ Request Body
                         </div>
                         <div class="url-box">
 
-                            <button class="curlbtn fob-activate-fetching-top" type="submit"
-                                onclick="show('Create-Plan-curl')">
+                            <button class="curlbtn fob-activate-fetching-top" type="submit" onclick="show('Create-Plan-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">                          <code id="Create-Plan-curl" style=" display: block;">
-curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-cyber-insurance/v1/plans' \
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-cyber-insurance/v1/plans' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'x-request-id: fba38860-9899-4c90-bf4a-947515879e10' \
@@ -516,17 +508,17 @@ curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-s
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
 
-                                    <div class="response-box-div">
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan')" >200</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan2')" >400</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan3')" >401</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan4')" >403</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan5')" >405</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan6')" >429</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan7')" >500</a>
-                                      </div>
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan4')">403</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan5')">405</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan6')">429</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan7')">500</a>
+                                </div>
 
-                                      <pre class="response-box">
+                                <pre class="response-box">
 
 <code class="text" style=" display: block; " id="response-Create-Plan">
 {
@@ -637,15 +629,14 @@ curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-s
                     <p class="fob-welcome-line"></p>
                     <p class="fob-welcome-text">Endpoint: /mp-cyber-insurance/v1/policy</p>
                     <p class="fob-welcome-text">
-                        <a
-                            href="//link">
+                        <a href="//link">
                             Swagger
                             Link
                         </a>
                     </p>
                     <p class="fob-welcome-text">Create Policy</p>
                     <div class="requestURL-box">
-                     <div class="request-box">
+                        <div class="request-box">
                             <h1 class="fob-welcome-title">Request Example</h1>
                             <p class="fob-welcome-line"></p>
                             <pre class="example_97 api-guides-example-fob ">
@@ -665,8 +656,7 @@ Request Body
                         </div>
                         <div class="url-box">
 
-                            <button class="curlbtn fob-activate-fetching-top" type="submit"
-                                onclick="show('Create-Policy-curl')">
+                            <button class="curlbtn fob-activate-fetching-top" type="submit" onclick="show('Create-Policy-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
@@ -697,17 +687,17 @@ curl --location --globoff '{{base-url}}/mp-cyber-insurance/v1/policy' \
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
 
-                                    <div class="response-box-div">
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy')" >200</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy2')" >400</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy3')" >401</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy4')" >403</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy5')" >405</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy6')" >429</a>
-                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy7')" >500</a>
-                                      </div>
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy4')">403</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy5')">405</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy6')">429</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy7')">500</a>
+                                </div>
 
-                                      <pre class="response-box">
+                                <pre class="response-box">
 
                                       <code class="text" style=" display: block; " id="response-Create-Policy">
 {

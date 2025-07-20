@@ -1758,7 +1758,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
+							"raw": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
 							"protocol": "https",
 							"host": [
 								"sit",
@@ -1842,7 +1842,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
+									"raw": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
 									"protocol": "https",
 									"host": [
 										"sit",
@@ -1968,7 +1968,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
+									"raw": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
 									"protocol": "https",
 									"host": [
 										"sit",
@@ -2094,7 +2094,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
+									"raw": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
 									"protocol": "https",
 									"host": [
 										"sit",
@@ -2220,7 +2220,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
+									"raw": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/{{baseUrl}}/financial-institutions/:FinancialInstitutionId/data-groups",
 									"protocol": "https",
 									"host": [
 										"sit",
@@ -2343,17 +2343,17 @@
 	"variable": [
 		{
 			"key": "base-url",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
 			"type": "string"
 		},
 		{
 			"key": "client-id",
-			"value": "009407e30165d8f05d554e336acb0b26",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "client-secret",
-			"value": "efc9584a7ff25456423a532040ebbd42",
+			"value": "",
 			"type": "string"
 		},
 		{
@@ -2376,7 +2376,7 @@
 		},
 		{
 			"key": "SandboxUrl",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
 			"type": "string"
 		}
 	]

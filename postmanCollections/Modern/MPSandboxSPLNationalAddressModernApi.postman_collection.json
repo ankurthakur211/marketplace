@@ -1,501 +1,459 @@
 {
-	"info": {
-		"_postman_id": "2941a3c8-c38f-4c33-af54-f3da6cc5e481",
-		"name": "MP Sandbox SPL National Address Modern Api",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "22335175"
-	},
-	"item": [
-		{
-			"name": "Token Mangement",
-			"item": [
-				{
-					"name": "Generate Token",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var data = JSON.parse(responseBody);\r",
-									"pm.collectionVariables.set(\"access-token\", data.access_token);"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "grant_type",
-									"value": "client_credentials",
-									"type": "text"
-								},
-								{
-									"key": "client_id",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "client_secret",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "scope",
-									"value": "marketplace_apis",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base-url}}/oauth2security/oauth2/token",
-							"host": [
-								"{{base-url}}"
-							],
-							"path": [
-								"oauth2security",
-								"oauth2",
-								"token"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "SPL National Address",
-			"item": [
-				{
-					"name": "Retrieve national address",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{access-token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-request-id",
-								"value": "{{$guid}}",
-								"description": "An RFC4122 UID used as a correlation id."
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=0",
-							"host": [
-								"{{base-url}}"
-							],
-							"path": [
-								"mp-saudi-post",
-								"v1",
-								"national-address",
-								":POINumber"
-							],
-							"query": [
-								{
-									"key": "poiType",
-									"value": "0"
-								}
-							],
-							"variable": [
-								{
-									"key": "POINumber",
-									"value": "6460094848"
-								}
-							]
-						},
-						"description": "This path is used to get a specific accounts link details."
-					},
-					"response": [
-						{
-							"name": "Retrieve national address",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"description": "An RFC4122 UID used as a correlation id."
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=NationalID",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-saudi-post",
-										"v1",
-										"national-address",
-										":POINumber"
-									],
-									"query": [
-										{
-											"key": "poiType",
-											"value": "NationalID"
-										}
-									],
-									"variable": [
-										{
-											"key": "POINumber",
-											"value": "1105485096"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "cc4d3d1e-510c-45dc-a601-50eed828cd34"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67b32212023afcd2"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,98;"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 17 Feb 2025 11:48:36 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"AddressesList\": [\n            {\n                \"BuildingNumber\": \"4429\",\n                \"StreetName\": \"Abdulqawi Ibn Abdulhakim\",\n                \"CityName\": \"RIYADH\",\n                \"PostCode\": \"12787\",\n                \"AdditionalNumber\": \"7283\",\n                \"CityNameAr\": \"الرياض\",\n                \"StreetNameAr\": \"عبدالقوي بن عبدالحاكم\",\n                \"Coordinates\": \"46.66766613 24.59283828\",\n                \"ShortAddress1\": \"4429 Abdulqawi Ibn Abdulhakim - Al Suwaidi Dist.\",\n                \"ShortAddress2\": \"RIYADH 12787 - 7283\",\n                \"IsPrimaryAddress\": \"true\",\n                \"Latitude\": \"24.59283828\",\n                \"Longitude\": \"46.66766613\",\n                \"AddressId\": \"1278744297283\",\n                \"RegionName\": \"Al Riyadh\",\n                \"RegionNameAr\": \"الرياض\",\n                \"CityId\": \"3\",\n                \"RegionId\": \"1\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Retrieve national address",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"description": "An RFC4122 UID used as a correlation id."
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=NationalID",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-saudi-post",
-										"v1",
-										"national-address",
-										":POINumber"
-									],
-									"query": [
-										{
-											"key": "poiType",
-											"value": "NationalID"
-										}
-									],
-									"variable": [
-										{
-											"key": "POINumber",
-											"value": "1086129291"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "279ef401-2140-4fcd-8672-3dbaca9adecf"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67b3222201b0b360"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,97;"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 17 Feb 2025 11:48:51 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"AddressesList\": [\n            {\n                \"BuildingNumber\": \"2929\",\n                \"CityName\": \"RIYADH\",\n                \"PostCode\": \"12553\",\n                \"AdditionalNumber\": \"6317\",\n                \"CityNameAr\": \"الرياض\",\n                \"Coordinates\": \"46.58660828 24.65514552\",\n                \"ShortAddress1\": \"2929  - Dhahrat Laban Dist.\",\n                \"ShortAddress2\": \"RIYADH 12553 - 6317\",\n                \"IsPrimaryAddress\": \"true\",\n                \"Latitude\": \"24.65514552\",\n                \"Longitude\": \"46.58660828\",\n                \"AddressId\": \"1255329296317\",\n                \"RegionName\": \"Al Riyadh\",\n                \"RegionNameAr\": \"الرياض\",\n                \"CityId\": \"3\",\n                \"RegionId\": \"1\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Retrieve national address",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"description": "An RFC4122 UID used as a correlation id."
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=IqamaID",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-saudi-post",
-										"v1",
-										"national-address",
-										":POINumber"
-									],
-									"query": [
-										{
-											"key": "poiType",
-											"value": "IqamaID"
-										}
-									],
-									"variable": [
-										{
-											"key": "POINumber",
-											"value": "2216044384"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "55715d44-2b3a-4c48-8035-873b0d9eee79"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67b3223300b570b3"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,96;"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 17 Feb 2025 11:49:08 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"AddressesList\": [\n            {\n                \"BuildingNumber\": \"2394\",\n                \"StreetName\": \"Sulayman Ibn Khalaf\",\n                \"CityName\": \"RIYADH\",\n                \"PostCode\": \"14265\",\n                \"AdditionalNumber\": \"7847\",\n                \"CityNameAr\": \"الرياض\",\n                \"StreetNameAr\": \"سليمان بن خلف\",\n                \"Coordinates\": \"46.83081418 24.67826901\",\n                \"ShortAddress1\": \"2394 Sulayman Ibn Khalaf - Al Sulay Dist.\",\n                \"ShortAddress2\": \"RIYADH 14265 - 7847\",\n                \"IsPrimaryAddress\": \"true\",\n                \"Latitude\": \"24.67826901\",\n                \"Longitude\": \"46.83081418\",\n                \"AddressId\": \"1426523947847\",\n                \"RegionName\": \"Al Riyadh\",\n                \"RegionNameAr\": \"الرياض\",\n                \"CityId\": \"3\",\n                \"RegionId\": \"1\"\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Retrieve national address",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"description": "An RFC4122 UID used as a correlation id."
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=CRNumber",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-saudi-post",
-										"v1",
-										"national-address",
-										":POINumber"
-									],
-									"query": [
-										{
-											"key": "poiType",
-											"value": "CRNumber"
-										}
-									],
-									"variable": [
-										{
-											"key": "POINumber",
-											"value": "7005677625"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "780505e3-52fa-4b81-99c2-7c04d0d205ca"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67b3224400b57103"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,95;"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 17 Feb 2025 11:49:26 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"AddressesList\": [\n            {\n                \"TitleEn\": \"شركة واحة غذاء الخليج لتقديم الوجبات\",\n                \"RegionNameAr\": \"الرياض\",\n                \"UnitNumber\": \"101\",\n                \"BuildingNumber\": \"2277\",\n                \"StreetName\": \"Makkah Almukarama Branch\",\n                \"StreetNameAr\": \"مكة المكرمة الفرعي\",\n                \"DistrictId\": \"\",\n                \"DistrictName\": \"Al Olaya Dist.\",\n                \"CityName\": \"RIYADH\",\n                \"DistrictNameAr\": \"حي العليا\",\n                \"PostCode\": \"12611\",\n                \"AdditionalNumber\": \"9191\",\n                \"RegionName\": \"Al Riyadh\",\n                \"RegionId\": \"1\",\n                \"CityId\": \"3\",\n                \"CityNameAr\": \"الرياض\",\n                \"AddressId\": \"1261122779191\",\n                \"ShortAddress1\": \"2277 Makkah Almukarama Branch - Al Olaya Dist.\",\n                \"ShortAddress2\": \"RIYADH 12611 - 9191\",\n                \"Latitude\": \"24.67923384\",\n                \"Longitude\": \"46.69156443\",\n                \"IsPrimaryAddress\": \"true\",\n                \"Coordinates\": \"46.69156443 24.67923384\"\n            }\n        ]\n    }\n}"
-						}
-					]
-				}
-			]
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "base-url",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
-			"type": "default"
-		},
-		{
-			"key": "access-token",
-			"value": ""
-		}
-	]
+    "info": {
+        "_postman_id": "2941a3c8-c38f-4c33-af54-f3da6cc5e481",
+        "name": "MP Sandbox SPL National Address Modern Api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "22335175"
+    },
+    "item": [{
+            "name": "Token Mangement",
+            "item": [{
+                "name": "Generate Token",
+                "event": [{
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "var data = JSON.parse(responseBody);\r",
+                            "pm.collectionVariables.set(\"access-token\", data.access_token);"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }],
+                "request": {
+                    "auth": {
+                        "type": "noauth"
+                    },
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                        "mode": "urlencoded",
+                        "urlencoded": [{
+                                "key": "grant_type",
+                                "value": "client_credentials",
+                                "type": "text"
+                            },
+                            {
+                                "key": "client_id",
+                                "value": "",
+                                "type": "text"
+                            },
+                            {
+                                "key": "client_secret",
+                                "value": "",
+                                "type": "text"
+                            },
+                            {
+                                "key": "scope",
+                                "value": "marketplace_apis",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    "url": {
+                        "raw": "{{base-url}}/oauth2security/oauth2/token",
+                        "host": [
+                            "{{base-url}}"
+                        ],
+                        "path": [
+                            "oauth2security",
+                            "oauth2",
+                            "token"
+                        ]
+                    }
+                },
+                "response": []
+            }]
+        },
+        {
+            "name": "SPL National Address",
+            "item": [{
+                "name": "Retrieve national address",
+                "request": {
+                    "auth": {
+                        "type": "bearer",
+                        "bearer": [{
+                            "key": "token",
+                            "value": "{{access-token}}",
+                            "type": "string"
+                        }]
+                    },
+                    "method": "GET",
+                    "header": [{
+                            "key": "x-request-id",
+                            "value": "{{$guid}}",
+                            "description": "An RFC4122 UID used as a correlation id."
+                        },
+                        {
+                            "key": "Accept",
+                            "value": "application/json"
+                        }
+                    ],
+                    "url": {
+                        "raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=0",
+                        "host": [
+                            "{{base-url}}"
+                        ],
+                        "path": [
+                            "mp-saudi-post",
+                            "v1",
+                            "national-address",
+                            ":POINumber"
+                        ],
+                        "query": [{
+                            "key": "poiType",
+                            "value": "0"
+                        }],
+                        "variable": [{
+                            "key": "POINumber",
+                            "value": "6460094848"
+                        }]
+                    },
+                    "description": "This path is used to get a specific accounts link details."
+                },
+                "response": [{
+                        "name": "Retrieve national address",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "description": "An RFC4122 UID used as a correlation id."
+                                },
+                                {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=NationalID",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-saudi-post",
+                                    "v1",
+                                    "national-address",
+                                    ":POINumber"
+                                ],
+                                "query": [{
+                                    "key": "poiType",
+                                    "value": "NationalID"
+                                }],
+                                "variable": [{
+                                    "key": "POINumber",
+                                    "value": "1105485096"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "cc4d3d1e-510c-45dc-a601-50eed828cd34"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67b32212023afcd2"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,98;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Mon, 17 Feb 2025 11:48:36 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"AddressesList\": [\n            {\n                \"BuildingNumber\": \"4429\",\n                \"StreetName\": \"Abdulqawi Ibn Abdulhakim\",\n                \"CityName\": \"RIYADH\",\n                \"PostCode\": \"12787\",\n                \"AdditionalNumber\": \"7283\",\n                \"CityNameAr\": \"الرياض\",\n                \"StreetNameAr\": \"عبدالقوي بن عبدالحاكم\",\n                \"Coordinates\": \"46.66766613 24.59283828\",\n                \"ShortAddress1\": \"4429 Abdulqawi Ibn Abdulhakim - Al Suwaidi Dist.\",\n                \"ShortAddress2\": \"RIYADH 12787 - 7283\",\n                \"IsPrimaryAddress\": \"true\",\n                \"Latitude\": \"24.59283828\",\n                \"Longitude\": \"46.66766613\",\n                \"AddressId\": \"1278744297283\",\n                \"RegionName\": \"Al Riyadh\",\n                \"RegionNameAr\": \"الرياض\",\n                \"CityId\": \"3\",\n                \"RegionId\": \"1\"\n            }\n        ]\n    }\n}"
+                    },
+                    {
+                        "name": "Retrieve national address",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "description": "An RFC4122 UID used as a correlation id."
+                                },
+                                {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=NationalID",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-saudi-post",
+                                    "v1",
+                                    "national-address",
+                                    ":POINumber"
+                                ],
+                                "query": [{
+                                    "key": "poiType",
+                                    "value": "NationalID"
+                                }],
+                                "variable": [{
+                                    "key": "POINumber",
+                                    "value": "1086129291"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "279ef401-2140-4fcd-8672-3dbaca9adecf"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67b3222201b0b360"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,97;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Mon, 17 Feb 2025 11:48:51 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"AddressesList\": [\n            {\n                \"BuildingNumber\": \"2929\",\n                \"CityName\": \"RIYADH\",\n                \"PostCode\": \"12553\",\n                \"AdditionalNumber\": \"6317\",\n                \"CityNameAr\": \"الرياض\",\n                \"Coordinates\": \"46.58660828 24.65514552\",\n                \"ShortAddress1\": \"2929  - Dhahrat Laban Dist.\",\n                \"ShortAddress2\": \"RIYADH 12553 - 6317\",\n                \"IsPrimaryAddress\": \"true\",\n                \"Latitude\": \"24.65514552\",\n                \"Longitude\": \"46.58660828\",\n                \"AddressId\": \"1255329296317\",\n                \"RegionName\": \"Al Riyadh\",\n                \"RegionNameAr\": \"الرياض\",\n                \"CityId\": \"3\",\n                \"RegionId\": \"1\"\n            }\n        ]\n    }\n}"
+                    },
+                    {
+                        "name": "Retrieve national address",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "description": "An RFC4122 UID used as a correlation id."
+                                },
+                                {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=IqamaID",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-saudi-post",
+                                    "v1",
+                                    "national-address",
+                                    ":POINumber"
+                                ],
+                                "query": [{
+                                    "key": "poiType",
+                                    "value": "IqamaID"
+                                }],
+                                "variable": [{
+                                    "key": "POINumber",
+                                    "value": "2216044384"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "55715d44-2b3a-4c48-8035-873b0d9eee79"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67b3223300b570b3"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,96;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Mon, 17 Feb 2025 11:49:08 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"AddressesList\": [\n            {\n                \"BuildingNumber\": \"2394\",\n                \"StreetName\": \"Sulayman Ibn Khalaf\",\n                \"CityName\": \"RIYADH\",\n                \"PostCode\": \"14265\",\n                \"AdditionalNumber\": \"7847\",\n                \"CityNameAr\": \"الرياض\",\n                \"StreetNameAr\": \"سليمان بن خلف\",\n                \"Coordinates\": \"46.83081418 24.67826901\",\n                \"ShortAddress1\": \"2394 Sulayman Ibn Khalaf - Al Sulay Dist.\",\n                \"ShortAddress2\": \"RIYADH 14265 - 7847\",\n                \"IsPrimaryAddress\": \"true\",\n                \"Latitude\": \"24.67826901\",\n                \"Longitude\": \"46.83081418\",\n                \"AddressId\": \"1426523947847\",\n                \"RegionName\": \"Al Riyadh\",\n                \"RegionNameAr\": \"الرياض\",\n                \"CityId\": \"3\",\n                \"RegionId\": \"1\"\n            }\n        ]\n    }\n}"
+                    },
+                    {
+                        "name": "Retrieve national address",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "description": "An RFC4122 UID used as a correlation id."
+                                },
+                                {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-saudi-post/v1/national-address/:POINumber?poiType=CRNumber",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-saudi-post",
+                                    "v1",
+                                    "national-address",
+                                    ":POINumber"
+                                ],
+                                "query": [{
+                                    "key": "poiType",
+                                    "value": "CRNumber"
+                                }],
+                                "variable": [{
+                                    "key": "POINumber",
+                                    "value": "7005677625"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "780505e3-52fa-4b81-99c2-7c04d0d205ca"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67b3224400b57103"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,95;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Mon, 17 Feb 2025 11:49:26 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"AddressesList\": [\n            {\n                \"TitleEn\": \"شركة واحة غذاء الخليج لتقديم الوجبات\",\n                \"RegionNameAr\": \"الرياض\",\n                \"UnitNumber\": \"101\",\n                \"BuildingNumber\": \"2277\",\n                \"StreetName\": \"Makkah Almukarama Branch\",\n                \"StreetNameAr\": \"مكة المكرمة الفرعي\",\n                \"DistrictId\": \"\",\n                \"DistrictName\": \"Al Olaya Dist.\",\n                \"CityName\": \"RIYADH\",\n                \"DistrictNameAr\": \"حي العليا\",\n                \"PostCode\": \"12611\",\n                \"AdditionalNumber\": \"9191\",\n                \"RegionName\": \"Al Riyadh\",\n                \"RegionId\": \"1\",\n                \"CityId\": \"3\",\n                \"CityNameAr\": \"الرياض\",\n                \"AddressId\": \"1261122779191\",\n                \"ShortAddress1\": \"2277 Makkah Almukarama Branch - Al Olaya Dist.\",\n                \"ShortAddress2\": \"RIYADH 12611 - 9191\",\n                \"Latitude\": \"24.67923384\",\n                \"Longitude\": \"46.69156443\",\n                \"IsPrimaryAddress\": \"true\",\n                \"Coordinates\": \"46.69156443 24.67923384\"\n            }\n        ]\n    }\n}"
+                    }
+                ]
+            }]
+        }
+    ],
+    "event": [{
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [{
+            "key": "base-url",
+            "value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+            "type": "default"
+        },
+        {
+            "key": "access-token",
+            "value": ""
+        }
+    ]
 }

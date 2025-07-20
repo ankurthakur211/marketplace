@@ -11,13 +11,10 @@
 
                     <p class="fob-welcome-line">&nbsp;</p>`
                     <p class="fob-welcome-text">
-                        The Travel Insurance API enables seamless integration with Al-Rajhi’s travel insurance services.
-                        It allows partners to issue travel insurance policies, retrieve policy details, and access
-                        customer-related information in real time.
+                        The Travel Insurance API enables seamless integration with Al-Rajhi’s travel insurance services. It allows partners to issue travel insurance policies, retrieve policy details, and access customer-related information in real time.
                     </p>
                     <p class="fob-welcome-text">
-                        This API helps streamline the travel insurance process by automating policy generation and
-                        ensuring secure communication between systems via the TAPI Marketplace platform.
+                        This API helps streamline the travel insurance process by automating policy generation and ensuring secure communication between systems via the TAPI Marketplace platform.
                     </p>
 
                 </div>
@@ -28,11 +25,9 @@
             </div>
 
             <div class="d-flex btn-box">
-                <a class="primary-btn" download=""
-                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxTravelIntegrationARTInboundAPIs.postman_collection.json"
+                <a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxTravelIntegrationARTInboundAPIs.postman_collection.json"
                     id="downloadLink">Download Postman Collection</a>
-                <a class="primary-btn" download=""
-                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/TravelInsuranceSampleRequestData.xlsx">Download
+                <a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/TravelInsuranceSampleRequestData.xlsx">Download
                     Sample Data</a>
             </div>
         </div>
@@ -43,8 +38,7 @@
             <h1 class="fob-welcome-title">Travel Workflow</h1>
 
             <p class="motoinsu-image">&nbsp;</p>
-            <a class="fob-product-title-click"
-                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ARTTravelInsuranceFlowDigramv0.1.pdf"
+            <a class="fob-product-title-click" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/ARTTravelInsuranceFlowDigramv0.1.pdf"
                 rel="noopener" target="_blank">Click here
             </a>
         </div>
@@ -66,15 +60,13 @@
                     </p>
 
                     <p class="fob-welcome-text">
-                        <a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Fproducts/get">Swagger
+                        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Fproducts/get">Swagger
                             Link
                         </a>
                     </p>
 
                     <p class="fob-welcome-text">
-                        Use this API to fetch travel insurance products based on the user's
-                        date of birth. It will return all products and available plan types.
+                        Use this API to fetch travel insurance products based on the user's date of birth. It will return all products and available plan types.
                     </p>
 
                     <div class="requestURL-box">
@@ -93,14 +85,13 @@
                         </div>
 
                         <div class="url-box">
-                            <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                    onclick="show('Finds-Travel-Insurance-Products-curl')">
+                            <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Finds-Travel-Insurance-Products-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
 
                             <pre id="generatedCurl">
                         <code id="Finds-Travel-Insurance-Products-curl" style=" display: block;">
-  curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox//mp-travel-insurance/v1/products?referenceId=2406132841&amp;birthDate=1989-05-25' \
+  curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound//mp-travel-insurance/v1/products?referenceId=2406132841&amp;birthDate=1989-05-25' \
   --header 'x-request-id: c2572d66-1c03-4aa7-849e-e76af744a060' \
   --header 'accept-language: En' \
   --header 'Accept: application/json' \
@@ -118,14 +109,10 @@
                                 </p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('Finds-Travel-Insurance-Products')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('Finds-Travel-Insurance-Products2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('Finds-Travel-Insurance-Products3')">401</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('Finds-Travel-Insurance-Products4')">500</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('Finds-Travel-Insurance-Products')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('Finds-Travel-Insurance-Products2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('Finds-Travel-Insurance-Products3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('Finds-Travel-Insurance-Products4')">500</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -243,8 +230,7 @@
                     </p>
 
                     <p class="fob-welcome-text">
-                        <a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Ftrip-destinations/get">Swagger
+                        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Ftrip-destinations/get">Swagger
                             Link</a>
                     </p>
 
@@ -268,14 +254,13 @@
                         </div>
 
                         <div class="url-box">
-                            <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                    onclick="show('Finds-Trip-Destination-curl')">
+                            <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Finds-Trip-Destination-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
 
                             <pre id="generatedCurl">
                                 <code id="Finds-Trip-Destination-curl" style=" display: block;">
-  curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox//mp-travel-insurance/v1/trip-destinations?referenceId=2406132841&productId=610621' \
+  curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound//mp-travel-insurance/v1/trip-destinations?referenceId=2406132841&productId=610621' \
   --header 'x-request-id: 9a214b5c-5dd5-4add-9fbf-8cbe706a0bb3' \
   --header 'Accept: application/json' \
   --header 'Authorization: ••••••'
@@ -292,14 +277,10 @@
                                 </p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('Finds-Trip-Destination')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('Finds-Trip-Destination2')">401</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('Finds-Trip-Destination3')">403</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('Finds-Trip-Destination4')">500</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('Finds-Trip-Destination')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('Finds-Trip-Destination2')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('Finds-Trip-Destination3')">403</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('Finds-Trip-Destination4')">500</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -398,8 +379,7 @@
                             </div>
 
                             <div class="url-box">
-                                <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                    onclick="show('Get-Alien-Info-By-Iqama-dob-curl')">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Get-Alien-Info-By-Iqama-dob-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
 
@@ -415,8 +395,7 @@
                         <div class="response-outterbox">
                             <div class="innerbox">
                                 <div class="code-box">
-                                    <p
-                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                         &nbsp;&nbsp;&nbsp;&nbsp;Response
                                     </p>
 
@@ -560,8 +539,7 @@
                         <p class="fob-welcome-text">Endpoint: /mp-travel-insurance/v1/addons</p>
 
                         <p class="fob-welcome-text">
-                            <a
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Faddons/get">Swagger
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Faddons/get">Swagger
                                 Link</a>
                         </p>
 
@@ -588,8 +566,7 @@
                             </div>
 
                             <div class="url-box">
-                                <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                    onclick="show('travel-addons-curl')">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('travel-addons-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
 
@@ -605,8 +582,7 @@
                         <div class="response-outterbox">
                             <div class="innerbox">
                                 <div class="code-box">
-                                    <p
-                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                         &nbsp;&nbsp;&nbsp;&nbsp;Response
                                     </p>
 
@@ -823,8 +799,7 @@
                         <p class="fob-welcome-text">Endpoint: /mp-travel-insurance/v1/rate</p>
 
                         <p class="fob-welcome-text">
-                            <a
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Frate/post">Swagger
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Frate/post">Swagger
                                 Link</a>
                         </p>
 
@@ -871,8 +846,7 @@
                             </div>
 
                             <div class="url-box">
-                                <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                    onclick="show('travel-rates-curl')">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('travel-rates-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
 
@@ -917,8 +891,7 @@
                         <div class="response-outterbox">
                             <div class="innerbox">
                                 <div class="code-box">
-                                    <p
-                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                         &nbsp;&nbsp;&nbsp;&nbsp;Response
                                     </p>
 
@@ -1061,8 +1034,7 @@
                         <p class="fob-welcome-text">Endpoint: /mp-travel-insurance/v1/quote</p>
 
                         <p class="fob-welcome-text">
-                            <a
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Fquote/post">Swagger
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Fquote/post">Swagger
                                 Link</a>
                         </p>
 
@@ -1090,8 +1062,7 @@
                             </div>
 
                             <div class="url-box">
-                                <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                    onclick="show('travel-quotes-curl')">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('travel-quotes-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
 
@@ -1114,8 +1085,7 @@
                         <div class="response-outterbox">
                             <div class="innerbox">
                                 <div class="code-box">
-                                    <p
-                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                         &nbsp;&nbsp;&nbsp;&nbsp;Response
                                     </p>
 
@@ -1254,16 +1224,12 @@
                         <p class="fob-welcome-text">Endpoint: /mp-travel-insurance/v1/policy</p>
 
                         <p class="fob-welcome-text">
-                            <a
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Fpolicy/post">Swagger
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Fpolicy/post">Swagger
                                 Link</a>
                         </p>
 
                         <p class="fob-welcome-text">
-                            Once payment is confirmed by source system then this API should be
-                            called to generate policy at ART end, this API will provide
-                            acknowledgement of request in response and in background it will
-                            generate policy.
+                            Once payment is confirmed by source system then this API should be called to generate policy at ART end, this API will provide acknowledgement of request in response and in background it will generate policy.
                         </p>
 
                         <div class="requestURL-box">
@@ -1287,8 +1253,7 @@
                             </div>
 
                             <div class="url-box">
-                                <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                    onclick="show('travel-policy-curl')">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('travel-policy-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
 
@@ -1312,8 +1277,7 @@
                         <div class="response-outterbox">
                             <div class="innerbox">
                                 <div class="code-box">
-                                    <p
-                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                         &nbsp;&nbsp;&nbsp;&nbsp;Response
                                     </p>
 
@@ -1448,8 +1412,7 @@
                         <p class="fob-welcome-text">Endpoint: /mp-travel-insurance/v1/policies</p>
 
                         <p class="fob-welcome-text">
-                            <a
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Fpolicies/get">Swagger
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4245/api/2800#/MPTravelIntegrationART_100/operation/%2Fpolicies/get">Swagger
                                 Link</a>
                         </p>
 
@@ -1474,8 +1437,7 @@
                             </div>
 
                             <div class="url-box">
-                                <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                    onclick="show('travel-policylist-curl')">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('travel-policylist-curl')">
                                     <p class="curlText">cURL</p>
                                 </button>
 
@@ -1491,8 +1453,7 @@
                         <div class="response-outterbox">
                             <div class="innerbox">
                                 <div class="code-box">
-                                    <p
-                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                         &nbsp;&nbsp;&nbsp;&nbsp;Response
                                     </p>
 

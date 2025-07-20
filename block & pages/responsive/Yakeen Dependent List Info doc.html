@@ -11,9 +11,7 @@
 
                     <p class="fob-welcome-line">&nbsp;</p>
 
-                    <p class="fob-welcome-text">The Yakeen Dependent List Info displays the list of customer dependents'
-                        information by entering the user's inquiry key and the dependent's ID, showing their shared
-                        relationship and details.</p>
+                    <p class="fob-welcome-text">The Yakeen Dependent List Info displays the list of customer dependents' information by entering the user's inquiry key and the dependent's ID, showing their shared relationship and details.</p>
                 </div>
 
                 <div class="rightside-sec">
@@ -21,10 +19,8 @@
                 </div>
             </div>
 
-            <div class="d-flex btn-box"><a download=""
-                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxYakeenDependentListInfoAPI.postman_collection.json"
-                    id="downloadLink">Download Postman Collection</a> <a download=""
-                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/YakeenDependentListInfoSampleRequestData.xlsx">Download
+            <div class="d-flex btn-box"><a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxYakeenDependentListInfoAPI.postman_collection.json"
+                    id="downloadLink">Download Postman Collection</a> <a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/YakeenDependentListInfoSampleRequestData.xlsx">Download
                     Sample Data</a></div>
         </div>
     </div>
@@ -34,8 +30,7 @@
             <h1 class="fob-welcome-title">Yakeen Dependent List Info Workflow</h1>
 
             <p class="motoinsu-image">&nbsp;</p>
-            <a download=""
-                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/YakeenDependentListInfoFlowDiagramv0.1.pdf"
+            <a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/YakeenDependentListInfoFlowDiagramv0.1.pdf"
                 id="downloadLink">Click here</a>
         </div>
     </div>
@@ -44,7 +39,8 @@
         <div class="container">
             <p class="main-heading">APIs</p>
 
-            <div class="bx--snippet-container body" data-testid="expandable-example-display"><!-- API 1 -->
+            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                <!-- API 1 -->
                 <div class="api-infosec">
                     <h1 class="fob-welcome-title" id="section-2">List Customer Dependent Info</h1>
 
@@ -52,12 +48,11 @@
 
                     <p class="fob-welcome-text">Endpoint: /mp-yakeen-customers/v1/dependent-information{DependentId}</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2932/api/2929#/MPGetyakeenCustomerDependentInformation_100/operation/%2Fdependent-information%2F{DependentId}/get">Swagger
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2932/api/2929#/MPGetyakeenCustomerDependentInformation_100/operation/%2Fdependent-information%2F{DependentId}/get">Swagger
                             Link</a></p>
 
-                    <p class="fob-welcome-text">The endpoint is used to return the dependent information of the
-                        customer.</p>
+                    <p class="fob-welcome-text">The endpoint is used to return the dependent information of the customer.
+                    </p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -77,14 +72,13 @@
                         </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                            onclick="show('yakeen-inf')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('yakeen-inf')">
                             <p class="curlText">cURL</p>
                         </button>
 
                             <pre id="generatedCurl">
                         <code id="yakeen-inf">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-yakeen-customers/v1/dependent-information/2045395892?inquiryType=AlienDependentInfoByIqama&amp;inquiryKey=2200326351' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-yakeen-customers/v1/dependent-information/2045395892?inquiryType=AlienDependentInfoByIqama&amp;inquiryKey=2200326351' \
     --header 'x-request-id: eff32975-c288-44b8-b3b4-bf08a8167649' \
     --header 'Accept: application/json' \
     --header 'Accept-Language: ar' \
@@ -101,15 +95,15 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info')">200</a> 
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info2')">400</a> 
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info3')">401</a> 
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info4')">403</a> 
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info5')">404</a> 
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info6')">405</a> 
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info7')">406</a> 
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info8')">429</a> 
-                                    <a class="response-box-error" type="button" onclick="responseText('response-info9')">500</a> 
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info4')">403</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info5')">404</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info6')">405</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info7')">406</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info8')">429</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info9')">500</a>
                                     <a class="response-box-error" type="button" onclick="responseText('response-info10')">503</a></div>
 
                                 <pre class="response-box">

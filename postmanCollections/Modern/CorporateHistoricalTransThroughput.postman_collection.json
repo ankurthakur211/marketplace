@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "15c918de-7f95-4956-bd51-86342515693d",
+		"_postman_id": "db7014d6-d145-40df-83c1-519ce3271115",
 		"name": "Corporate Historical Trans Throughput",
 		"description": "This API is used to list customer financial summaries.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "23110150"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32018122"
 	},
 	"item": [
 		{
@@ -15,9 +15,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [
@@ -727,7 +731,17 @@
 						}
 					]
 				},
-				"url": "{{publicUrl}}/oauth2security/oauth2/token",
+				"url": {
+					"raw": "{{publicUrl}}/oauth2security/oauth2/token",
+					"host": [
+						"{{publicUrl}}"
+					],
+					"path": [
+						"oauth2security",
+						"oauth2",
+						"token"
+					]
+				},
 				"description": "Generated from cURL: curl --location '\nhttps://api-gateway.apic1005.ejada.com/apimarketplace-dev/api-marketplace-dev/oauth2security/oauth2/token'\n\\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'grant_type=client_credentials' \\\n--data-urlencode 'scope=marketplace_apis' \\\n--data-urlencode 'client_id=d02c19954bda615b8f2cd12583183b52' \\\n--data-urlencode 'client_secret=2783abcb79d95178ad42dfad1ae4432e'"
 			},
 			"response": []
@@ -735,11 +749,23 @@
 	],
 	"auth": {
 		"type": "oauth2",
-		"oauth2": {
-			"scope": "marketplace_apis",
-			"accessTokenUrl": "https://api-marketplace.alrajhigroup.com.sa/oauth2security/oauth2/token",
-			"grant_type": "client_credentials"
-		}
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "marketplace_apis",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://api-marketplace.alrajhigroup.com.sa/oauth2security/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			}
+		]
 	},
 	"event": [
 		{
@@ -770,7 +796,7 @@
 		},
 		{
 			"key": "publicUrl",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
 			"type": "string"
 		},
 		{
