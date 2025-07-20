@@ -721,6 +721,53 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {    
+    const signinLink = document.querySelector('a[href="/sandbox/user/login"]');
+        if (signinLink) {
+          signinLink.addEventListener("click", function () {
+            localStorage.setItem("fromSigninButton", "true");
+          });
+        }
+     });
+
+     document.addEventListener("DOMContentLoaded", function () {
+        const redirectFlag = localStorage.getItem("fromSigninButton");
+        if (redirectFlag === "true") {
+            
+            document.body.style.display = "none";
+          localStorage.removeItem("fromSigninButton");
+    
+           // Wait briefly, then trigger the Sign in with MFA button
+          setTimeout(() => {
+            const mfaButton = document.querySelector('a.registry-button.generic-button.button');
+            if (mfaButton) {
+              mfaButton.click();
+            } else {
+              // Fallback in case button not found
+              console.warn("MFA button not found.");
+             // document.body.style.visibility = "visible";
+             
+            }
+          }, 100); // adjust delay if needed
+        } else {
+          // Normal page load
+          
+          const loginForm = document.querySelector(".apic-user-form-login");
+          if (loginForm !== null) {
+            // Make the element visible if it was hidden using visibility
+            loginForm.style.visibility = "visible";
+        
+            // Optional: if it was hidden using display:none
+            // loginForm.style.display = "block"; // or "flex", "inline-block", etc.
+          }
+        }
+      });     
+    
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const parent = document.querySelector('.apicSubscribeAppForm');
 
