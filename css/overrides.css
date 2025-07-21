@@ -23846,5 +23846,23 @@ li.elipsis-names.createorg {
     line-height: 32.4px;
 }
 
+.application-unsubscribe-form div#edit-actions button {
+    width: max-content;
+    border-radius: 9px !important;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.application-unsubscribe-form a#edit-cancel {
+    width: max-content;
+    padding: 20px;
+    margin-top: unset;
+    border-radius: 9px;
+}
+
 
 /*merna css updates*/
