@@ -1317,55 +1317,67 @@ if (window.location.pathname.includes('/myorg/invite')) {
     originalForm.replaceWith(newForm);
   
     newForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-  
-      const email = document.getElementById('email').value.trim();
-      const firstName = document.getElementById('first_name').value.trim();
-      const lastName = document.getElementById('last_name').value.trim();
-      const selectedRole = newForm.querySelector('input[name="user_role"]:checked');
-  
-      if (!selectedRole) {
-        alert('Please select a role.');
-        return;
-      }
-  
-      const { orgId, roleId } = JSON.parse(selectedRole.value);
-  
-      const payload = {
-        user: {
-          email: email,
-          first_name: firstName,
-          last_name: lastName
-        },
-        consumer_org: {
-          id: orgId,
-          roles: [roleId]
+        e.preventDefault();
+      
+        const email = document.getElementById('email').value.trim();
+        const firstName = document.getElementById('first_name').value.trim();
+        const lastName = document.getElementById('last_name').value.trim();
+        const selectedRole = newForm.querySelector('input[name="user_role"]:checked');
+      
+        if (!selectedRole) {
+          alert('Please select a role.');
+          return;
         }
-      };
-  
-      fetch('/sandbox/invite-user-proxy', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      })
-        .then(response => {
-          if (!response.ok) throw new Error('Request failed');
-          return response.json();
+      
+        const submitBtn = newForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Inviting...';
+      
+        // Optional loader icon
+        let loader = document.createElement('span');
+        loader.className = 'loader';
+        loader.style.marginLeft = '10px';
+        loader.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`;
+        submitBtn.appendChild(loader);
+      
+        const { orgId, roleId } = JSON.parse(selectedRole.value);
+      
+        const payload = {
+          user: {
+            email: email,
+            first_name: firstName,
+            last_name: lastName
+          },
+          consumer_org: {
+            id: orgId,
+            roles: [roleId]
+          }
+        };
+      
+        fetch('/sandbox/invite-user-proxy', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
         })
-        .then(data => {
-          alert('User invited successfully!');
-          console.log('Response:', data);
-          
-          // Clear form fields on success
-          newForm.reset();
-        })
-        .catch(error => {
-          alert('An error occurred while inviting the user.');
-          console.error('Error:', error);
-        });
-    });
+          .then(response => {
+            if (!response.ok) throw new Error('Request failed');
+            return response.json();
+          })
+          .then(data => {
+            alert('User invited successfully!');
+            newForm.reset();
+          })
+          .catch(error => {
+            alert('An error occurred while inviting the user.');
+            console.error('Error:', error);
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Invite User';
+          });
+      });
   }
 });
 

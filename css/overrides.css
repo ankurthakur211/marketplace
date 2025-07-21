@@ -15140,9 +15140,11 @@ form#custom-invite-form button{
     margin-bottom: 0px;
 }
 #roles-container div{
-    display: flex;
+    display: flex !important;
     align-items: center;
-    gap: 12px;
+    gap: 12px !important;
+    flex-direction: row !important;
+    margin-bottom: 0px !important;
 }
 #roles-container input[type="radio"]{
     width: 20px;
@@ -15151,6 +15153,10 @@ form#custom-invite-form button{
 }
 #roles-container div .bx--radio-button__appearance{
     visibility: hidden;
+}
+form#custom-invite-form input {
+    margin-bottom: 0px !important; 
+    margin-top: 0px !important; 
 }
 
 
