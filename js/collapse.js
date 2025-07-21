@@ -1255,6 +1255,120 @@ document.addEventListener('DOMContentLoaded', function() {
 //   });
 // });
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+if (window.location.pathname.includes('/myorg/invite')) {
+    const originalForm = document.querySelector('#consumerorg-invite-user-form');
+    const roleRadios = originalForm.querySelectorAll('input[type="radio"][name="role"]');
+    const roleLabels = originalForm.querySelectorAll('label[for^="edit-role-"]');
+  
+    // Create a new custom form
+    const newForm = document.createElement('form');
+    newForm.id = 'custom-invite-form';
+  
+    newForm.innerHTML = `
+      <div>
+        <label>First Name</label>
+        <input type="text" id="first_name" required>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input type="text" id="last_name" required>
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div id="roles-container">
+        <p><strong>Select Role:</strong></p>
+      </div>
+      <button type="submit">Invite User</button>
+    `;
+  
+    const rolesContainer = newForm.querySelector('#roles-container');
+  
+    roleRadios.forEach((originalRadio, index) => {
+      const newId = `custom-role-${index}`;
+  
+      const originalValue = originalRadio.value;
+      const orgId = originalValue.split('/orgs/')[1]?.split('/')[0] || '';
+      const roleId = originalValue.split('/roles/')[1]?.split('/')[0] || '';
+  
+      const radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.name = 'user_role';
+      radio.id = newId;
+      radio.value = JSON.stringify({ orgId, roleId });
+  
+      const label = roleLabels[index] ? roleLabels[index].cloneNode(true) : null;
+      if (label) {
+        label.setAttribute('for', newId);
+      }
+  
+      const wrapper = document.createElement('div');
+      wrapper.appendChild(radio);
+      if (label) wrapper.appendChild(label);
+      rolesContainer.appendChild(wrapper);
+    });
+  
+    // Replace the old form completely with the new one
+    originalForm.replaceWith(newForm);
+  
+    newForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const email = document.getElementById('email').value.trim();
+      const firstName = document.getElementById('first_name').value.trim();
+      const lastName = document.getElementById('last_name').value.trim();
+      const selectedRole = newForm.querySelector('input[name="user_role"]:checked');
+  
+      if (!selectedRole) {
+        alert('Please select a role.');
+        return;
+      }
+  
+      const { orgId, roleId } = JSON.parse(selectedRole.value);
+  
+      const payload = {
+        user: {
+          email: email,
+          first_name: firstName,
+          last_name: lastName
+        },
+        consumer_org: {
+          id: orgId,
+          roles: [roleId]
+        }
+      };
+  
+      fetch('/sandbox/invite-user-proxy', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+        .then(response => {
+          if (!response.ok) throw new Error('Request failed');
+          return response.json();
+        })
+        .then(data => {
+          alert('User invited successfully!');
+          console.log('Response:', data);
+          
+          // Clear form fields on success
+          newForm.reset();
+        })
+        .catch(error => {
+          alert('An error occurred while inviting the user.');
+          console.error('Error:', error);
+        });
+    });
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
     var openSearchButton = document.querySelector(".opensearch");
 

@@ -15108,6 +15108,51 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     display: flex;
 }
 
+form#custom-invite-form input {
+    height: 46px;
+}
+form#custom-invite-form input {
+    margin-bottom: 34px;
+    margin-top: 34px;
+}
+form#custom-invite-form div{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form#custom-invite-form button{
+    width: 50%;
+    height: 4rem;
+    border-radius: 8px;
+    font-size: 24px;
+    background-color: #221afb;
+    color: white;
+    border: 1px solid #221afb;
+}
+#roles-container{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+#roles-container p{
+    margin-bottom: 0px;
+}
+#roles-container div{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+#roles-container input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    margin-top: 7px;
+}
+#roles-container div .bx--radio-button__appearance{
+    visibility: hidden;
+}
+
 
 /*updating home page feb ankiee*/
 
