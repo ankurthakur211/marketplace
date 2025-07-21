@@ -1,0 +1,8 @@
+custom.invite_user:
+  path: '/invite-user-proxy'
+  defaults:
+    _controller: '\Drupal\invite_user_api\Controller\InviteUserController::submit'
+    _title: 'Invite User API'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'

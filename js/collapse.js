@@ -1186,20 +1186,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 `);;
         }
 
-        let header = document.querySelector(".page-header");
-        if (header) {
-            header.insertAdjacentHTML("afterend", `
-                <p class="main-pera">
-                 Here are your applications, ready to go...
-                </p>
-            `);
-        }
-
         let blazy = document.querySelector(".blazy.blazy--view.blazy--view--applications");
         if (blazy) {
             blazy.classList.add("custom-applicationcards");
         }
+        const header = document.querySelector(".page-header");
+        const appWrapper = document.querySelector(".apicNewAppWrapper");
 
+        if (header && !appWrapper) {
+            header.insertAdjacentHTML("afterend", `
+      <p class="noapptext">
+        Please ask your administrator to allow creating apps
+      </p>
+    `);
+
+        }
     }
 });
 

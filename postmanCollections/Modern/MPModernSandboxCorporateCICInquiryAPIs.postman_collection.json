@@ -1,641 +1,600 @@
 {
-	"info": {
-		"_postman_id": "4b2bdd4c-9052-4665-9e6b-fd786d919557",
-		"name": "MP Modern Sandbox Corporate CIC Inquiry APIs",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "23110150"
-	},
-	"item": [
-		{
-			"name": "Token Management",
-			"item": [
-				{
-					"name": "Generate Token",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var data = JSON.parse(responseBody);\r",
-									"pm.collectionVariables.set(\"access-token\", data.access_token);"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							},
-							{
-								"key": "Cookie",
-								"value": "d70c4b71d548cdbd2b531dc96408ca96=86b7432f4a100650ebec8b640f28a1d6"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "grant_type",
-									"value": "client_credentials",
-									"type": "text"
-								},
-								{
-									"key": "client_id",
-									"value": "{{client-id}}",
-									"type": "text"
-								},
-								{
-									"key": "client_secret",
-									"value": "{{client-secret}}",
-									"type": "text"
-								},
-								{
-									"key": "scope",
-									"value": "marketplace_apis",
-									"type": "text"
-								}
-							]
-						},
-						"url": "{{base-url}}/oauth2security/oauth2/token"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Corporate CIC Inquiry",
-			"item": [
-				{
-					"name": "Customer Basic Data",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-request-id",
-								"value": "{{$guid}}",
-								"type": "text"
-							},
-							{
-								"key": "accept-language",
-								"value": "EN",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
-							"host": [
-								"{{base-url}}"
-							],
-							"path": [
-								"mp-corporate",
-								"v1",
-								"inquire",
-								":ReferenceId"
-							],
-							"query": [
-								{
-									"key": "customerStatus",
-									"value": "1"
-								},
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "pageSize",
-									"value": "10"
-								}
-							],
-							"variable": [
-								{
-									"key": "ReferenceId",
-									"value": "7003259999"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Customer Basic Data",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "accept-language",
-										"value": "EN",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-corporate",
-										"v1",
-										"inquire",
-										":ReferenceId"
-									],
-									"query": [
-										{
-											"key": "customerStatus",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "pageSize",
-											"value": "10"
-										}
-									],
-									"variable": [
-										{
-											"key": "ReferenceId",
-											"value": "7003259999"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "f30b96e3-8b78-451d-9ff7-01ab8a839a90"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a885410134ab02"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,99;"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 09 Feb 2025 10:36:50 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"46abecaa-55f2-4c55-9f59-cb051587d7b7\",\n        \"StatusDescription\": \"Successful Operation\"\n    },\n    \"Links\": {\n        \"Self\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7003259999?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 0\n    }\n}"
-						},
-						{
-							"name": "Customer Basic Data",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "accept-language",
-										"value": "EN",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-corporate",
-										"v1",
-										"inquire",
-										":ReferenceId"
-									],
-									"query": [
-										{
-											"key": "customerStatus",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "pageSize",
-											"value": "10"
-										}
-									],
-									"variable": [
-										{
-											"key": "ReferenceId",
-											"value": "7049409151"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "970f7551-bef7-44ee-ad97-fe401157e559"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a8855e0134ac52"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,98;"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 09 Feb 2025 10:37:18 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"7b5422bd-5ab6-4794-80f2-42ed30ce59e4\",\n        \"StatusDescription\": \"Successful Operation\",\n        \"CustomerInformationList\": [\n            {\n                \"CICNumber\": \"0000000003172389\",\n                \"FirstNameEn\": \"TDM ARB COMPANY LTD\",\n                \"FirstNameAr\": \"لغص\",\n                \"CustomerSinceDate\": \"1999-10-23\",\n                \"IdNumber\": \"7049409151\",\n                \"IdType\": \"X\",\n                \"CustomerType\": \"D\",\n                \"customerStatus\": \"1\",\n                \"GregExpiryDate\": \"2025-03-14\"\n            }\n        ]\n    },\n    \"Links\": {\n        \"Self\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1\",\n        \"First\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1\",\n        \"Last\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 1\n    }\n}"
-						},
-						{
-							"name": "Customer Basic Data",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "accept-language",
-										"value": "EN",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-corporate",
-										"v1",
-										"inquire",
-										":ReferenceId"
-									],
-									"query": [
-										{
-											"key": "customerStatus",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "pageSize",
-											"value": "10"
-										}
-									],
-									"variable": [
-										{
-											"key": "ReferenceId",
-											"value": "7008871653"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "570c241a-2219-489f-ae06-833f800660ec"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a8858d0134afe2"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,97;"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 09 Feb 2025 10:38:06 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"1cbea605-2b1b-4b19-a05a-41c0665b5f2c\",\n        \"StatusDescription\": \"Successful Operation\"\n    },\n    \"Links\": {\n        \"Self\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/7008871653?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 0\n    }\n}"
-						},
-						{
-							"name": "Customer Basic Data",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "accept-language",
-										"value": "EN",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-corporate",
-										"v1",
-										"inquire",
-										":ReferenceId"
-									],
-									"query": [
-										{
-											"key": "customerStatus",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "pageSize",
-											"value": "10"
-										}
-									],
-									"variable": [
-										{
-											"key": "ReferenceId",
-											"value": "4010579298"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "0ac41201-c370-4448-9ad5-c9aa78409563"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a885ab006309a3"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,96;"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 09 Feb 2025 10:38:35 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"97d06af3-cf87-403e-b417-a568669a64d6\",\n        \"StatusDescription\": \"Successful Operation\"\n    },\n    \"Links\": {\n        \"Self\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/4010579298?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 0\n    }\n}"
-						},
-						{
-							"name": "Customer Basic Data",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-request-id",
-										"value": "{{$guid}}",
-										"type": "text"
-									},
-									{
-										"key": "accept-language",
-										"value": "EN",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
-									"host": [
-										"{{base-url}}"
-									],
-									"path": [
-										"mp-corporate",
-										"v1",
-										"inquire",
-										":ReferenceId"
-									],
-									"query": [
-										{
-											"key": "customerStatus",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "pageSize",
-											"value": "10"
-										}
-									],
-									"variable": [
-										{
-											"key": "ReferenceId",
-											"value": "1319327313"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "Keep-Alive"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json"
-								},
-								{
-									"key": "x-request-id",
-									"value": "e07ae015-3495-46ee-be13-6604b2be4717"
-								},
-								{
-									"key": "X-Global-Transaction-ID",
-									"value": "757dc76c67a885b30134b9f2"
-								},
-								{
-									"key": "X-RateLimit-Limit",
-									"value": "name=default,100;"
-								},
-								{
-									"key": "X-RateLimit-Remaining",
-									"value": "name=default,95;"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 09 Feb 2025 10:38:43 GMT"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"5a5b2917-b3b1-41fd-9a00-2823778d2a71\",\n        \"StatusDescription\": \"Successful Operation\",\n        \"CustomerInformationList\": [\n            {\n                \"CICNumber\": \"0000000125128531\",\n                \"FirstNameEn\": \"EJADA COMPANY LTD\",\n                \"FirstNameAr\": \"???\",\n                \"CustomerSinceDate\": \"2024-04-18\",\n                \"IdNumber\": \"1319327313\",\n                \"IdType\": \"@\",\n                \"CustomerType\": \"D\",\n                \"customerStatus\": \"1\",\n                \"GregExpiryDate\": \"2026-02-20\"\n            }\n        ]\n    },\n    \"Links\": {\n        \"Self\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/1319327313?customerStatus=1&pageSize=10&page=1\",\n        \"First\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/1319327313?customerStatus=1&pageSize=10&page=1\",\n        \"Last\": \"https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-corporate/v1/inquire/1319327313?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 1\n    }\n}"
-						}
-					]
-				}
-			]
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "base-url",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
-			"type": "string"
-		},
-		{
-			"key": "client-id",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "client-secret",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "access-token",
-			"value": "",
-			"type": "string"
-		}
-	]
+    "info": {
+        "_postman_id": "4b2bdd4c-9052-4665-9e6b-fd786d919557",
+        "name": "MP Modern Sandbox Corporate CIC Inquiry APIs",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+        "_exporter_id": "23110150"
+    },
+    "item": [{
+            "name": "Token Management",
+            "item": [{
+                "name": "Generate Token",
+                "event": [{
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "var data = JSON.parse(responseBody);\r",
+                            "pm.collectionVariables.set(\"access-token\", data.access_token);"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }],
+                "request": {
+                    "method": "POST",
+                    "header": [{
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                        },
+                        {
+                            "key": "Cookie",
+                            "value": "d70c4b71d548cdbd2b531dc96408ca96=86b7432f4a100650ebec8b640f28a1d6"
+                        }
+                    ],
+                    "body": {
+                        "mode": "urlencoded",
+                        "urlencoded": [{
+                                "key": "grant_type",
+                                "value": "client_credentials",
+                                "type": "text"
+                            },
+                            {
+                                "key": "client_id",
+                                "value": "{{client-id}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "client_secret",
+                                "value": "{{client-secret}}",
+                                "type": "text"
+                            },
+                            {
+                                "key": "scope",
+                                "value": "marketplace_apis",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    "url": "{{base-url}}/oauth2security/oauth2/token"
+                },
+                "response": []
+            }]
+        },
+        {
+            "name": "Corporate CIC Inquiry",
+            "item": [{
+                "name": "Customer Basic Data",
+                "request": {
+                    "auth": {
+                        "type": "bearer",
+                        "bearer": {
+                            "token": "{{access-token}}"
+                        }
+                    },
+                    "method": "GET",
+                    "header": [{
+                            "key": "x-request-id",
+                            "value": "{{$guid}}",
+                            "type": "text"
+                        },
+                        {
+                            "key": "accept-language",
+                            "value": "EN",
+                            "type": "text"
+                        }
+                    ],
+                    "url": {
+                        "raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
+                        "host": [
+                            "{{base-url}}"
+                        ],
+                        "path": [
+                            "mp-corporate",
+                            "v1",
+                            "inquire",
+                            ":ReferenceId"
+                        ],
+                        "query": [{
+                                "key": "customerStatus",
+                                "value": "1"
+                            },
+                            {
+                                "key": "page",
+                                "value": "1"
+                            },
+                            {
+                                "key": "pageSize",
+                                "value": "10"
+                            }
+                        ],
+                        "variable": [{
+                            "key": "ReferenceId",
+                            "value": "7003259999"
+                        }]
+                    }
+                },
+                "response": [{
+                        "name": "Customer Basic Data",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "accept-language",
+                                    "value": "EN",
+                                    "type": "text"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-corporate",
+                                    "v1",
+                                    "inquire",
+                                    ":ReferenceId"
+                                ],
+                                "query": [{
+                                        "key": "customerStatus",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "page",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "pageSize",
+                                        "value": "10"
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "ReferenceId",
+                                    "value": "7003259999"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "f30b96e3-8b78-451d-9ff7-01ab8a839a90"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a885410134ab02"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,99;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Sun, 09 Feb 2025 10:36:50 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"46abecaa-55f2-4c55-9f59-cb051587d7b7\",\n        \"StatusDescription\": \"Successful Operation\"\n    },\n    \"Links\": {\n        \"Self\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7003259999?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 0\n    }\n}"
+                    },
+                    {
+                        "name": "Customer Basic Data",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "accept-language",
+                                    "value": "EN",
+                                    "type": "text"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-corporate",
+                                    "v1",
+                                    "inquire",
+                                    ":ReferenceId"
+                                ],
+                                "query": [{
+                                        "key": "customerStatus",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "page",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "pageSize",
+                                        "value": "10"
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "ReferenceId",
+                                    "value": "7049409151"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "970f7551-bef7-44ee-ad97-fe401157e559"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a8855e0134ac52"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,98;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Sun, 09 Feb 2025 10:37:18 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"7b5422bd-5ab6-4794-80f2-42ed30ce59e4\",\n        \"StatusDescription\": \"Successful Operation\",\n        \"CustomerInformationList\": [\n            {\n                \"CICNumber\": \"0000000003172389\",\n                \"FirstNameEn\": \"TDM ARB COMPANY LTD\",\n                \"FirstNameAr\": \"لغص\",\n                \"CustomerSinceDate\": \"1999-10-23\",\n                \"IdNumber\": \"7049409151\",\n                \"IdType\": \"X\",\n                \"CustomerType\": \"D\",\n                \"customerStatus\": \"1\",\n                \"GregExpiryDate\": \"2025-03-14\"\n            }\n        ]\n    },\n    \"Links\": {\n        \"Self\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1\",\n        \"First\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1\",\n        \"Last\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 1\n    }\n}"
+                    },
+                    {
+                        "name": "Customer Basic Data",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "accept-language",
+                                    "value": "EN",
+                                    "type": "text"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-corporate",
+                                    "v1",
+                                    "inquire",
+                                    ":ReferenceId"
+                                ],
+                                "query": [{
+                                        "key": "customerStatus",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "page",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "pageSize",
+                                        "value": "10"
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "ReferenceId",
+                                    "value": "7008871653"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "570c241a-2219-489f-ae06-833f800660ec"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a8858d0134afe2"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,97;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Sun, 09 Feb 2025 10:38:06 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"1cbea605-2b1b-4b19-a05a-41c0665b5f2c\",\n        \"StatusDescription\": \"Successful Operation\"\n    },\n    \"Links\": {\n        \"Self\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7008871653?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 0\n    }\n}"
+                    },
+                    {
+                        "name": "Customer Basic Data",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "accept-language",
+                                    "value": "EN",
+                                    "type": "text"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-corporate",
+                                    "v1",
+                                    "inquire",
+                                    ":ReferenceId"
+                                ],
+                                "query": [{
+                                        "key": "customerStatus",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "page",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "pageSize",
+                                        "value": "10"
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "ReferenceId",
+                                    "value": "4010579298"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "0ac41201-c370-4448-9ad5-c9aa78409563"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a885ab006309a3"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,96;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Sun, 09 Feb 2025 10:38:35 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"97d06af3-cf87-403e-b417-a568669a64d6\",\n        \"StatusDescription\": \"Successful Operation\"\n    },\n    \"Links\": {\n        \"Self\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/4010579298?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 0\n    }\n}"
+                    },
+                    {
+                        "name": "Customer Basic Data",
+                        "originalRequest": {
+                            "method": "GET",
+                            "header": [{
+                                    "key": "x-request-id",
+                                    "value": "{{$guid}}",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "accept-language",
+                                    "value": "EN",
+                                    "type": "text"
+                                }
+                            ],
+                            "url": {
+                                "raw": "{{base-url}}/mp-corporate/v1/inquire/:ReferenceId?customerStatus=1&page=1&pageSize=10",
+                                "host": [
+                                    "{{base-url}}"
+                                ],
+                                "path": [
+                                    "mp-corporate",
+                                    "v1",
+                                    "inquire",
+                                    ":ReferenceId"
+                                ],
+                                "query": [{
+                                        "key": "customerStatus",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "page",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "key": "pageSize",
+                                        "value": "10"
+                                    }
+                                ],
+                                "variable": [{
+                                    "key": "ReferenceId",
+                                    "value": "1319327313"
+                                }]
+                            }
+                        },
+                        "status": "OK",
+                        "code": 200,
+                        "_postman_previewlanguage": "json",
+                        "header": [{
+                                "key": "Connection",
+                                "value": "Keep-Alive"
+                            },
+                            {
+                                "key": "Transfer-Encoding",
+                                "value": "chunked"
+                            },
+                            {
+                                "key": "content-type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "x-request-id",
+                                "value": "e07ae015-3495-46ee-be13-6604b2be4717"
+                            },
+                            {
+                                "key": "X-Global-Transaction-ID",
+                                "value": "757dc76c67a885b30134b9f2"
+                            },
+                            {
+                                "key": "X-RateLimit-Limit",
+                                "value": "name=default,100;"
+                            },
+                            {
+                                "key": "X-RateLimit-Remaining",
+                                "value": "name=default,95;"
+                            },
+                            {
+                                "key": "Date",
+                                "value": "Sun, 09 Feb 2025 10:38:43 GMT"
+                            },
+                            {
+                                "key": "Content-Encoding",
+                                "value": "gzip"
+                            }
+                        ],
+                        "cookie": [],
+                        "body": "{\n    \"Data\": {\n        \"StatusCode\": \"I000000\",\n        \"RequestID\": \"5a5b2917-b3b1-41fd-9a00-2823778d2a71\",\n        \"StatusDescription\": \"Successful Operation\",\n        \"CustomerInformationList\": [\n            {\n                \"CICNumber\": \"0000000125128531\",\n                \"FirstNameEn\": \"EJADA COMPANY LTD\",\n                \"FirstNameAr\": \"???\",\n                \"CustomerSinceDate\": \"2024-04-18\",\n                \"IdNumber\": \"1319327313\",\n                \"IdType\": \"@\",\n                \"CustomerType\": \"D\",\n                \"customerStatus\": \"1\",\n                \"GregExpiryDate\": \"2026-02-20\"\n            }\n        ]\n    },\n    \"Links\": {\n        \"Self\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/1319327313?customerStatus=1&pageSize=10&page=1\",\n        \"First\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/1319327313?customerStatus=1&pageSize=10&page=1\",\n        \"Last\": \"https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/1319327313?customerStatus=1&pageSize=10&page=1\"\n    },\n    \"Meta\": {\n        \"TotalPages\": 1\n    }\n}"
+                    }
+                ]
+            }]
+        }
+    ],
+    "event": [{
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [{
+            "key": "base-url",
+            "value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+            "type": "string"
+        },
+        {
+            "key": "client-id",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "client-secret",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "access-token",
+            "value": "",
+            "type": "string"
+        }
+    ]
 }

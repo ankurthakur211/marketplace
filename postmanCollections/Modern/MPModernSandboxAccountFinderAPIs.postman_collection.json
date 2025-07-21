@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d1d70fa5-a72d-46f4-8a9c-a2b6146c205d",
+		"_postman_id": "62c1a72f-7230-4cca-9e69-65729c66a403",
 		"name": "MP Modern Sandbox Account Finder APIs",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "22086553",
-		"_collection_link": "https://speeding-water-900262.postman.co/workspace/Modern-Sandbox~54d8660f-9568-4428-bcb2-e6d7c82cb248/collection/22086553-d1d70fa5-a72d-46f4-8a9c-a2b6146c205d?action=share&source=collection_link&creator=22086553"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32018122"
 	},
 	"item": [
 		{
@@ -56,7 +55,17 @@
 								}
 							]
 						},
-						"url": "{{base-url}}/oauth2security/oauth2/token"
+						"url": {
+							"raw": "{{base-url}}/oauth2security/oauth2/token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
 					},
 					"response": []
 				}
@@ -70,9 +79,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
@@ -85,7 +98,17 @@
 								}
 							}
 						},
-						"url": "{{base-url}}/mp-account-finder/v1/activate"
+						"url": {
+							"raw": "{{base-url}}/mp-account-finder/v1/activate",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-account-finder",
+								"v1",
+								"activate"
+							]
+						}
 					},
 					"response": [
 						{
@@ -102,7 +125,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/activate"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/activate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"activate"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -158,7 +191,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/activate"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/activate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"activate"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -214,7 +257,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/activate"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/activate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"activate"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -270,7 +323,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/activate"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/activate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"activate"
+									]
+								}
 							},
 							"status": "Bad request",
 							"code": 400,
@@ -330,7 +393,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/activate"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/activate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"activate"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -386,7 +459,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/activate"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/activate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"activate"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -442,7 +525,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/activate"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/activate",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"activate"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -491,9 +584,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -724,9 +821,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [
@@ -1131,9 +1232,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{access-token}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [
@@ -1161,7 +1266,17 @@
 								}
 							}
 						},
-						"url": "{{base-url}}/mp-account-finder/v1/outwards-verification",
+						"url": {
+							"raw": "{{base-url}}/mp-account-finder/v1/outwards-verification",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"mp-account-finder",
+								"v1",
+								"outwards-verification"
+							]
+						},
 						"description": "This path is used to initiate outwards account verification."
 					},
 					"response": [
@@ -1194,7 +1309,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/outwards-verification"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/outwards-verification",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"outwards-verification"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -1265,7 +1390,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/outwards-verification"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/outwards-verification",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"outwards-verification"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -1336,7 +1471,17 @@
 										}
 									}
 								},
-								"url": "{{base-url}}/mp-account-finder/v1/outwards-verification"
+								"url": {
+									"raw": "{{base-url}}/mp-account-finder/v1/outwards-verification",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mp-account-finder",
+										"v1",
+										"outwards-verification"
+									]
+								}
 							},
 							"status": "No Content",
 							"code": 204,
@@ -1406,7 +1551,7 @@
 	"variable": [
 		{
 			"key": "base-url",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
 			"type": "string"
 		},
 		{

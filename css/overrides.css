@@ -19812,13 +19812,11 @@ body.context--BusinessDomains .apicMainContent {
     }
 }
 
-.apic-user-form-login
-{
+.apic-user-form-login {
     visibility: hidden;
 }
 
-#searchbardomains
-{
+#searchbardomains {
     width: 90%;
     padding: 10px 11px;
     font-size: 14px;
@@ -19826,8 +19824,10 @@ body.context--BusinessDomains .apicMainContent {
     outline: none;
     margin-top: 16px;
     margin-left: 20px;
-    transition: 0.3s ;
+    transition: 0.3s;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    font-size: 18px;
+    color: #5464f2;
 }
 
 
@@ -23883,6 +23883,34 @@ li.elipsis-names.createorg {
     .products-businessbox.custom-business-domainpage .Products-business-field-background .product-subtext {
         font-size: 42px;
     }
+}
+
+.noapptext {
+    font-size: 20px;
+    max-width: 585px;
+    line-height: 32.4px;
+}
+
+.application-unsubscribe-form div#edit-actions button {
+    width: max-content;
+    border-radius: 9px !important;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.application-unsubscribe-form a#edit-cancel {
+    width: max-content;
+    padding: 20px;
+    margin-top: unset;
+    border-radius: 9px;
+}
+
+section#block-marketplace-latest-exposedformsearch-apipage-1 {
+    display: none;
 }
 
 

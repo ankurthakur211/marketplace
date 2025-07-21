@@ -1,408 +1,392 @@
 {
-	"info": {
-		"_postman_id": "3a2202f5-df60-40a2-97ee-525d24193dba",
-		"name": "MP Modern Sandbox Customer VIBAN Topup",
-		"description": "Customer VIBAN Topup Eligibility Validate For ARG API Documentation",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "23110150"
-	},
-	"item": [
-		{
-			"name": "generate token",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var data = JSON.parse(responseBody);\r",
-							"pm.collectionVariables.set(\"access_token\", data.access_token);"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/x-www-form-urlencoded"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "grant_type",
-							"value": "client_credentials",
-							"type": "text"
-						},
-						{
-							"key": "client_id",
-							"value": "009407e30165d8f05d554e336acb0b26",
-							"type": "text"
-						},
-						{
-							"key": "client_secret",
-							"value": "efc9584a7ff25456423a532040ebbd42",
-							"type": "text"
-						},
-						{
-							"key": "scope",
-							"value": "marketplace_apis",
-							"type": "text"
-						}
-					]
-				},
-				"url": "{{baseUrl}}/oauth2security/oauth2/token",
-				"description": "Generated from cURL: curl --location 'https://api-gateway.apic1005.ejada.com/apimarketplace-dev/api-marketplace-dev/oauth2security/oauth2/token' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'grant_type=client_credentials' \\\n--data-urlencode 'scope=marketplace_apis' \\\n--data-urlencode 'client_id=d02c19954bda615b8f2cd12583183b52' \\\n--data-urlencode 'client_secret=2783abcb79d95178ad42dfad1ae4432e'"
-			},
-			"response": []
-		},
-		{
-			"name": "Customer VIBAN Topup Eligibility Validate For ARGG",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "{{access_token}}"
-					}
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "x-request-id",
-						"value": "${{$guid}}",
-						"description": "(Required) unique identifier for request"
-					},
-					{
-						"key": "accept-language",
-						"value": "en",
-						"description": "could be EN for english  or AR for Arabic",
-						"disabled": true
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"Data\": {\n        \"TargetPOI\": {\n            \"POINumber\": \"2303849687\",\n            \"POIType\": \"IQA\"\n        }\n    }\n}",
-					"options": {
-						"raw": {
-							"headerFamily": "json",
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{baseUrl}}/mp-viban-topup-eligibility/v1/validation"
-			},
-			"response": [
-				{
-					"name": "Customer VIBAN Topup Eligibility Validate For ARGG",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-request-id",
-								"value": "${{$guid}}",
-								"description": "(Required) unique identifier for request"
-							},
-							{
-								"key": "accept-language",
-								"value": "en",
-								"description": "could be EN for english  or AR for Arabic",
-								"disabled": true
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"Data\": {\n        \"TargetPOI\": {\n            \"POINumber\": \"2252501971\",\n            \"POIType\": \"IQA\"\n        }\n    }\n}",
-							"options": {
-								"raw": {
-									"headerFamily": "json",
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/mp-viban-topup-eligibility/v1/validation"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "Keep-Alive"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "content-type",
-							"value": "application/json"
-						},
-						{
-							"key": "x-request-id",
-							"value": "$7dbc17f6-b3ab-487c-815b-8e865c31534f"
-						},
-						{
-							"key": "X-Global-Transaction-ID",
-							"value": "757dc76c67ab652d012458d0"
-						},
-						{
-							"key": "X-RateLimit-Limit",
-							"value": "name=default,100;"
-						},
-						{
-							"key": "X-RateLimit-Remaining",
-							"value": "name=default,96;"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 11 Feb 2025 14:56:45 GMT"
-						},
-						{
-							"key": "Content-Encoding",
-							"value": "gzip"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Data\": {\n        \"Wallets\": [\n            {\n                \"WalletNumber\": \"10018\",\n                \"VirtualIBAN\": \"SA1780200010018221234016\",\n                \"Alias\": \"Main\"\n            }\n        ]\n    }\n}"
-				},
-				{
-					"name": "Customer VIBAN Topup Eligibility Validate For ARGG",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-request-id",
-								"value": "${{$guid}}",
-								"description": "(Required) unique identifier for request"
-							},
-							{
-								"key": "accept-language",
-								"value": "en",
-								"description": "could be EN for english  or AR for Arabic",
-								"disabled": true
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"Data\": {\n        \"TargetPOI\": {\n            \"POINumber\": \"1079448994\",\n            \"POIType\": \"NAT\"\n        }\n    }\n}",
-							"options": {
-								"raw": {
-									"headerFamily": "json",
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/mp-viban-topup-eligibility/v1/validation"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "Keep-Alive"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "content-type",
-							"value": "application/json"
-						},
-						{
-							"key": "x-request-id",
-							"value": "$10212cef-98c0-4784-bdd3-076359cac47e"
-						},
-						{
-							"key": "X-Global-Transaction-ID",
-							"value": "757dc76c67ac67b201952102"
-						},
-						{
-							"key": "X-RateLimit-Limit",
-							"value": "name=default,100;"
-						},
-						{
-							"key": "X-RateLimit-Remaining",
-							"value": "name=default,99;"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 12 Feb 2025 09:19:46 GMT"
-						},
-						{
-							"key": "Content-Encoding",
-							"value": "gzip"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Data\": {\n        \"Alias\": \"Main\",\n        \"VirtualIBAN\": \"SA7798012000000110197857\",\n        \"WalletNumber\": \"12345\"\n    }\n}"
-				},
-				{
-					"name": "Customer VIBAN Topup Eligibility Validate For ARGG",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-request-id",
-								"value": "${{$guid}}",
-								"description": "(Required) unique identifier for request"
-							},
-							{
-								"key": "accept-language",
-								"value": "en",
-								"description": "could be EN for english  or AR for Arabic",
-								"disabled": true
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"Data\": {\n        \"TargetPOI\": {\n            \"POINumber\": \"2303849687\",\n            \"POIType\": \"IQA\"\n        }\n    }\n}",
-							"options": {
-								"raw": {
-									"headerFamily": "json",
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/mp-viban-topup-eligibility/v1/validation"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "Keep-Alive"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "content-type",
-							"value": "application/json"
-						},
-						{
-							"key": "x-request-id",
-							"value": "$10212cef-98c0-4784-bdd3-076359cac47e"
-						},
-						{
-							"key": "X-Global-Transaction-ID",
-							"value": "757dc76c67ac67b201952102"
-						},
-						{
-							"key": "X-RateLimit-Limit",
-							"value": "name=default,100;"
-						},
-						{
-							"key": "X-RateLimit-Remaining",
-							"value": "name=default,99;"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 12 Feb 2025 09:19:46 GMT"
-						},
-						{
-							"key": "Content-Encoding",
-							"value": "gzip"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"Data\": {\n        \"Alias\": \"Main\",\n        \"VirtualIBAN\": \"SA7798012000000110197857\",\n        \"WalletNumber\": \"12345\"\n    }\n}"
-				}
-			]
-		}
-	],
-	"auth": {
-		"type": "oauth2",
-		"oauth2": {
-			"scope": "marketplace_apis",
-			"accessTokenUrl": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/oauth2security/oauth2/token",
-			"grant_type": "client_credentials"
-		}
-	},
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "access_token",
-			"value": ""
-		},
-		{
-			"key": "baseUrl",
-			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox",
-			"type": "string"
-		},
-		{
-			"key": "client_id",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "client_secret",
-			"value": "",
-			"type": "string"
-		}
-	]
+    "info": {
+        "_postman_id": "3a2202f5-df60-40a2-97ee-525d24193dba",
+        "name": "MP Modern Sandbox Customer VIBAN Topup",
+        "description": "Customer VIBAN Topup Eligibility Validate For ARG API Documentation",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+        "_exporter_id": "23110150"
+    },
+    "item": [{
+            "name": "generate token",
+            "event": [{
+                "listen": "test",
+                "script": {
+                    "exec": [
+                        "var data = JSON.parse(responseBody);\r",
+                        "pm.collectionVariables.set(\"access_token\", data.access_token);"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                }
+            }],
+            "request": {
+                "method": "POST",
+                "header": [{
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                }],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [{
+                            "key": "grant_type",
+                            "value": "client_credentials",
+                            "type": "text"
+                        },
+                        {
+                            "key": "client_id",
+                            "value": "009407e30165d8f05d554e336acb0b26",
+                            "type": "text"
+                        },
+                        {
+                            "key": "client_secret",
+                            "value": "efc9584a7ff25456423a532040ebbd42",
+                            "type": "text"
+                        },
+                        {
+                            "key": "scope",
+                            "value": "marketplace_apis",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": "{{baseUrl}}/oauth2security/oauth2/token",
+                "description": "Generated from cURL: curl --location 'https://api-gateway.apic1005.ejada.com/apimarketplace-dev/api-marketplace-dev/oauth2security/oauth2/token' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'grant_type=client_credentials' \\\n--data-urlencode 'scope=marketplace_apis' \\\n--data-urlencode 'client_id=d02c19954bda615b8f2cd12583183b52' \\\n--data-urlencode 'client_secret=2783abcb79d95178ad42dfad1ae4432e'"
+            },
+            "response": []
+        },
+        {
+            "name": "Customer VIBAN Topup Eligibility Validate For ARGG",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": {
+                        "token": "{{access_token}}"
+                    }
+                },
+                "method": "POST",
+                "header": [{
+                        "key": "x-request-id",
+                        "value": "${{$guid}}",
+                        "description": "(Required) unique identifier for request"
+                    },
+                    {
+                        "key": "accept-language",
+                        "value": "en",
+                        "description": "could be EN for english  or AR for Arabic",
+                        "disabled": true
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"Data\": {\n        \"TargetPOI\": {\n            \"POINumber\": \"2303849687\",\n            \"POIType\": \"IQA\"\n        }\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "headerFamily": "json",
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": "{{baseUrl}}/mp-viban-topup-eligibility/v1/validation"
+            },
+            "response": [{
+                    "name": "Customer VIBAN Topup Eligibility Validate For ARGG",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [{
+                                "key": "x-request-id",
+                                "value": "${{$guid}}",
+                                "description": "(Required) unique identifier for request"
+                            },
+                            {
+                                "key": "accept-language",
+                                "value": "en",
+                                "description": "could be EN for english  or AR for Arabic",
+                                "disabled": true
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "disabled": true
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"Data\": {\n        \"TargetPOI\": {\n            \"POINumber\": \"2252501971\",\n            \"POIType\": \"IQA\"\n        }\n    }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "{{baseUrl}}/mp-viban-topup-eligibility/v1/validation"
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [{
+                            "key": "Connection",
+                            "value": "Keep-Alive"
+                        },
+                        {
+                            "key": "Transfer-Encoding",
+                            "value": "chunked"
+                        },
+                        {
+                            "key": "content-type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "x-request-id",
+                            "value": "$7dbc17f6-b3ab-487c-815b-8e865c31534f"
+                        },
+                        {
+                            "key": "X-Global-Transaction-ID",
+                            "value": "757dc76c67ab652d012458d0"
+                        },
+                        {
+                            "key": "X-RateLimit-Limit",
+                            "value": "name=default,100;"
+                        },
+                        {
+                            "key": "X-RateLimit-Remaining",
+                            "value": "name=default,96;"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Tue, 11 Feb 2025 14:56:45 GMT"
+                        },
+                        {
+                            "key": "Content-Encoding",
+                            "value": "gzip"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"Data\": {\n        \"Wallets\": [\n            {\n                \"WalletNumber\": \"10018\",\n                \"VirtualIBAN\": \"SA1780200010018221234016\",\n                \"Alias\": \"Main\"\n            }\n        ]\n    }\n}"
+                },
+                {
+                    "name": "Customer VIBAN Topup Eligibility Validate For ARGG",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [{
+                                "key": "x-request-id",
+                                "value": "${{$guid}}",
+                                "description": "(Required) unique identifier for request"
+                            },
+                            {
+                                "key": "accept-language",
+                                "value": "en",
+                                "description": "could be EN for english  or AR for Arabic",
+                                "disabled": true
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "disabled": true
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"Data\": {\n        \"TargetPOI\": {\n            \"POINumber\": \"1079448994\",\n            \"POIType\": \"NAT\"\n        }\n    }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "{{baseUrl}}/mp-viban-topup-eligibility/v1/validation"
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [{
+                            "key": "Connection",
+                            "value": "Keep-Alive"
+                        },
+                        {
+                            "key": "Transfer-Encoding",
+                            "value": "chunked"
+                        },
+                        {
+                            "key": "content-type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "x-request-id",
+                            "value": "$10212cef-98c0-4784-bdd3-076359cac47e"
+                        },
+                        {
+                            "key": "X-Global-Transaction-ID",
+                            "value": "757dc76c67ac67b201952102"
+                        },
+                        {
+                            "key": "X-RateLimit-Limit",
+                            "value": "name=default,100;"
+                        },
+                        {
+                            "key": "X-RateLimit-Remaining",
+                            "value": "name=default,99;"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Wed, 12 Feb 2025 09:19:46 GMT"
+                        },
+                        {
+                            "key": "Content-Encoding",
+                            "value": "gzip"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"Data\": {\n        \"Alias\": \"Main\",\n        \"VirtualIBAN\": \"SA7798012000000110197857\",\n        \"WalletNumber\": \"12345\"\n    }\n}"
+                },
+                {
+                    "name": "Customer VIBAN Topup Eligibility Validate For ARGG",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [{
+                                "key": "x-request-id",
+                                "value": "${{$guid}}",
+                                "description": "(Required) unique identifier for request"
+                            },
+                            {
+                                "key": "accept-language",
+                                "value": "en",
+                                "description": "could be EN for english  or AR for Arabic",
+                                "disabled": true
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "disabled": true
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"Data\": {\n        \"TargetPOI\": {\n            \"POINumber\": \"2303849687\",\n            \"POIType\": \"IQA\"\n        }\n    }\n}",
+                            "options": {
+                                "raw": {
+                                    "headerFamily": "json",
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "{{baseUrl}}/mp-viban-topup-eligibility/v1/validation"
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [{
+                            "key": "Connection",
+                            "value": "Keep-Alive"
+                        },
+                        {
+                            "key": "Transfer-Encoding",
+                            "value": "chunked"
+                        },
+                        {
+                            "key": "content-type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "x-request-id",
+                            "value": "$10212cef-98c0-4784-bdd3-076359cac47e"
+                        },
+                        {
+                            "key": "X-Global-Transaction-ID",
+                            "value": "757dc76c67ac67b201952102"
+                        },
+                        {
+                            "key": "X-RateLimit-Limit",
+                            "value": "name=default,100;"
+                        },
+                        {
+                            "key": "X-RateLimit-Remaining",
+                            "value": "name=default,99;"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Wed, 12 Feb 2025 09:19:46 GMT"
+                        },
+                        {
+                            "key": "Content-Encoding",
+                            "value": "gzip"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"Data\": {\n        \"Alias\": \"Main\",\n        \"VirtualIBAN\": \"SA7798012000000110197857\",\n        \"WalletNumber\": \"12345\"\n    }\n}"
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "oauth2",
+        "oauth2": {
+            "scope": "marketplace_apis",
+            "accessTokenUrl": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/oauth2security/oauth2/token",
+            "grant_type": "client_credentials"
+        }
+    },
+    "event": [{
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [{
+            "key": "access_token",
+            "value": ""
+        },
+        {
+            "key": "baseUrl",
+            "value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound",
+            "type": "string"
+        },
+        {
+            "key": "client_id",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "client_secret",
+            "value": "",
+            "type": "string"
+        }
+    ]
 }

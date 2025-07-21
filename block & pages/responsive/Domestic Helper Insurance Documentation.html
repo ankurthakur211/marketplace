@@ -11,9 +11,7 @@
 
                     <p class="fob-welcome-line">&nbsp;</p>
 
-                    <p class="fob-welcome-text">The primary objective of this project is to enable ART to avail applying
-                        for Domestic Helper Insurance policies through API Marketplace. This product allow ARB customers
-                        to apply for domestic helper Insurance through ARB Mobile app.</p>
+                    <p class="fob-welcome-text">The primary objective of this project is to enable ART to avail applying for Domestic Helper Insurance policies through API Marketplace. This product allow ARB customers to apply for domestic helper Insurance through ARB Mobile app.</p>
                 </div>
 
                 <div class="rightside-sec">
@@ -21,10 +19,8 @@
                 </div>
             </div>
 
-            <div class="d-flex btn-box"><a class="primary-btn" download=""
-                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxDomesticHelperInsuranceInboundAPIs.postman_collection.json"
-                    id="downloadLink">Download Postman Collection</a> <a class="primary-btn" download=""
-                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/MPDomesticHelperSampleRequestData.xlsx">Download
+            <div class="d-flex btn-box"><a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxDomesticHelperInsuranceInboundAPIs.postman_collection.json"
+                    id="downloadLink">Download Postman Collection</a> <a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/MPDomesticHelperSampleRequestData.xlsx">Download
                     Sample Data</a></div>
         </div>
     </div>
@@ -34,8 +30,7 @@
             <h1 class="fob-welcome-title">Domestic Helper Insurance Workflow</h1>
 
             <p class="motoinsu-image">&nbsp;</p>
-            <a class="fob-product-title-click"
-                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/DomesticHelperInsuranceFlowDiagram.pdf"
+            <a class="fob-product-title-click" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/DomesticHelperInsuranceFlowDiagram.pdf"
                 rel="noopener" target="_blank">Click here </a>
         </div>
     </div>
@@ -44,7 +39,8 @@
         <div class="container">
             <p class="main-heading">APIs</p>
 
-            <div class="bx--snippet-container body" data-testid="expandable-example-display"><!-- API 1 -->
+            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                <!-- API 1 -->
                 <div class="api-infosec">
                     <h1 class="fob-welcome-title" id="section-2">Create Customer</h1>
 
@@ -55,8 +51,7 @@
                     <p class="fob-welcome-text">This operation is used to create customer in Domestic Helper Insurance.
                     </p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fcustomers/post">Swagger
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fcustomers/post">Swagger
                             Link</a></p>
 
                     <div class="requestURL-box">
@@ -82,14 +77,13 @@
                                 </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Create-Customer-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Create-Customer-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                     <code id="Create-Customer-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/customers' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/customers' \
     --header 'x-request-id: $cbddb672-57d3-4e53-a869-3f9200ac65ed' \
     --header 'accept-language: EN' \
     --header 'Content-Type: application/json' \
@@ -115,12 +109,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Create-Customer')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Create-Customer2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Create-Customer3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Customer')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Customer2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Customer3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -171,12 +162,10 @@
 
                     <p class="fob-welcome-text">Endpoint: POST: /mp-domestic-helper/v1/members/{ReferenceId}</p>
 
-                    <p class="fob-welcome-text">This operation is used to create quotation if not created and add
-                        member.</p>
+                    <p class="fob-welcome-text">This operation is used to create quotation if not created and add member.
+                    </p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}/post"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}/post" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -205,14 +194,13 @@
                         </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Add-Member-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Add-Member-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                             <code id="Add-Member-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members/U2FsdGVkX19hLusB2Zqjsmf8phxsRWtOmrQn%2BuHyqIM%3D?transactionId=dh_policies_purchase' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/members/U2FsdGVkX19hLusB2Zqjsmf8phxsRWtOmrQn%2BuHyqIM%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $dad711a8-327d-48a0-bcbb-d53a04082d21' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
@@ -235,12 +223,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Add-Member')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Add-Member2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Add-Member3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Add-Member')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Add-Member2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Add-Member3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -350,9 +335,7 @@
 
                     <p class="fob-welcome-text">This operation is used to insert the members in bulk.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers-bulk%2F{ReferenceId}/post"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers-bulk%2F{ReferenceId}/post" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -392,14 +375,13 @@
                           </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Insert-bulk-member-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Insert-bulk-member-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                       <code id="Insert-bulk-member-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members-bulk/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/members-bulk/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $6d32f1b6-ffa9-4f54-83d6-57ae0d27620c' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
@@ -433,12 +415,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Insert-Bulk-Member')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Insert-Bulk-Member2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Insert-Bulk-Member3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Insert-Bulk-Member')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Insert-Bulk-Member2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Insert-Bulk-Member3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -545,9 +524,7 @@
 
                     <p class="fob-welcome-text">This operation is used to update the members in bulk.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers-bulk%2F{ReferenceId}/put"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers-bulk%2F{ReferenceId}/put" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -578,14 +555,13 @@
                                   </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Update-Members-In-Bulk-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Update-Members-In-Bulk-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                       <code id="Update-Members-In-Bulk-curl">
-    curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members-bulk/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location --request PUT 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/members-bulk/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $25ff9198-d97b-49e5-ac45-cfa5a54890f0' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
@@ -611,12 +587,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Members-In-Bulk')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Members-In-Bulk2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Members-In-Bulk3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Members-In-Bulk')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Members-In-Bulk2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Members-In-Bulk3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -747,9 +720,7 @@
 
                     <p class="fob-welcome-text">This operation is used to update Member class.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}%2F{MemberId}/put"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}%2F{MemberId}/put" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -777,14 +748,13 @@
                                   </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Update-Member-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Update-Member-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                       <code id="Update-Member-curl">
-    curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
+    curl --location --request PUT 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/members/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $484ebad7-995f-412f-aa9b-b8ff60ea3f73' \
     --data '{
     "Data": {
@@ -803,12 +773,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Member')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Member2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Member3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Member')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Member2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Member3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -933,14 +900,12 @@
 
                     <p class="fob-welcome-line">&nbsp;</p>
 
-                    <p class="fob-welcome-text">Endpoint: DELETE :
-                        /mp-domestic-helper/v1/members/{ReferenceId}/{MemberId}</p>
+                    <p class="fob-welcome-text">Endpoint: DELETE : /mp-domestic-helper/v1/members/{ReferenceId}/{MemberId}
+                    </p>
 
                     <p class="fob-welcome-text">This operation is used to delete member from quote.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}%2F{MemberId}/delete"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmembers%2F{ReferenceId}%2F{MemberId}/delete" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -961,14 +926,13 @@
                                   </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Delete-Member-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Delete-Member-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                       <code id="Delete-Member-curl">
-    curl --location --request DELETE 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/members/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
+    curl --location --request DELETE 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/members/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $7042a5b3-cbcf-4d26-bf04-e53dcdbfa81b' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
     }'
@@ -984,12 +948,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Delete-Member')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Delete-Member2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Delete-Member3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Delete-Member')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Delete-Member2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Delete-Member3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -1053,9 +1014,7 @@
 
                     <p class="fob-welcome-text">This operation is used to get all MDF questions.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmdf-questions/get"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmdf-questions/get" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -1072,14 +1031,13 @@
                                   </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('MDF-Questions-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('MDF-Questions-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                       <code id="MDF-Questions-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/mdf-questions?transactionId=dh_policies_purchase' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/mdf-questions?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $a3442ab0-3b15-488a-a673-bec2d1e4b285' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
                                       </code>
@@ -1094,12 +1052,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-MDF-Questions')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-MDF-Questions2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-MDF-Questions3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-MDF-Questions')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-MDF-Questions2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-MDF-Questions3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -1201,9 +1156,7 @@
 
                     <p class="fob-welcome-text">This operation is used to get gold rate history.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmdf-response%2F{ReferenceId}/put"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fmdf-response%2F{ReferenceId}/put" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -1239,14 +1192,13 @@
                               </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Save-MDF-Questions-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Save-MDF-Questions-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Save-MDF-Questions-curl">
-    curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/mdf-response/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location --request PUT 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/mdf-response/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $c833a0c0-d03d-4c30-969f-51f642ec6ea1' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
@@ -1277,12 +1229,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Save-MDF-Questions')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Save-MDF-Questions2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Save-MDF-Questions3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Save-MDF-Questions')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Save-MDF-Questions2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Save-MDF-Questions3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -1411,9 +1360,7 @@
 
                     <p class="fob-welcome-text">This operation is used to get quote details.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes/get"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes/get" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -1431,14 +1378,13 @@
                                 </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Retrieve-Quote-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Retrieve-Quote-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                     <code id="Retrieve-Quote-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/quotes?poiNumber=1054110125&amp;mobileNumber=552920838' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/quotes?poiNumber=1054110125&amp;mobileNumber=552920838' \
     --header 'x-request-id: 9b248985-52c0-4ca3-8ea6-61c0d9460099' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
     }'
@@ -1454,12 +1400,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Retrieve-Quote')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Retrieve-Quote2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Retrieve-Quote3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Retrieve-Quote')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Retrieve-Quote2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Retrieve-Quote3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -1516,9 +1459,7 @@
 
                     <p class="fob-welcome-text">This operation is used to calculate quotation premiums.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes%2F{ReferenceId}/get"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes%2F{ReferenceId}/get" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -1538,14 +1479,13 @@
                               </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Calculate-Quote-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Calculate-Quote-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Calculate-Quote-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/quotes/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/quotes/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $f1226278-664c-47d4-994d-178d1adb5f02' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
                                  </code>
@@ -1560,12 +1500,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Calculate-Quote')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Calculate-Quote2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Calculate-Quote3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Calculate-Quote')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Calculate-Quote2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Calculate-Quote3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -1673,9 +1610,7 @@
 
                     <p class="fob-welcome-text">This operation is used to to get quote details.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes-details%2F{ReferenceId}/get"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fquotes-details%2F{ReferenceId}/get" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -1695,14 +1630,13 @@
                               </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Quote-Details-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Quote-Details-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Quote-Details-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/quotes-details/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/quotes-details/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $76baabc6-cf35-4fa3-a8c5-ba6c74c2187f' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
                                   </code>
@@ -1717,12 +1651,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Quote-Details')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Quote-Details2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Quote-Details3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Quote-Details')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Quote-Details2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Quote-Details3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -1826,15 +1757,12 @@
 
                     <p class="fob-welcome-line">&nbsp;</p>
 
-                    <p class="fob-welcome-text">Endpoint: POST :
-                        /mp-domestic-helper/v1/documents/{ReferenceId}/{MemberId}</p>
+                    <p class="fob-welcome-text">Endpoint: POST : /mp-domestic-helper/v1/documents/{ReferenceId}/{MemberId}
+                    </p>
 
-                    <p class="fob-welcome-text">This operation is used to upload document for a member whose response is
-                        Yes for MDF question.</p>
+                    <p class="fob-welcome-text">This operation is used to upload document for a member whose response is Yes for MDF question.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}%2F{MemberId}/post"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}%2F{MemberId}/post" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -1858,14 +1786,13 @@
                               </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Upload-Document-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Upload-Document-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Upload-Document-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=123' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=123' \
     --header 'x-request-id: 28723456-d835-4c84-a52a-0a7a2789485b' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
     --form 'QuestionId="1001"' \
@@ -1883,12 +1810,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Upload-Document')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Upload-Document2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Upload-Document3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Upload-Document')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Upload-Document2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Upload-Document3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -1940,14 +1864,12 @@
 
                     <p class="fob-welcome-line">&nbsp;</p>
 
-                    <p class="fob-welcome-text">Endpoint: DELETE :
-                        /mp-domestic-helper/v1/documents/{ReferenceId}/{MemberId}</p>
+                    <p class="fob-welcome-text">Endpoint: DELETE : /mp-domestic-helper/v1/documents/{ReferenceId}/{MemberId}
+                    </p>
 
                     <p class="fob-welcome-text">This operation is used to delete the document.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}%2F{MemberId}/delete"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}%2F{MemberId}/delete" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -1968,14 +1890,13 @@
                               </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Delete-Document-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Delete-Document-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Delete-Document-curl">
-    curl --location --request DELETE 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
+    curl --location --request DELETE 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D/4306?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $8e697c9a-996d-40e0-8979-4a122b61ce9e' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
                                   </code>
@@ -1990,12 +1911,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Delete-Document')">204</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Delete-Document2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Delete-Document3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Delete-Document')">204</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Delete-Document2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Delete-Document3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -2042,12 +1960,9 @@
 
                     <p class="fob-welcome-text">Endpoint: GET : /mp-domestic-helper/v1/documents/{ReferenceId}</p>
 
-                    <p class="fob-welcome-text">This operation is used to get all the documents uploaded for the given
-                        reference Id.</p>
+                    <p class="fob-welcome-text">This operation is used to get all the documents uploaded for the given reference Id.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}/get"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fdocuments%2F{ReferenceId}/get" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -2067,14 +1982,13 @@
                               </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Get-All-Documents-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Get-All-Documents-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Get-All-Documents-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/documents/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $685d80a7-f4ed-43f3-9e82-e24bce9ff7e4' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
                                   </code>
@@ -2089,12 +2003,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Get-All-Documents')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Get-All-Documents2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Get-All-Documents3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Get-All-Documents')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Get-All-Documents2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Get-All-Documents3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -2156,9 +2067,7 @@
 
                     <p class="fob-welcome-text">This operation is used to get all service providers.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fservice-providers%2F{ReferenceId}/get"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fservice-providers%2F{ReferenceId}/get" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -2178,14 +2087,13 @@
                               </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Service-Providers-List-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Service-Providers-List-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Service-Providers-List-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/service-providers/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/service-providers/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $038db371-bb5b-400e-99b1-f607fa27cc3d' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
                                   </code>
@@ -2200,12 +2108,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Service-Providers-List')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Service-Providers-List2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Service-Providers-List3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Service-Providers-List')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Service-Providers-List2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Service-Providers-List3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -2437,9 +2342,7 @@
 
                     <p class="fob-welcome-text">This operation is used to update the last visited page of the user.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Flast-visited-page%2F{ReferenceId}/put"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Flast-visited-page%2F{ReferenceId}/put" id="downloadLink">Swagger Link</a></p>
 
                     <div class="requestURL-box">
                         <div class="request-box">
@@ -2465,14 +2368,13 @@
                               </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Update-Last-Visited-Page-curl')">
+                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Update-Last-Visited-Page-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Update-Last-Visited-Page-curl">
-    curl --location --request PUT 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/last-visited-page/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location --request PUT 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/last-visited-page/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $cff52dcc-544c-4a9d-8e47-5e9c48ce9869' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo' \
@@ -2493,12 +2395,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Last-Visited-Page')">204</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Last-Visited-Page2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Update-Last-Visited-Page3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Last-Visited-Page')">204</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Last-Visited-Page2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Update-Last-Visited-Page3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -2548,9 +2447,7 @@
 
                     <p class="fob-welcome-text">This operation is used to create the policy.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fpolicy%2F{ReferenceId}/post"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fpolicy%2F{ReferenceId}/post" id="downloadLink">Swagger Link</a></p>
 
 
                     <div class="requestURL-box">
@@ -2581,14 +2478,13 @@
                               </pre>
                         </div>
                         <div class="url-box">
-                            <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('create-policy-curl')">
+                            <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('create-policy-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                                   <code id="create-policy-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/policy/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/policy/U2FsdGVkX1%2BQoOFZwIbadQ0QNBdEcHqUkD0W272ybHo%3D?transactionId=dh_policies_purchase' \
     --header 'x-request-id: $7328b6a1-1c24-4170-b8c9-6f669fef7fbb' \
     --header 'Content-Type: application/json' \
     --data '{
@@ -2612,12 +2508,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Create-Policy')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Create-Policy2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Create-Policy3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
@@ -2671,9 +2564,7 @@
 
                     <p class="fob-welcome-text">This operation is used to to get plans.</p>
 
-                    <p class="fob-welcome-text"><a
-                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fplans/get"
-                            id="downloadLink">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2797/api/1693#/MPDomesticHelperInsurance_100/operation/%2Fplans/get" id="downloadLink">Swagger Link</a></p>
 
 
                     <div class="requestURL-box">
@@ -2688,14 +2579,13 @@
                               </pre>
                         </div>
                         <div class="url-box">
-                            <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                onclick="show('Get-Plans-curl')">
+                            <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Get-Plans-curl')">
                                 <p class="curlText">cURL</p>
                             </button>
 
                             <pre id="generatedCurl">
                                   <code id="Get-Plans-curl">
-    curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/mp-sandbox/mp-domestic-helper/v1/plans' \
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-domestic-helper/v1/plans' \
     --header 'x-request-id: $df1cabdd-f6cd-4c0a-9059-65dcd083e0c5' \
     --header 'accept-language: EN' \
     --header 'Authorization: Bearer AAIgMDA5NDA3ZTMwMTY1ZDhmMDVkNTU0ZTMzNmFjYjBiMjZLpIin7Yz4kAkE1Uv8RlBw3rFTKEOEIQPDiwIzg8N48ZH30Ow_GCUQk_PcRLNNJI7pC_SktX5ehmdXTgvYrypIKmxTdE6ixOvNGZ4X9qMJvn8GJS8OUL211Y-zYQ4160scbmNHVmy9bHQY-q6QLYdo'
@@ -2711,12 +2601,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
                                 <div class="response-box-div">
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Get-Plans')">200</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Get-Plans2')">400</a>
-                                    <a class="response-box-error" type="button"
-                                        onclick="responseText('response-Get-Plans3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Get-Plans')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Get-Plans2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-Get-Plans3')">401</a>
                                 </div>
 
                                 <pre class="response-box">
