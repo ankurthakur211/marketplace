@@ -10,6 +10,31 @@ class InviteUserController extends ControllerBase {
 
   public function submit(Request $request) {
     $data = json_decode($request->getContent(), true);
+    
+    
+    $errors = [];
+
+    // Check for empty or invalid fields
+    if (empty($data['user']['first_name']) || strlen(trim($data['user']['first_name'])) < 2) {
+        $errors[] = 'First name is required and should be at least 2 characters.';
+    }
+
+    if (empty($data['user']['last_name']) || strlen(trim($data['user']['last_name'])) < 2) {
+        $errors[] = 'Last name is required and should be at least 2 characters.';
+    }
+
+    if (empty($data['user']['email']) || !filter_var($data['user']['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'A valid email address is required.';
+    }
+
+    if (empty($data['consumer_org']['id']) || empty($data['consumer_org']['roles'][0])) {
+        $errors[] = 'Organization ID and at least one role are required.';
+    }
+
+    // If there are errors, return them
+    if (!empty($errors)) {
+        return new JsonResponse(['status' => 'error', 'messages' => $errors], 400);
+    }
 
     if (!$data) {
       return new JsonResponse(['error' => 'Invalid JSON'], 400);
