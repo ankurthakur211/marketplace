@@ -1284,7 +1284,10 @@ if (window.location.pathname.includes('/myorg/invite')) {
       <div id="roles-container">
         <p><strong>Select Role:</strong></p>
       </div>
+      <div class="invite-button">
       <button type="submit">Invite User</button>
+      <button type="reset">Cancel</button>
+      </div>
     `;
   
     const rolesContainer = newForm.querySelector('#roles-container');
@@ -1355,28 +1358,38 @@ if (window.location.pathname.includes('/myorg/invite')) {
         };
       
         fetch('/sandbox/invite-user-proxy', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        })
-          .then(response => {
-            if (!response.ok) throw new Error('Request failed');
-            return response.json();
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
           })
-          .then(data => {
-            alert('User invited successfully!');
-            newForm.reset();
-          })
-          .catch(error => {
-            alert('An error occurred while inviting the user.');
-            console.error('Error:', error);
-          })
-          .finally(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Invite User';
-          });
+            .then(async response => {
+              const data = await response.json();
+                if (!response.ok) {
+                    // Return the error response data
+                    throw data;
+                }
+                return data;
+            })
+            .then(data => {
+              alert('✅ User invited successfully!');
+              newForm.reset();
+            })
+            .catch(error => {
+              if (error.messages && Array.isArray(error.messages)) {
+                // Backend validation errors
+                alert('⚠️ ' + error.messages.join('\n'));
+              } else {
+                // Generic error
+                alert('An error occurred while inviting the user.');
+                console.error('Error:', error);
+              }
+            })
+            .finally(() => {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Invite User';
+            });
       });
   }
 });
