@@ -15161,7 +15161,7 @@ form#custom-invite-form input {
 
 .invite-button
 {
-    flex-direction: row;
+    flex-direction: row !important;
 }
 
 
