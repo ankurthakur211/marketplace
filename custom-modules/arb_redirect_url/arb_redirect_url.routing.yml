@@ -1,0 +1,7 @@
+arb_redirect_url.redirecturl:
+ path: '/redirect-url'
+ defaults: 
+   _controller: Drupal\arb_redirect_url\Controller\RedirectURLController::RedirectURL
+   _title: 'Redirect URL'
+ requirements:
+   _permission: 'access content'   
