@@ -40,7 +40,7 @@ class InviteUserController extends ControllerBase {
       return new JsonResponse(['error' => 'Invalid JSON'], 400);
     }
 
-    $target_url = 'https://sit.public.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-public-sit/portal/v1/users/invite-member';
+    $target_url = 'https://apimarketp-6419a8ad-gateway-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/apimarketplace-sit/sandbox-inbound/portal/v1/users/invite-member';
 
     // Prepare headers with client_id and client_secret
     $headers = [

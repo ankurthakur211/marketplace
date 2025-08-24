@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function user_role_body_class_preprocess_html(array &$variables) {
+  $current_user = \Drupal::currentUser();
+
+  // Check if the user is anonymous
+  if ($current_user->isAnonymous()) {
+    $variables['attributes']['class'][] = 'role-nouser';
+  }
+  else {
+    // Get all roles assigned to the current user
+    $roles = $current_user->getRoles();
+
+    // Add each role as a class in the format role-ROLE-NAME
+    foreach ($roles as $role) {
+      $variables['attributes']['class'][] = 'role-' . Html::getClass($role);
+    }
+  }
+}
