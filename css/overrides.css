@@ -19849,6 +19849,18 @@ body.context--BusinessDomains .apicMainContent {
     color: #5464f2;
 }
 
+.custom-productcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    list-style: none;
+    padding-left: 0;
+  }
+   
+  .custom-productcards  .grid{
+    width: calc(100% / 3 - 22px);
+  }
+
 
 /*updating home page feb ankiee*/
 
