@@ -723,48 +723,48 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {    
+document.addEventListener("DOMContentLoaded", function() {
     const signinLink = document.querySelector('a[href="/sandbox/user/login"]');
-        if (signinLink) {
-          signinLink.addEventListener("click", function () {
+    if (signinLink) {
+        signinLink.addEventListener("click", function() {
             localStorage.setItem("fromSigninButton", "true");
-          });
-        }
-     });
+        });
+    }
+});
 
-     document.addEventListener("DOMContentLoaded", function () {
-        const redirectFlag = localStorage.getItem("fromSigninButton");
-        if (redirectFlag === "true") {
-            
-            document.body.style.display = "none";
-          localStorage.removeItem("fromSigninButton");
-    
-           // Wait briefly, then trigger the Sign in with MFA button
-          setTimeout(() => {
+document.addEventListener("DOMContentLoaded", function() {
+    const redirectFlag = localStorage.getItem("fromSigninButton");
+    if (redirectFlag === "true") {
+
+        document.body.style.display = "none";
+        localStorage.removeItem("fromSigninButton");
+
+        // Wait briefly, then trigger the Sign in with MFA button
+        setTimeout(() => {
             const mfaButton = document.querySelector('a.registry-button.generic-button.button');
             if (mfaButton) {
-              mfaButton.click();
+                mfaButton.click();
             } else {
-              // Fallback in case button not found
-              console.warn("MFA button not found.");
-             // document.body.style.visibility = "visible";
-             
+                // Fallback in case button not found
+                console.warn("MFA button not found.");
+                // document.body.style.visibility = "visible";
+
             }
-          }, 100); // adjust delay if needed
-        } else {
-          // Normal page load
-          
-          const loginForm = document.querySelector(".apic-user-form-login");
-          if (loginForm !== null) {
+        }, 100); // adjust delay if needed
+    } else {
+        // Normal page load
+
+        const loginForm = document.querySelector(".apic-user-form-login");
+        if (loginForm !== null) {
             // Make the element visible if it was hidden using visibility
             loginForm.style.visibility = "visible";
-        
+
             // Optional: if it was hidden using display:none
             // loginForm.style.display = "block"; // or "flex", "inline-block", etc.
-          }
         }
-      });     
-    
+    }
+});
+
 
 
 
@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const oldUri = decodeURIComponent(redirectMatch[2]);
                 const newUri = oldUri.replace(
                     'https://test.developer.api-marketplace.alrajhibank.com.sa',
-                    'https://apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud'
+                    'https://apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank'
                 );
                 const newHref = originalHref.replace(redirectMatch[0], `${redirectMatch[1]}${encodeURIComponent(newUri)}`);
                 link.setAttribute('href', newHref);
@@ -1259,16 +1259,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-if (window.location.pathname.includes('/myorg/invite')) {
-    const originalForm = document.querySelector('#consumerorg-invite-user-form');
-    const roleRadios = originalForm.querySelectorAll('input[type="radio"][name="role"]');
-    const roleLabels = originalForm.querySelectorAll('label[for^="edit-role-"]');
-  
-    // Create a new custom form
-    const newForm = document.createElement('form');
-    newForm.id = 'custom-invite-form';
-  
-    newForm.innerHTML = `
+    if (window.location.pathname.includes('/myorg/invite')) {
+        const originalForm = document.querySelector('#consumerorg-invite-user-form');
+        const roleRadios = originalForm.querySelectorAll('input[type="radio"][name="role"]');
+        const roleLabels = originalForm.querySelectorAll('label[for^="edit-role-"]');
+
+        // Create a new custom form
+        const newForm = document.createElement('form');
+        newForm.id = 'custom-invite-form';
+
+        newForm.innerHTML = `
       <div>
         <label>First Name</label>
         <input type="text" id="first_name" required>
@@ -1289,109 +1289,113 @@ if (window.location.pathname.includes('/myorg/invite')) {
       <button type="reset">Cancel</button>
       </div>
     `;
-  
-    const rolesContainer = newForm.querySelector('#roles-container');
-  
-    roleRadios.forEach((originalRadio, index) => {
-      const newId = `custom-role-${index}`;
-  
-      const originalValue = originalRadio.value;
-      const orgId = originalValue.split('/orgs/')[1]?.split('/')[0] || '';
-      const roleId = originalValue.split('/roles/')[1]?.split('/')[0] || '';
-  
-      const radio = document.createElement('input');
-      radio.type = 'radio';
-      radio.name = 'user_role';
-      radio.id = newId;
-      radio.value = JSON.stringify({ orgId, roleId });
-  
-      const label = roleLabels[index] ? roleLabels[index].cloneNode(true) : null;
-      if (label) {
-        label.setAttribute('for', newId);
-      }
-  
-      const wrapper = document.createElement('div');
-      wrapper.appendChild(radio);
-      if (label) wrapper.appendChild(label);
-      rolesContainer.appendChild(wrapper);
-    });
-  
-    // Replace the old form completely with the new one
-    originalForm.replaceWith(newForm);
-  
-    newForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-      
-        const email = document.getElementById('email').value.trim();
-        const firstName = document.getElementById('first_name').value.trim();
-        const lastName = document.getElementById('last_name').value.trim();
-        const selectedRole = newForm.querySelector('input[name="user_role"]:checked');
-      
-        if (!selectedRole) {
-          alert('Please select a role.');
-          return;
-        }
-      
-        const submitBtn = newForm.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Inviting...';
-      
-        // Optional loader icon
-        let loader = document.createElement('span');
-        loader.className = 'loader';
-        loader.style.marginLeft = '10px';
-        loader.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`;
-        submitBtn.appendChild(loader);
-      
-        const { orgId, roleId } = JSON.parse(selectedRole.value);
-      
-        const payload = {
-          user: {
-            email: email,
-            first_name: firstName,
-            last_name: lastName
-          },
-          consumer_org: {
-            id: orgId,
-            roles: [roleId]
-          }
-        };
-      
-        fetch('/sandbox/invite-user-proxy', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-          })
-            .then(async response => {
-              const data = await response.json();
-                if (!response.ok) {
-                    // Return the error response data
-                    throw data;
+
+        const rolesContainer = newForm.querySelector('#roles-container');
+
+        roleRadios.forEach((originalRadio, index) => {
+            const newId = `custom-role-${index}`;
+
+            const originalValue = originalRadio.value;
+            const orgId = originalValue.split('/orgs/')[1] ?
+                originalValue.split('/orgs/')[1].split('/')[0] :
+                '';
+
+            const roleId = originalValue.split('/roles/')[1] ?
+                originalValue.split('/roles/')[1].split('/')[0] :
+                '';
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = 'user_role';
+            radio.id = newId;
+            radio.value = JSON.stringify({ orgId, roleId });
+
+            const label = roleLabels[index] ? roleLabels[index].cloneNode(true) : null;
+            if (label) {
+                label.setAttribute('for', newId);
+            }
+
+            const wrapper = document.createElement('div');
+            wrapper.appendChild(radio);
+            if (label) wrapper.appendChild(label);
+            rolesContainer.appendChild(wrapper);
+        });
+
+        // Replace the old form completely with the new one
+        originalForm.replaceWith(newForm);
+
+        newForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const firstName = document.getElementById('first_name').value.trim();
+            const lastName = document.getElementById('last_name').value.trim();
+            const selectedRole = newForm.querySelector('input[name="user_role"]:checked');
+
+            if (!selectedRole) {
+                alert('Please select a role.');
+                return;
+            }
+
+            const submitBtn = newForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Inviting...';
+
+            // Optional loader icon
+            let loader = document.createElement('span');
+            loader.className = 'loader';
+            loader.style.marginLeft = '10px';
+            loader.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`;
+            submitBtn.appendChild(loader);
+
+            const { orgId, roleId } = JSON.parse(selectedRole.value);
+
+            const payload = {
+                user: {
+                    email: email,
+                    first_name: firstName,
+                    last_name: lastName
+                },
+                consumer_org: {
+                    id: orgId,
+                    roles: [roleId]
                 }
-                return data;
-            })
-            .then(data => {
-              alert('✅ User invited successfully!');
-              newForm.reset();
-            })
-            .catch(error => {
-              if (error.messages && Array.isArray(error.messages)) {
-                // Backend validation errors
-                alert('⚠️ ' + error.messages.join('\n'));
-              } else {
-                // Generic error
-                alert('An error occurred while inviting the user.');
-                console.error('Error:', error);
-              }
-            })
-            .finally(() => {
-              submitBtn.disabled = false;
-              submitBtn.textContent = 'Invite User';
-            });
-      });
-  }
+            };
+
+            fetch('/sandbox/invite-user-proxy', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(async response => {
+                    const data = await response.json();
+                    if (!response.ok) {
+                        // Return the error response data
+                        throw data;
+                    }
+                    return data;
+                })
+                .then(data => {
+                    alert('✅ User invited successfully!');
+                    newForm.reset();
+                })
+                .catch(error => {
+                    if (error.messages && Array.isArray(error.messages)) {
+                        // Backend validation errors
+                        alert('⚠️ ' + error.messages.join('\n'));
+                    } else {
+                        // Generic error
+                        alert('An error occurred while inviting the user.');
+                        console.error('Error:', error);
+                    }
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Invite User';
+                });
+        });
+    }
 });
 
 

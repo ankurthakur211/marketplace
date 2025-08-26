@@ -1,0 +1,4284 @@
+<div id="search-term-result">
+
+    <p>
+        The main goal for this project is to Allowing ARB Mobile App customers to apply for Single Premium Pension Product through retail application until product complete sale.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="product-details-document">
+        <div class="api-doc-background">
+            <p class="api-doc-background-text">Single Premium Pension API Documentation</p>
+        </div>
+
+        <div class="moterinsurance-sec">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="leftside-sec">
+                        <p class="fob-welcome-title" id="section-1">Single Premium Pension APIs</p>
+
+                        <p class="fob-welcome-line">&nbsp;</p>
+
+                        <p class="fob-welcome-text">
+                            The main goal for this project is to Allowing ARB Mobile App customers to apply for Single Premium Pension Product through retail application until product complete sale.
+                        </p>
+                    </div>
+
+                    <div class="rightside-sec">
+                        <p class="API-image">&nbsp;</p>
+                    </div>
+                </div>
+
+                <div class="d-flex btn-box">
+                    <a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/postmanCollections/Modern/MP_Single_Premium_Pension_APIs.postman_collection.json"
+                        id="downloadLink">Download Postman Collection</a
+        >
+        <a
+          class="primary-btn"
+          download=""
+          href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/SampleData/Modern/SinglePremiumPensionDatafields.xlsx"
+          >Download Sample Data</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="miw-section">
+    <div class="container">
+      <h1 class="fob-welcome-title">Single Premium Pension Workflow</h1>
+
+      <p class="motoinsu-image">&nbsp;</p>
+      <a
+        class="fob-product-title-click"
+        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/Pension(SinglePremium)FlowDiagramv0.1.pdf"
+        rel="noopener"
+        target="_blank"
+        >Click here
+      </a>
+                </div>
+            </div>
+
+            <div class="APIs-section">
+                <div class="container">
+                    <p class="main-heading">APIs</p>
+
+                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                        <!-- API 1 -->
+                        <div class="api-infosec">
+                            <h1 class="fob-welcome-title" id="section-2">
+                                Get All Policies for the User
+                            </h1>
+
+                            <p class="fob-welcome-text">
+                                Endpoint: /list-policies
+                            </p>
+
+                            <p class="fob-welcome-text">
+                                <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Flist-policies/get">Swagger Link
+            </a>
+                            </p>
+
+                            <p class="fob-welcome-text">This API will return all the policies user have based on user identification number.</p>
+
+                            <div class="requestURL-box">
+                                <div class="request-box">
+                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+                                    <p class="fob-welcome-line">&nbsp;</p>
+
+                                    <pre class="example_97 api-guides-example-fob">
+                       <code class="sample-code">
+Query Params:
+    poiType:IQ
+    poiNumber:2464795638
+                      </code>
+                    </pre>
+                                </div>
+
+                                <div class="url-box">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('get-all-policies-curl')">
+                          <p class="curlText">cURL</p>
+                      </button>
+
+                                    <pre id="generatedCurl">
+                      <code id="get-all-policies-curl">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/list-policies?poiType=IQ&poiNumber=2464795638' \
+--header 'x-request-id: 409719fe-e092-4ea0-a99b-c09516f1a414' \
+--header 'accept-language: en' \
+--header 'Authorization: Bearer ..' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000'
+                      </code>
+                    </pre>
+                                </div>
+                            </div>
+
+                            <div class="response-outterbox">
+                                <div class="innerbox">
+                                    <div class="code-box">
+                                        <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Response
+                                        </p>
+
+                                        <div class="response-box-div">
+                                            <a class="response-box-error" onclick="responseText('get-all-policies')" type="button">200</a>
+                                            <a class="response-box-error" onclick="responseText('get-all-policies2')" type="button">400</a>
+                                            <a class="response-box-error" onclick="responseText('get-all-policies3')" type="button">401</a>
+                                            <a class="response-box-error" onclick="responseText('get-all-policies4')" type="button">403</a>
+                                            <a class="response-box-error" onclick="responseText('get-all-policies5')" type="button">404</a>
+                                            <a class="response-box-error" onclick="responseText('get-all-policies6')" type="button">405</a>
+                                            <a class="response-box-error" onclick="responseText('get-all-policies7')" type="button">406</a>
+                                            <a class="response-box-error" onclick="responseText('get-all-policies8')" type="button">429</a>
+                                            <a class="response-box-error" onclick="responseText('get-all-policies9')" type="button">500</a>
+                                        </div>
+
+                                        <pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="get-all-policies">
+{
+    "Data": {
+        "PoliciesList": [
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API25940",
+                "PolicyNumber": "IBER000300015045",
+                "PlanCode": "IBER0003",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 6000,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-07-27T00:00:00.000+00:00",
+                "ExpiryDate": "2033-07-26T00:00:00.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API26266",
+                "PolicyNumber": "IBER000300015115",
+                "PlanCode": "IBER0003",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 6000,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-03-14T05:17:23.000+00:00",
+                "ExpiryDate": "2033-03-13T05:17:23.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API26242",
+                "PolicyNumber": "IBER000300015103",
+                "PlanCode": "IBER0003",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 6000,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-03-13T08:16:14.000+00:00",
+                "ExpiryDate": "2033-03-12T08:16:14.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API26164",
+                "PolicyNumber": "IBER000300015092",
+                "PlanCode": "IBER0003",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 6000,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-03-09T07:22:38.000+00:00",
+                "ExpiryDate": "2033-03-08T07:22:38.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API26359",
+                "PolicyNumber": "IBER000300015127",
+                "PlanCode": "IBER0003",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 300,
+                "PaymentFrequency": "12",
+                "CommencementDate": "2023-03-15T02:19:13.000+00:00",
+                "ExpiryDate": "2033-03-14T02:19:13.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API26166",
+                "PolicyNumber": "IBER000300015093",
+                "PlanCode": "IBER0003",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 6000,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-03-09T07:17:50.000+00:00",
+                "ExpiryDate": "2033-03-08T07:17:50.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API26244",
+                "PolicyNumber": "IBER000300015104",
+                "PlanCode": "IBER0003",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 6000,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-03-13T10:10:03.000+00:00",
+                "ExpiryDate": "2033-03-12T10:10:03.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API27019",
+                "PolicyNumber": "IBER000300015278",
+                "PlanCode": "IBER0003",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 300,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-04-02T04:40:26.000+00:00",
+                "ExpiryDate": "2033-04-01T04:40:26.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API33306",
+                "PolicyNumber": "IBSR00100016541",
+                "PlanCode": "IBSR001",
+                "CurrencyCode": "SAR",
+                "SumCovered": 50000,
+                "Contribution": 25000,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-02-23T00:00:00.000+00:00",
+                "ExpiryDate": "2033-02-22T00:00:00.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API26267",
+                "PolicyNumber": "IBIR000400015116",
+                "PlanCode": "IBIR0004",
+                "CurrencyCode": "SAR",
+                "SumCovered": 50000,
+                "Contribution": 300,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-03-14T06:11:46.000+00:00",
+                "ExpiryDate": "2033-03-13T06:11:46.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            },
+            {
+                "ProposerNameEn": "AHMED ELSAYED SALEM ELSAYED",
+                "ProposerNameAr": "",
+                "QuotationNumber": "API26395",
+                "PolicyNumber": "IBIR000400015143",
+                "PlanCode": "IBIR0004",
+                "CurrencyCode": "SAR",
+                "SumCovered": 0,
+                "Contribution": 300,
+                "PaymentFrequency": "01",
+                "CommencementDate": "2023-03-15T09:44:29.000+00:00",
+                "ExpiryDate": "2033-03-14T09:44:29.000+00:00",
+                "SequenceNumber": 1,
+                "PremiumRequestFlag": "N"
+            }
+        ],
+        "ReturnValues": [
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "EDU",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 722400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-08-27T00:00:00.000+00:00",
+                "TotPaidAmt": 6020,
+                "GrossContribution": 6020,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Education Silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "EDU",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 722400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-04-14T05:17:23.000+00:00",
+                "TotPaidAmt": 6020,
+                "GrossContribution": 6020,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Education Silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "EDU",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 722400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-04-13T08:16:14.000+00:00",
+                "TotPaidAmt": 6020,
+                "GrossContribution": 6020,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Education Silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "EDU",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 722400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-04-09T07:22:38.000+00:00",
+                "TotPaidAmt": 6020,
+                "GrossContribution": 6020,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Education Silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "EDU",
+                "TotInstallmentCount": 10,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 5400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2024-03-15T02:19:13.000+00:00",
+                "TotPaidAmt": 540,
+                "GrossContribution": 540,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Education Silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "EDU",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 722400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-04-09T07:17:50.000+00:00",
+                "TotPaidAmt": 6020,
+                "GrossContribution": 6020,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Education Silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "EDU",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 722400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-04-13T10:10:03.000+00:00",
+                "TotPaidAmt": 6020,
+                "GrossContribution": 6020,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Education Silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "EDU",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 38400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-05-02T04:40:26.000+00:00",
+                "TotPaidAmt": 320,
+                "GrossContribution": 320,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Education Silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "INV",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 9,
+                "TotContributionAmt": 3002400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-11-23T00:00:00.000+00:00",
+                "TotPaidAmt": 225180,
+                "GrossContribution": 25020,
+                "ProductName": "Wealthmaster UL -Saving and Protection Benefits(Single Premium)",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "INV",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 38400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-04-14T06:11:46.000+00:00",
+                "TotPaidAmt": 320,
+                "GrossContribution": 320,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Investment silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            },
+            {
+                "CancellationFlag": "N",
+                "PaymentMethod": "04",
+                "PlanType": "INV",
+                "TotInstallmentCount": 120,
+                "InstallmentPaidCount": 1,
+                "TotContributionAmt": 38400,
+                "TotFundValue": 0,
+                "NextPaymentDate": "2023-04-15T09:44:29.000+00:00",
+                "TotPaidAmt": 320,
+                "GrossContribution": 320,
+                "ProductName": "Al Rajhi Takaful  Mustaqbal – Investment silver Plan",
+                "PolicyStatus": "IN-FORCE",
+                "BusinessSource": "BANCA",
+                "IdenNo": "2464795638",
+                "PolicyStatusCode": "NB010",
+                "PolicyAmlStatus": ""
+            }
+        ]
+    }
+}
+                                            </code>
+                                            <code class="text" style=" display: none; " id="get-all-policies2">
+{
+"Errors": [
+    {
+    "Code": "ERROR.400.001",
+    "Message": "Invalid POI Number",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                            </code>
+                                            <code class="text" style=" display: none; " id="get-all-policies3">
+{
+"Errors": [
+    {
+    "Code": "ERROR.401.001",
+    "Message": "Unauthorized to call the target operation.",
+    "Path": "authorization",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="get-all-policies4">
+{
+"Errors": [
+    {
+    "Code": "ERROR.403.001",
+    "Message": "Can't find any valid subscription.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                            </code>
+
+
+    <code class="text" style=" display: none; " id="get-all-policies5">
+{
+"Errors": [
+    {
+    "Code": "ERROR.404.001",
+    "Message": "No resources match requested URI.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                      </code>
+                                            <code class="text" style=" display: none; " id="get-all-policies6">
+{
+"Errors": [
+    {
+    "Code": "ERROR.405.001",
+    "Message": "The method is not allowed for the requested URL.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="get-all-policies7">
+{
+"Errors": [
+    {
+    "Code": "ERROR.406.001",
+    "Message": "An appropriate representation of the requested resource could not be found",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="get-all-policies8">
+{
+"Errors": [
+    {
+    "Code": "ERROR.429.001",
+    "Message": "Assembly Rate Limit exceeded",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="get-all-policies9">
+{
+"Errors": [
+    {
+    "Code": "ERROR.500.001",
+    "Message": "Internal Error",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                            </code>
+                                          </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- API 2 -->
+
+                        <div class="api-infosec">
+                            <h1 class="fob-welcome-title" id="section-3">
+                                Retrieves Questions Description and Codes
+                            </h1>
+
+                            <p class="fob-welcome-line">&nbsp;</p>
+
+                            <p class="fob-welcome-text">
+                                Endpoint: /question
+                            </p>
+
+                            <p class="fob-welcome-text">
+                                <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fquestion/get">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+           This path is used to retrieve question codes and description based on question type.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                        <code class="sample-code">
+        Headers:
+            transactionId:12
+                        </code>
+                      </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('retrieves-questions-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                              <code id="retrieves-questions-curl">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/question' \
+--header 'x-request-id: d95bc4a4-5055-4b5e-a623-e2d7d98ced9c' \
+--header 'accept-language: ar' \
+--header 'transactionId: 12' \
+--header 'Authorization: Bearer ...' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000'
+                          </code>
+                        </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('retrieves-questions')" type="button">200</a>
+                                <a class="response-box-error" onclick="responseText('retrieves-questions2')" type="button">400</a>
+                                <a class="response-box-error" onclick="responseText('retrieves-questions3')" type="button">401</a>
+                                <a class="response-box-error" onclick="responseText('retrieves-questions4')" type="button">403</a>
+                                <a class="response-box-error" onclick="responseText('retrieves-questions5')" type="button">404</a>
+                                <a class="response-box-error" onclick="responseText('retrieves-questions6')" type="button">405</a>
+                                <a class="response-box-error" onclick="responseText('retrieves-questions7')" type="button">406</a>
+                                <a class="response-box-error" onclick="responseText('retrieves-questions8')" type="button">429</a>
+                                <a class="response-box-error" onclick="responseText('retrieves-questions9')" type="button">500</a>
+                        </div>
+
+                        <pre class="response-box">
+
+                      <code class="text" style=" display: block; " id="retrieves-questions">
+{
+    "Data": {
+        "Questions": [
+            {
+                "QuestionsType": "Health Questions",
+                "QuestionDetails": [
+                    {
+                        "QuestionDescription": "هل لديك حاليًا أي إعاقة جسدية أو أمراض وراثية",
+                        "QuestionCode": "UW038",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل أُصبت أو أنك مصاب حاليًا بأي أعراض، أو بأمراض، أو بحالة طبية (جسدية أو عقلية أو نفسية) مثل ضغط الدم العالي، الجلطات، السرطان، أمراض القلب، السكري، آلام الصدر،  أمراض الدم، أو الكلى، أو الكبد، أو الجهاز التنفسي، أو الجهاز الهضمي، أو العضلات، أو المفاصل، أو الجهاز العصبي أو أمراض واعتلالات نفسية؟",
+                        "QuestionCode": "UW056",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل تتناول أدوية حاليًا  للعلاج من حالات طبية مزمنة ",
+                        "QuestionCode": "UW037",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل تدخن أكثر من 20 سيجارة في اليوم أو تشرب الكحول أو تتعاطى أي مخدرات غير قانونية؟",
+                        "QuestionCode": "UW035",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل تشارك حاليًا في أو تنوي المشاركة في أي رياضات أو نشاطات ترفيهية مثل الطيران أو السباقات أو الغوص؟",
+                        "QuestionCode": "UW066",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل سبق أن ثبت إصابتك بكوفيد-19 ؟(اذكر تاريخ تقرير الفحص الايجابي وما إذا طلب منك الحجر في المستشفى أو في المنزل)",
+                        "QuestionCode": "UW058",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "إذا سبق أن ثبتت إصابتك بكوفيد-19، هل تعافيت تمامًا دون أي مضاعفات / عواقب مثل ضيق التنفس ، أو مشاكل الصحة العقلية ، أو السعال ، أو ضعف الذاكرة ، أو الضعف ، إلخ. ",
+                        "QuestionCode": "UW059",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل تم تطعيمك باللقاح بشكل كامل و وقائي* هل  لقاح الكوفيد - 19 الذي تم تلقيحك به معتمد رسميًا** ؟ *كامل و وقائي تعني أوصت الشركة المصنعة بأخذ جرعات مفردة أو متعددة**رسميا معتمدة تعني انها اعتمدت من الجهات الرسمية المحلية ",
+                        "QuestionCode": "UW060",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل تعاني من أي من أعراض كوفيد-19  (حمى، التهاب في الحلق،كحة، إعياء، صعوبة في التنفس، احتقان الأنف، أعراض معوية مثل الغثيان، الاستفراغ و/أو الاسهال) خلال ال30 وم الماضية أو تم تشخيصك كمصاب بالفايروس؟ ?",
+                        "QuestionCode": "UW061",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "خلال الـ 15 يوم الماضية ، هل كان لديك أي احتكاك مع شخص تم تأكيد إصابته بكوفيد-19؟",
+                        "QuestionCode": "UW062",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل حصل أن تلقيت أي إخطار أو تم توجيهك إلى الحجر الصحي أو العزل المنزلي ( باستثناء لوكان ذلك كجزء من إجراءات تنظيم دوام الموظفين)",
+                        "QuestionCode": "UW063",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل قمت بالسفر إلى خارج بلد إقامتك خلال الـ 30 يوم الماضية؟ لو كانت الإجابة بنعم، الرجاء تزويدنا بالمعلومات المطلوبة (المعلومات المطلوبة هي الدولة، المدينة، تاريخ الذهاب، تاريخ العودة)",
+                        "QuestionCode": "UW064",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "خلال الثلاث أشهر القادمة، هل تنوي السفر خارج بلد إقامتك؟ إذا كانت الإجابة بنعم، الرجاء تزويدنا بالمعلومات المطلوبة (المعلومات المطلوبة هي الدولة، المدينة، تاريخ الذهاب، ومدة الرحلة)",
+                        "QuestionCode": "UW065",
+                        "QuestionType": "Boolean"
+                    }
+                ]
+            },
+            {
+                "QuestionsType": "General Questions",
+                "QuestionDetails": [
+                    {
+                        "QuestionDescription": "هل أنت أو أي أحد من أقاربك من الدرجة الأولى يشغل أو شغل مؤخرًا أو تم ترشيحه لأي منصب قيادي حكومي أو سياسي أو عسكري أو في شركات حكومية",
+                        "QuestionCode": "UW053",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل أنت خاضع لضرائب دولة اجنبية ؟",
+                        "QuestionCode": "UW052",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل هناك أي معلومات جوهرية تود الإفصاح عنها (مثل استثمارات، تعاملات مالية، أو أنشطة سياسية)؟",
+                        "QuestionCode": "UW054",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل تم رفض أو تأجيل أو سحب أو الموافقة بشروط خاصة على طلب إصدار وثيقة",
+                        "QuestionCode": "UW055",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل لديك أي عقود تأمين أخرى مع شركات تأمين أخرى في دول مجلس التعاون الخليجي؟",
+                        "QuestionCode": "UW030",
+                        "QuestionType": "Boolean"
+                    }
+                ]
+            },
+            {
+                "QuestionsType": "Pregnancy Questions",
+                "QuestionDetails": [
+                    {
+                        "QuestionDescription": "هل أنت حامل حاليًا؟",
+                        "QuestionCode": "UW047",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل سبق لك أن كنت حاملًا؟",
+                        "QuestionCode": "UW049",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "هل كانت لديك أي مضاعفات متعلقة بالحمل؟",
+                        "QuestionCode": "UW050",
+                        "QuestionType": "Boolean"
+                    },
+                    {
+                        "QuestionDescription": "اخر تاريخ للولادة",
+                        "QuestionCode": "UW048",
+                        "QuestionType": "Date"
+                    }
+                ]
+            }
+        ]
+    }
+}
+                       </code>
+                      <code class="text" style=" display: none; " id="retrieves-questions2">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.400.001",
+            "Message": "Customer not Found.",
+            "Path": "request.reference",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+                      <code class="text" style=" display: none; " id="retrieves-questions3">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.401.003",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+
+                      </code>
+
+                      <code class="text" style=" display: none; " id="retrieves-questions4">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+
+
+                      <code class="text" style=" display: none; " id="retrieves-questions5">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+
+
+                      <code class="text" style=" display: none; " id="retrieves-questions6">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+
+                      </code>
+
+
+                      <code class="text" style=" display: none; " id="retrieves-questions7">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+
+
+                      <code class="text" style=" display: none; " id="retrieves-questions8">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+
+
+                      <code class="text" style=" display: none; " id="retrieves-questions9">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                      </code>
+                            </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- API 3 -->
+
+        <div class="api-infosec">
+            <h1 class="fob-welcome-title" id="section-4">
+                Retrieves Occupation Description and Codes
+            </h1>
+
+            <p class="fob-welcome-line">&nbsp;</p>
+
+            <p class="fob-welcome-text">
+                Endpoint: /occupation-codes
+            </p>
+
+            <p class="fob-welcome-text">
+                <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Foccupation-codes/get">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            This path is used to retrieve Occupation codes needed to pass during lead or quotation gcreation.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title mt-0">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                              <code class="sample-code">
+        Headers:
+            transactionId:12
+                          </code>
+                        </pre>
+            </div>
+
+            <div class="url-box">
+             <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('retrieves-OCCUP-curl')">
+                          <p class="curlText">cURL</p>
+                      </button>
+
+              <pre id="generatedCurl">
+                                                  <code id="retrieves-OCCUP-curl">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/occupation-codes' \
+--header 'x-request-id: 78ce3f4f-f219-4149-a1aa-58894d3b9fb5' \
+--header 'accept-language: ar' \
+--header 'transactionId: 12' \
+--header 'Authorization: Bearer ..' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000'
+                     </code>
+                          </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('retrieves-OCCUP')" type="button">200</a>
+                <a class="response-box-error" onclick="responseText('retrieves-OCCUP2')" type="button">400</a>
+                <a class="response-box-error" onclick="responseText('retrieves-OCCUP3')" type="button">401</a>
+                <a class="response-box-error" onclick="responseText('retrieves-OCCUP4')" type="button">403</a>
+                <a class="response-box-error" onclick="responseText('retrieves-OCCUP5')" type="button">404</a>
+                <a class="response-box-error" onclick="responseText('retrieves-OCCUP6')" type="button">405</a>
+                <a class="response-box-error" onclick="responseText('retrieves-OCCUP7')" type="button">406</a>
+                <a class="response-box-error" onclick="responseText('retrieves-OCCUP8')" type="button">429</a>
+                <a class="response-box-error" onclick="responseText('retrieves-OCCUP9')" type="button">500</a>
+        </div>
+
+        <pre class="response-box">
+
+                          <code class="text" style=" display: block; " id="retrieves-OCCUP">
+ {
+    "Data": {
+        "Occupations": [
+            {
+                "OccupationCode": "OCC2447",
+                "OccupationDescription": "مدير"
+            },
+            {
+                "OccupationCode": "ACCL1",
+                "OccupationDescription": "موظف"
+            },
+            {
+                "OccupationCode": "ACCT1",
+                "OccupationDescription": "محاسب"
+            },
+            {
+                "OccupationCode": "OCC0012",
+                "OccupationDescription": "مراجع"
+            },
+            {
+                "OccupationCode": "OCC0013",
+                "OccupationDescription": "مسؤول"
+            },
+            {
+                "OccupationCode": "OCC0014",
+                "OccupationDescription": "شريك"
+            },
+            {
+                "OccupationCode": "OCC0016",
+                "OccupationDescription": "سكرتير"
+            },
+            {
+                "OccupationCode": "ACAS1",
+                "OccupationDescription": "مساعد"
+            },
+            {
+                "OccupationCode": "OCC0011",
+                "OccupationDescription": "رئيس قسم"
+            },
+            {
+                "OccupationCode": "OCC0075",
+                "OccupationDescription": "استشاري"
+            },
+            {
+                "OccupationCode": "OCC0074",
+                "OccupationDescription": "اكتواري"
+            },
+            {
+                "OccupationCode": "OCC0080",
+                "OccupationDescription": "محكم"
+            },
+            {
+                "OccupationCode": "OCC0081",
+                "OccupationDescription": "مقدر"
+            },
+            {
+                "OccupationCode": "OCC0168",
+                "OccupationDescription": "مراقب"
+            },
+            {
+                "OccupationCode": "OCC0167",
+                "OccupationDescription": "منسق"
+            },
+            {
+                "OccupationCode": "OCC0172",
+                "OccupationDescription": "مشرف"
+            },
+            {
+                "OccupationCode": "OCC0166",
+                "OccupationDescription": "اداري"
+            },
+            {
+                "OccupationCode": "OCC0834",
+                "OccupationDescription": "مصمم"
+            },
+            {
+                "OccupationCode": "OCC1175",
+                "OccupationDescription": "محامي"
+            },
+            {
+                "OccupationCode": "OCC0226",
+                "OccupationDescription": "مبيعات"
+            },
+            {
+                "OccupationCode": "OCC0235",
+                "OccupationDescription": "وكيل"
+            },
+            {
+                "OccupationCode": "OCC0297",
+                "OccupationDescription": "موظفو"
+            },
+            {
+                "OccupationCode": "OCC1619",
+                "OccupationDescription": "سفير"
+            },
+            {
+                "OccupationCode": "ANYS1",
+                "OccupationDescription": "محلل"
+            },
+            {
+                "OccupationCode": "OCC0731",
+                "OccupationDescription": "مبرمج"
+            },
+            {
+                "OccupationCode": "OCC0082",
+                "OccupationDescription": "مثمن"
+            },
+            {
+                "OccupationCode": "OCC0346",
+                "OccupationDescription": "مهندس"
+            },
+            {
+                "OccupationCode": "ARTS1",
+                "OccupationDescription": "حرفي"
+            },
+            {
+                "OccupationCode": "OCC0085",
+                "OccupationDescription": "مقيم"
+            },
+            {
+                "OccupationCode": "OCC2459",
+                "OccupationDescription": "مؤلف"
+            },
+            {
+                "OccupationCode": "BBST1",
+                "OccupationDescription": "حاصنة"
+            },
+            {
+                "OccupationCode": "OCC0398",
+                "OccupationDescription": "صراف"
+            },
+            {
+                "OccupationCode": "OCC0403",
+                "OccupationDescription": "مصرفي"
+            },
+            {
+                "OccupationCode": "OCC0878",
+                "OccupationDescription": "جراح"
+            },
+            {
+                "OccupationCode": "BROK1",
+                "OccupationDescription": "سمسار"
+            },
+            {
+                "OccupationCode": "CARS1",
+                "OccupationDescription": "داهن"
+            },
+            {
+                "OccupationCode": "OCC0868",
+                "OccupationDescription": "طبيب"
+            },
+            {
+                "OccupationCode": "CRPT1",
+                "OccupationDescription": "نجار"
+            },
+            {
+                "OccupationCode": "OCC0628",
+                "OccupationDescription": "رسام"
+            },
+            {
+                "OccupationCode": "OCC0932",
+                "OccupationDescription": "رئيس"
+            },
+            {
+                "OccupationCode": "OCC1442",
+                "OccupationDescription": "متخصص"
+            },
+            {
+                "OccupationCode": "CTRC1",
+                "OccupationDescription": "مقاول"
+            },
+            {
+                "OccupationCode": "COOK1",
+                "OccupationDescription": "طباخ"
+            },
+            {
+                "OccupationCode": "OCC1618",
+                "OccupationDescription": "دبلوماسي"
+            },
+            {
+                "OccupationCode": "DRIV1",
+                "OccupationDescription": "سائق"
+            },
+            {
+                "OccupationCode": "OCC0898",
+                "OccupationDescription": "اقتصادي"
+            },
+            {
+                "OccupationCode": "EDIT1",
+                "OccupationDescription": "محرر"
+            },
+            {
+                "OccupationCode": "OCC0406",
+                "OccupationDescription": "مالي"
+            },
+            {
+                "OccupationCode": "FISH1",
+                "OccupationDescription": "سماك"
+            },
+            {
+                "OccupationCode": "HSTY1",
+                "OccupationDescription": "مصفف"
+            },
+            {
+                "OccupationCode": "HSWF1",
+                "OccupationDescription": "ربة منزل"
+            },
+            {
+                "OccupationCode": "OCC0589",
+                "OccupationDescription": "كابتن"
+            },
+            {
+                "OccupationCode": "OCC0093",
+                "OccupationDescription": "محقق"
+            },
+            {
+                "OccupationCode": "OCC1100",
+                "OccupationDescription": "مترجم"
+            },
+            {
+                "OccupationCode": "OCC0740",
+                "OccupationDescription": "مدرب"
+            },
+            {
+                "OccupationCode": "JOUR1",
+                "OccupationDescription": "صحفي"
+            },
+            {
+                "OccupationCode": "OCC1178",
+                "OccupationDescription": "قاضي"
+            },
+            {
+                "OccupationCode": "OCC1183",
+                "OccupationDescription": "ممارس"
+            },
+            {
+                "OccupationCode": "OCC1199",
+                "OccupationDescription": "نادل"
+            },
+            {
+                "OccupationCode": "OCC1315",
+                "OccupationDescription": "وزير"
+            },
+            {
+                "OccupationCode": "OCC2235",
+                "OccupationDescription": "مدرسة"
+            },
+            {
+                "OccupationCode": "OCC2461",
+                "OccupationDescription": "روائي"
+            },
+            {
+                "OccupationCode": "NURS1",
+                "OccupationDescription": "ممرضة"
+            },
+            {
+                "OccupationCode": "PHAR1",
+                "OccupationDescription": "صيدلي"
+            },
+            {
+                "OccupationCode": "PLUM1",
+                "OccupationDescription": "سباك"
+            },
+            {
+                "OccupationCode": "OCC2462",
+                "OccupationDescription": "شاعر"
+            },
+            {
+                "OccupationCode": "OCC1617",
+                "OccupationDescription": "سياسي"
+            },
+            {
+                "OccupationCode": "OCC1173",
+                "OccupationDescription": "بروفيسر"
+            },
+            {
+                "OccupationCode": "PRMT1",
+                "OccupationDescription": "متعهد"
+            },
+            {
+                "OccupationCode": "OCC1788",
+                "OccupationDescription": "منتج"
+            },
+            {
+                "OccupationCode": "OCC1789",
+                "OccupationDescription": "مسجل"
+            },
+            {
+                "OccupationCode": "REST1",
+                "OccupationDescription": "مالك"
+            },
+            {
+                "OccupationCode": "OCC1874",
+                "OccupationDescription": "متقاعد"
+            },
+            {
+                "OccupationCode": "OCC1265",
+                "OccupationDescription": "احصائي"
+            },
+            {
+                "OccupationCode": "STDN1",
+                "OccupationDescription": "طالب"
+            },
+            {
+                "OccupationCode": "TELE1",
+                "OccupationDescription": "مسوق"
+            },
+            {
+                "OccupationCode": "TUTO1",
+                "OccupationDescription": "مدرس"
+            },
+            {
+                "OccupationCode": "OCC2330",
+                "OccupationDescription": "طابع"
+            },
+            {
+                "OccupationCode": "OCC0845",
+                "OccupationDescription": "خطاط"
+            },
+            {
+                "OccupationCode": "VGSP1",
+                "OccupationDescription": "مورد"
+            },
+            {
+                "OccupationCode": "WEBD1",
+                "OccupationDescription": "مطور"
+            },
+            {
+                "OccupationCode": "WELD1",
+                "OccupationDescription": "لحام"
+            },
+            {
+                "OccupationCode": "OCC00013",
+                "OccupationDescription": "عامل"
+            },
+            {
+                "OccupationCode": "OCC0259",
+                "OccupationDescription": "مزارع"
+            },
+            {
+                "OccupationCode": "OCC0289",
+                "OccupationDescription": "فني"
+            },
+            {
+                "OccupationCode": "OCC1604",
+                "OccupationDescription": "شرطة"
+            },
+            {
+                "OccupationCode": "OCC0317",
+                "OccupationDescription": "سائق الاسعاف "
+            },
+            {
+                "OccupationCode": "OCC0318",
+                "OccupationDescription": "رجل الاسعاف "
+            },
+            {
+                "OccupationCode": "OCC0329",
+                "OccupationDescription": "معالجة المواد الغذائية الحيوانية "
+            },
+            {
+                "OccupationCode": "OCC2252",
+                "OccupationDescription": "مذيعة "
+            },
+            {
+                "OccupationCode": "OCC0385",
+                "OccupationDescription": "رياضي"
+            },
+            {
+                "OccupationCode": "BAKE3",
+                "OccupationDescription": "خباز"
+            },
+            {
+                "OccupationCode": "BARB3",
+                "OccupationDescription": "حلاق"
+            },
+            {
+                "OccupationCode": "OCC1425",
+                "OccupationDescription": "كابتن "
+            },
+            {
+                "OccupationCode": "OCC0343",
+                "OccupationDescription": "النحال"
+            },
+            {
+                "OccupationCode": "OCC0476",
+                "OccupationDescription": "عسكري"
+            },
+            {
+                "OccupationCode": "OCC0952",
+                "OccupationDescription": "مصور "
+            },
+            {
+                "OccupationCode": "OCC0590",
+                "OccupationDescription": "سائق سيارة توصيل"
+            },
+            {
+                "OccupationCode": "OCC0591",
+                "OccupationDescription": "سائق سيارة"
+            },
+            {
+                "OccupationCode": "CBMD",
+                "OccupationDescription": "خادمه"
+            },
+            {
+                "OccupationCode": "OCC0883",
+                "OccupationDescription": "سائق "
+            },
+            {
+                "OccupationCode": "OCC0694",
+                "OccupationDescription": "المنظف"
+            },
+            {
+                "OccupationCode": "OCC1609",
+                "OccupationDescription": "شرطي"
+            },
+            {
+                "OccupationCode": "OCC0758",
+                "OccupationDescription": "رئيس عمال المقاولات"
+            },
+            {
+                "OccupationCode": "OCC1692",
+                "OccupationDescription": "مهندس التكاليف "
+            },
+            {
+                "OccupationCode": "OCC1643",
+                "OccupationDescription": "صياد السرطان "
+            },
+            {
+                "OccupationCode": "OCC0797",
+                "OccupationDescription": "القاطع "
+            },
+            {
+                "OccupationCode": "OCC0802",
+                "OccupationDescription": "محصل الدين "
+            },
+            {
+                "OccupationCode": "OCC0803",
+                "OccupationDescription": "غواص البحر العميق(القوات المسلحة)"
+            },
+            {
+                "OccupationCode": "OCC0831",
+                "OccupationDescription": "جراح الاسنان "
+            },
+            {
+                "OccupationCode": "OCC0828",
+                "OccupationDescription": "طبيب اسنان "
+            },
+            {
+                "OccupationCode": "OCC1693",
+                "OccupationDescription": "مهندس التصميم "
+            },
+            {
+                "OccupationCode": "DIVE3",
+                "OccupationDescription": "غطاس"
+            },
+            {
+                "OccupationCode": "OCC0805",
+                "OccupationDescription": "مدرب الغوص (القوات المسلحة)"
+            },
+            {
+                "OccupationCode": "OCC0882",
+                "OccupationDescription": "معالج كلاب الحراسة"
+            },
+            {
+                "OccupationCode": "ELET3",
+                "OccupationDescription": "كهربائي"
+            },
+            {
+                "OccupationCode": "OCC0260",
+                "OccupationDescription": "مدير المزرعة "
+            },
+            {
+                "OccupationCode": "OCC0969",
+                "OccupationDescription": "مربى الاسماك "
+            },
+            {
+                "OccupationCode": "OCC0970",
+                "OccupationDescription": "مربي اسماك "
+            },
+            {
+                "OccupationCode": "OCC0974",
+                "OccupationDescription": "صياد سمك "
+            },
+            {
+                "OccupationCode": "PEST3",
+                "OccupationDescription": "مكافح حشرات "
+            },
+            {
+                "OccupationCode": "PLOT",
+                "OccupationDescription": "طيار "
+            },
+            {
+                "OccupationCode": "SACO3",
+                "OccupationDescription": "منسق مبيعات"
+            },
+            {
+                "OccupationCode": "SLEX3",
+                "OccupationDescription": "تنفيذي المبيعات"
+            },
+            {
+                "OccupationCode": "SECG3",
+                "OccupationDescription": "حارس الامن"
+            },
+            {
+                "OccupationCode": "OCC2025",
+                "OccupationDescription": "مشرف الامن"
+            },
+            {
+                "OccupationCode": "SFEM3",
+                "OccupationDescription": "يعمل لحسابه الخاص"
+            },
+            {
+                "OccupationCode": "OT3",
+                "OccupationDescription": "اخرى"
+            }
+        ]
+    }
+}
+                          </code>
+                          <code class="text" style=" display: none; " id="retrieves-OCCUP2">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.400.004",
+            "Message": "Store is invalid.",
+            "Path": "request.parameters.mappingPosID",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                          </code>
+                          <code class="text" style=" display: none; " id="retrieves-OCCUP3">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+
+                          </code>
+
+                          <code class="text" style=" display: none; " id="retrieves-OCCUP4">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                          </code>
+
+
+                          <code class="text" style=" display: none; " id="retrieves-OCCUP5">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                          </code>
+
+
+                          <code class="text" style=" display: none; " id="retrieves-OCCUP6">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+
+                          </code>
+
+
+                          <code class="text" style=" display: none; " id="retrieves-OCCUP7">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                          </code>
+
+
+                          <code class="text" style=" display: none; " id="retrieves-OCCUP8">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                          </code>
+
+
+                          <code class="text" style=" display: none; " id="retrieves-OCCUP9">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                          </code>
+                                </pre>
+    </div>
+</div>
+</div>
+</div>
+<!-- API 4 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-5">
+        Get Eligible Products
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /products
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fproducts/get">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            Based on the user's age, this API will return eligible products applicable for the user and maximum policy tenure.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                          <code class="sample-code">
+Query Params:
+        gregbirthDate:19-01-1990
+        planType:singlePremiumPension
+                                    </code>
+                                  </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('get-eligible-products-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                            <code id="get-eligible-products-curl">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/products?gregbirthDate=19-01-1990&planType=singlePremiumPension' \
+--header 'x-request-id: d8d951cb-1e0f-4f85-9ae5-5274d2aea8ff' \
+--header 'accept-language: ar' \
+--header 'Authorization: Bearer ...' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000'
+                                      </code>
+                                    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('get-eligible-products')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('get-eligible-products2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('get-eligible-products3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('get-eligible-products4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('get-eligible-products5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('get-eligible-products6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('get-eligible-products7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('get-eligible-products8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('get-eligible-products9')" type="button">500</a>
+</div>
+
+<pre class="response-box">
+
+                                    <code class="text" style=" display: block; " id="get-eligible-products">
+ {
+    "Data": {
+        "MinimumTenure": 10,
+        "MaximumTenure": 30,
+        "IndexRate": 3,
+        "products": [
+            {
+                "ProductName": "قسط واحد",
+                "ProductDescription": "هذا منتج متميز واحد",
+                "PlanType": "INV",
+                "SchemeDetails": [
+                    {
+                        "PlanCode": "IBAR002",
+                        "PlanName": "NA",
+                        "Contribution": "25000-10000000",
+                        "PaymentFrequency": "00",
+                        "PremiumPattern": "L",
+                        "SumAssured": "50000-10000000",
+                        "BenefitCode": "VN"
+                    }
+                ]
+            }
+        ]
+    }
+}
+                                     </code>
+                                    <code class="text" style=" display: none; " id="get-eligible-products2">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.400.004",
+            "Message": "Store is invalid.",
+            "Path": "request.parameters.mappingPosID",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                    <code class="text" style=" display: none; " id="get-eligible-products3">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+
+                                    </code>
+
+                                    <code class="text" style=" display: none; " id="get-eligible-products4">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+
+
+                                    <code class="text" style=" display: none; " id="get-eligible-products5">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+
+
+                                    <code class="text" style=" display: none; " id="get-eligible-products6">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+
+                                    </code>
+
+
+                                    <code class="text" style=" display: none; " id="get-eligible-products7">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+
+
+                                    <code class="text" style=" display: none; " id="get-eligible-products8">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+
+
+                                    <code class="text" style=" display: none; " id="get-eligible-products9">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                    </code>
+                                          </pre>
+</div>
+</div>
+</div>
+</div>
+<!-- API 5 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-6">
+        Get Investment Funds
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /funds
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Ffunds/get">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">It returns all the available funds where user's money will be invested.</p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                              <code class="sample-code">
+        Headers:
+            Authorization
+                                    </code>
+                                  </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('get-investment-funds-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                                <code id="get-investment-funds-curl">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/funds' \
+--header 'x-request-id: ce2f4127-b8be-40f4-899c-a8ac1312666a' \
+--header 'accept-language: ar' \
+--header 'Authorization: Bearer ...' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000'
+                                      </code>
+                                    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('get-investment-funds')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('get-investment-funds2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('get-investment-funds3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('get-investment-funds4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('get-investment-funds5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('get-investment-funds6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('get-investment-funds7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('get-investment-funds8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('get-investment-funds9')" type="button">500</a>
+</div>
+
+<pre class="response-box">
+
+                                        <code class="text" style=" display: block; " id="get-investment-funds">
+        {
+    "Data": {
+        "Funds": [
+            {
+                "FundCode": "CS001",
+                "FundName": "صندوق المحافظ"
+            },
+            {
+                "FundCode": "BF001",
+                "FundName": "صندوق المتوازن"
+            },
+            {
+                "FundCode": "AM001",
+                "FundName": "صندوق النمو"
+            },
+            {
+                "FundDescription": "Al Rajhi Takaful will invest your money based on your fund allocation, but it will not affect the received amount at the end"
+            }
+        ]
+    }
+}
+                                         </code>
+                                        <code class="text" style=" display: none; " id="get-investment-funds2">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.400.004",
+            "Message": "Store is invalid.",
+            "Path": "request.parameters.mappingPosID",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                        </code>
+                                        <code class="text" style=" display: none; " id="get-investment-funds3">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+
+                                        </code>
+
+                                        <code class="text" style=" display: none; " id="get-investment-funds4">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                        </code>
+
+
+                                        <code class="text" style=" display: none; " id="get-investment-funds5">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                        </code>
+
+
+                                        <code class="text" style=" display: none; " id="get-investment-funds6">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                        </code>
+
+
+                                        <code class="text" style=" display: none; " id="get-investment-funds7">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                        </code>
+
+
+                                        <code class="text" style=" display: none; " id="get-investment-funds8">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                        </code>
+
+
+                                        <code class="text" style=" display: none; " id="get-investment-funds9">
+        {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+            }
+        ]
+        }
+                                        </code>
+                                              </pre>
+</div>
+</div>
+</div>
+</div>
+<!-- API 6 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-7">
+        Retrieves Additional Coverages or Riders Details
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /additional-coverage/{PlanCode}
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fadditional-coverage%2F{PlanCode}/get">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">It is used to retrieve additional coverages if customer opts for it.</p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                      <code class="sample-code">
+
+Path Param:
+    PlanCode
+    </code>
+    </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('get-additional-coverage-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                                        <code id="get-additional-coverage-curl">
+
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/additional-coverage/string' \
+--header 'x-request-id: 929b3766-2566-4621-ae1c-8a854bfbc3bd' \
+--header 'accept-language: ar' \
+--header 'Authorization: Bearer ...' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000'
+     </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('get-additional-coverage')" type="button">204</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('get-additional-coverage10')" type="button">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="get-additional-coverage">
+{
+    "Data": {
+        "AdditionalCoverage": [
+            {
+                "RiderCode": "IRRTPD001",
+                "RiderName": "العجز الكلي الدائم"
+            },
+            {
+                "RiderCode": "None",
+                "RiderName": "لا أحد"
+            }
+        ]
+    }
+}
+                                             </code>
+                                            <code class="text" style=" display: none; " id="get-additional-coverage2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="get-additional-coverage3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="get-additional-coverage4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-additional-coverage5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-additional-coverage6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-additional-coverage7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-additional-coverage8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-additional-coverage9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="get-additional-coverage10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+<!-- API 7 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-8">
+        Get Policy Number
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /policy-number/{QuotationNumber}
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fpolicy-number%2F{QuotationNumber}/get">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            It is used to Policy number based on the quotation number.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                          <code class="sample-code">
+
+Path Param:
+QuotationNumber
+    </code>
+    </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('get-policynumber-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                                            <code id="get-policynumber-curl">
+
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/policy-number/API26423' \
+--header 'x-request-id: dc72aa71-d0ac-4ce2-9d33-009f98733207' \
+--header 'accept-language: en' \
+--header 'poiType: 12' \
+--header 'poiNumber;' \
+--header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODGpx0zejq9TUF2V88u5Vv8q_b9Rf5lNMHcOeI4mn0HSIG3SRzLjehHJ_9uqMAud8nUC8A1Ix4FgHzY-hHJud6OWS18TDtzPpYAImyLbLa5Juy-E9mSTIcJ6oK88rOYfAheFD6lPsVyWt1zTMetpBBXn' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000'
+    </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('get-policynumber')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('get-policynumber10')" type="button">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="get-policynumber">
+{
+    "Data": {
+        "Policies": [
+            {
+                "PolicyNumber": "IBMR000200015154"
+            }
+        ]
+    }
+}
+
+                                             </code>
+                                            <code class="text" style=" display: none; " id="get-policynumber2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="get-policynumber3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="get-policynumber4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-policynumber5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-policynumber6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-policynumber7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-policynumber8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-policynumber9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="get-policynumber10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+<!-- API 8 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-9">
+        Retrieve Customer Data
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /customer-data
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fcustomer-data/get">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            This API is used to retrieve customer data from ELM, Saudi post and Gosi.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                              <code class="sample-code">
+
+Query Parameters:
+    poiType:SI
+    poiNumber:1007328634
+    birthDate:03-1980
+    transactionId:123
+    </code>
+    </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('get-customerdata-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                                                <code id="get-customerdata-curl">
+
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/customer-data?poiType=SI&poiNumber=1007328634&birthDate=03-1980&transactionId=123' \
+--header 'x-request-id: eb694a82-3d7b-42e1-be24-92ac656ab9fc' \
+--header 'accept-language: en' \
+--header 'poiType: 12' \
+--header 'poiNumber;' \
+--header 'Authorization: Bearer ...' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000'
+     </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('get-customerdata')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('get-customerdata10')" type="button">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="get-customerdata">
+ {
+    "Data": {
+        "AnnualIncome": 30000
+    }
+}
+
+                                             </code>
+                                            <code class="text" style=" display: none; " id="get-customerdata2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="get-customerdata3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="get-customerdata4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-customerdata5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-customerdata6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-customerdata7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-customerdata8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="get-customerdata9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="get-customerdata10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+<!-- API 9 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-10">
+        Generate Proposal or Quotation
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">Endpoint: /quotation</p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fquotation/post">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            This API is used to generate a proposal.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                                  <code class="sample-code">
+Request Body:
+{
+  "Data": {
+    "TransactionId": "string",
+    "PlanCode": "IBAR002",
+    "ProposerType": "I",
+    "ProposerRelation": "string",
+    "ProposerPOIType": "string",
+    "ProposerPOINumber": "1096169121",
+    "ProposerName": "string",
+    "ProposerbirthDate": "2025-05-27",
+    "ProposerGender": "M",
+    "AnnualIncome": 0,
+    "Contribution": 0,
+    "PolicyTerm": 0,
+    "PremiumPayTerm": 0,
+    "PaymentFrequency": "st",
+    "SumAssured": 0,
+    "CommencementDateOption": "S",
+    "CommencementDate": "2025-05-27T13:53:38.124Z",
+    "PremiumPattern": "string",
+    "BenefitCode": "L",
+    "IndexRate": 0,
+    "Height": "string",
+    "Weight": "string",
+    "PayerType": "S",
+    "PayerRelation": "string",
+    "PayerPOIType": "string",
+    "PayerPOINumber": "string",
+    "Currency": "string",
+    "Occupation": "string",
+    "PensionFrequency": "st",
+    "PensionTerm": 0,
+    "PensionStartDate": "2025-05-27T13:53:38.124Z",
+    "QuotationDetails": [
+      {
+        "LifeAssuredRelation": "string",
+        "LifeAssuredPOIType": "string",
+        "LifeAssuredPOINumber": "string",
+        "ConsumeAlcohol": "Y",
+        "AlcoholPerDay": 0,
+        "PregnantFlag": "Y",
+        "PregnancyMonths": 0,
+        "SmokerFlag": "Y",
+        "NumberOfSticksPerDay": 0
+      }
+    ],
+    "Questions": [
+      {
+        "QuestionCode": "string",
+        "QuestionReply": "Y",
+        "QuestionReplyDetails": "string"
+      }
+    ],
+    "FundDetails": [
+      {
+        "FundCode": "string",
+        "FundPercentage": 0
+      }
+    ],
+    "StrategyDetails": [
+      {
+        "StrategyCode": "string",
+        "StrategyPercentage": 0
+      }
+    ],
+    "FamilyHistoryDetails": [
+      {
+        "FamilyMemberRelation": "string",
+        "Alive": "s",
+        "Age": 0,
+        "CauseCode": "string",
+        "StateOfHealth": "string"
+      }
+    ],
+    "AgentDetails": [
+      {
+        "AgentNumber": 0,
+        "Rank": "string",
+        "AgentSharePercent": 0
+      }
+    ],
+    "BeneficiaryDetails": [
+      {
+        "BeneficiaryPOIType": "string",
+        "BeneficiaryPOINumber": "string",
+        "BeneficiaryName": "string",
+        "BeneficiarybirthDate": "2025-05-27T13:53:38.124Z",
+        "BeneficiaryRelation": "string",
+        "BenefitShare": 0
+      }
+    ],
+    "CustomerBankDetails": [
+      {
+        "BankCode": "string",
+        "BranchCode": "string",
+        "AccountType": "string",
+        "AccountNumber": "string",
+        "InternationalBankNumber": "string"
+      }
+    ],
+    "CustomerContactDetails": [
+      {
+        "ContactCode": "string",
+        "ContactNumber": "string"
+      }
+    ]
+  }
+}
+    </code>
+    </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('create-quotation-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                <code id="create-quotation-curl">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/quotation' \
+--header 'x-request-id: e251755f-d753-4236-aa20-83bd4d66ec4a' \
+--header 'accept-language: en' \
+--header 'poiType: 12' \
+--header 'poiNumber;' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ...' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000' \
+--data '{
+  "Data": {
+    "TransactionId": "string",
+    "PlanCode": "IBAR002",
+    "ProposerType": "I",
+    "ProposerRelation": "string",
+    "ProposerPOIType": "string",
+    "ProposerPOINumber": "1096169121",
+    "ProposerName": "string",
+    "ProposerbirthDate": "2025-05-27",
+    "ProposerGender": "M",
+    "AnnualIncome": 0,
+    "Contribution": 0,
+    "PolicyTerm": 0,
+    "PremiumPayTerm": 0,
+    "PaymentFrequency": "st",
+    "SumAssured": 0,
+    "CommencementDateOption": "S",
+    "CommencementDate": "2025-05-27T13:53:38.124Z",
+    "PremiumPattern": "string",
+    "BenefitCode": "L",
+    "IndexRate": 0,
+    "Height": "string",
+    "Weight": "string",
+    "PayerType": "S",
+    "PayerRelation": "string",
+    "PayerPOIType": "string",
+    "PayerPOINumber": "string",
+    "Currency": "string",
+    "Occupation": "string",
+    "PensionFrequency": "st",
+    "PensionTerm": 0,
+    "PensionStartDate": "2025-05-27T13:53:38.124Z",
+    "QuotationDetails": [
+      {
+        "LifeAssuredRelation": "string",
+        "LifeAssuredPOIType": "string",
+        "LifeAssuredPOINumber": "string",
+        "ConsumeAlcohol": "Y",
+        "AlcoholPerDay": 0,
+        "PregnantFlag": "Y",
+        "PregnancyMonths": 0,
+        "SmokerFlag": "Y",
+        "NumberOfSticksPerDay": 0
+      }
+    ],
+    "Questions": [
+      {
+        "QuestionCode": "string",
+        "QuestionReply": "Y",
+        "QuestionReplyDetails": "string"
+      }
+    ],
+    "FundDetails": [
+      {
+        "FundCode": "string",
+        "FundPercentage": 0
+      }
+    ],
+    "StrategyDetails": [
+      {
+        "StrategyCode": "string",
+        "StrategyPercentage": 0
+      }
+    ],
+    "FamilyHistoryDetails": [
+      {
+        "FamilyMemberRelation": "string",
+        "Alive": "s",
+        "Age": 0,
+        "CauseCode": "string",
+        "StateOfHealth": "string"
+      }
+    ],
+    "AgentDetails": [
+      {
+        "AgentNumber": 0,
+        "Rank": "string",
+        "AgentSharePercent": 0
+      }
+    ],
+    "BeneficiaryDetails": [
+      {
+        "BeneficiaryPOIType": "string",
+        "BeneficiaryPOINumber": "string",
+        "BeneficiaryName": "string",
+        "BeneficiarybirthDate": "2025-05-27T13:53:38.124Z",
+        "BeneficiaryRelation": "string",
+        "BenefitShare": 0
+      }
+    ],
+    "CustomerBankDetails": [
+      {
+        "BankCode": "string",
+        "BranchCode": "string",
+        "AccountType": "string",
+        "AccountNumber": "string",
+        "InternationalBankNumber": "string"
+      }
+    ],
+    "CustomerContactDetails": [
+      {
+        "ContactCode": "string",
+        "ContactNumber": "string"
+      }
+    ]
+  }
+}'
+     </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('create-quotation')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('create-quotation2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('create-quotation3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('create-quotation4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('create-quotation5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('create-quotation6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('create-quotation7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('create-quotation8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('create-quotation9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('create-quotation10')" type="button">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="create-quotation">
+{
+    "Data": {
+        "QuotationDetails": {
+            "QuotationNumber": "API46589",
+            "PolicyStatus": "NB001"
+        }
+    }
+}
+                                             </code>
+                                            <code class="text" style=" display: none; " id="create-quotation2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="create-quotation3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="create-quotation4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-quotation5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-quotation6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-quotation7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-quotation8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-quotation9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="create-quotation10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+<!-- API 10 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-11">
+        Download Initial Quotation Report
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /initial-quotation-report
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Finitial-quotation-report/post">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            Provides the data required to print the illustration report, This API needs to be called after initial proposal creation.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                                      <code class="sample-code">
+
+Request Body:
+   {
+  "Data": {
+    "TransactionId": "string",
+    "QuotationNumber": "API46589",
+    "PlanType": "EDU",
+    "PreferredLanguage": "en"
+  }
+}
+
+                                                  </code>
+                                                </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('download-initial-quotation-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                                                        <code id="download-initial-quotation-curl">
+
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/initial-quotation-report' \
+--header 'x-request-id: 2c40ddfb-6694-481a-ba22-7c4557b0a101' \
+--header 'accept-language: en' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ...' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000' \
+--data '{
+  "Data": {
+    "TransactionId": "string",
+    "QuotationNumber": "API46589",
+    "PlanType": "EDU",
+    "PreferredLanguage": "en"
+  }
+}'
+     </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('download-initial-quotation')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('download-initial-quotation10')" type="button">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="download-initial-quotation">
+        {
+    "Data": {
+        "ReportOutput": [
+            "JVBERi0xLjUKJeLjz9MKMiAwIG9iago8PC9UeXBlL1BhZ2UvUGFyZW50IDAgMCBS...BASE64_PDF_1"
+        ]
+    }
+}
+
+                                             </code>
+                                            <code class="text" style=" display: none; " id="download-initial-quotation2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="download-initial-quotation3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="download-initial-quotation4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-initial-quotation5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-initial-quotation6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-initial-quotation7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-initial-quotation8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-initial-quotation9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="download-initial-quotation10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+<!-- API 11 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-12">
+        Update Proposal or Quotation
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /quotation/{QuotationNumber}
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fquotation%2F{QuotationNumber}/put">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            This API is used to update quotation. Once user enters all the questions (health, pregnancy or health related questions), fund details and existing policies, update quotation needs to be called.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                                          <code class="sample-code">
+
+Request Body:
+        {
+  "Data": {
+    "Questions": [
+      {
+        "QuestionCode": "string",
+        "QuestionReply": "Y",
+        "QuestionReplyDetails": "string"
+      }
+    ],
+    "FundDetails": [
+      {
+        "FundCode": "string",
+        "FundPercentage": 0
+      }
+    ]
+  }
+}
+     </code>
+    </pre>
+            </div>
+
+               <div class="url-box">
+              <button class="curlbtn fob-create-person-profile-top" type="submit"
+                onclick="show('update-quotation-curl')">
+                <p class="curlText">cURL</p>
+              </button>
+
+              <pre id="generatedCurl">
+                                                                            <code id="update-quotation-curl">
+
+curl --location --request PUT 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/quotation/API78562' \
+--header 'x-request-id: 6efe2faa-3dac-4b6f-8963-867814257c7a' \
+--header 'accept-language: en' \
+--header 'poiType: 12' \
+--header 'poiNumber;' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ,,,' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000' \
+--data '{
+  "Data": {
+    "Questions": [
+      {
+        "QuestionCode": "string",
+        "QuestionReply": "Y",
+        "QuestionReplyDetails": "string"
+      }
+    ],
+    "FundDetails": [
+      {
+        "FundCode": "string",
+        "FundPercentage": 0
+      }
+    ]
+  }
+}'
+     </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('update-quotation')">200</a>
+        <a class="response-box-error" onclick="responseText('update-quotation2')">400</a>
+        <a class="response-box-error" onclick="responseText('update-quotation3')">401</a>
+        <a class="response-box-error" onclick="responseText('update-quotation4')">403</a>
+        <a class="response-box-error" onclick="responseText('update-quotation5')">404</a>
+        <a class="response-box-error" onclick="responseText('update-quotation6')">405</a>
+        <a class="response-box-error" onclick="responseText('update-quotation7')">406</a>
+        <a class="response-box-error" onclick="responseText('update-quotation8')">429</a>
+        <a class="response-box-error" onclick="responseText('update-quotation9')">500</a>
+        <a class="response-box-error" onclick="responseText('update-quotation10')">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="update-quotation">
+{
+    "Data": {
+        "QuotationDetails": {
+            "QuotationNumber": "API78562",
+            "PolicyNumber": "POL78562",
+            "PolicyStatus": "Approved"
+        },
+        "EligibleFlag": true
+    }
+}
+
+                                             </code>
+                                            <code class="text" style=" display: none; " id="update-quotation2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="update-quotation3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="update-quotation4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="update-quotation5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="update-quotation6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="update-quotation7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="update-quotation8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="update-quotation9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="update-quotation10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+<!-- API 12 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-13">
+        Download Updated Quotation Report
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /updated-quotation-report
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fupdated-quotation-report/post">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            Provides the data required from ISF to print the Proposal form. This API needs to be called to download updated proposal.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                                    <code class="sample-code">
+
+Request Body:
+{
+  "Data": {
+    "TransactionId": "string",
+    "QuotationNumber": "API46589",
+    "PlanType": "EDU",
+    "PreferredLanguage": "en"
+  }
+}
+
+                                              </code>
+                                            </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('download-updated-quotation-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                                                      <code id="download-updated-quotation-curl">
+
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/updated-quotation-report' \
+--header 'x-request-id: d776c4c1-2e4e-4225-b621-132a2e12f3e0' \
+--header 'accept-language: en' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ...' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000' \
+--data '{
+  "Data": {
+    "TransactionId": "string",
+    "QuotationNumber": "API46589",
+    "PlanType": "EDU",
+    "PreferredLanguage": "en"
+  }
+}'
+     </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('download-updated-quotation')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('download-updated-quotation10')" type="button">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="download-updated-quotation">
+    {
+"Data": {
+    "ReportOutput": [
+        "JVBERi0xLjUKJeLjz9MKMiAwIG9iago8PC9Db2xvclNwYWNlWy9DYWxSR0I+...BASE64_FAKE_PDF_1..."
+    ]
+}
+}
+                                             </code>
+                                            <code class="text" style=" display: none; " id="download-updated-quotation2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="download-updated-quotation3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="download-updated-quotation4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-updated-quotation5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-updated-quotation6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-updated-quotation7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-updated-quotation8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-updated-quotation9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="download-updated-quotation10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+
+<!-- API 13 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-14">
+        Create Proposal Deposit Receipt
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /policy-receipt
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fpolicy-receipt/post">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            It is used to create a proposal deposit receipt and posts the accounting for it, receipt creation is needed before issuing policy, after this call apigee will call issue policy internally.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                                    <code class="sample-code">
+
+Request Body:
+{
+  "Data": {
+    "PolicyNumber": "IBAR00200018414",
+    "QuotationNumber": "API46162",
+    "InstrumentType": "string",
+    "InstrumentBank": "ARB",
+    "InstrumentBankBranch": "CST ARB CUSTOMERS",
+    "InstrumentNumber": "string",
+    "Contribution": 0,
+    "Currency": "string",
+    "CreditCardType": "string",
+    "CreditCardNumber": "string",
+    "CreditCardValidFrom": "2025-05-27T13:50:42.336Z",
+    "CreditCardValidTo": "2025-05-27T13:50:42.336Z"
+  }
+}
+
+                                              </code>
+                                            </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('create-proposal-receipt-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                                                      <code id="create-proposal-receipt-curl">
+
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/policy-receipt' \
+--header 'x-request-id: 1942aba2-5319-476e-814a-a287d07b1c0f' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ..' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000' \
+--data '{
+  "Data": {
+    "PolicyNumber": "IBAR00200018414",
+    "QuotationNumber": "API46162",
+    "InstrumentType": "string",
+    "InstrumentBank": "ARB",
+    "InstrumentBankBranch": "CST ARB CUSTOMERS",
+    "InstrumentNumber": "string",
+    "Contribution": 0,
+    "Currency": "string",
+    "CreditCardType": "string",
+    "CreditCardNumber": "string",
+    "CreditCardValidFrom": "2025-05-27T13:50:42.336Z",
+    "CreditCardValidTo": "2025-05-27T13:50:42.336Z"
+  }
+}'
+     </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('create-proposal-receipt')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('create-proposal-receipt10')" type="button">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="create-proposal-receipt">
+{
+    "Data": {
+        "Receipts": [
+            {
+                "ReceiptNumber": "string",
+                "PolicyStatus": "string"
+            }
+        ]
+    }
+}
+                                             </code>
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="create-proposal-receipt10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- API 14 -->
+
+<div class="api-infosec">
+    <h1 class="fob-welcome-title" id="section-15">
+        Download Policy Report
+    </h1>
+
+    <p class="fob-welcome-line">&nbsp;</p>
+
+    <p class="fob-welcome-text">
+        Endpoint: /policy-report
+    </p>
+
+    <p class="fob-welcome-text">
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/7089/api/6265#/MPSinglePremiumPension_100/operation/%2Fpolicy-report/post">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            It provides the data required to download policy report.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                                                    <code class="sample-code">
+
+Request Body:
+{
+  "Data": {
+    "TransactionId": "string",
+    "PolicyNumber": "IBER000300015080",
+    "PreferredLanguage": "en"
+  }
+}
+
+                                              </code>
+                                            </pre>
+            </div>
+
+            <div class="url-box">
+                                <button class="curlbtn fob-create-person-profile-top" type="submit"
+                                    onclick="show('download-policy-report-curl')">
+                                    <p class="curlText">cURL</p>
+                                </button>
+
+              <pre id="generatedCurl">
+                                                                      <code id="download-policy-report-curl">
+
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-single-premium-pension/v1/policy-report' \
+--header 'x-request-id: 670d70f8-da6f-481e-afe5-5666788f21e5' \
+--header 'accept-language: en' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ..' \
+--header 'Cookie: BIGipServertest.api-marketplace.alrajhibank.com.sa-443.app~test.api-marketplace.alrajhibank.com.sa-443_pool=1748362250.24438.0000' \
+--data '{
+  "Data": {
+    "TransactionId": "string",
+    "PolicyNumber": "IBER000300015080",
+    "PreferredLanguage": "en"
+  }
+}'
+     </code>
+    </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('download-policy-report')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('download-policy-report10')" type="button">503</a>
+</div>
+
+<pre class="response-box">
+
+                                            <code class="text" style=" display: block; " id="download-policy-report">
+{
+    "Data": {
+        "ReportOutput": [
+            "JVBERi0xLjUKJeLjz9MKMiAwIG9iago8PC9Db2xvclNwYWNlWy9DYWxSR0I8PC9HYW1tYVsyLjIgMi4yIDIuMl0vV2hpdGVQb2ludFswLjk1MDQzIDEgMS4wOV0vTWF0cml4WzAuNDEyMzkgMC4yMTI2NCAwLjAxOTMzIDAuMzU3NTggMC43MTUxNyAwLjExOTE5IDAuMTgwNDUgMC4wNzIxOCAwLjk1MDRdPj5dL0ludGVudC9QZXJjZXB0dWFsL1N1YnR5cGUvSW1hZ2UvSGVpZ2h0IDYxL0ZpbHRlci9GbGF0ZURlY29kZS9UeXBlL1hPYmplY3QvRGVjb2RlUGFybXM8PC9Db2x1bW5zIDI0OS9Db2xvcnMgMy9QcmVkaWN0b3IgMTUvQml0c1BlckNvbXBvbmVudCA4Pj4vV2lkdGggMjQ5L0xlbmd0aCA1NzI1L0JpdHNQZXJDb21wb25lbnQgOD4+"
+        ]
+    }
+}
+                                             </code>
+                                            <code class="text" style=" display: none; " id="download-policy-report2">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.400.007",
+                "Message": "Store is invalid.",
+                "Path": "request.mappingPosID",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="download-policy-report3">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.401.001",
+                "Message": "Unauthorized to call the target operation.",
+                "Path": "authorization",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+                                            <code class="text" style=" display: none; " id="download-policy-report4">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-policy-report5">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.404.001",
+                "Message": "No resources match requested URI.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-policy-report6">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.405.001",
+                "Message": "The method is not allowed for the requested URL.",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-policy-report7">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-policy-report8">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.429.001",
+                "Message": "Assembly Rate Limit exceeded",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+
+
+                                            <code class="text" style=" display: none; " id="download-policy-report9">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.500.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="download-policy-report10">
+        {
+            "Errors": [
+                {
+                "Code": "ERROR.503.001",
+                "Message": "Internal Error",
+                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                }
+            ]
+        }
+                                            </code>
+                                                  </pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
