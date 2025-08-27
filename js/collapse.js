@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+    //for basic pages header
+    if (document.querySelector(".basic-page") && window.location.href.includes("/search/")) {
+        const header = document.querySelector("h1.page-header");
+        if (header) {
+            header.classList.add("no-margin-top");
+        }
+    }
+    //search bar in business domains
     const style = document.createElement('style');
     style.textContent = `
   .sidemenu-navitems.hidden-by-search {
@@ -6,23 +14,26 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 `;
     document.head.appendChild(style);
-    document.getElementById('searchbardomains').onkeyup = function() {
-        const val = this.value.toLowerCase();
-        let matchCount = 0;
+    const searchBar = document.getElementById("searchbardomains");
+    if (searchBar) {
+        searchBar.onkeyup = function() {
+            const val = this.value.toLowerCase();
+            let matchCount = 0;
 
-        document.querySelectorAll('.sidemenu-navitems').forEach(el => {
-            const text = el.innerText.toLowerCase();
-            const match = text.includes(val);
-            if (match) {
-                el.classList.remove('hidden-by-search');
-                matchCount++;
-            } else {
-                el.classList.add('hidden-by-search');
-            }
-        });
+            document.querySelectorAll('.sidemenu-navitems').forEach(el => {
+                const text = el.innerText.toLowerCase();
+                const match = text.includes(val);
+                if (match) {
+                    el.classList.remove('hidden-by-search');
+                    matchCount++;
+                } else {
+                    el.classList.add('hidden-by-search');
+                }
+            });
 
-        console.log(`🔍 Found ${matchCount} match(es) for: "${val}"`);
-    };
+            console.log(`🔍 Found ${matchCount} match(es) for: "${val}"`);
+        };
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -1735,17 +1746,17 @@ myElement.addEventListener('mouseout', function() {
 });*/
 
 var listcolor = document.getElementById("listcolor");
+if (listcolor) {
+    listcolor.addEventListener("click", function() {
+        listcolor.style.color = "#556ff8";
+        listcolor.style.border = "2px solid #556ff8";
+    });
 
-listcolor.addEventListener("click", function() {
-    listcolor.style.color = "#556ff8";
-    listcolor.style.border = "2px solid #556ff8";
-});
-
-listcolor.addEventListener("mouseout", function() {
-    listcolor.style.color = "#556ff8";
-    listcolor.style.border = "2px solid #556ff8";
-});
-
+    listcolor.addEventListener("mouseout", function() {
+        listcolor.style.color = "#556ff8";
+        listcolor.style.border = "2px solid #556ff8";
+    });
+}
 var myElement = document.getElementById("myElement");
 var isClicked = false;
 
