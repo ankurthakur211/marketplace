@@ -15172,6 +15172,31 @@ form#custom-invite-form input {
     flex-direction: row !important;
 }
 
+.custom-APIproduct .custom-productcards .grid .bx--card .apicProductCard .customFields {
+    order: 1;
+    margin-top: 40px;
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 767px) {
+    .toolbar-loading .apicStickyHeader {
+        left: 0px;
+    }
+    .apiconnect-explorer .operation-section .operationHeader, .apiconnect-explorer .overview-section .overviewHeader, .apiconnect-explorer .overview-section .overviewBody, .apiconnect-explorer .definitions-section .definitionsHeader, .apiconnect-explorer .definitions-section .definitionsBody{
+        padding: 10px 20px 0 20px;
+    }
+    .downloadOpenApi {
+        height: 99px;        
+    }
+    .apiconnect-explorer .overviewBody .operationInformation {
+        padding: 0.7rem 0px;
+    }
+    .apicProduct .apicProductHeader, .productApiWrapper header.titleSection {
+        padding: 0.5rem 0rem;
+    }
+ 
+}
+
 
 /*updating home page feb ankiee*/
 
@@ -19848,6 +19873,18 @@ body.context--BusinessDomains .apicMainContent {
     font-size: 18px;
     color: #5464f2;
 }
+
+.custom-productcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    list-style: none;
+    padding-left: 0;
+  }
+   
+  .custom-productcards  .grid{
+    width: calc(100% / 3 - 22px);
+  }
 
 
 /*updating home page feb ankiee*/
