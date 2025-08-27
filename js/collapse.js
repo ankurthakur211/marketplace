@@ -1435,27 +1435,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     var openSearchButton2 = document.querySelector(".opensearch2");
+    if (openSearchButton2) {
+        openSearchButton2.addEventListener("click", function() {
+            var searchContainer = document.querySelector(
+                "section#block-marketplace-latest-exposedformsearch-apipage-1"
+            );
 
-    openSearchButton2.addEventListener("click", function() {
-        var searchContainer = document.querySelector(
-            "section#block-marketplace-latest-exposedformsearch-apipage-1"
-        );
+            console.log(searchContainer); // Log searchContainer to debug
 
-        console.log(searchContainer); // Log searchContainer to debug
-
-        if (searchContainer) {
-            if (
-                searchContainer.style.display === "none" ||
-                searchContainer.style.display === ""
-            ) {
-                searchContainer.style.display = "flex";
+            if (searchContainer) {
+                if (
+                    searchContainer.style.display === "none" ||
+                    searchContainer.style.display === ""
+                ) {
+                    searchContainer.style.display = "flex";
+                } else {
+                    searchContainer.style.display = "none";
+                }
             } else {
-                searchContainer.style.display = "none";
+                console.log("Search container not found");
             }
-        } else {
-            console.log("Search container not found");
-        }
-    });
+        });
+    }
 
 
 
