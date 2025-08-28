@@ -15182,19 +15182,23 @@ form#custom-invite-form input {
     .toolbar-loading .apicStickyHeader {
         left: 0px;
     }
-    .apiconnect-explorer .operation-section .operationHeader, .apiconnect-explorer .overview-section .overviewHeader, .apiconnect-explorer .overview-section .overviewBody, .apiconnect-explorer .definitions-section .definitionsHeader, .apiconnect-explorer .definitions-section .definitionsBody{
+    .apiconnect-explorer .operation-section .operationHeader,
+    .apiconnect-explorer .overview-section .overviewHeader,
+    .apiconnect-explorer .overview-section .overviewBody,
+    .apiconnect-explorer .definitions-section .definitionsHeader,
+    .apiconnect-explorer .definitions-section .definitionsBody {
         padding: 10px 20px 0 20px;
     }
     .downloadOpenApi {
-        height: 99px;        
+        height: 99px;
     }
     .apiconnect-explorer .overviewBody .operationInformation {
         padding: 0.7rem 0px;
     }
-    .apicProduct .apicProductHeader, .productApiWrapper header.titleSection {
+    .apicProduct .apicProductHeader,
+    .productApiWrapper header.titleSection {
         padding: 0.5rem 0rem;
     }
- 
 }
 
 
@@ -19880,11 +19884,11 @@ body.context--BusinessDomains .apicMainContent {
     gap: 24px;
     list-style: none;
     padding-left: 0;
-  }
-   
-  .custom-productcards  .grid{
+}
+
+.custom-productcards .grid {
     width: calc(100% / 3 - 22px);
-  }
+}
 
 
 /*updating home page feb ankiee*/
@@ -23991,5 +23995,10 @@ section#block-marketplace-latest-exposedformsearch-apipage-1 {
     padding-bottom: 10px;
     border-bottom: 1px solid #5464f2;
 }
+
+h1.page-header.no-margin-top {
+    margin-top: unset !important;
+}
+
 
 /*migration updates*/
