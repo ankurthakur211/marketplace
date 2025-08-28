@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function ckeditor_allow_precode_editor_js_settings_alter(array &$settings, \Drupal\editor\Entity\Editor $editor) {
+  // Apply to ALL text formats that use CKEditor 5.
+  if (!empty($settings['editorSettings']['plugins']['DrupalSourceEditing']['allowedTags'])) {
+    $settings['editorSettings']['plugins']['DrupalSourceEditing']['allowedTags'][] = 'pre';
+    $settings['editorSettings']['plugins']['DrupalSourceEditing']['allowedTags'][] = 'code';
+    $settings['editorSettings']['plugins']['DrupalSourceEditing']['allowedTags'][] = 'span';
+  }
+}
