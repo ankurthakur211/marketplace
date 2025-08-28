@@ -2,40 +2,31 @@
     <p>About Emkan Voucher Redemption APIS</p>
 
     <p>
-        The main goal for this project is to enable Emkan to avail applying
-        for
-        Voucher Redemption through API Marketplace.
-        Voucher Redemption mainly is the exchange by a Customer of a Voucher (or individual items
-        within
-        a Voucher) for goods or services ordinarily provided.
-        These API’s are used for getting the voucher details [amount and current status], voucher
-        pre-redemption, redemption, pre-refunding and refunding. Exposing these API’s can be applied
-        for
-        on-prem and ecommerce Emkan's Retail Finance merchants.
+        The main goal for this project is to enable Emkan to avail applying for Voucher Redemption through API Marketplace. Voucher Redemption mainly is the exchange by a Customer of a Voucher (or individual items within a Voucher) for goods or services ordinarily
+        provided. These API’s are used for getting the voucher details [amount and current status], voucher pre-redemption, redemption, pre-refunding and refunding. Exposing these API’s can be applied for on-prem and ecommerce Emkan's Retail Finance merchants.
     </p>
 </div>
 <div class="basic-page">
     <div class="api-doc-background">
-        <p class="api-doc-background-text ">Emkan Voucher Redemption API
-            Documentation</p>
+        <p class="api-doc-background-text ">Emkan Voucher Redemption API Documentation
+        </p>
     </div>
-    
+
     <div class="container ">
         <div class="row">
             <div class="col-md-3">
                 <div class="container">
                     <div>
-                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar"
-                            onkeyup="search_menu()" type="text" />
-    
+                        <input class="api-doc-field-Search" placeholder="      Search " name="Search here" id="searchbar" onkeyup="search_menu()" type="text" />
+
                     </div>
                     <br>
                     <div class="api-guides-vertical-menu ">
-    
-    
+
+
                         <a class="api-list main-looking-menu apn-doc-menu" href="#section-1" onclick="show('expand2')">Emkan
                             Voucher Redemption APIs</a>
-    
+
                         <div class="api-guides-dropdown-container" id="expand2">
                             <a class="api-guides-noList apn-doc-menu" href="#section-2">Voucher Details</a>
                             <a class="api-guides-noList apn-doc-menu" href="#section-3">Pre-redeem</a>
@@ -43,33 +34,28 @@
                             <a class="api-guides-noList apn-doc-menu" href="#section-5">Pre-refund</a>
                             <a class="api-guides-noList apn-doc-menu " href="#section-6">Refund</a>
                         </div>
-    
-    
+
+
                     </div>
                     <br>
                 </div>
             </div>
-    
+
             <div class="col-md-9">
                 <div class="container api-guides-text">
                     <div class="container api-guides-text p-0">
                         <p class="fob-welcome-title" id="section-1">Emkan Voucher Redemption APIs</p>
                         <p class="fob-welcome-line"></p>
-                        <p class="fob-welcome-text">The main goal for this project is to enable Emkan to avail applying for
-                            Voucher Redemption through API Marketplace.
-                            Voucher Redemption mainly is the exchange by a Customer of a Voucher (or individual items within
-                            a Voucher) for goods or services ordinarily provided.
-                            These API’s are used for getting the voucher details [amount and current status], voucher
-                            pre-redemption, redemption, pre-refunding and refunding. Exposing these API’s can be applied for
+                        <p class="fob-welcome-text">The main goal for this project is to enable Emkan to avail applying for Voucher Redemption through API Marketplace. Voucher Redemption mainly is the exchange by a Customer of a Voucher (or individual items within a Voucher) for
+                            goods or services ordinarily provided. These API’s are used for getting the voucher details [amount and current status], voucher pre-redemption, redemption, pre-refunding and refunding. Exposing these API’s can be applied for
                             on-prem and ecommerce Emkan's Retail Finance merchants.
-                            </br></p>
-                        <p class="fob-welcome-text"><a id="downloadLink"
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Emkan_Voucher_Redemption.postman_collection.json"
+                            </br>
+                        </p>
+                        <p class="fob-welcome-text"><a id="downloadLink" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Emkan_Voucher_Redemption.postman_collection.json"
                                 download="">Download Postman Collection</a></p>
-                        <p class="fob-welcome-text"><a
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/EmkanVoucherRedemptionSampleRequestData.xlsx"
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/EmkanVoucherRedemptionSampleRequestData.xlsx"
                                 download="">Download Sample Data</a></p>
-    
+
                         <h1 class="fob-welcome-title">Emkan Voucher Redemption Workflow</h1>
                         <p class="fob-welcome-line"></p>
                         <a class="fob-product-title-click" target="_blank" href="../voucherRedemptionWorkflowImg">Click
@@ -88,18 +74,18 @@
                                 <p class="Voucher-Redemption-img"><br></p>
                             </div>
                         </div>
-    
+
                         <h1 class="fob-welcome-title" id="section-2">Voucher Details</h1>
                         <p class="fob-welcome-line"></p>
-                        <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/getVoucherDetails</br></p>
-                        <p class="fob-welcome-text"><a
-                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FgetVoucherDetails/post">Swagger
+                        <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/getVoucherDetails</br>
+                        </p>
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FgetVoucherDetails/post">Swagger
                                 Link</a></p>
-                        <p class="fob-welcome-text">It is exposed for retrieving the voucher
-                            details (voucher's current amount and status).
-                            </br></p>
+                        <p class="fob-welcome-text">It is exposed for retrieving the voucher details (voucher's current amount and status).
+                            </br>
+                        </p>
                         <div class="bx--snippet-container body" data-testid="expandable-example-display">
-    
+
                             <div class="row flex mt-25">
                                 <div class="col-lg-8">
                                     <h1 class="fob-welcome-title mt-0">Request Example</h1>
@@ -115,11 +101,10 @@
                       </pre>
                                 </div>
                                 <div class="col-lg-4 mt-25">
-                                    <button class="curlbtn fob-create-person-profile-top" type="submit"
-                                        onclick="show('rede-details')">
+                                    <button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('rede-details')">
                                         <p class="curlText">cURL</p>
                                     </button>
-    
+
                                     <pre id="generatedCurl">
                         <code id="rede-details" style=" display: block;">
         curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/getVoucherDetails' \
@@ -138,34 +123,25 @@
                       </pre>
                                 </div>
                             </div>
-    
+
                             <div class="row flex mt-25">
                                 <div class="col-lg-8">
                                     <div class="code-box">
-                                        <p
-                                            class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                             &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
-    
-    
+
+
                                         <div class="response-box-div">
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('voucher-det')">200</a>
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('voucher-det3')">401</a>
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('voucher-det4')">403</a>
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('voucher-det5')">404</a>
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('voucher-det6')">405</a>
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('voucher-det7')">406</a>
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('voucher-det8')">429</a>
-                                            <a type="button" class="response-box-error"
-                                                onclick="responseText('voucher-det9')">500</a>
+                                            <a type="button" class="response-box-error" onclick="responseText('voucher-det')">200</a>
+                                            <a type="button" class="response-box-error" onclick="responseText('voucher-det3')">401</a>
+                                            <a type="button" class="response-box-error" onclick="responseText('voucher-det4')">403</a>
+                                            <a type="button" class="response-box-error" onclick="responseText('voucher-det5')">404</a>
+                                            <a type="button" class="response-box-error" onclick="responseText('voucher-det6')">405</a>
+                                            <a type="button" class="response-box-error" onclick="responseText('voucher-det7')">406</a>
+                                            <a type="button" class="response-box-error" onclick="responseText('voucher-det8')">429</a>
+                                            <a type="button" class="response-box-error" onclick="responseText('voucher-det9')">500</a>
                                         </div>
-    
+
                                         <pre class="response-box">
     
                         <code id="voucher-det" style=" display: block; " class="text">
@@ -264,21 +240,19 @@
                                     </div>
                                 </div>
                             </div>
-    
-    
+
+
                             <h1 class="fob-welcome-title" id="section-3">Pre-redeem</h1>
                             <p class="fob-welcome-line"></p>
-                            <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/preRedeem</br></p>
-                            <p class="fob-welcome-text"><a
-                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FpreRedeem/post">Swagger
+                            <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/preRedeem</br>
+                            </p>
+                            <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FpreRedeem/post">Swagger
                                     Link</a></p>
-                            <p class="fob-welcome-text">This api is exposed for generating the otp (that is being sent to
-                                user's mobile
-                                number and otp id to the merchant, each of the otp and otpID are associated) before
-                                redeeming the voucher.</br></p>
-    
+                            <p class="fob-welcome-text">This api is exposed for generating the otp (that is being sent to user's mobile number and otp id to the merchant, each of the otp and otpID are associated) before redeeming the voucher.</br>
+                            </p>
+
                             <div class="bx--snippet-container body" data-testid="expandable-example-display">
-    
+
                                 <div class="row flex mt-25">
                                     <div class="col-lg-8">
                                         <h1 class="fob-welcome-title">Request Example</h1>
@@ -292,12 +266,11 @@
                         </pre>
                                     </div>
                                     <div class="col-lg-4 mt-25">
-    
-                                        <button class="curlbtn fob-activate-fetching-top" type="submit"
-                                            onclick="show('preredeem-vo')">
+
+                                        <button class="curlbtn fob-activate-fetching-top" type="submit" onclick="show('preredeem-vo')">
                                             <p class="curlText">cURL</p>
                                         </button>
-    
+
                                         <pre id="generatedCurl">
                             <code id="preredeem-vo" style=" display: block;">
         curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/preRedeem' \
@@ -317,28 +290,19 @@
                                 <div class="row flex mt-25">
                                     <div class="col-lg-8">
                                         <div class="code-box">
-                                            <p
-                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                            <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
-    
-    
+
+
                                             <div class="response-box-div">
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('preredeem')">200</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('preredeem3')">401</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('preredeem4')">403</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('preredeem5')">404</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('preredeem6')">405</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('preredeem7')">406</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('preredeem8')">429</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('preredeem9')">500</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('preredeem')">200</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('preredeem3')">401</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('preredeem4')">403</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('preredeem5')">404</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('preredeem6')">405</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('preredeem7')">406</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('preredeem8')">429</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('preredeem9')">500</a>
                                             </div>
                                             <pre class="response-box">
     
@@ -442,21 +406,19 @@
       }    
                   </code>
                         </pre>
-    
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <h1 class="fob-welcome-title" id="section-4">Redeem</h1>
                             <p class="fob-welcome-line"></p>
-                            <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/redeem</br></p>
-                            <p class="fob-welcome-text"><a
-                                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2Fredeem/post">Swagger
+                            <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/redeem</br>
+                            </p>
+                            <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2Fredeem/post">Swagger
                                     Link</a></p>
-                            <p class="fob-welcome-text">This operation is performed when a
-                                voucher is used as a form of payment. When used as a form of payment the consumer
-                                redeems the requested amount against the voucher. Once redeemed, the voucher may not
-                                be used again.</br></p>
+                            <p class="fob-welcome-text">This operation is performed when a voucher is used as a form of payment. When used as a form of payment the consumer redeems the requested amount against the voucher. Once redeemed, the voucher may not be used again.</br>
+                            </p>
                             <div class="bx--snippet-container body" data-testid="expandable-example-display">
                                 <div class="row flex mt-25">
                                     <div class="col-lg-8">
@@ -475,8 +437,7 @@
                           </pre>
                                     </div>
                                     <div class="col-lg-4 mt-25">
-                                        <button class="curlbtn fob-validate-OTP-top" type="submit"
-                                            onclick="show('redeem-voucher')">
+                                        <button class="curlbtn fob-validate-OTP-top" type="submit" onclick="show('redeem-voucher')">
                                             <p class="curlText">cURL</p>
                                         </button>
                                         <pre id="generatedCurl">
@@ -502,28 +463,19 @@
                                 <div class="row flex mt-25">
                                     <div class="col-lg-8">
                                         <div class="code-box">
-    
-                                            <p
-                                                class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+
+                                            <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
-    
+
                                             <div class="response-box-div">
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('redeem')">200</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('redeem3')">401</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('redeem4')">403</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('redeem5')">404</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('redeem6')">405</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('redeem7')">406</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('redeem8')">429</a>
-                                                <a type="button" class="response-box-error"
-                                                    onclick="responseText('redeem9')">500</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('redeem')">200</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('redeem3')">401</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('redeem4')">403</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('redeem5')">404</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('redeem6')">405</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('redeem7')">406</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('redeem8')">429</a>
+                                                <a type="button" class="response-box-error" onclick="responseText('redeem9')">500</a>
                                             </div>
                                             <pre class="response-box">
     
@@ -638,16 +590,15 @@
                                 </div>
                                 <h1 class="fob-welcome-title" id="section-5">Pre-refund</h1>
                                 <p class="fob-welcome-line"></p>
-                                <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/preRefund</br></p>
-                                <p class="fob-welcome-text"><a
-                                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FpreRefund/post">Swagger
+                                <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/preRefund</br>
+                                </p>
+                                <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2FpreRefund/post">Swagger
                                         Link</a></p>
-                                <p class="fob-welcome-text">It is exposed for generating the otp (that
-                                    is being sent to user's mobile number and otp id to the merchant, each of the otp
-                                    and otpID are associated) before refunding the voucher. </br></p>
-    
+                                <p class="fob-welcome-text">It is exposed for generating the otp (that is being sent to user's mobile number and otp id to the merchant, each of the otp and otpID are associated) before refunding the voucher. </br>
+                                </p>
+
                                 <div class="bx--snippet-container body" data-testid="expandable-example-display">
-    
+
                                     <div class="row flex mt-25">
                                         <div class="col-lg-8">
                                             <h1 class="fob-welcome-title">Request Example</h1>
@@ -661,12 +612,11 @@
                                       </pre>
                                         </div>
                                         <div class="col-lg-4 mt-25">
-    
-                                            <button class="curlbtn fob-activate-fetching-top" type="submit"
-                                                onclick="show('vo-prerefund')">
+
+                                            <button class="curlbtn fob-activate-fetching-top" type="submit" onclick="show('vo-prerefund')">
                                                 <p class="curlText">cURL</p>
                                             </button>
-    
+
                                             <pre id="generatedCurl">
                                           <code id="vo-prerefund" style=" display: block;">
     curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/preRefund' \
@@ -685,28 +635,19 @@
                                     <div class="row flex mt-25">
                                         <div class="col-lg-8">
                                             <div class="code-box">
-                                                <p
-                                                    class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                                     &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
-    
-    
+
+
                                                 <div class="response-box-div">
-                                                    <a type="button" class="response-box-error"
-                                                        onclick="responseText('prerefund')">200</a>
-                                                    <a type="button" class="response-box-error"
-                                                        onclick="responseText('prerefund3')">401</a>
-                                                    <a type="button" class="response-box-error"
-                                                        onclick="responseText('prerefund4')">403</a>
-                                                    <a type="button" class="response-box-error"
-                                                        onclick="responseText('prerefund5')">404</a>
-                                                    <a type="button" class="response-box-error"
-                                                        onclick="responseText('prerefund6')">405</a>
-                                                    <a type="button" class="response-box-error"
-                                                        onclick="responseText('prerefund7')">406</a>
-                                                    <a type="button" class="response-box-error"
-                                                        onclick="responseText('prerefund8')">429</a>
-                                                    <a type="button" class="response-box-error"
-                                                        onclick="responseText('prerefund9')">500</a>
+                                                    <a type="button" class="response-box-error" onclick="responseText('prerefund')">200</a>
+                                                    <a type="button" class="response-box-error" onclick="responseText('prerefund3')">401</a>
+                                                    <a type="button" class="response-box-error" onclick="responseText('prerefund4')">403</a>
+                                                    <a type="button" class="response-box-error" onclick="responseText('prerefund5')">404</a>
+                                                    <a type="button" class="response-box-error" onclick="responseText('prerefund6')">405</a>
+                                                    <a type="button" class="response-box-error" onclick="responseText('prerefund7')">406</a>
+                                                    <a type="button" class="response-box-error" onclick="responseText('prerefund8')">429</a>
+                                                    <a type="button" class="response-box-error" onclick="responseText('prerefund9')">500</a>
                                                 </div>
                                                 <pre class="response-box">
     
@@ -810,25 +751,23 @@
             }    
                                 </code>
                                       </pre>
-    
+
                                             </div>
                                         </div>
                                     </div>
-    
+
                                     <h1 class="fob-welcome-title" id="section-6">Refund</h1>
                                     <p class="fob-welcome-line"></p>
-                                    <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/refund</br></p>
-                                    <p class="fob-welcome-text"><a
-                                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2Frefund/post">Swagger
+                                    <p class="fob-welcome-text">Endpoint: /merchant/v1/vouchers/refund</br>
+                                    </p>
+                                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/38/api/14#/MerchantVoucherServices_100/operation/%2Fvouchers%2Frefund/post">Swagger
                                             Link</a></p>
-                                    <p class="fob-welcome-text">This operation is performed when a voucher
-                                        was previously successfully redeemed, the merchant may use the refund voucher
-                                        operation to request the voucher to be placed back into an unredeemed state. Once
-                                        status of the voucher is unredeemed, the customer may cancel the contract from emkan
-                                        website or redeem it again.</br></p>
-    
+                                    <p class="fob-welcome-text">This operation is performed when a voucher was previously successfully redeemed, the merchant may use the refund voucher operation to request the voucher to be placed back into an unredeemed state. Once status of the
+                                        voucher is unredeemed, the customer may cancel the contract from emkan website or redeem it again.</br>
+                                    </p>
+
                                     <div class="bx--snippet-container body" data-testid="expandable-example-display">
-    
+
                                         <div class="row flex mt-25">
                                             <div class="col-lg-8">
                                                 <h1 class="fob-welcome-title">Request Example</h1>
@@ -845,12 +784,11 @@
                                           </pre>
                                             </div>
                                             <div class="col-lg-4 mt-25">
-    
-                                                <button class="curlbtn fob-activate-fetching-top" type="submit"
-                                                    onclick="show('vo-refund')">
+
+                                                <button class="curlbtn fob-activate-fetching-top" type="submit" onclick="show('vo-refund')">
                                                     <p class="curlText">cURL</p>
                                                 </button>
-    
+
                                                 <pre id="generatedCurl">
                                               <code id="vo-refund" style=" display: block;">
     curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/merchant/v1/vouchers/refund' \
@@ -874,28 +812,19 @@
                                         <div class="row flex mt-25">
                                             <div class="col-lg-8">
                                                 <div class="code-box">
-                                                    <p
-                                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
                                                         &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
-    
-    
+
+
                                                     <div class="response-box-div">
-                                                        <a type="button" class="response-box-error"
-                                                            onclick="responseText('response-refund')">200</a>
-                                                        <a type="button" class="response-box-error"
-                                                            onclick="responseText('response-refund3')">401</a>
-                                                        <a type="button" class="response-box-error"
-                                                            onclick="responseText('response-refund4')">403</a>
-                                                        <a type="button" class="response-box-error"
-                                                            onclick="responseText('response-refund5')">404</a>
-                                                        <a type="button" class="response-box-error"
-                                                            onclick="responseText('response-refund6')">405</a>
-                                                        <a type="button" class="response-box-error"
-                                                            onclick="responseText('response-refund7')">406</a>
-                                                        <a type="button" class="response-box-error"
-                                                            onclick="responseText('response-refund8')">429</a>
-                                                        <a type="button" class="response-box-error"
-                                                            onclick="responseText('response-refund9')">500</a>
+                                                        <a type="button" class="response-box-error" onclick="responseText('response-refund')">200</a>
+                                                        <a type="button" class="response-box-error" onclick="responseText('response-refund3')">401</a>
+                                                        <a type="button" class="response-box-error" onclick="responseText('response-refund4')">403</a>
+                                                        <a type="button" class="response-box-error" onclick="responseText('response-refund5')">404</a>
+                                                        <a type="button" class="response-box-error" onclick="responseText('response-refund6')">405</a>
+                                                        <a type="button" class="response-box-error" onclick="responseText('response-refund7')">406</a>
+                                                        <a type="button" class="response-box-error" onclick="responseText('response-refund8')">429</a>
+                                                        <a type="button" class="response-box-error" onclick="responseText('response-refund9')">500</a>
                                                     </div>
                                                     <pre class="response-box">
     
@@ -1009,7 +938,7 @@
                 }    
                                     </code>
                                           </pre>
-    
+
                                                 </div>
                                             </div>
                                         </div>
