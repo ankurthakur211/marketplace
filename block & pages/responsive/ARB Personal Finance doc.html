@@ -73,12 +73,12 @@
                         </p>
 
                         <p class="fob-welcome-text">
-                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3487/api/3484#/MPGetPersonalFinanceResponsibleLending_200/operation/%2Fresponsible-lending/get">Swagger Link
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1052/api/1049#/MPGetPersonalFinanceResponsibleLending_200/operation/%2Fresponsible-lending/get">Swagger Link
             </a>
                         </p>
 
                         <p class="fob-welcome-text">
-                            Get Responsible Lending Details is used to set customer responsible lending information required by SAMA such as income ,obligations, expenses, …etc.
+                            Get Responsible Lending Details is used to get customer responsible lending information required by SAMA such as income ,obligations, expenses, …etc.
                         </p>
 
                         <div class="requestURL-box">
@@ -97,9 +97,7 @@
                             </div>
 
                             <div class="url-box">
-                                <button class="curlbtn fob-create-person-profile-top" type="submit">
-                <p class="curlText">cURL</p>
-            </button>
+                                <p class="fob-welcome-title curlText">cURL</p>
 
                                 <pre id="generatedCurl">
                         <code id="Inquire-for-customer-RL-curl">
@@ -285,226 +283,17 @@
                         </div>
                     </div>
                     <!-- API 2 -->
-
                     <div class="api-infosec">
-                        <h1 class="fob-welcome-title" id="section-6">
-                            MP Get Stipulated Customer Data
-                        </h1>
+                        <h1 class="fob-welcome-title" id="section-3">Customer Fill RL</h1>
 
                         <p class="fob-welcome-line">&nbsp;</p>
 
                         <p class="fob-welcome-text">
-                            Endpoint: /mp-personal-finance/v2/stipulated-customer-data
+                            Endpoint: /mp-personal-finance/v2/responsible-lending
                         </p>
 
                         <p class="fob-welcome-text">
-                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/node/3490#/MPGetPersonalFinanceStipulatedCustomerData_200/operation/%2Fstipulated-customer-data/get">Swagger Link</a
-            >
-          </p>
-
-          <p class="fob-welcome-text">
-            Get Stipulated Customer Data Details is used to get stipulated
-            customer data.
-          </p>
-
-          <div class="requestURL-box">
-            <div class="request-box">
-              <h1 class="fob-welcome-title">Request Example</h1>
-
-              <p class="fob-welcome-line">&nbsp;</p>
-
-              <pre class="example_97 api-guides-example-fob">
-                          <code class="sample-code">
-
-                          </code>
-                        </pre>
-            </div>
-
-            <div class="url-box">
-              <button class="curlbtn fob-create-person-profile-top" type="submit">
-                <p class="curlText">cURL</p>
-            </button>
-
-              <pre id="generatedCurl">
-                                <code id="Customer-Fill-RL-curl">
-      curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-personal-finance/v2/stipulated-customer-data' \
-      --header 'x-request-id: $7da68fa4-2ae5-46d9-96ad-5bcfefc5e31a' \
-      --header 'accept-language: en' \
-      --header 'Accept: application/json' \
-      --header 'Authorization: ••••••'
-                            </code>
-                          </pre>
-            </div>
-          </div>
-
-          <div class="response-outterbox">
-            <div class="innerbox">
-              <div class="code-box">
-                <p
-                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
-                >
-                  &nbsp;&nbsp;&nbsp;&nbsp;Response
-                </p>
-
-                <div class="response-box-div">
-                  <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility')" type="button">200</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility2')" type="button">400</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility3')" type="button">401</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility4')" type="button">403</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility5')" type="button">404</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility6')" type="button">405</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility7')" type="button">406</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility8')" type="button">429</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility9')" type="button">500</a>
-                            <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility10')" type="button">503</a>
-                    </div>
-
-                    <pre class="response-box">
-
-                                            <code class="text" style=" display: block; " id="response-Check-Customer-Eligibility">
-      {
-          "Data": {
-              "EmployerId": 12,
-              "DepartmentId": 15,
-              "SectorId": "MMM",
-              "SalaryAmount": "23500.000",
-              "SalaryCurrency": "SAR",
-              "MilitaryRankId": "001",
-              "EmploymentDate": "2019-03-25",
-              "Mobile": "0542061794",
-              "Email": "ux1672@gmail.com",
-              "ObsoleteData": "N",
-              "AvailableData": "Y",
-              "CurrentAccountBranch": "20400",
-              "CurrentAccountNumber": "6085248631",
-              "CurrentAccountType": "001"
-          }
-      }
-                                             </code>
-                                             <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility2">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.400.001",
-              "Message": "Bad Request",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                                          </code>
-
-                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility3">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.401.001",
-              "Message": "Unauthorized to call the target operation.",
-              "Path": "authorization",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                            </code>
-
-                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility4">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.403.001",
-              "Message": "Can't find any valid subscription.",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                            </code>
-
-                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility5">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.404.001",
-              "Message": "No resources match requested URI.",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                            </code>
-                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility6">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.405.001",
-              "Message": "The method is not allowed for the requested URL.",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                            </code>
-                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility7">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.406.001",
-              "Message": "An appropriate representation of the requested resource could not be found",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                            </code>
-
-                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility8">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.429.001",
-              "Message": "Assembly Rate Limit exceeded",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                            </code>
-
-                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility9">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.500.001",
-              "Message": "Internal Error",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                            </code>
-                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility10">
-      {
-          "Errors": [
-              {
-              "Code": "ERROR.503.001",
-              "Message": "Service Unavailable.",
-              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-              }
-          ]
-      }
-                                            </code>
-
-                                                  </pre>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- API 3 -->
-
-    <div class="api-infosec">
-        <h1 class="fob-welcome-title" id="section-3">Customer Fill RL</h1>
-
-        <p class="fob-welcome-line">&nbsp;</p>
-
-        <p class="fob-welcome-text">
-            Endpoint: /mp-personal-finance/v2/responsible-lending
-        </p>
-
-        <p class="fob-welcome-text">
-            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3505/api/3502#/MPSetPersonalFinanceResponsibleLending_200/operation/%2Fresponsible-lending/post">Swagger Link</a
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1322/api/1319#/MPSetPersonalFinanceResponsibleLending_200/operation/%2Fresponsible-lending/post">Swagger Link</a
             >
           </p>
 
@@ -650,9 +439,7 @@
             </div>
 
             <div class="url-box">
-              <button class="curlbtn fob-create-person-profile-top" type="submit">
-                <p class="curlText">cURL</p>
-            </button>
+               <p class="fob-welcome-title curlText">cURL</p>
 
               <pre id="generatedCurl">
                                 <code id="Customer-Fill-RL-curl">
@@ -798,18 +585,18 @@
 
                 <div class="response-box-div">
                   <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL')" type="button">200</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL2')" type="button">400</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL3')" type="button">401</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL4')" type="button">403</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL5')" type="button">404</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL6')" type="button">405</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL7')" type="button">406</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL8')" type="button">429</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL9')" type="button">500</a>
-            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL10')" type="button">503</a>
-    </div>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL2')" type="button">400</a>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL3')" type="button">401</a>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL4')" type="button">403</a>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL5')" type="button">404</a>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL6')" type="button">405</a>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL7')" type="button">406</a>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL8')" type="button">429</a>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL9')" type="button">500</a>
+                            <a class="response-box-error" onclick="responseText('response-Customer-Fill-RL10')" type="button">503</a>
+                    </div>
 
-    <pre class="response-box">
+                    <pre class="response-box">
 
                                             <code class="text" style=" display: block; " id="response-Customer-Fill-RL">
       {
@@ -927,10 +714,235 @@
 
 
                                                   </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- API 3 -->
+    <div class="api-infosec">
+        <h1 class="fob-welcome-title" id="section-4">
+            Get Product Eligibility
+        </h1>
+
+        <p class="fob-welcome-line">&nbsp;</p>
+
+        <p class="fob-welcome-text">
+            Endpoint: /mp-personal-finance/v2/personal-product-eligibility
+        </p>
+
+        <p class="fob-welcome-text">
+            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1046/api/1043#/MPGetPersonalFinanceProductEligibility_200/operation/%2Fpersonal-product-eligibility/get">Swagger Link</a
+            >
+          </p>
+
+          <p class="fob-welcome-text">
+            Get personal finance product eligibility Details is used to get
+            personal finance product eligibility.
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title">Request Example</h1>
+
+              <p class="fob-welcome-line">&nbsp;</p>
+
+              <pre class="example_97 api-guides-example-fob">
+                                            <code class="sample-code">
+      Query Params:
+      financialProductsIds:[SFN,3PF,WRE]
+                                      </code>
+                                    </pre>
+            </div>
+
+            <div class="url-box">
+              <p class="fob-welcome-title curlText">cURL</p>
+
+              <pre id="generatedCurl">
+                                              <code id="Get-Stipulated-Customer-Data-curl">
+      curl --location --globoff 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-personal-finance/v2/personal-product-eligibility?financialProductsIds=[SFN%2C3PF%2CWRE]' \
+      --header 'x-request-id: $ddbc558a-9250-425e-9f95-f15026fd22b1' \
+      --header 'accept-language: en' \
+      --header 'Accept: application/json' \
+      --header 'Authorization: ••••••'
+                                        </code>
+                                      </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p
+                  class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text"
+                >
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response
+                </p>
+
+                <div class="response-box-div">
+                  <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data')" type="button">200</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data2')" type="button">400</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data3')" type="button">401</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data4')" type="button">403</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data5')" type="button">404</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data6')" type="button">405</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data7')" type="button">406</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data8')" type="button">429</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data9')" type="button">500</a>
+            <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data10')" type="button">503</a>
+    </div>
+
+    <pre class="response-box">
+
+                                                      <code class="text" style=" display: block; " id="response-Get-Stipulated-Customer-Data">
+      {
+          "Data": {
+              "ProductsEligibilityList": [
+                  {
+                      "FinanceProductId": "SFN",
+                      "FeatureCode": "ST",
+                      "CampaignId": "X",
+                      "CampaignName": "X",
+                      "EligibilityAmount": "0",
+                      "EligibilityCurrency": "SAR",
+                      "Duration": 0,
+                      "EligibleInstallmentAmount": "0",
+                      "EligibleInstallmentCurrency": "SAR",
+                      "ProfitRate": "0",
+                      "AcceptableRequest": "R",
+                      "InstallmentDataList": [
+                          {
+                              "StartPeriod": 1,
+                              "EndPeriod": 0,
+                              "InstallmentAmount": "0",
+                              "InstallmentCurrency": "SAR"
+                          }
+                      ],
+                      "MessageKeyList": [
+                          {
+                              "MessageDescription": "Application In Flow"
+                          }
+                      ],
+                      "CustomerSegment": "001"
+                  }
+              ]
+          }
+      }
+                                                     </code>
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data2">
+      {
+          "Errors": [
+              {
+              "Code": "ERROR.400.001",
+              "Message": "Bad Request",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              }
+          ]
+      }
+                                                      </code>
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data3">
+      {
+          "Errors": [
+              {
+              "Code": "ERROR.401.001",
+              "Message": "Unauthorized to call the target operation.",
+              "Path": "authorization",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              }
+          ]
+      }
+                                                      </code>
+
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data4">
+      {
+          "Errors": [
+              {
+              "Code": "ERROR.403.001",
+              "Message": "Can't find any valid subscription.",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              }
+          ]
+      }
+                                                      </code>
+
+
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data5">
+      {
+          "Errors": [
+              {
+                  "Code": "ERROR.404.001",
+                  "Message": "No resources match requested URI.",
+                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              }
+          ]
+      }
+                                                      </code>
+
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data6">
+      {
+          "Errors": [
+          {
+              "Code": "ERROR.405.001",
+              "Message": "The method is not allowed for the requested URL.",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+          }
+          ]
+      }
+                                                      </code>
+
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data7">
+      {
+          "Errors": [
+          {
+              "Code": "ERROR.406.001",
+              "Message": "An appropriate representation of the requested resource could not be found",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+          }
+          ]
+      }
+                                                      </code>
+
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data8">
+      {
+          "Errors": [
+              {
+                  "Code": "ERROR.429.001",
+                  "Message": "Assembly Rate Limit exceeded",
+                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              }
+          ]
+      }
+                                                      </code>
+
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data9">
+      {
+          "Errors": [
+              {
+                  "Code": "ERROR.500.001",
+                  "Message": "Internal Error",
+                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              }
+          ]
+      }
+                                                      </code>
+
+                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data10">
+      {
+          "Errors": [
+              {
+              "Code": "ERROR.503.001",
+              "Message": "Service Unavailable.",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              }
+          ]
+      }
+                                                      </code>
+                                                      </pre>
 </div>
 </div>
 </div>
 </div>
+
 <!-- API 4 -->
 
 <div class="api-infosec">
@@ -945,7 +957,7 @@
     </p>
 
     <p class="fob-welcome-text">
-        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3535/api/3478#/MPGetEmployerDepartmentsListOfValues_200/operation/%2Femployer-departments/get">Swagger Link</a
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/998/api/995#/MPGetEmployerDepartmentsListOfValues_200/operation/%2Femployer-departments/get">Swagger Link</a
             >
           </p>
 
@@ -964,16 +976,13 @@
                                 <code class="sample-code">
       Query Params:
       pageSize:100
-      //lovCode3:44
       page:1
                             </code>
                           </pre>
             </div>
 
             <div class="url-box">
-              <button class="curlbtn fob-create-person-profile-top" type="submit">
-                <p class="curlText">cURL</p>
-            </button>
+               <p class="fob-welcome-title curlText">cURL</p>
 
               <pre id="generatedCurl">
                                                     <code id="Check-Customer-Eligibility-curl">
@@ -1744,26 +1753,25 @@
 </div>
 </div>
 <!-- API 5 -->
-
 <div class="api-infosec">
-    <h1 class="fob-welcome-title" id="section-4">
-        Get Product Eligibility
+    <h1 class="fob-welcome-title" id="section-6">
+        Get Stipulated Customer Data
     </h1>
 
     <p class="fob-welcome-line">&nbsp;</p>
 
     <p class="fob-welcome-text">
-        Endpoint: /mp-personal-finance/v2/personal-product-eligibility
+        Endpoint: /mp-personal-finance/v2/stipulated-customer-data
     </p>
 
     <p class="fob-welcome-text">
-        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1057/api/979#/GetPersonalFinanceProductEligibility_100/operation/%2Fpersonal-product-eligibility/get">Swagger Link</a
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1058/api/1055#/MPGetPersonalFinanceStipulatedCustomerData_200/operation/%2Fstipulated-customer-data/get">Swagger Link</a
             >
           </p>
 
           <p class="fob-welcome-text">
-            Get personal finance product eligibility Details is used to get
-            personal finance product eligibility.
+            Get Stipulated Customer Data Details is used to get stipulated
+            customer data.
           </p>
 
           <div class="requestURL-box">
@@ -1773,27 +1781,24 @@
               <p class="fob-welcome-line">&nbsp;</p>
 
               <pre class="example_97 api-guides-example-fob">
-                                            <code class="sample-code">
-      Query Params:
-      financialProductsIds:[SFN,3PF,WRE]
-                                      </code>
-                                    </pre>
+                          <code class="sample-code">
+
+                          </code>
+                        </pre>
             </div>
 
             <div class="url-box">
-              <button class="curlbtn fob-create-person-profile-top" type="submit">
-                <p class="curlText">cURL</p>
-            </button>
+               <p class="fob-welcome-title curlText">cURL</p>
 
               <pre id="generatedCurl">
-                                              <code id="Get-Stipulated-Customer-Data-curl">
-      curl --location --globoff 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-personal-finance/v2/personal-product-eligibility?financialProductsIds=[SFN%2C3PF%2CWRE]' \
-      --header 'x-request-id: $ddbc558a-9250-425e-9f95-f15026fd22b1' \
+                                <code id="Customer-Fill-RL-curl">
+      curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-personal-finance/v2/stipulated-customer-data' \
+      --header 'x-request-id: $7da68fa4-2ae5-46d9-96ad-5bcfefc5e31a' \
       --header 'accept-language: en' \
       --header 'Accept: application/json' \
       --header 'Authorization: ••••••'
-                                        </code>
-                                      </pre>
+                            </code>
+                          </pre>
             </div>
           </div>
 
@@ -1807,56 +1812,41 @@
                 </p>
 
                 <div class="response-box-div">
-                  <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data')" type="button">200</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data2')" type="button">400</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data3')" type="button">401</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data4')" type="button">403</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data5')" type="button">404</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data6')" type="button">405</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data7')" type="button">406</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data8')" type="button">429</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data9')" type="button">500</a>
-        <a class="response-box-error" onclick="responseText('response-Get-Stipulated-Customer-Data10')" type="button">503</a>
+                  <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility')" type="button">200</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility2')" type="button">400</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility3')" type="button">401</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility4')" type="button">403</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility5')" type="button">404</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility6')" type="button">405</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility7')" type="button">406</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility8')" type="button">429</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility9')" type="button">500</a>
+        <a class="response-box-error" onclick="responseText('response-Check-Customer-Eligibility10')" type="button">503</a>
 </div>
 
 <pre class="response-box">
 
-                                                      <code class="text" style=" display: block; " id="response-Get-Stipulated-Customer-Data">
+                                            <code class="text" style=" display: block; " id="response-Check-Customer-Eligibility">
       {
           "Data": {
-              "ProductsEligibilityList": [
-                  {
-                      "FinanceProductId": "SFN",
-                      "FeatureCode": "ST",
-                      "CampaignId": "X",
-                      "CampaignName": "X",
-                      "EligibilityAmount": "0",
-                      "EligibilityCurrency": "SAR",
-                      "Duration": 0,
-                      "EligibleInstallmentAmount": "0",
-                      "EligibleInstallmentCurrency": "SAR",
-                      "ProfitRate": "0",
-                      "AcceptableRequest": "R",
-                      "InstallmentDataList": [
-                          {
-                              "StartPeriod": 1,
-                              "EndPeriod": 0,
-                              "InstallmentAmount": "0",
-                              "InstallmentCurrency": "SAR"
-                          }
-                      ],
-                      "MessageKeyList": [
-                          {
-                              "MessageDescription": "Application In Flow"
-                          }
-                      ],
-                      "CustomerSegment": "001"
-                  }
-              ]
+              "EmployerId": 12,
+              "DepartmentId": 15,
+              "SectorId": "MMM",
+              "SalaryAmount": "23500.000",
+              "SalaryCurrency": "SAR",
+              "MilitaryRankId": "001",
+              "EmploymentDate": "2019-03-25",
+              "Mobile": "0542061794",
+              "Email": "ux1672@gmail.com",
+              "ObsoleteData": "N",
+              "AvailableData": "Y",
+              "CurrentAccountBranch": "20400",
+              "CurrentAccountNumber": "6085248631",
+              "CurrentAccountType": "001"
           }
       }
-                                                     </code>
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data2">
+                                             </code>
+                                             <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility2">
       {
           "Errors": [
               {
@@ -1866,8 +1856,9 @@
               }
           ]
       }
-                                                      </code>
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data3">
+                                                          </code>
+
+                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility3">
       {
           "Errors": [
               {
@@ -1878,9 +1869,9 @@
               }
           ]
       }
-                                                      </code>
+                                            </code>
 
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data4">
+                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility4">
       {
           "Errors": [
               {
@@ -1890,70 +1881,66 @@
               }
           ]
       }
-                                                      </code>
+                                            </code>
 
-
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data5">
+                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility5">
       {
           "Errors": [
               {
-                  "Code": "ERROR.404.001",
-                  "Message": "No resources match requested URI.",
-                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              "Code": "ERROR.404.001",
+              "Message": "No resources match requested URI.",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
               }
           ]
       }
-                                                      </code>
-
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data6">
+                                            </code>
+                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility6">
       {
           "Errors": [
-          {
+              {
               "Code": "ERROR.405.001",
               "Message": "The method is not allowed for the requested URL.",
               "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-          }
+              }
           ]
       }
-                                                      </code>
-
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data7">
+                                            </code>
+                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility7">
       {
           "Errors": [
-          {
+              {
               "Code": "ERROR.406.001",
               "Message": "An appropriate representation of the requested resource could not be found",
               "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-          }
-          ]
-      }
-                                                      </code>
-
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data8">
-      {
-          "Errors": [
-              {
-                  "Code": "ERROR.429.001",
-                  "Message": "Assembly Rate Limit exceeded",
-                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
               }
           ]
       }
-                                                      </code>
+                                            </code>
 
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data9">
+                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility8">
       {
           "Errors": [
               {
-                  "Code": "ERROR.500.001",
-                  "Message": "Internal Error",
-                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              "Code": "ERROR.429.001",
+              "Message": "Assembly Rate Limit exceeded",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
               }
           ]
       }
-                                                      </code>
+                                            </code>
 
-                                                      <code class="text" style=" display: none; " id="response-Get-Stipulated-Customer-Data10">
+                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility9">
+      {
+          "Errors": [
+              {
+              "Code": "ERROR.500.001",
+              "Message": "Internal Error",
+              "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+              }
+          ]
+      }
+                                            </code>
+                                            <code class="text" style=" display: none; " id="response-Check-Customer-Eligibility10">
       {
           "Errors": [
               {
@@ -1963,12 +1950,14 @@
               }
           ]
       }
-                                                      </code>
-                                                      </pre>
+                                            </code>
+
+                                                  </pre>
 </div>
 </div>
 </div>
 </div>
+
 <!-- API 6 -->
 
 <div class="api-infosec">
@@ -2008,9 +1997,7 @@
             </div>
 
             <div class="url-box">
-              <button class="curlbtn fob-create-person-profile-top" type="submit">
-                <p class="curlText">cURL</p>
-            </button>
+               <p class="fob-welcome-title curlText">cURL</p>
 
               <pre id="generatedCurl">
                                                   <code id="Get-Mandatory-Documents-Details-curl">
@@ -2191,7 +2178,7 @@
 </div>
 </div>
 </div>
-<!-- API 6 -->
+<!-- API 7 -->
 
 <div class="api-infosec">
     <h1 class="fob-welcome-title" id="section-8">Open New Dossier</h1>
@@ -2203,7 +2190,7 @@
     </p>
 
     <p class="fob-welcome-text">
-        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3559/api/3496#/MPOpenPersonalFinanceNewFinanceDossier_200/operation/%2Fopen-new-dossier/post">Swagger Link</a
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1292/api/1289#/MPOpenPersonalFinanceNewFinanceDossier_200/operation/%2Fopen-new-dossier/post">Swagger Link</a
             >
           </p>
 
@@ -2277,9 +2264,7 @@
             </div>
 
             <div class="url-box">
-              <button class="curlbtn fob-create-person-profile-top" type="submit">
-                <p class="curlText">cURL</p>
-            </button>
+               <p class="fob-welcome-title curlText">cURL</p>
 
               <pre id="generatedCurl">
                                                           <code id="Open-New-Dossier-curl">

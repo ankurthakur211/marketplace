@@ -24000,5 +24000,13 @@ h1.page-header.no-margin-top {
     margin-top: unset !important;
 }
 
+#block-marketplace-latest-exposedformsearch-apipage-1>h2.block-title {
+    display: none;
+}
+
+button#ccs-\:rl\:-tab-1 {
+    display: none;
+}
+
 
 /*migration updates*/
