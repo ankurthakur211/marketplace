@@ -4,5 +4,793 @@
     </p>
 </div>
 <div class="basic-page">
+    <div class="product-details-document">
+        <div class="api-doc-background">
+            <p class="api-doc-background-text ">Cyber Security API Documentation</p>
+        </div>
+        <div class="moterinsurance-sec">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="leftside-sec">
+                        <p class="fob-welcome-title" id="section-1">ART Cyber Security APIs</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">API Marketplace will be a huge plus and a great added value for Integration in al-Rajhi bank.<br /> Cyber Security Insurance is a product provided by ART (ARG Subsidiary referred as provider) This product provides coverage to protect
+                            companies from financial losses and liabilities resulting from cyber-attacks and data breaches. The purpose of this project is to allow ARG subsidiaries (referred as consumers) to offer cyber security insurance service to their
+                            customers through subsidiary digital channels.
+                        </p>
 
+
+                    </div>
+                    <div class="rightside-sec">
+                        <p class="API-image"></p>
+                    </div>
+                </div>
+                <div class="d-flex btn-box">
+                    <a class="primary-btn" id="downloadLink" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxCyberSecurityInsurance.postman_collection.json"
+                        download="">Download Postman Collection</a>
+                    <a class="primary-btn" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/ModernCyberSecurityInsuranceSampleRequestData.xlsx"
+                        download="">Download Sample Data</a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="miw-section">
+            <div class="container">
+                <h1 class="fob-welcome-title">ART Cyber Security Workflow</h1>
+                <p class="motoinsu-image"></p>
+                <a class="fob-product-title-click" target="_blank" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/CyberSecurityInsuranceFlowDiagramv0.1.pdf"
+                    rel="noopener">
+                Click here
+            </a>
+            </div>
+        </div>
+
+        <div class="APIs-section">
+            <div class="container">
+                <p class="main-heading">
+                    APIs
+                </p>
+
+                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                    <!-- API 1 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-2">Create Quote</h1>
+                        <p class="fob-welcome-text">Endpoint: /mp-cyber-insurance/v1/quote</p>
+                        <p class="fob-welcome-text">
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1517/api/779#/MPARBCyberInsurance_100/operation/%2Fquote/post">
+                            Swagger
+                            Link
+                        </a>
+                        </p>
+                        <p class="fob-welcome-text">Create quote is used to Create quote.
+                        </p>
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                   <code class="sample-code">
+                    Request Body:
+                    {
+                        "Data": {
+                            "POINumber": "1000113769",
+                            "MobileNumber": "966555848626",
+                            "BirthDate": "03-1983",
+                            "Email": "eslam.fecu@gmail.com",
+                            "GroupType": "Individual",
+                            "PolicyStartDate": "2024-10-04",
+                            "ClaimInLastThree": "90",
+                            "LossAmount": 12200,
+                            "Questions": [
+                                {
+                                    "Id": 1001,
+                                    "Value": "Owner"
+                                },
+                                {
+                                    "Id": 1002,
+                                    "Value": "No"
+                                },
+                                {
+                                    "Id": 1003,
+                                    "Value": "Yes"
+                                },
+                                {
+                                    "Id": 1004,
+                                    "Value": "Yes"
+                                },
+                                {
+                                    "Id": 1005,
+                                    "Value": "Yes"
+                                },
+                                {
+                                    "Id": 4001,
+                                    "Value": "Yes"
+                                },
+                                {
+                                    "Id": 4002,
+                                    "Value": "3"
+                                },
+                                {
+                                    "Id": 1006,
+                                    "Value": "Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent"
+                                },
+                                {
+                                    "Id": 4003,
+                                    "Value": "2323"
+                                }
+                            ]
+                        }
+                    }
+                  </code>
+                </pre>
+                            </div>
+                            <div class="url-box">
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+                                <pre id="generatedCurl">
+                  <code id="Create-quote-curl" style=" display: block;">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-cyber-insurance/v1/quote' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'x-request-id: f4e14ead-66e1-49ab-ac3e-fd25cb69c86e' \
+--header 'Authorization: Bearer AAIgYjgzOTY5ODM3Yzk1Zjk3YzQzOWM4ZWMxMDA1MDZmZWFv7Bwgn0Wc2YzEuYy0HT-rS9VljdSfyVwoohRKSLKObKcMT7DLvH6-fra4kCTLtoWhfhmzkd3FGaT6suu_8HyP051w873ExDiZ9vdw18qAUISE7bfj_LcYp0kcuIZ06hXTrc-nD9VgAzBzpQBumQZn' \
+--data-raw '{
+"Data": {
+        "POINumber": "2481998819",
+        "MobileNumber": "966556692447",
+        "BirthDate": "05-1993",
+        "Email": "eslam.fecu@gmail.com",
+        "GroupType": "Individual",
+        "PolicyStartDate": "2024-10-04",
+        "ClaimInLastThree": "90",
+        LossAmount": 12200,
+        "Questions": [
+        {
+            "Id": 1001,
+            "Value": "Owner"
+        },
+        {
+        "Id": 1002,
+        "Value": "No"
+        },
+        {
+        "Id": 1003,
+        "Value": "Yes"
+        },
+        {
+        "Id": 1004,
+        "Value": "Yes"
+        },
+        {
+        "Id": 1005,
+        "Value": "Yes"
+        },
+        {
+        "Id": 4001,
+        "Value": "Yes"
+        },
+        {
+        "Id": 4002,
+        "Value": "3"
+        },
+        {
+        "Id": 1006,
+        "Value": "Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent"
+        },
+        {
+        "Id": 4003,
+        "Value": "2323"
+        }
+        ]
+        }
+        }'
+                  </code>
+                </pre>
+                            </div>
+                        </div>
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response
+                                    </p>
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote')">200</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote5')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote6')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Quote7')">500</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                                          <code class="text" style=" display: block; " id="response-Create-Quote">
+{
+"Data": {
+    "UserInfo": {
+        "HijriBirthDate": "15-11-1413",
+        "FirstNameEn": "NORMAN",
+        "LastNameEn": "MANAMPEN",
+        "SecondNameEn": "ALIMUDIN",
+        "ThirdNameEn": "",
+        "FirstNameAr": "نورمان",
+        "Gender": "M",
+        "GregIqamaExpiryDate": "21-01-2025",
+        "HijriIqamaExpiryDate": "21-07-1446",
+        "IqamaIssuePlace": "موقع بوابة الوزارة الألكترونية",
+        "LastNameAr": "مانامفين",
+        "LogId": 0,
+        "NationalityCode": 315,
+        "OccupationCode": 9141055,
+        "SecondNameAr": "عالم الدين",
+        "SocialStatusCode": 1,
+        "SponsorMOINumber": 1015926049,
+        "SponsorName": "",
+        "ThirdNameAr": "",
+        "MaritalStatus": "unmarried",
+        "ClaimInLastThree": 90,
+        "LossAmount": 12200,
+        "POINumber": "2481998819",
+        "MobileNumber": "556692447",
+        "GregBirthDate": "05-1993",
+        "Email": "eslam.fecu@gmail.com",
+        "GroupType": "Individual",
+        "PolicyStartDate": "2023-05-23",
+        "Questions": [
+            {
+                "Id": 1001,
+                "Value": "Owner"
+            },
+            {
+                "Id": 1002,
+                "Value": "No"
+            },
+            {
+                "Id": 1003,
+                "Value": "Yes"
+            },
+            {
+                "Id": 1004,
+                "Value": "Yes"
+            },
+            {
+                "Id": 1005,
+                "Value": "Yes"
+            },
+            {
+                "Id": 4001,
+                "Value": "Yes"
+            },
+            {
+                "Id": 4002,
+                "Value": "3"
+            },
+            {
+                "Id": 1006,
+                "Value": "Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent"
+            },
+            {
+                "Id": 4003,
+                "Value": "2323"
+            }
+        ],
+        "PolicyEndDate": "2024-05-22T00:00:00.000Z",
+        "Addresses": [
+            {
+                "BuildingNumber": "3319",
+                "Street": "Balbak",
+                "District": "King Abdullah Dist.",
+                "City": "RIYADH",
+                "PostCode": "12426",
+                "AdditionalNumber": "8819",
+                "CityAr": "الرياض",
+                "StreetAr": "بعلبك",
+                "DistrictAr": "حي الملك عبدالله",
+                LatLng": "46.74540657 24.73033429",
+                "ShortAddress": "RHKA3319",
+                "IsPrimaryAddress": "true",
+                "PKAddressId": "1242633198819",
+                "CityId": "3",
+                "RegionId": "1",
+                "Address1": "3319 Balbak - King Abdullah Dist.",
+                "Address2": "RIYADH 12426 - 8819",
+                "RegionName": "Al Riyadh",
+                "RegionNameAr": "الرياض",
+                "Latitude": "24.73033429",
+                "Longitude": "46.74540657"
+            }
+        ]
+    },
+    "ReferenceNumber": 130245,
+    "Rates": [
+            {
+                "Id": "dcd2cebf-c02f-4b77-bc10-5054a99707d8",
+                "BasePremium": 103,
+                "CommissionAmount": 0,
+                "CommissionRate": 0,
+                "FinalDiscount": 0,
+                "GrandTotalPremium": 118.45,
+                "NetPremium": 103,
+                "PlanId": 611445,
+                "PlanType": "Standard",
+                "ProductId": 610660,
+                "TotalPremium": 103,
+                "Type": "Individual",
+                "VATAmount": 15.45,
+                "VATRate": 0.15,
+                "NetChange": 0,
+                "PreadjustedTermPremium": 0,
+                "OverridePremium": 0,
+                "MinimumPremium": 0,
+                "OverrideNetChange": 0,
+                "TransactionPremium": 0,
+                "PriorPremium": 0,
+                "PriorTermPremium": 0,
+                "PreadjustedNetChange": 0,
+                "Premium": 0,
+                "TermPremium": 0,
+                "ProratedMinimumPremium": 0,
+                "AnnualPremium": 0,
+                "RatedManualPremium": 0,
+                "DiscountAmount": 0
+            },
+            {
+                "Id": "fbc4f6e3-f6fd-441f-a243-612e98b386cf",
+                "BasePremium": 172,
+                "CommissionAmount": 0,
+                "CommissionRate": 0,
+                "FinalDiscount": 0,
+                "GrandTotalPremium": 197.8,
+                "NetPremium": 172,
+                "PlanId": 611444,
+                "PlanType": "Advanced",
+                "ProductId": 610660,
+                "TotalPremium": 172,
+                "Type": "Individual",
+                "VATAmount": 25.8,
+                "VATRate": 0.15,
+                "NetChange": 0,
+                "PreadjustedTermPremium": 0,
+                "OverridePremium": 0,
+                "MinimumPremium": 0,
+                "OverrideNetChange": 0,
+                "TransactionPremium": 0,
+                "PriorPremium": 0,
+                "PriorTermPremium": 0,
+                "PreadjustedNetChange": 0,
+                "Premium": 0,
+                "TermPremium": 0,
+                "ProratedMinimumPremium": 0,
+                "AnnualPremium": 0,
+                "RatedManualPremium": 0,
+                "DiscountAmount": 0
+            }
+        ],
+        "ReferenceId": "U2FsdGVkX185eMRY3UUkjgxcTWu5Mea6OYV0CTxzbPk="
+    }
+}                     
+                                          </code>
+
+                                          <code class="text" style=" display: none; " id="response-Create-Quote2">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.400.001",
+      "Message": "Invalid POI Number.",
+      "Path": "request.parameters.POINumber",
+      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+  ]
+}
+                                                                </code>
+
+                                          <code class="text" style=" display: none; " id="response-Create-Quote3">
+{
+    "Errors": [
+      {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  } 
+                                          </code>
+
+                                          <code class="text" style=" display: none; " id="response-Create-Quote4">  
+{
+    "Errors": [
+      {
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  }
+                                          </code>
+
+                                          <code class="text" style=" display: none; " id="response-Create-Quote5"> 
+{
+    "Errors": [
+      {
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  }
+                                          </code>
+
+                                          <code class="text" style=" display: none; " id="response-Create-Quote6">
+{
+    "Errors": [
+      {
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  }
+                                          </code>
+
+                                          <code class="text" style=" display: none; " id="response-Create-Quote7">
+{
+    "Errors": [
+      {
+        "Code": "ERROR.500.001",
+        "Message": "Internal Error",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  }
+                                          </code>
+                                        </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- API 2 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-6">MP Create Plan</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /mp-cyber-insurance/v1/plans</p>
+                        <p class="fob-welcome-text">
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1517/api/779#/MPARBCyberInsurance_100/operation/%2Fplans/post">
+                            Swagger
+                            Link
+                        </a>
+                        </p>
+                        <p class="fob-welcome-text">Create Plan.</p>
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+<code class="sample-code">
+Request Body 
+{
+    "Data": {
+        "ReferenceId": "U2FsdGVkX1+4RgJAjJI7zaEI/cIRu4PYIjP3qX+7wcM=",
+        "PlanId": "2f953127-6f21-44d3-8024-be37d946110c"
+    }
+}
+</code>
+                  </pre>
+                            </div>
+                            <div class="url-box">
+
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+                                <pre id="generatedCurl">                          <code id="Create-Plan-curl" style=" display: block;">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-cyber-insurance/v1/plans' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'x-request-id: fba38860-9899-4c90-bf4a-947515879e10' \
+--header 'Authorization: Bearer AAIgYjgzOTY5ODM3Yzk1Zjk3YzQzOWM4ZWMxMDA1MDZmZWFv7Bwgn0Wc2YzEuYy0HT-rS9VljdSfyVwoohRKSLKObKcMT7DLvH6-fra4kCTLtoWhfhmzkd3FGaT6suu_8HyP051w873ExDiZ9vdw18qAUISE7bfj_LcYp0kcuIZ06hXTrc-nD9VgAzBzpQBumQZn' \
+--data '{
+    "Data": {
+        "ReferenceId": "U2FsdGVkX185eMRY3UUkjgxcTWu5Mea6OYV0CTxzbPk=",
+        "PlanId": "fbc4f6e3-f6fd-441f-a243-612e98b386cf"
+    }
+}'
+</code>
+                    </pre>
+                            </div>
+                        </div>
+
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan')">200</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan5')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan6')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Plan7')">500</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+<code class="text" style=" display: block; " id="response-Create-Plan">
+{
+    "Data": {
+        "PolicyHolderDetails": {
+            "FullName": "NORMAN ALIMUDIN MANAMPEN",
+            "MobileNumber": "+966556692447",
+            "Email": "eslam.fecu@gmail.com",
+            "Address": "3319 Balbak - King Abdullah Dist., RIYADH 12426 - 8819 (EDAA6966)"
+        },
+        "PolicyDetails": {
+            "ProductAndCoverage": "Advanced",
+            "PolicyStartDate": "2023-05-23",
+            "PolicyEndDate": "2024-10-03",
+            "ProductType": "Individual",
+            "QuotationId": 9102275
+        },
+        "PaymentSummary": {
+            "BasePremium": 172,
+            "VAT": 25.8,
+            "Discount": 0,
+            "TotalPremium": 172
+        }
+    }
+}</code>
+                                       <code class="text" style=" display: none; " id="response-Create-Plan2">
+{
+    "Errors": [
+      {
+        "Code": "ERROR.400.001",
+        "Message": "Invalid POI Number.",
+        "Path": "request.parameters.POINumber",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  }
+                                                    </code>
+
+                                      <code class="text" style=" display: none; " id="response-Create-Plan3">
+{
+    "Errors": [
+      {
+        "Code": "ERROR.401.001",
+        "Message": "Unauthorized to call the target operation.",
+        "Path": "authorization",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  }
+                                      </code>
+
+                                      <code class="text" style=" display: none; " id="response-Create-Plan4">   
+{
+    "Errors": [
+      {
+        "Code": "ERROR.403.001",
+        "Message": "Can't find any valid subscription.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  }
+                                      </code>
+
+                                      <code class="text" style=" display: none; " id="response-Create-Plan5"> 
+{
+    "Errors": [
+      {
+        "Code": "ERROR.405.001",
+        "Message": "The method is not allowed for the requested URL.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  } 
+                                      </code>
+                                      <code class="text" style=" display: none; " id="response-Create-Plan6"> 
+{
+    "Errors": [
+      {
+        "Code": "ERROR.429.001",
+        "Message": "Assembly Rate Limit exceeded",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+      }
+    ]
+  }     
+                                      </code>
+                                      <code class="text" style=" display: none; " id="response-Create-Plan7">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.500.001",
+      "Message": "Internal Error",
+      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+  ]
+}
+
+                                      </code>
+                                            </pre>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- API 3 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-3">Create Policy</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /mp-cyber-insurance/v1/policy</p>
+                        <p class="fob-welcome-text">
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1517/api/779#/MPARBCyberInsurance_100/operation/%2Fpolicy/post">
+                            Swagger
+                            Link
+                        </a>
+                        </p>
+                        <p class="fob-welcome-text">Create Policy</p>
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+Request Body
+{
+    "Data": {
+        "ReferenceId": "U2FsdGVkX1+4RgJAjJI7zaEI/cIRu4PYIjP3qX+7wcM=",
+        "QuotationId": "9102108",
+        "PaymentMethod": "credit card",
+        "PaymentReferenceNumber": "123456789",
+        "PaymentAmount": "172"
+    }
+}
+                    </code>
+                  </pre>
+                            </div>
+                            <div class="url-box">
+
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+                                <pre id="generatedCurl">                          
+                                <code id="Create-Policy-curl" style=" display: block;">
+curl --location --globoff '{{base-url}}/mp-cyber-insurance/v1/policy' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'x-request-id: 1b9fc277-9631-4b29-a66c-5221326d088d' \
+--data '{
+    "Data": {
+        "ReferenceId": "U2FsdGVkX1+4RgJAjJI7zaEI/cIRu4PYIjP3qX+7wcM=",
+        "QuotationId": "9102108",
+        "PaymentMethod": "credit card",
+        "PaymentReferenceNumber": "123456789",
+        "PaymentAmount": "172"
+    }
+}
+                      </code>
+                    </pre>
+                            </div>
+                        </div>
+
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy')">200</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy5')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy6')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-Create-Policy7')">500</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                                      <code class="text" style=" display: block; " id="response-Create-Policy">
+{
+    "Data": {
+        "PolicyId": 9102275,
+        "PolicyNumber": 9102275,
+        "Message": "Policy has been created with the provided referenceId"
+    }
+}
+                                       </code>
+                                       <code class="text" style=" display: none; " id="response-Create-Policy2">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.400.001",
+      "Message": "Invalid POI Number.",
+      "Path": "request.parameters.POINumber",
+      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+  ]
+}
+                                                    </code>
+
+                                      <code class="text" style=" display: none; " id="response-Create-Policy3">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.401.001",
+      "Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+  ]
+}
+                                      </code>
+
+                                      <code class="text" style=" display: none; " id="response-Create-Policy4">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.403.001",
+      "Message": "Can't find any valid subscription.",
+      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+  ]
+}     
+                                      </code>
+
+                                      <code class="text" style=" display: none; " id="response-Create-Policy5">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.405.001",
+      "Message": "The method is not allowed for the requested URL.",
+      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+  ]
+}  
+                                    </code>
+
+                                      <code class="text" style=" display: none; " id="response-Create-Policy6">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.429.001",
+      "Message": "Assembly Rate Limit exceeded",
+      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+  ]
+}
+                                      </code>
+                                      <code class="text" style=" display: none; " id="response-Create-Policy7">
+{
+  "Errors": [
+    {
+      "Code": "ERROR.500.001",
+      "Message": "Internal Error",
+      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+  ]
+}           
+                                      </code>
+                                      
+
+                                            </pre>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

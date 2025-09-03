@@ -29,7 +29,7 @@
 
                 <div class="d-flex btn-box"><a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxSMSGatewayAPIs.postman_collection.json"
                         id="downloadLink">Download Postman Collection</a> <a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/MPModernSandboxARBNotificationEngine(SMSGateway)SampleRequestData.xlsx">Download
-                        Sample Data</a></div>
+                    Sample Data</a></div>
             </div>
         </div>
 
@@ -40,8 +40,8 @@
                 <p class="motoinsu-image">&nbsp;</p>
                 <a class="fob-product-title-click" target="_blank" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/ARBNotificationEngine-SMSGatewayFlowDiagramv0.1.pdf"
                     rel="noopener noopener">
-                        Click here
-                    </a>
+                    Click here
+                </a>
             </div>
         </div>
 
@@ -59,8 +59,8 @@
                         <p class="fob-welcome-text">Endpoint: /gwt.alrajhibank.com.sa/mp-notification-sms/v1/registered-event
                         </p>
 
-                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/4032/api/3133#/MPSendSMSNotification_100/operation/%2Fregistered-event/post">Swagger
-                                Link</a></p>
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/node/1295#/MPSendSMSNotification_100/operation/%2Fregistered-event/post">Swagger
+                            Link</a></p>
 
                         <p class="fob-welcome-text">This path is used to send registered event SMS notification.</p>
 
@@ -71,69 +71,68 @@
                                 <p class="fob-welcome-line">&nbsp;</p>
 
                                 <pre class="example_97 api-guides-example-fob ">
-                                        <code class="sample-code">
-        Request Body
+                                    <code class="sample-code">
+    Request Body
+    {
+    "Data": {
+      "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
+      "EventCode": "QAEMALOG",
+      "RecipientsList": [
         {
-        "Data": {
-          "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
-          "EventCode": "QAEMALOG",
-          "RecipientsList": [
+          "PreferredLanguage": "EN",
+          "NotificationsMethodsInformationList": [
             {
-              "PreferredLanguage": "EN",
-              "NotificationsMethodsInformationList": [
-                {
-                  "Contact": "966500000111"
-                }
-              ],
-              "ParametersList": [
-                {
-                  "ParameterCode": "TRN_AMNT",
-                  "ParameterValue": "1000"
-                }
-              ]
+              "Contact": "966500000111"
+            }
+          ],
+          "ParametersList": [
+            {
+              "ParameterCode": "TRN_AMNT",
+              "ParameterValue": "1000"
             }
           ]
         }
-        }
-                                        </code>
-                                      </pre>
+      ]
+    }
+    }
+                                    </code>
+                                  </pre>
                             </div>
 
-                            <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Send-registered-event-SMS-notification-curl')">
-                                <p class="curlText">cURL</p>
-                            </button>
+                            <div class="url-box">
+                                <p class="fob-welcome-title curlText">cURL</p>
 
                                 <pre id="generatedCurl">
-                                          <code id="Send-registered-event-SMS-notification-curl">
-        curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/gwt.alrajhibank.com.sa/mp-notification-sms/v1/registered-event' \
-        --header 'Accept-Language: ar' \
-        --header 'Content-Type: application/json' \
-        --header 'Accept: application/json' \
-        --header 'Authorization: ••••••' \
-        --data '{
-        "Data": {
-        "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
-        "EventCode": "QAEMALOG",
-        "RecipientsList": [
-        {
-        "PreferredLanguage": "EN",
-        "NotificationsMethodsInformationList": [
-        {
-        "Contact": "966500000111"
-        }
-        ],
-        "ParametersList": [
-        {
-        "ParameterCode": "TRN_AMNT",
-        "ParameterValue": "1000"
-        }
-        ]
-        }
-        ]
-        }
-        }'                                                   
-                                          </code>
-                                        </pre>
+                                      <code id="Send-registered-event-SMS-notification-curl">
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/gwt.alrajhibank.com.sa/mp-notification-sms/v1/registered-event' \
+    --header 'Accept-Language: ar' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+    "Data": {
+    "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
+    "EventCode": "QAEMALOG",
+    "RecipientsList": [
+    {
+    "PreferredLanguage": "EN",
+    "NotificationsMethodsInformationList": [
+    {
+    "Contact": "966500000111"
+    }
+    ],
+    "ParametersList": [
+    {
+    "ParameterCode": "TRN_AMNT",
+    "ParameterValue": "1000"
+    }
+    ]
+    }
+    ]
+    }
+    }'                                                   
+                                      </code>
+                                    </pre>
                             </div>
                         </div>
 
@@ -156,134 +155,134 @@
                                         <a class="response-box-error" type="button" onclick="responseText('Send-registered-event-SMS-notification10')">503</a></div>
 
                                     <pre class="response-box">
-    
-                                <code class="text" id="Send-registered-event-SMS-notification" style=" display: block; ">
-        204 no content                                                                     
-                                 </code>
-                                 <code class="text" id="Send-registered-event-SMS-notification2" style=" display: none; ">
+
+                            <code class="text" id="Send-registered-event-SMS-notification" style=" display: block; ">
+    204 no content                                                                     
+                             </code>
+                             <code class="text" id="Send-registered-event-SMS-notification2" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                                                
-                                    </code>	
-                                
-                                <code class="text" id="Send-registered-event-SMS-notification3" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }
-                                
+    ]
+    }
+                                                            
                                 </code>	
-                                
-                                <code class="text" id="Send-registered-event-SMS-notification4" style=" display: none; ">
+                            
+                            <code class="text" id="Send-registered-event-SMS-notification3" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                </code>
-                                
-                                
-                                <code class="text" id="Send-registered-event-SMS-notification5" style=" display: none; " >
+    ]
+    }
+                            
+                            </code>	
+                            
+                            <code class="text" id="Send-registered-event-SMS-notification4" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                </code>
-                                
-                                
-                                <code class="text" id="Send-registered-event-SMS-notification6" style=" display: none; ">
+    ]
+    }
+                            </code>
+                            
+                            
+                            <code class="text" id="Send-registered-event-SMS-notification5" style=" display: none; " >
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                     
-                                </code>
+    ]
+    }
+                            </code>
+                            
+                            
+                            <code class="text" id="Send-registered-event-SMS-notification6" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
                                  
-                                
-                                <code class="text" id="Send-registered-event-SMS-notification7" style=" display: none; ">
+                            </code>
+                             
+                            
+                            <code class="text" id="Send-registered-event-SMS-notification7" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }       
-                                </code>
-                                 
-                                
-                                <code class="text" id="Send-registered-event-SMS-notification8" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }  
-                                </code>
-                                
-                                
-                                <code class="text" id="Send-registered-event-SMS-notification9" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                </code>
-                                <code class="text" id="Send-registered-event-SMS-notification10" style=" display: none; ">
+    ]
+    }       
+                            </code>
+                             
+                            
+                            <code class="text" id="Send-registered-event-SMS-notification8" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                </code>
-                                      </pre>
+    ]
+    }  
+                            </code>
+                            
+                            
+                            <code class="text" id="Send-registered-event-SMS-notification9" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            <code class="text" id="Send-registered-event-SMS-notification10" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                                  </pre>
                                 </div>
                             </div>
                         </div>
@@ -298,8 +297,8 @@
                         <p class="fob-welcome-text">Endpoint: /gwt.alrajhibank.com.sa/mp-notification-sms/v1/generate-otp
                         </p>
 
-                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3130/api/3127#/MPMarketplaceOTPManagement_100/operation/%2Fgenerate-otp/post">Swagger
-                                Link</a></p>
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1232/api/1229#/MPMarketplaceOTPManagement_100/operation/%2Fgenerate-otp/post">Swagger
+                            Link</a></p>
 
                         <p class="fob-welcome-text">This path is used to generate marketplace OTP.</p>
 
@@ -310,55 +309,54 @@
                                 <p class="fob-welcome-line">&nbsp;</p>
 
                                 <pre class="example_97 api-guides-example-fob ">
-                                            <code class="sample-code">
-        Request Body
+                                        <code class="sample-code">
+    Request Body
+    {
+    "Data": {
+      "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
+      "POINumber": "1003055037",
+      "MobileNumber": "0544524481",
+      "Purpose": "LOG",
+      "OTPMethodData": "QAE",
+      "ParametersList": [
         {
-        "Data": {
-          "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
-          "POINumber": "1003055037",
-          "MobileNumber": "0544524481",
-          "Purpose": "LOG",
-          "OTPMethodData": "QAE",
-          "ParametersList": [
-            {
-              "ParameterCode": "Amount",
-              "ParameterValue": "1000.0"
-            }
-          ]
+          "ParameterCode": "Amount",
+          "ParameterValue": "1000.0"
         }
-        }
-                                            </code>
-                                          </pre>
+      ]
+    }
+    }
+                                        </code>
+                                      </pre>
                             </div>
 
-                            <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Generate-marketplace-OTP-curl')">
-                                <p class="curlText">cURL</p>
-                            </button>
+                            <div class="url-box">
+                                <p class="fob-welcome-title curlText">cURL</p>
 
                                 <pre id="generatedCurl">
-                                              <code id="Generate-marketplace-OTP-curl">
-        curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/gwt.alrajhibank.com.sa/mp-notification-sms/v1/generate-otp' \
-        --header 'Accept-Language: en' \
-        --header 'Content-Type: application/json' \
-        --header 'Accept: application/json' \
-        --header 'Authorization: Bearer asdasdsa' \
-        --data '{
-        "Data": {
-        "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
-        "POINumber": "1003055037",
-        "MobileNumber": "0544524481",
-        "Purpose": "LOG",
-        "OTPMethodData": "QAE",
-        "ParametersList": [
-            {
-            "ParameterCode": "Amount",
-            "ParameterValue": "1000.0"
-            }
-        ]
+                                          <code id="Generate-marketplace-OTP-curl">
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/gwt.alrajhibank.com.sa/mp-notification-sms/v1/generate-otp' \
+    --header 'Accept-Language: en' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: Bearer asdasdsa' \
+    --data '{
+    "Data": {
+    "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
+    "POINumber": "1003055037",
+    "MobileNumber": "0544524481",
+    "Purpose": "LOG",
+    "OTPMethodData": "QAE",
+    "ParametersList": [
+        {
+        "ParameterCode": "Amount",
+        "ParameterValue": "1000.0"
         }
-        }'                                                         
-                                              </code>
-                                            </pre>
+    ]
+    }
+    }'                                                         
+                                          </code>
+                                        </pre>
                             </div>
                         </div>
 
@@ -380,120 +378,120 @@
                                         <a class="response-box-error" type="button" onclick="responseText('Generate-marketplace-OTP10')">503</a></div>
 
                                     <pre class="response-box">
+
+                                <code class="text" id="Generate-marketplace-OTP" style=" display: block; ">
+    204 no content          
+                                 </code>
+                                <code class="text" id="Generate-marketplace-OTP3" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                
+                                </code>	
+                                
+                                <code class="text" id="Generate-marketplace-OTP4" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="Generate-marketplace-OTP5" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="Generate-marketplace-OTP6" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }                 
+                                </code>
+                                 
+                                
+                                <code class="text" id="Generate-marketplace-OTP7" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                 
+                                
+                                <code class="text" id="Generate-marketplace-OTP8" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="Generate-marketplace-OTP9" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
     
-                                    <code class="text" id="Generate-marketplace-OTP" style=" display: block; ">
-        204 no content          
-                                     </code>
-                                    <code class="text" id="Generate-marketplace-OTP3" style=" display: none; ">
+                                <code class="text" id="Generate-marketplace-OTP10" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                    
-                                    </code>	
-                                    
-                                    <code class="text" id="Generate-marketplace-OTP4" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }
-                                    </code>
-                                    
-                                    
-                                    <code class="text" id="Generate-marketplace-OTP5" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }
-                                    </code>
-                                    
-                                    
-                                    <code class="text" id="Generate-marketplace-OTP6" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }                 
-                                    </code>
-                                     
-                                    
-                                    <code class="text" id="Generate-marketplace-OTP7" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }
-                                    </code>
-                                     
-                                    
-                                    <code class="text" id="Generate-marketplace-OTP8" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }
-                                    </code>
-                                    
-                                    
-                                    <code class="text" id="Generate-marketplace-OTP9" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }
-                                    </code>
-        
-                                    <code class="text" id="Generate-marketplace-OTP10" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }
-                                    </code>
-                                          </pre>
+    ]
+    }
+                                </code>
+                                      </pre>
                                 </div>
                             </div>
                         </div>
@@ -508,8 +506,8 @@
                         <p class="fob-welcome-text">Endpoint: /gwt.alrajhibank.com.sa/mp-notification-sms/v1/validate-otp
                         </p>
 
-                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3130/api/3127#/MPMarketplaceOTPManagement_100/operation/%2Fvalidate-otp/post">Swagger
-                                Link</a></p>
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1232/api/1229#/MPMarketplaceOTPManagement_100/operation/%2Fvalidate-otp/post">Swagger
+                            Link</a></p>
 
                         <p class="fob-welcome-text">This path is used to validate marketplace OTP.</p>
 
@@ -520,43 +518,43 @@
                                 <p class="fob-welcome-line">&nbsp;</p>
 
                                 <pre class="example_97 api-guides-example-fob ">
-                                                <code class="sample-code">
-        Request Body
-        {
-        "Data": {
-          "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
-          "OTP": "2030",
-          "POINumber": "1003055037",
-          "MobileNumber": "0544524481",
-          "Purpose": "LOG"
-        }
-        }
-                                                </code>
-                                              </pre>
+                                            <code class="sample-code">
+    Request Body
+    {
+    "Data": {
+      "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
+      "OTP": "2030",
+      "POINumber": "1003055037",
+      "MobileNumber": "0544524481",
+      "Purpose": "LOG"
+    }
+    }
+                                            </code>
+                                          </pre>
                             </div>
 
-                            <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('Validate-marketplace-OTP-curl')">
-                                <p class="curlText">cURL</p>
-                            </button>
+                            <div class="url-box">
+                                <p class="fob-welcome-title curlText">cURL</p>
+
 
                                 <pre id="generatedCurl">
-                                                  <code id="Validate-marketplace-OTP-curl">
-        curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/gwt.alrajhibank.com.sa/mp-notification-sms/v1/validate-otp' \
-        --header 'Accept-Language: en' \
-        --header 'Content-Type: application/json' \
-        --header 'Accept: application/json' \
-        --header 'Authorization: ••••••' \
-        --data '{
-        "Data": {
-        "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
-        "OTP": "2030",
-        "POINumber": "1003055037",
-        "MobileNumber": "0544524481",
-        "Purpose": "LOG"
-        }
-        }'                                                                                                                          
-                                                  </code>
-                                                </pre>
+                                              <code id="Validate-marketplace-OTP-curl">
+    curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/gwt.alrajhibank.com.sa/mp-notification-sms/v1/validate-otp' \
+    --header 'Accept-Language: en' \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --header 'Authorization: ••••••' \
+    --data '{
+    "Data": {
+    "ClientTimestamp": "2022-02-17T18:25:43.511+03:00",
+    "OTP": "2030",
+    "POINumber": "1003055037",
+    "MobileNumber": "0544524481",
+    "Purpose": "LOG"
+    }
+    }'                                                                                                                          
+                                              </code>
+                                            </pre>
                             </div>
                         </div>
 
@@ -579,133 +577,133 @@
                                         <a class="response-box-error" type="button" onclick="responseText('Validate-marketplace-OTP10')">503</a></div>
 
                                     <pre class="response-box">
+
+                                    <code class="text" id="Validate-marketplace-OTP" style=" display: block; ">
+    204 no content                                                                   
+                                     </code>
+                                    <code class="text" id="Validate-marketplace-OTP2" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                    
+                                    </code>	
     
-                                        <code class="text" id="Validate-marketplace-OTP" style=" display: block; ">
-        204 no content                                                                   
-                                         </code>
-                                        <code class="text" id="Validate-marketplace-OTP2" style=" display: none; ">
+                                    <code class="text" id="Validate-marketplace-OTP3" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                        
-                                        </code>	
-        
-                                        <code class="text" id="Validate-marketplace-OTP3" style=" display: none; ">
+    ]
+    }
+                                                                            
+                                    </code>
+                                    
+                                    <code class="text" id="Validate-marketplace-OTP4" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                                                                
-                                        </code>
-                                        
-                                        <code class="text" id="Validate-marketplace-OTP4" style=" display: none; ">
+    ]
+    }
+                                    </code>
+                                    
+                                    
+                                    <code class="text" id="Validate-marketplace-OTP5" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                        </code>
-                                        
-                                        
-                                        <code class="text" id="Validate-marketplace-OTP5" style=" display: none; ">
+    ]
+    }
+                                    </code>
+                                    
+                                    
+                                    <code class="text" id="Validate-marketplace-OTP6" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                        </code>
-                                        
-                                        
-                                        <code class="text" id="Validate-marketplace-OTP6" style=" display: none; ">
+    ]
+    }               
+                                    </code>
+                                     
+                                    
+                                    <code class="text" id="Validate-marketplace-OTP7" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
-        }               
-                                        </code>
-                                         
-                                        
-                                        <code class="text" id="Validate-marketplace-OTP7" style=" display: none; ">
-        {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                        </code>
-                                         
-                                        
-                                        <code class="text" id="Validate-marketplace-OTP8" style=" display: none; ">
+    ]
+    }
+                                    </code>
+                                     
+                                    
+                                    <code class="text" id="Validate-marketplace-OTP8" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                        </code>
-                                        
-                                        
-                                        <code class="text" id="Validate-marketplace-OTP9" style=" display: none; ">
+    ]
+    }
+                                    </code>
+                                    
+                                    
+                                    <code class="text" id="Validate-marketplace-OTP9" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                        </code>
-                                        <code class="text" id="Validate-marketplace-OTP10" style=" display: none; ">
+    ]
+    }
+                                    </code>
+                                    <code class="text" id="Validate-marketplace-OTP10" style=" display: none; ">
+    {
+    "Errors": [
         {
-        "Errors": [
-            {
-            "Code": "string",
-            "Message": "string",
-            "Path": "request.body.PSUId",
-            "Url": "https://{baseURL}/developer-portal/terms"
-            }
-        ]
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
         }
-                                                                                </code>
-                                              </pre>
+    ]
+    }
+                                                                            </code>
+                                          </pre>
                                 </div>
                             </div>
                         </div>

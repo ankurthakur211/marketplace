@@ -1,5 +1,6 @@
 <div id="search-term-result">
-    <p>Corporate CIC Inquiry</p>
+    <p> The Corporate CIC Inquiry is a product designed to retrieve basic corporate data.
+    </p>
 </div>
 <div class="basic-page">
     <div class="product-details-document">
@@ -31,255 +32,244 @@
 
                 <div class="d-flex btn-box">
                     <a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxCorporateCICInquiryAPIs.postman_collection.json"
-                        id="downloadLink">Download Postman Collection</a
-              >
-              <a
-                class="primary-btn"
-                download=""
-                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/CorporateCICInquirySampleRequestData.xlsx"
-                >Download Sample Data</a
-              >
+                        id="downloadLink">Download Postman Collection</a>
+                    <a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/CorporateCICInquirySampleRequestData.xlsx">Download
+                    Sample Data</a>
+                </div>
             </div>
-          </div>
         </div>
 
         <div class="miw-section">
-          <div class="container">
-            <h1 class="fob-welcome-title">Corporate CIC Inquiry Workflow</h1>
+            <div class="container">
+                <h1 class="fob-welcome-title">Corporate CIC Inquiry Workflow</h1>
 
-            <p class="motoinsu-image">&nbsp;</p>
-            <a
-              class="fob-product-title-click"
-              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/CorporateCICInquiryFlowDiagramv0.1.pdf"
-              rel="noopener"
-              target="_blank"
-              >Click here
+                <p class="motoinsu-image">&nbsp;</p>
+                <a class="fob-product-title-click" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/CorporateCICInquiryFlowDiagramv0.1.pdf"
+                    rel="noopener" target="_blank">Click here
             </a>
-                </div>
             </div>
+        </div>
 
-            <div class="APIs-section">
-                <div class="container">
-                    <p class="main-heading">APIs</p>
+        <div class="APIs-section">
+            <div class="container">
+                <p class="main-heading">APIs</p>
 
-                    <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                <div class="bx--snippet-container body" data-testid="expandable-example-display">
 
-                        <!-- API 1 -->
-                        <div class="api-infosec">
-                            <h1 class="fob-welcome-title" id="section-2">Customer Basic Data</h1>
+                    <!-- API 1 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-2">Customer Basic Data</h1>
 
-                            <p class="fob-welcome-text">
-                                Endpoint: /mp-corporate/v1/inquire{ReferenceId}
-                            </p>
+                        <p class="fob-welcome-text">
+                            Endpoint: /mp-corporate/v1/inquire{ReferenceId}
+                        </p>
 
-                            <p class="fob-welcome-text">
-                                <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/3166/api/3163#/MPCorporateCICInquiry_100/operation/%2Finquire%2F{ReferenceId}/get">Swagger Link
-                  </a>
-                            </p>
+                        <p class="fob-welcome-text">
+                            <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1865/api/1862#/MPCorporateCICInquiry_100/operation/%2Finquire%2F{ReferenceId}/get">Swagger
+                            Link
+                        </a>
+                        </p>
 
-                            <p class="fob-welcome-text">
-                                The endpoint is used to return corporate basic data like the name, ID information, mobile number and gender.
-                            </p>
+                        <p class="fob-welcome-text">
+                            The endpoint is used to return corporate basic data like the name, ID information, mobile number and gender.
+                        </p>
 
-                            <div class="requestURL-box">
-                                <div class="request-box">
-                                    <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
 
-                                    <p class="fob-welcome-line">&nbsp;</p>
+                                <p class="fob-welcome-line">&nbsp;</p>
 
-                                    <pre class="example_97 api-guides-example-fob">
-                      <code class="sample-code">
-                          Query Params:
-                          customerStatus:1
-                          page:1
-                          pageSize:10
+                                <pre class="example_97 api-guides-example-fob">
+                <code class="sample-code">
+                    Query Params:
+                    customerStatus:1
+                    page:1
+                    pageSize:10
 
-                          Path Variables:
-                          ReferenceId:7003259999
-                      </code>
-                      </pre>
-                                </div>
-
-                                <div class="url-box">
-                                    <button class="curlbtn fob-create-person-profile-top" type="submit">
-
-                  <p class="curlText">cURL</p>
-              </button>
-
-                                    <pre id="generatedCurl">
-                          <code id="citizen-curl">
-                              curl --location
-                              'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&amp;page=1&amp;pageSize=10'
-                              \ --header 'x-request-id: cac6cc0a-e79f-47c6-9fae-2e77d57012ea'
-                              \ --header 'accept-language: EN' \ --header 'Authorization:
-                              ••••••'
-                          </code>
-                          </pre>
-                                </div>
+                    Path Variables:
+                    ReferenceId:7003259999
+                </code>
+                </pre>
                             </div>
 
-                            <div class="response-outterbox">
-                                <div class="innerbox">
-                                    <div class="code-box">
-                                        <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;Response
-                                        </p>
-                                        <div class="response-box-div">
-                                            <a class="response-box-error active" onclick="responseText('citizen')" type="button">200</a>
-                                            <a class="response-box-error" onclick="responseText('citizen2')" type="button">400</a>
-                                            <a class="response-box-error" onclick="responseText('citizen3')" type="button">401</a>
-                                            <a class="response-box-error" onclick="responseText('citizen4')" type="button">403</a>
-                                            <a class="response-box-error" onclick="responseText('citizen5')" type="button">404</a>
-                                            <a class="response-box-error" onclick="responseText('citizen6')" type="button">405</a>
-                                            <a class="response-box-error" onclick="responseText('citizen7')" type="button">406</a>
-                                            <a class="response-box-error" onclick="responseText('citizen8')" type="button">429</a>
-                                            <a class="response-box-error" onclick="responseText('citizen9')" type="button">500</a>
-                                            <a class="response-box-error" onclick="responseText('citizen10')" type="button">503</a>
-                                        </div>
+                            <div class="url-box">
 
-                                        <pre class="response-box">
-                              <code class="text" style=" display: block; " id="citizen">
-                  {
-                  "Data": {
-                      "StatusCode": "I000000",
-                      "RequestID": "7b5422bd-5ab6-4794-80f2-42ed30ce59e4",
-                      "StatusDescription": "Successful Operation",
-                      "CustomerInformationList": [
-                          {
-                              "CICNumber": "0000000003172389",
-                              "FirstNameEn": "TDM ARB COMPANY LTD",
-                              "FirstNameAr": "لغص",
-                              "CustomerSinceDate": "1999-10-23",
-                              "IdNumber": "7049409151",
-                              "IdType": "X",
-                              "CustomerType": "D",
-                              "customerStatus": "1",
-                              "GregExpiryDate": "2025-03-14"
-                          }
-                      ]
-                  },
-                  "Links": {
-                      "Self": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&amp;pageSize=10&amp;page=1",
-                      "First": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&amp;pageSize=10&amp;page=1",
-                      "Last": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&amp;pageSize=10&amp;page=1"
-                  },
-                  "Meta": {
-                      "TotalPages": 1
-                  }
-              }
-                              </code>
+                                <p class="fob-welcome-title curlText">cURL</p>
 
-                              <code class="text" style=" display: none; " id="citizen2">
-                                  {
-                                  "Errors": [
-                                  {
-                                  "Code": "ERROR.400.001",
-                                  "Message": "Bad Request",
-                                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                  }
-                                  ]
-                                  }
-                              </code>
+                                <pre id="generatedCurl">
+                    <code id="citizen-curl">
+                        curl --location
+                        'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&amp;page=1&amp;pageSize=10'
+                        \ --header 'x-request-id: cac6cc0a-e79f-47c6-9fae-2e77d57012ea'
+                        \ --header 'accept-language: EN' \ --header 'Authorization:
+                        ••••••'
+                    </code>
+                    </pre>
+                            </div>
+                        </div>
 
-                              <code class="text" style=" display: none; " id="citizen3">
-                                  {
-                                  "Errors": [
-                                      {
-                                      "Code": "ERROR.401.001",
-                                      "Message": "Unauthorized to call the target operation.",
-                                      "Path": "authorization",
-                                      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                      }
-                                  ]
-                                  }
-                              </code>
-
-                              <code class="text" style=" display: none; " id="citizen4">
-                                  {
-                                  "Errors": [
-                                  {
-                                  "Code": "ERROR.403.001",
-                                  "Message": "Invalid token",
-                                  "Path": "authorization",
-                                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                  }
-                                  ]
-                                  }
-                              </code>
-                              <code class="text" style=" display: none; " id="citizen5">
-                                  {
-                                  "Errors": [
-                                  {
-                                  "Code": "ERROR.404.001",
-                                  "Message": "No resources match requested URI.",
-                                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                  }
-                                  ]
-                                  }
-                              </code>
-
-                              <code class="text" style=" display: none; " id="citizen6">
-                                  {
-                                  "Errors": [
-                                  {
-                                  "Code": "ERROR.405.001",
-                                  "Message": "The method is not allowed for the requested URL.",
-                                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                  }
-                                  ]
-                                  }
-
-                              </code>
-
-                              <code class="text" style=" display: none; " id="citizen7">
-                                  {
-                                  "Errors": [
-                                  {
-                                  "Code": "ERROR.406.001",
-                                  "Message": "An appropriate representation of the requested resource could not be found",
-                                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                  }
-                                  ]
-                                  }
-                              </code>
-
-                              <code class="text" style=" display: none; " id="citizen8">
-                                  {
-                                  "Errors": [
-                                  {
-                                  "Code": "ERROR.429.001",
-                                  "Message": "Assembly Rate Limit exceeded",
-                                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                  }
-                                  ]
-                                  }
-                              </code>
-
-                              <code class="text" style=" display: none; " id="citizen9">
-                                  {
-                                  "Errors": [
-                                  {
-                                  "Code": "ERROR.500.001",
-                                  "Message": "Internal Error",
-                                  "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                  }
-                                  ]
-                                  }
-                              </code>
-
-                              <code class="text" style=" display: none; " id="citizen10">
-                                  {
-                                  "Errors": [
-                                  {
-                                      "Code": "ERROR.503.001",
-                                      "Message": "Service Unavailable.",
-                                      "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
-                                  }
-                                  ]
-                                  }
-                              </code>
-                              </pre>
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response
+                                    </p>
+                                    <div class="response-box-div">
+                                        <a class="response-box-error active" onclick="responseText('citizen')" type="button">200</a>
+                                        <a class="response-box-error" onclick="responseText('citizen2')" type="button">400</a>
+                                        <a class="response-box-error" onclick="responseText('citizen3')" type="button">401</a>
+                                        <a class="response-box-error" onclick="responseText('citizen4')" type="button">403</a>
+                                        <a class="response-box-error" onclick="responseText('citizen5')" type="button">404</a>
+                                        <a class="response-box-error" onclick="responseText('citizen6')" type="button">405</a>
+                                        <a class="response-box-error" onclick="responseText('citizen7')" type="button">406</a>
+                                        <a class="response-box-error" onclick="responseText('citizen8')" type="button">429</a>
+                                        <a class="response-box-error" onclick="responseText('citizen9')" type="button">500</a>
+                                        <a class="response-box-error" onclick="responseText('citizen10')" type="button">503</a>
                                     </div>
+
+                                    <pre class="response-box">
+                        <code class="text" style=" display: block; " id="citizen">
+            {
+            "Data": {
+                "StatusCode": "I000000",
+                "RequestID": "7b5422bd-5ab6-4794-80f2-42ed30ce59e4",
+                "StatusDescription": "Successful Operation",
+                "CustomerInformationList": [
+                    {
+                        "CICNumber": "0000000003172389",
+                        "FirstNameEn": "TDM ARB COMPANY LTD",
+                        "FirstNameAr": "لغص",
+                        "CustomerSinceDate": "1999-10-23",
+                        "IdNumber": "7049409151",
+                        "IdType": "X",
+                        "CustomerType": "D",
+                        "customerStatus": "1",
+                        "GregExpiryDate": "2025-03-14"
+                    }
+                ]
+            },
+            "Links": {
+                "Self": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&amp;pageSize=10&amp;page=1",
+                "First": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&amp;pageSize=10&amp;page=1",
+                "Last": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-corporate/v1/inquire/7049409151?customerStatus=1&amp;pageSize=10&amp;page=1"
+            },
+            "Meta": {
+                "TotalPages": 1
+            }
+        }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="citizen2">
+                            {
+                            "Errors": [
+                            {
+                            "Code": "ERROR.400.001",
+                            "Message": "Bad Request",
+                            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                            }
+                            ]
+                            }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="citizen3">
+                            {
+                            "Errors": [
+                                {
+                                "Code": "ERROR.401.001",
+                                "Message": "Unauthorized to call the target operation.",
+                                "Path": "authorization",
+                                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                                }
+                            ]
+                            }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="citizen4">
+                            {
+                            "Errors": [
+                            {
+                            "Code": "ERROR.403.001",
+                            "Message": "Invalid token",
+                            "Path": "authorization",
+                            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                            }
+                            ]
+                            }
+                        </code>
+                        <code class="text" style=" display: none; " id="citizen5">
+                            {
+                            "Errors": [
+                            {
+                            "Code": "ERROR.404.001",
+                            "Message": "No resources match requested URI.",
+                            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                            }
+                            ]
+                            }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="citizen6">
+                            {
+                            "Errors": [
+                            {
+                            "Code": "ERROR.405.001",
+                            "Message": "The method is not allowed for the requested URL.",
+                            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                            }
+                            ]
+                            }
+
+                        </code>
+
+                        <code class="text" style=" display: none; " id="citizen7">
+                            {
+                            "Errors": [
+                            {
+                            "Code": "ERROR.406.001",
+                            "Message": "An appropriate representation of the requested resource could not be found",
+                            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                            }
+                            ]
+                            }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="citizen8">
+                            {
+                            "Errors": [
+                            {
+                            "Code": "ERROR.429.001",
+                            "Message": "Assembly Rate Limit exceeded",
+                            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                            }
+                            ]
+                            }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="citizen9">
+                            {
+                            "Errors": [
+                            {
+                            "Code": "ERROR.500.001",
+                            "Message": "Internal Error",
+                            "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                            }
+                            ]
+                            }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="citizen10">
+                            {
+                            "Errors": [
+                            {
+                                "Code": "ERROR.503.001",
+                                "Message": "Service Unavailable.",
+                                "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+                            }
+                            ]
+                            }
+                        </code>
+                        </pre>
                                 </div>
                             </div>
                         </div>
@@ -287,5 +277,5 @@
                 </div>
             </div>
         </div>
-
     </div>
+</div>

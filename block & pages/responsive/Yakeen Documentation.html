@@ -20,7 +20,8 @@
             </div>
 
             <div class="d-flex btn-box"><a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxYakeenIntegrationAPI.postman_collection.json"
-                    id="downloadLink">Download Postman Collection</a> <a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/YakeenIntegrationSampleDataRequest.xlsx">Download Sample Data</a></div>
+                    id="downloadLink">Download Postman Collection</a> <a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/YakeenIntegrationSampleDataRequest.xlsx">Download
+                    Sample Data</a></div>
         </div>
     </div>
 
@@ -29,8 +30,8 @@
             <h1 class="fob-welcome-title">Yakeen Integration Workflow</h1>
 
             <p class="motoinsu-image">&nbsp;</p>
-            <a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apic-nonpr-766d725d-portal-web-cp4i-nprd.apimp-nprd-cl01-de8fb88b0db8c47d4745b3af8ac7158d-0000.eu-de.containers.appdomain.cloud/themes/marketplace_latest/PDF/YakeenIntegrationFlowDiagramv0.1.pdf"
-                id="downloadLink">Click here</a></div>
+            <a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/YakeenIntegrationFlowDiagramv0.1.pdf" id="downloadLink">Click here</a>
+        </div>
     </div>
 
     <div class="APIs-section">
@@ -46,7 +47,8 @@
 
                     <p class="fob-welcome-text">Endpoint: /mp-yakeen/v1/arb-persons/{POINumber}</p>
 
-                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2923/api/2641#/MPYakeenPersonInformation_100/operation/%2Farb-persons%2F{POINumber}/get">Swagger Link</a></p>
+                    <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1850/api/1826#/MPYakeenPersonInformation_100/operation/%2Farb-persons%2F{POINumber}/get">Swagger
+                            Link</a></p>
 
                     <p class="fob-welcome-text">It is used to describe the endpoints required for retrieving and verifying personal information such as name, date of birth, nationality, and address details from two different providers, ARB and ART, based on consumer requirements.</p>
 
@@ -66,9 +68,9 @@
             </pre>
                         </div>
 
-                        <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit"></button>
+                        <div class="url-box">
 
-                            <p class="curlText"><button class="curlbtn fob-create-person-profile-top" type="submit">cURL</button></p>
+                            <p class="fob-welcome-title curlText">cURL</p>
 
                             <pre id="generatedCurl">
             <code id="yakeen-inf">
@@ -82,14 +84,24 @@
                     <div class="response-outterbox">
                         <div class="innerbox">
                             <div class="code-box">
-                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">&nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
-                                <div class="response-box-div"><a class="response-box-error" type="button">200</a> <a class="response-box-error" type="button">400</a> <a class="response-box-error" type="button">401</a> <a class="response-box-error" type="button">403</a> <a class="response-box-error"
-                                        type="button">404</a> <a class="response-box-error" type="button">405</a> <a class="response-box-error" type="button">406</a> <a class="response-box-error" type="button">429</a> <a class="response-box-error" type="button">500</a></div>
+                                <div class="response-box-div">
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info')">200</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info2')">400</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info3')">401</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info4')">403</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info5')">404</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info6')">405</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info7')">406</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info8')">429</a>
+                                    <a class="response-box-error" type="button" onclick="responseText('response-info9')">500</a>
+                                </div>
 
                                 <pre class="response-box">
 
-                <code class="text" id="response-info">
+                <code class="text" id="response-info" style=" display: block; ">
 {
     "Data": {
         "PersonInfo": {
@@ -113,7 +125,7 @@
                 
             
                 </code>
-                <code class="text" id="response-info2">
+                <code class="text" id="response-info2" style=" display: none; ">
 {
     "Errors": [
         {
@@ -125,7 +137,7 @@
     ]
 }
                                     </code>	                      
-                <code class="text" id="response-info3">
+                <code class="text" id="response-info3" style=" display: none; ">
 {
     "Errors": [
         {
@@ -138,7 +150,7 @@
 } 
                 </code>	
             
-                <code class="text" id="response-info4">
+                <code class="text" id="response-info4" style=" display: none; ">
 {
     "Errors": [
         {
@@ -150,7 +162,7 @@
 }
                 </code>
             
-                <code class="text" id="response-info5">
+                <code class="text" id="response-info5" style=" display: none; ">
 {
     "Errors": [
         {
@@ -162,7 +174,7 @@
 }
                 </code>
             
-                <code class="text" id="response-info6">
+                <code class="text" id="response-info6" style=" display: none; ">
 {
     "Errors": [
         {
@@ -175,7 +187,7 @@
                     
                 </code>
             
-                <code class="text" id="response-info7">
+                <code class="text" id="response-info7" style=" display: none; ">
 {
     "Errors": [
         {
@@ -187,7 +199,7 @@
 }       
                 </code>
             
-                <code class="text" id="response-info8">
+                <code class="text" id="response-info8" style=" display: none; ">
 {
     "Errors": [
         {
@@ -199,7 +211,7 @@
 } 
                 </code>
             
-                <code class="text" id="response-info9">
+                <code class="text" id="response-info9" style=" display: none; ">
 {
     "Errors": [
         {
@@ -225,9 +237,11 @@
 
                         <p class="fob-welcome-text">Endpoint: /mp-yakeen/v1/customers/{POINumber}/id-expiration</p>
 
-                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2638/api/2635#/MPYakeenCustomerIDExpiration_100/operation/%2Fcustomers%2F{POINumber}%2Fid-expiration/get">Swagger Link</a></p>
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1847/api/1832#/MPYakeenCustomerIDExpiration_100/operation/%2Fcustomers%2F{POINumber}%2Fid-expiration/get">Swagger
+                                Link</a></p>
 
-                        <p class="fob-welcome-text">It is responsible for Retrieveing Customer ID Expiration from Yakeen.</p>
+                        <p class="fob-welcome-text">It is responsible for Retrieveing Customer ID Expiration from Yakeen.
+                        </p>
 
                         <div class="requestURL-box">
                             <div class="request-box">
@@ -247,9 +261,8 @@ Path Params:
                             </div>
 
                             <div class="url-box">
-                                <!-- <div class="code-box"> --><button class="curlbtn fob-activate-fetching-top" type="submit"></button>
-
-                                <p class="curlText"><button class="curlbtn fob-activate-fetching-top" type="submit">cURL</button></p>
+                                <!-- <div class="code-box"> -->
+                                <p class="fob-welcome-title curlText">cURL</p>
 
                                 <pre id="generatedCurl">
                                 <code id="yakeen-customer">
@@ -265,14 +278,24 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
                         <div class="response-outterbox">
                             <div class="innerbox">
                                 <div class="code-box">
-                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">&nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
 
-                                    <div class="response-box-div"><a class="response-box-error" type="button">200</a> <a class="response-box-error" type="button">400</a> <a class="response-box-error" type="button">401</a> <a class="response-box-error" type="button">403</a> <a class="response-box-error"
-                                            type="button">404</a> <a class="response-box-error" type="button">405</a> <a class="response-box-error" type="button">406</a> <a class="response-box-error" type="button">429</a> <a class="response-box-error" type="button">500</a></div>
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust')">200</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust5')">404</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust6')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust7')">406</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust8')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('response-cust9')">500</a>
+                                    </div>
 
                                     <pre class="response-box">
 
-                    <code class="text" id="response-cust">
+                    <code class="text" id="response-cust" style=" display: block; ">
 {
     "Data": {
         "PersonInfo": {
@@ -285,7 +308,7 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
 }
                         
                         </code>
-                    <code class="text" id="response-cust2">
+                    <code class="text" id="response-cust2" style=" display: none; ">
 {
     "Errors": [
         {
@@ -297,7 +320,7 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
     ]
 }
                     </code>
-                    <code class="text" id="response-cust3">
+                    <code class="text" id="response-cust3" style=" display: none; ">
 {
     "Errors": [
         {
@@ -311,7 +334,7 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
                     
                     </code>	
                     
-                    <code class="text" id="response-cust4">
+                    <code class="text" id="response-cust4" style=" display: none; ">
 {
     "Errors": [
         {
@@ -324,7 +347,7 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
                     </code>
                     
                     
-                    <code class="text" id="response-cust5">
+                    <code class="text" id="response-cust5" style=" display: none; ">
 {
     "Errors": [
         {
@@ -337,7 +360,7 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
                     </code>
                     
                     
-                    <code class="text" id="response-cust6">
+                    <code class="text" id="response-cust6" style=" display: none; ">
 {
     "Errors": [
         {
@@ -351,7 +374,7 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
                     </code>
                         
                     
-                    <code class="text" id="response-cust7">
+                    <code class="text" id="response-cust7" style=" display: none; ">
 {
     "Errors": [
         {
@@ -364,7 +387,7 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
                     </code>
                         
                     
-                    <code class="text" id="response-cust8">
+                    <code class="text" id="response-cust8" style=" display: none; ">
 {
     "Errors": [
         {
@@ -377,7 +400,7 @@ curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-
                     </code>
                     
                     
-                    <code class="text" id="response-cust9">
+                    <code class="text" id="response-cust9" style=" display: none; ">
 {
     "Errors": [
         {
