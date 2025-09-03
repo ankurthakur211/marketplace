@@ -1760,22 +1760,22 @@ if (listcolor) {
 }
 var myElement = document.getElementById("myElement");
 var isClicked = false;
+if (myElement) {
+    myElement.addEventListener("click", function() {
+        if (isClicked) {
+            myElement.style.backgroundColor = "#E9EEFD";
+        } else {
+            myElement.style.backgroundColor = "#E9EEFD";
+        }
+        isClicked = !isClicked;
+    });
 
-myElement.addEventListener("click", function() {
-    if (isClicked) {
-        myElement.style.backgroundColor = "#E9EEFD";
-    } else {
-        myElement.style.backgroundColor = "#E9EEFD";
-    }
-    isClicked = !isClicked;
-});
-
-myElement.addEventListener("mouseout", function() {
-    if (!isClicked) {
-        myElement.style.backgroundColor = "#E9EEFD";
-    }
-});
-
+    myElement.addEventListener("mouseout", function() {
+        if (!isClicked) {
+            myElement.style.backgroundColor = "#E9EEFD";
+        }
+    });
+}
 /*function toggleDiv(divId) {
   var div = document.getElementById(divId);
   div.classList.toggle('hidden');

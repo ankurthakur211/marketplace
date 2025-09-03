@@ -32,7 +32,7 @@
 
                 <div class="d-flex btn-box"><a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/MPModernSandboxLoadAllPolicyAPI.postman_collection.json"
                         id="downloadLink">Download Postman Collection</a> <a class="primary-btn" download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/LoadAllPoliciesSampleRequestData.xlsx">Download
-                        Sample Data</a></div>
+                    Sample Data</a></div>
             </div>
         </div>
 
@@ -57,8 +57,8 @@
 
                         <p class="fob-welcome-text">Endpoint: /mp-policies-information/v1/load-policies</p>
 
-                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2911/api/2908#/MPLoadAllPoliciesAPI_101/operation/%2Fload-policies/get">Swagger
-                                Link </a></p>
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/node/240#/MPLoadAllPoliciesAPI_300/operation/%2Fload-policies/get">Swagger
+                            Link </a></p>
 
                         <p class="fob-welcome-text">This is for load-policies by national-id and policy type.</p>
 
@@ -69,24 +69,25 @@
                                 <p class="fob-welcome-line">&nbsp;</p>
 
                                 <pre class="example_97 api-guides-example-fob ">
-                           <code class="sample-code">
-                            Query Params:
-                            poiNumber:1068574142
-                          </code>
-                        </pre>
+                       <code class="sample-code">
+                        Query Params:
+                        poiNumber:1068574142
+                      </code>
+                    </pre>
                             </div>
 
-                            <div class="url-box"><button class="curlbtn fob-create-person-profile-top" type="submit" onclick="show('citizen-curl')">
-                                <p class="curlText">cURL</p>
-                            </button>
+                            <div class="url-box">
+
+                                <p class="fob-welcome-title curlText">cURL</p>
+
 
                                 <pre id="generatedCurl">
-                          <code id="citizen-curl">
-                            curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-policies-information/v1/load-policies?poiNumber=1096136294&amp;policyType=home' \
-                            --header 'Accept: application/json' \
-                            --header 'Authorization: ••••••'
-                          </code>
-                        </pre>
+                      <code id="citizen-curl">
+                        curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-policies-information/v1/load-policies?poiNumber=1096136294&amp;policyType=home' \
+                        --header 'Accept: application/json' \
+                        --header 'Authorization: ••••••'
+                      </code>
+                    </pre>
                             </div>
                         </div>
 
@@ -107,159 +108,159 @@
                                         <a class="response-box-error" type="button" onclick="responseText('response-info9')">500</a></div>
 
                                     <pre class="response-box">
+
+                      <code class="text" id="response-info" style=" display: block; ">
     
-                          <code class="text" id="response-info" style=" display: block; ">
-        
-        {
-        "Data": {
-        "HomePolicies": [
-        {
-        "ExpiryDate": "2025-04-25T23:59:00",
-        "InsuranceType": "Fire/Property",
-        "PolicyCreationDate": "2024-04-18T08:29:27",
-        "PolicyId": 9043035,
-        "PolicyNumber": "P0424-FHH-INWS-08892281",
-        "PolicyStatus": "POLICY ACTIVE AND POSTED",
-        "PolicyType": 610640,
-        "Product": "",
-        "RenewalPremium": ""
-        },
-        {
-        "ExpiryDate": "2025-03-16T23:59:00",
-        "InsuranceType": "Fire/Property",
-        "PolicyCreationDate": "2024-03-16T14:10:24",
-        "PolicyId": 9036945,
-        "PolicyNumber": "P0324-FHH-INWS-08890767",
-        "PolicyStatus": "POLICY ACTIVE AND POSTED",
-        "PolicyType": 610640,
-        "Product": "",
-        "RenewalPremium": ""
-        },
-        {
-        "ExpiryDate": "2024-08-21T23:59:00",
-        "InsuranceType": "Fire/Property",
-        "PolicyCreationDate": "2023-08-20T14:44:52",
-        "PolicyId": 8990251,
-        "PolicyNumber": "P0823-FHH-INWS-08887009",
-        "PolicyStatus": "POLICY ACTIVE AND POSTED",
-        "PolicyType": 610640,
-        "Product": "",
-        "RenewalPremium": ""
-        },
-        {
-        "ExpiryDate": "2024-08-21T23:59:00",
-        "InsuranceType": "Fire/Property",
-        "PolicyCreationDate": "2023-08-06T13:03:17",
-        "PolicyId": 8989558,
-        "PolicyNumber": "P0823-FHH-INWS-08886800",
-        "PolicyStatus": "POLICY ACTIVE AND POSTED",
-        "PolicyType": 610640,
-        "Product": "",
-        "RenewalPremium": ""
-        },
-        {
-        "ExpiryDate": "2024-06-14T23:59:00",
-        "InsuranceType": "Fire/Property",
-        "PolicyCreationDate": "2023-06-09T14:41:44",
-        "PolicyId": 8987606,
-        "PolicyNumber": "P0623-FHH-INWS-08886176",
-        "PolicyStatus": "POLICY ACTIVE AND POSTED",
-        "PolicyType": 610640,
-        "Product": "",
-        "RenewalPremium": ""
-        }
-        ]
-        }
-        }
-        </code>
-        
-                          <code class="text" id="response-info2" style=" display: none; ">
-        {
-        "Errors": [
-        {
-        "Code": "ERROR.400.349",
-        "Message": "PSU ID is mandatory",
-        "Path": "authorization",
-        "Url": "https://portal-www.neo-tek.com"
-        }
-        ]
-        }
-        </code>
-        <code class="text" id="response-info3" style=" display: none; ">
-        {
-        "Errors": [
-        {
-        "Code": "ERROR.401.001",
-        "Message": "Unauthorized to call the target operation.",
-        "Path": "authorization",
-        "Url": "https://portal-www.neo-tek.com"
-        }
-        ]
-        }
-        </code>
-        
-                        <code class="text" id="response-info4" style=" display: none; ">
-        {
-        "Errors": [
-        {
-        "Code": "ERROR.403.001",
-        "Message": "Can't find any valid subscription.",
-        "Path": "authorization",
-        "Url": "https://portal-www.neo-tek.com"
-        }
-        ]
-        }
-        </code>
-        <code class="text" id="response-info6" style=" display: none; ">
-        {
-        "Errors": [
-        {
-        "Code": "ERROR.405.001",
-        "Message": "The method is not allowed for the requested URL.",
-        "Path": "authorization",
-        "Url": "https://portal-www.neo-tek.com"
-        }
-        ]
-        }
-        </code>
-        <code class="text" id="response-info7" style=" display: none; ">
-        {
-        "Errors": [
-        {
-        "Code": "ERROR.406.001",
-        "Message": "An appropriate representation of the requested resource could not be \n Path: authorization",
-        "Path": "authorization",
-        "Url": "https://portal-www.neo-tek.com"
-        }
-        ]
-        }
-        </code>
-        <code class="text" id="response-info8" style=" display: none; ">
-        {
-        "Errors": [
-        {
-        "Code": "ERROR.429.001",
-        "Message": "Assembly Rate Limit exceeded",
-        "Path": "authorization",
-        "Url": "https://portal-www.neo-tek.com"
-        }
-        ]
-        }
-        </code>
-        
-                          <code class="text" id="response-info9" style=" display: none; ">
-        {
-        "Errors": [
-        {
-        "Code": "ERROR.500.001",
-        "Message": "Internal Error",
-        "Path": "authorization",
-        "Url": "https://portal-www.neo-tek.com"
-        }
-        ]
-        }
-        </code>
-        </pre>
+    {
+    "Data": {
+    "HomePolicies": [
+    {
+    "ExpiryDate": "2025-04-25T23:59:00",
+    "InsuranceType": "Fire/Property",
+    "PolicyCreationDate": "2024-04-18T08:29:27",
+    "PolicyId": 9043035,
+    "PolicyNumber": "P0424-FHH-INWS-08892281",
+    "PolicyStatus": "POLICY ACTIVE AND POSTED",
+    "PolicyType": 610640,
+    "Product": "",
+    "RenewalPremium": ""
+    },
+    {
+    "ExpiryDate": "2025-03-16T23:59:00",
+    "InsuranceType": "Fire/Property",
+    "PolicyCreationDate": "2024-03-16T14:10:24",
+    "PolicyId": 9036945,
+    "PolicyNumber": "P0324-FHH-INWS-08890767",
+    "PolicyStatus": "POLICY ACTIVE AND POSTED",
+    "PolicyType": 610640,
+    "Product": "",
+    "RenewalPremium": ""
+    },
+    {
+    "ExpiryDate": "2024-08-21T23:59:00",
+    "InsuranceType": "Fire/Property",
+    "PolicyCreationDate": "2023-08-20T14:44:52",
+    "PolicyId": 8990251,
+    "PolicyNumber": "P0823-FHH-INWS-08887009",
+    "PolicyStatus": "POLICY ACTIVE AND POSTED",
+    "PolicyType": 610640,
+    "Product": "",
+    "RenewalPremium": ""
+    },
+    {
+    "ExpiryDate": "2024-08-21T23:59:00",
+    "InsuranceType": "Fire/Property",
+    "PolicyCreationDate": "2023-08-06T13:03:17",
+    "PolicyId": 8989558,
+    "PolicyNumber": "P0823-FHH-INWS-08886800",
+    "PolicyStatus": "POLICY ACTIVE AND POSTED",
+    "PolicyType": 610640,
+    "Product": "",
+    "RenewalPremium": ""
+    },
+    {
+    "ExpiryDate": "2024-06-14T23:59:00",
+    "InsuranceType": "Fire/Property",
+    "PolicyCreationDate": "2023-06-09T14:41:44",
+    "PolicyId": 8987606,
+    "PolicyNumber": "P0623-FHH-INWS-08886176",
+    "PolicyStatus": "POLICY ACTIVE AND POSTED",
+    "PolicyType": 610640,
+    "Product": "",
+    "RenewalPremium": ""
+    }
+    ]
+    }
+    }
+    </code>
+    
+                      <code class="text" id="response-info2" style=" display: none; ">
+    {
+    "Errors": [
+    {
+    "Code": "ERROR.400.349",
+    "Message": "PSU ID is mandatory",
+    "Path": "authorization",
+    "Url": "https://portal-www.neo-tek.com"
+    }
+    ]
+    }
+    </code>
+    <code class="text" id="response-info3" style=" display: none; ">
+    {
+    "Errors": [
+    {
+    "Code": "ERROR.401.001",
+    "Message": "Unauthorized to call the target operation.",
+    "Path": "authorization",
+    "Url": "https://portal-www.neo-tek.com"
+    }
+    ]
+    }
+    </code>
+    
+                    <code class="text" id="response-info4" style=" display: none; ">
+    {
+    "Errors": [
+    {
+    "Code": "ERROR.403.001",
+    "Message": "Can't find any valid subscription.",
+    "Path": "authorization",
+    "Url": "https://portal-www.neo-tek.com"
+    }
+    ]
+    }
+    </code>
+    <code class="text" id="response-info6" style=" display: none; ">
+    {
+    "Errors": [
+    {
+    "Code": "ERROR.405.001",
+    "Message": "The method is not allowed for the requested URL.",
+    "Path": "authorization",
+    "Url": "https://portal-www.neo-tek.com"
+    }
+    ]
+    }
+    </code>
+    <code class="text" id="response-info7" style=" display: none; ">
+    {
+    "Errors": [
+    {
+    "Code": "ERROR.406.001",
+    "Message": "An appropriate representation of the requested resource could not be \n Path: authorization",
+    "Path": "authorization",
+    "Url": "https://portal-www.neo-tek.com"
+    }
+    ]
+    }
+    </code>
+    <code class="text" id="response-info8" style=" display: none; ">
+    {
+    "Errors": [
+    {
+    "Code": "ERROR.429.001",
+    "Message": "Assembly Rate Limit exceeded",
+    "Path": "authorization",
+    "Url": "https://portal-www.neo-tek.com"
+    }
+    ]
+    }
+    </code>
+    
+                      <code class="text" id="response-info9" style=" display: none; ">
+    {
+    "Errors": [
+    {
+    "Code": "ERROR.500.001",
+    "Message": "Internal Error",
+    "Path": "authorization",
+    "Url": "https://portal-www.neo-tek.com"
+    }
+    ]
+    }
+    </code>
+    </pre>
                                 </div>
                             </div>
                         </div>
