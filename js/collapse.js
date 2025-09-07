@@ -615,38 +615,36 @@ document.addEventListener("DOMContentLoaded", function() {
     // }
 
 
-
     const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-    function moveNavItemsForMobile() {
-        // Clear previously added items to avoid duplicates
-        const existingItems = document.querySelectorAll('.navbar-collapse .menu.nav .searching-responsive, .navbar-collapse .menu.nav .moved-item');
-        existingItems.forEach(item => item.remove());
+    // Store original parents so we can restore later
+    const originalParents = new Map();
 
+    function moveItem(li, target) {
+        if (!li) return;
+        if (!originalParents.has(li)) {
+            originalParents.set(li, li.parentNode);
+        }
+        li.classList.add('moved-item');
+        target.appendChild(li);
+    }
+
+    function moveNavItemsForMobile() {
         const navCollapseList = document.querySelector('.navbar-collapse .menu.nav');
         if (!navCollapseList) return;
 
         // Move login menu items
         const loginMenu = document.querySelector('.region.region-navigation-right .menu.menu--login.nav');
         if (loginMenu) {
-            loginMenu.querySelectorAll('li').forEach(li => {
-                const clone = li.cloneNode(true);
-                clone.classList.add('moved-item');
-                navCollapseList.appendChild(clone);
-            });
+            loginMenu.querySelectorAll('li').forEach(li => moveItem(li, navCollapseList));
         }
 
         // Move organization menu items
         const orgMenu = document.querySelector('#block-marketplace-latest-consumerorganizationselection .dropitmenu-submenu');
         if (orgMenu) {
             orgMenu.querySelectorAll('li').forEach(li => {
-                const isDisabled = li.hasAttribute('disabled');
-                const isSelected = li.hasAttribute('selected');
-                if (isDisabled || isSelected) return;
-
-                const clone = li.cloneNode(true);
-                clone.classList.add('moved-item');
-                navCollapseList.appendChild(clone);
+                if (li.hasAttribute('disabled') || li.hasAttribute('selected')) return;
+                moveItem(li, navCollapseList);
             });
         }
 
@@ -665,37 +663,30 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
 
-                const clone = li.cloneNode(true);
-                clone.classList.add('moved-item');
-                navCollapseList.appendChild(clone);
+                moveItem(li, navCollapseList);
             });
         }
 
-        // Insert search icon section
+        // Move search icon section
         const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
         if (searchIconSection) {
-            const searchItem = document.createElement('li');
-            searchItem.classList.add('searching-responsive', 'moved-item');
-
-            // Clone the node deeply
-            const clonedSection = searchIconSection.cloneNode(true);
-
-            // Find the <a> tag with class 'opensearch' inside the clone and replace its class
-            const openSearchLink = clonedSection.querySelector('a.opensearch');
-            if (openSearchLink) {
-                openSearchLink.classList.remove('opensearch');
-                openSearchLink.classList.add('opensearch2');
+            let li = searchIconSection.closest('li');
+            if (!li) {
+                li = document.createElement('li');
+                li.appendChild(searchIconSection);
             }
-
-            searchItem.appendChild(clonedSection);
-            navCollapseList.insertBefore(searchItem, navCollapseList.firstChild);
+            li.classList.add('searching-responsive', 'moved-item');
+            navCollapseList.insertBefore(li, navCollapseList.firstChild);
         }
     }
 
     function restoreNavItemsToOriginal() {
-        // Remove only the items we added
-        const movedItems = document.querySelectorAll('.navbar-collapse .menu.nav .searching-responsive, .navbar-collapse .menu.nav .moved-item');
-        movedItems.forEach(item => item.remove());
+        originalParents.forEach((parent, li) => {
+            if (document.body.contains(li)) {
+                parent.appendChild(li); // restore back to original location
+                li.classList.remove('moved-item');
+            }
+        });
     }
 
     // Initial run
@@ -711,6 +702,7 @@ document.addEventListener("DOMContentLoaded", function() {
             restoreNavItemsToOriginal();
         }
     });
+
 
     /* for nav bar menu responsive design*/
 
