@@ -24207,7 +24207,7 @@ button#ccs-\:rl\:-tab-1 {
     position: relative;
     z-index: 2;
     margin-top: 35px;
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 200;
     color: #fff;
     text-align: justify;
@@ -24219,11 +24219,16 @@ button#ccs-\:rl\:-tab-1 {
     position: relative;
     z-index: 2;
     margin-top: 0px;
-    font-size: 24px;
-    font-weight: bolder;
-    color: #fff;
     text-align: justify;
     margin-left: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 12px;
+    border-left: 6px solid #00c4ff;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 5px #00c4ff, 0 0 5px #007bff;
 }
 
 .product-widget .slide .table1 {
@@ -24343,6 +24348,7 @@ button#ccs-\:rl\:-tab-1 {
     color: white;
     font-size: 20px;
     font-weight: bold;
+    margin-top: 10px !important;
 }
 
 
