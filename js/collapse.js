@@ -620,6 +620,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Store original parents so we can restore later
     const originalParents = new Map();
 
+    // Track original search position separately
+    let searchOriginalParent = null;
+    let searchNextSibling = null;
+
     function moveItem(li, target) {
         if (!li) return;
         if (!originalParents.has(li)) {
@@ -627,6 +631,41 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         li.classList.add('moved-item');
         target.appendChild(li);
+    }
+
+    function moveSearchBlock(navCollapseList) {
+        const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
+        if (searchIconSection) {
+            if (!searchOriginalParent) {
+                searchOriginalParent = searchIconSection.parentNode;
+                searchNextSibling = searchIconSection.nextSibling;
+            }
+
+            // Wrap in li for mobile if not already inside one
+            let li = searchIconSection.closest('li');
+            if (!li) {
+                li = document.createElement('li');
+                li.classList.add('searching-responsive', 'moved-item');
+                li.appendChild(searchIconSection);
+            } else {
+                li.classList.add('searching-responsive', 'moved-item');
+            }
+
+            navCollapseList.insertBefore(li, navCollapseList.firstChild);
+        }
+    }
+
+    function restoreSearchBlock() {
+        const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
+        if (searchIconSection && searchOriginalParent) {
+            searchOriginalParent.insertBefore(searchIconSection, searchNextSibling);
+        }
+
+        // Clean up wrapper <li> if it exists
+        const wrapper = document.querySelector('.searching-responsive.moved-item');
+        if (wrapper && wrapper.tagName === 'LI') {
+            wrapper.remove();
+        }
     }
 
     function moveNavItemsForMobile() {
@@ -667,26 +706,21 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
-        // Move search icon section
-        const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
-        if (searchIconSection) {
-            let li = searchIconSection.closest('li');
-            if (!li) {
-                li = document.createElement('li');
-                li.appendChild(searchIconSection);
-            }
-            li.classList.add('searching-responsive', 'moved-item');
-            navCollapseList.insertBefore(li, navCollapseList.firstChild);
-        }
+        // Move search block
+        moveSearchBlock(navCollapseList);
     }
 
     function restoreNavItemsToOriginal() {
+        // Restore moved menu items
         originalParents.forEach((parent, li) => {
             if (document.body.contains(li)) {
                 parent.appendChild(li); // restore back to original location
                 li.classList.remove('moved-item');
             }
         });
+
+        // Restore search block
+        restoreSearchBlock();
     }
 
     // Initial run
@@ -702,6 +736,7 @@ document.addEventListener("DOMContentLoaded", function() {
             restoreNavItemsToOriginal();
         }
     });
+
 
 
     /* for nav bar menu responsive design*/
