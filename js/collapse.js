@@ -1,3 +1,49 @@
+//code for wizard
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelector('.slides');
+    const slideElements = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.dots');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+
+    if (!slides || slideElements.length === 0) return; // safeguard
+
+    let currentIndex = 0;
+
+    // Create dots
+    slideElements.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlide() {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlide();
+    }
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slideElements.length - 1;
+        updateSlide();
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex < slideElements.length - 1) ? currentIndex + 1 : 0;
+        updateSlide();
+    });
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
     //for basic pages header
     if (document.querySelector(".basic-page") && window.location.href.includes("/search/")) {
