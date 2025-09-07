@@ -24134,7 +24134,7 @@ button#ccs-\:rl\:-tab-1 {
 
 .product-widget .dots {
     display: inline-block;
-    background: #666;
+    background: #00c4ff;
     padding: 6px 14px;
     border-radius: 25px;
     position: absolute;
@@ -24146,7 +24146,7 @@ button#ccs-\:rl\:-tab-1 {
     height: 10px;
     width: 10px;
     margin: 0 5px;
-    background: #bbb;
+    background: #ffffff;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
@@ -24154,7 +24154,7 @@ button#ccs-\:rl\:-tab-1 {
 }
 
 .product-widget .dot.active {
-    background: #fff;
+    background: #0e3876;
 }
 
 .product-widget .arrow {
@@ -24183,12 +24183,12 @@ button#ccs-\:rl\:-tab-1 {
 
 .product-widget .arrow.left span {
     border-width: 10px 14px 10px 0;
-    border-color: transparent #777 transparent transparent;
+    border-color: transparent #00c4ff transparent transparent;
 }
 
 .product-widget .arrow.right span {
     border-width: 10px 0 10px 14px;
-    border-color: transparent transparent transparent #777;
+    border-color: transparent transparent transparent #00c4ff;
 }
 
 .product-widget .arrow:hover {
