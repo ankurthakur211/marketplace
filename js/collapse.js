@@ -1,3 +1,49 @@
+//code for wizard
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelector('.slides');
+    const slideElements = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.dots');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+
+    if (!slides || slideElements.length === 0) return; // safeguard
+
+    let currentIndex = 0;
+
+    // Create dots
+    slideElements.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlide() {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlide();
+    }
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slideElements.length - 1;
+        updateSlide();
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex < slideElements.length - 1) ? currentIndex + 1 : 0;
+        updateSlide();
+    });
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
     //for basic pages header
     if (document.querySelector(".basic-page") && window.location.href.includes("/search/")) {
@@ -615,38 +661,75 @@ document.addEventListener("DOMContentLoaded", function() {
     // }
 
 
-
     const mediaQuery = window.matchMedia('(max-width: 767px)');
 
-    function moveNavItemsForMobile() {
-        // Clear previously added items to avoid duplicates
-        const existingItems = document.querySelectorAll('.navbar-collapse .menu.nav .searching-responsive, .navbar-collapse .menu.nav .moved-item');
-        existingItems.forEach(item => item.remove());
+    // Store original parents so we can restore later
+    const originalParents = new Map();
 
+    // Track original search position separately
+    let searchOriginalParent = null;
+    let searchNextSibling = null;
+
+    function moveItem(li, target) {
+        if (!li) return;
+        if (!originalParents.has(li)) {
+            originalParents.set(li, li.parentNode);
+        }
+        li.classList.add('moved-item');
+        target.appendChild(li);
+    }
+
+    function moveSearchBlock(navCollapseList) {
+        const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
+        if (searchIconSection) {
+            if (!searchOriginalParent) {
+                searchOriginalParent = searchIconSection.parentNode;
+                searchNextSibling = searchIconSection.nextSibling;
+            }
+
+            // Wrap in li for mobile if not already inside one
+            let li = searchIconSection.closest('li');
+            if (!li) {
+                li = document.createElement('li');
+                li.classList.add('searching-responsive', 'moved-item');
+                li.appendChild(searchIconSection);
+            } else {
+                li.classList.add('searching-responsive', 'moved-item');
+            }
+
+            navCollapseList.insertBefore(li, navCollapseList.firstChild);
+        }
+    }
+
+    function restoreSearchBlock() {
+        const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
+        if (searchIconSection && searchOriginalParent) {
+            searchOriginalParent.insertBefore(searchIconSection, searchNextSibling);
+        }
+
+        // Clean up wrapper <li> if it exists
+        const wrapper = document.querySelector('.searching-responsive.moved-item');
+        if (wrapper && wrapper.tagName === 'LI') {
+            wrapper.remove();
+        }
+    }
+
+    function moveNavItemsForMobile() {
         const navCollapseList = document.querySelector('.navbar-collapse .menu.nav');
         if (!navCollapseList) return;
 
         // Move login menu items
         const loginMenu = document.querySelector('.region.region-navigation-right .menu.menu--login.nav');
         if (loginMenu) {
-            loginMenu.querySelectorAll('li').forEach(li => {
-                const clone = li.cloneNode(true);
-                clone.classList.add('moved-item');
-                navCollapseList.appendChild(clone);
-            });
+            loginMenu.querySelectorAll('li').forEach(li => moveItem(li, navCollapseList));
         }
 
         // Move organization menu items
         const orgMenu = document.querySelector('#block-marketplace-latest-consumerorganizationselection .dropitmenu-submenu');
         if (orgMenu) {
             orgMenu.querySelectorAll('li').forEach(li => {
-                const isDisabled = li.hasAttribute('disabled');
-                const isSelected = li.hasAttribute('selected');
-                if (isDisabled || isSelected) return;
-
-                const clone = li.cloneNode(true);
-                clone.classList.add('moved-item');
-                navCollapseList.appendChild(clone);
+                if (li.hasAttribute('disabled') || li.hasAttribute('selected')) return;
+                moveItem(li, navCollapseList);
             });
         }
 
@@ -665,37 +748,25 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
 
-                const clone = li.cloneNode(true);
-                clone.classList.add('moved-item');
-                navCollapseList.appendChild(clone);
+                moveItem(li, navCollapseList);
             });
         }
 
-        // Insert search icon section
-        const searchIconSection = document.querySelector('#block-marketplace-latest-searchicon');
-        if (searchIconSection) {
-            const searchItem = document.createElement('li');
-            searchItem.classList.add('searching-responsive', 'moved-item');
-
-            // Clone the node deeply
-            const clonedSection = searchIconSection.cloneNode(true);
-
-            // Find the <a> tag with class 'opensearch' inside the clone and replace its class
-            const openSearchLink = clonedSection.querySelector('a.opensearch');
-            if (openSearchLink) {
-                openSearchLink.classList.remove('opensearch');
-                openSearchLink.classList.add('opensearch2');
-            }
-
-            searchItem.appendChild(clonedSection);
-            navCollapseList.insertBefore(searchItem, navCollapseList.firstChild);
-        }
+        // Move search block
+        moveSearchBlock(navCollapseList);
     }
 
     function restoreNavItemsToOriginal() {
-        // Remove only the items we added
-        const movedItems = document.querySelectorAll('.navbar-collapse .menu.nav .searching-responsive, .navbar-collapse .menu.nav .moved-item');
-        movedItems.forEach(item => item.remove());
+        // Restore moved menu items
+        originalParents.forEach((parent, li) => {
+            if (document.body.contains(li)) {
+                parent.appendChild(li); // restore back to original location
+                li.classList.remove('moved-item');
+            }
+        });
+
+        // Restore search block
+        restoreSearchBlock();
     }
 
     // Initial run
@@ -711,6 +782,8 @@ document.addEventListener("DOMContentLoaded", function() {
             restoreNavItemsToOriginal();
         }
     });
+
+
 
     /* for nav bar menu responsive design*/
 
