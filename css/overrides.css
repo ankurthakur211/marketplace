@@ -24353,3 +24353,32 @@ button#ccs-\:rl\:-tab-1 {
 
 
 /*janet updates for adding widget*/
+
+
+/*janet overview and modifications*/
+
+@media (max-width: 900px) {
+    .path-subscription .apic-wizard-navigation .button,
+    .path-subscription-noplan .apic-wizard-navigation .button {
+        flex: 1 1 auto;
+        min-width: 40% !important;
+        max-width: 40% !important;
+        text-align: center;
+    }
+}
+
+.context--subscription-chooseapp .ui-dialog {
+    width: 50% !important;
+    left: 305px !important;
+}
+
+@media (max-width: 600px) {
+    .path-subscription .apicFormFooter a.button,
+    .path-subscription-noplan .apicFormFooter a.button {
+        min-width: 40% !important;
+        max-width: 40% !important;
+    }
+}
+
+
+/*janet overview and modifications*/
