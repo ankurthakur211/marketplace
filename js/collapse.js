@@ -1468,6 +1468,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (error.messages && Array.isArray(error.messages)) {
                         // Backend validation errors
                         alert('⚠️ ' + error.messages.join('\n'));
+                    }
+                    else if (error.Errors && Array.isArray(error.Errors)) {
+                        // Errors from the external API (e.g., user already exists)
+                        const messages = error.Errors.map(e => e.Message || 'Unknown error');
+                        alert('⚠️ ' + messages.join('\n'));
+                
                     } else {
                         // Generic error
                         alert('An error occurred while inviting the user.');
@@ -1480,6 +1486,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
         });
     }
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+if (window.location.href.includes("sandbox/myorg")) {
+    const ul = document.querySelector('.organizationTabs ul');
+  
+    if (ul) {
+      const li = document.createElement('li');
+      li.className = 'orgInvite';
+  
+      const a = document.createElement('a');
+      a.href = '/sandbox/myorg/invite';
+      a.textContent = 'Invite';
+  
+      li.appendChild(a);
+      ul.appendChild(li);
+    }
+  }
 });
 
 

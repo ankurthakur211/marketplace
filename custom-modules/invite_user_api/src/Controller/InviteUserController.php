@@ -55,11 +55,15 @@ class InviteUserController extends ControllerBase {
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $error = curl_error($ch);
     curl_close($ch);
+
+    \Drupal::logger('invite_user_api')->info('Curl is working');
 
     if ($error) {
       return new JsonResponse(['error' => $error], 500);
