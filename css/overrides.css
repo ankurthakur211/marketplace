@@ -20022,6 +20022,19 @@ body.context--BusinessDomains .apicMainContent {
     }
 
 
+    @media screen and (max-width: 767px) {
+        .apicTruncate span {
+            white-space: normal;
+          }
+    }
+
+
+    .alert-dismissible
+    {
+        margin-top: 30px;
+    }
+
+
 /*updating home page feb ankiee*/
 
 
