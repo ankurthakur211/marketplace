@@ -19935,6 +19935,66 @@ body.context--BusinessDomains .apicMainContent {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .apicMyOrg .field.organizationMembers {
+        padding: 2rem 0rem 0;
+    }
+    .apicMyOrgMembers table tbody{
+        flex-direction: column;
+    }
+    .apicMyOrg .apicMyOrgMembers table{
+        flex-direction: column;
+    }
+    .apicMyOrg .apicMyOrgMembers table thead{
+        display: none;
+    }
+    .apicMyOrg .apicMyOrgMembers tbody td:nth-child(5){
+        display: flex;
+        justify-content: flex-start;
+    }
+    .apicMyOrg .apicMyOrgMembers .apicMyOrgStatus {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 48px;
+        height: 30px;
+        position: absolute;
+        right: 24px;
+        top: 41px;
+    }
+     .apicMyOrg .titleSection .organizationTabs li.selected a {
+        border: 2px solid #0f62fe;
+        width: 150%;
+        color: #0f62fe;
+    }
+    .orgInvite{
+        display: none !important;
+    }
+    .dropit{
+        position: absolute;
+        top: 50px;
+        right: 5px;
+    }
+    .apicMyOrg .apicMyOrgMembers tbody td{
+        position: relative;
+    }
+    .apicMyOrg .apicMyOrgMembers tbody tr{
+        position: relative;
+    }
+    .apicMyOrgMemberRoleEnabled{
+        display: flex;
+        padding-left: 56px;
+        margin-top: 28px;
+    }
+    .apicUserFirstLastName{
+        margin-bottom: 0px;
+    }
+    .apicMyOrg .apicMyOrgMembers tbody td{
+        position: unset;
+    }
+    }
+
 
 /*updating home page feb ankiee*/
 
