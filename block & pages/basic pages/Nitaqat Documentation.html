@@ -1,0 +1,748 @@
+<div id="search-term-result">
+
+
+    <p>
+        The purpose of Nitaqat is Automate establishment data retrieval, improve decision-making using real-time Nitaqat and Saudization insights, and ensure secure, scalable integration with Takamol Holding’s services.
+    </p>
+</div>
+<div class="basic-page">
+    <div class="product-details-document categorize-page">
+        <div class="api-doc-background">
+            <p class="api-doc-background-text ">Nitaqat API Documentation</p>
+        </div>
+
+        <div class="moterinsurance-sec">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="leftside-sec">
+                        <p class="fob-welcome-title" id="section-1">Nitaqat APIs</p>
+
+                        <p class="fob-welcome-line">&nbsp;</p>
+
+                        <p class="fob-welcome-text">The purpose of this project is Automate establishment data retrieval, improve decision-making using real-time Nitaqat and Saudization insights, and ensure secure, scalable integration with Takamol Holding’s services.</p>
+                    </div>
+
+                    <div class="rightside-sec">
+                        <p class="API-image">&nbsp;</p>
+                    </div>
+                </div>
+
+                <div class="d-flex btn-box"><a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/NitaqatSandboxMP.postman_collection.json"
+                        id="downloadLink">Download Postman Collection</a> <a download="" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/NitaqatDatafields.xlsx">Download
+                    Sample Data</a></div>
+            </div>
+        </div>
+
+        <div class="miw-section">
+            <div class="container">
+                <h1 class="fob-welcome-title">Nitaqat Architecture</h1>
+
+                <p class="motoinsu-image">&nbsp;</p>
+                <a class="fob-product-title-click" target="_blank" href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/Nitaqatv0.1.pdf"
+                    rel="noopener noopener">
+                    Click here
+                </a>
+            </div>
+        </div>
+
+        <div class="APIs-section">
+            <div class="container">
+                <p class="main-heading">APIs</p>
+
+                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+                    <!-- API 1 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-2">Get Basic Establishment Details</h1>
+
+                        <p class="fob-welcome-line">&nbsp;</p>
+
+                        <p class="fob-welcome-text">Endpoint: /establishment-information/v1/get-basic-details
+                        </p>
+
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/307/api/304#/MPGetBasicEstablishmentDetails_100/operation/%2Fget-basic-details/post">Swagger
+                            Link</a></p>
+
+                        <p class="fob-welcome-text">This path aims to provide Basic Establishment Details.</p>
+
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title">Request Example</h1>
+
+                                <p class="fob-welcome-line">&nbsp;</p>
+
+                                <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+Request Body:
+    {
+    "Data": {
+        
+        "SevenHundredNumber": "7001345276"
+    }
+    }
+
+                                    </code>
+                                  </pre>
+                            </div>
+
+                            <div class="url-box">
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+                                <pre id="generatedCurl">
+                                      <code id="basicnitaqat-curl">
+curl --location 'https://test.api.neotek.sa/establishment-information/v1/get-basic-details' \
+--header 'accept: application/json' \
+--header 'content-type: application/json' \
+--data '{
+  "Data": {
+    
+    "SevenHundredNumber": "7001345276"
+  }
+}
+'                                                   
+                                      </code>
+                                    </pre>
+                            </div>
+                        </div>
+
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat')">200</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat5')">404</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat6')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat7')">406</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat8')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat9')">500</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('basicnitaqat10')">503</a></div>
+
+                                    <pre class="response-box">
+
+                            <code class="text" id="basicnitaqat" style=" display: block; ">
+    {
+    "Data": {
+        "Type": "شركة",
+        "Size": "متوسطة (فئة ب)",
+        "Status": "قائمة",
+        "EstablishmentEconomicActivity": "النقل البري والتخزين",
+        "ISICActivity": "نقل السلع المبردة والمجمدة",
+        "CertificateStartDate": "1990-05-21 00:00:00.000",
+        "CertificateEndDate": "2021-06-06 00:00:00.000",
+        "CRNumber": 4030071118,
+        "SevenHundredNumber": 7001345276,
+        "CRStatus": "نشط",
+        "LaborOfficeId": 9,
+        "ClosingDate": "",
+        "Name": "شركه التوكيلات البحرية العالمية",
+        "ISICActivitycode": "7719",
+        "EstablishmentEconomicActivityCode": "471",
+        "LegalRegistration": "ذات مسئولية محدودة"
+    }
+}                                                                    
+                             </code>
+                             <code class="text" id="basicnitaqat2" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                                            
+                                </code>	
+                            
+                            <code class="text" id="basicnitaqat3" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            
+                            </code>	
+                            
+                            <code class="text" id="basicnitaqat4" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            
+                            
+                            <code class="text" id="basicnitaqat5" style=" display: none; " >
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            
+                            
+                            <code class="text" id="basicnitaqat6" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                 
+                            </code>
+                             
+                            
+                            <code class="text" id="basicnitaqat7" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                            </code>
+                             
+                            
+                            <code class="text" id="basicnitaqat8" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }  
+                            </code>
+                            
+                            
+                            <code class="text" id="basicnitaqat9" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            <code class="text" id="basicnitaqat10" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                                  </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- API 2 -->
+
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-3">Get Advanced Establishment Details</h1>
+
+                        <p class="fob-welcome-line">&nbsp;</p>
+
+                        <p class="fob-welcome-text">Endpoint: /establishment-information/v1/get-advanced-details
+                        </p>
+
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/325/api/322#/MPGetAdvancedEstablishmentDetails_100/operation/%2Fget-advanced-details/post">Swagger
+                            Link</a></p>
+
+                        <p class="fob-welcome-text">This path aims to provide Advanced Establishment Details.</p>
+
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title">Request Example</h1>
+
+                                <p class="fob-welcome-line">&nbsp;</p>
+
+                                <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+Request Body:
+        {
+        "Data": {
+            "SevenHundredNumber": "7001345276"
+        }
+        }
+                                        </code>
+                                      </pre>
+                            </div>
+
+                            <div class="url-box">
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+                                <pre id="generatedCurl">
+                                          <code id="advancednitaqat-curl">
+curl --location 'https://test.api.neotek.sa/establishment-information/v1/get-advanced-details' \
+--header 'accept: application/json' \
+--header 'content-type: application/json' \
+--header 'Authorization: Bearer AAIgZDkwNWI1OTEyY2RjNmMwNjZiNjY3MmViOTQ2ZjE4Zjax5CP6jdDbmNee8-YCpCStN5_f8-wW7hHd7hYMFQTmpsjLQ31VlXSIzsTfWMSSvlWnFRUCYVLn-N1k37d0e83MqobJeUz2yrX_C39UG1WNwMjx72-tHr0ZTgXFZSVcwHtHX6XdpFQxDhC-FeSF5PCo' \
+--data '{
+  "Data": {
+    "SevenHundredNumber": "7001345276"
+  }
+}
+'                                                        
+                                          </code>
+                                        </pre>
+                            </div>
+                        </div>
+
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat')">200</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat5')">404</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat6')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat7')">406</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat8')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat9')">500</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('advancednitaqat10')">503</a></div>
+
+                                    <pre class="response-box">
+
+                                <code class="text" id="advancednitaqat" style=" display: block; ">
+    {
+    "Data": {
+        "Size": "متوسطة (فئة ب)",
+        "Status": "قائمة",
+        "ISICActivity": "نقل السلع المبردة والمجمدة",
+        "CertificateStartDate": "1990-05-21 00:00:00.000",
+        "CertificateEndDate": "2021-06-06 00:00:00.000",
+        "LegalRegistration": "ذات مسئولية محدودة",
+        "CRNumber": 4030071118,
+        "CRStatus": "نشط",
+        "Name": "شركه التوكيلات البحرية العالمية",
+        "ISICActivitycode": "7719",
+        "CountOfBranches": 2,
+        "CountOfUnauthenticatedContracts": 105,
+        "CountOfAuthenticatedContracts": 0,
+        "CountOfFemales": 5,
+        "CountOfMales": 83,
+        "CountOfForeigners": 73,
+        "CountOfSaudis": 15,
+        "SaudizationCompliance": "compliant",
+        "SaudizationCertificateExpiry": "No certificate found",
+        "LaborOfficeId": 9,
+        "EstablishmentType": "شركة",
+        "SevenHundredNumber": 7001345276,
+        "EconomicActivityCode": "471",
+        "EconomicActivity": "النقل البري والتخزين"
+    }
+}          
+                                 </code>
+                             <code class="text" id="advancednitaqat2" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                                            
+                                </code>	
+                                <code class="text" id="advancednitaqat3" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                
+                                </code>	
+                                
+                                <code class="text" id="advancednitaqat4" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="advancednitaqat5" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="advancednitaqat6" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }                 
+                                </code>
+                                 
+                                
+                                <code class="text" id="advancednitaqat7" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                 
+                                
+                                <code class="text" id="advancednitaqat8" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="advancednitaqat9" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+    
+                                <code class="text" id="advancednitaqat10" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                      </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- API 3 -->
+
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-4">Get Premium Establishment Details</h1>
+
+                        <p class="fob-welcome-line">&nbsp;</p>
+
+                        <p class="fob-welcome-text">Endpoint: /establishment-information/v1/get-premium-details
+                        </p>
+
+                        <p class="fob-welcome-text"><a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/301/api/298#/MPGetPremiumEstablishmentDetails_100/operation/%2Fget-premium-details/post">Swagger
+                            Link</a></p>
+
+                        <p class="fob-welcome-text">This path aims to provide Premium Establishment Details.</p>
+
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title">Request Example</h1>
+
+                                <p class="fob-welcome-line">&nbsp;</p>
+
+                                <pre class="example_97 api-guides-example-fob ">
+                                            <code class="sample-code">
+Request Body:
+        {
+        "Data": {
+            "SevenHundredNumber": "7001345276"
+        }
+        }
+                                            </code>
+                                          </pre>
+                            </div>
+
+                            <div class="url-box">
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+
+                                <pre id="generatedCurl">
+                                              <code id="premiumnitaqat-curl">
+curl --location 'https://test.api.neotek.sa/establishment-information/v1/get-premium-details' \
+--header 'accept: application/json' \
+--header 'content-type: application/json' \
+--data '{
+  "Data": {
+    "SevenHundredNumber": "7001345276"
+  }
+}
+'                                                                                                                       
+                                              </code>
+                                            </pre>
+                            </div>
+                        </div>
+
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat')">200</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat2')">400</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat3')">401</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat4')">403</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat5')">404</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat6')">405</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat7')">406</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat8')">429</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat9')">500</a>
+                                        <a class="response-box-error" type="button" onclick="responseText('premiumnitaqat10')">503</a></div>
+
+                                    <pre class="response-box">
+
+                                    <code class="text" id="premiumnitaqat" style=" display: block; ">
+    {
+    "Data": {
+        "Size": "متوسطة (فئة ب)",
+        "Status": "قائمة",
+        "ISICActivity": "نقل السلع المبردة والمجمدة",
+        "CertificateStartDate": "1990-05-21 00:00:00.000",
+        "CertificateEndDate": "2021-06-06 00:00:00.000",
+        "LegalRegistration": "ذات مسئولية محدودة",
+        "CRNumber": 4030071118,
+        "CRStatus": "نشط",
+        "ClosingDate": "",
+        "Name": "شركه التوكيلات البحرية العالمية",
+        "ISICActivityCode": "7719",
+        "SevenHundredNumber": 7001345276,
+        "LaborOfficeId": 9,
+        "NitaqColor": "اخضر متوسط",
+        "EstablishmentType": "شركة",
+        "SaudizationCertificateExpiry": "No certificate found",
+        "SaudizationCompliance": "compliant",
+        "CountOfSaudis": 15,
+        "CountOfForeigners": 73,
+        "CountOfMales": 83,
+        "CountOfFemales": 5,
+        "CountOfAuthenticatedContracts": 0,
+        "CountOfUnauthenticatedContracts": 105,
+        "CountOfActiveWorkpermits": 0,
+        "CountOfInactiveWorkpermits": 0,
+        "CountOfBranches": 2,
+        "CountOfViolations": 3,
+        "SumOfUnpaidViolations": 6000,
+        "WPSStatus": "No certificate found",
+        "EstablishmentEconomicActivity": "النقل البري والتخزين",
+        "EstablishmentEconomicActivityCode": "471"
+    }
+}                                                                   
+                                     </code>
+                                    <code class="text" id="premiumnitaqat2" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                    
+                                    </code>	
+    
+                                    <code class="text" id="premiumnitaqat3" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                                                            
+                                    </code>
+                                    
+                                    <code class="text" id="premiumnitaqat4" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                    </code>
+                                    
+                                    
+                                    <code class="text" id="premiumnitaqat5" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                    </code>
+                                    
+                                    
+                                    <code class="text" id="premiumnitaqat6" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }               
+                                    </code>
+                                     
+                                    
+                                    <code class="text" id="premiumnitaqat7" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                    </code>
+                                     
+                                    
+                                    <code class="text" id="premiumnitaqat8" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                    </code>
+                                    
+                                    
+                                    <code class="text" id="premiumnitaqat9" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                    </code>
+                                    <code class="text" id="premiumnitaqat10" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                                                            </code>
+                                          </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

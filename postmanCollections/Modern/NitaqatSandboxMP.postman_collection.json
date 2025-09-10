@@ -1,0 +1,745 @@
+{
+	"info": {
+		"_postman_id": "b1155cb5-f1a5-4640-a1de-819365857196",
+		"name": "Nitaqat Sandbox MP",
+		"description": "Credit Risk Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32018122"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access-token\", data.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "establishment_information",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test.api.neotek.sa/oauth2security/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"test",
+						"api",
+						"neotek",
+						"sa"
+					],
+					"path": [
+						"oauth2security",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Basic Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "sub-client",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Data\": {\r\n    // \"CRNumber\": \"1234567891\",\r\n    \"SevenHundredNumber\": \"7001345276\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.api.neotek.sa/establishment-information/v1/get-basic-details",
+					"protocol": "https",
+					"host": [
+						"test",
+						"api",
+						"neotek",
+						"sa"
+					],
+					"path": [
+						"establishment-information",
+						"v1",
+						"get-basic-details"
+					]
+				},
+				"description": "This path is used to create an credit risk assessmen request"
+			},
+			"response": [
+				{
+					"name": "Get Basic Details",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "REPLACE_THIS_VALUE",
+								"disabled": true
+							},
+							{
+								"key": "q",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Data\": {\r\n    // \"CRNumber\": \"1234567891\",\r\n    \"SevenHundredNumber\": \"7001345276\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://test.api.neotek.sa/establishment-information/v1/get-basic-details",
+							"protocol": "https",
+							"host": [
+								"test",
+								"api",
+								"neotek",
+								"sa"
+							],
+							"path": [
+								"establishment-information",
+								"v1",
+								"get-basic-details"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 03 Jun 2025 10:42:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transaction-Id",
+							"value": "1748947337701"
+						},
+						{
+							"key": "Channel-Id",
+							"value": "Integration"
+						},
+						{
+							"key": "RequestTime",
+							"value": "2025-06-03 10:42:17.701"
+						},
+						{
+							"key": "MWResponseTime",
+							"value": "2025-06-03 10:42:18.112"
+						},
+						{
+							"key": "Response-Status",
+							"value": "SUCCESS"
+						},
+						{
+							"key": "Response-Code",
+							"value": "00000000"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "391bc0b0683ed18901149a21"
+						},
+						{
+							"key": "X-BurstLimit-Limit",
+							"value": "name=Default burst-limit,10;"
+						},
+						{
+							"key": "X-BurstLimit-Remaining",
+							"value": "name=Default burst-limit,9;"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,1000;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,999;"
+						},
+						{
+							"key": "x-request-id",
+							"value": "cc3d9248-bfaa-42d1-ba79-bc218c194ac0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, public, public"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "TS0132fd92=0104a1792ccdb539ba37a27f13d3c825940a0761dd3732365c335fa063265b45c0ed6e1298dcf2b2fb5f541d82814721c7db4fe6c8; Path=/; Domain=.gw-apic.qiwa.info; Secure"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"Type\": \"شركة\",\n        \"Size\": \"متوسطة (فئة ب)\",\n        \"Status\": \"قائمة\",\n        \"EstablishmentEconomicActivity\": \"النقل البري والتخزين\",\n        \"ISICActivity\": \"نقل السلع المبردة والمجمدة\",\n        \"CertificateStartDate\": \"1990-05-21 00:00:00.000\",\n        \"CertificateEndDate\": \"2021-06-06 00:00:00.000\",\n        \"CRNumber\": 4030071118,\n        \"SevenHundredNumber\": 7001345276,\n        \"CRStatus\": \"نشط\",\n        \"LaborOfficeId\": 9,\n        \"ClosingDate\": \"\",\n        \"Name\": \"شركه التوكيلات البحرية العالمية\",\n        \"ISICActivitycode\": \"7719\",\n        \"EstablishmentEconomicActivityCode\": \"471\",\n        \"LegalRegistration\": \"ذات مسئولية محدودة\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Advanced Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "sub-client",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Data\": {\n    \"SevenHundredNumber\": \"7001345276\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.api.neotek.sa/establishment-information/v1/get-advanced-details",
+					"protocol": "https",
+					"host": [
+						"test",
+						"api",
+						"neotek",
+						"sa"
+					],
+					"path": [
+						"establishment-information",
+						"v1",
+						"get-advanced-details"
+					]
+				},
+				"description": "This path is used to create an credit risk assessmen request"
+			},
+			"response": [
+				{
+					"name": "Get Advanced Details",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer AAIgZDkwNWI1OTEyY2RjNmMwNjZiNjY3MmViOTQ2ZjE4Zjax5CP6jdDbmNee8-YCpCStN5_f8-wW7hHd7hYMFQTmpsjLQ31VlXSIzsTfWMSSvlWnFRUCYVLn-N1k37d0e83MqobJeUz2yrX_C39UG1WNwMjx72-tHr0ZTgXFZSVcwHtHX6XdpFQxDhC-FeSF5PCo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Data\": {\n    \"SevenHundredNumber\": \"7001345276\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://test.api.neotek.sa/establishment-information/v1/get-advanced-details",
+							"protocol": "https",
+							"host": [
+								"test",
+								"api",
+								"neotek",
+								"sa"
+							],
+							"path": [
+								"establishment-information",
+								"v1",
+								"get-advanced-details"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 03 Jun 2025 10:41:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transaction-Id",
+							"value": "1748947275582"
+						},
+						{
+							"key": "Channel-Id",
+							"value": "Integration"
+						},
+						{
+							"key": "RequestTime",
+							"value": "2025-06-03 10:41:15.582"
+						},
+						{
+							"key": "MWResponseTime",
+							"value": "2025-06-03 10:41:31.885"
+						},
+						{
+							"key": "Response-Status",
+							"value": "SUCCESS"
+						},
+						{
+							"key": "Response-Code",
+							"value": "00000000"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "391bc0b0683ed14b01997880"
+						},
+						{
+							"key": "X-BurstLimit-Limit",
+							"value": "name=Default burst-limit,10;"
+						},
+						{
+							"key": "X-BurstLimit-Remaining",
+							"value": "name=Default burst-limit,9;"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,1000;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,998;"
+						},
+						{
+							"key": "x-request-id",
+							"value": "84ff42ff-2671-4057-ba76-e592c9de19e4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, public, public"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "TS0132fd92=0104a1792c5e42fb11c973934658365a0be391e580c0628cd220bdb93bdb9119769ef9ce2ef84771fc43a0e796d29aac5e4b46e2cb; Path=/; Domain=.gw-apic.qiwa.info; Secure"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"Size\": \"متوسطة (فئة ب)\",\n        \"Status\": \"قائمة\",\n        \"ISICActivity\": \"نقل السلع المبردة والمجمدة\",\n        \"CertificateStartDate\": \"1990-05-21 00:00:00.000\",\n        \"CertificateEndDate\": \"2021-06-06 00:00:00.000\",\n        \"LegalRegistration\": \"ذات مسئولية محدودة\",\n        \"CRNumber\": 4030071118,\n        \"CRStatus\": \"نشط\",\n        \"Name\": \"شركه التوكيلات البحرية العالمية\",\n        \"ISICActivitycode\": \"7719\",\n        \"CountOfBranches\": 2,\n        \"CountOfUnauthenticatedContracts\": 105,\n        \"CountOfAuthenticatedContracts\": 0,\n        \"CountOfFemales\": 5,\n        \"CountOfMales\": 83,\n        \"CountOfForeigners\": 73,\n        \"CountOfSaudis\": 15,\n        \"SaudizationCompliance\": \"compliant\",\n        \"SaudizationCertificateExpiry\": \"No certificate found\",\n        \"LaborOfficeId\": 9,\n        \"EstablishmentType\": \"شركة\",\n        \"SevenHundredNumber\": 7001345276,\n        \"EconomicActivityCode\": \"471\",\n        \"EconomicActivity\": \"النقل البري والتخزين\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Premium Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "sub-client",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Data\": {\r\n    \"SevenHundredNumber\": \"7001345276\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.api.neotek.sa/establishment-information/v1/get-premium-details",
+					"protocol": "https",
+					"host": [
+						"test",
+						"api",
+						"neotek",
+						"sa"
+					],
+					"path": [
+						"establishment-information",
+						"v1",
+						"get-premium-details"
+					]
+				},
+				"description": "This path is used to create an credit risk assessmen request"
+			},
+			"response": [
+				{
+					"name": "Get Premium Details",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "REPLACE_THIS_VALUE",
+								"disabled": true
+							},
+							{
+								"key": "aa",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Data\": {\r\n    \"SevenHundredNumber\": \"7001345276\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://test.api.neotek.sa/establishment-information/v1/get-premium-details",
+							"protocol": "https",
+							"host": [
+								"test",
+								"api",
+								"neotek",
+								"sa"
+							],
+							"path": [
+								"establishment-information",
+								"v1",
+								"get-premium-details"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 03 Jun 2025 10:42:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Transaction-Id",
+							"value": "1748947327265"
+						},
+						{
+							"key": "Channel-Id",
+							"value": "Integration"
+						},
+						{
+							"key": "RequestTime",
+							"value": "2025-06-03 10:42:07.265"
+						},
+						{
+							"key": "MWResponseTime",
+							"value": "2025-06-03 10:42:17.776"
+						},
+						{
+							"key": "Response-Status",
+							"value": "SUCCESS"
+						},
+						{
+							"key": "Response-Code",
+							"value": "00000000"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "391bc0b0683ed17f01da56b2"
+						},
+						{
+							"key": "X-BurstLimit-Limit",
+							"value": "name=Default burst-limit,10;"
+						},
+						{
+							"key": "X-BurstLimit-Remaining",
+							"value": "name=Default burst-limit,9;"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,1000;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,998;"
+						},
+						{
+							"key": "x-request-id",
+							"value": "74210c8c-ece7-4363-a25a-dc94abc8085d"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, public, public"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "TS0132fd92=0104a1792c22d4f81e89141c258e4b2803f30fc07210b842082d85c527131dac033a8190681c45248d2179004b7244e80b38ff10e7; Path=/; Domain=.gw-apic.qiwa.info; Secure"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"Size\": \"متوسطة (فئة ب)\",\n        \"Status\": \"قائمة\",\n        \"ISICActivity\": \"نقل السلع المبردة والمجمدة\",\n        \"CertificateStartDate\": \"1990-05-21 00:00:00.000\",\n        \"CertificateEndDate\": \"2021-06-06 00:00:00.000\",\n        \"LegalRegistration\": \"ذات مسئولية محدودة\",\n        \"CRNumber\": 4030071118,\n        \"CRStatus\": \"نشط\",\n        \"ClosingDate\": \"\",\n        \"Name\": \"شركه التوكيلات البحرية العالمية\",\n        \"ISICActivityCode\": \"7719\",\n        \"SevenHundredNumber\": 7001345276,\n        \"LaborOfficeId\": 9,\n        \"NitaqColor\": \"اخضر متوسط\",\n        \"EstablishmentType\": \"شركة\",\n        \"SaudizationCertificateExpiry\": \"No certificate found\",\n        \"SaudizationCompliance\": \"compliant\",\n        \"CountOfSaudis\": 15,\n        \"CountOfForeigners\": 73,\n        \"CountOfMales\": 83,\n        \"CountOfFemales\": 5,\n        \"CountOfAuthenticatedContracts\": 0,\n        \"CountOfUnauthenticatedContracts\": 105,\n        \"CountOfActiveWorkpermits\": 0,\n        \"CountOfInactiveWorkpermits\": 0,\n        \"CountOfBranches\": 2,\n        \"CountOfViolations\": 3,\n        \"SumOfUnpaidViolations\": 6000,\n        \"WPSStatus\": \"No certificate found\",\n        \"EstablishmentEconomicActivity\": \"النقل البري والتخزين\",\n        \"EstablishmentEconomicActivityCode\": \"471\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://test.api.neotek.sa/credit-risk-assessment/v1",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "external-gw",
+			"value": "https://test.api.neotek.sa",
+			"type": "string"
+		},
+		{
+			"key": "public-gw",
+			"value": "https://test.api.public.neotek.sa",
+			"type": "string"
+		},
+		{
+			"key": "RequestId",
+			"value": ""
+		}
+	]
+}
