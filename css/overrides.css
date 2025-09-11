@@ -24165,7 +24165,7 @@ button#ccs-\:rl\:-tab-1 {
     background: white;
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     height: 415px;
 }
 
@@ -24591,6 +24591,26 @@ button#ccs-\:rl\:-tab-1 {
     }
 }
 
+.single-product-key-terms-product-text {
+    font-size: 20px;
+    color: #7b7b7b;
+    width: 46%;
+    margin-top: 5%;
+    line-height: 45px;
+}
+
+.single-product-inputs-outputs-product-text {
+    font-size: 20px;
+    color: #7b7b7b;
+    width: 46%;
+    margin-top: 5%;
+    line-height: 25px;
+}
+
+.single-product-key-features-product-text{
+    font-size: 20px;
+    line-height: 25px;
+}
 
 /*janet New Sections in Product Page*/
 
@@ -24615,3 +24635,4 @@ button#ccs-\:rl\:-tab-1 {
         }
     }
 }
+
