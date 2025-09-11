@@ -20010,6 +20010,25 @@ body.context--BusinessDomains .apicMainContent {
     margin-top: 30px;
 }
 
+@media screen and (max-width: 767px) {
+    .region-content.custom-viewprofile{
+        display: flex;
+        flex-direction: column;
+    }
+    #edit-cancel{
+    width: 99px !important;
+    height: 40px !important;
+    }
+    form#user-form button#edit-submit {
+        padding: 0px 23px !important;
+        height: 42px !important;
+    }
+    form#user-form a#edit-delete {
+        height: 42px !important;
+        padding: 15px !important;
+    }
+}
+
 
 /*updating home page feb ankiee*/
 
