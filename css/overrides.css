@@ -25124,3 +25124,20 @@ button#ccs-\:rl\:-tab-1 {
 }
 
 /*addition to Power-Of-Attorney images*/
+/*addition to Motor Insurance SME images*/
+.motor-sme-description{
+    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Slide1 Background.jpg');
+}
+
+.motor-sme-usecase{
+    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/usecasev2.jpeg');
+}
+/*addition to Motor Insurance SME images*/
+
+/* Janet Edit the Text of Workflow Button*/
+
+.product-details-document .miw-section a::after {
+    content: "to Open Workflow" !important;
+}
+
+/* Janet Edit the Text of Workflow Button*/
