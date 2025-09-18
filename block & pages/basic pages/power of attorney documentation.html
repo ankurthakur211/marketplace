@@ -1,0 +1,1604 @@
+<div id="search-term-result">
+
+  <p>
+    The purpose of this project is Automate establishment data retrieval,
+    improve decision-making using real-time Power Of Attorney and Saudization insights, and ensure secure,
+    scalable integration with Takamol Holding’s services.
+  </p>
+</div>
+<div class="basic-page">
+  <div class="product-details-document categorize-page">
+    <div class="api-doc-background">
+      <p class="api-doc-background-text ">Power Of Attorney API Documentation</p>
+    </div>
+
+    <div class="moterinsurance-sec">
+      <div class="container">
+        <div class="d-flex">
+          <div class="leftside-sec">
+            <p class="fob-welcome-title" id="section-1">Power Of Attorney APIs</p>
+
+            <p class="fob-welcome-line">&nbsp;</p>
+
+            <p class="fob-welcome-text">The purpose of this project is Automate establishment data retrieval,
+              improve decision-making using real-time Power Of Attorney and Saudization insights, and ensure
+              secure,
+              scalable integration with Takamol Holding’s services.</p>
+          </div>
+
+          <div class="rightside-sec">
+            <p class="API-image">&nbsp;</p>
+          </div>
+        </div>
+
+        <div class="d-flex btn-box"><a download=""
+            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/MpPowerofAttorney.postman_collection.json"
+            id="downloadLink">Download Postman Collection</a> <a download=""
+            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/PowerofAttorneyDatafields.xlsx">Download
+            Sample Data</a></div>
+      </div>
+    </div>
+
+    <div class="miw-section">
+      <div class="container">
+        <h1 class="fob-welcome-title">Nitaqat Architecture</h1>
+
+        <p class="motoinsu-image">&nbsp;</p>
+        <a class="fob-product-title-click" target="_blank"
+          href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/PowerOfAttorneyFlowDiagramv0.1.pdf"
+          rel="noopener noopener">
+          Click here
+        </a>
+      </div>
+    </div>
+
+    <div class="APIs-section">
+      <div class="container">
+        <p class="main-heading">APIs</p>
+
+        <div class="bx--snippet-container body" data-testid="expandable-example-display">
+          <!-- API 1 -->
+          <div class="api-infosec">
+            <h1 class="fob-welcome-title" id="section-2">Attorney Lookup</h1>
+
+            <p class="fob-welcome-line">&nbsp;</p>
+
+            <p class="fob-welcome-text">Endpoint: /ministry-of-justice/v1/power-of-attorney-lookup
+            </p>
+
+            <p class="fob-welcome-text"><a
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/node/1295#/MPSendSMSNotification_100/operation/%2Fregistered-event/post">Swagger
+                Link</a></p>
+
+            <p class="fob-welcome-text">This API retrieves comprehensive details about authorized
+              representatives including control hierarchies, attorney types, and nested child controls.</p>
+
+            <div class="requestURL-box">
+              <div class="request-box">
+                <h1 class="fob-welcome-title">Request Example</h1>
+
+                <p class="fob-welcome-line">&nbsp;</p>
+
+                <pre class="example_97 api-guides-example-fob ">
+                                    <code class="sample-code">
+header:
+        Cookie: name=value
+
+                                    </code>
+                                  </pre>
+              </div>
+
+              <div class="url-box">
+                <p class="fob-welcome-title curlText">cURL</p>
+
+                <pre id="generatedCurl">
+                                      <code id="attorneylookup-curl">
+curl --location 'https://test.api.neotek.sa/ministry-of-justice/v1/power-of-attorney-lookup' \
+--header 'x-request-id: ea60de6c-9063-4bda-a6ea-779e3d9530a5' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer AAIgMTQ5Y2I3NzMxM2FkNGEyMjYwMGEzNTZiMTMyYTI3MzQLowmucj6mhlQDcPUqOy5OgF7ai_QNzBPaUhk-EovvdF9AjHkyzzrN5Eb6nko0BgQMJWlxWQMVFmInh0Fow6ncfBnPS48DzPkVKO5hL7U6BnUqdDp58ry4txz07JzxF91FJyoQFDpttH-F7gHwd7fN' \
+--header 'Cookie: name=value' \
+--data ''                                                 
+                                      </code>
+                                    </pre>
+              </div>
+            </div>
+
+            <div class="response-outterbox">
+              <div class="innerbox">
+                <div class="code-box">
+                  <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                  <div class="response-box-div">
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup')">200</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup2')">400</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup3')">401</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup4')">403</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup5')">404</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup6')">405</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup7')">406</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup8')">429</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup9')">500</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneylookup10')">503</a>
+                  </div>
+
+                  <pre class="response-box">
+
+                            <code class="text" id="attorneylookup" style=" display: block; ">
+[
+{
+    "ID": 1,
+    "ControlLabel": "البيع والإفراغ للمشتري",
+    "AttorneyTypeName": "العقارات",
+    "ChildControls": [
+        {
+            "ID": 20065,
+            "ControlLabel": "استلام الثمن",
+            "AttorneyTypeName": "العقارات",
+            "ChildControls": [
+                {
+                    "ID": 2,
+                    "ControlLabel": "بشيك",
+                    "AttorneyTypeName": "العقارات",
+                    "ChildControls": [
+                        {
+                            "ID": 3345,
+                            "ControlLabel": "مصدق",
+                            "AttorneyTypeName": "العقارات",
+                            "ChildControls": []
+                        },
+                        {
+                            "ID": 334563,
+                            "ControlLabel": "باسمي",
+                            "AttorneyTypeName": "العقارات",
+                            "ChildControls": []
+                        },
+                        {
+                            "ID": 3,
+                            "ControlLabel": "باسم المالك",
+                            "AttorneyTypeName": "العقارات",
+                            "ChildControls": []
+                        },
+                        {
+                            "ID": 334,
+                            "ControlLabel": "باسم الورثة",
+                            "AttorneyTypeName": "العقارات",
+                            "ChildControls": []
+                        },
+                        {
+                            "ID": 334562,
+                            "ControlLabel": "باسم الوكيل الأول",
+                            "AttorneyTypeName": "العقارات",
+                            "ChildControls": []
+                        }
+                    ]
+                },
+                {
+                    "ID": 2006533,
+                    "ControlLabel": "المقايضة",
+                    "AttorneyTypeName": "العقارات",
+                    "ChildControls": [
+                        {
+                            "ID": 200342,
+                            "ControlLabel": "",
+                            "AttorneyTypeName": "العقارات",
+                            "ChildControls": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ID": 20016,
+            "ControlLabel": "الإقرار باستلام المبلغ",
+            "AttorneyTypeName": "العقارات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 595,
+    "ControlLabel": "إصدار رخصة قيادة",
+    "AttorneyTypeName": "المرور",
+    "ChildControls": [
+        {
+            "ID": 60621,
+            "ControlLabel": "",
+            "AttorneyTypeName": "المرور",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 626,
+    "ControlLabel": "مراجعة الأمارة وإدارة تنفيذ الأحكام الحقوقية",
+    "AttorneyTypeName": "الجهات الأمنية",
+    "ChildControls": [
+        {
+            "ID": 627,
+            "ControlLabel": "",
+            "AttorneyTypeName": "الجهات الأمنية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 630,
+    "ControlLabel": "استخراج صك إذن استثمار العقار أو المبلغ الموقوف",
+    "AttorneyTypeName": "أذونات المحاكم",
+    "ChildControls": [
+        {
+            "ID": 631,
+            "ControlLabel": "للقطعة رقم",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        },
+        {
+            "ID": 632,
+            "ControlLabel": "المملوكة بالصك رقم",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        },
+        {
+            "ID": 633,
+            "ControlLabel": "بتاريخ",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        },
+        {
+            "ID": 634,
+            "ControlLabel": "الصادر من",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        },
+        {
+            "ID": 635,
+            "ControlLabel": "الواقعة في",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 672,
+    "ControlLabel": "إصدار رخص",
+    "AttorneyTypeName": "الأمانات والبلديات",
+    "ChildControls": []
+},
+{
+    "ID": 681,
+    "ControlLabel": "إصدار بطاقة تفويض للصندوق",
+    "AttorneyTypeName": "البريد",
+    "ChildControls": []
+},
+{
+    "ID": 800,
+    "ControlLabel": "التسجيل في الشبكة الإلكترونية لخدمات الإيجار",
+    "AttorneyTypeName": "شبكة إيجار الإلكترونية",
+    "ChildControls": []
+},
+{
+    "ID": 819,
+    "ControlLabel": "إصدار التراخيص",
+    "AttorneyTypeName": "التراخيص الصناعية",
+    "ChildControls": []
+},
+{
+    "ID": 831,
+    "ControlLabel": "الإقرار بالوقف وطلب توثيقه",
+    "AttorneyTypeName": "الحالات الاجتماعية",
+    "ChildControls": []
+},
+{
+    "ID": 879,
+    "ControlLabel": "التقديم على مساعدة مالية",
+    "AttorneyTypeName": "المساعدات المالية والعينية",
+    "ChildControls": [
+        {
+            "ID": 880,
+            "ControlLabel": "من",
+            "AttorneyTypeName": "المساعدات المالية والعينية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 883,
+    "ControlLabel": "إصدار شرائح جوالات",
+    "AttorneyTypeName": "شركات الاتصالات",
+    "ChildControls": []
+},
+{
+    "ID": 888,
+    "ControlLabel": "مراجعة البنك المركزي السعودي",
+    "AttorneyTypeName": "المؤسسات الحكومية",
+    "ChildControls": []
+},
+{
+    "ID": 966,
+    "ControlLabel": "مراجعة وزارة الثقافة",
+    "AttorneyTypeName": "الوزارات الحكومية",
+    "ChildControls": [
+        {
+            "ID": 967,
+            "ControlLabel": "تسجيل الكتب",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 968,
+            "ControlLabel": "تسجيل الحقوق الفكرية",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 969,
+            "ControlLabel": "استخراج تصاريح",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": [
+                {
+                    "ID": 970,
+                    "ControlLabel": "",
+                    "AttorneyTypeName": "الوزارات الحكومية",
+                    "ChildControls": []
+                }
+            ]
+        },
+        {
+            "ID": 971,
+            "ControlLabel": "استخراج رخصة",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": [
+                {
+                    "ID": 972,
+                    "ControlLabel": "",
+                    "AttorneyTypeName": "الوزارات الحكومية",
+                    "ChildControls": []
+                }
+            ]
+        }
+    ]
+},
+{
+    "ID": 1101,
+    "ControlLabel": "مراجعة إدارة السجلات",
+    "AttorneyTypeName": "السجلات التجارية",
+    "ChildControls": []
+},
+{
+    "ID": 1549,
+    "ControlLabel": "مراجعة الشركة السعودية للكهرباء",
+    "AttorneyTypeName": "طلب الخدمات",
+    "ChildControls": [
+        {
+            "ID": 1550,
+            "ControlLabel": "ادخال الكهرباء",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        },
+        {
+            "ID": 1551,
+            "ControlLabel": "تقوية عداد الكهرباء",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        },
+        {
+            "ID": 1552,
+            "ControlLabel": "نقل عداد الكهرباء",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        },
+        {
+            "ID": 1553,
+            "ControlLabel": "للصك رقم",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        },
+        {
+            "ID": 1554,
+            "ControlLabel": "بتاريخ",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        },
+        {
+            "ID": 1555,
+            "ControlLabel": "الصادر من",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 1561,
+    "ControlLabel": "إصدار تصاريح صيد",
+    "AttorneyTypeName": "تصاريح القوارب والصيد",
+    "ChildControls": []
+},
+{
+    "ID": 1601,
+    "ControlLabel": "إصدار سجل الأسرة (دفتر العائلة)",
+    "AttorneyTypeName": "إدارة الأحوال المدنية",
+    "ChildControls": []
+},
+{
+    "ID": 1621,
+    "ControlLabel": "إصدار التأشيرات",
+    "AttorneyTypeName": "مكتب الإستقدام",
+    "ChildControls": []
+},
+{
+    "ID": 1631,
+    "ControlLabel": "إصدار الإقامات",
+    "AttorneyTypeName": "الجوازات",
+    "ChildControls": []
+},
+{
+    "ID": 1667,
+    "ControlLabel": "إصدار جواز سفر",
+    "AttorneyTypeName": "الجوازات",
+    "ChildControls": [
+        {
+            "ID": 1668,
+            "ControlLabel": "",
+            "AttorneyTypeName": "الجوازات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 1675,
+    "ControlLabel": "إصدار التأشيرات",
+    "AttorneyTypeName": "وزارة الموارد البشرية والتنمية الاجتماعية",
+    "ChildControls": []
+},
+{
+    "ID": 1727,
+    "ControlLabel": "استقدام العمالة من الخارج",
+    "AttorneyTypeName": "استقدام العمالة",
+    "ChildControls": []
+},
+{
+    "ID": 1751,
+    "ControlLabel": "مراجعة هيئة الزكاة والضريبة والجمارك لجمركة السيارات وإصدار لوحات سير",
+    "AttorneyTypeName": "السيارات",
+    "ChildControls": []
+},
+{
+    "ID": 1839,
+    "ControlLabel": "إقامة الدعاوى وتحريرها والرد عليها",
+    "AttorneyTypeName": "وكالة خارج المملكة العربية السعودية فقط",
+    "ChildControls": []
+},
+{
+    "ID": 2000,
+    "ControlLabel": "التقديم على طلب قرض",
+    "AttorneyTypeName": "البنك السعودي للتسليف والإدخار",
+    "ChildControls": [
+        {
+            "ID": 2001,
+            "ControlLabel": "",
+            "AttorneyTypeName": "البنك السعودي للتسليف والإدخار",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 2100,
+    "ControlLabel": "التقديم على طلب قرض",
+    "AttorneyTypeName": "بنك التنمية الاجتماعية",
+    "ChildControls": [
+        {
+            "ID": 2101,
+            "ControlLabel": "",
+            "AttorneyTypeName": "بنك التنمية الاجتماعية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 2582,
+    "ControlLabel": "طلب التمويل والتسهيلات الائتمانية وتجديده",
+    "AttorneyTypeName": "بنك التصدير والاستيراد السعودي",
+    "ChildControls": []
+},
+{
+    "ID": 4111,
+    "ControlLabel": "استلام الرواتب",
+    "AttorneyTypeName": "الرواتب والمستحقات",
+    "ChildControls": [
+        {
+            "ID": 4112,
+            "ControlLabel": "من",
+            "AttorneyTypeName": "الرواتب والمستحقات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 42247,
+    "ControlLabel": "مراجعة",
+    "AttorneyTypeName": "البنوك والمصارف",
+    "ChildControls": [
+        {
+            "ID": 42247333,
+            "ControlLabel": "بنك",
+            "AttorneyTypeName": "البنوك والمصارف",
+            "ChildControls": [
+                {
+                    "ID": 42248,
+                    "ControlLabel": "",
+                    "AttorneyTypeName": "البنوك والمصارف",
+                    "ChildControls": []
+                }
+            ]
+        },
+        {
+            "ID": 4224733,
+            "ControlLabel": "مصرف",
+            "AttorneyTypeName": "البنوك والمصارف",
+            "ChildControls": [
+                {
+                    "ID": 4224822,
+                    "ControlLabel": "",
+                    "AttorneyTypeName": "البنوك والمصارف",
+                    "ChildControls": []
+                }
+            ]
+        },
+        {
+            "ID": 4224734,
+            "ControlLabel": "جميع البنوك والمصارف",
+            "AttorneyTypeName": "البنوك والمصارف",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 70102,
+    "ControlLabel": "الإقرار بدين",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70103,
+    "ControlLabel": "الإقرار بسداد دين",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70104,
+    "ControlLabel": "الإقرار بالتنازل عن دين",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70105,
+    "ControlLabel": "الإقرار بكفالة",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70106,
+    "ControlLabel": "الإقرار باستلام مبلغ مالي",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70107,
+    "ControlLabel": "الإقرار باستلام منقول",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70108,
+    "ControlLabel": "الإقرار بالتنازل عن منقول",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70109,
+    "ControlLabel": "الإقرار بالتنازل عن مبلغ مالي",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70110,
+    "ControlLabel": "قبول التنازل",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70111,
+    "ControlLabel": "قبول التنازل عن حصة إرثية",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 70112,
+    "ControlLabel": "الإقرار بالتنازل عن الحصة الإرثية",
+    "AttorneyTypeName": "التوكيل على الإقرارات",
+    "ChildControls": []
+},
+{
+    "ID": 77001,
+    "ControlLabel": "مراجعة الأمارة وشعبة تنفيذ الأحكام الحقوقية",
+    "AttorneyTypeName": "الجهات الأمنية",
+    "ChildControls": [
+        {
+            "ID": 770011,
+            "ControlLabel": "",
+            "AttorneyTypeName": "الجهات الأمنية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 82001,
+    "ControlLabel": "مراجعة الهيئة العامة للعقار(السجل العقاري)",
+    "AttorneyTypeName": "الهيئات الحكومية",
+    "ChildControls": [
+        {
+            "ID": 82002,
+            "ControlLabel": "تقديم طلب التسجيل الأول للعقار",
+            "AttorneyTypeName": "الهيئات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 82003,
+            "ControlLabel": "الإطلاع على السجل العقاري",
+            "AttorneyTypeName": "الهيئات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 82004,
+            "ControlLabel": "طلب تعديل سجل عقاري",
+            "AttorneyTypeName": "الهيئات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 82005,
+            "ControlLabel": "تسجيل الأحكام القضائية في السجل العقاري",
+            "AttorneyTypeName": "الهيئات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 82006,
+            "ControlLabel": "التأشير في السجل العقاري",
+            "AttorneyTypeName": "الهيئات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 82007,
+            "ControlLabel": "التظلم أمام الهيئة العامة للعقار",
+            "AttorneyTypeName": "الهيئات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 82008,
+            "ControlLabel": "التنازل عن النقص في المساحة",
+            "AttorneyTypeName": "الهيئات الحكومية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 82009,
+    "ControlLabel": "الهيئة العامة للنقل",
+    "AttorneyTypeName": "الهيئات الحكومية",
+    "ChildControls": []
+},
+{
+    "ID": 114098,
+    "ControlLabel": "إقامة الدعاوي وتحريرها والرد عليها",
+    "AttorneyTypeName": "وكالة خارج المملكة العربية السعودية فقط",
+    "ChildControls": []
+},
+{
+    "ID": 798001,
+    "ControlLabel": "مراجعة الرئاسة العامة لشؤون المسجد الحرام والمسجد النبوي",
+    "AttorneyTypeName": "الرئاسات الحكومية",
+    "ChildControls": [
+        {
+            "ID": 7980013,
+            "ControlLabel": "إدارة العربات",
+            "AttorneyTypeName": "الرئاسات الحكومية",
+            "ChildControls": [
+                {
+                    "ID": 79800132,
+                    "ControlLabel": "بخصوص",
+                    "AttorneyTypeName": "الرئاسات الحكومية",
+                    "ChildControls": []
+                }
+            ]
+        },
+        {
+            "ID": 7980014,
+            "ControlLabel": "مراجعة مكتب الأمانات",
+            "AttorneyTypeName": "الرئاسات الحكومية",
+            "ChildControls": [
+                {
+                    "ID": 79800133,
+                    "ControlLabel": "بخصوص",
+                    "AttorneyTypeName": "الرئاسات الحكومية",
+                    "ChildControls": []
+                }
+            ]
+        }
+    ]
+},
+{
+    "ID": 5000000,
+    "ControlLabel": "الاستلام و التسليم",
+    "ChildControls": []
+},
+{
+    "ID": 1800185478,
+    "ControlLabel": "الهيئة العامة للإحصاء",
+    "AttorneyTypeName": "الهيئات الحكومية",
+    "ChildControls": []
+},
+{
+    "ID": 4,
+    "ControlLabel": "الشراء وقبول الإفراغ ودفع الثمن",
+    "AttorneyTypeName": "العقارات",
+    "ChildControls": [
+        {
+            "ID": 4222,
+            "ControlLabel": "المقايضة",
+            "AttorneyTypeName": "العقارات",
+            "ChildControls": [
+                {
+                    "ID": 422224,
+                    "ControlLabel": "",
+                    "AttorneyTypeName": "العقارات",
+                    "ChildControls": []
+                }
+            ]
+        }
+    ]
+},
+{
+    "ID": 596,
+    "ControlLabel": "إصدار بدل تالف أو مفقود لرخصة قيادة",
+    "AttorneyTypeName": "المرور",
+    "ChildControls": [
+        {
+            "ID": 60622,
+            "ControlLabel": "",
+            "AttorneyTypeName": "المرور",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 624,
+    "ControlLabel": "إصدار تعريف بالراتب",
+    "AttorneyTypeName": "الرواتب والمستحقات",
+    "ChildControls": [
+        {
+            "ID": 625,
+            "ControlLabel": "من",
+            "AttorneyTypeName": "الرواتب والمستحقات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 636,
+    "ControlLabel": "استخراج صك إذن استثمار العقار أو المبلغ الموصى به",
+    "AttorneyTypeName": "أذونات المحاكم",
+    "ChildControls": [
+        {
+            "ID": 637,
+            "ControlLabel": "للقطعة رقم",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        },
+        {
+            "ID": 638,
+            "ControlLabel": "المملوكة بالصك رقم",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        },
+        {
+            "ID": 639,
+            "ControlLabel": "بتاريخ",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        },
+        {
+            "ID": 640,
+            "ControlLabel": "الصادر من",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        },
+        {
+            "ID": 641,
+            "ControlLabel": "الواقعة في",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 673,
+    "ControlLabel": "إصدار فسوحات البناء والترميم",
+    "AttorneyTypeName": "الأمانات والبلديات",
+    "ChildControls": []
+},
+{
+    "ID": 801,
+    "ControlLabel": "توقيع عقود الإيجار الخاصة بشبكة إيجار الإلكترونية",
+    "AttorneyTypeName": "شبكة إيجار الإلكترونية",
+    "ChildControls": [
+        {
+            "ID": 802,
+            "ControlLabel": "وجميع العقود ذات العلاقة بالعملية الإيجارية",
+            "AttorneyTypeName": "شبكة إيجار الإلكترونية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 820,
+    "ControlLabel": "مراجعة المديرية العامة للدفاع المدني",
+    "AttorneyTypeName": "التراخيص الصناعية",
+    "ChildControls": []
+},
+{
+    "ID": 835,
+    "ControlLabel": "إصدار السجلات",
+    "AttorneyTypeName": "السجلات التجارية",
+    "ChildControls": []
+},
+{
+    "ID": 881,
+    "ControlLabel": "التقديم على مساعدة عينية",
+    "AttorneyTypeName": "المساعدات المالية والعينية",
+    "ChildControls": [
+        {
+            "ID": 882,
+            "ControlLabel": "من",
+            "AttorneyTypeName": "المساعدات المالية والعينية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 884,
+    "ControlLabel": "إصدار بدل تالف أو مفقود لشرائح الجوالات واستبدالها",
+    "AttorneyTypeName": "شركات الاتصالات",
+    "ChildControls": []
+},
+{
+    "ID": 889,
+    "ControlLabel": "مراجعة الهيئة العامة للموانئ",
+    "AttorneyTypeName": "المؤسسات الحكومية",
+    "ChildControls": []
+},
+{
+    "ID": 973,
+    "ControlLabel": "مراجعة وزارة الطاقة",
+    "AttorneyTypeName": "الوزارات الحكومية",
+    "ChildControls": [
+        {
+            "ID": 974,
+            "ControlLabel": "مصلحة المياه والصرف الصحي",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 1102,
+    "ControlLabel": "استخراج السجلات",
+    "AttorneyTypeName": "السجلات التجارية",
+    "ChildControls": []
+},
+{
+    "ID": 1556,
+    "ControlLabel": "مراجعة شركة المياه الوطنية",
+    "AttorneyTypeName": "طلب الخدمات",
+    "ChildControls": [
+        {
+            "ID": 1557,
+            "ControlLabel": "ادخال المياه",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        },
+        {
+            "ID": 1558,
+            "ControlLabel": "للصك رقم",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        },
+        {
+            "ID": 1559,
+            "ControlLabel": "بتاريخ",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        },
+        {
+            "ID": 1560,
+            "ControlLabel": "الصادر من",
+            "AttorneyTypeName": "طلب الخدمات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 1562,
+    "ControlLabel": "إصدار بدل تالف أو مفقود لتصاريح الصيد",
+    "AttorneyTypeName": "تصاريح القوارب والصيد",
+    "ChildControls": []
+},
+{
+    "ID": 1575,
+    "ControlLabel": "مراجعة الهيئة العامة للولاية على أموال القاصرين ومن في حكمهم",
+    "AttorneyTypeName": "الهيئات الحكومية",
+    "ChildControls": []
+},
+{
+    "ID": 1602,
+    "ControlLabel": "إصدار بدل تالف أو مفقود لسجل الأسرة (دفتر العائلة)",
+    "AttorneyTypeName": "إدارة الأحوال المدنية",
+    "ChildControls": []
+},
+{
+    "ID": 1622,
+    "ControlLabel": "إصدار تأشيرات الزيارة العائلية",
+    "AttorneyTypeName": "مكتب الإستقدام",
+    "ChildControls": []
+},
+{
+    "ID": 1632,
+    "ControlLabel": "إصدار إقامات بدل مفقود أو تالف",
+    "AttorneyTypeName": "الجوازات",
+    "ChildControls": []
+},
+{
+    "ID": 1669,
+    "ControlLabel": "إصدار جواز سفر بدل مفقود أو تالف",
+    "AttorneyTypeName": "الجوازات",
+    "ChildControls": [
+        {
+            "ID": 1670,
+            "ControlLabel": "",
+            "AttorneyTypeName": "الجوازات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 1676,
+    "ControlLabel": "إلغاء التأشيرات",
+    "AttorneyTypeName": "وزارة الموارد البشرية والتنمية الاجتماعية",
+    "ChildControls": []
+},
+{
+    "ID": 1752,
+    "ControlLabel": "مراجعة وزارة النقل والخدمات اللوجستية لإصدار كروت تشغيل السيارات",
+    "AttorneyTypeName": "السيارات",
+    "ChildControls": []
+},
+{
+    "ID": 2002,
+    "ControlLabel": "استلام القرض ",
+    "AttorneyTypeName": "البنك السعودي للتسليف والإدخار",
+    "ChildControls": []
+},
+{
+    "ID": 2102,
+    "ControlLabel": "استلام القرض ",
+    "AttorneyTypeName": "بنك التنمية الاجتماعية",
+    "ChildControls": []
+},
+{
+    "ID": 2583,
+    "ControlLabel": "قبول شروط التمويل وأحكامها وأسعارها",
+    "AttorneyTypeName": "بنك التصدير والاستيراد السعودي",
+    "ChildControls": []
+},
+{
+    "ID": 4113,
+    "ControlLabel": "استلام الرواتب التقاعدية",
+    "AttorneyTypeName": "الرواتب والمستحقات",
+    "ChildControls": [
+        {
+            "ID": 4114,
+            "ControlLabel": "من",
+            "AttorneyTypeName": "الرواتب والمستحقات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 42200,
+    "ControlLabel": "فتح الحسابات بضوابط شرعية",
+    "AttorneyTypeName": "البنوك والمصارف",
+    "ChildControls": []
+},
+{
+    "ID": 114092,
+    "ControlLabel": "المخاصمة والمرافعة والمدافعة وإقامة البينة",
+    "AttorneyTypeName": "وكالة خارج المملكة العربية السعودية فقط",
+    "ChildControls": []
+},
+{
+    "ID": 770010,
+    "ControlLabel": "مراجعة مراكز الشرطة",
+    "AttorneyTypeName": "الجهات الأمنية",
+    "ChildControls": [
+        {
+            "ID": 7700122,
+            "ControlLabel": "بخصوص",
+            "AttorneyTypeName": "الجهات الأمنية",
+            "ChildControls": [
+                {
+                    "ID": 77001223,
+                    "ControlLabel": "",
+                    "AttorneyTypeName": "الجهات الأمنية",
+                    "ChildControls": []
+                }
+            ]
+        }
+    ]
+},
+{
+    "ID": 798002,
+    "ControlLabel": "مراجعة الرئاسة العامة للبحوث العلمية والإفتاء",
+    "AttorneyTypeName": "الرئاسات الحكومية",
+    "ChildControls": []
+},
+{
+    "ID": 1000000,
+    "ControlLabel": "مراجعة جميع الجهات ذات العلاقة وإنهاء جميع الإجراءات اللازمة والتوقيع فيما يتطلب ذلك",
+    "ChildControls": []
+},
+{
+    "ID": 4123335,
+    "ControlLabel": "استخراج تعريف بالراتب",
+    "AttorneyTypeName": "الرواتب والمستحقات",
+    "ChildControls": [
+        {
+            "ID": 4115,
+            "ControlLabel": "من",
+            "AttorneyTypeName": "الرواتب والمستحقات",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 4220001,
+    "ControlLabel": "فتح الحسابات ",
+    "AttorneyTypeName": "البنوك والمصارف",
+    "ChildControls": [
+        {
+            "ID": 422001,
+            "ControlLabel": "اعتماد التوقيع",
+            "AttorneyTypeName": "البنوك والمصارف",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 1700185480,
+    "ControlLabel": "البيع عبر خدمة الافراغ العقاري الالكتروني",
+    "AttorneyTypeName": "العقارات",
+    "ChildControls": []
+},
+{
+    "ID": 1700185481,
+    "ControlLabel": "الشراء عبر خدمة الافراغ العقاري الالكتروني",
+    "AttorneyTypeName": "العقارات",
+    "ChildControls": []
+},
+{
+    "ID": 196,
+    "ControlLabel": "الهبة والإفراغ",
+    "AttorneyTypeName": "العقارات",
+    "ChildControls": []
+},
+{
+    "ID": 642,
+    "ControlLabel": "استخراج صك إقامة ناظر على الوقف أو الوصية",
+    "AttorneyTypeName": "أذونات المحاكم",
+    "ChildControls": [
+        {
+            "ID": 643,
+            "ControlLabel": "",
+            "AttorneyTypeName": "أذونات المحاكم",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 674,
+    "ControlLabel": "إصدار شهادات إتمام البناء",
+    "AttorneyTypeName": "الأمانات والبلديات",
+    "ChildControls": []
+},
+{
+    "ID": 832,
+    "ControlLabel": "مراجعة الهيئة العامة للرياضة والشباب",
+    "AttorneyTypeName": "الرئاسات الحكومية",
+    "ChildControls": []
+},
+{
+    "ID": 890,
+    "ControlLabel": "مراجعة الشركة السعودية للخطوط الحديدية",
+    "AttorneyTypeName": "المؤسسات الحكومية",
+    "ChildControls": []
+},
+{
+    "ID": 975,
+    "ControlLabel": "وزارة النقل والخدمات اللوجستية",
+    "AttorneyTypeName": "الوزارات الحكومية",
+    "ChildControls": [
+        {
+            "ID": 976,
+            "ControlLabel": "استخراج رخصة",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 977,
+            "ControlLabel": "تجديد رخصة",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 978,
+            "ControlLabel": "استخراج ترخيص",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 979,
+            "ControlLabel": "تجديد ترخيص",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 980,
+            "ControlLabel": "استخراج رخصة أجرة عامة",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 981,
+            "ControlLabel": "تجديد رخصة أجرة عامة",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 982,
+            "ControlLabel": "استخراج ترخيص نقل مدرسي",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 983,
+            "ControlLabel": "تجديد ترخيص نقل مدرسي",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        },
+        {
+            "ID": 984,
+            "ControlLabel": "إستخراج رخصة تاجير سيارات",
+            "AttorneyTypeName": "الوزارات الحكومية",
+            "ChildControls": []
+        }
+    ]
+},
+{
+    "ID": 1103,
+    "ControlLabel": "تجديد السجلات",
+    "AttorneyTypeName": "السجلات التجارية",
+    "ChildControls": []
+},
+{
+    "ID": 1543,
+    "ControlLabel": "إبرام وتوقيع الإتفاقيات والتسهيلات الائتمانية وملاحقها وشروطها",
+    "AttorneyTypeName": "بنك التصدير والاستيراد السعودي",
+    "ChildControls": []
+},
+{
+    "ID": 1563,
+    "ControlLabel": "إصدار رخص قوارب",
+    "AttorneyTypeName": "تصاريح                                        
+                             </code>
+                             <code class="text" id="attorneylookup2" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                                            
+                                </code>	
+                            
+                            <code class="text" id="attorneylookup3" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            
+                            </code>	
+                            
+                            <code class="text" id="attorneylookup4" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            
+                            
+                            <code class="text" id="attorneylookup5" style=" display: none; " >
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            
+                            
+                            <code class="text" id="attorneylookup6" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                 
+                            </code>
+                             
+                            
+                            <code class="text" id="attorneylookup7" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }       
+                            </code>
+                             
+                            
+                            <code class="text" id="attorneylookup8" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }  
+                            </code>
+                            
+                            
+                            <code class="text" id="attorneylookup9" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                            <code class="text" id="attorneylookup10" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                            </code>
+                                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- API 2 -->
+
+          <div class="api-infosec">
+            <h1 class="fob-welcome-title" id="section-3">Attorney Verification</h1>
+
+            <p class="fob-welcome-line">&nbsp;</p>
+
+            <p class="fob-welcome-text">Endpoint: /ministry-of-justice/v1/power-of-attorney-info/{Code}
+            </p>
+
+            <p class="fob-welcome-text"><a
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1232/api/1229#/MPMarketplaceOTPManagement_100/operation/%2Fgenerate-otp/post">Swagger
+                Link</a></p>
+
+            <p class="fob-welcome-text">This API validates attorney document authenticity, verifying status,
+              validity periods, principals/agents, and supporting bilingual (Arabic/English) data.</p>
+
+            <div class="requestURL-box">
+              <div class="request-box">
+                <h1 class="fob-welcome-title">Request Example</h1>
+
+                <p class="fob-welcome-line">&nbsp;</p>
+
+                <pre class="example_97 api-guides-example-fob ">
+                                        <code class="sample-code">
+Query Parameters:
+    PrincipalID:1239623432
+    AgentID:1239623432
+                                        </code>
+                                      </pre>
+              </div>
+
+              <div class="url-box">
+                <p class="fob-welcome-title curlText">cURL</p>
+
+                <pre id="generatedCurl">
+                                          <code id="attorneyVerification-curl">
+curl --location 'https://test.api.neotek.sa/ministry-of-justice/v1/power-of-attorney-info/456246546?PrincipalID=1239623432&AgentID=1239623432' \
+--header 'x-request-id: d45d54b9-7bac-4638-bdd6-4b6314b7b921' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer AAIgMTQ5Y2I3NzMxM2FkNGEyMjYwMGEzNTZiMTMyYTI3MzQLowmucj6mhlQDcPUqOy5OgF7ai_QNzBPaUhk-EovvdF9AjHkyzzrN5Eb6nko0BgQMJWlxWQMVFmInh0Fow6ncfBnPS48DzPkVKO5hL7U6BnUqdDp58ry4txz07JzxF91FJyoQFDpttH-F7gHwd7fN' \
+--header 'Cookie: name=value; name=value'                                                      
+                                          </code>
+                                        </pre>
+              </div>
+            </div>
+
+            <div class="response-outterbox">
+              <div class="innerbox">
+                <div class="code-box">
+                  <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                  <div class="response-box-div">
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification')">200</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification2')">400</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification3')">401</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification4')">403</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification5')">404</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification6')">405</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification7')">406</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification8')">429</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification9')">500</a>
+                    <a class="response-box-error" type="button" onclick="responseText('attorneyVerification10')">503</a>
+                  </div>
+
+                  <pre class="response-box">
+
+                                <code class="text" id="attorneyVerification" style=" display: block; ">
+{
+    "Code": 456246546,
+    "Status": "منتهية",
+    "IssueHijriDate": "1445/12/16",
+    "IssueGregDate": "2024/06/22",
+    "ExpiryHijriDate": "1446/09/17",
+    "ExpiryGregDate": "2025/03/17",
+    "AttorneyType": "وكالة أصلية",
+    "Location": {
+        "ID": 50005,
+        "Name": "خدمات الوكالات الإلكترونية"
+    },
+    "Principals": [
+        {
+            "ID": "2080717990",
+            "Name": "رهام نصر  الحمدان",
+            "Birthday": "1992-01-01T00:00:00",
+            "SefaName": "أصالة عن نفسه",
+            "SefaID": 1
+        }
+    ],
+    "Agents": [
+        {
+            "ID": "1165864511",
+            "Name": "محمد فؤاد عمر باوزير",
+            "Birthday": "1993-01-28T00:00:00",
+            "SefaName": "أصالة عن نفسه",
+            "SefaID": 1
+        }
+    ],
+    "AgentsBehavior": {
+        "Ar": "منفردين",
+        "En": "alone"
+    },
+    "Text": "الحـمد لله وحـده والصـلاة والسـلام على من لا نبـي بعـده ،                وبـعـد :\r\nفمن خلال الخدمات الإلكترونية لوزارة العدل، تم إصدار وكالة إلكترونياً رقم 456246546 للموكل:\r\n1- رهام نصر  الحمدان سورية الجنسية بموجب إقامة رقم ٢٠٨٠٧١٧٩٩٠\r\n\t  وقـد تـم الاقـرار بتـوكـيـل : \r\n\r\n1- محمد فؤاد عمر باوزير سعودي الجنسية بموجب سجل مدني رقم ١١٦٥٨٦٤٥١١\r\n مراجعة [الجوازات] وذلك في إصدار إذن بالسفر و مراجعة [الجوازات] في إصدار تأشيرة خروج وعودة مراجعة جميع الجهات ذات العلاقة وإنهاء جميع الإجراءات اللازمة والتوقيع فيما يتطلب ذلك  - وعليه جرى التصديق والتوقيع تحريراً في ١٤٤٥/١٢/١٦ هـ وصلى الله وسلم على نبينا محمد وآله وصحبه أجمعين.",
+    "TextList": [
+        {
+            "ID": 1649,
+            "Text": "إصدار تأشيرة خروج وعودة",
+            "Type": "الجوازات"
+        },
+        {
+            "ID": 1671,
+            "Text": "إصدار إذن بالسفر",
+            "Type": "الجوازات"
+        },
+        {
+            "ID": 1000000,
+            "Text": "مراجعة جميع الجهات ذات العلاقة وإنهاء جميع الإجراءات اللازمة والتوقيع فيما يتطلب ذلك"
+        }
+    ],
+    "AllowedToActOnBehalf": [
+        {
+            "Name": "رهام نصر  الحمدان",
+            "TypeName": "فردى",
+            "Type": 1,
+            "IdentityNo": "2080717990",
+            "TypeNameEn": "Individual",
+            "SefaID": 1,
+            "SefaName": "أصالة عن نفسه"
+        }
+    ]
+}
+                                 </code>
+                             <code class="text" id="attorneyVerification2" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                                            
+                                </code>	
+                                <code class="text" id="attorneyVerification3" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                
+                                </code>	
+                                
+                                <code class="text" id="attorneyVerification4" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="attorneyVerification5" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="attorneyVerification6" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }                 
+                                </code>
+                                 
+                                
+                                <code class="text" id="attorneyVerification7" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                 
+                                
+                                <code class="text" id="attorneyVerification8" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                
+                                
+                                <code class="text" id="attorneyVerification9" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+    
+                                <code class="text" id="attorneyVerification10" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "string",
+        "Message": "string",
+        "Path": "request.body.PSUId",
+        "Url": "https://{baseURL}/developer-portal/terms"
+        }
+    ]
+    }
+                                </code>
+                                      </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
