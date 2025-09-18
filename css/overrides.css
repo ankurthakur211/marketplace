@@ -15403,6 +15403,12 @@ form#custom-invite-form input {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .custom-APIproduct .views-exposed-form .form-item:nth-child(3){
+        width: 100%
+    }
+    }
+
 
 /*updating home page feb ankiee*/
 
