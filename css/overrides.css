@@ -25106,21 +25106,21 @@ button#ccs-\:rl\:-tab-1 {
 
 /*addition to nitaqat images*/
 .nitaqat-usecase {
-    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Nitaqat_usecase.png");
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Nitaqat_usecase.png") !important;
 }
 
 .nitaqat-description {
-    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/nitaqat-description.png');
+    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/nitaqat-description.png') !important ;
 }
 
 /*addition to nitaqat images*/
 /*addition to Power-Of-Attorney images*/
 .Power-Of-Attorney-usecase {
-    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Power-Of-Attorney.png");
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Power-Of-Attorney.png") !important;
 }
 
 .Power-Of-Attorney-description {
-    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Power-Of-Attorney-description.png');
+    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Power-Of-Attorney-description.png') !important;
 }
 
 /*addition to Power-Of-Attorney images*/
@@ -25141,3 +25141,47 @@ button#ccs-\:rl\:-tab-1 {
 }
 
 /* Janet Edit the Text of Workflow Button*/
+
+/* Janet Fix Use Case Image in Widget */
+
+.product-widget .slide2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-widget .slide2 .content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-widget .slide2 .content .usecase-image{
+    position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 50px 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    flex: 1;
+}
+
+@media (max-width: 780px) {
+    .product-widget .slide2 .content .usecase-image {
+        position: relative;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 50px 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100%;
+        flex: 1;
+        margin: 30px;
+    }
+}
+
+/* Janet Fix Use Case Image in Widget */
