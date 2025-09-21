@@ -25256,6 +25256,7 @@ button#ccs-\:rl\:-tab-1 {
 
 .context--search-api #page-node-title {
     width: 100% !important;
+    padding-left: 0px !important;
 }
 
 .context--search-api .basic-page {
@@ -25277,6 +25278,15 @@ button#ccs-\:rl\:-tab-1 {
 
 .context--search-api .panel.panel-default .tag-header {
     margin-bottom: 15px;
+}
+
+.context--search-api .field--name-apic-tags .tag-header {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.context--search-api .field--item{
+    margin-bottom: 30px !important;
 }
 
 /* Janet Fix some Designs in Search Page */
