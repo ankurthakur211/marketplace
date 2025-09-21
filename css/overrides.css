@@ -15404,10 +15404,10 @@ form#custom-invite-form input {
 }
 
 @media screen and (max-width: 767px) {
-    .custom-APIproduct .views-exposed-form .form-item:nth-child(3){
+    .custom-APIproduct .views-exposed-form .form-item:nth-child(3) {
         width: 100%
     }
-    }
+}
 
 
 /*updating home page feb ankiee*/
@@ -25116,13 +25116,13 @@ button#ccs-\:rl\:-tab-1 {
 }
 
 .nitaqat-description {
-    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/nitaqat-description.png') !important ;
+    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/nitaqat-description.png') !important;
 }
 
 /*addition to nitaqat images*/
 /*addition to Power-Of-Attorney images*/
 .Power-Of-Attorney-usecase {
-    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Power-Of-Attorney.png") !important;
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Power-Of-Attorney-usecase.png") !important;
 }
 
 .Power-Of-Attorney-description {
@@ -25131,13 +25131,14 @@ button#ccs-\:rl\:-tab-1 {
 
 /*addition to Power-Of-Attorney images*/
 /*addition to Motor Insurance SME images*/
-.motor-sme-description{
+.motor-sme-description {
     background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Slide1 Background.jpg') !important;
 }
 
-.motor-sme-usecase{
+.motor-sme-usecase {
     background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Motor-SME-usecase.png') !important;
 }
+
 /*addition to Motor Insurance SME images*/
 
 /* Janet Edit the Text of Workflow Button*/
@@ -25155,13 +25156,13 @@ button#ccs-\:rl\:-tab-1 {
     flex-direction: column;
 }
 
-.product-widget .slide2 .content{
+.product-widget .slide2 .content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.product-widget .slide2 .content .usecase-image{
+.product-widget .slide2 .content .usecase-image {
     position: relative;
     max-width: 100%;
     box-sizing: border-box;
@@ -25191,3 +25192,37 @@ button#ccs-\:rl\:-tab-1 {
 }
 
 /* Janet Fix Use Case Image in Widget */
+
+/*merna addition to styling for power of attorney widget*/
+.slide1text.widgetList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide1text.widgetList li {
+    display: flex;
+    align-items: flex-start;
+    margin: 14px 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.slide1text.widgetList .widgetDescriptionIcon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.slide1text.widgetList li span {
+    flex: 1;
+    line-height: 1.4;
+}
+
+/*merna addition to styling for power of attorney widget*/
