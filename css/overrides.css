@@ -20395,6 +20395,40 @@ body.context--BusinessDomains .apicMainContent {
     width: 1px;
 }
 
+    .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+        width: 434px !important;
+}
+.modal-application-create-form button.btn-danger{
+    height: 40px;
+    text-align: center;
+    padding: 0;
+    width: 154px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+.modal-application-create-form button.btn-info{
+    margin: 0 auto !important;
+    width: 200px !important;
+    display: flex !important;
+    padding: 0 !important;
+     height: 40px !important;
+}
+.modal-application-create-form button.btn-info:hover{
+color: #fff !important;
+}
+.modal-application-create-form input.form-text{
+    height: 40px !important;
+}
+button.use-ajax.button.button--primary.js-form-submit.form-submit.btn-success.btn.icon-before{
+    text-align: center;
+    display: flex;
+    padding: 0;
+    width: 135px;
+    font-size: 18px;
+    height: 41px;
+    border-radius: 8px;
+}
+
 
 /*updating home page feb ankiee*/
 

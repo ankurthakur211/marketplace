@@ -397,13 +397,13 @@ document.addEventListener("DOMContentLoaded", function() {
        
      const link = document.querySelector("a.btn-primary");
       if (link) {
-        console.log("Original href:", link.getAttribute("href"));
+       
     
         // Replace "/?" with "?" in the href
         const correctedHref = link.getAttribute("href").replace("/?", "?");
         link.setAttribute("href", correctedHref);
     
-        console.log("Corrected href:", link.getAttribute("href"));
+        
       }
         }
     
