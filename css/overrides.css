@@ -25319,4 +25319,39 @@ button#ccs-\:rl\:-tab-1 {
     margin-bottom: 30px !important;
 }
 
+.context--search-api .field--name-api-swagger{
+    display: none;
+}
+
 /* Janet Fix some Designs in Search Page */
+
+/* Janet Motor Insurance Page add the new Sections */
+
+.product-widget .insuranceProducts .smart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-widget .insuranceProducts .smartIcon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-widget .insuranceProducts .smartText {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px !important;
+}
+
+.motor-insurance-usecase {
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Motor-insurance-usecase.png") !important;
+}
+
+/* Janet Motor Insurance Page add the new Sections */
