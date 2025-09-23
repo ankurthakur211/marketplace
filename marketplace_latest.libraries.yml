@@ -2,15 +2,8 @@ global-styling:
   css:
     theme:
       css/overrides.css: {}
-
-custom-js:
+custome-js:
   js:
     js/collapse.js: {}
 
-global-scripts:
-  version: 1.x
-  js:
-    js/global.js: {}
-  dependencies:
-    - core/jquery
-    - core/jquery.form
+    
