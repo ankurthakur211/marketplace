@@ -1,0 +1,503 @@
+{
+	"info": {
+		"_postman_id": "657c5394-8b7b-4f25-8d64-03d74b894ef4",
+		"name": "Freelancer Validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29105968"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access-token\", data.access_token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{ClientID}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{ClientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "marketplace_apis",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{Host}}/oauth2security/oauth2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Check Certificate Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{access-token}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "{{$guid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"certificateNumber\": \"FL-013988291\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Host}}/{{BasePath}}/certificate/status"
+			},
+			"response": [
+				{
+					"name": "Check Certificate Status",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Request-Id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"certificateNumber\": \"FL-013988291\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Host}}/{{BasePath}}/certificate/status"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "8b9d830f-c4df-4eb3-80d1-c8b3c2621e7b"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68a310fb000e4010"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,93;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 11:39:40 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"result\": {\n        \"status\": \"CANCELED\",\n        \"revokedAt\": null,\n        \"issueAt\": \"2024-08-21\",\n        \"canceledAt\": \"2025-05-26\",\n        \"expiryDate\": \"2025-08-21\",\n        \"licenseNumber\": \"FL-013988291\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Verify by National ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nationalId\": \"1107454009\",\r\n  \"certificateNumber\": \"FL-013988291\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Host}}/{{BasePath}}/certificate/nin"
+			},
+			"response": [
+				{
+					"name": "Verify by National ID",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nationalId\": \"1107454009\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Host}}/{{BasePath}}/certificate/nin"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "9b7dbc41-8bc6-444d-b084-f37ed7439afb"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68a31104000e4310"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,92;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 11:39:49 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"result\": {\n        \"englishName\": \"adel\",\n        \"nationalId\": \"1107454009\",\n        \"arabicName\": \"عادل عيد نفل الحارثي\",\n        \"nationalIdExpiryDate\": \"1450-07-01\",\n        \"certificate\": [\n            {\n                \"expiryDate\": \"2024-08-14\",\n                \"number\": \"FL-000000000\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2023-08-14\",\n                \"speciality\": {\n                    \"code\": \"AS093\",\n                    \"name\": \"بحوث التسويق - المتسوق الخفي\",\n                    \"nameEn\": \"Marketing Research - Mystery Shopper\",\n                    \"category\": {\n                        \"nameEn\": \"Sales & Marketing\",\n                        \"name\": \"المبيعات والتسويق\",\n                        \"code\": \"C106\"\n                    }\n                },\n                \"canceledAt\": \"2024-02-05\"\n            },\n            {\n                \"expiryDate\": \"2023-08-20\",\n                \"number\": \"FL-288064828\",\n                \"status\": \"EXPIRED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2023-08-20\",\n                \"speciality\": {\n                    \"code\": \"AS139\",\n                    \"name\": \"سيارة الآيس كريم المتجولة\",\n                    \"nameEn\": \"Ice Cream Truck\",\n                    \"category\": {\n                        \"nameEn\": \"Food Trucks\",\n                        \"name\": \"عربات الأطعمة\",\n                        \"code\": \"C024\"\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": \"2024-11-14\",\n                \"number\": \"FL-852266804\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2023-11-14\",\n                \"speciality\": {\n                    \"code\": \"AS371\",\n                    \"name\": \"تصميم وتركيب وصيانة شبكات الحاسب\",\n                    \"nameEn\": \"Design - Installation and Maintenance of Computer Networks\",\n                    \"category\": {\n                        \"nameEn\": \"IT & Network\",\n                        \"name\": \"الشبكات وتكنولوجيا المعلومات\",\n                        \"code\": \"C099\"\n                    }\n                },\n                \"canceledAt\": \"2024-01-23\"\n            },\n            {\n                \"expiryDate\": \"2025-02-05\",\n                \"number\": \"FL-803071185\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-02-05\",\n                \"speciality\": {\n                    \"code\": \"AS298\",\n                    \"name\": \"المؤثرات و التسجيل الصوتي\",\n                    \"nameEn\": \"Recording & Sound Effects\",\n                    \"category\": {\n                        \"nameEn\": \"Audio & Visual\",\n                        \"name\": \"الصوت والبصريات\",\n                        \"code\": \"C105\"\n                    }\n                },\n                \"canceledAt\": \"2024-02-05\"\n            },\n            {\n                \"expiryDate\": \"2025-02-05\",\n                \"number\": \"FL-638394474\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-02-05\",\n                \"speciality\": {\n                    \"code\": \"AS165\",\n                    \"name\": \"برمجيات الحاسب الالي\",\n                    \"nameEn\": \"Computer Software\",\n                    \"category\": {\n                        \"nameEn\": \"Data Science & Analytics\",\n                        \"name\": \"علوم البيانات والتحليل\",\n                        \"code\": \"C104\"\n                    }\n                },\n                \"canceledAt\": \"2024-02-05\"\n            },\n            {\n                \"expiryDate\": \"2025-03-04\",\n                \"number\": \"FL-341336432\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-03-04\",\n                \"speciality\": {\n                    \"code\": \"AS257\",\n                    \"name\": \"تصميم الجرافيك\",\n                    \"nameEn\": \"Graphic Designing\",\n                    \"category\": {\n                        \"nameEn\": \"Design & Creative\",\n                        \"name\": \"التصميم والإبداع\",\n                        \"code\": \"C101\"\n                    }\n                },\n                \"canceledAt\": \"2024-03-26\"\n            },\n            {\n                \"expiryDate\": \"2025-03-27\",\n                \"number\": \"FL-291569721\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-03-27\",\n                \"speciality\": {\n                    \"code\": \"AS257\",\n                    \"name\": \"تصميم الجرافيك\",\n                    \"nameEn\": \"Graphic Designing\",\n                    \"category\": {\n                        \"nameEn\": \"Design & Creative\",\n                        \"name\": \"التصميم والإبداع\",\n                        \"code\": \"C101\"\n                    }\n                },\n                \"canceledAt\": \"2025-05-19\"\n            },\n            {\n                \"expiryDate\": \"2025-05-01\",\n                \"number\": \"FL-090302137\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-05-01\",\n                \"speciality\": {\n                    \"code\": \"AS368\",\n                    \"name\": \"نظم تقنية المعلومات\",\n                    \"nameEn\": \"Information Technology Systems\",\n                    \"category\": {\n                        \"nameEn\": \"IT & Network\",\n                        \"name\": \"الشبكات وتكنولوجيا المعلومات\",\n                        \"code\": \"C099\"\n                    }\n                },\n                \"canceledAt\": \"2024-12-10\"\n            },\n            {\n                \"expiryDate\": \"2025-05-01\",\n                \"number\": \"FL-576772638\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-05-01\",\n                \"speciality\": {\n                    \"code\": \"AS073\",\n                    \"name\": \"بحوث التسويق - الابحاث والتحليل\",\n                    \"nameEn\": \"Marketing Research - Research and Analysis\",\n                    \"category\": {\n                        \"nameEn\": \"Sales & Marketing\",\n                        \"name\": \"المبيعات والتسويق\",\n                        \"code\": \"C106\"\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": null,\n                \"number\": \"FL-560899391\",\n                \"status\": \"REJECTED\",\n                \"revokedAt\": null,\n                \"issueDate\": null,\n                \"speciality\": {\n                    \"code\": \"AS165\",\n                    \"name\": \"برمجيات الحاسب الالي\",\n                    \"nameEn\": \"Computer Software\",\n                    \"category\": {\n                        \"nameEn\": \"Data Science & Analytics\",\n                        \"name\": \"علوم البيانات والتحليل\",\n                        \"code\": \"C104\"\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": \"2025-06-04\",\n                \"number\": \"FL-773756785\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-06-04\",\n                \"speciality\": {\n                    \"code\": \"AS287\",\n                    \"name\": \"برمجة وتطوير المواقع الالكترونية\",\n                    \"nameEn\": \"Websites Programming and Developing\",\n                    \"category\": {\n                        \"nameEn\": \"Web - Mobile & Software\",\n                        \"name\": \"تطوير تطبيقات الجوال والويب\",\n                        \"code\": \"C102\"\n                    }\n                },\n                \"canceledAt\": \"2025-05-27\"\n            },\n            {\n                \"expiryDate\": \"2025-08-18\",\n                \"number\": \"FL-414221931\",\n                \"status\": \"REVOKED\",\n                \"revokedAt\": \"2024-08-18\",\n                \"issueDate\": \"2024-08-18\",\n                \"speciality\": {\n                    \"code\": \"S628\",\n                    \"name\": \"اخصائي بيئي\",\n                    \"nameEn\": \"Environmental specialist\",\n                    \"category\": {\n                        \"nameEn\": \"Environmental compliance\",\n                        \"name\": \"الإلتزام البيئي\",\n                        \"code\": null\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": \"2025-08-18\",\n                \"number\": \"FL-837913520\",\n                \"status\": \"ACTIVE\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-08-18\",\n                \"speciality\": {\n                    \"code\": \"S628\",\n                    \"name\": \"اخصائي بيئي\",\n                    \"nameEn\": \"Environmental specialist\",\n                    \"category\": {\n                        \"nameEn\": \"Environmental compliance\",\n                        \"name\": \"الإلتزام البيئي\",\n                        \"code\": null\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": \"2025-08-20\",\n                \"number\": \"FL-872070317\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-08-20\",\n                \"speciality\": {\n                    \"code\": \"AS093\",\n                    \"name\": \"بحوث التسويق - المتسوق الخفي\",\n                    \"nameEn\": \"Marketing Research - Mystery Shopper\",\n                    \"category\": {\n                        \"nameEn\": \"Sales & Marketing\",\n                        \"name\": \"المبيعات والتسويق\",\n                        \"code\": \"C106\"\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": \"2025-08-21\",\n                \"number\": \"FL-013988291\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-08-21\",\n                \"speciality\": {\n                    \"code\": \"AS090\",\n                    \"name\": \"ادارة وتنشيط المبيعات\",\n                    \"nameEn\": \"Sales Promotion and Management\",\n                    \"category\": {\n                        \"nameEn\": \"Sales & Marketing\",\n                        \"name\": \"المبيعات والتسويق\",\n                        \"code\": \"C106\"\n                    }\n                },\n                \"canceledAt\": \"2025-05-26\"\n            },\n            {\n                \"expiryDate\": \"2025-02-10\",\n                \"number\": \"FL-541440269\",\n                \"status\": \"EXPIRED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2024-02-10\",\n                \"speciality\": {\n                    \"code\": \"AS061\",\n                    \"name\": \"ادخال البيانات\",\n                    \"nameEn\": \"Data Entry\",\n                    \"category\": {\n                        \"nameEn\": \"Administrative Support\",\n                        \"name\": \"الدعم الاداري\",\n                        \"code\": \"C103\"\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": \"2026-02-10\",\n                \"number\": \"FL-490775363\",\n                \"status\": \"REVOKED\",\n                \"revokedAt\": \"2025-02-11\",\n                \"issueDate\": \"2025-02-10\",\n                \"speciality\": {\n                    \"code\": \"AS138\",\n                    \"name\": \"سيارة متجولة لبيع الأغذية\",\n                    \"nameEn\": \"Food Truck\",\n                    \"category\": {\n                        \"nameEn\": \"Food Trucks\",\n                        \"name\": \"عربات الأطعمة\",\n                        \"code\": \"C024\"\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": null,\n                \"number\": \"FL-718624467\",\n                \"status\": \"CANCELED_BEFORE_ACTIVE\",\n                \"revokedAt\": null,\n                \"issueDate\": null,\n                \"speciality\": {\n                    \"code\": \"AS163\",\n                    \"name\": \"تدقيق ادخال البيانات\",\n                    \"nameEn\": \"Data Entry Auditing\",\n                    \"category\": {\n                        \"nameEn\": \"Data Science & Analytics\",\n                        \"name\": \"علوم البيانات والتحليل\",\n                        \"code\": \"C104\"\n                    }\n                },\n                \"canceledAt\": \"2025-03-12\"\n            },\n            {\n                \"expiryDate\": null,\n                \"number\": \"FL-595215341\",\n                \"status\": \"CANCELED_BEFORE_ACTIVE\",\n                \"revokedAt\": null,\n                \"issueDate\": null,\n                \"speciality\": {\n                    \"code\": \"AS060\",\n                    \"name\": \"المساعدة الادارية\",\n                    \"nameEn\": \"Administrative Assistance\",\n                    \"category\": {\n                        \"nameEn\": \"Administrative Support\",\n                        \"name\": \"الدعم الاداري\",\n                        \"code\": \"C103\"\n                    }\n                },\n                \"canceledAt\": \"2025-07-31\"\n            },\n            {\n                \"expiryDate\": \"2026-05-29\",\n                \"number\": \"FL-994602362\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2025-05-29\",\n                \"speciality\": {\n                    \"code\": \"AS163\",\n                    \"name\": \"تدقيق ادخال البيانات\",\n                    \"nameEn\": \"Data Entry Auditing\",\n                    \"category\": {\n                        \"nameEn\": \"Data Science & Analytics\",\n                        \"name\": \"علوم البيانات والتحليل\",\n                        \"code\": \"C104\"\n                    }\n                },\n                \"canceledAt\": \"2025-05-29\"\n            },\n            {\n                \"expiryDate\": \"2026-05-29\",\n                \"number\": \"FL-447132472\",\n                \"status\": \"CANCELED\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2025-05-29\",\n                \"speciality\": {\n                    \"code\": \"AS163\",\n                    \"name\": \"تدقيق ادخال البيانات\",\n                    \"nameEn\": \"Data Entry Auditing\",\n                    \"category\": {\n                        \"nameEn\": \"Data Science & Analytics\",\n                        \"name\": \"علوم البيانات والتحليل\",\n                        \"code\": \"C104\"\n                    }\n                },\n                \"canceledAt\": \"2025-05-29\"\n            },\n            {\n                \"expiryDate\": null,\n                \"number\": \"FL-272857433\",\n                \"status\": \"PENDING\",\n                \"revokedAt\": null,\n                \"issueDate\": null,\n                \"speciality\": {\n                    \"code\": \"AS487\",\n                    \"name\": \"الاستشارات العقارية\",\n                    \"nameEn\": \"Real Estate Consulting\",\n                    \"category\": {\n                        \"nameEn\": \"Real Estate Consulting\",\n                        \"name\": \"الاستشارات العقارية\",\n                        \"code\": null\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": null,\n                \"number\": \"FL-208324806\",\n                \"status\": \"EDITED\",\n                \"revokedAt\": null,\n                \"issueDate\": null,\n                \"speciality\": {\n                    \"code\": \"AS617\",\n                    \"name\": \"تجربة التحديث جديد\",\n                    \"nameEn\": \" new test the update\",\n                    \"category\": {\n                        \"nameEn\": \"Sales & Marketing\",\n                        \"name\": \"المبيعات والتسويق\",\n                        \"code\": \"C106\"\n                    }\n                },\n                \"canceledAt\": null\n            },\n            {\n                \"expiryDate\": \"2026-08-04\",\n                \"number\": \"FL-541061546\",\n                \"status\": \"ACTIVE\",\n                \"revokedAt\": null,\n                \"issueDate\": \"2025-08-04\",\n                \"speciality\": {\n                    \"code\": \"AS138\",\n                    \"name\": \"سيارة متجولة لبيع الأغذية\",\n                    \"nameEn\": \"Food Truck\",\n                    \"category\": {\n                        \"nameEn\": \"Food Trucks\",\n                        \"name\": \"عربات الأطعمة\",\n                        \"code\": \"C024\"\n                    }\n                },\n                \"canceledAt\": null\n            }\n        ],\n        \"gender\": \"MALE\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "List Roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{Host}}/{{BasePath}}/roles"
+			},
+			"response": [
+				{
+					"name": "List Roles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{Host}}/{{BasePath}}/roles"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "57afcf2e-18df-49c9-9a2f-36f7ba6d723a"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68a3110b000e4690"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,91;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 11:39:56 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"result\": [\n        {\n            \"code\": \"R0013\",\n            \"nameAr\": \"الخدمات التخصصية\",\n            \"nameEn\": \"Specialized Services\"\n        },\n        {\n            \"code\": \"R006\",\n            \"nameAr\": \"النقل الموجه\",\n            \"nameEn\": \"Ride Hailing\"\n        },\n        {\n            \"code\": \"R007\",\n            \"nameAr\": \"الخدمات العقارية\",\n            \"nameEn\": \"Real Estate Services\"\n        },\n        {\n            \"code\": \"R0012\",\n            \"nameAr\": \"الأسر المنتجة\",\n            \"nameEn\": \"Productive Families\"\n        },\n        {\n            \"code\": \"R001\",\n            \"nameAr\": \"الخدمات السياحية\",\n            \"nameEn\": \"Tourism Services\"\n        },\n        {\n            \"code\": \"R002\",\n            \"nameAr\": \"الخدمات الاجتماعية\",\n            \"nameEn\": \"Social Services\"\n        },\n        {\n            \"code\": \"R003\",\n            \"nameAr\": \"الخدمات الاعلامية\",\n            \"nameEn\": \"Media Services\"\n        },\n        {\n            \"code\": \"R009\",\n            \"nameAr\": \"عربات الأطعمة\",\n            \"nameEn\": \"Food Trucks\"\n        },\n        {\n            \"code\": \"R0010\",\n            \"nameAr\": \"الحرف اليدوية\",\n            \"nameEn\": \"Handicrafts\"\n        },\n        {\n            \"code\": \"R0011\",\n            \"nameAr\": \"التنمية الريفية\",\n            \"nameEn\": \"Rural Development\"\n        },\n        {\n            \"code\": \"R004\",\n            \"nameAr\": \"توصيل الطلبات\",\n            \"nameEn\": \"The Service of Delivery (COVID-19 Stimulus)\"\n        },\n        {\n            \"code\": \"R005\",\n            \"nameAr\": \"المقيمون\",\n            \"nameEn\": \"Resident Expatriates\"\n        },\n        {\n            \"code\": \"R008\",\n            \"nameAr\": \"خدمة توصيل الطلبات\",\n            \"nameEn\": \"Delivery Services\"\n        },\n        {\n            \"code\": \"R0014\",\n            \"nameAr\": \"الخدمات المحاسبية والمراجعة المالية\",\n            \"nameEn\": \"Accounting and Statistics \"\n        },\n        {\n            \"code\": \"R0017\",\n            \"nameAr\": \"اختبار قاعدة بيانات جديد\",\n            \"nameEn\": \"New DB Test\"\n        },\n        {\n            \"code\": \"R0020\",\n            \"nameAr\": \"مدققي الطاقة المستقلين\",\n            \"nameEn\": \"Energy Services\"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"الإلتزام البيئي \",\n            \"nameEn\": \"Environmental compliance\"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"test new manal\",\n            \"nameEn\": \"test new \"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"test new manal\",\n            \"nameEn\": \"test new \"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"test new manal\",\n            \"nameEn\": \"test new \"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"test new manal\",\n            \"nameEn\": \"test new \"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"test new manal\",\n            \"nameEn\": \"test new \"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"test new manal\",\n            \"nameEn\": \"test new \"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"منال \",\n            \"nameEn\": \"Test manal Role \"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"الاتزام البيئي\",\n            \"nameEn\": \"UAT Test Role\"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"منال رول\",\n            \"nameEn\": \"Role Manal test\"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"اختبار دور \",\n            \"nameEn\": \"Test Role UAT\"\n        },\n        {\n            \"code\": \"R0019\",\n            \"nameAr\": \"المهن البلدية\",\n            \"nameEn\": \"المهن البلدية\"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"المهن الرياضية\",\n            \"nameEn\": \"Sports Professions\"\n        },\n        {\n            \"code\": null,\n            \"nameAr\": \"التدريب المعتمد\",\n            \"nameEn\": \"certified Training\"\n        },\n        {\n            \"code\": \"R0016\",\n            \"nameAr\": \"الاستشارات الإدارية\",\n            \"nameEn\": \"Management consulting\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "List Categories",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rolesCode\": \"R003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Host}}/{{BasePath}}/categories"
+			},
+			"response": [
+				{
+					"name": "List Categories",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rolesCode\": \"R003\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Host}}/{{BasePath}}/categories"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "22efaaa4-9b44-48f8-af62-cd49b40d8c81"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68a31112000e49c0"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,90;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 11:40:03 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"result\": [\n        {\n            \"id\": 96,\n            \"nameAr\": \"خدمة اجتماعية\",\n            \"nameEn\": \"Social service\",\n            \"categoryCode\": \"C015\"\n        },\n        {\n            \"id\": 97,\n            \"nameAr\": \"الإعلام\",\n            \"nameEn\": \"Media\",\n            \"categoryCode\": \"C014\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "List Specialties",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoriesCode\": \"C014\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{Host}}/{{BasePath}}/specialities"
+			},
+			"response": [
+				{
+					"name": "List Specialties",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoriesCode\": \"C014\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{Host}}/{{BasePath}}/specialities"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "529449ec-5266-4830-ab50-8bb7e4521b0c"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "757dc76c68a3111a000e4c60"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,89;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 18 Aug 2025 11:40:10 GMT"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"result\": [\n        {\n            \"specialityCode\": \"AS407\",\n            \"nameAr\": \"مساعد محرر\",\n            \"nameEn\": \"Assistant Editor\"\n        },\n        {\n            \"specialityCode\": \"AS408\",\n            \"nameAr\": \"قائد فريق موسيقي\",\n            \"nameEn\": \"Musical Team Leader\"\n        },\n        {\n            \"specialityCode\": \"AS439\",\n            \"nameAr\": \"اختصاصي ديكور أفلام / سينما تلفزيون\",\n            \"nameEn\": \"Film / TV Cinema Decorator\"\n        },\n        {\n            \"specialityCode\": \"AS420\",\n            \"nameAr\": \"فني إلكتروني / أجهزة بث وإرسال تلفزيوني\",\n            \"nameEn\": \"Electronic Technician / Broadcasting Equipment and Television Broadcasting\"\n        },\n        {\n            \"specialityCode\": \"AS417\",\n            \"nameAr\": \"فني مونتاج\",\n            \"nameEn\": \"Montage Technician\"\n        },\n        {\n            \"specialityCode\": \"AS398\",\n            \"nameAr\": \"صحافي\",\n            \"nameEn\": \"Journalist\"\n        },\n        {\n            \"specialityCode\": \"AS401\",\n            \"nameAr\": \"محرر صور\",\n            \"nameEn\": \"Photographer Editor\"\n        },\n        {\n            \"specialityCode\": \"AS430\",\n            \"nameAr\": \"مقدم برامج\",\n            \"nameEn\": \"Presenter\"\n        },\n        {\n            \"specialityCode\": \"AS424\",\n            \"nameAr\": \"مهندس إلكتروني / بث وإرسال\",\n            \"nameEn\": \"Electronic Engineer/Broadcast and Transmission\"\n        },\n        {\n            \"specialityCode\": \"AS433\",\n            \"nameAr\": \"فني تصوير فيديو\",\n            \"nameEn\": \"Videography Technician\"\n        },\n        {\n            \"specialityCode\": \"AS422\",\n            \"nameAr\": \"فني تشغيل / أجهزة إرسال تلفزيوني\",\n            \"nameEn\": \"TV Operator/Transmitter Technician\"\n        },\n        {\n            \"specialityCode\": \"AS421\",\n            \"nameAr\": \"فني إلكتروني / أجهزة بث وإرسال إذاعي\",\n            \"nameEn\": \"Electronic Technician / Broadcasting and Broadcasting Equipment\"\n        },\n        {\n            \"specialityCode\": \"AS428\",\n            \"nameAr\": \"مذيع\",\n            \"nameEn\": \"Announcer\"\n        },\n        {\n            \"specialityCode\": \"AS414\",\n            \"nameAr\": \"منسق برامج/ إذاعة وتلفزيون\",\n            \"nameEn\": \"Program/Radio and TV Coordinator\"\n        },\n        {\n            \"specialityCode\": \"AS432\",\n            \"nameAr\": \"فني تسجيل / صوت\",\n            \"nameEn\": \"Recording/Voice Technician\"\n        },\n        {\n            \"specialityCode\": \"AS437\",\n            \"nameAr\": \"ممثل\",\n            \"nameEn\": \"Actor\"\n        },\n        {\n            \"specialityCode\": \"AS418\",\n            \"nameAr\": \"فني مؤثرات صوتية\",\n            \"nameEn\": \"Sound Effects Technician\"\n        },\n        {\n            \"specialityCode\": \"AS402\",\n            \"nameAr\": \"مخرج ابداعي\",\n            \"nameEn\": \"Creative Director\"\n        },\n        {\n            \"specialityCode\": \"AS429\",\n            \"nameAr\": \"معلق رياضي\",\n            \"nameEn\": \"Sports Commentator\"\n        },\n        {\n            \"specialityCode\": \"AS410\",\n            \"nameAr\": \"ملحن اغاني\",\n            \"nameEn\": \"Song Composer\"\n        },\n        {\n            \"specialityCode\": \"AS399\",\n            \"nameAr\": \"محلل اخبار\",\n            \"nameEn\": \"News Analyst\"\n        },\n        {\n            \"specialityCode\": \"AS444\",\n            \"nameAr\": \"اختصاصي تصوير سينمائي\",\n            \"nameEn\": \"Cinematography Specialist\"\n        },\n        {\n            \"specialityCode\": \"AS416\",\n            \"nameAr\": \"فني دبلجة\",\n            \"nameEn\": \"Dubbing Technician\"\n        },\n        {\n            \"specialityCode\": \"AS435\",\n            \"nameAr\": \"فني تصوير سينمائي\",\n            \"nameEn\": \"Cinematography Technician\"\n        },\n        {\n            \"specialityCode\": \"AS425\",\n            \"nameAr\": \"مهندس إلكتروني / إذاعة وتلفزيون\",\n            \"nameEn\": \"Electronic / Radio and Television Engineer\"\n        },\n        {\n            \"specialityCode\": \"AS409\",\n            \"nameAr\": \"موزع موسيقي\",\n            \"nameEn\": \"Music Composer\"\n        },\n        {\n            \"specialityCode\": \"AS413\",\n            \"nameAr\": \"معد برامج / إذاعة وتلفزيون\",\n            \"nameEn\": \"Producer of Programs / Radio and Television\"\n        },\n        {\n            \"specialityCode\": \"AS406\",\n            \"nameAr\": \"مساعد منتج\",\n            \"nameEn\": \"Product Assistant\"\n        },\n        {\n            \"specialityCode\": \"AS449\",\n            \"nameAr\": \"كاتب\",\n            \"nameEn\": \"Writer\"\n        },\n        {\n            \"specialityCode\": \"AS446\",\n            \"nameAr\": \"مخرج سينمائي\",\n            \"nameEn\": \"Cinematic Director\"\n        },\n        {\n            \"specialityCode\": \"AS405\",\n            \"nameAr\": \"محلل تلفزيوني وإذاعي\",\n            \"nameEn\": \"TV and Radio Analyst\"\n        },\n        {\n            \"specialityCode\": \"AS447\",\n            \"nameAr\": \"مخرج تلفزيوني\",\n            \"nameEn\": \"TV Director\"\n        },\n        {\n            \"specialityCode\": \"AS412\",\n            \"nameAr\": \"رسام صور/ أفلام متحركة\",\n            \"nameEn\": \"Photographer/Animator\"\n        },\n        {\n            \"specialityCode\": \"AS434\",\n            \"nameAr\": \"فني تصوير تلفزيوني\",\n            \"nameEn\": \"Television Photography Technician\"\n        },\n        {\n            \"specialityCode\": \"AS438\",\n            \"nameAr\": \"اختصاصي مؤثرات حركية\",\n            \"nameEn\": \"Kinetic Effects Specialist\"\n        },\n        {\n            \"specialityCode\": \"AS397\",\n            \"nameAr\": \"مساعد مخرج\",\n            \"nameEn\": \"Co-Director\"\n        },\n        {\n            \"specialityCode\": \"AS448\",\n            \"nameAr\": \"مخرج اذاعي\",\n            \"nameEn\": \"Radio Director\"\n        },\n        {\n            \"specialityCode\": \"AS445\",\n            \"nameAr\": \"مخرج أفلام رسوم متحركة\",\n            \"nameEn\": \"Animation Film Director\"\n        },\n        {\n            \"specialityCode\": \"AS441\",\n            \"nameAr\": \"اختصاصي إضاءة\",\n            \"nameEn\": \"Lighting Specialist\"\n        },\n        {\n            \"specialityCode\": \"AS436\",\n            \"nameAr\": \"مصور فوتوغرافي\",\n            \"nameEn\": \"Photographer\"\n        },\n        {\n            \"specialityCode\": \"AS443\",\n            \"nameAr\": \"اختصاصي تصوير تلفزيوني\",\n            \"nameEn\": \"Television Photography Specialist\"\n        },\n        {\n            \"specialityCode\": \"AS076\",\n            \"nameAr\": \"التسويق والترويج والدعاية والاعلان\",\n            \"nameEn\": \"Marketing - Promotion and Advertising\"\n        },\n        {\n            \"specialityCode\": \"AS431\",\n            \"nameAr\": \"فني تسجيل / صورة\",\n            \"nameEn\": \"Recording/Photographer Technician\"\n        },\n        {\n            \"specialityCode\": \"AS404\",\n            \"nameAr\": \"مهندس محتوى\",\n            \"nameEn\": \"Content Engineer\"\n        },\n        {\n            \"specialityCode\": \"AS442\",\n            \"nameAr\": \"اختصاصي صوت\",\n            \"nameEn\": \"Audio Specialist\"\n        },\n        {\n            \"specialityCode\": \"AS400\",\n            \"nameAr\": \"محرر افلام\",\n            \"nameEn\": \"Movie Editor\"\n        },\n        {\n            \"specialityCode\": \"AS440\",\n            \"nameAr\": \"اختصاصي مؤثرات صوتية\",\n            \"nameEn\": \"Sound Effects Specialist\"\n        },\n        {\n            \"specialityCode\": \"AS419\",\n            \"nameAr\": \"فني إلكتروني / أجهزة راديو وتلفزيون\",\n            \"nameEn\": \"Electronic / Radio and Television Technician\"\n        },\n        {\n            \"specialityCode\": \"AS396\",\n            \"nameAr\": \"محرر صحفي\",\n            \"nameEn\": \"News Editor\"\n        },\n        {\n            \"specialityCode\": \"AS426\",\n            \"nameAr\": \"مدير انتاج سينمائي\",\n            \"nameEn\": \"Film Production Manager\"\n        },\n        {\n            \"specialityCode\": \"AS427\",\n            \"nameAr\": \"مدير انتاج تلفزيوني\",\n            \"nameEn\": \"TV Production Manager\"\n        },\n        {\n            \"specialityCode\": \"AS423\",\n            \"nameAr\": \"فني تشغيل / أجهزة بث اذاعي\",\n            \"nameEn\": \"Operational/Broadcasting Equipment Technician\"\n        },\n        {\n            \"specialityCode\": \"AS403\",\n            \"nameAr\": \"مدير محتوى\",\n            \"nameEn\": \"Content Manager\"\n        },\n        {\n            \"specialityCode\": \"AS395\",\n            \"nameAr\": \"مدون إعلامي في مواقع التواصل الإجتماعي\",\n            \"nameEn\": \"Social Media Blogger\"\n        },\n        {\n            \"specialityCode\": \"AS415\",\n            \"nameAr\": \"فني تحميض افلام\",\n            \"nameEn\": \"Film Development Technician\"\n        },\n        {\n            \"specialityCode\": \"AS411\",\n            \"nameAr\": \"مؤلف موسيقي\",\n            \"nameEn\": \"Composer\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{access-token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Host",
+			"value": "https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit"
+		},
+		{
+			"key": "BasePath",
+			"value": "/freelance-validation/v1"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		},
+		{
+			"key": "ClientID",
+			"value": ""
+		},
+		{
+			"key": "ClientSecret",
+			"value": ""
+		}
+	]
+}

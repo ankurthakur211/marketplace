@@ -20395,10 +20395,11 @@ body.context--BusinessDomains .apicMainContent {
     width: 1px;
 }
 
-    .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
-        width: 434px !important;
+.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons {
+    width: 434px !important;
 }
-.modal-application-create-form button.btn-danger{
+
+.modal-application-create-form button.btn-danger {
     height: 40px;
     text-align: center;
     padding: 0;
@@ -20406,20 +20407,24 @@ body.context--BusinessDomains .apicMainContent {
     font-size: 18px;
     border-radius: 8px;
 }
-.modal-application-create-form button.btn-info{
+
+.modal-application-create-form button.btn-info {
     margin: 0 auto !important;
     width: 200px !important;
     display: flex !important;
     padding: 0 !important;
-     height: 40px !important;
-}
-.modal-application-create-form button.btn-info:hover{
-color: #fff !important;
-}
-.modal-application-create-form input.form-text{
     height: 40px !important;
 }
-button.use-ajax.button.button--primary.js-form-submit.form-submit.btn-success.btn.icon-before{
+
+.modal-application-create-form button.btn-info:hover {
+    color: #fff !important;
+}
+
+.modal-application-create-form input.form-text {
+    height: 40px !important;
+}
+
+button.use-ajax.button.button--primary.js-form-submit.form-submit.btn-success.btn.icon-before {
     text-align: center;
     display: flex;
     padding: 0;
@@ -25315,13 +25320,13 @@ button#ccs-\:rl\:-tab-1 {
     margin-top: 15px;
 }
 
-.context--search-api .field--item{
+.context--search-api .field--item {
     margin-bottom: 30px !important;
 }
 
-.context--search-api .field--name-api-swagger{
+/* .context--search-api .field--name-api-swagger {
     display: none;
-}
+} */
 
 /* Janet Fix some Designs in Search Page */
 
@@ -25355,3 +25360,18 @@ button#ccs-\:rl\:-tab-1 {
 }
 
 /* Janet Motor Insurance Page add the new Sections */
+/*addition to Freelancer-Registration images*/
+.Freelancer-Registration-usecase {
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Freelancer-Registration-usecase.jpg") !important;
+}
+
+.Freelancer-Registration-description {
+    background-image: url('https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Freelancer-Registration-description.png') !important;
+}
+
+li.strong-text-product strong {
+    color: #2a2a2a;
+    font-weight: bold;
+}
+
+/*addition to Freelancer-Registration images*/
