@@ -1540,7 +1540,7 @@ if (window.location.href.includes("sandbox/myorg")) {
 
 document.addEventListener("DOMContentLoaded", function() {
     var openSearchButton = document.querySelector(".opensearch");
-
+if(openSearchButton){
     openSearchButton.addEventListener("click", function() {
         var searchContainer = document.querySelector(
             "section#block-marketplace-latest-exposedformsearch-apipage-1"
@@ -1560,7 +1560,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             console.log("Search container not found");
         }
-    });
+    });}
 
     var openSearchButton2 = document.querySelector(".opensearch2");
     if (openSearchButton2) {
