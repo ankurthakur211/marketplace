@@ -24812,7 +24812,7 @@ button#ccs-\:rl\:-tab-1 {
     font-size: 21px;
     font-weight: 200;
     color: #fff;
-    text-align: justify;
+    text-align: left;
     width: 50%;
     margin-left: 35px;
 }
@@ -25430,7 +25430,7 @@ li.strong-text-product strong {
     font-weight: 200;
     color: #fff;
     text-align: justify;
-    width: 75% !important;
+    width: 65% !important;
     margin-left: 35px;
 }
 
@@ -25441,7 +25441,13 @@ li.strong-text-product strong {
     margin-top: -3%;
     position: unset;
     margin-top: 20%;
-    max-width: 75%;
+    max-width: 100%;
 }
 
+@media (max-width: 1200px) {
+    .product-doc-content .single-product-terminologies-product-title {
+        font-size: 35px;
+        line-height: 35px;
+    }
+}
 /* Janet Mutual Fund Page add the new Sections */
