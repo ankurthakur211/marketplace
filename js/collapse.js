@@ -315,20 +315,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-    if (feedback.includes('subscription_noplan?productId')) {
-
-        const link = document.querySelector("a.add-app");
-
-        if (link) {
-          link.addEventListener("click", function(e) {
-            e.preventDefault(); // stop modal behavior
-            window.location.href = link.getAttribute("href"); // redirect to href
-          });
-        }
-
-    }
-
-
     if (feedback.includes('user/register')) {
         var apicSignupForm = document.querySelector('.apic-user-form');
         apicSignupForm.classList.add('custom-signup');
@@ -423,7 +409,19 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
 
-
+        var fullUrl = window.location.href;
+        if (fullUrl.includes('subscription_noplan?productId')) {
+    
+            const link = document.querySelector("a.add-app");
+    
+            if (link) {
+              link.addEventListener("click", function(e) {
+                e.preventDefault(); // stop modal behavior
+                window.location.href = link.getAttribute("href"); // redirect to href
+              });
+            }
+    
+        }
 
 
 
