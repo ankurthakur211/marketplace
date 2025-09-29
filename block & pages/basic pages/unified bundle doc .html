@@ -1,0 +1,1834 @@
+<div id="search-term-result">
+    <p>The Unified Insurance API provides a streamlined,bundled
+        solution for customers seeking to purchase home, cyber, and travel insurance simultaneously.
+</div>
+<div class="basic-page">
+    <div class="product-details-document">
+        <div class="api-doc-background">
+            <p class="api-doc-background-text ">Unified Bundled API Documentation</p>
+        </div>
+        <div class="moterinsurance-sec">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="leftside-sec">
+                        <p class="fob-welcome-title" id="section-1">Unified Bundled APIs</p>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">he Unified Insurance API provides a streamlined, bundled
+                            solution for customers seeking to purchase home, cyber, and travel insurance simultaneously.
+                        </p>
+
+
+                    </div>
+                    <div class="rightside-sec">
+                        <p class="API-image"></p>
+                    </div>
+                </div>
+                <div class="d-flex btn-box">
+                    <a class="primary-btn" id="downloadLink"
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/MPSandboxEStatementsModernAPIs.postman_collection.json"
+                        download="">Download Postman Collection</a>
+                    <a class="primary-btn"
+                        href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/unifiedbundle(cyber_travle_home)Datafields.xlsx"
+                        download="">Download Sample Data</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="miw-section">
+            <div class="container">
+                <h1 class="fob-welcome-title">Unified Bundled Workflow</h1>
+                <p class="motoinsu-image"></p>
+                <a class="fob-product-title-click" target="_blank"
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/ARG-xxxUnifiedBundlingInsuranceFlowDiagramv0.1.pdf"
+                    rel="noopener">
+                    Click here
+                </a>
+            </div>
+        </div>
+
+        <div class="APIs-section">
+            <div class="container">
+                <p class="main-heading">
+                    APIs
+                </p>
+
+                <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                    <!-- API 1 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-2">Rate</h1>
+                        <p class="fob-welcome-text">Endpoint: POST : /v1/art/unified-insurance/rate</p>
+                        <p class="fob-welcome-text">
+                            <a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/860/api/857#/MPEStatements_100/operation/%2Fe-statements/post">
+                                Swagger
+                                Link
+                            </a>
+                        </p>
+                        <p class="fob-welcome-text">This API is used to create rate.
+                        </p>
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                   <code class="sample-code">
+{
+    "unifiedReference": "unified-test", 
+    "travel": {
+        "BusinessChannel": "602402",
+        "GroupType": "Family",
+        "NumberOfMembers": 2,
+        "ReferenceId": 21011,
+        "SourceSystem": "ARB Mubasher", 
+        "Lang": "AR",
+        "ReferenceCode": "ABCD1234",
+        "IsBundle": false,
+        "BundleId": "1",
+        "BundlePercentage": "10",
+        "Products": [
+            {
+                "ProductID": 610621,
+                "PackageType": "Kingdom of Saudi Arabia",
+                "TripDuration": 2,
+                "TripType": "611000",
+                "StartDate": "2025-02-20",
+                "EndDate": "2025-02-22",
+                "Travellers": [
+                    {
+                        "NationalId": "1111111111",
+                        "Age": 39,
+                        "DateOfBirth": "1985-07-13",
+                        "IsPolicyHolder": true,
+                        "Name": "Test",
+                        "Email": "aa@gg.com",
+                        "PassportNo": "",
+                        "MobileNo": "502902555",
+                        "IdExpiry": "",
+                        "Relationship": "Self",
+                        "IsVaccinated": true,
+                        "NationalityCode": ""
+                    },
+                    {
+                        "NationalId": "1111111112",
+                        "Age": 12,
+                        "DateOfBirth": "2012-12-13",
+                        "IsPolicyHolder": false,
+                        "Name": "TestChild1",
+                        "Email": "aa@gg.com",
+                        "PassportNo": "",
+                        "MobileNo": "502902555",
+                        "IdExpiry": "",
+                        "Relationship": "Self",
+                        "IsVaccinated": true,
+                        "NationalityCode": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "cyber": {
+        "nationalId": "1000890499",
+        "mobileNumber": "966566052931",
+        "dateOfBirth": "08-1971",
+        "email": "eslam.fecu@gmail.com",
+        "groupType": "Individual",
+        "policyStartDate": "2025-01-01",
+        "depNationalId": "12121",
+        "Questions": [
+            {
+                "id": 1001,
+                "value": "Owner"
+            },
+            {
+                "id": 1002,
+                "value": "No"
+            },
+            {
+                "id": 1003,
+                "value": "Yes"
+            },
+            {
+                "id": 1004,
+                "value": "Yes"
+            },
+            {
+                "id": 1005,
+                "value": "Yes"
+            },
+            {
+                "id": 4001,
+                "value": "Yes"
+            },
+            {
+                "id": 4002,
+                "value": "3"
+            },
+            {
+                "id": 1006,
+                "value": "Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent"
+            },
+            {
+                "id": 4003,
+                "value": "2323"
+            }
+        ]
+    },
+    "home": {
+        "nationalId": "2406132841",
+        "mobileNumber": "510663201",
+        "previousRejectedProposals": "0",
+        "previousClaims": "0",
+        "policyStartDate": "05-09-2025",
+        "birthDate": "25-05-1989",
+        "email": "eslam.fecu@gmail.com",
+        "maritalStatus": "single"
+    }
+}
+                  </code>
+                </pre>
+                            </div>
+                            <div class="url-box">
+
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+
+                                <pre id="generatedCurl">
+                  <code id="rate-curl" style=" display: block;">
+curl --location --globoff '{{public_url}}/apioceuat.alrajhitakaful.com/v1/art/unified-insurance/rate' \
+--header 'Accept: application/json' \
+--header 'X-Request-Id: d9f46efc-b5bc-46c8-a584-47cfa39cfb98' \
+--data-raw '{
+    "unifiedReference": "unified-test", 
+    "travel": {
+        "BusinessChannel": "602402",
+        "GroupType": "Family",
+        "NumberOfMembers": 2,
+        "ReferenceId": 21011,
+        "SourceSystem": "ARB Mubasher", 
+        "Lang": "AR",
+        "ReferenceCode": "ABCD1234",
+        "IsBundle": false,
+        "BundleId": "1",
+        "BundlePercentage": "10",
+        "Products": [
+            {
+                "ProductID": 610621,
+                "PackageType": "Kingdom of Saudi Arabia",
+                "TripDuration": 2,
+                "TripType": "611000",
+                "StartDate": "2025-02-20",
+                "EndDate": "2025-02-22",
+                "Travellers": [
+                    {
+                        "NationalId": "1111111111",
+                        "Age": 39,
+                        "DateOfBirth": "1985-07-13",
+                        "IsPolicyHolder": true,
+                        "Name": "Test",
+                        "Email": "aa@gg.com",
+                        "PassportNo": "",
+                        "MobileNo": "502902555",
+                        "IdExpiry": "",
+                        "Relationship": "Self",
+                        "IsVaccinated": true,
+                        "NationalityCode": ""
+                    },
+                    {
+                        "NationalId": "1111111112",
+                        "Age": 12,
+                        "DateOfBirth": "2012-12-13",
+                        "IsPolicyHolder": false,
+                        "Name": "TestChild1",
+                        "Email": "aa@gg.com",
+                        "PassportNo": "",
+                        "MobileNo": "502902555",
+                        "IdExpiry": "",
+                        "Relationship": "Self",
+                        "IsVaccinated": true,
+                        "NationalityCode": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "cyber": {
+        "nationalId": "1000890499",
+        "mobileNumber": "966566052931",
+        "dateOfBirth": "08-1971",
+        "email": "eslam.fecu@gmail.com",
+        "groupType": "Individual",
+        "policyStartDate": "2025-01-01",
+        "depNationalId": "12121",
+        "Questions": [
+            {
+                "id": 1001,
+                "value": "Owner"
+            },
+            {
+                "id": 1002,
+                "value": "No"
+            },
+            {
+                "id": 1003,
+                "value": "Yes"
+            },
+            {
+                "id": 1004,
+                "value": "Yes"
+            },
+            {
+                "id": 1005,
+                "value": "Yes"
+            },
+            {
+                "id": 4001,
+                "value": "Yes"
+            },
+            {
+                "id": 4002,
+                "value": "3"
+            },
+            {
+                "id": 1006,
+                "value": "Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent"
+            },
+            {
+                "id": 4003,
+                "value": "2323"
+            }
+        ]
+    },
+    "home": {
+        "nationalId": "2406132841",
+        "mobileNumber": "510663201",
+        "previousRejectedProposals": "0",
+        "previousClaims": "0",
+        "policyStartDate": "05-09-2025",
+        "birthDate": "25-05-1989",
+        "email": "eslam.fecu@gmail.com",
+        "maritalStatus": "single"
+    }
+}'
+                  </code>
+                </pre>
+                            </div>
+                        </div>
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response
+                                    </p>
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate')">200</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate2')">400</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate3')">401</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate4')">403</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate5')">404</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate6')">405</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate7')">406</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate8')">429</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate9')">500</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-rate10')">503</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                                        <code class="text" style=" display: block; " id="response-rate">
+{
+    "unifiedReference": "unified-test",
+    "travel": {
+        "BundleId": "",
+        "BundlePercentage": "0",
+        "BusinessChannel": "602402",
+        "Errors": null,
+        "GroupType": "Family",
+        "IsBundle": false,
+        "NumberOfMembers": "2",
+        "Products": [
+            {
+                "Benefit": [
+                    "إلغاء و تقليص الرحلة",
+                    "تأخير الرحلة",
+                    "تأخير الحقائب",
+                    "فوات رحلة المغادرة / المواصلة",
+                    "الممتلكات الشخصية (المقتنيات المفردة أو الزوجية أو المجموعة)",
+                    "فقدان مستندات السفر",
+                    "الأموال الشخصية",
+                    "فوات الحدث / المناسبة",
+                    "المسؤولية الشخصية",
+                    "المساعدة القانونية",
+                    "سند كفالة للإفراج",
+                    "السرقة",
+                    "الاحتيال بواسطة بطاقة الائتمان",
+                    "الوفاة الناتجة عن حادث (وسائل النقل العام)",
+                    "الوفاة الناتجة عن حادث",
+                    "العجز الجزئي الدائم",
+                    "العجز الكلي الدائم",
+                    "زيارة مؤازرة",
+                    "مصاريف طب الأسنان في حالات الطوارئ",
+                    "الإخلاء الطبي في الحالات الطارئة",
+                    "إعادة رفات الموتى إلى البلد الأم"
+                ],
+                "CommissionAmount": 0,
+                "CommissionRate": 0,
+                "Coverages": [
+                    {
+                        "CoverPremium": 15,
+                        "CoverageDescription": "Terrorism and Hijack",
+                        "CoverageDescription_AR": "الإرهاب والاختطاف",
+                        "CoverageID": "611325",
+                        "CoverageName": "Terrorism and Hijack",
+                        "CoverageName_AR": "الإرهاب والاختطاف",
+                        "IsSelected": "0",
+                        "TravellerSerial": null
+                    },
+                    {
+                        "CoverPremium": 25,
+                        "CoverageDescription": "Excess Waiver",
+                        "CoverageDescription_AR": "إلغاء التحمل",
+                        "CoverageID": "610693",
+                        "CoverageName": "Excess Waiver",
+                        "CoverageName_AR": "إلغاء التحمل",
+                        "IsSelected": "0",
+                        "TravellerSerial": null
+                    }
+                ],
+                "EndDate": "2025-02-22",
+                "NetPremium": 75,
+                "OptionalDiscountAmount": 0,
+                "PackageType": "Kingdom of Saudi Arabia",
+                "PlanType": "Domestic",
+                "ProductID": "610621",
+                "ProductType": "DOMESTIC",
+                "RateTotalPremium": null,
+                "StartDate": "2025-02-20",
+                "TotalPremium": 86.25,
+                "TotalPremiumWithAddOn": 75,
+                "Travellers": [
+                    {
+                        "Age": 39,
+                        "AgeLoading": 1,
+                        "CommissionAmount": 0,
+                        "CommissionRate": 0,
+                        "DateOfBirth": "1985-07-13",
+                        "Email": "aa@gg.com",
+                        "GrandTotalPremium": 57.5,
+                        "GroupDiscount": 0,
+                        "IdExpiry": "",
+                        "IsPolicyHolder": true,
+                        "IsVaccinated": true,
+                        "MobileNo": "502902555",
+                        "Name": "Test",
+                        "NationalId": "1111111111",
+                        "NationalityCode": "",
+                        "NetPremium": 50,
+                        "OptionalDiscount": 0,
+                        "OptionalDiscountAmount": 0,
+                        "PassportNo": "",
+                        "RateTotalPremium": null,
+                        "Relationship": "Self",
+                        "TotalPremium": 50,
+                        "VATPremium": 7.5
+                    },
+                    {
+                        "Age": 12,
+                        "AgeLoading": 0.5,
+                        "CommissionAmount": 0,
+                        "CommissionRate": 0,
+                        "DateOfBirth": "2012-12-13",
+                        "Email": "aa@gg.com",
+                        "GrandTotalPremium": 28.75,
+                        "GroupDiscount": 0,
+                        "IdExpiry": "",
+                        "IsPolicyHolder": false,
+                        "IsVaccinated": true,
+                        "MobileNo": "502902555",
+                        "Name": "TestChild1",
+                        "NationalId": "1111111112",
+                        "NationalityCode": "",
+                        "NetPremium": 25,
+                        "OptionalDiscount": 0,
+                        "OptionalDiscountAmount": 0,
+                        "PassportNo": "",
+                        "RateTotalPremium": null,
+                        "Relationship": "Self",
+                        "TotalPremium": 25,
+                        "VATPremium": 3.75
+                    }
+                ],
+                "TripDuration": "2",
+                "TripType": "611000",
+                "VATPremium": 11.25
+            }
+        ],
+        "RateCode": "TR250824-502822183498",
+        "ReferenceCode": "ABCD1234",
+        "ReferenceId": "21011",
+        "SourceSystem": "ARB Mubasher",
+        "StatusCode": 2
+    },
+    "cyber": {
+        "userInfo": {
+            "dateOfBirthG": "21-08-1971",
+            "englishFirstName": "AZZAH",
+            "englishLastName": "ALZAHRANI",
+            "englishSecondName": "SAEED",
+            "englishThirdName": "M",
+            "familyName": "الزهراني",
+            "fatherName": "سعيد",
+            "firstName": "عزه",
+            "gender": "F",
+            "grandFatherName": "محمد سرور",
+            "idIssuePlace": "موقع بوابة الوزارة الألكترونية",
+            "logId": 0,
+            "socialStatusDesc": "Married / متزوج-ة",
+            "maritalStatusDescAr": "متزوجه",
+            "subtribeName": "",
+            "maritalStatus": "married",
+            "nationalId": "1000890499",
+            "mobileNumber": "566052931",
+            "dateOfBirth": "08-1971",
+            "email": "eslam.fecu@gmail.com",
+            "groupType": "Individual",
+            "policyStartDate": "2025-01-01",
+            "Questions": [
+                {
+                    "id": 1001,
+                    "value": "Owner"
+                },
+                {
+                    "id": 1002,
+                    "value": "No"
+                },
+                {
+                    "id": 1003,
+                    "value": "Yes"
+                },
+                {
+                    "id": 1004,
+                    "value": "Yes"
+                },
+                {
+                    "id": 1005,
+                    "value": "Yes"
+                },
+                {
+                    "id": 4001,
+                    "value": "Yes"
+                },
+                {
+                    "id": 4002,
+                    "value": "3"
+                },
+                {
+                    "id": 1006,
+                    "value": "Swimming Pool, Gymnasium, Covered Garage, Cinema, Additional Sitting Room, Tent"
+                },
+                {
+                    "id": 4003,
+                    "value": "2323"
+                }
+            ],
+            "schemeCode": "",
+            "policyEndDate": "2025-12-31T00:00:00.000Z",
+            "agentCode": null,
+            "Addresses": [
+                {
+                    "BuildingNumber": "4182",
+                    "Street": "Ibrahim Al Muqaddisi",
+                    "DistrictID": null,
+                    "District": "Al Ajwad Dist.",
+                    "City": "JEDDAH",
+                    "PostCode": "23466",
+                    "AdditionalNumber": "7406",
+                    "City_L2": "جدة",
+                    "Street_L2": "ابراهيم المقدسي",
+                    "District_L2": "حي الاجواد",
+                    "ObjLatLng": "39.26480383 21.60028607",
+                    "ShortAddress": "JDJA4182",
+                    "IsPrimaryAddress": "true",
+                    "PKAddressID": "2346641827406",
+                    "CityID": "18",
+                    "RegionID": "2",
+                    "Address1": "4182 Ibrahim Al Muqaddisi - Al Ajwad Dist.",
+                    "Address2": "JEDDAH 23466 - 7406",
+                    "RegionName": "Mecca Al Mokarama",
+                    "RegionName_L2": "مكة المكرمة",
+                    "Latitude": "21.60028607",
+                    "Longitude": "39.26480383",
+                    "CityId": "18",
+                    "RegionId": "2"
+                }
+            ]
+        },
+        "referenceId": "U2FsdGVkX18F0TWzfZaJpifCFMBc/wp1frPkiHqc+UY=",
+        "referenceNumber": 167910,
+        "rates": [
+            {
+                "Id": "2d3161c9-d8e1-48b3-9c1b-1bba0c4e3973",
+                "BasePremium": 192,
+                "ClaimLoadingAmount": 0,
+                "CommissionAmount": 0,
+                "CommissionRate": 0,
+                "DiscountAmount": 0,
+                "FinalDiscount": 0,
+                "FinalDiscountString": {},
+                "GrandTotalPremium": 220.8,
+                "NetPremium": 192,
+                "PlanID": 611445,
+                "PlanType": "Standard",
+                "ProductID": 610660,
+                "TotalPremium": 192,
+                "Type": "Family",
+                "VATAmount": 28.8,
+                "VATRate": 0.15,
+                "NetChange": 0,
+                "PreadjustedTermPremium": 0,
+                "OverridePremium": 0,
+                "MinimumPremium": 0,
+                "OverrideNetChange": 0,
+                "TransactionPremium": 0,
+                "PriorPremium": 0,
+                "PriorTermPremium": 0,
+                "PreadjustedNetChange": 0,
+                "Premium": 0,
+                "TermPremium": 0,
+                "ProratedMinimumPremium": 0,
+                "AnnualPremium": 0,
+                "ratedManualPremium": 0
+            },
+            {
+                "Id": "349bb567-4e92-4477-997a-1a818eefdf07",
+                "BasePremium": 292,
+                "ClaimLoadingAmount": 0,
+                "CommissionAmount": 0,
+                "CommissionRate": 0,
+                "DiscountAmount": 0,
+                "FinalDiscount": 0,
+                "FinalDiscountString": {},
+                "GrandTotalPremium": 335.8,
+                "NetPremium": 292,
+                "PlanID": 611444,
+                "PlanType": "Advanced",
+                "ProductID": 610660,
+                "TotalPremium": 292,
+                "Type": "Family",
+                "VATAmount": 43.8,
+                "VATRate": 0.15,
+                "NetChange": 0,
+                "PreadjustedTermPremium": 0,
+                "OverridePremium": 0,
+                "MinimumPremium": 0,
+                "OverrideNetChange": 0,
+                "TransactionPremium": 0,
+                "PriorPremium": 0,
+                "PriorTermPremium": 0,
+                "PreadjustedNetChange": 0,
+                "Premium": 0,
+                "TermPremium": 0,
+                "ProratedMinimumPremium": 0,
+                "AnnualPremium": 0,
+                "ratedManualPremium": 0
+            }
+        ]
+    },
+    "home": {
+        "meta": {
+            "status": 1,
+            "statusCode": 200
+        },
+        "data": {
+            "referenceId": "U2FsdGVkX1%2FfG8QdR0ffNjgLvk%2FrMcbNCbIMxxoYfcE%3D",
+            "OwnerNationalId": "2406132841",
+            "policyHolderData": {
+                "status": 1,
+                "EnglishFirstName": "SHAIK",
+                "EnglishSecondName": "IBRAHIM",
+                "EnglishThirdName": "",
+                "EnglishLastName": "ZUBEDI",
+                "birthDate": null,
+                "MaritalStatus": "married",
+                "Gender": "M",
+                "NationalityCode": 321,
+                "address": {
+                    "totalSearchResults": "1",
+                    "Addresses": [
+                        {
+                            "BuildingNumber": "3113",
+                            "Street": "مكي المأموني",
+                            "DistrictID": null,
+                            "District": "حي الوزارات",
+                            "City": "الرياض",
+                            "PostCode": "12626",
+                            "AdditionalNumber": "6339",
+                            "City_L2": "RIYADH",
+                            "Street_L2": "Makki Al Mamouni",
+                            "District_L2": "Al Wizarat Dist.",
+                            "ObjLatLng": "46.71047968 24.66778477",
+                            "ShortAddress": "RCWA3113",
+                            "IsPrimaryAddress": "true",
+                            "PKAddressID": "1262631136339",
+                            "CityID": "3",
+                            "RegionID": "1",
+                            "Address1": "3113 مكي المأموني - حي الوزارات",
+                            "Address2": "الرياض 12626 - 6339",
+                            "RegionName": "الرياض",
+                            "RegionName_L2": "Al Riyadh",
+                            "Latitude": "24.66778477",
+                            "Longitude": "46.71047968",
+                            "CityId": "3",
+                            "RegionId": "1"
+                        }
+                    ],
+                    "PostCode": null,
+                    "success": true,
+                    "result": null,
+                    "statusdescription": "SUCCESS",
+                    "fullexception": null
+                }
+            },
+            "policyStartDate": "05-09-2025",
+            "policyEndDate": "04-09-2026",
+            "plans": [
+                {
+                    "NoOfDomesticHelpers": "4",
+                    "PlanTypeId": "1",
+                    "PlanTypeName": "Diamond",
+                    "rate": {
+                        "BasePremium": "3000",
+                        "CommissionAmount": "0",
+                        "CommissionRate": "0",
+                        "DomesticHelperCount": "0",
+                        "FinalDiscount": "5",
+                        "FinalDiscountString": "SchemeDiscount",
+                        "Id": "1",
+                        "NetPremium": "2850",
+                        "OptionalPackBasePremium": "500",
+                        "OptionalPackNetPremium": "0",
+                        "OptionalPackTotalPremium": "0",
+                        "PlanType": "Diamond",
+                        "PromoDiscount": "0.05",
+                        "PromoDiscountAmount": "150",
+                        "TotalNetPremium": "2850",
+                        "TotalPremium": "3277.5",
+                        "VATAmount": "427.5",
+                        "VATRate": "0.15",
+                        "VATPercentage": "15%"
+                    },
+                    "Coverages": [
+                        {
+                            "Name": "Accidental Damage",
+                            "Value": "5,000,000"
+                        },
+                        {
+                            "Name": "Alternative Accommodation & Loss of Rent",
+                            "Value": "200,000"
+                        },
+                        {
+                            "Name": "Replacing Locks & Keys",
+                            "Value": "5,000"
+                        },
+                        {
+                            "Name": "Tracing a Leak",
+                            "Value": "5,000"
+                        },
+                        {
+                            "Name": "Emergency Access",
+                            "Value": "5,000"
+                        }
+                    ]
+                },
+                {
+                    "NoOfDomesticHelpers": "4",
+                    "PlanTypeId": "2",
+                    "PlanTypeName": "Platinum",
+                    "rate": {
+                        "BasePremium": "800",
+                        "CommissionAmount": "0",
+                        "CommissionRate": "0",
+                        "DomesticHelperCount": "0",
+                        "FinalDiscount": "5",
+                        "FinalDiscountString": "SchemeDiscount",
+                        "Id": "2",
+                        "NetPremium": "760",
+                        "OptionalPackBasePremium": "400",
+                        "OptionalPackNetPremium": "0",
+                        "OptionalPackTotalPremium": "0",
+                        "PlanType": "Platinum",
+                        "PromoDiscount": "0.05",
+                        "PromoDiscountAmount": "40",
+                        "TotalNetPremium": "760",
+                        "TotalPremium": "874",
+                        "VATAmount": "114",
+                        "VATRate": "0.15",
+                        "VATPercentage": "15%"
+                    },
+                    "Coverages": [
+                        {
+                            "Name": "Accidental Damage",
+                            "Value": "1,000,000"
+                        },
+                        {
+                            "Name": "Alternative Accommodation & Loss of Rent",
+                            "Value": "50,000"
+                        },
+                        {
+                            "Name": "Replacing Locks & Keys",
+                            "Value": "1,000"
+                        },
+                        {
+                            "Name": "Tracing a Leak",
+                            "Value": "1,000"
+                        },
+                        {
+                            "Name": "Emergency Access",
+                            "Value": "1,000"
+                        }
+                    ]
+                },
+                {
+                    "NoOfDomesticHelpers": "4",
+                    "PlanTypeId": "3",
+                    "PlanTypeName": "Gold",
+                    "rate": {
+                        "BasePremium": "450",
+                        "CommissionAmount": "0",
+                        "CommissionRate": "0",
+                        "DomesticHelperCount": "0",
+                        "FinalDiscount": "5",
+                        "FinalDiscountString": "SchemeDiscount",
+                        "Id": "3",
+                        "NetPremium": "427.5",
+                        "OptionalPackBasePremium": "200",
+                        "OptionalPackNetPremium": "0",
+                        "OptionalPackTotalPremium": "0",
+                        "PlanType": "Gold",
+                        "PromoDiscount": "0.05",
+                        "PromoDiscountAmount": "22.5",
+                        "TotalNetPremium": "427.5",
+                        "TotalPremium": "491.63",
+                        "VATAmount": "64.125",
+                        "VATRate": "0.15",
+                        "VATPercentage": "15%"
+                    },
+                    "Coverages": [
+                        {
+                            "Name": "Accidental Damage",
+                            "Value": "500,000"
+                        },
+                        {
+                            "Name": "Alternative Accommodation & Loss of Rent",
+                            "Value": "25,000"
+                        },
+                        {
+                            "Name": "Replacing Locks & Keys ",
+                            "Value": "Not Covered"
+                        },
+                        {
+                            "Name": "Tracing a Leak",
+                            "Value": "Not Covered"
+                        },
+                        {
+                            "Name": "Emergency Access",
+                            "Value": "500"
+                        }
+                    ]
+                },
+                {
+                    "NoOfDomesticHelpers": "0",
+                    "PlanTypeId": "4",
+                    "PlanTypeName": "Silver",
+                    "rate": {
+                        "BasePremium": "250",
+                        "CommissionAmount": "0",
+                        "CommissionRate": "0",
+                        "DomesticHelperCount": "0",
+                        "FinalDiscount": "5",
+                        "FinalDiscountString": "SchemeDiscount",
+                        "Id": "4",
+                        "NetPremium": "237.5",
+                        "OptionalPackBasePremium": "100",
+                        "OptionalPackNetPremium": "0",
+                        "OptionalPackTotalPremium": "0",
+                        "PlanType": "Silver",
+                        "PromoDiscount": "0.05",
+                        "PromoDiscountAmount": "12.5",
+                        "TotalNetPremium": "237.5",
+                        "TotalPremium": "273.13",
+                        "VATAmount": "35.625",
+                        "VATRate": "0.15",
+                        "VATPercentage": "15%"
+                    },
+                    "Coverages": [
+                        {
+                            "Name": "Accidental Damage",
+                            "Value": "250,000"
+                        },
+                        {
+                            "Name": "Alternative Accommodation & Loss of Rent",
+                            "Value": "12,500"
+                        },
+                        {
+                            "Name": "Replacing Locks & Keys",
+                            "Value": "Not Covered"
+                        },
+                        {
+                            "Name": "Tracing a Leak",
+                            "Value": "Not Covered"
+                        },
+                        {
+                            "Name": "Emergency Access",
+                            "Value": "250"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-rate2">
+    {
+        "Errors":
+        [
+            {
+                "Code": "ERROR.400.001",
+                "Message": "PSUId is mandatory.",
+                "Path": "request.body.PSUId",
+                "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-rate3">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-rate4">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-rate5">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-rate6">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-rate7">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-rate8">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-rate9">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+<code class="text" id="response-rate10" style=" display: none; ">
+{
+"Errors": [
+    {
+    "Code": "ERROR.503.001",
+    "Message": "Service Unavailable.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                                                    </code>
+                                        </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API 2 -->
+                    <div class="api-infosec">
+                        <h1 class="fob-welcome-title" id="section-3">Quote</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /v1/art/unified-insurance/quote</p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/860/api/857#/MPEStatements_100/operation/%2Fe-statements-request-id%2F{RequestId}/get">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">This API is used to create quote.</p>
+
+
+
+
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+{
+    "unifiedReference": "unified-test", 
+    "travel": {
+        "SourceSystem": "ARB Mubasher",
+        "ReferenceId": "ABCD1234",
+        "RateCode": "TR250825-501815458063",
+        "PlanType": "Domestic",
+        "TotalPremium": 86.25
+    },
+    "cyber": {
+        "referenceId": "U2FsdGVkX1+qBCGTOc+hOHJoH1XDMUUMpGRUX8B9pOc=",
+        "planId": "2d3161c9-d8e1-48b3-9c1b-1bba0c4e3973"
+    },
+    "home": {
+        "referenceId": "U2FsdGVkX1%2FZRhUh5YnhfN4TE2Bqj3qFFTdXoVxs1XI%3D",
+        "domesticHelpers": [
+            {
+                "nationalId": "2512023454",
+                "birthDate": "05-04-1974"
+            },
+            {
+                "nationalId": "1011151006",
+                "birthDate": "21-05-1981"
+            }
+        ],
+        "planTypeId": "1",
+        "addressAndBuildingDetails": {
+            "streetName": "sa",
+            "isLocationDifferentOfNationalAddress": "0",
+            "city": "AL RIYADH",
+            "district": "al riyadh",
+            "zipCode": "11111",
+            "latitude": {},
+            "longitude": {},
+            "buildingNumber": "1234",
+            "address": "1234 sa al riyadh AL RIYADH",
+            "buildingType": "townhouse",
+            "commonQuestionnaire": [
+                {
+                    "id": "1001",
+                    "value": "Owner"
+                },
+                {
+                    "id": "1002",
+                    "value": " No"
+                },
+                {
+                    "id": "1003",
+                    "value": "Yes"
+                },
+                {
+                    "id": "1004",
+                    "value": "Yes"
+                },
+                {
+                    "id": "1005",
+                    "value": " No"
+                },
+                {
+                    "id": "1006",
+                    "value": "Swimming Pool"
+                }
+            ],
+            "itemList": [
+                {
+                    "ItemId": "jewelry",
+                    "itemDescription": "necklace",
+                    "itemValue": "19000",
+                    "receiptPath": "http://arthowbsldn:8000/Shared Documents//20230807/ccabbda7_BpEeQpYZ1LmnSt9NqTqR-1691412239560.png"
+                },
+                {
+                    "ItemId": "electronics",
+                    "itemDescription": "laptop",
+                    "itemValue": "6000",
+                    "receiptPath": "http://arthowbsldn:8000/Shared Documents//20230807/ccabbda7_BpEeQpYZ1LmnSt9NqTqR-1691412239560.png"
+                }
+            ]
+        }
+    }
+}
+                    </code>
+                  </pre>
+                            </div>
+                            <div class="url-box">
+
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+
+                                <pre id="generatedCurl">                          <code id="quote-curl" style=" display: block;">
+curl --location --globoff '{{public_url}}/v1/art/unified-insurance/quote' \
+--header 'Accept: application/json' \
+--header 'X-Request-Id: 398b9b24-67af-4d7a-a3d2-f08f40d8676b' \
+--data '{
+    "unifiedReference": "unified-test", 
+    "travel": {
+        "SourceSystem": "ARB Mubasher",
+        "ReferenceId": "ABCD1234",
+        "RateCode": "TR250825-501815458063",
+        "PlanType": "Domestic",
+        "TotalPremium": 86.25
+    },
+    "cyber": {
+        "referenceId": "U2FsdGVkX1+qBCGTOc+hOHJoH1XDMUUMpGRUX8B9pOc=",
+        "planId": "2d3161c9-d8e1-48b3-9c1b-1bba0c4e3973"
+    },
+    "home": {
+        "referenceId": "U2FsdGVkX1%2FZRhUh5YnhfN4TE2Bqj3qFFTdXoVxs1XI%3D",
+        "domesticHelpers": [
+            {
+                "nationalId": "2512023454",
+                "birthDate": "05-04-1974"
+            },
+            {
+                "nationalId": "1011151006",
+                "birthDate": "21-05-1981"
+            }
+        ],
+        "planTypeId": "1",
+        "addressAndBuildingDetails": {
+            "streetName": "sa",
+            "isLocationDifferentOfNationalAddress": "0",
+            "city": "AL RIYADH",
+            "district": "al riyadh",
+            "zipCode": "11111",
+            "latitude": {},
+            "longitude": {},
+            "buildingNumber": "1234",
+            "address": "1234 sa al riyadh AL RIYADH",
+            "buildingType": "townhouse",
+            "commonQuestionnaire": [
+                {
+                    "id": "1001",
+                    "value": "Owner"
+                },
+                {
+                    "id": "1002",
+                    "value": " No"
+                },
+                {
+                    "id": "1003",
+                    "value": "Yes"
+                },
+                {
+                    "id": "1004",
+                    "value": "Yes"
+                },
+                {
+                    "id": "1005",
+                    "value": " No"
+                },
+                {
+                    "id": "1006",
+                    "value": "Swimming Pool"
+                }
+            ],
+            "itemList": [
+                {
+                    "ItemId": "jewelry",
+                    "itemDescription": "necklace",
+                    "itemValue": "19000",
+                    "receiptPath": "http://arthowbsldn:8000/Shared Documents//20230807/ccabbda7_BpEeQpYZ1LmnSt9NqTqR-1691412239560.png"
+                },
+                {
+                    "ItemId": "electronics",
+                    "itemDescription": "laptop",
+                    "itemValue": "6000",
+                    "receiptPath": "http://arthowbsldn:8000/Shared Documents//20230807/ccabbda7_BpEeQpYZ1LmnSt9NqTqR-1691412239560.png"
+                }
+            ]
+        }
+    }
+}'
+                      </code>
+                    </pre>
+                            </div>
+                        </div>
+
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote')">200</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote2')">400</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote3')">401</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote4')">403</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote5')">404</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote6')">405</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote7')">406</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote8')">429</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote9')">500</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-quote10')">503</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                                  <code class="text" style=" display: block; " id="response-quote">
+        {
+    "unifiedReference": "unified-test",
+    "travel": {
+        "Coverages": null,
+        "Errors": null,
+        "NetPremium": 0,
+        "OptionalDiscountAmount": 0,
+        "QuotationNo": "TQ250825-538362399907828",
+        "RateCode": "TR250825-501815458063",
+        "ReferenceId": "ABCD1234",
+        "SourceSystem": "ARB Mubasher",
+        "StatusCode": 2,
+        "TotalPremium": 86.25,
+        "VATAmount": 0
+    },
+    "cyber": {
+        "policyHolderDetails": {
+            "fullName": "AZZAH SAEED ALZAHRANI",
+            "mobileNumber": "+966566052931",
+            "emailAddress": "eslam.fecu@gmail.com",
+            "address": "4182 Ibrahim Al Muqaddisi - Al Ajwad Dist., JEDDAH 23466 - 7406 (JDJA4182)"
+        },
+        "policyDetails": {
+            "productAndCoverage": "Standard",
+            "policyStartDate": "2025-01-01",
+            "policyEndDate": "2025-12-31",
+            "productType": "Family",
+            "quotationId": "50335983"
+        },
+        "paymentSummary": {
+            "basePremium": 192,
+            "vat": 28.8,
+            "discount": 0,
+            "totalPremium": 192
+        }
+    },
+    "home": {
+        "meta": {
+            "status": 1,
+            "statusCode": 200
+        },
+        "data": {
+            "quotationDetails": {
+                "referenceId": "U2FsdGVkX1/ZRhUh5YnhfN4TE2Bqj3qFFTdXoVxs1XI=",
+                "policyHolderDetails": {
+                    "lastUpdated": "2025-06-16T11:15:16.509+0000",
+                    "dateOfBirthH": "20-10-1409",
+                    "englishFirstName": "SHAIK",
+                    "englishLastName": "ZUBEDI",
+                    "englishSecondName": "IBRAHIM",
+                    "englishThirdName": "",
+                    "firstName": "شيك",
+                    "gender": "M",
+                    "iqamaExpiryDateG": "06-05-2026",
+                    "iqamaExpiryDateH": "19-11-1447",
+                    "iqamaIssuePlaceDesc": "موقع بوابة الوزارة الألكترونية",
+                    "lastName": "سبيدي",
+                    "logId": 0,
+                    "nationalityCode": 321,
+                    "occupationCode": 243110,
+                    "secondName": "ابراهيم",
+                    "socialStatusCode": 2,
+                    "sponsorMoiNumber": 7001767040,
+                    "sponsorName": "",
+                    "thirdName": "",
+                    "maritalStatus": "married",
+                    "status": 1,
+                    "elmResponse": {
+                        "isOwner": true
+                    }
+                },
+                "policyDetails": {
+                    "Id": 3510,
+                    "IdType": "IQAMA",
+                    "NationalId": "2406132841",
+                    "PlanType": "Diamond",
+                    "Email": "eslam.fecu@gmail.com",
+                    "MobileNumber": "510663201",
+                    "BirthDate": "1989-05-25T00:00:00.000Z",
+                    "MaritalStatus": "single",
+                    "SpouseIdType": "IQAMA",
+                    "SpouseNationalId": "",
+                    "SpouseBirthDate": "",
+                    "PolicyStartDate": "2025-09-05T00:00:00.000Z",
+                    "PolicyEndDate": "2026-09-04T00:00:00.000Z",
+                    "QuotationNo": null,
+                    "PolicyID": null,
+                    "PolicyNo": null,
+                    "Amount": "4427.50",
+                    "Status": 0,
+                    "isVerified": 0,
+                    "PreviousClaims": 0,
+                    "PreviousRejectedProposals": 0,
+                    "Language": "En",
+                    "CreatedAt": "2025-08-25T09:56:51.080Z",
+                    "UpdatedAt": "2025-08-25T09:56:51.080Z",
+                    "SourceSystem": "ARB Mubsher",
+                    "IsmasterOtpVerified": null,
+                    "AgentCode": null,
+                    "PurchasedBy": null,
+                    "AgentCodePayment": null,
+                    "ServiceName": null,
+                    "ClientReferenceId": null,
+                    "SumInsured": "5,000,000",
+                    "NationalityCode": "321"
+                },
+                "domesticHelpers": [
+                    {
+                        "lastUpdated": "2025-05-21T10:14:21.040+0000",
+                        "dateOfBirthH": "13-03-1394",
+                        "englishFirstName": "THAHIR",
+                        "englishLastName": "HUSSAINA",
+                        "englishSecondName": "HUSSAIN",
+                        "englishThirdName": "MOHAMMED",
+                        "firstName": "طاهر",
+                        "gender": "M",
+                        "iqamaExpiryDateG": "18-03-2026",
+                        "iqamaExpiryDateH": "29-09-1447",
+                        "iqamaIssuePlaceDesc": "شركة العلم لامن المعلومات",
+                        "lastName": "حسينة",
+                        "logId": 0,
+                        "nationalityCode": 321,
+                        "occupationCode": 251102,
+                        "secondName": "حسين",
+                        "socialStatusCode": 2,
+                        "sponsorMoiNumber": 7001593321,
+                        "sponsorName": "",
+                        "thirdName": "محمد",
+                        "maritalStatus": "married",
+                        "status": 1
+                    },
+                    {
+                        "lastUpdated": "2025-04-05T02:06:31.386+0000",
+                        "dateOfBirthG": "25-05-1981",
+                        "englishFirstName": "YAZEED",
+                        "englishLastName": "ALMOTAIWEA",
+                        "englishSecondName": "FAHAD",
+                        "englishThirdName": "IBRAHIM",
+                        "familyName": "المطيويع",
+                        "fatherName": "بن فهد",
+                        "firstName": "يزيد",
+                        "gender": "M",
+                        "grandFatherName": "بن ابراهيم",
+                        "idIssuePlace": "أحوال الرياض  2",
+                        "logId": 0,
+                        "socialStatusDesc": "متزوج",
+                        "maritalStatusDescAr": "زوجة واحدة",
+                        "subtribeName": "",
+                        "maritalStatus": "married",
+                        "status": 1
+                    }
+                ],
+                "addressAndBuildingDetails": {
+                    "streetName": "sa",
+                    "isLocationDifferentOfNationalAddress": "0",
+                    "city": "AL RIYADH",
+                    "district": "al riyadh",
+                    "zipCode": "11111",
+                    "latitude": {},
+                    "longitude": {},
+                    "buildingNumber": "1234",
+                    "address": "1234 sa al riyadh AL RIYADH",
+                    "buildingType": "townhouse",
+                    "commonQuestionnaire": [
+                        {
+                            "id": "1001",
+                            "value": "Owner"
+                        },
+                        {
+                            "id": "1002",
+                            "value": " No"
+                        },
+                        {
+                            "id": "1003",
+                            "value": "Yes"
+                        },
+                        {
+                            "id": "1004",
+                            "value": "Yes"
+                        },
+                        {
+                            "id": "1005",
+                            "value": " No"
+                        },
+                        {
+                            "id": "1006",
+                            "value": [
+                                "Swimming Pool"
+                            ]
+                        }
+                    ],
+                    "itemList": [
+                        {
+                            "ItemId": "jewelry",
+                            "itemDescription": "necklace",
+                            "itemValue": "19000",
+                            "receiptPath": "http://arthowbsldn:8000/Shared Documents//20230807/ccabbda7_BpEeQpYZ1LmnSt9NqTqR-1691412239560.png",
+                            "fromUpload": true,
+                            "itemDocumentId": 86
+                        },
+                        {
+                            "ItemId": "electronics",
+                            "itemDescription": "laptop",
+                            "itemValue": "6000",
+                            "receiptPath": "http://arthowbsldn:8000/Shared Documents//20230807/ccabbda7_BpEeQpYZ1LmnSt9NqTqR-1691412239560.png",
+                            "fromUpload": true,
+                            "itemDocumentId": 87
+                        }
+                    ],
+                    "referenceId": "U2FsdGVkX1/ZRhUh5YnhfN4TE2Bqj3qFFTdXoVxs1XI="
+                },
+                "quotation": "500106534552467"
+            }
+        }
+    }
+}
+                                  </code>
+                <code class="text" style=" display: none; " id="response-quote2">
+    {
+        "Errors":
+        [
+            {
+                "Code": "ERROR.400.001",
+                "Message": "PSUId is mandatory.",
+                "Path": "request.body.PSUId",
+                "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                </code>
+                <code class="text" style=" display: none; " id="response-quote3">
+    {
+        "Errors": [
+        {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+
+                </code>
+
+                <code class="text" style=" display: none; " id="response-quote4">
+    {
+        "Errors": [
+        {
+            "Code": "ERROR.403.001",
+            "Message": "Can't find any valid subscription.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                    </code>
+
+                    <code class="text" style=" display: none; " id="response-quote5">
+    {
+        "Errors": [
+        {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                    </code>
+
+
+                    <code class="text" style=" display: none; " id="response-quote6">
+    {
+        "Errors": [
+        {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+
+                    </code>
+
+
+                    <code class="text" style=" display: none; " id="response-quote7">
+    {
+        "Errors": [
+        {
+            "Code": "ERROR.406.001",
+            "Message": "An appropriate representation of the requested resource could not be found",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                    </code>
+
+
+                    <code class="text" style=" display: none; " id="response-quote8">
+    {
+        "Errors": [
+        {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                    </code>
+
+
+                    <code class="text" style=" display: none; " id="response-quote9">
+    {
+        "Errors": [
+        {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+        }
+        ]
+    }
+                    </code>
+    <code class="text" id="response-quote10" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.503.001",
+        "Message": "Service Unavailable.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }
+                                                    </code>
+                                          </pre>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- API 3 -->
+                    <div class="api-infosec">
+
+                        <h1 class="fob-welcome-title" id="section-4">Policy</h1>
+                        <p class="fob-welcome-line"></p>
+                        <p class="fob-welcome-text">Endpoint: /mp-financial/v1/e-statements-estatment-id/{EStatementId}
+                        </p>
+                        <p class="fob-welcome-text"><a
+                                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/860/api/857#/MPEStatements_100/operation/%2Fe-statements-estatment-id%2F{EStatementId}/get">Swagger
+                                Link</a></p>
+                        <p class="fob-welcome-text">This API is used to create policy.</p>
+
+                        <div class="requestURL-box">
+                            <div class="request-box">
+                                <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                                <p class="fob-welcome-line"></p>
+                                <pre class="example_97 api-guides-example-fob ">                          <code class="sample-code">
+{
+    "unifiedReference": "unified-test",
+    "travel": {
+        "PaymentBillNumber": "737418511154428128000321109731",
+        "PaymentUsername": "s m khan ",
+        "ProductId": "610621",
+        "QuotationNo": "TQ250825-538362399907828",
+        "ReferenceId": "ABCD1234",
+        "SourceSystem": "ARB Mubasher"
+    },
+    "cyber": {
+        "referenceId": "U2FsdGVkX19pXChveESpy5fZfsuVyG8DBZoBjm1t3TE=",
+        "quotationId": "50332703",
+        "paymentMethod": "credit card",
+        "paymentReferenceNo": "12345688009"
+    },
+    "home": {
+        "paymentMethod": "DD",
+        "paymentReferenceNo": "217207630041741041600321069731",
+        "paymentAmount": "3277.50",
+        "referenceId": "U2FsdGVkX1/ZRhUh5YnhfN4TE2Bqj3qFFTdXoVxs1XI="
+    }
+}
+                      </code>
+                    </pre>
+                            </div>
+                            <div class="url-box">
+
+                                <p class="fob-welcome-title curlText">cURL</p>
+
+                                <pre id="generatedCurl">                                              <code id="policy-curl" style=" display: block;">
+curl --location --globoff '{{public_url}}/v1/art/unified-insurance/policy' \
+--header 'Accept: application/json' \
+--header 'X-Request-Id: 21a46c20-f801-46b1-bf84-79d14e03a3cf' \
+--data '{
+    "unifiedReference": "unified-test",
+    "travel": {
+        "PaymentBillNumber": "737418511154428128000321109731",
+        "PaymentUsername": "s m khan ",
+        "ProductId": "610621",
+        "QuotationNo": "TQ250825-538362399907828",
+        "ReferenceId": "ABCD1234",
+        "SourceSystem": "ARB Mubasher"
+    },
+    "cyber": {
+        "referenceId": "U2FsdGVkX19pXChveESpy5fZfsuVyG8DBZoBjm1t3TE=",
+        "quotationId": "50332703",
+        "paymentMethod": "credit card",
+        "paymentReferenceNo": "12345688009"
+    },
+    "home": {
+        "paymentMethod": "DD",
+        "paymentReferenceNo": "217207630041741041600321069731",
+        "paymentAmount": "3277.50",
+        "referenceId": "U2FsdGVkX1/ZRhUh5YnhfN4TE2Bqj3qFFTdXoVxs1XI="
+    }
+}'
+                 </code>
+                      </pre>
+                            </div>
+                        </div>
+                        <div class="response-outterbox">
+                            <div class="innerbox">
+                                <div class="code-box">
+
+                                    <p
+                                        class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+                                    <div class="response-box-div">
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy')">200</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy2')">400</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy3')">401</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy4')">403</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy5')">404</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy6')">405</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy7')">406</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy8')">429</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy9')">500</a>
+                                        <a class="response-box-error" type="button"
+                                            onclick="responseText('response-policy10')">503</a>
+                                    </div>
+
+                                    <pre class="response-box">
+
+                                      <code class="text" style=" display: block; " id="response-policy">
+            {
+    "unifiedReference": "unified-test",
+    "message": "Policy request has been received with the provided referenceId, will update you shortly."
+}
+                                      </code>
+                                      <code class="text" style=" display: none; " id="response-policy2">
+    {
+        "Errors": [
+            {
+                "Code": "ERROR.400.001",
+                "Message": "PSUId is mandatory.",
+                "Path": "request.body.PSUId",
+                "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                    </code>
+                    <code class="text" style=" display: none; " id="response-policy3">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.401.001",
+            "Message": "Unauthorized to call the target operation.",
+            "Path": "authorization",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+                        <code class="text" style=" display: none; " id="response-policy4">
+    {
+        "Errors": [
+            {
+                "Code": "ERROR.403.001",
+                "Message": "Can't find any valid subscription.",
+                "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+
+                        <code class="text" style=" display: none; " id="response-policy5">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.404.001",
+            "Message": "No resources match requested URI.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+
+                        <code class="text" style=" display: none; " id="response-policy6">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.405.001",
+            "Message": "The method is not allowed for the requested URL.",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+
+                        </code>
+
+
+                        <code class="text" style=" display: none; " id="response-policy7">
+    {
+        "Errors": [
+            {
+                "Code": "ERROR.406.001",
+                "Message": "An appropriate representation of the requested resource could not be found",
+                "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+
+                        <code class="text" style=" display: none; " id="response-policy8">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.429.001",
+            "Message": "Assembly Rate Limit exceeded",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+
+
+                        <code class="text" style=" display: none; " id="response-policy9">
+    {
+        "Errors": [
+            {
+            "Code": "ERROR.500.001",
+            "Message": "Internal Error",
+            "Url": "https://{baseURL}/developer-portal/terms"
+            }
+        ]
+    }
+                        </code>
+                        <code class="text" id="response-policy10" style=" display: none; ">
+    {
+    "Errors": [
+        {
+        "Code": "ERROR.503.001",
+        "Message": "Service Unavailable.",
+        "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+        }
+    ]
+    }
+                                                    </code>
+                                              </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
