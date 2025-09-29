@@ -24812,7 +24812,7 @@ button#ccs-\:rl\:-tab-1 {
     font-size: 21px;
     font-weight: 200;
     color: #fff;
-    text-align: justify;
+    text-align: left;
     width: 50%;
     margin-left: 35px;
 }
@@ -25391,3 +25391,87 @@ li.strong-text-product strong {
 } */
 
 /* Janet Health SME Page add the new Sections */
+
+/* Janet Mutual Fund Page add the new Sections */
+
+.mutual-fund-usecase{
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Mutual-fund-usecase.png") !important;
+}
+
+.mutual-fund-workflow{
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Mutual-fund-process-workflow.jpg") !important;
+}
+
+.product-doc-content .single-product-terminologies-product-title {
+    font-size: 40px;
+    color: #2a2a2a;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.product-doc-content .Mutual-Terminologies{
+    background-color: #eef2fe !important;
+}
+
+.product-doc-content .Mutual-Key-Features{
+    background-color: white !important;
+}
+
+.product-doc-content .Mutual-Inputs-Outputs-Samples{
+    background-color: #eef2fe !important;
+}
+
+.product-widget .slide .Mutual-text{
+    position: relative;
+    z-index: 2;
+    margin-top: 35px;
+    font-size: 21px;
+    font-weight: 200;
+    color: #fff;
+    text-align: justify;
+    width: 65% !important;
+    margin-left: 35px;
+}
+
+.single-product-terminologies-product-img{
+    content: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Terminologies.png");
+    position: absolute;
+    left: 46%;
+    margin-top: -3%;
+    position: unset;
+    margin-top: 20%;
+    max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .product-doc-content .single-product-terminologies-product-title {
+        font-size: 35px;
+        line-height: 35px;
+    }
+}
+/* Janet Mutual Fund Page add the new Sections */
+
+/* Janet Gold Wallet Page add the new Sections */
+
+.gold-wallet-usecase{
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Gold-Wallet-usecase.png") !important;
+}
+
+.gold-wallet-workflow{
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Gold-Wallet-workflow.jpg") !important;
+}
+
+/* Janet Gold Wallet Page add the new Sections */
+
+/* Janet Categorization Page add the new Sections */
+
+.categorization-usecase{
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Categorization-usecase.png") !important;
+}
+
+.categorization-workflow{
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/Categorization-workflow.jpg") !important;
+}
+
+/* Janet Categorization Page add the new Sections */
