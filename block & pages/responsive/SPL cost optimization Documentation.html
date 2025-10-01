@@ -1,0 +1,272 @@
+<div class="product-details-document categorize-page">
+  <div class="api-doc-background">
+    <p class="api-doc-background-text ">SPL cost optimization API Documentation</p>
+  </div>
+
+  <div class="moterinsurance-sec">
+    <div class="container">
+      <div class="d-flex">
+        <div class="leftside-sec">
+          <p class="fob-welcome-title" id="section-1">SPL cost optimization APIs</p>
+          <p class="fob-welcome-line"></p>
+          <p class="fob-welcome-text">ARG’s Centralized Cached Services for SPL have
+            been designed to optimize efficiency and reduce the costs of consuming SPL services and
+            time. These services leverage pre-cached data already stored by the bank.</br>
+          </p>
+        </div>
+        <div class="rightside-sec">
+          <p class="API-image"></p>
+        </div>
+      </div>
+
+      <div class="d-flex btn-box">
+        <a id="downloadLink"
+          href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/Modern_Sandbox_Centralized_Cached_Service(SPL).postman_collection.json"
+          download="">Download Postman Collection</a>
+        <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/MPSPLcostoptimizationSampleRequestData.xlsx"
+          download="">Download Sample Data</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="miw-section">
+    <div class="container">
+      <h1 class="fob-welcome-title">SPL cost optimization Sequence Diagram</h1>
+      <p class="motoinsu-image"></p>
+      <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/CentralizedCachedServicesforSPlv0.6.1.pdf"
+        download="">Click here</a>
+    </div>
+  </div>
+
+  <div class="APIs-section">
+    <div class="container">
+      <p class="main-heading">
+        APIs
+      </p>
+
+      <div class="bx--snippet-container body" data-testid="expandable-example-display">
+        <!-- API 1 -->
+        <div class="api-infosec">
+          <h1 class="fob-welcome-title" id="section-2">Get Customer Address Details</h1>
+          <p class="fob-welcome-line"></p>
+          <p class="fob-welcome-text">Endpoint: /v1/cached-address</br>
+          </p>
+          <p class="fob-welcome-text"><a id="downloadLink"
+              href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/2608/api/2605#/MPGetCustomerAddressDetails_101/operation/%2Fcached-address/get">Swagger
+              Link</a></p>
+          <p class="fob-welcome-text">This path retrieves customer address information from ARB using the customer
+            ID and the last fetched date available in the bank’s system.
+            </br>
+          </p>
+
+          <div class="requestURL-box">
+            <div class="request-box">
+              <h1 class="fob-welcome-title mt-0">Request Example</h1>
+              <p class="fob-welcome-line"></p>
+              <pre class="example_97 api-guides-example-fob ">
+                <code class="sample-code">
+Query Parameters:
+    idNumber= 1098248663
+    idType= 0
+                      
+                </code>
+              </pre>
+            </div>
+            <div class="url-box">
+              <p class="fob-welcome-title curlText">cURL</p>
+
+              <pre id="generatedCurl">
+                <code id="SPL-cost-optimization" style=" display: block;">
+curl --location --globoff 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-customers/v1/cached-address?idNumber=1098248663&idType=0' \
+--header 'x-request-id: d66acb1a-7696-4227-8c09-894a5429632b' \
+--header 'Accept: application/json'
+                    
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <div class="response-outterbox">
+            <div class="innerbox">
+              <div class="code-box">
+                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                  &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                <div class="response-box-div">
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization')">201</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization2')">400</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization3')">401</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization4')">403</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization5')">404</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization6')">405</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization7')">406</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization8')">429</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization9')">500</a>
+                  <a type="button" class="response-box-error"
+                    onclick="responseText('response-SPL-cost-optimization10')">503</a>
+                </div>
+
+                <pre class="response-box">
+
+                <code id="response-SPL-cost-optimization" style=" display: block; " class="text">
+{
+    "Data": {
+        "LastInsertTime": "2025-09-18T12:34:56Z",
+        "CompanyName": "ABC",
+        "CustomerAddress1": "124 Main St",
+        "CustomerAddress2": "Apt 101",
+        "LocationCoordinates": "37.7749",
+        "BuildingNumber": "123",
+        "AdditionalNumber": "101",
+        "UnitNumber": "101",
+        "PKAddressId": "12345",
+        "StreetName": "Main St",
+        "StreetNameOtherLanguage": "Main St",
+        "DistrictId": "12345",
+        "DistrictName": "Downtown",
+        "DistrictNameOtherLanguage": "Downtown",
+        "CityId": "12345",
+        "CityName": "Riyadh",
+        "CityNameOtherLanguage": "Riyadh",
+        "RegionId": "12345",
+        "RegionName": "Eastern Province",
+        "RegionNameOtherLanguage": "Eastern Province",
+        "PostCode": "12345",
+        "ARBCityId": "111",
+        "ARBRegionId": "323"
+    }
+}
+                      
+                </code>
+                <code id="response-SPL-cost-optimization2" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.400.001",
+      "Message": "Customer POINumber is invalid.",
+      "Path": "request.body.POINumber",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}  
+                  </code>	
+    
+                <code id="response-SPL-cost-optimization3" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.401.001",
+      "Message": "Unauthorized to call the target operation.",
+      "Path": "authorization",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}  
+                </code>	
+              
+                <code id="response-SPL-cost-optimization4" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.403.001",
+      "Message": "Can't find any valid subscription.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}    
+                </code>
+              
+                <code id="response-SPL-cost-optimization5" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.404.001",
+      "Message": "No resources match requested URI.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}     
+                </code>
+              
+                <code id="response-SPL-cost-optimization6" style=" display: none; "class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.405.001",
+      "Message": "The method is not allowed for the requested URL.",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}
+                      
+                </code>
+              
+                <code id="response-SPL-cost-optimization7" style=" display: none; "class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.406.001",
+      "Message": "An appropriate representation of the requested resource could not be found",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}       
+                </code>
+              
+                <code id="response-SPL-cost-optimization8" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.429.001",
+      "Message": "Assembly Rate Limit exceeded",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}     
+                </code>
+              
+                <code id="response-SPL-cost-optimization9" style=" display: none; " class="text">
+{
+  "Errors": [
+    {
+      "Code": "NTSP.ERROR.500.001",
+      "Message": "Internal Error",
+      "Url": "https://{baseURL}/developer-portal/terms"
+    }
+  ]
+}     
+                </code>
+                                 <code id="response-SPL-cost-optimization10" style=" display: none; " class="text">
+{
+"Errors": [
+    {
+    "Code": "ERROR.503.001",
+    "Message": "Service Unavailable.",
+    "Url": "https://api-marketplace.alrajhigroup.com.sa/developer-portal/terms"
+    }
+]
+}
+                     </code>
+              </pre>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

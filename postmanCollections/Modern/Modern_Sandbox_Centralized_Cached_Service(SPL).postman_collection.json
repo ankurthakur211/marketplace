@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "ee9f6639-9199-4bf2-afb2-96dff38d8f89",
+		"name": "Modern Sandbox Centralized Cached Service  (SPL)",
+		"description": "This API Swagger is intended to describe the endpoints required for managing accounts links. Through this API, consumers can link their accounts in financial institutions in order to get the benefits of retrieving linked accounts information. Moreover, consumers can inquire about accounts links and revoke a specific link.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29105968"
+	},
+	"item": [
+		{
+			"name": "Access Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access-token\", data.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Cookie",
+						"value": "cookiesession1=678A8C3997F36E43064F1EBED59975E1"
+					},
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "marketplace_apis",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{baseUrl}}/oauth2security/oauth2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Mp Get Customer Address Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{access-token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"description": "An RFC4122 UID used as a correlation id."
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/mp-customers/v1/cached-address?idNumber=1200297628&idType=01",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"mp-customers",
+						"v1",
+						"cached-address"
+					],
+					"query": [
+						{
+							"key": "idNumber",
+							"value": "1200297628"
+						},
+						{
+							"key": "idType",
+							"value": "01"
+						}
+					]
+				},
+				"description": "This path is used to get a specific accounts link details."
+			},
+			"response": [
+				{
+					"name": "Mp Get Customer Address Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/mp-customers/v1/cached-address?idNumber=1098248663&idType=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mp-customers",
+								"v1",
+								"cached-address"
+							],
+							"query": [
+								{
+									"key": "idNumber",
+									"value": "1098248663"
+								},
+								{
+									"key": "idType",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "963541f2-c374-4e56-9864-078abfdda95d"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "6c5eecad68da69a300051b71"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,96;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 11:12:38 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"LastInsertTime\": \"2025-09-18T12:34:56Z\",\n        \"CompanyName\": \"ABC\",\n        \"CustomerAddress1\": \"124 Main St\",\n        \"CustomerAddress2\": \"Apt 101\",\n        \"LocationCoordinates\": \"37.7749\",\n        \"BuildingNumber\": \"123\",\n        \"AdditionalNumber\": \"101\",\n        \"UnitNumber\": \"101\",\n        \"PKAddressId\": \"12345\",\n        \"StreetName\": \"Main St\",\n        \"StreetNameOtherLanguage\": \"Main St\",\n        \"DistrictId\": \"12345\",\n        \"DistrictName\": \"Downtown\",\n        \"DistrictNameOtherLanguage\": \"Downtown\",\n        \"CityId\": \"12345\",\n        \"CityName\": \"Riyadh\",\n        \"CityNameOtherLanguage\": \"Riyadh\",\n        \"RegionId\": \"12345\",\n        \"RegionName\": \"Eastern Province\",\n        \"RegionNameOtherLanguage\": \"Eastern Province\",\n        \"PostCode\": \"12345\",\n        \"ARBCityId\": \"111\",\n        \"ARBRegionId\": \"323\"\n    }\n}"
+				},
+				{
+					"name": "Mp Get Customer Address Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/mp-customers/v1/cached-address?idNumber=2292663263&idType=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mp-customers",
+								"v1",
+								"cached-address"
+							],
+							"query": [
+								{
+									"key": "idNumber",
+									"value": "2292663263"
+								},
+								{
+									"key": "idType",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "edaef3d9-c6bf-4d86-b1c2-48b680e72123"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "6c5eecad68da69bc00013e83"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,95;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 11:13:00 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"LastInsertTime\": \"2025-08-18T12:34:56Z\",\n        \"CompanyName\": \"ABC\",\n        \"CustomerAddress1\": \"123 Main St\",\n        \"CustomerAddress2\": \"Apt 101\",\n        \"LocationCoordinates\": \"37.7749\",\n        \"BuildingNumber\": \"123\",\n        \"AdditionalNumber\": \"101\",\n        \"UnitNumber\": \"101\",\n        \"PKAddressId\": \"12345\",\n        \"StreetName\": \"Main St\",\n        \"StreetNameOtherLanguage\": \"Main St\",\n        \"DistrictId\": \"12345\",\n        \"DistrictName\": \"Downtown\",\n        \"DistrictNameOtherLanguage\": \"Downtown\",\n        \"CityId\": \"12345\",\n        \"CityName\": \"Riyadh\",\n        \"CityNameOtherLanguage\": \"Riyadh\",\n        \"RegionId\": \"12345\",\n        \"RegionName\": \"Eastern Province\",\n        \"RegionNameOtherLanguage\": \"Eastern Province\",\n        \"PostCode\": \"12345\",\n        \"ARBCityId\": \"111\",\n        \"ARBRegionId\": \"323\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"scope": "marketplace_apis",
+			"accessTokenUrl": "https://api-marketplace.alrajhibank.com.sa/apimarketplace-prod/api-marketplace/oauth2security/oauth2/token",
+			"grant_type": "client_credentials"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		}
+	]
+}

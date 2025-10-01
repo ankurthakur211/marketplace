@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "36ff5cb3-d243-4691-8cfa-ce516d883574",
+		"name": "Modern Sandbox Centralized Cached Service Yakeen",
+		"description": "This API Swagger is intended to describe the endpoints required for managing accounts links. Through this API, consumers can link their accounts in financial institutions in order to get the benefits of retrieving linked accounts information. Moreover, consumers can inquire about accounts links and revoke a specific link.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29105968"
+	},
+	"item": [
+		{
+			"name": "Access Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"access-token\", data.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Cookie",
+						"value": "cookiesession1=678A8C3997F36E43064F1EBED59975E1"
+					},
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "marketplace_apis",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{baseUrl}}/oauth2security/oauth2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Mp Get Customer Yakeen Information For Resident",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{access-token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"description": "An RFC4122 UID used as a correlation id."
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/mp-customers/yakeen/v1/cached-resident?residentIqamaId=32532546",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"mp-customers",
+						"yakeen",
+						"v1",
+						"cached-resident"
+					],
+					"query": [
+						{
+							"key": "residentIqamaId",
+							"value": "32532546"
+						}
+					]
+				},
+				"description": "This path is used to get a specific accounts link details."
+			},
+			"response": [
+				{
+					"name": "Mp Get Customer Yakeen Information For Resident",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/mp-customers/yakeen/v1/cached-resident?residentIqamaId=32532546",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mp-customers",
+								"yakeen",
+								"v1",
+								"cached-resident"
+							],
+							"query": [
+								{
+									"key": "residentIqamaId",
+									"value": "32532546"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "d83bb334-9a91-4cc2-afb7-aa8b86304b27"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "ed7e63dc68da692000057770"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,99;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 11:10:24 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"LastInsertTime\": \"2025-08-18T12:34:56Z\",\n        \"ResidentIqamaId\": \"1098248663\",\n        \"GregBirthDate\": \"1992-07-15\",\n        \"FirstNameEn\": \"Mohammed\",\n        \"SecondNameEn\": \"Saleh\",\n        \"ThirdNameEn\": \"Ali\",\n        \"LastNameEn\": \"Alharbi\",\n        \"FirstNameAr\": \"محمد\",\n        \"SecondNameAr\": \"صالح\",\n        \"ThirdNameAr\": \"علي\",\n        \"LastNameAr\": \"الحميد\",\n        \"Gender\": \"M\",\n        \"IdExpiryDate\": \"2028-03-01\",\n        \"LogId\": \"123456789\",\n        \"NationalityCode\": \"SA\",\n        \"SponsorName\": \"شركة الراجحي\",\n        \"OccupationDescription\": \"Engineer\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Mp Get Cached Customer Yakeen Information For citizen",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{access-token}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-request-id",
+						"value": "{{$guid}}",
+						"description": "An RFC4122 UID used as a correlation id."
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/mp-customers/yakeen/v1/cached-citizen?citizenNationalId=1098248663",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"mp-customers",
+						"yakeen",
+						"v1",
+						"cached-citizen"
+					],
+					"query": [
+						{
+							"key": "citizenNationalId",
+							"value": "1098248663"
+						}
+					]
+				},
+				"description": "This path is used to get a specific accounts link details."
+			},
+			"response": [
+				{
+					"name": "Mp Get Cached Customer Yakeen Information For citizen",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"description": "An RFC4122 UID used as a correlation id."
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/mp-customers/yakeen/v1/cached-citizen?citizenNationalId=1098248663",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mp-customers",
+								"yakeen",
+								"v1",
+								"cached-citizen"
+							],
+							"query": [
+								{
+									"key": "citizenNationalId",
+									"value": "1098248663"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "x-request-id",
+							"value": "29096dab-f026-48b0-84e4-5fd496719835"
+						},
+						{
+							"key": "X-Global-Transaction-ID",
+							"value": "ed7e63dc68da693b0003e951"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "name=default,100;"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "name=default,98;"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 11:10:51 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"LastInsertTime\": \"2025-08-18T12:34:56Z\",\n        \"CitizenNationalId\": \"1098248663\",\n        \"GregBirthDate\": \"1992-07-15\",\n        \"HijriBirthDate\": \"1413-01-06\",\n        \"PlaceOfBirth\": \"Riyadh\",\n        \"FirstNameEn\": \"Mohammed\",\n        \"SecondNameEn\": \"Saleh\",\n        \"ThirdNameEn\": \"Ali\",\n        \"LastNameEn\": \"Alharbi\",\n        \"FirstNameAr\": \"محمد\",\n        \"FamilyNameAr\": \"الحربي\",\n        \"FatherNameAr\": \"صالح\",\n        \"GrandFatherNameAr\": \"عبدالله\",\n        \"SubtribeNameAr\": \"تميم\",\n        \"LastNameAr\": \"الحميد\",\n        \"Gender\": \"M\",\n        \"IdExpiryDate\": \"2028-03-01\",\n        \"LogId\": \"123456789\",\n        \"IdIssueDate\": \"2015-05-01\",\n        \"IdVersionNumber\": \"3\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"scope": "marketplace_apis",
+			"accessTokenUrl": "https://api-marketplace.alrajhibank.com.sa/apimarketplace-prod/api-marketplace/oauth2security/oauth2/token",
+			"grant_type": "client_credentials"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound"
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		}
+	]
+}
