@@ -20435,6 +20435,21 @@ button.use-ajax.button.button--primary.js-form-submit.form-submit.btn-success.bt
 }
 
 
+@media screen and (max-width: 767px) {
+.field.field--name-field-product-description.field--type-string.field--label-above
+{
+    margin-top:45px;
+}
+}
+
+.apicProductName.apicTruncate{
+    overflow: visible !important;
+    max-width: 90% !important;
+    width: 90% !important;
+    white-space: initial !important;
+}
+
+
 /*updating home page feb ankiee*/
 
 

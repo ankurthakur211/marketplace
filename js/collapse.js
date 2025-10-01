@@ -2120,4 +2120,4 @@ function faq2(myBtn) {
                 "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/arrowup.png";
         }
     }
-}
+}/
