@@ -42,9 +42,18 @@ document.addEventListener("DOMContentLoaded", () => {
         updateSlide();
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.href;
+    const loginPath = "/user/login?destination=";
 
-
-document.addEventListener("DOMContentLoaded", function() {
+    if (currentUrl.includes(loginPath)) {
+        // Get the base URL before /user/login
+        const baseUrl = currentUrl.split("/user/login")[0];
+        // Redirect to base URL + /Homepage
+        window.location.href = `${baseUrl}/Homepage`;
+    }
+});
+document.addEventListener("DOMContentLoaded", function () {
     //for basic pages header
     if (document.querySelector(".basic-page") && window.location.href.includes("/search/")) {
         const header = document.querySelector("h1.page-header");
@@ -62,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.head.appendChild(style);
     const searchBar = document.getElementById("searchbardomains");
     if (searchBar) {
-        searchBar.onkeyup = function() {
+        searchBar.onkeyup = function () {
             const val = this.value.toLowerCase();
             let matchCount = 0;
 
@@ -82,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     let searchTerm = urlParams.get("search_api_fulltext");
 
@@ -394,34 +403,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var link = document.querySelector("a.btn-primary");
     if (pattern.test(feedback) && link) {
-       
-     const link = document.querySelector("a.btn-primary");
-      if (link) {
-       
-    
-        // Replace "/?" with "?" in the href
-        const correctedHref = link.getAttribute("href").replace("/?", "?");
-        link.setAttribute("href", correctedHref);
-    
-        
-      }
+
+        const link = document.querySelector("a.btn-primary");
+        if (link) {
+
+
+            // Replace "/?" with "?" in the href
+            const correctedHref = link.getAttribute("href").replace("/?", "?");
+            link.setAttribute("href", correctedHref);
+
+
         }
-    
+    }
 
 
-        var fullUrl = window.location.href;
-        if (fullUrl.includes('subscription_noplan?productId')) {
-    
-            const link = document.querySelector("a.add-app");
-    
-            if (link) {
-              link.addEventListener("click", function(e) {
+
+    var fullUrl = window.location.href;
+    if (fullUrl.includes('subscription_noplan?productId')) {
+
+        const link = document.querySelector("a.add-app");
+
+        if (link) {
+            link.addEventListener("click", function (e) {
                 e.preventDefault(); // stop modal behavior
                 window.location.href = link.getAttribute("href"); // redirect to href
-              });
-            }
-    
+            });
         }
+
+    }
 
 
 
@@ -835,16 +844,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const signinLink = document.querySelector('a[href="/sandbox/user/login"]');
     if (signinLink) {
-        signinLink.addEventListener("click", function() {
+        signinLink.addEventListener("click", function () {
             localStorage.setItem("fromSigninButton", "true");
         });
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const redirectFlag = localStorage.getItem("fromSigninButton");
     if (redirectFlag === "true") {
 
@@ -880,7 +889,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const parent = document.querySelector('.apicSubscribeAppForm');
 
     if (parent) {
@@ -890,7 +899,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    document.querySelectorAll('form.user-login-form.pwd-see a.registry-button.generic-button.button').forEach(function(link) {
+    document.querySelectorAll('form.user-login-form.pwd-see a.registry-button.generic-button.button').forEach(function (link) {
         try {
             const originalHref = link.getAttribute('href');
             const redirectMatch = originalHref.match(/([?&]redirect_uri=)([^&]+)/);
@@ -920,7 +929,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     document.querySelectorAll(".faq-question").forEach(question => {
-        question.addEventListener("click", function() {
+        question.addEventListener("click", function () {
             const answer = this.nextElementSibling;
             const icon = this.querySelector(".faq-toggle path");
 
@@ -936,7 +945,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
 
     const coreTab = document.querySelector('.core-banking-tab');
@@ -948,7 +957,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     if (coreTab && subTabs) {
-        coreTab.addEventListener('click', function() {
+        coreTab.addEventListener('click', function () {
             subTabs.style.display = (subTabs.style.display === 'none' || subTabs.style.display === '') ?
                 'block' :
                 'none';
@@ -1067,7 +1076,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //modifications to apply figma on terms and conditions
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     if (window.location.href.includes("/tsandcs")) {
         const pageNodeTitle = document.querySelector("#page-node-title");
         if (pageNodeTitle) {
@@ -1149,7 +1158,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //modifications to apply figma on privacy and policy
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     if (window.location.href.includes("/privacy")) {
         const pageNodeTitle = document.querySelector("#page-node-title");
         if (pageNodeTitle) {
@@ -1214,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const loginWrapper = document.querySelector(".apic-login-wrapper");
     if (loginWrapper) {
         const style = document.createElement("style");
@@ -1229,12 +1238,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     if (window.location.href.includes('/taxonomy/term')) {
         // Select all 'apicTeaser' divs
-        document.querySelectorAll('.apicTeaser').forEach(function(teaserDiv) {
+        document.querySelectorAll('.apicTeaser').forEach(function (teaserDiv) {
             // Select all 'apicTeaserMain' divs
-            document.querySelectorAll('.apicTeaserMain').forEach(function(teaserMain) {
+            document.querySelectorAll('.apicTeaserMain').forEach(function (teaserMain) {
                 // Check if there are at least two divs inside each 'apicTeaserMain'
                 const divs = teaserMain.querySelectorAll('div');
                 if (divs.length > 1) {
@@ -1242,7 +1251,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             // Hide all 'basic-page' divs inside each 'apicTeaser'
-            teaserDiv.querySelectorAll('.basic-page').forEach(function(basicPageDiv) {
+            teaserDiv.querySelectorAll('.basic-page').forEach(function (basicPageDiv) {
                 basicPageDiv.style.display = 'none';
             });
 
@@ -1370,7 +1379,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname.includes('/myorg/invite')) {
         const originalForm = document.querySelector('#consumerorg-invite-user-form');
         const roleRadios = originalForm.querySelectorAll('input[type="radio"][name="role"]');
@@ -1435,7 +1444,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Replace the old form completely with the new one
         originalForm.replaceWith(newForm);
 
-        newForm.addEventListener('submit', function(e) {
+        newForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
             const email = document.getElementById('email').value.trim();
@@ -1474,12 +1483,12 @@ document.addEventListener("DOMContentLoaded", function() {
             };
 
             fetch('/sandbox/invite-user-proxy', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                })
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
                 .then(async response => {
                     const data = await response.json();
                     if (!response.ok) {
@@ -1501,7 +1510,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         // Errors from the external API (e.g., user already exists)
                         const messages = error.Errors.map(e => e.Message || 'Unknown error');
                         alert('⚠️ ' + messages.join('\n'));
-                
+
                     } else {
                         // Generic error
                         alert('An error occurred while inviting the user.');
@@ -1517,52 +1526,53 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-if (window.location.href.includes("sandbox/myorg")) {
-    const ul = document.querySelector('.organizationTabs ul');
-  
-    if (ul) {
-      const li = document.createElement('li');
-      li.className = 'orgInvite';
-  
-      const a = document.createElement('a');
-      a.href = '/sandbox/myorg/invite';
-      a.textContent = 'Invite';
-  
-      li.appendChild(a);
-      ul.appendChild(li);
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.href.includes("sandbox/myorg")) {
+        const ul = document.querySelector('.organizationTabs ul');
+
+        if (ul) {
+            const li = document.createElement('li');
+            li.className = 'orgInvite';
+
+            const a = document.createElement('a');
+            a.href = '/sandbox/myorg/invite';
+            a.textContent = 'Invite';
+
+            li.appendChild(a);
+            ul.appendChild(li);
+        }
     }
-  }
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var openSearchButton = document.querySelector(".opensearch");
-if(openSearchButton){
-    openSearchButton.addEventListener("click", function() {
-        var searchContainer = document.querySelector(
-            "section#block-marketplace-latest-exposedformsearch-apipage-1"
-        );
+    if (openSearchButton) {
+        openSearchButton.addEventListener("click", function () {
+            var searchContainer = document.querySelector(
+                "section#block-marketplace-latest-exposedformsearch-apipage-1"
+            );
 
-        console.log(searchContainer); // Log searchContainer to debug
+            console.log(searchContainer); // Log searchContainer to debug
 
-        if (searchContainer) {
-            if (
-                searchContainer.style.display === "none" ||
-                searchContainer.style.display === ""
-            ) {
-                searchContainer.style.display = "flex";
+            if (searchContainer) {
+                if (
+                    searchContainer.style.display === "none" ||
+                    searchContainer.style.display === ""
+                ) {
+                    searchContainer.style.display = "flex";
+                } else {
+                    searchContainer.style.display = "none";
+                }
             } else {
-                searchContainer.style.display = "none";
+                console.log("Search container not found");
             }
-        } else {
-            console.log("Search container not found");
-        }
-    });}
+        });
+    }
 
     var openSearchButton2 = document.querySelector(".opensearch2");
     if (openSearchButton2) {
-        openSearchButton2.addEventListener("click", function() {
+        openSearchButton2.addEventListener("click", function () {
             var searchContainer = document.querySelector(
                 "section#block-marketplace-latest-exposedformsearch-apipage-1"
             );
@@ -1852,7 +1862,7 @@ function generateAndDisplayCurl(event) {
 function displayText(textId) {
     // Hide all text elements
     var textElements = document.querySelectorAll(".text");
-    textElements.forEach(function(element) {
+    textElements.forEach(function (element) {
         element.style.display = "none";
     });
 
@@ -1874,12 +1884,12 @@ myElement.addEventListener('mouseout', function() {
 
 var listcolor = document.getElementById("listcolor");
 if (listcolor) {
-    listcolor.addEventListener("click", function() {
+    listcolor.addEventListener("click", function () {
         listcolor.style.color = "#556ff8";
         listcolor.style.border = "2px solid #556ff8";
     });
 
-    listcolor.addEventListener("mouseout", function() {
+    listcolor.addEventListener("mouseout", function () {
         listcolor.style.color = "#556ff8";
         listcolor.style.border = "2px solid #556ff8";
     });
@@ -1887,7 +1897,7 @@ if (listcolor) {
 var myElement = document.getElementById("myElement");
 var isClicked = false;
 if (myElement) {
-    myElement.addEventListener("click", function() {
+    myElement.addEventListener("click", function () {
         if (isClicked) {
             myElement.style.backgroundColor = "#E9EEFD";
         } else {
@@ -1896,7 +1906,7 @@ if (myElement) {
         isClicked = !isClicked;
     });
 
-    myElement.addEventListener("mouseout", function() {
+    myElement.addEventListener("mouseout", function () {
         if (!isClicked) {
             myElement.style.backgroundColor = "#E9EEFD";
         }
@@ -1923,7 +1933,7 @@ function showDiv(divId) {
 function responseText(errorId) {
     // Hide all text elements
     var textElements = document.querySelectorAll(".text");
-    textElements.forEach(function(element) {
+    textElements.forEach(function (element) {
         element.style.display = "none";
     });
 
@@ -2120,4 +2130,4 @@ function faq2(myBtn) {
                 "https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/arrowup.png";
         }
     }
-}/
+}
