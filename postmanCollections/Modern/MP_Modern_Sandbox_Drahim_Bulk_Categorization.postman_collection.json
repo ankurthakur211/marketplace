@@ -1,0 +1,555 @@
+{
+	"info": {
+		"_postman_id": "a1f65689-0fa3-49e2-bbb1-f9e18f9e26ea",
+		"name": "MP Modern Sandbox Drahim Bulk Categorization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29982339"
+	},
+	"item": [
+		{
+			"name": "Token Management",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access-token\", data.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "marketplace_apis",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/oauth2security/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"oauth2security",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Drahim Bulk Categorization",
+			"item": [
+				{
+					"name": "MP Drahim Bulk Categorization",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Data\": {\r\n        \"Merchants\": [\r\n            {\r\n                \"MerchantName\": \"flynas\",\r\n                \"MerchantId\": \"string\",\r\n                \"MerchantMccCode\": \"string\",\r\n                \"MerchantPaymentType\": \"string\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{inbound-gw}}/mp-bulk-categorization/v1/merchants/categorize",
+							"protocol": "https",
+							"host": [
+								"{{inbound-gw}}"
+							],
+							"path": [
+								"mp-bulk-categorization",
+								"v1",
+								"merchants",
+								"categorize"
+							]
+						},
+						"description": "Generated from cURL: curl --location 'https://sit.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/api-marketplace-sit/v1/merchants/categorize/bulk' \\\r\n--header 'Accept-Language: EN' \\\r\n--header 'Content-Type: application/json' \\\r\n--header 'Accept: application/json' \\\r\n--header 'x-request-id: 14912703-fd63-4a59-99a0-8b5b2a052a3f' \\\r\n--header 'Authorization: Bearer AAIgZDJiY2YwZTcyZDc5YzFkZTFkMjAyMTQxY2RlZmI1ODF-_34fLAYxAY8cepDf9mcWuWhWiOpTgRq7ULeTht8Ztl9P3TH4Y8dfBjLq7TLEVASo90UWwxkuO5X7hZxcoHb-Ik416F09dNKwgiDOPwot4GwpJFPzbwL-g-LShCBNo35DeUMlgZxNmSyttJ0EsXKq' \\\r\n--data '{\r\n  \"merchants\": [\r\n    {\r\n      \"merchant_name\": \"mcdonalds\",\r\n      \"merchant_id\": \"string\",\r\n      \"merchant_mcc_code\": \"string\",\r\n      \"merchant_payment_type\": \"string\"\r\n    }\r\n  ]\r\n}'"
+					},
+					"response": [
+						{
+							"name": "MP Drahim Bulk Categorization",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "EN"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Merchants\": [\r\n            {\r\n                \"MerchantName\": \"mcdonalds\",\r\n                \"MerchantId\": \"string\",\r\n                \"MerchantMccCode\": \"string\",\r\n                \"MerchantPaymentType\": \"string\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/mp-bulk-categorization/v1/merchants/categorize",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-bulk-categorization",
+										"v1",
+										"merchants",
+										"categorize"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5fbdb970-5721-4297-92d0-46f29383bc35"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a6686cdbd501493110"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,98;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 08:50:29 GMT"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": [\n        {\n            \"Id\": \"01JA7S4VVTT07EF7T0ZQABD5E8\",\n            \"MerchantName\": \"mcdonalds\",\n            \"CategoryId\": \"8\",\n            \"CategorizedBy\": \"inverse_jaccard_leven\",\n            \"VerifiedMerchant\": {\n                \"Id\": \"01J3JAXJJZWT56HZ4R9271A6YS\",\n                \"NameEn\": \"McDonalds\",\n                \"Logo\": \"\",\n                \"CategoryId\": \"8\",\n                \"NameAr\": \"ماكدونالدز\",\n                \"CategoryName\": \"RESTURANTS\"\n            },\n            \"CategoryName\": \"RESTURANTS\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "MP Drahim Bulk Categorization",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "EN"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Merchants\": [\r\n            {\r\n                \"MerchantName\": \"بندة\",\r\n                \"MerchantId\": \"string\",\r\n                \"MerchantMccCode\": \"string\",\r\n                \"MerchantPaymentType\": \"string\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/mp-bulk-categorization/v1/merchants/categorize",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-bulk-categorization",
+										"v1",
+										"merchants",
+										"categorize"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8718b730-745a-4675-8641-bbb0342fec98"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a6686cdbe602860922"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,96;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 08:50:46 GMT"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": [\n        {\n            \"Id\": \"01HWKVD8FFW6CYRAC0R5ANZKRR\",\n            \"MerchantName\": \"بندة\",\n            \"CategoryId\": \"1\",\n            \"CategorizedBy\": \"N/A\",\n            \"CategoryName\": \"GROCERIES\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "MP Drahim Bulk Categorization",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "EN"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Merchants\": [\r\n            {\r\n                \"MerchantName\": \"hunger station\",\r\n                \"MerchantId\": \"string\",\r\n                \"MerchantMccCode\": \"string\",\r\n                \"MerchantPaymentType\": \"string\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/mp-bulk-categorization/v1/merchants/categorize",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-bulk-categorization",
+										"v1",
+										"merchants",
+										"categorize"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f82a33dd-2ae9-45e1-85e8-6b5587ecaee0"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a6686cdbee01493290"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,95;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 08:50:54 GMT"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": [\n        {\n            \"Id\": \"01HWKVC4ZEAA5PPDVV01SA6DFW\",\n            \"MerchantName\": \"hunger station\",\n            \"CategoryId\": \"8\",\n            \"CategorizedBy\": \"N/A\",\n            \"CategoryName\": \"RESTURANTS\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "MP Drahim Bulk Categorization",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "EN"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-request-id",
+										"value": "{{$guid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\": {\r\n        \"Merchants\": [\r\n            {\r\n                \"MerchantName\": \"flynas\",\r\n                \"MerchantId\": \"string\",\r\n                \"MerchantMccCode\": \"string\",\r\n                \"MerchantPaymentType\": \"string\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{inbound-gw}}/mp-bulk-categorization/v1/merchants/categorize",
+									"protocol": "https",
+									"host": [
+										"{{inbound-gw}}"
+									],
+									"path": [
+										"mp-bulk-categorization",
+										"v1",
+										"merchants",
+										"categorize"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "x-request-id",
+									"value": "6192169b-5191-4940-8eed-e59c116a3335"
+								},
+								{
+									"key": "X-Global-Transaction-ID",
+									"value": "9e07f6a6686cdbfa02860982"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "name=default,100;"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "name=default,94;"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 08:51:06 GMT"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Data\": [\n        {\n            \"Id\": \"01JYP5CQX2EAHPG79709CM9JY6\",\n            \"MerchantName\": \"flynas\",\n            \"CategoryId\": \"11\",\n            \"CategorizedBy\": \"fuzzy_matching_merchant_db\",\n            \"CategoryName\": \"TRAVEL\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "inbound-gw",
+			"value": "test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound"
+		},
+		{
+			"key": "client-id",
+			"value": ""
+		},
+		{
+			"key": "client-secret",
+			"value": ""
+		},
+		{
+			"key": "access-token",
+			"value": ""
+		}
+	]
+}
