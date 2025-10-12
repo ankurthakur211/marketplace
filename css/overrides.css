@@ -15409,6 +15409,21 @@ form#custom-invite-form input {
     }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+    .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+      width: 50%;
+    }
+  }
+   
+  /* Mobile */
+  @media (max-width: 767px) {
+    .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+      width: 100%;
+    }
+  }
+   
+  
+
 
 /*updating home page feb ankiee*/
 
@@ -18163,7 +18178,7 @@ body.context--BusinessDomains .apicMainContent {
     box-shadow: 0px 0px 12.38px 0px rgba(119, 119, 119, 0.2588235294);
     border-radius: 15px;
     overflow: hidden;
-    width: calc(50% - 10px);
+    width: calc(33% - 10px);
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box {
