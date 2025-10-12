@@ -25498,7 +25498,28 @@ li.strong-text-product strong {
 
 
 }
-.bulkcategorization-usecase{
-      background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/bulkCategorization-usecase.png") !important;
+
+.bulkcategorization-usecase {
+    background-image: url("https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/css/images/bulkCategorization-usecase.png") !important;
 }
+
 /* merna bulk Categorization Page add the new Sections */
+/*merna changes for business domains navbar*/
+.products-businessbox.custom-business-domainpage .maincontent-sec .leftside-menu .Products-business-menu .sidemenu-navitems .api-list {
+    background: #ffffff;
+    gap: 5px;
+    padding: 10px 30px;
+    padding-left: 30px !important;
+    margin: 0;
+    font-size: 15px;
+    color: #5464f2;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative !important;
+    left: unset;
+    top: unset;
+    transition: 0.3s linear;
+}
+/*merna changes for business domains navbar*/
