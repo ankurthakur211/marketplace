@@ -18767,7 +18767,7 @@ body.context--BusinessDomains .apicMainContent {
     box-shadow: 0px 0px 12.38px 0px rgba(119, 119, 119, 0.2588235294);
     border-radius: 15px;
     overflow: hidden;
-    width: calc(50% - 10px);
+    width: calc(33% - 10px) !important;
     min-height: 100%;
 }
 
