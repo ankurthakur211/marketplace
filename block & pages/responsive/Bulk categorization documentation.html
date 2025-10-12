@@ -1,0 +1,165 @@
+<div class="product-details-document categorize-page">
+
+
+    <div class="api-doc-background">
+        <p class="api-doc-background-text ">Bulk Categorization API Documentation</p>
+    </div>
+
+
+
+    <div class="moterinsurance-sec">
+        <div class="container">
+            <div class="d-flex">
+                <div class="leftside-sec">
+                    <p class="fob-welcome-title" id="section-1">Bulk Categorization APIS </p>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">
+                        The purpose of this project is to enable all ARG
+                        subsidiaries (referred to as consumers) to offer Drahim's bulk merchant categorization service
+                        to their customers through subsidiary digital channels.
+                    </p>
+                </div>
+                <div class="rightside-sec">
+                    <p class="API-image"></p>
+                </div>
+            </div>
+            <div class="d-flex btn-box">
+                <a id="downloadLink"
+                    href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/postmanCollections/Modern/MP_Modern_Sandbox_Drahim_Bulk_Categorization.postman_collection.json"
+                    download="">Download Postman Collection</a>
+                <a href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/SampleData/Modern/MPDrahimBulkCategorizationSampleRequestData.xlsx"
+                    download="">Download Sample Data</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="miw-section custom-sec">
+        <div class="container">
+
+            <h1 class="fob-welcome-title">Bulk Categorization Workflow</h1>
+            <p class="motoinsu-image"></p>
+
+            <a id="downloadLink"
+                href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/sites/sandbox.apimp-apic-b2a7a046-portal-web-mp-cp4i-nprd.apps.ocp.np4sitcl01.alrajhi.bank/themes/marketplace_latest/PDF/MPDrahimBulkCategorizationFlowDiagram.pdf"
+                download="">Download Categorization Workflow</a>
+
+        </div>
+    </div>
+
+    <div class="APIs-section">
+        <div class="container">
+            <p class="main-heading">
+                APIs
+            </p>
+            <div class="bx--snippet-container body" data-testid="expandable-example-display">
+
+                <!-- API 1 -->
+                <div class="api-infosec">
+                    <h1 class="fob-welcome-title" id="section-2">Categorize Bulk Merchant</h1>
+                    <p class="fob-welcome-line"></p>
+                    <p class="fob-welcome-text">Endpoint: /merchants/categorize/bulk</br>
+                    </p>
+                    <p class="fob-welcome-text"><a
+                            href="https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/product/1907/api/845#/MPDrahimBulkCategorization_100/operation/%2Fmerchants%2Fcategorize/post">Swagger
+                            Link</a></p>
+                    <p class="fob-welcome-text">This API utilizes the Drahim AI Engine to classify and categorize the
+                        given merchant based on the provided information.</br>
+                    </p>
+                    <div class="requestURL-box">
+                        <div class="request-box">
+                            <h1 class="fob-welcome-title mt-0">Request Example</h1>
+                            <p class="fob-welcome-line"></p>
+                            <pre class="example_97 api-guides-example-fob ">
+                    <code class="sample-code">
+Request Body:
+    {
+        "Data": {
+            "Merchants": [
+                {
+                    "MerchantName": "flynas",
+                    "MerchantId": "string",
+                    "MerchantMccCode": "string",
+                    "MerchantPaymentType": "string"
+                }
+            ]
+        }
+    }
+                    </code>
+                  </pre>
+                        </div>
+                        <div class="url-box">
+                            <p class="fob-welcome-title curlText">cURL</p>
+
+                            <pre id="generatedCurl">
+                    <code id="BulkCategorization-curl" style=" display: block;">
+curl --location 'https://test.api-marketplace.alrajhibank.com.sa/apimarketplace-sit/sandbox-inbound/mp-bulk-categorization/v1/merchants/categorize' \
+--header 'Accept-Language: EN' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: ••••••' \
+--data '{
+    "Data": {
+        "Merchants": [
+            {
+                "MerchantName": "flynas",
+                "MerchantId": "string",
+                "MerchantMccCode": "string",
+                "MerchantPaymentType": "string"
+            }
+        ]
+    }
+}'</code>
+                  </pre>
+                        </div>
+                    </div>
+                    <div class="response-outterbox">
+                        <div class="innerbox">
+                            <div class="code-box">
+                                <p class="api-doc-small-gray-box-api-document api-doc-small-gray-box-api-document-text">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Response</p>
+
+
+                                <div class="response-box-div">
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('BulkCategorization')">200</a>
+                                    <a type="button" class="response-box-error"
+                                        onclick="responseText('BulkCategorization3')">422</a>
+                                </div>
+
+                                <pre class="response-box">
+
+                      <code id="BulkCategorization" style=" display: block; " class="text">
+{
+    "Data": [
+        {
+            "Id": "01JYP5CQX2EAHPG79709CM9JY6",
+            "MerchantName": "flynas",
+            "CategoryId": "11",
+            "CategorizedBy": "fuzzy_matching_merchant_db",
+            "CategoryName": "TRAVEL"
+        }
+    ]
+}                      
+                      </code>
+                      <code id="BulkCategorization3" style=" display: none; " class="text">
+{
+    "Errors": [
+        {
+        "Code": "NTSP.ERROR.422.001",
+        "Message": "Instructed identification is missing",
+        "Path": "Data.Initiation.InstructionIdentification",
+        "Url": "https://{baseURL}/developer-portal/term"
+        }
+    ]
+}
+                      </code>	
+                    
+                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
