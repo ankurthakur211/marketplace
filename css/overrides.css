@@ -18178,7 +18178,7 @@ body.context--BusinessDomains .apicMainContent {
     box-shadow: 0px 0px 12.38px 0px rgba(119, 119, 119, 0.2588235294);
     border-radius: 15px;
     overflow: hidden;
-    width: calc(33% - 10px);
+    width: calc(32% - 10px);
 }
 
 .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box .image-box {
@@ -18767,7 +18767,7 @@ body.context--BusinessDomains .apicMainContent {
     box-shadow: 0px 0px 12.38px 0px rgba(119, 119, 119, 0.2588235294);
     border-radius: 15px;
     overflow: hidden;
-    width: calc(33% - 10px) !important;
+    width: calc(32% - 10px) !important;
     min-height: 100%;
 }
 
@@ -20462,6 +20462,26 @@ button.use-ajax.button.button--primary.js-form-submit.form-submit.btn-success.bt
     width: 90% !important;
     white-space: initial !important;
 }
+
+@media (min-width: 1025px) and (max-width: 1510px) {
+    .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+      width: 47% !important;
+    }
+  }
+   
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+      width: 90% !important;
+      margin: 0 auto !important;
+    }
+  }
+   
+  /* Mobile */
+  @media (max-width: 767px) {
+    .products-businessbox.custom-business-domainpage .maincontent-sec .rightbox-sec .Products-business-cards-row-one .product-cardoutter .productcard-box {
+      width: 100% !important;
+    }
+  }
 
 
 /*updating home page feb ankiee*/
