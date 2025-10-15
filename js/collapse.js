@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Get the base URL before /user/login
         const baseUrl = currentUrl.split("/user/login")[0];
         // Redirect to base URL + /Homepage
-        window.location.href = `${baseUrl}/Homepage`;
+        window.location.href = `https://test.developer.api-marketplace.alrajhibank.com.sa/sandbox/Homepage`;
     }
 });
 document.addEventListener("DOMContentLoaded", function () {
